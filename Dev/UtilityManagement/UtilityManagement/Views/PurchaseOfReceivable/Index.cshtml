@@ -1,0 +1,320 @@
+﻿@model  UtilityManagement.Models.PurchaseOfReceivableModel
+@{
+    ViewBag.Title = "Purchase Of Receivables Index";
+}
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Purchase Of Receivables</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+    <div class="details-data-section chartlink">
+        <div class="f10">
+        @Html.Label("Utility Company")
+        @Html.DropDownList("UtilityCompanyId", null, new { @onchange = "Utility_onChange()" })
+        </div>
+        @{
+            if (Session["PurchaseOfReceivable_UtilityCompanyId_Set"] != null && Session["PurchaseOfReceivable_UtilityCompanyId_Set"].ToString() != "00000000-0000-0000-0000-000000000000")
+            {
+                 <div class="details-full-section" style="overflow:hidden;">
+                    <div class="right_chart">
+                        <div class="navscroll rightscroll">
+                            <a href="">
+                                <img src="~/Images/navscroll.png" /></a>
+                        </div>
+                        <div id="hideDiv" class="chart_open" style="display: none">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="form-details">
+                                            <h4>Purchase Of Receivables</h4>
+                                            <div class="form_fieldset">
+                                                <fieldset>
+                                                    <legend>Purchase Of Receivables</legend>
+                                                    <div class="details-data-section">
+                                                        <img src="/PurchaseOfReceivable/PorCountChart" alt="" class="img" />
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <img id="dirImg" src="~/Images/view_chart.png" onclick="showHide('hideDiv',this.id)" />
+                    </div>
+                    <br />
+                    <div style="overflow-x:scroll;" id="bheight">
+                        <table>
+                            <tr>
+                                <td style="vertical-align:top">
+                                    <div class="form-title-specific p5">Purchase Of Receivables</div>
+                                    <table class="index2 top_border left_border">
+                                        <tr>
+                                            <th>Row Count = @Model.PurchaseOfReceivableList.Count()</th>
+                                            <th>
+                                                @Html.ActionLink("Utility Code", "UtilityCodeTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityCodeImageUrl))
+                                                    {
+                                                        <img id="imgUtilityCode" src="@ViewBag.UtilityCodeImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Driver", "PorDriverTileClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.PorDriverImageUrl))
+                                                    {
+                                                        <img id="imgPorDriver" src="@ViewBag.PorDriverImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Rate Class", "RateClassTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassImageUrl))
+                                                    {
+                                                        <img id="imgRateClass" src="@ViewBag.RateClassImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Load Profile", "LoadProfileTileClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileImageUrl))
+                                                    {
+                                                        <img id="imgLoadProfile" src="@ViewBag.LoadProfileImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Tariff Code", "TariffCodeTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeImageUrl))
+                                                    {
+                                                        <img id="imgTariffCode" src="@ViewBag.TariffCodeImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Offered", "IsPorOfferedTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.IsPorOfferedImageUrl))
+                                                    {
+                                                        <img id="imgIsPorOffered" src="@ViewBag.IsPorOfferedImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Participated", "IsPorParticipatedTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.IsPorParticipatedImageUrl))
+                                                    {
+                                                        <img id="imgIsPorParticipated" src="@ViewBag.IsPorParticipatedImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Eligible", "IsPorAssuranceTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.IsPorAssuranceImageUrl))
+                                                    {
+                                                        <img id="imgIsPorAssurance" src="@ViewBag.IsPorAssuranceImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Recourse", "PorRecourseTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.PorRecourseImageUrl))
+                                                    {
+                                                        <img id="imgPorRecourse" src="@ViewBag.PorRecourseImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Discount Rate", "PorDiscountRateTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.PorDiscountRateImageUrl))
+                                                    {
+                                                        <img id="imgPorDiscountRate" src="@ViewBag.PorDiscountRateImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Flat Fee", "PorFlatFeeTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.PorFlatFeeImageUrl))
+                                                    {
+                                                        <img id="imgPorFlatFee" src="@ViewBag.PorFlatFeeImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Effective Date", "PorDiscountEffectiveDateTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.PorDiscountEffectiveDateImageUrl))
+                                                    {
+                                                        <img id="imgPorDiscountEffectiveDate" src="@ViewBag.PorDiscountEffectiveDateImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Expiration Date", "PorDiscountExpirationDateTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.PorDiscountExpirationDateImageUrl))
+                                                    {
+                                                        <img id="imgPorDiscountExpirationDate" src="@ViewBag.PorDiscountExpirationDateImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Inactive", "InactiveTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+                                                    {
+                                                        <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Created By", "CreatedByTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+                                                    {
+                                                        <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Created Date", "CreatedDateTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+                                                    {
+                                                        <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Modified By", "LastModifiedByTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+                                                    {
+                                                        <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                            <th>
+                                                @Html.ActionLink("Modified Date", "LastModifiedDateTitleClick")
+                                                @{
+                                                    if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+                                                    {
+                                                        <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"  valign="middle" />
+                                                    }
+                                                }
+                                            </th>
+                                        </tr>
+                                        @{
+                                            foreach (var item in Model.PurchaseOfReceivableList)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                                                        <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.PorDriver.Name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.RateClass.RateClassCode)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.LoadProfile.LoadProfileCode)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.TariffCode.TariffCodeCode)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.IsPorOffered)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.IsPorParticipated)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.IsPorAssurance)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelitem => item.PorRecourse.Name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.DiscountRate)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.FlatFee)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.EffectiveDate)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ExpirationDate)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Inactive)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                 </div>
+            }
+        }
+    </div>
+</div>
+
+<script>
+    function Utility_onChange() {
+        if ($("select#UtilityCompanyId").val() != "-1") {
+            $.ajax({
+                type: 'POST',
+                url: "/PurchaseOfReceivable/IndexUtilitySelection",
+                datatype: 'json',
+                async: false,
+                data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                success: function (data) { },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+            document.location.href = '/PurchaseOfReceivable/Index';
+        }
+    };
+</script>
+
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

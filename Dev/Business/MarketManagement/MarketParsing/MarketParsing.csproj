@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89380D4D-DDFB-4F0F-8F4C-5D42D9DA579D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibertyPower.Business.MarketManagement.MarketParsing</RootNamespace>
+    <AssemblyName>MarketParsing</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/MarketParsing/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>0618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonEntity, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonExcel, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonExceptions, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonExceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonHelper, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonRules, Version=11.12.7.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonRules.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonShared, Version=13.1.9.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonShared.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonSql.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelAccess, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\ExcelAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="FieldHistory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Reference\Pricing\FieldHistory.dll</HintPath>
+    </Reference>
+    <Reference Include="FileManager, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\FileManager.dll</HintPath>
+    </Reference>
+    <Reference Include="FileParser, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\FileParser.dll</HintPath>
+    </Reference>
+    <Reference Include="GenericCsv, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\GenericCsv.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics3.Excel.v10.1">
+      <HintPath>..\..\..\..\Reference\NonBuild\Infragistics\Infragistics3.Excel.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADDRESSOBJECTLib">
+      <HintPath>..\..\..\..\Reference\NonBuild\Other\Interop.ADDRESSOBJECTLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="LibertyPowerSql, Version=12.2.10.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Temp\LibertyPowerSql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WorkbookAccess, Version=2011.3.6.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Temp\WorkbookAccess.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AepUsageParser.cs" />
+    <Compile Include="CreateLoaXlsFactory.cs" />
+    <Compile Include="CtpenUsageParser.cs" />
+    <Compile Include="CustomAccountCandidateCollectionValidationRule.cs" />
+    <Compile Include="CustomAccountCandidateValidationRule.cs" />
+    <Compile Include="CustomOfferListOfAccountsParser.cs" />
+    <Compile Include="CustomUtilityAccountExcelSchemaRule.cs" />
+    <Compile Include="DateValueRule.cs" />
+    <Compile Include="DetermineUtilityFromAccountNumber.cs" />
+    <Compile Include="MappingFactory.cs" />
+    <Compile Include="MinimumDateRule.cs" />
+    <Compile Include="NumericValueRule.cs" />
+    <Compile Include="PropertyExistsAndHasValueRule.cs" />
+    <Compile Include="ListOfAccountsAddressUpdate.cs" />
+    <Compile Include="ErcotListOfAccountsParser.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="ParserFileTypes.cs" />
+    <Compile Include="ParserResult.cs" />
+    <Compile Include="ParserSchemaDictionary.cs" />
+    <Compile Include="PGEUsage\PgeUsageRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SCEUsage\SceUsageRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SDGEUsage\SdgeUsageRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UsageParserException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OfferEngineUploadsParserFactory.cs" />
+    <Compile Include="PGEUsage\PgeUsageParser.cs" />
+    <Compile Include="PGEUsage\PgeUsageAccount.cs" />
+    <Compile Include="PGEUsage\PgeUsageAccountCollection.cs" />
+    <Compile Include="PGEUsage\PgeUsageItem.cs" />
+    <Compile Include="PGEUsage\PgeUsageItemCollection.cs" />
+    <Compile Include="ProspectAccountCandidateCollection.cs" />
+    <Compile Include="SCEUsage\SceUsageParser.cs" />
+    <Compile Include="SCEUsage\SceUsageAccount.cs" />
+    <Compile Include="SCEUsage\SceUsageAccountCollection.cs" />
+    <Compile Include="SCEUsage\SceUsageItem.cs" />
+    <Compile Include="SCEUsage\SceUsageItemCollection.cs" />
+    <Compile Include="SDGEUsage\SdgeUsageParser.cs" />
+    <Compile Include="SDGEUsage\SdgeUsageAccount.cs" />
+    <Compile Include="SDGEUsage\SdgeUsageAccountCollection.cs" />
+    <Compile Include="SDGEUsage\SdgeUsageItem.cs" />
+    <Compile Include="SDGEUsage\SdgeUsageItemCollection.cs" />
+    <Compile Include="SharylandUsageParser.cs" />
+    <Compile Include="TnmpUsageParser.cs" />
+    <Compile Include="TxuSesco.cs" />
+    <Compile Include="TxuSescoUsageParser.cs" />
+    <Compile Include="TxuUsageParser.cs" />
+    <Compile Include="UsageAepExcelSchemaRule.cs" />
+    <Compile Include="UsageCandidate.cs" />
+    <Compile Include="UsageCtpenExcelSchemaRule.cs" />
+    <Compile Include="UsageRequiredFieldValuesRule.cs" />
+    <Compile Include="UsageTnmpExcelSchemaRule.cs" />
+    <Compile Include="UsageTxuExcelSchemaRule.cs" />
+    <Compile Include="ApplicationType.cs" />
+    <Compile Include="UsageCandidateFactory.cs" />
+    <Compile Include="MarketParsingException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MissingAccountListingColumnValueRule.cs" />
+    <Compile Include="MissingAccountListingColumnValuesRule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityAccountExcelFormatRule.cs" />
+    <Compile Include="UtilityAccountRequiredFieldsRule.cs" />
+    <Compile Include="ProspectAccountCandidate.cs" />
+    <Compile Include="ProspectAccountCandidateFactory.cs" />
+    <Compile Include="UtilityCodeIsKnownValueRule.cs" />
+    <Compile Include="UtilityAccountRequiredFieldList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UtilityAccountColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UtilityAccountRequiredFieldFactory.cs" />
+    <Compile Include="ParserSchema.cs" />
+    <Compile Include="ParserSchemaList.cs" />
+    <Compile Include="ParserSchemaFactory.cs" />
+    <Compile Include="UtilityStandIn.cs" />
+    <Compile Include="UtilityStandInFactory.cs" />
+    <Compile Include="ValidateCaliforniaUsageFileRule.cs" />
+    <Compile Include="ValidateUtilityAccountRule.cs" />
+    <Compile Include="ValidateUsageRule.cs" />
+    <Compile Include="ValidationResult.cs" />
+    <Compile Include="ValueExistsRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagrams\ValidateUtilityAccountsAndUsagesDiagram.cd" />
+    <None Include="Diagrams\ValidateExcelSchemasDiagram.cd" />
+    <None Include="Diagrams\AccountsListParsingDiagramOverview.cd" />
+    <EmbeddedResource Include="LOA.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UsageManagement\UsageManagement.csproj">
+      <Project>{942f6c2e-682c-4d9b-9d6b-0b2062a43c70}</Project>
+      <Name>UsageManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityManagement\UtilityManagement.csproj">
+      <Project>{98086321-a541-4063-872b-62fa3a691b24}</Project>
+      <Name>UtilityManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

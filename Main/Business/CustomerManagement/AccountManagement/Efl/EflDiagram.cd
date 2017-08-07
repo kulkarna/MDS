@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ElectricityFactsLabel">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAECAAIAAAAAAAAAAEAACAAAAAAA=</HashCode>
+      <FileName>Efl\ElectricityFactsLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ElectricityFactsLabelList">
+    <Position X="0.5" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\ElectricityFactsLabelList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ElectricityFactsLabelFactory">
+    <Position X="2.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABQAABIgEEAAABAAAAEBAABgACAAAAATAggEBCAggA=</HashCode>
+      <FileName>Efl\ElectricityFactsLabelFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.PdfFactory">
+    <Position X="2.75" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Efl\PdfFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ValidEflLpFixedRule">
+    <Position X="7.75" Y="5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Efl\ValidEflLpFixedRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ValidEflTermRule">
+    <Position X="7.75" Y="2" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAAAABAAAACAAAAAAAAAAAAAAAAQAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Efl\ValidEflTermRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ValidEflRateRule">
+    <Position X="7.75" Y="3.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\ValidEflRateRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.RateUsageList">
+    <Position X="0.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\RateUsageList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ValidEflInputRule">
+    <Position X="7.75" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAAAAFAAAACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Efl\ValidEflInputRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.EflRequest">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAAIAAAAAAAAAAAACAAAAAAAAAAAAAEAAACAAAAAA=</HashCode>
+      <FileName>Efl\EflRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.PdfNotCreatedException">
+    <Position X="10" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\PdfNotCreatedException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ContractEfl">
+    <Position X="0.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\ContractEfl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ValidAccountTypeRule">
+    <Position X="7.75" Y="6.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidAccountTypeRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.RateUsageDefaultProd">
+    <Position X="5.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAABACAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\RateUsageDefaultProd.cs</FileName>
+      <NewMemberFileName>Efl\RateUsageSmbRes.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.RateUsage">
+    <Position X="5.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAgAAAABAAAAABAIAAAAAAAAAAAAACAADAAAAAg=</HashCode>
+      <FileName>Efl\RateUsage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.RateUsageStandard">
+    <Position X="5.5" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\RateUsageStandard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.EflUtility">
+    <Position X="10" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAACAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\EflUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.EflUtilityList">
+    <Position X="10" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\EflUtilityList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.EflProduct">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAgAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\EflProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.EflProductList">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\EflProductList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.EflDefaultProduct">
+    <Position X="12.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAABAAAgCAAAQAAAAAAAAAAAAAEAAAEAAAIAAA=</HashCode>
+      <FileName>Efl\EflDefaultProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.EflDefaultProductList">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\EflDefaultProductList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.EflCharges">
+    <Position X="3" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIgAAAIAAgAAAACIAAAAAAAAAAAAAAAACAAAAAg=</HashCode>
+      <FileName>Efl\EflCharges.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.RateUsageSpecial1">
+    <Position X="7.75" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\RateUsageSpecial1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LibertyPower.Business.CustomerManagement.AccountManagement.EflTemplateType">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAgAAABAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Efl\EflTemplateType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

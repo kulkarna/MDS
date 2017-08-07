@@ -1,0 +1,107 @@
+﻿@model List<UtilityManagement.Models.DemographicDataByZipCodeItem>
+@{
+    ViewBag.Title = "Demographic Data By Zip Code Index";
+}
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Demographic Data By Zip Code</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button></div>
+        </div>
+    </div>
+    <div class="details-data-section">
+
+        <div class="detail_table">
+            <div class="left_container">
+            <table class="index">
+                <tr>
+                    <th>Row Count = @this.Model.Count</th>
+                    <th>Zip Code</th>
+                    <th>Customer Count</th>
+                    <th>Segment 1</th>
+                    <th>Segment 1 Percent</th>
+                    <th>Segment 1 Count</th>
+                    <th>Segment 2</th>
+                    <th>Segment 2 Percent</th>
+                    <th>Segment 2 Count</th>
+                    <th>Segment 3</th>
+                    <th>Segment 3 Percent</th>
+                    <th>Segment 3 Count</th>
+                    <th>Date</th>
+                </tr>
+                    @{
+                           if (this.Model == null)
+                         {
+                            <tr><td>Model is null</td></tr>
+                         }
+                         else
+                         {
+                             if (this.Model.Count == 0)
+                             {
+                                        <tr><td>Model.Count==0</td></tr>
+                             }
+                             else
+                             {
+                                 foreach (var item in this.Model)
+                                 {
+                                    <tr>
+                                        <td>
+                                            @{string checkBoxId = string.Format("CheckBoxSelection_{0}", Guid.NewGuid().ToString());}
+                                            <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ZipCode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CustomerCountInZipCode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Segment1)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Segment1Percent)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Segment1Count)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Segment2)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Segment2Percent)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Segment2Count)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Segment3)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Segment3Percent)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Segment3Count)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Date)
+                                        </td>
+                                    </tr>
+                                 }
+                             }
+                         }
+                    }
+            </table>
+                </div></div>
+                <div class="right_chart">
+               </div>
+        </div></div>
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

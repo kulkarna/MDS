@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="03013751-475c-4449-ae4b-11ac2cd590b3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:57373/ChannelManagementService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ChannelManagementService.xsd" MetadataType="Schema" ID="b9bcc4fa-1434-4854-8d88-b7695a223797" SourceId="1" SourceUrl="http://localhost:57373/ChannelManagementService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ChannelManagementService1.xsd" MetadataType="Schema" ID="a5cc1947-3d65-478b-92d0-8e736cbaded8" SourceId="1" SourceUrl="http://localhost:57373/ChannelManagementService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ChannelManagementService2.xsd" MetadataType="Schema" ID="04bc81f7-c511-4f1e-a68d-239783f48ea3" SourceId="1" SourceUrl="http://localhost:57373/ChannelManagementService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ChannelManagementService3.xsd" MetadataType="Schema" ID="45b33d21-7fb7-47cc-9c9a-dfa118219ba7" SourceId="1" SourceUrl="http://localhost:57373/ChannelManagementService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ChannelManagementService.wsdl" MetadataType="Wsdl" ID="60b11367-afc1-450f-a464-77b0b33d2f42" SourceId="1" SourceUrl="http://localhost:57373/ChannelManagementService.svc?wsdl" />
+    <MetadataFile FileName="ChannelManagementService4.xsd" MetadataType="Schema" ID="733c0e03-74df-4113-8a70-9651164a0700" SourceId="1" SourceUrl="http://localhost:57373/ChannelManagementService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ChannelManagementService5.xsd" MetadataType="Schema" ID="9a48746b-c2e5-4882-8e5d-17f7f35ce1a4" SourceId="1" SourceUrl="http://localhost:57373/ChannelManagementService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ChannelManagementService.disco" MetadataType="Disco" ID="dbee46cb-bbc3-4c31-a4f9-0c6aaae687c8" SourceId="1" SourceUrl="http://localhost:57373/ChannelManagementService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

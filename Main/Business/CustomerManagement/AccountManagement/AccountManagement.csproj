@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5BDF93E6-83AA-4251-BDAD-38F466714B41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibertyPower.Business.CustomerManagement.AccountManagement</RootNamespace>
+    <AssemblyName>AccountManagement</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/AccountManagement/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AccountSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\AccountSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Pdf">
+      <HintPath>..\..\..\..\..\..\Framework\Reference\NonBuild\Aspose\4.x\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\..\..\..\..\..\Framework\Reference\NonBuild\Aspose\13.x\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Commissions">
+      <HintPath>..\..\..\..\..\..\Reference\CRM Tools\Commissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\NonBuild\Common.Logging.2.0.0\lib\2.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonEntity, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonExceptions, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonExceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonHelper, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonRules, Version=11.12.7.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonRules.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Temp\CommonSql.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomerManagementEF">
+      <HintPath>..\..\..\..\..\..\Reference\CRM\CustomerManagementEF.dll</HintPath>
+    </Reference>
+    <Reference Include="DailyPricing">
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\DailyPricing.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentWebService, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\DealCaptureDlls\DocumentWebService.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiManagement">
+      <HintPath>..\..\..\..\..\..\Reference\Market\EdiManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="EmailManager">
+      <HintPath>..\..\..\..\..\..\Reference\Core\EmailManager.dll</HintPath>
+    </Reference>
+    <Reference Include="EnrollmentSql">
+      <HintPath>..\..\..\..\..\..\Reference\CRM Tools\EnrollmentSql.dll</HintPath>
+    </Reference>
+    <Reference Include="LetterQueue">
+      <HintPath>..\..\..\..\..\..\Reference\CRM Tools\LetterQueue.dll</HintPath>
+    </Reference>
+    <Reference Include="ProductManagement, Version=2012.2.15.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\ProductManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="ProspectManagement, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\ProspectManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Prospects">
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\Prospects.dll</HintPath>
+    </Reference>
+    <Reference Include="RateManagement">
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\RateManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="SalesChannel">
+      <HintPath>..\..\..\..\..\..\Reference\CRM Tools\SalesChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="SecurityManager">
+      <HintPath>..\..\..\..\..\..\Reference\Core\SecurityManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountDeenrollmentConfirmedRule.cs" />
+    <Compile Include="AccountDeenrollRule.cs" />
+    <Compile Include="AccountEnrolledRule.cs" />
+    <Compile Include="AccountFactory.cs" />
+    <Compile Include="AcquireUsage.cs" />
+    <Compile Include="ContractPrePopulateValidation.cs" />
+    <Compile Include="AccountPendingDeenrollmentRequestRule.cs" />
+    <Compile Include="AccountPendingEnrollmentRequestRule.cs" />
+    <Compile Include="AccountPendingReenrollmentRequestRule.cs" />
+    <Compile Include="AccountTypeDictionary.cs" />
+    <Compile Include="AccountTypeList.cs" />
+    <Compile Include="CommissionFactory.cs" />
+    <Compile Include="CommissionTransaction.cs" />
+    <Compile Include="CommissionProcessor.cs" />
+    <Compile Include="CommissionTransactionList.cs" />
+    <Compile Include="CompanyAccountCollection.cs" />
+    <Compile Include="CompanyAccountType.cs" />
+    <Compile Include="CompanyCustomer.cs" />
+    <Compile Include="CompanyIndividual.cs" />
+    <Compile Include="CompanyOrganization.cs" />
+    <Compile Include="ContractSubmission.cs" />
+    <Compile Include="ContractValidation.cs" />
+    <Compile Include="Efl\EflCharges.cs" />
+    <Compile Include="Efl\EflDefaultProduct.cs" />
+    <Compile Include="Efl\EflDefaultProductList.cs" />
+    <Compile Include="Efl\EflModifier.cs" />
+    <Compile Include="Efl\EflProductList.cs" />
+    <Compile Include="Efl\EflProduct.cs" />
+    <Compile Include="Efl\EflUtilityList.cs" />
+    <Compile Include="Efl\EflUtility.cs" />
+    <Compile Include="Efl\ContractEfl.cs" />
+    <Compile Include="Efl\RateUsageDefaultProd.cs" />
+    <Compile Include="Efl\EflRequest.cs" />
+    <Compile Include="Efl\EflTemplateType.cs" />
+    <Compile Include="Efl\ElectricityFactsLabel.cs" />
+    <Compile Include="Efl\ElectricityFactsLabelFactory.cs" />
+    <Compile Include="Efl\ElectricityFactsLabelList.cs" />
+    <Compile Include="Efl\RateUsageSpecial1.cs" />
+    <Compile Include="Efl\RateUsageStandard.cs" />
+    <Compile Include="Efl\ValidEflLpFixedRule.cs" />
+    <Compile Include="Efl\ValidEflRateRule.cs" />
+    <Compile Include="Efl\ValidEflTermRule.cs" />
+    <Compile Include="Efl\ValidEflInputRule.cs" />
+    <Compile Include="EnrollmentFactory.cs" />
+    <Compile Include="Etf\DoubleMonthlyEtfCalculator.cs" />
+    <Compile Include="Etf\Etf.cs" />
+    <Compile Include="Etf\EtfCalculationType.cs" />
+    <Compile Include="Etf\EtfCalculatorType.cs" />
+    <Compile Include="Etf\EtfContextFactory.cs" />
+    <Compile Include="Etf\EtfEndStatus.cs" />
+    <Compile Include="Etf\EtfInvoiceAction.cs" />
+    <Compile Include="Etf\EtfInvoiceList.cs" />
+    <Compile Include="Etf\EtfProcessingAction.cs" />
+    <Compile Include="Etf\FixedEtfResult.cs" />
+    <Compile Include="Etf\FlatEtfCalculator.cs" />
+    <Compile Include="Etf\ManualEntryCalculator.cs" />
+    <Compile Include="Etf\MonthScalerEtfCalculator.cs" />
+    <Compile Include="Etf\MultiTermEtfCalculator.cs" />
+    <Compile Include="Etf\RetentionSavedAccount.cs" />
+    <Compile Include="Etf\RetentionSavedAccountFactory.cs" />
+    <Compile Include="Etf\RetentionSavedAccountList.cs" />
+    <Compile Include="Etf\RetentionSavedAccountStatus.cs" />
+    <Compile Include="Etf\SalesPitchLetterAction.cs" />
+    <Compile Include="Etf\States\EtfCalculatingState.cs" />
+    <Compile Include="Etf\States\EtfCompletedState.cs" />
+    <Compile Include="Etf\States\EtfEstimatedState.cs" />
+    <Compile Include="Etf\States\EtfInvoiceNotPaidState.cs" />
+    <Compile Include="Etf\States\EtfPaidState.cs" />
+    <Compile Include="Etf\States\EtfState.cs" />
+    <Compile Include="Etf\States\PendingInvoiceState.cs" />
+    <Compile Include="Etf\States\PendingSalesPitchLetterState.cs" />
+    <Compile Include="Etf\States\SuccessfulEtfCalculationState.cs" />
+    <Compile Include="Etf\States\ValidAccountStatusState.cs" />
+    <Compile Include="Etf\States\EtfStartState.cs" />
+    <Compile Include="EnrollmentStatus.cs" />
+    <Compile Include="Etf\EtfContext.cs" />
+    <Compile Include="Etf\EtfProcessingException.cs" />
+    <Compile Include="Etf\EtfProcessingExceptionFactory.cs" />
+    <Compile Include="Etf\EtfProcessingExceptionList.cs" />
+    <Compile Include="Etf\EtfCalculator.cs" />
+    <Compile Include="Etf\EtfApplicableRule.cs" />
+    <Compile Include="Etf\EtfCalculatorFactory.cs" />
+    <Compile Include="Etf\EtfInvoice.cs" />
+    <Compile Include="Etf\EtfInvoiceFactory.cs" />
+    <Compile Include="Etf\EtfInvoiceStatus.cs" />
+    <Compile Include="Etf\EtfResult.cs" />
+    <Compile Include="Etf\EtfResultType.cs" />
+    <Compile Include="Etf\EtfWaivedReasonCode.cs" />
+    <Compile Include="Etf\EtfWaivedReasonCodeFactory.cs" />
+    <Compile Include="Etf\EtfWaivedReasonCodeList.cs" />
+    <Compile Include="AccountEvent.cs" />
+    <Compile Include="AccountEventFactory.cs" />
+    <Compile Include="AccountEventHistory.cs" />
+    <Compile Include="AccountEventHistoryFactory.cs" />
+    <Compile Include="AccountEventProcessor.cs" />
+    <Compile Include="AccountEventType.cs" />
+    <Compile Include="AccountInfo.cs" />
+    <Compile Include="AccountInfoFactory.cs" />
+    <Compile Include="AccountMeters.cs" />
+    <Compile Include="AccountMetersFactory.cs" />
+    <Compile Include="AccountType.cs" />
+    <Compile Include="ContractConvertibleRule.cs" />
+    <Compile Include="ContractFactory.cs" />
+    <Compile Include="EdiTransactionProcessor.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="ErrorFactory.cs" />
+    <Compile Include="Etf\EtfFactory.cs" />
+    <Compile Include="Etf\IEtfState.cs" />
+    <Compile Include="Etf\States\ValidCustomerTypeState.cs" />
+    <Compile Include="Etf\States\ValidCustomTypeState.cs" />
+    <Compile Include="Etf\States\ProductEligibilityCheckState.cs" />
+    <Compile Include="Etf\VariableEtfCalculatorFactory.cs" />
+    <Compile Include="Exceptions\AccountNotFoundException.cs" />
+    <Compile Include="Exceptions\ContractNotFoundException.cs" />
+    <Compile Include="Exceptions\AccountManagementException.cs" />
+    <Compile Include="Exceptions\AccountStatusNotUpdatedException.cs" />
+    <Compile Include="BillingType.cs" />
+    <Compile Include="CompanyAccountFactory.cs" />
+    <Compile Include="Credit\CreditRecord.cs" />
+    <Compile Include="CompanyAccount.cs" />
+    <Compile Include="Contract.cs" />
+    <Compile Include="Etf\FixedEtfCalculator.cs" />
+    <Compile Include="Etf\FixedEtfCalculatorFactory.cs" />
+    <Compile Include="Exceptions\EflAvgMonthluUsageNotFoundException.cs" />
+    <Compile Include="Exceptions\EflChargesNotFoundException.cs" />
+    <Compile Include="Exceptions\EflDefaultProductNotFoundException.cs" />
+    <Compile Include="Exceptions\InvalidAccountTypeException.cs" />
+    <Compile Include="Exceptions\InvalidEflInputException.cs" />
+    <Compile Include="Exceptions\McpeNotFoundExcpetion.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Etf\MarketRate.cs" />
+    <Compile Include="Etf\MarketRateFactory.cs" />
+    <Compile Include="Efl\PdfFactory.cs" />
+    <Compile Include="Exceptions\PdfNotCreatedException.cs" />
+    <Compile Include="LpEnrollmentType.cs" />
+    <Compile Include="MeterReadCalendar.cs" />
+    <Compile Include="MeterReadCalendarFactory.cs" />
+    <Compile Include="Month.cs" />
+    <Compile Include="MonthDictionary.cs" />
+    <Compile Include="MonthList.cs" />
+    <Compile Include="Etf\NewYorkEtfCalculator.cs" />
+    <Compile Include="Etf\MultiTermEtfCalculatorFactory.cs" />
+    <Compile Include="ProductUpdate\ProductUpdate.cs" />
+    <Compile Include="ProductUpdate\ProductUpdateType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RateChangeFactory.cs" />
+    <Compile Include="Efl\RateUsage.cs" />
+    <Compile Include="Efl\RateUsageList.cs" />
+    <Compile Include="RenewableContractRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Etf\SalesPitchLetter.cs" />
+    <Compile Include="Etf\SalesPitchLetterFactory.cs" />
+    <Compile Include="Etf\SalesPitchLetterList.cs" />
+    <Compile Include="Etf\SalesPitchLetterStatus.cs" />
+    <Compile Include="Service References\RateServiceWCF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="StartDateModificationAllowedRule.cs" />
+    <Compile Include="ContractTemplateVersion.cs" />
+    <Compile Include="Status.cs" />
+    <Compile Include="StatusList.cs" />
+    <Compile Include="StatusTransition.cs" />
+    <Compile Include="StatusTransitionIsValidRule.cs" />
+    <Compile Include="StatusTransitionList.cs" />
+    <Compile Include="StatusTransitionsReasonCode.cs" />
+    <Compile Include="StatusTransitionsReasonCodeList.cs" />
+    <Compile Include="TransactionFactory.cs" />
+    <Compile Include="Etf\VariableEtfCalculator.cs" />
+    <Compile Include="ValidAccountTypeRule.cs" />
+    <Compile Include="Web References\com.libertypowercorp.enrollment\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\DocumentRepository\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AccountManagementDiagram.cd" />
+    <None Include="app.config" />
+    <None Include="Efl\EflDiagram.cd" />
+    <None Include="Efl\Efl.config" />
+    <None Include="Etf\EtfDiagram.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RateServiceWCF\RateService.wsdl" />
+    <None Include="Service References\RateServiceWCF\RateService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RateServiceWCF\RateService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RateServiceWCF\RateService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\DocumentRepository\DocumentRepository.wsdl" />
+    <None Include="Web References\DocumentRepository\DocumentSetupClass.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DocumentRepository\DocumentTypeClass.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DocumentRepository\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DocumentRepository\Result.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DocumentRepository\TemplateVersionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DocumentRepository\usp_document_history_sel_by_acct_conResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DocumentRepository\usp_TemplateMappingSelectResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DocumentRepository\vw_TemplateMappingFull.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://lpcnocws4:83/DocumentRepository/DocumentRepository.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.libertypowercorp.enrollment\</RelPath>
+      <UpdateFromURL>http://lpcnocws4:83/DocumentRepository/DocumentRepository.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AccountManagement_DocumentRepository_RepositoryServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://sqlprod:83/proddocumentrepository/documentrepository.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.libertypowercorp.enrollment\</RelPath>
+      <UpdateFromURL>http://sqlprod:83/proddocumentrepository/documentrepository.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AccountManagement_com_libertypowercorp_enrollment_RepositoryServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.libertypowercorp.enrollment\TemplateVersionInfo1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.libertypowercorp.enrollment\usp_TemplateMappingSelectResult1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.libertypowercorp.enrollment\vw_TemplateMappingFull1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.libertypowercorp.enrollment\DocumentRepository.disco" />
+    <None Include="Web References\com.libertypowercorp.enrollment\DocumentRepository.wsdl" />
+    <None Include="Web References\com.libertypowercorp.enrollment\DocumentSetupClass.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.libertypowercorp.enrollment\DocumentTypeClass.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.libertypowercorp.enrollment\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.libertypowercorp.enrollment\Result.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Efl\License\Aspose.Pdf.lic" />
+    <None Include="Efl\License\Aspose.Words.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DataAccess\SqlAccess\IstaSql\IstaSql.csproj">
+      <Project>{C0897342-C763-4B4A-9770-384507B7CFE0}</Project>
+      <Name>IstaSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DataAccess\SqlAccess\LibertyPowerSql\LibertyPowerSql.csproj">
+      <Project>{05913fb9-6f34-4863-a2f3-0a875a4908ff}</Project>
+      <Name>LibertyPowerSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Services\IstaService\IstaWebService.csproj">
+      <Project>{98ee2193-7e9a-4349-b5c5-a042ce7d35ee}</Project>
+      <Name>IstaWebService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MarketManagement\UsageManagement\UsageManagement.csproj">
+      <Project>{942F6C2E-682C-4D9B-9D6B-0B2062A43C70}</Project>
+      <Name>UsageManagement %28LibertyPower\Business\MarketManagement\UsageManagement%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MarketManagement\UtilityManagement\UtilityManagement.csproj">
+      <Project>{98086321-A541-4063-872B-62FA3A691B24}</Project>
+      <Name>UtilityManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TempClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\DocumentRepository\DocumentRepository.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RateServiceWCF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RateServiceWCF\RateService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RateServiceWCF\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RateServiceWCF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RateServiceWCF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.MarkerBase">
+    <Position X="9.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BgABEAAVIEELAFABCwChAMyQAoAhGAQEQRBAIDAAAIA=</HashCode>
+      <FileName>Markers\MarkerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.OrMapper867">
+    <Position X="5" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Mappers\OrMapper867.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.DataInserter">
+    <Position X="0.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQEAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataInserter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.ConfigurationFactory">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>ConfigurationFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.UtilityConfigList">
+    <Position X="18.75" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UtilityConfigDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.UtilityConfig">
+    <Position X="21.25" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACACAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UtilityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.FileManager.FileManagerFactory">
+    <Position X="4.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.DunsDiscoverer">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAAAAAAA=</HashCode>
+      <FileName>DunsDiscoverer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.Processor">
+    <Position X="2.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Processor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FormatParser.Parser">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.MapperBase">
+    <Position X="7" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IBA8AACCIhCECRAEBzQASI4QgWJBAECgAIACwFCFCgI=</HashCode>
+      <FileName>Mappers\MapperBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.Mapper">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers\Mapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.FileManager.FileManager">
+    <Position X="12" Y="3.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.FileManager.FileContext">
+    <Position X="12" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.Validator">
+    <Position X="2.5" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiAccount">
+    <Position X="14" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIIIAAAQEAABACAQiICABgc4RFhEAQEAQQAAIKAgAoA=</HashCode>
+      <FileName>EdiAccount.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EdiUsageList" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiUsage">
+    <Position X="14" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABAAAAAoAAAAAAAAgAEAEAAAAAQAAgAAAAAA=</HashCode>
+      <FileName>EdiUsage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiFile">
+    <Position X="16.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAABABABAACABggAgAAEAIAAAgAAQAAAAAA=</HashCode>
+      <FileName>EdiFile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EdiAccountList" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiAccountList" Collapsed="true">
+    <Position X="16.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EdiAccountList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiFileValidRule">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAIACAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rules\EdiFileValidRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.FileConfigDataExistsRule">
+    <Position X="18.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAABCAAAAAAAACAAAAAAIACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rules\FileConfigDataExistsRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.ExceptionLogger">
+    <Position X="2.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>ExceptionLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiAccountLog">
+    <Position X="16.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAECCAAAAAgAAEAACAAgAAAAgAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>EdiAccountLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.UtilityUsageAccount">
+    <Position X="6.5" Y="12.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIAIAAAQoAABAACAAIAgBgg4AFBECUEAAIAAAiAAAAA=</HashCode>
+      <FileName>UtilityUsageAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.UtilityUsageList">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UtilityUsageList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.UtilityUsage">
+    <Position X="2.5" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABAAAAAAAAAAAAAAgAEAEAAAAAQAAgAAAAAA=</HashCode>
+      <FileName>UtilityUsage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiFileManager">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EdiFileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.AccountDataExistsRule">
+    <Position X="24.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAABAAAAAAAACAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Rules\AccountDataExistsRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiIdrUsage">
+    <Position X="11.75" Y="10" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABAAAAAAAAIAAAAAAAEAAAAABAAAAgAAAAAA=</HashCode>
+      <FileName>EdiIdrUsage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiUsageList">
+    <Position X="14.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EdiUsageList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiIdrUsageList">
+    <Position X="12" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EdiIdrUsageList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.TextAccess.FileLister">
+    <Position X="4.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.UtilityIdrUsage">
+    <Position X="9.25" Y="12.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UtilityIdrUsage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.Utility">
+    <Position X="23.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.Usage">
+    <Position X="0.5" Y="8.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UtilityAccount">
+    <Position X="3.5" Y="10" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule">
+    <Position X="21.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.IdrUsage">
+    <Position X="9.25" Y="10" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.AddressType">
+    <Position X="26.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>AddressType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

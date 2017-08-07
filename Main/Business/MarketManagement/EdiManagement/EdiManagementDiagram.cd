@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibertyPower.Business.MarketManagement.EdiManagement.EdiFactory">
+    <Position X="0.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>EdiFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiManagement.Ista814Header">
+    <Position X="3.25" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQIAABAAAAAAAAEACCIAACAIkAACAEQAAAAGAAAAAA=</HashCode>
+      <FileName>Ista814Header.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Ista814ServiceList" />
+      <Property Name="Ista814NameList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiManagement.Ista814Service">
+    <Position X="6.75" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AgGIhAIQEAIAAAIEAAAAAkCAIFgISAoAEIAAAAABAAA=</HashCode>
+      <FileName>IstaService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ServiceMeterList" />
+      <Property Name="ServiceRejectList" />
+      <Property Name="ServiceAccountChangeList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiManagement.Ista814ServiceMeter">
+    <Position X="9.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAEAACAAAAAAAEAAAEAEAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Ista814ServeiceMeter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiManagement.Ista814ServiceReject">
+    <Position X="3.25" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAQAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ista814ServiceReject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiManagement.Ista814ServiceAccountChange">
+    <Position X="3.25" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAEAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ista814ServiceAccountChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiManagement.Ista814Name">
+    <Position X="9.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAAAAIIACkAwAAACAACAABAAABBAAAAEA=</HashCode>
+      <FileName>Ista814Name.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiManagement.EdiException">
+    <Position X="12" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EdiException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiManagement.Key814NotFoundException">
+    <Position X="12" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Key814NotFoundException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LibertyPower.Business.MarketManagement.EdiManagement.IstaTransactionDirection">
+    <Position X="0.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TransactionDirection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.MarketManagement.EdiManagement.IstaServiceType">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IstaServiceType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.MarketManagement.EdiManagement.EdiTransactionProcessingOutcome">
+    <Position X="0.5" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAQAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>EdiTransactionProcessingOutcome.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.MarketManagement.EdiManagement.ResponseType">
+    <Position X="3.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAgACgAAAAAA=</HashCode>
+      <FileName>ResponseType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

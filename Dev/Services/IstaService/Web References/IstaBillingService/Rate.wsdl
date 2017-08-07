@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://services.ista-billing.com/api" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://services.ista-billing.com/api" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://services.ista-billing.com/api">
+      <s:import />
+      <s:import schemaLocation="http://ws.services.ista-billing.com/api/Rate.asmx?schema=RateDS" />
+      <s:element name="IsAlive">
+        <s:complexType />
+      </s:element>
+      <s:element name="IsAliveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsAliveResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRates">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRatesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRates2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cspId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRates2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRates2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListRateDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRateDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateDetails2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rateId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateDetails2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRateDetails2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateDetails3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="custId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateDetails3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRateDetails3Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateDetails4">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rateId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateDetails4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRateDetails4Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateReadyCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="meterReadDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateReadyCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRateReadyCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListUnbilledConsumptionCustomers">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListUnbilledConsumptionCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListUnbilledConsumptionCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRateAmount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="custID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rateAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="effectiveDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRateAmountResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateRateAmount2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="custID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rateAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="effectiveDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="expirationDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRateAmount2Response">
+        <s:complexType />
+      </s:element>
+      <s:element name="Load">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateIndexType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="activeOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateIndexTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRateIndexTypeResult" type="tns:ArrayOfWSRateIndexType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWSRateIndexType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSRateIndexType" type="tns:WSRateIndexType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSRateIndexType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RateIndexTypeId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RateIndexTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListRateIndexRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rateIndexRangeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRateIndexRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRateIndexRangeResult" type="tns:ArrayOfWSRateIndexRange" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWSRateIndexRange">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSRateIndexRange" type="tns:WSRateIndexRange" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSRateIndexRange">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RateIndexTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateFrom" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateTo" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndexRate" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateNewRateIndexRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rateIndexRange" type="tns:WSRateIndexRange" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewRateIndexRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateNewRateIndexRangeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewRateForcastEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rateForecast" type="tns:WSRateForecast" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WSRateForecast">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateFrom" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateTo" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpectedUsage" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsageMinPercentage" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsageMaxPercentage" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="OvertakeIndexTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UndertakeIndexTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OvertakeMargin" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="UndertakeMargin" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateNewRateForcastEntryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateContractVolume">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contractVolume" type="tns:WSContractVolume" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WSContractVolume">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PremiseID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PeriodStart" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PeriodEnd" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UndertakeRateDetailID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OvertakeRateDetailID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UndertakeCollarPercent" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OvertakeCollarPercent" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="VolumeInterval" type="tns:ContractVolumeIntervalOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="VolumeDetails" type="tns:ArrayOfWSConractVolumeDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ContractVolumeIntervalOptions">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="FifteenMinutes" />
+              <s:enumeration value="ThirtyMinutes" />
+              <s:enumeration value="Hourly" />
+              <s:enumeration value="Daily" />
+              <s:enumeration value="Monthly" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:complexType name="ArrayOfWSConractVolumeDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSConractVolumeDetail" type="tns:WSConractVolumeDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSConractVolumeDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IntervalStart" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpectedVolume" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateContractVolumeResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsAliveSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAlive" />
+  </wsdl:message>
+  <wsdl:message name="IsAliveSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListRates" />
+  </wsdl:message>
+  <wsdl:message name="ListRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListRates2SoapIn">
+    <wsdl:part name="parameters" element="tns:ListRates2" />
+  </wsdl:message>
+  <wsdl:message name="ListRates2SoapOut">
+    <wsdl:part name="parameters" element="tns:ListRates2Response" />
+  </wsdl:message>
+  <wsdl:message name="ListRateDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListRateDetails" />
+  </wsdl:message>
+  <wsdl:message name="ListRateDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListRateDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListRateDetails2SoapIn">
+    <wsdl:part name="parameters" element="tns:ListRateDetails2" />
+  </wsdl:message>
+  <wsdl:message name="ListRateDetails2SoapOut">
+    <wsdl:part name="parameters" element="tns:ListRateDetails2Response" />
+  </wsdl:message>
+  <wsdl:message name="ListRateDetails3SoapIn">
+    <wsdl:part name="parameters" element="tns:ListRateDetails3" />
+  </wsdl:message>
+  <wsdl:message name="ListRateDetails3SoapOut">
+    <wsdl:part name="parameters" element="tns:ListRateDetails3Response" />
+  </wsdl:message>
+  <wsdl:message name="ListRateDetails4SoapIn">
+    <wsdl:part name="parameters" element="tns:ListRateDetails4" />
+  </wsdl:message>
+  <wsdl:message name="ListRateDetails4SoapOut">
+    <wsdl:part name="parameters" element="tns:ListRateDetails4Response" />
+  </wsdl:message>
+  <wsdl:message name="ListRateReadyCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListRateReadyCustomers" />
+  </wsdl:message>
+  <wsdl:message name="ListRateReadyCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListRateReadyCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListUnbilledConsumptionCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListUnbilledConsumptionCustomers" />
+  </wsdl:message>
+  <wsdl:message name="ListUnbilledConsumptionCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListUnbilledConsumptionCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRateAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRateAmount" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRateAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRateAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRateAmount2SoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRateAmount2" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRateAmount2SoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRateAmount2Response" />
+  </wsdl:message>
+  <wsdl:message name="LoadSoapIn">
+    <wsdl:part name="parameters" element="tns:Load" />
+  </wsdl:message>
+  <wsdl:message name="LoadSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListRateIndexTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ListRateIndexType" />
+  </wsdl:message>
+  <wsdl:message name="ListRateIndexTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ListRateIndexTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListRateIndexRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:ListRateIndexRange" />
+  </wsdl:message>
+  <wsdl:message name="ListRateIndexRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:ListRateIndexRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewRateIndexRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewRateIndexRange" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewRateIndexRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewRateIndexRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewRateForcastEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewRateForcastEntry" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewRateForcastEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewRateForcastEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateContractVolumeSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateContractVolume" />
+  </wsdl:message>
+  <wsdl:message name="CreateContractVolumeSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateContractVolumeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RateSoap">
+    <wsdl:operation name="IsAlive">
+      <wsdl:input message="tns:IsAliveSoapIn" />
+      <wsdl:output message="tns:IsAliveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRates">
+      <wsdl:input message="tns:ListRatesSoapIn" />
+      <wsdl:output message="tns:ListRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRates">
+      <wsdl:input name="ListRates2" message="tns:ListRates2SoapIn" />
+      <wsdl:output name="ListRates2" message="tns:ListRates2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <wsdl:input message="tns:ListRateDetailsSoapIn" />
+      <wsdl:output message="tns:ListRateDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <wsdl:input name="ListRateDetails2" message="tns:ListRateDetails2SoapIn" />
+      <wsdl:output name="ListRateDetails2" message="tns:ListRateDetails2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <wsdl:input name="ListRateDetails3" message="tns:ListRateDetails3SoapIn" />
+      <wsdl:output name="ListRateDetails3" message="tns:ListRateDetails3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <wsdl:input name="ListRateDetails4" message="tns:ListRateDetails4SoapIn" />
+      <wsdl:output name="ListRateDetails4" message="tns:ListRateDetails4SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRateReadyCustomers">
+      <wsdl:input message="tns:ListRateReadyCustomersSoapIn" />
+      <wsdl:output message="tns:ListRateReadyCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListUnbilledConsumptionCustomers">
+      <wsdl:input message="tns:ListUnbilledConsumptionCustomersSoapIn" />
+      <wsdl:output message="tns:ListUnbilledConsumptionCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRateAmount">
+      <wsdl:input message="tns:UpdateRateAmountSoapIn" />
+      <wsdl:output message="tns:UpdateRateAmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRateAmount">
+      <wsdl:input name="UpdateRateAmount2" message="tns:UpdateRateAmount2SoapIn" />
+      <wsdl:output name="UpdateRateAmount2" message="tns:UpdateRateAmount2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Load">
+      <wsdl:input message="tns:LoadSoapIn" />
+      <wsdl:output message="tns:LoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRateIndexType">
+      <wsdl:input message="tns:ListRateIndexTypeSoapIn" />
+      <wsdl:output message="tns:ListRateIndexTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRateIndexRange">
+      <wsdl:input message="tns:ListRateIndexRangeSoapIn" />
+      <wsdl:output message="tns:ListRateIndexRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewRateIndexRange">
+      <wsdl:input message="tns:CreateNewRateIndexRangeSoapIn" />
+      <wsdl:output message="tns:CreateNewRateIndexRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewRateForcastEntry">
+      <wsdl:input message="tns:CreateNewRateForcastEntrySoapIn" />
+      <wsdl:output message="tns:CreateNewRateForcastEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateContractVolume">
+      <wsdl:input message="tns:CreateContractVolumeSoapIn" />
+      <wsdl:output message="tns:CreateContractVolumeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RateSoap" type="tns:RateSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsAlive">
+      <soap:operation soapAction="https://services.ista-billing.com/api/IsAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRates">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRates">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListRates2" style="document" />
+      <wsdl:input name="ListRates2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListRates2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListRateDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListRateDetails2" style="document" />
+      <wsdl:input name="ListRateDetails2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListRateDetails2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListRateDetails3" style="document" />
+      <wsdl:input name="ListRateDetails3">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListRateDetails3">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListRateDetails4" style="document" />
+      <wsdl:input name="ListRateDetails4">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListRateDetails4">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateReadyCustomers">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListRateReadyCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUnbilledConsumptionCustomers">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListUnbilledConsumptionCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRateAmount">
+      <soap:operation soapAction="https://services.ista-billing.com/api/UpdateRateAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRateAmount">
+      <soap:operation soapAction="https://services.ista-billing.com/api/UpdateRateAmount2" style="document" />
+      <wsdl:input name="UpdateRateAmount2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateRateAmount2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Load">
+      <soap:operation soapAction="https://services.ista-billing.com/api/Load" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateIndexType">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListRateIndexType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateIndexRange">
+      <soap:operation soapAction="https://services.ista-billing.com/api/ListRateIndexRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewRateIndexRange">
+      <soap:operation soapAction="https://services.ista-billing.com/api/CreateNewRateIndexRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewRateForcastEntry">
+      <soap:operation soapAction="https://services.ista-billing.com/api/CreateNewRateForcastEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContractVolume">
+      <soap:operation soapAction="https://services.ista-billing.com/api/CreateContractVolume" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RateSoap12" type="tns:RateSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsAlive">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/IsAlive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRates">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRates">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListRates2" style="document" />
+      <wsdl:input name="ListRates2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListRates2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListRateDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListRateDetails2" style="document" />
+      <wsdl:input name="ListRateDetails2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListRateDetails2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListRateDetails3" style="document" />
+      <wsdl:input name="ListRateDetails3">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListRateDetails3">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateDetails">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListRateDetails4" style="document" />
+      <wsdl:input name="ListRateDetails4">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListRateDetails4">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateReadyCustomers">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListRateReadyCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUnbilledConsumptionCustomers">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListUnbilledConsumptionCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRateAmount">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/UpdateRateAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRateAmount">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/UpdateRateAmount2" style="document" />
+      <wsdl:input name="UpdateRateAmount2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateRateAmount2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Load">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/Load" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateIndexType">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListRateIndexType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRateIndexRange">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/ListRateIndexRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewRateIndexRange">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/CreateNewRateIndexRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewRateForcastEntry">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/CreateNewRateForcastEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContractVolume">
+      <soap12:operation soapAction="https://services.ista-billing.com/api/CreateContractVolume" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Rate">
+    <wsdl:port name="RateSoap" binding="tns:RateSoap">
+      <soap:address location="http://ws.services.ista-billing.com/api/Rate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RateSoap12" binding="tns:RateSoap12">
+      <soap12:address location="http://ws.services.ista-billing.com/api/Rate.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

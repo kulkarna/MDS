@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.UserInterfaceControlVisibility>
+
+@{
+    ViewBag.Title = "User Interface Control Visibility Index";
+}
+
+<h3>User Interface Control Visibility Index</h3>
+<br />
+
+<table>
+    <tr>
+        <th>
+            <input type="checkbox" class="check-box">
+        </th>
+        <th>
+            @Html.DisplayName("User Interface Form Name")
+        </th>
+        <th>
+            @Html.DisplayName("Control Name")
+        </th>
+        <th>
+            @Html.DisplayName("Control Value Governing Visibility")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inactive)
+        </th>
+        <th>
+            @Html.DisplayName("Created By")
+        </th>
+        <th>
+            @Html.DisplayName("Created Date")
+        </th>
+        <th>
+            @Html.DisplayName("Last Modified By")
+        </th>
+        <th>
+            @Html.DisplayName("Last Modified Date")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+            <td>
+                @Html.DisplayFor(modelItem => item.UserInterfaceForm.UserInterfaceFormName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserInterfaceFormControl.ControlName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserInterfaceControlAndValueGoverningControlVisibility.ControlValueGoverningVisibiltiy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inactive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModifiedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModifiedDate)
+            </td>
+        </tr>
+    }
+
+</table>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

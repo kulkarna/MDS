@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.TabletBusinessObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.TabletBusinessObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/ChannelManagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="TabletDataCache">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChannelId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModified" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HashValue" type="ser:guid" />
+      <xs:element minOccurs="0" name="LastChanged" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TabletDataCacheID" type="xs:int" />
+      <xs:element minOccurs="0" name="TabletDataCacheItemID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabletDataCache" nillable="true" type="tns:TabletDataCache" />
+</xs:schema>

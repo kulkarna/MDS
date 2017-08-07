@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/CRMWebServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CRMWebServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities" />
+  <xs:complexType name="WSDocumentResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentGuid" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WSDocumentResult" nillable="true" type="tns:WSDocumentResult" />
+  <xs:complexType name="WSResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSResult" nillable="true" type="tns:WSResult" />
+  <xs:complexType name="WSDocumentSubmissionStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HaveAllFilesBeenSubmitted" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="IncomingDocuments" nillable="true" type="q2:ArrayOfTabletDocument" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities" minOccurs="0" name="ReceivedDocuments" nillable="true" type="q3:ArrayOfWSDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSDocumentSubmissionStatus" nillable="true" type="tns:WSDocumentSubmissionStatus" />
+</xs:schema>

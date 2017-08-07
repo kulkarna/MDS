@@ -1,0 +1,304 @@
+﻿@model DataAccessLayerEntityFramework.RequestModeIdr
+@{
+    ViewBag.Title = "Create Request Mode IDR";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+     <div class="edit_section">
+        <div class="edit_header">
+            <div class="idr_ico"></div>
+            <div class="edit_header_desc"><h4>IDR Request Mode</h4>
+            <h3>New Record</h3>
+            @*Enrollment Type*@
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Request Mode IDR</legend>
+
+                <div class="textblock">
+                <div class="details-data-section">
+                     <div id="Gen"  class="activable">
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                    <div id="hideContent" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="details-left-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UtilityCompanyId, "Utility Company")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("UtilityCompanyId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.UtilityCompanyId, "The current Utility Company field value is invalid.")
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.RequestModeEnrollmentTypeId, "Enrollment Type")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("RequestModeEnrollmentTypeId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.RequestModeEnrollmentTypeId, "The current Request Mode Enrollment Type field value is invalid.")
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UtilityCompany.RequestModeIdrs.Where(x=>x.UtilityCompanyId == model.UtilityCompanyId).FirstOrDefault().RequestModeType.Name, "Request Mode Type")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("RequestModeTypeId")
+                            @Html.ValidationMessageFor(model => model.RequestModeTypeId, "The current Request Mode Type field value is invalid.")
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label" id="divAddressLabel">
+                            @Html.LabelFor(model => model.AddressForPreEnrollment, "Address For Pre Enrollment", new { id = "lblAddress", visible = "false" })
+                        </div>
+                        <div class="editor-field" id="divAddressField">
+                            @Html.EditorFor(model => model.AddressForPreEnrollment, new { id = "tbxAddress" })
+                            @Html.ValidationMessageFor(model => model.AddressForPreEnrollment, string.Empty, new { id = "vmfAddress" })
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.AddressForPreEnrollmentValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="AddressForPreEnrollment" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                         <div class="clear"></div>
+                       
+                        <div class="editor-label" id="divEmailTemplateLabel">
+                            @Html.LabelFor(model => model.EmailTemplate, "Email Template")
+                        </div>
+                        <div class="editor-field" id="divEmailTemplateText">
+                            @Html.EditorFor(model => model.EmailTemplate)
+                            @Html.ValidationMessageFor(model => model.EmailTemplate)
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.EmailTemplateValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="EmailTemplate" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Instructions)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Instructions)
+                            @Html.ValidationMessageFor(model => model.Instructions)
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.InstructionValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="Instructions" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                         <div class="clear"></div>
+                                 </div>
+                        <div class="details-right-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UtilitysSlaIdrResponseInDays, "Utility SLA")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.UtilitysSlaIdrResponseInDays)
+                            @Html.ValidationMessageFor(model => model.UtilitysSlaIdrResponseInDays, "The Utility's SLA IDR Response In Days Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.UtilitysSlaIdrResponseInDaysValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="UtilitysSlaIdrResponseInDays" data-valmsg-replace="true">The current Utility SLA Response field value is invalid.</span>
+                            }
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LibertyPowersSlaFollowUpIdrResponseInDays, "Liberty Power SLA")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.LibertyPowersSlaFollowUpIdrResponseInDays)
+                            @Html.ValidationMessageFor(model => model.LibertyPowersSlaFollowUpIdrResponseInDays, "The Liberty Power's SLA Follow Up IDR Respons In Days Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.LibertyPowersSlaFollowUpIdrResponseInDaysValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="LibertyPowersSlaFollowUpIdrResponseInDays" data-valmsg-replace="true">The current Liberty Power SLA Response field value is invalid.</span>
+                            }
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.IsLoaRequired, "Is LOA Required")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.IsLoaRequired)
+                            @Html.ValidationMessageFor(model => model.IsLoaRequired)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.RequestCostAccount, "Request Cost Account")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.RequestCostAccount)
+                            @Html.ValidationMessageFor(model => model.RequestCostAccount, "The Request Cost Acount Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.RequestCostAccountValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="RequestCostAccount" data-valmsg-replace="true">The current Request Cost Account field value is invalid.</span>
+                            }
+                        </div>
+                        </div>
+                    </div>
+                        </div>
+                         </div>
+                      <br />
+                    <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails" >
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.Inactive)
+                            @Html.ValidationMessageFor(model => model.Inactive)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                            @Html.ValidationMessageFor(model => model.CreatedBy)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                            @Html.ValidationMessageFor(model => model.CreatedDate)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                        </div>
+                        </div>
+                </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        if ($("select#RequestModeTypeId").val() != "-1") {
+            $.ajax({
+                url: "/RequestModeIdr/GetVisibilityData",
+                type: 'POST',
+                data: { formName: "Idr Request Mode" },
+                success: function (data) {
+                    $("#divAddressLabel").hide();
+                    $("#divAddressField").hide();
+                    $("#divEmailTemplateLabel").hide();
+                    $("#divEmailTemplateText").hide();
+
+                    $.each(data, function (i, val) {
+                        var control = "#" + val.ControllingControlName + " option:selected";
+                        if ($(control).text().toLowerCase() == val.ControllingControlValue.toLowerCase()) {
+                            var controlToShow = "#" + val.VisibilityControlName;
+                            $(controlToShow).show();
+                        }
+                    });
+                },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+        }
+    });
+
+    $(function () {
+        $("select#RequestModeTypeId").change(function (evt) {
+            if ($("select#RequestModeTypeId").val() != "-1") {
+                $.ajax({
+                    url: "/RequestModeIdr/GetVisibilityData",
+                    type: 'POST',
+                    data: { formName: "Idr Request Mode" },
+                    success: function (data) {
+                        $("#divAddressLabel").hide();
+                        $("#divAddressField").hide();
+                        $("#divEmailTemplateLabel").hide();
+                        $("#divEmailTemplateText").hide();
+
+                        $.each(data, function (i, val) {
+                            var control = "#" + val.ControllingControlName + " option:selected";
+                            if ($(control).text().toLowerCase() == val.ControllingControlValue.toLowerCase()) {
+                                var controlToShow = "#" + val.VisibilityControlName;
+                                $(controlToShow).show();
+                            }
+                        });
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+            }
+        });
+    });
+
+    $(function () {
+        $("select#RequestModeEnrollmentTypeId").change(function (evt) {
+            if ($("select#RequestModeEnrollmentTypeId").val() != "-1") {
+                $.ajax({
+                    url: "/RequestModeIdr/PopulateRequestModeTypeList",
+                    type: 'POST',
+                    data: { RequestModeEnrollmentTypeId: $("select#RequestModeEnrollmentTypeId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Id + "'>" + val.Name + "</option>";
+                        });
+
+                        $("select#RequestModeTypeId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+            }
+        });
+    });
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+@{
+    var errorMessage = Model.GetRequestModeIdrValidationString(true);
+    if (errorMessage != null)
+    {
+    <h3>@errorMessage</h3>
+    }    
+}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+
+    });

@@ -1,0 +1,18 @@
+﻿@model UtilityManagement.Models.HuChartDataModel
+@{
+    ViewBag.Title = "Request Mode Historical Usage Chart";
+}
+
+<h2>Por Count Chart</h2>
+            <div style="text-align: center">
+                <%: Html.Chart("HuChart",   // Action
+                               "RequestModeHistoricalUsageController",        // Controller
+                               new {            // RouteData
+                                   CategoryName = Model.CategoryName,
+                                   OrderYear = Model.OrderYear
+                               },
+                               new {            // HTML attributes
+                                   alt = "Sales for " + Model.CategoryName + " in " + Model.OrderYear,
+                                   title = "Sales for " + Model.CategoryName + " in " + Model.OrderYear,
+                               }) %>
+            </div>

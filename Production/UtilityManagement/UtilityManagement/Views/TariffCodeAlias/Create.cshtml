@@ -1,0 +1,143 @@
+﻿@model DataAccessLayerEntityFramework.TariffCodeAlia
+@{
+    ViewBag.Title = "Create Tariff Code Alias";
+}
+@using UserInterfaceValidationExtensions
+<script>
+    $("#UtilityCompanyId option").attr("disabled", "true");
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    
+           <div class="edit_section">
+        <div class="edit_header">
+            <div class="tariff_ico"></div>
+            <div class="edit_header_desc"><h4>Tariff Code Alias</h4>
+            <h3>New Record</h3>
+            @*Enrollment Type*@
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Load Profile</legend>
+
+               <div class="textblock">
+                  <div class="details-data-section">
+                      <div id="Gen"  class="activable">
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                    <div id="hideContent" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.Label("Utility Company")
+                        </div>
+                        <div class="editor-field">
+                            @Html.Label((string)ViewBag.UtilityCode)
+                        </div>
+                        <div class="clear"></div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.TariffCode.TariffCodeId, "Tariff Code Id")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("TariffCodeId", String.Empty)<br /><br />
+                            @Html.ValidationMessageFor(model => model.TariffCodeId, "The current Tariff Code Id field value is invalid.")
+                        </div>
+                        <div class="clear"></div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.TariffCodeCodeAlias, "Tariff Code Alias")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.TariffCodeCodeAlias)<br /><br />
+                            @Html.ValidationMessageFor(model => model.TariffCodeCodeAlias, "The current Tariff Code Alias field value is invalid.")
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.TariffCodeCodeAliasValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="TariffCodeCode" data-valmsg-replace="true">@validationMessage</span>
+        }
+        else if (Session["ErrorMessage"] != null)
+        { 
+                                <span class="field-validation-error" data-valmsg-for="LpStandardTariffCodeCode" data-valmsg-replace="true">@Session["ErrorMessage"].ToString()</span>
+        }
+        
+    }
+                            }
+                        </div>
+                        <div class="clear"></div>
+
+                    </div>
+                    </div>
+                          </div>
+
+
+
+                    <br/>
+                     <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.Inactive)
+                            @Html.ValidationMessageFor(model => model.Inactive)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                            @Html.ValidationMessageFor(model => model.CreatedBy)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                            @Html.ValidationMessageFor(model => model.CreatedDate)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                   </div>
+            </fieldset>
+        </div>
+    </div>
+}
+@*@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

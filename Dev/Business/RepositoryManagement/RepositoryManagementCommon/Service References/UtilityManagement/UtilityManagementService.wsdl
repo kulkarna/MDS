@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UtilityManagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://lpcd7x64-065.libertypower.local/UtilityManagementWcf/UtilityManagementService.UtilityManagementService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://lpcd7x64-065.libertypower.local/UtilityManagementWcf/UtilityManagementService.UtilityManagementService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" />
+      <xsd:import schemaLocation="http://lpcd7x64-065.libertypower.local/UtilityManagementWcf/UtilityManagementService.UtilityManagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://lpcd7x64-065.libertypower.local/UtilityManagementWcf/UtilityManagementService.UtilityManagementService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUtilityManagementService_GetAIRequestMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAIRequestMode" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAIRequestMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAIRequestModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAIRequestMode_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q1:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestModeEnrollmentTypes" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestModeEnrollmentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypes_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q2:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestModeEnrollmentTypesNoTrace" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestModeEnrollmentTypesNoTraceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q3:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilities" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilities_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q4:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilitiesNoTrace_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilitiesNoTrace" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilitiesNoTrace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilitiesNoTraceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilitiesNoTrace_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q5:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetUtilityIdByUtilityCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilityIdByUtilityCode" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetUtilityIdByUtilityCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilityIdByUtilityCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetUtilityIdByUtilityCode_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q6:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetUtilityCodeByUtilityId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilityCodeByUtilityId" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetUtilityCodeByUtilityId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilityCodeByUtilityIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetUtilityCodeByUtilityId_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q7:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetBillingTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillingTypes" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetBillingTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillingTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetBillingTypes_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q8:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetData_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q9:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetHURequestMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHURequestMode" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetHURequestMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHURequestModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetHURequestMode_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q10:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetIDRRequestModeData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIDRRequestModeData" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetIDRRequestModeData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIDRRequestModeDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetIDRRequestModeData_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q11:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetNextMeterRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextMeterRead" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetNextMeterRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextMeterReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetNextMeterRead_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q12:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetNextMeterReadDateForAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextMeterReadDateForAccount" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetNextMeterReadDateForAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextMeterReadDateForAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetNextMeterReadDateForAccount_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q13:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_HasPorAssurance_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasPorAssurance" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_HasPorAssurance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasPorAssuranceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_HasPorAssurance_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q14:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_PorAssurance_InputMessage">
+    <wsdl:part name="parameters" element="tns:PorAssurance" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_PorAssurance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PorAssuranceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_PorAssurance_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q15:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilityAccountInfoRequiredFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilityAccountInfoRequiredFields" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilityAccountInfoRequiredFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilityAccountInfoRequiredFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilityAccountInfoRequiredFields_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q16:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_DoesUtilityCodeBelongToIso_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoesUtilityCodeBelongToIso" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_DoesUtilityCodeBelongToIso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoesUtilityCodeBelongToIsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_DoesUtilityCodeBelongToIso_UtilityManagementExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" name="detail" element="q17:UtilityManagementException" />
+  </wsdl:message>
+  <wsdl:portType name="IUtilityManagementService">
+    <wsdl:operation name="GetAIRequestMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAIRequestMode" message="tns:IUtilityManagementService_GetAIRequestMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAIRequestModeResponse" message="tns:IUtilityManagementService_GetAIRequestMode_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAIRequestModeUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetAIRequestMode_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestModeEnrollmentTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypes" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesResponse" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypes_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestModeEnrollmentTypesNoTrace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesNoTrace" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesNoTraceResponse" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesNoTraceUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilities" message="tns:IUtilityManagementService_GetAllUtilities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesResponse" message="tns:IUtilityManagementService_GetAllUtilities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetAllUtilities_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilitiesNoTrace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesNoTrace" message="tns:IUtilityManagementService_GetAllUtilitiesNoTrace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesNoTraceResponse" message="tns:IUtilityManagementService_GetAllUtilitiesNoTrace_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesNoTraceUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetAllUtilitiesNoTrace_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityIdByUtilityCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetUtilityIdByUtilityCode" message="tns:IUtilityManagementService_GetUtilityIdByUtilityCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetUtilityIdByUtilityCodeResponse" message="tns:IUtilityManagementService_GetUtilityIdByUtilityCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetUtilityIdByUtilityCodeUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetUtilityIdByUtilityCode_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityCodeByUtilityId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetUtilityCodeByUtilityId" message="tns:IUtilityManagementService_GetUtilityCodeByUtilityId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetUtilityCodeByUtilityIdResponse" message="tns:IUtilityManagementService_GetUtilityCodeByUtilityId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetUtilityCodeByUtilityIdUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetUtilityCodeByUtilityId_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetBillingTypes" message="tns:IUtilityManagementService_GetBillingTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetBillingTypesResponse" message="tns:IUtilityManagementService_GetBillingTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetBillingTypesUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetBillingTypes_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetData" message="tns:IUtilityManagementService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetDataResponse" message="tns:IUtilityManagementService_GetData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetDataUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetData_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHURequestMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetHURequestMode" message="tns:IUtilityManagementService_GetHURequestMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetHURequestModeResponse" message="tns:IUtilityManagementService_GetHURequestMode_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetHURequestModeUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetHURequestMode_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIDRRequestModeData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetIDRRequestModeData" message="tns:IUtilityManagementService_GetIDRRequestModeData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetIDRRequestModeDataResponse" message="tns:IUtilityManagementService_GetIDRRequestModeData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetIDRRequestModeDataUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetIDRRequestModeData_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextMeterRead">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetNextMeterRead" message="tns:IUtilityManagementService_GetNextMeterRead_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetNextMeterReadResponse" message="tns:IUtilityManagementService_GetNextMeterRead_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetNextMeterReadUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetNextMeterRead_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextMeterReadDateForAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetNextMeterReadDateForAccount" message="tns:IUtilityManagementService_GetNextMeterReadDateForAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetNextMeterReadDateForAccountResponse" message="tns:IUtilityManagementService_GetNextMeterReadDateForAccount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetNextMeterReadDateForAccountUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetNextMeterReadDateForAccount_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasPorAssurance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/HasPorAssurance" message="tns:IUtilityManagementService_HasPorAssurance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/HasPorAssuranceResponse" message="tns:IUtilityManagementService_HasPorAssurance_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/HasPorAssuranceUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_HasPorAssurance_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PorAssurance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/PorAssurance" message="tns:IUtilityManagementService_PorAssurance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/PorAssuranceResponse" message="tns:IUtilityManagementService_PorAssurance_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/PorAssuranceUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_PorAssurance_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilityAccountInfoRequiredFields">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilityAccountInfoRequiredFields" message="tns:IUtilityManagementService_GetAllUtilityAccountInfoRequiredFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilityAccountInfoRequiredFieldsResponse" message="tns:IUtilityManagementService_GetAllUtilityAccountInfoRequiredFields_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilityAccountInfoRequiredFieldsUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_GetAllUtilityAccountInfoRequiredFields_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesUtilityCodeBelongToIso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/DoesUtilityCodeBelongToIso" message="tns:IUtilityManagementService_DoesUtilityCodeBelongToIso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/DoesUtilityCodeBelongToIsoResponse" message="tns:IUtilityManagementService_DoesUtilityCodeBelongToIso_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUtilityManagementService/DoesUtilityCodeBelongToIsoUtilityManagementExceptionFault" name="UtilityManagementExceptionFault" message="tns:IUtilityManagementService_DoesUtilityCodeBelongToIso_UtilityManagementExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUtilityManagementService" type="tns:IUtilityManagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAIRequestMode">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAIRequestMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestModeEnrollmentTypes">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestModeEnrollmentTypesNoTrace">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesNoTrace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilities">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAllUtilities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilitiesNoTrace">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesNoTrace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityIdByUtilityCode">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetUtilityIdByUtilityCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityCodeByUtilityId">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetUtilityCodeByUtilityId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingTypes">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetBillingTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetHURequestMode">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetHURequestMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIDRRequestModeData">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetIDRRequestModeData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextMeterRead">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetNextMeterRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextMeterReadDateForAccount">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetNextMeterReadDateForAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HasPorAssurance">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/HasPorAssurance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PorAssurance">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/PorAssurance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilityAccountInfoRequiredFields">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAllUtilityAccountInfoRequiredFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DoesUtilityCodeBelongToIso">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/DoesUtilityCodeBelongToIso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UtilityManagementExceptionFault">
+        <soap:fault use="literal" name="UtilityManagementExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UtilityManagementService">
+    <wsdl:port name="BasicHttpBinding_IUtilityManagementService" binding="tns:BasicHttpBinding_IUtilityManagementService">
+      <soap:address location="http://lpcd7x64-065.libertypower.local/UtilityManagementWcf/UtilityManagementService.UtilityManagementService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

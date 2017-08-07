@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" />
+  <xs:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO.MissingRate" />
+  <xs:element name="GetUsage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" minOccurs="0" name="input" nillable="true" type="q1:UsageRequestDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" minOccurs="0" name="GetUsageResult" nillable="true" type="q2:ArrayOfResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeEnroll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" minOccurs="0" name="input" nillable="true" type="q3:DeEnrollmentRequestDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeEnrollResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" minOccurs="0" name="DeEnrollResult" nillable="true" type="q4:ArrayOfResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReEnroll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" minOccurs="0" name="input" nillable="true" type="q5:ReEnrollmentRequestDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReEnrollResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" minOccurs="0" name="ReEnrollResult" nillable="true" type="q6:ArrayOfResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessValidationErrorReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="applications" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessValidationErrorReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessValidationErrorReportResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Enroll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" minOccurs="0" name="input" nillable="true" type="q8:EnrollmentRequestDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnrollResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" minOccurs="0" name="EnrollResult" nillable="true" type="q9:ArrayOfResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestMissingRate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO.MissingRate" minOccurs="0" name="input" nillable="true" type="q10:MissingRateDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestMissingRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO.MissingRate" minOccurs="0" name="RequestMissingRateResult" nillable="true" type="q11:ArrayOfMissingRateResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

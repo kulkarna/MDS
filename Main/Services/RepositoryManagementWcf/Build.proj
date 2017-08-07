@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="DebugBuild">
+	<PropertyGroup>
+		<ProjectName>offer.engine.services</ProjectName>
+		<MsTestPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\mstest.exe</MsTestPath>
+		<MSBuildExtensionsPath>$(MSBuildProjectDirectory)\..\tools\MSBuild\</MSBuildExtensionsPath>
+		<MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)\..\tools\MSBuild\MSBuildCommunityTasks</MSBuildCommunityTasksPath>
+    <SetupFileLocation>$(MSBuildProjectDirectory)\deployment\offer.engine.wcf.setup\bin\Debug\</SetupFileLocation>
+    <TMajor>$([System.DateTime]::Now.ToString('yy'))</TMajor>
+	</PropertyGroup>
+
+	<Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets"/>
+  
+  <Target Name="DebugBuild" DependsOnTargets="PrintInfo; SetVersionInfo; DebugCleanAndBuild; RestoreVersionInfo; CleanUp">
+  </Target>
+
+	<Target Name="PrintInfo">
+		<Message Text="MSBuildProjectDirectory: $(MSBuildProjectDirectory)"/>
+		<Message Text="MSBuildCommunityTasksLib: $(MSBuildCommunityTasksLib)"/>
+		<Message Text="MSBuildCommunityTasksPath: $(MSBuildCommunityTasksPath)"/>
+		<Message Text="Building $(ProjectName)" />
+    <Message Text="Now is: $([System.DateTime]::Now.ToString('yyyy.MMdd'))"/>
+	</Target>
+	
+	<Target Name="DebugCleanAndBuild">
+		<MSBuild Projects="$(ProjectName).sln" Targets="Clean" Properties="Configuration=Debug" BuildInParallel="true"/>
+		<MSBuild Projects="$(ProjectName).sln" Targets="Build" Properties="Configuration=Debug;ProductVersion=2.1.1.0" BuildInParallel="true"/>
+	</Target>
+
+	<Target Name="SetVersionInfo">
+		<Time>
+			<Output TaskParameter="Month" PropertyName="TMinor" />
+			<Output TaskParameter="Day" PropertyName="TBuild" />
+		</Time>
+		<!-- Need version to auto-generate its Build property so that the revision will automatically update between days -->
+		<Version Major="$(TMajor)" Minor="$(TMinor)" BuildType="Automatic" RevisionType="BuildIncrement" VersionFile="version.txt">
+			<Output TaskParameter="Revision" PropertyName="VRevision" />
+		</Version>
+    <Exec Command="attrib -R $(MSBuildProjectDirectory)\SharedVersionInfo.cs" />
+		<AssemblyInfo CodeLanguage="CS" OutputFile="SharedVersionInfo.cs" AssemblyVersion="$(TMajor).$(TMinor).$(TBuild).$(VRevision)" AssemblyFileVersion="$(TMajor).$(TMinor).$(TBuild).$(VRevision)" AssemblyInformationalVersion="$(TMajor).$(TMinor).$(TBuild) alpha" />
+	</Target>
+  
+	<Target Name="RestoreVersionInfo">
+    <Message Text="MyVersion: $(TMajor).$(TMinor).$(TBuild).$(VRevision)"/>
+		<AssemblyInfo CodeLanguage="CS" OutputFile="SharedVersionInfo.cs" AssemblyVersion="0.0.0.0" AssemblyFileVersion="0.0.0.0" AssemblyInformationalVersion="0.0.0.0" />
+    <Exec Command="attrib +R $(MSBuildProjectDirectory)\SharedVersionInfo.cs" />
+	</Target>
+
+  <Target Name="CleanUp">
+    <MSBuild Projects="$(ProjectName).sln" Targets="Clean" Properties="Configuration=Debug" BuildInParallel="true"/>
+  </Target>
+</Project>

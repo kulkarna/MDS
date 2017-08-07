@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnualUsageUpdater", "AnnualUsageUpdator\AnnualUsageUpdater.csproj", "{BA9B179C-7EA4-4871-AEC9-9C22B2510ABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageManagementServiceProxy", "UsageManagementServiceProxy\UsageManagementServiceProxy.csproj", "{A14E6674-4846-4158-ABA7-4E811ECB3DB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageManagementWcfRepository", "UsageManagementWcfRepository\UsageManagementWcfRepository.csproj", "{A83601FD-D5A3-4B52-9D3C-BD96A05DEFAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountServiceProxy", "AccountServiceProxy\AccountServiceProxy.csproj", "{FC3639B0-50BE-4019-A38F-E196AEDBCB0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountServiceRepository", "AccountServiceRepository\AccountServiceRepository.csproj", "{08B0BBCF-2BC9-4E3A-B4FB-6A521832F033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnualUsageUpdatorRepository", "AnnualUsageUpdatorRepository\AnnualUsageUpdatorRepository.csproj", "{2663EF9C-C4A8-4BB0-AD7F-98D214CDE7B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnualUsageUpdaterBusinessLayer", "AnnualUsageUpdaterBusinessLayer\AnnualUsageUpdaterBusinessLayer.csproj", "{5664DA79-44FD-4E78-8EE1-92DB716175C4}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://lpcnocapptfs1:8080/tfs/lpcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UsageManagementServiceProxy\\UsageManagementServiceProxy.csproj
+		SccProjectName1 = UsageManagementServiceProxy
+		SccLocalPath1 = UsageManagementServiceProxy
+		SccProjectUniqueName2 = UsageManagementWcfRepository\\UsageManagementWcfRepository.csproj
+		SccProjectName2 = UsageManagementWcfRepository
+		SccLocalPath2 = UsageManagementWcfRepository
+		SccProjectUniqueName3 = AccountServiceProxy\\AccountServiceProxy.csproj
+		SccProjectName3 = AccountServiceProxy
+		SccLocalPath3 = AccountServiceProxy
+		SccProjectUniqueName4 = AccountServiceRepository\\AccountServiceRepository.csproj
+		SccProjectName4 = AccountServiceRepository
+		SccLocalPath4 = AccountServiceRepository
+		SccProjectUniqueName5 = AnnualUsageUpdatorRepository\\AnnualUsageUpdatorRepository.csproj
+		SccProjectName5 = AnnualUsageUpdatorRepository
+		SccLocalPath5 = AnnualUsageUpdatorRepository
+		SccProjectUniqueName6 = AnnualUsageUpdator\\AnnualUsageUpdater.csproj
+		SccProjectName6 = AnnualUsageUpdator
+		SccLocalPath6 = AnnualUsageUpdator
+		SccProjectUniqueName7 = AnnualUsageUpdaterBusinessLayer\\AnnualUsageUpdaterBusinessLayer.csproj
+		SccProjectName7 = AnnualUsageUpdaterBusinessLayer
+		SccLocalPath7 = AnnualUsageUpdaterBusinessLayer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA9B179C-7EA4-4871-AEC9-9C22B2510ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA9B179C-7EA4-4871-AEC9-9C22B2510ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA9B179C-7EA4-4871-AEC9-9C22B2510ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA9B179C-7EA4-4871-AEC9-9C22B2510ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14E6674-4846-4158-ABA7-4E811ECB3DB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14E6674-4846-4158-ABA7-4E811ECB3DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14E6674-4846-4158-ABA7-4E811ECB3DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14E6674-4846-4158-ABA7-4E811ECB3DB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83601FD-D5A3-4B52-9D3C-BD96A05DEFAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83601FD-D5A3-4B52-9D3C-BD96A05DEFAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83601FD-D5A3-4B52-9D3C-BD96A05DEFAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83601FD-D5A3-4B52-9D3C-BD96A05DEFAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC3639B0-50BE-4019-A38F-E196AEDBCB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC3639B0-50BE-4019-A38F-E196AEDBCB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC3639B0-50BE-4019-A38F-E196AEDBCB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC3639B0-50BE-4019-A38F-E196AEDBCB0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08B0BBCF-2BC9-4E3A-B4FB-6A521832F033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B0BBCF-2BC9-4E3A-B4FB-6A521832F033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B0BBCF-2BC9-4E3A-B4FB-6A521832F033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B0BBCF-2BC9-4E3A-B4FB-6A521832F033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2663EF9C-C4A8-4BB0-AD7F-98D214CDE7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2663EF9C-C4A8-4BB0-AD7F-98D214CDE7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2663EF9C-C4A8-4BB0-AD7F-98D214CDE7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2663EF9C-C4A8-4BB0-AD7F-98D214CDE7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5664DA79-44FD-4E78-8EE1-92DB716175C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5664DA79-44FD-4E78-8EE1-92DB716175C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5664DA79-44FD-4E78-8EE1-92DB716175C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5664DA79-44FD-4E78-8EE1-92DB716175C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

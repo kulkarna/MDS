@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using LibertyPower.Business.MarketManagement.UtilityManagement;
+using LibertyPower.Business.CustomerAcquisition.ProductManagement;
+using LibertyPower.Business.CustomerAcquisition.SalesChannel;
+using LibertyPower.Business.CustomerAcquisition.Prospects;
+using LibertyPower.Business.CommonBusiness.SecurityManager;
+
+namespace LibertyPower.Business.CustomerAcquisition.ProspectManagement
+{
+	public class ProspectContract
+	{
+		public List<ProspectAccount> Accounts;
+		public String ContractNumber;
+		public String AccountNumber;
+		public LibertyPower.Business.CustomerAcquisition.ProductManagement.AccountType? AccountType;
+		public String Status;
+		public String AccountId;
+		public RetailMarket Market;
+		public Utility Utility;
+		public Product Product;
+		public int RateId;
+		public decimal Rate;
+		public int CustomerNameLink;
+		public String CustomerName;
+		public int CustomerAddressLink;
+		public String CustomerAddress;
+		public String CustomerSuite;
+		public String CustomerCity;
+		public String CustomerState;
+		public String CustomerZip;
+		public int CustomerContactLink;
+		public String CustomerFirstName;
+		public String CustomerLastName;
+		public String CustomerTitle;
+		public String CustomerPhone;
+		public String CustomerFax;
+		public String CustomerEmail;
+		public String CustomerBirthday;
+		public int BillingAddressLink;
+		public String BillingAddress;
+		public String BillingSuite;
+		public String BillingCity;
+		public String BillingState;
+		public String BillingZip;
+		public int BillingContactLink;
+		public String BillingFirstName;
+		public String BillingLastName;
+		public String BillingTitle;
+		public String BillingPhone;
+		public String BillingFax;
+		public String BillingEmail;
+		public String BillingBirthday;
+		public int OwnerNameLink;
+		public String OwnerName;
+		public int ServiceAddressLink;
+		public String ServiceAddress;
+		public String ServiceSuite;
+		public String ServiceCity;
+		public String ServiceState;
+		public String ServiceZip;
+		public String BusinessType;
+		public String BusinessActivity;
+		public String AdditionalIdNumberType;
+		public String AdditionalIdNumber;
+		public DateTime ContractEffectiveStartDate;
+		public int EnrollmentType;
+		public int TermMonths;
+		public DateTime DateEnd;
+		public DateTime DateDeal;
+		public DateTime DateCreated;
+		public DateTime DateSubmit;
+		public String SalesChannelRole; //Role;
+		public User Username;
+		public String SalesRep;
+		public String Origin;
+		public String Comment;
+		public int Chgstamp;
+		public String ContractRateType;
+		public DateTime RequestedFlowStartDate;
+		public String DealType;
+		public String CustomerCode;
+		public String CustomerGroup;
+		public String SSNEncrypted;
+		public String SSNClear;
+		public int EvergreenOptionId;
+		public DateTime? EvergreenCommissionEnd;
+		public int ResidualOptionId;
+		public DateTime? ResidualCommisionEnd;
+		public int InitialPymtOptionId;
+		public String SalesManager;
+		public double EvergreenCommisionRate;
+		public int TaxExempt;
+		public int GracePeriod;
+		public string ContractType;
+		public String HeaderEnrollment1;
+		public String HeaderEnrollment2;
+		public String ErrorMsg;
+		public String ExcelContractNumber;
+        public String ContractVersion;
+        public int TemplateVersionID;
+        public String TemplateName;
+		public int ProductBrandID;
+		public Int64 PriceID;
+		public int PriceTier;
+		public int EstimatedAnnualUsage;
+        //Sept 26 2013 - PBI 20710
+        //Added for Promotion Codes on Deal capture
+        public List<string> PromotionCodes;
+	}
+}

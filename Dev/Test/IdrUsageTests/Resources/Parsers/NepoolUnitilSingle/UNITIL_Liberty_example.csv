@@ -1,0 +1,7 @@
+Recorder ID: ,3XXXXXX, , , , , , , , , , , 
+Customer ID: ,3YYYYYY, , , , , , , , , , , 
+Name: ,Company XYZ, , , , , , , , , , , 
+ , , , , , , , , , , , , 
+Date,Month,Day,Year,Hour,Minute,kW,kVA,CH-3,CH-4,CH-5,CH-6,CH-7
+7/1/2010 1:00AM,7,1,2010,1,0,1891.4,1980.7,0,0,0,0,0
+7/1/2010 2:00AM,7,1,2010,2,0,1934.2,2029.7,0,0,0,0,0

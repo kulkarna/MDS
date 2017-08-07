@@ -1,0 +1,22 @@
+﻿@model UtilityManagement.Models.AnnualSalesDataModel
+@{
+    ViewBag.Title = "Por Count Chart";
+}
+
+<h2>Por Count Chart</h2>
+            <div style="text-align: center">
+                <%: Html.Chart("PorCountChart",   // Action
+                               "PurchaseOfReceivable",        // Controller
+                               new {            // RouteData
+                                   CategoryName = Model.CategoryName,
+                                   OrderYear = Model.OrderYear
+                               },
+                               new {            // HTML attributes
+                                   alt = "Sales for " + Model.CategoryName + " in " + Model.OrderYear,
+                                   title = "Sales for " + Model.CategoryName + " in " + Model.OrderYear,
+                               }) %>
+            </div>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

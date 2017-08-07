@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IstaSql</name>
+    </assembly>
+    <members>
+        <member name="T:LibertyPower.DataAccess.SqlAccess.IstaSql.IstaMeterReadSql">
+            <summary>
+            IstaMeterReadSql
+            </summary>
+        </member>
+        <member name="M:LibertyPower.DataAccess.SqlAccess.IstaSql.IstaMeterReadSql.GetIstaMeterReads(System.String)">
+            <summary>
+            Gets the ista meter reads.
+            </summary>
+            <param name="account">The account.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.SqlAccess.IstaSql.IstaMeterReadSql.GetIstaMeterReads(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Gets the ista meter reads.
+            </summary>
+            <param name="account">The account.</param>
+            <param name="utility">The utility.</param>
+            <param name="from">From.</param>
+            <param name="to">To.</param>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.DataAccess.SqlAccess.IstaSql.IstaSql">
+            <summary>
+            ISTA related methods
+            </summary>
+        </member>
+        <member name="M:LibertyPower.DataAccess.SqlAccess.IstaSql.IstaSql.GetCustIDByAccountNumber(System.String)">
+            <summary>
+            Gets the ISTA custid for a Liberty Power account number
+            Use GetCustIDByAccountNumberAndUtility
+            </summary>
+            <param name="accountNumber">Liberty Power account number</param>
+            <returns>Returns the ISTA custid</returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.SqlAccess.IstaSql.IstaSql.GetCustIDByAccountAndUtility(System.String,System.String)">
+            <summary>
+            Gets the ISTA custid for a Liberty Power account number
+            </summary>
+            <param name="accountNumber">Liberty Power account number</param>
+            <param name="utilityId">Utility of the account</param>
+            <returns>Returns the ISTA custid</returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.SqlAccess.IstaSql.IstaSql.GetIstaCustomer(System.String)">
+            <summary>
+            Returns a row corresponding to an Ista customer given an LPC account number
+            </summary>
+            <param name="lpcAccountNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.SqlAccess.IstaSql.IstaSql.GetClassIdByAccountAndUtility(System.String,System.String)">
+            <summary>
+            Returns the class id given an account number
+            </summary>
+            <param name="accountNumber"></param>
+            <param name="utilityId"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

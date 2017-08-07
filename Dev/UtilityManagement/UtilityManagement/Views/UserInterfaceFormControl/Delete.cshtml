@@ -1,0 +1,67 @@
+﻿@model DataAccessLayerEntityFramework.UserInterfaceFormControl
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>UserInterfaceFormControl</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserInterfaceForm.UserInterfaceFormName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserInterfaceForm.UserInterfaceFormName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ControlName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ControlName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Inactive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Inactive)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastModifiedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastModifiedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastModifiedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastModifiedDate)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

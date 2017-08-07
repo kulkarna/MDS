@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CRMTesting" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" />
+      <xsd:import schemaLocation="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums" />
+      <xsd:import schemaLocation="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CommonBusiness.DocumentManager" />
+      <xsd:import schemaLocation="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CommonBusiness.SecurityManager" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICRMTesting_Echo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Echo" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_Echo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EchoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_EchoString_InputMessage">
+    <wsdl:part name="parameters" element="tns:EchoString" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_EchoString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EchoStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomAccountNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomAccountNumber" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomAccountNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomAccountNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomAccountByAccountType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomAccountByAccountType" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomAccountByAccountType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomAccountByAccountTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomBasicContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomBasicContract" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomBasicContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomBasicContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomContractBySalesChannelAndUtility_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomContractBySalesChannelAndUtility" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomContractBySalesChannelAndUtility_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomContractBySalesChannelAndUtilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomContractBySalesChannel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomContractBySalesChannel" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomContractBySalesChannel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomContractBySalesChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomRenewalContractBySalesChannel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomRenewalContractBySalesChannel" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateRandomRenewalContractBySalesChannel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomRenewalContractBySalesChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GetTestCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GetTestCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GetRandomUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRandomUser" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GetRandomUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRandomUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GetUserForContractSubmittal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserForContractSubmittal" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GetUserForContractSubmittal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserForContractSubmittalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateContractByPriceId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateContractByPriceId" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GenerateContractByPriceId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateContractByPriceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GetValidPriceIdForTesting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidPriceIdForTesting" />
+  </wsdl:message>
+  <wsdl:message name="ICRMTesting_GetValidPriceIdForTesting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidPriceIdForTestingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICRMTesting">
+    <wsdl:operation name="Echo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/Echo" message="tns:ICRMTesting_Echo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/EchoResponse" message="tns:ICRMTesting_Echo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EchoString">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/EchoString" message="tns:ICRMTesting_EchoString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/EchoStringResponse" message="tns:ICRMTesting_EchoString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomAccountNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomAccountNumber" message="tns:ICRMTesting_GenerateRandomAccountNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomAccountNumberResponse" message="tns:ICRMTesting_GenerateRandomAccountNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomAccount" message="tns:ICRMTesting_GenerateRandomAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomAccountResponse" message="tns:ICRMTesting_GenerateRandomAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomAccountByAccountType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomAccountByAccountType" message="tns:ICRMTesting_GenerateRandomAccountByAccountType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomAccountByAccountTypeResponse" message="tns:ICRMTesting_GenerateRandomAccountByAccountType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomBasicContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomBasicContract" message="tns:ICRMTesting_GenerateRandomBasicContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomBasicContractResponse" message="tns:ICRMTesting_GenerateRandomBasicContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomContractBySalesChannelAndUtility">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomContractBySalesChannelAndUtility" message="tns:ICRMTesting_GenerateRandomContractBySalesChannelAndUtility_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomContractBySalesChannelAndUtilityResponse" message="tns:ICRMTesting_GenerateRandomContractBySalesChannelAndUtility_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomContractBySalesChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomContractBySalesChannel" message="tns:ICRMTesting_GenerateRandomContractBySalesChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomContractBySalesChannelResponse" message="tns:ICRMTesting_GenerateRandomContractBySalesChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomRenewalContractBySalesChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomRenewalContractBySalesChannel" message="tns:ICRMTesting_GenerateRandomRenewalContractBySalesChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GenerateRandomRenewalContractBySalesChannelResponse" message="tns:ICRMTesting_GenerateRandomRenewalContractBySalesChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GetTestCustomer" message="tns:ICRMTesting_GetTestCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GetTestCustomerResponse" message="tns:ICRMTesting_GetTestCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRandomUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GetRandomUser" message="tns:ICRMTesting_GetRandomUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GetRandomUserResponse" message="tns:ICRMTesting_GetRandomUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserForContractSubmittal">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GetUserForContractSubmittal" message="tns:ICRMTesting_GetUserForContractSubmittal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GetUserForContractSubmittalResponse" message="tns:ICRMTesting_GetUserForContractSubmittal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateContractByPriceId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GenerateContractByPriceId" message="tns:ICRMTesting_GenerateContractByPriceId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GenerateContractByPriceIdResponse" message="tns:ICRMTesting_GenerateContractByPriceId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidPriceIdForTesting">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMTesting/GetValidPriceIdForTesting" message="tns:ICRMTesting_GetValidPriceIdForTesting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMTesting/GetValidPriceIdForTestingResponse" message="tns:ICRMTesting_GetValidPriceIdForTesting_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICRMTesting" type="tns:ICRMTesting">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Echo">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/Echo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EchoString">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/EchoString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomAccountNumber">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GenerateRandomAccountNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomAccount">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GenerateRandomAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomAccountByAccountType">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GenerateRandomAccountByAccountType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomBasicContract">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GenerateRandomBasicContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomContractBySalesChannelAndUtility">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GenerateRandomContractBySalesChannelAndUtility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomContractBySalesChannel">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GenerateRandomContractBySalesChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomRenewalContractBySalesChannel">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GenerateRandomRenewalContractBySalesChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GetTestCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRandomUser">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GetRandomUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserForContractSubmittal">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GetUserForContractSubmittal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateContractByPriceId">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GenerateContractByPriceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidPriceIdForTesting">
+      <soap:operation soapAction="http://tempuri.org/ICRMTesting/GetValidPriceIdForTesting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CRMTesting">
+    <wsdl:port name="BasicHttpBinding_ICRMTesting" binding="tns:BasicHttpBinding_ICRMTesting">
+      <soap:address location="http://devordersapi.libertypowercorp.com/CRMTesting.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

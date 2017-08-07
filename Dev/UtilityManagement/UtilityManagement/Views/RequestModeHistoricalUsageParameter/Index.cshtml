@@ -1,0 +1,294 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.RequestModeHistoricalUsageParameter>
+@{
+    ViewBag.Title = "Request Mode Historical Usage Parameter Index";
+    string result = "nothing";
+}
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Historical Usage Request Mode Parameter</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+    <div class="details-data-section chartlink">
+        <div class="left_table">
+           <div class="left_container">
+                <table class="index">
+                    <tr>
+                        <th>Row Count = @Model.Count()</th>
+                        <th>
+                            @Html.ActionLink("Utility Code", "UtilityCodeTitleClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityCodeImageUrl))
+                                {
+                                <img id="imgUtilityCode" src="@ViewBag.UtilityCodeImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Billing Account Required", "NameKeyClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.NameKeyImageUrl))
+                                {
+                                <img id="imgNameKey" src="@ViewBag.NameKeyImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Zip Code Required", "ZipCodeClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.ZipCodeImageUrl))
+                                {
+                                <img id="imgZipCode" src="@ViewBag.ZipCodeImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Name Key Required", "NameKeyClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.NameKeyImageUrl))
+                                {
+                                <img id="imgNameKey" src="@ViewBag.NameKeyImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is MDMA", "MdmaClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.MdmaImageUrl))
+                                {
+                                <img id="imgDriver" src="@ViewBag.MdmaImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Service Provider", "ServiceProviderClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.ServiceProviderImageUrl))
+                                {
+                                <img id="imgDriver" src="@ViewBag.ServiceProviderImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Meter Installer", "MeterInstallerClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.MeterInstallerImageUrl))
+                                {
+                                <img id="imgMeterInstaller" src="@ViewBag.MeterInstallerImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Meter Reader", "MeterReaderClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.MeterReaderImageUrl))
+                                {
+                                <img id="imgDriver" src="@ViewBag.MeterReaderImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Meter Owner", "MeterOwnerClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.MeterOwnerImageUrl))
+                                {
+                                <img id="imgMeterOwner" src="@ViewBag.MeterOwnerImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Scheduling Coordinator", "SchedulingCoordinatorClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.SchedulingCoordinatorImageUrl))
+                                {
+                                <img id="imgSchedulingCoordinator" src="@ViewBag.SchedulingCoordinatorImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Reference Number", "CustomerNumberClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.CustomerNumberImageUrl))
+                                {
+                                <img id="imgCustomerNumber" src="@ViewBag.CustomerNumberImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Pod Id Number", "PodIdNumberClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.PodIdNumberImageUrl))
+                                {
+                                <img id="imgPodIdNumber" src="@ViewBag.PodIdNumberImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Meter Type", "MeterTypeClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.MeterTypeImageUrl))
+                                {
+                                <img id="imgMeterType" src="@ViewBag.MeterTypeImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Meter Number", "MeterNumberClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.MeterNumberImageUrl))
+                                {
+                                <img id="imgMeterNumber" src="@ViewBag.MeterNumberImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Inactive", "InactiveTitleClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+                                {
+                                <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Created By", "CreatedByTitleClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+                                {
+                                <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Created Date", "CreatedDateTitleClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+                                {
+                                <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Modified By", "LastModifiedByTitleClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+                                {
+                                <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Modified Date", "LastModifiedDateTitleClick")
+                            @{
+                                if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+                                {
+                                <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"  valign="middle" />
+                                }
+                            }
+                        </th>
+                    </tr>
+                    @{
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                                    <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsBillingAccountNumberRequiredId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsZipCodeRequiredId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsNameKeyRequiredId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsMdmaId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsServiceProviderId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsMeterInstallerId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsMeterReaderId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsMeterOwnerId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsSchedulingCoordinatorId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.HasReferenceNumberId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.HasPodIdNumberId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.HasMeterTypeId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @{Write(((List<DataAccessLayerEntityFramework.TriStateValue>)ViewBag.TriStateValues).Where(c => c.Id == item.IsMeterNumberRequiredId).FirstOrDefault().Value.ToString());}
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Inactive)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="right_chart" id="resizable2">
+            <div class="ui-resizable-handle ui-resizable-w" onclick="showHide('hideDiv',this.id)"></div>
+            <div id="hideDiv" class="chart_open" style="display: none">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="form-details">
+                                <h4>Report</h4>
+                                <div class="form_fieldset">
+                                    <fieldset>
+                                        <legend>Request Mode Historical Usage Parameters</legend>
+                                        <div class="details-data-section">
+                                            <img src="/RequestModeHistoricalUsageParameter/HuFunnelChart" alt="" class="img" />
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <img id="dirImg" src="~/Images/view_chart.png" onclick="showHide('hideDiv',this.id)" />
+        </div>
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Lp_commonModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Lp_commonModelStoreContainer">
+          <EntitySet Name="common_messages" EntityType="Lp_commonModel.Store.common_messages" store:Type="Tables" store:Schema="dbo" store:Name="common_messages">
+            <DefiningQuery>SELECT 
+      [common_messages].[application] AS [application], 
+      [common_messages].[msg_id] AS [msg_id], 
+      [common_messages].[msg_descp] AS [msg_descp]
+      FROM [dbo].[common_messages] AS [common_messages]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="common_product" EntityType="Lp_commonModel.Store.common_product" store:Type="Tables" store:Schema="dbo" store:Name="common_product">
+            <DefiningQuery>SELECT 
+      [common_product].[product_id] AS [product_id], 
+      [common_product].[product_descp] AS [product_descp], 
+      [common_product].[product_category] AS [product_category], 
+      [common_product].[product_sub_category] AS [product_sub_category], 
+      [common_product].[utility_id] AS [utility_id], 
+      [common_product].[frecuency] AS [frecuency], 
+      [common_product].[db_number] AS [db_number], 
+      [common_product].[term_months] AS [term_months], 
+      [common_product].[date_created] AS [date_created], 
+      [common_product].[username] AS [username], 
+      [common_product].[inactive_ind] AS [inactive_ind], 
+      [common_product].[active_date] AS [active_date], 
+      [common_product].[chgstamp] AS [chgstamp], 
+      [common_product].[default_expire_product_id] AS [default_expire_product_id], 
+      [common_product].[requires_profitability] AS [requires_profitability], 
+      [common_product].[is_flexible] AS [is_flexible], 
+      [common_product].[account_type_id] AS [account_type_id], 
+      [common_product].[IsCustom] AS [IsCustom], 
+      [common_product].[IsDefault] AS [IsDefault], 
+      [common_product].[ProductBrandID] AS [ProductBrandID]
+      FROM [dbo].[common_product] AS [common_product]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_common.dbo.common_messages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="common_messages">
+          <Key>
+            <PropertyRef Name="application" />
+            <PropertyRef Name="msg_id" />
+            <PropertyRef Name="msg_descp" />
+          </Key>
+          <Property Name="application" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="msg_id" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="msg_descp" Type="varchar" Nullable="false" MaxLength="240" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_common.dbo.common_product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="common_product">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="product_descp" />
+            <PropertyRef Name="product_category" />
+            <PropertyRef Name="utility_id" />
+            <PropertyRef Name="frecuency" />
+            <PropertyRef Name="db_number" />
+            <PropertyRef Name="term_months" />
+            <PropertyRef Name="date_created" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="inactive_ind" />
+            <PropertyRef Name="active_date" />
+            <PropertyRef Name="chgstamp" />
+            <PropertyRef Name="default_expire_product_id" />
+            <PropertyRef Name="account_type_id" />
+            <PropertyRef Name="IsCustom" />
+            <PropertyRef Name="IsDefault" />
+          </Key>
+          <Property Name="product_id" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="product_descp" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="product_category" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="product_sub_category" Type="varchar" MaxLength="50" />
+          <Property Name="utility_id" Type="char" Nullable="false" MaxLength="15" />
+          <Property Name="frecuency" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="db_number" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="term_months" Type="int" Nullable="false" />
+          <Property Name="date_created" Type="datetime" Nullable="false" />
+          <Property Name="username" Type="nchar" Nullable="false" MaxLength="100" />
+          <Property Name="inactive_ind" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="active_date" Type="datetime" Nullable="false" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+          <Property Name="default_expire_product_id" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="requires_profitability" Type="tinyint" />
+          <Property Name="is_flexible" Type="tinyint" />
+          <Property Name="account_type_id" Type="int" Nullable="false" />
+          <Property Name="IsCustom" Type="tinyint" Nullable="false" />
+          <Property Name="IsDefault" Type="tinyint" Nullable="false" />
+          <Property Name="ProductBrandID" Type="int" />
+        </EntityType>
+        <Function Name="usp_messages_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_msg_id" Type="char" Mode="In" />
+          <Parameter Name="p_msg_descp" Type="varchar" Mode="InOut" />
+          <Parameter Name="p_application" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Lp_commonModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Lp_commonEntities" annotation:LazyLoadingEnabled="true" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <EntitySet Name="common_product" EntityType="Lp_commonModel.common_product" />
+          <EntitySet Name="common_messages" EntityType="Lp_commonModel.common_messages" />
+          <FunctionImport Name="usp_messages_sel">
+            <Parameter Name="p_msg_id" Mode="In" Type="String" />
+            <Parameter Name="p_msg_descp" Mode="InOut" Type="String" />
+            <Parameter Name="p_application" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="common_product">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="product_descp" />
+            <PropertyRef Name="product_category" />
+            <PropertyRef Name="utility_id" />
+            <PropertyRef Name="frecuency" />
+            <PropertyRef Name="db_number" />
+            <PropertyRef Name="term_months" />
+            <PropertyRef Name="date_created" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="inactive_ind" />
+            <PropertyRef Name="active_date" />
+            <PropertyRef Name="chgstamp" />
+            <PropertyRef Name="default_expire_product_id" />
+            <PropertyRef Name="account_type_id" />
+            <PropertyRef Name="IsCustom" />
+            <PropertyRef Name="IsDefault" />
+          </Key>
+          <Property Name="product_id" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="product_descp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="product_category" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="product_sub_category" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="utility_id" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="true" />
+          <Property Name="frecuency" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="db_number" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="term_months" Type="Int32" Nullable="false" />
+          <Property Name="date_created" Type="DateTime" Nullable="false" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="inactive_ind" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="active_date" Type="DateTime" Nullable="false" />
+          <Property Name="chgstamp" Type="Int16" Nullable="false" />
+          <Property Name="default_expire_product_id" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="requires_profitability" Type="Byte" />
+          <Property Name="is_flexible" Type="Byte" />
+          <Property Name="account_type_id" Type="Int32" Nullable="false" />
+          <Property Name="IsCustom" Type="Byte" Nullable="false" />
+          <Property Name="IsDefault" Type="Byte" Nullable="false" />
+          <Property Name="ProductBrandID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="common_messages">
+          <Key>
+            <PropertyRef Name="application" />
+            <PropertyRef Name="msg_id" />
+            <PropertyRef Name="msg_descp" />
+          </Key>
+          <Property Type="String" Name="application" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="msg_id" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="msg_descp" Nullable="false" MaxLength="240" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Lp_commonModelStoreContainer" CdmEntityContainer="Lp_commonEntities">
+          <EntitySetMapping Name="common_product"><EntityTypeMapping TypeName="Lp_commonModel.common_product"><MappingFragment StoreEntitySet="common_product">
+            <ScalarProperty Name="product_id" ColumnName="product_id" />
+            <ScalarProperty Name="product_descp" ColumnName="product_descp" />
+            <ScalarProperty Name="product_category" ColumnName="product_category" />
+            <ScalarProperty Name="product_sub_category" ColumnName="product_sub_category" />
+            <ScalarProperty Name="utility_id" ColumnName="utility_id" />
+            <ScalarProperty Name="frecuency" ColumnName="frecuency" />
+            <ScalarProperty Name="db_number" ColumnName="db_number" />
+            <ScalarProperty Name="term_months" ColumnName="term_months" />
+            <ScalarProperty Name="date_created" ColumnName="date_created" />
+            <ScalarProperty Name="username" ColumnName="username" />
+            <ScalarProperty Name="inactive_ind" ColumnName="inactive_ind" />
+            <ScalarProperty Name="active_date" ColumnName="active_date" />
+            <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+            <ScalarProperty Name="default_expire_product_id" ColumnName="default_expire_product_id" />
+            <ScalarProperty Name="requires_profitability" ColumnName="requires_profitability" />
+            <ScalarProperty Name="is_flexible" ColumnName="is_flexible" />
+            <ScalarProperty Name="account_type_id" ColumnName="account_type_id" />
+            <ScalarProperty Name="IsCustom" ColumnName="IsCustom" />
+            <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+            <ScalarProperty Name="ProductBrandID" ColumnName="ProductBrandID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="common_messages">
+            <EntityTypeMapping TypeName="Lp_commonModel.common_messages">
+              <MappingFragment StoreEntitySet="common_messages">
+                <ScalarProperty Name="msg_descp" ColumnName="msg_descp" />
+                <ScalarProperty Name="msg_id" ColumnName="msg_id" />
+                <ScalarProperty Name="application" ColumnName="application" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_messages_sel" FunctionName="Lp_commonModel.Store.usp_messages_sel" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LpCommon" ZoomLevel="73">
+        <EntityTypeShape EntityType="Lp_commonModel.common_product" Width="3" PointX="0.75" PointY="0.75" Height="4.8648079427083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_commonModel.common_messages" Width="2.875" PointX="5.625" PointY="1.25" Height="1.5956835937499996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

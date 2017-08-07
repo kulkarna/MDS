@@ -1,0 +1,461 @@
+﻿@model UtilityManagement.Models.IdrRuleModel
+@{
+    ViewBag.Title = "IDR Rule Index";
+    string preEnrollmentRequestModeTypeName = "NA";
+    string postEnrollmentRequestModeTypeName = "NA";
+    string preEnrollmentAlwaysRequest = "No";
+    string postEnrollmentAlwaysRequest = "No";
+    if (!(Model.PostEnrollmentIdrRules == null || Model.PostEnrollmentIdrRules.Count == 0))
+    {
+        postEnrollmentRequestModeTypeName = Model.PostEnrollmentIdrRules[0].RequestModeTypeName;
+        postEnrollmentAlwaysRequest = Model.PostEnrollmentRequestModeIdrAlwaysRequest ? "Yes" : "No";
+    }
+    if (!(Model.PreEnrollmentIdrRules == null || Model.PreEnrollmentIdrRules.Count == 0))
+    {
+        preEnrollmentRequestModeTypeName = Model.PreEnrollmentIdrRules[0].RequestModeTypeName;
+        preEnrollmentAlwaysRequest = Model.PreEnrollmentRequestModeIdrAlwaysRequest ? "Yes" : "No";
+    }
+}
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">IDR Rule</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+    <div class="details-data-section chartlink">
+        <div class="f10">
+        @Html.Label("Utility Company")
+        @Html.DropDownList("UtilityCompanyId", null, new { @onchange = "Utility_onChange()" })
+        </div>
+        @{if (Session["SelectedUtilityCompanyId"] != null && Session["SelectedUtilityCompanyId"].ToString() != "00000000-0000-0000-0000-000000000000")
+          {
+        <div class="left_table">
+            <div class="left_container">
+            <br />
+                <table class="index2 top_border">
+                    <tr>
+                        <th></th>
+                        <th>Enrollment Type</th>
+                        <th>Request Mode</th>
+                        <th>Always Request</th>
+                        <th></th>
+                    </tr>
+                    @if(@ViewBag.HasPreEnrollmentRequestModeIdr)
+                    {
+                    <tr>
+                        <td>
+                            @{string checkBoxIdPre = string.Format("CheckBoxSelection_PreEnrollmentCheckBox_{0}", Model.PreEnrollmentRequestModeIdrId);}
+                            <input type="checkbox" class="check-box" id="@checkBoxIdPre" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxIdPre');">
+                        <td>Pre Enrollment</td>
+                        <td>@preEnrollmentRequestModeTypeName</td>
+                        <td>@Html.DisplayFor(model => model.PreEnrollmentRequestModeIdrAlwaysRequest)</td>
+                        <td>
+                            <table class="index2 top_border">
+                                <tr>
+                        <th>
+                            @Html.ActionLink("Rate Class", "TitleClick", new { name = "RateClass" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassImageUrl))
+              {
+                                <img id="imgRateClass" src="@ViewBag.RateClassImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Load Profile", "TitleClick", new { name = "LoadProfile" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileImageUrl))
+              {
+                                <img id="imgLoadProfile" src="@ViewBag.LoadProfileImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Tariff Code", "TitleClick", new { name = "TariffCode" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeImageUrl))
+              {
+                                <img id="imgTariffCode" src="@ViewBag.TariffCodeImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Min Usage MWh", "TitleClick", new { name = "UsageMin" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.UsageMinImageUrl))
+              {
+                                <img id="imgUsageMin" src="@ViewBag.UsageMinImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Max Usage MWh", "TitleClick", new { name = "UsageMax" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.UsageMaxImageUrl))
+              {
+                                <img id="imgUsageMax" src="@ViewBag.UsageMaxImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Eligible", "TitleClick", new { name = "Eligibility" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.EligibilityImageUrl))
+              {
+                                <img id="imgEligibility" src="@ViewBag.EligibilityImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is HIA", "TitleClick", new { name = "Hia" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.HiaImageUrl))
+              {
+                                <img id="imgHia" src="@ViewBag.HiaImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Inactive", "TitleClick", new { name = "Inactive" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+              {
+                                <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Created By", "TitleClick", new { name = "CreatedBy" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+              {
+                                <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Created Date", "TitleClick", new { name = "CreatedDate" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+              {
+                                <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Modified By", "TitleClick", new { name = "LastModifiedBy" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+              {
+                                <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Modified Date", "TitleClick", new { name = "LastModifiedDate" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+              {
+                                <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                    </tr>
+                    @{
+              foreach (var item in Model.PreEnrollmentIdrRules)
+              {
+                                <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RateClass)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LoadProfile)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TariffCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MinUsageMWh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaxUsageMWh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsEligible)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsHia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Inactive)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                            </td>
+                        </tr>
+              }
+                    }
+                            </table>
+                        </td>
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>@Html.CheckBox("chkBoxPre", new { disabled="disabled" })</td>
+                            <td>Pre Enrollment</td>
+                            <td>No Request Mode IDR For Pre Enrollment Exists</td>
+                            <td>No</td>
+                            <td><table><tr><th>Rate Class</th><th>Load Profile</th><th>Tariff Code</th><th>Min Usage MWh</th><th>Max Usage MWh</th><th>Is Eligible</th><th>Is HIA</th><th>Inactive</th><th>Created By</th><th>Created Date</th><th>Modified By</th><th>Modified Date</th></tr></table></td>
+                        </tr>
+                    }
+                    @if(@ViewBag.HasPostEnrollmentRequestModeIdr)
+                    {
+                    <tr>
+                        <td>
+                            @{string checkBoxIdPost = string.Format("CheckBoxSelection_PostEnrollmentCheckBox_{0}", Model.PostEnrollmentRequestModeIdrId);}
+                            <input type="checkbox" class="check-box" id="@checkBoxIdPost" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxIdPost');">
+                        <td>Post Enrollment</td>
+                        <td>@postEnrollmentRequestModeTypeName</td>
+                        <td>@Html.DisplayFor(model => model.PostEnrollmentRequestModeIdrAlwaysRequest)</td>
+                        <td>
+                            <table class="index2 top_border">
+                    <tr>
+                        <th>
+                            @Html.ActionLink("Rate Class", "TitleClick", new { name = "RateClass" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassImageUrl))
+              {
+                                <img id="imgRateClass" src="@ViewBag.RateClassImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Load Profile", "TitleClick", new { name = "LoadProfile" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileImageUrl))
+              {
+                                <img id="imgLoadProfile" src="@ViewBag.LoadProfileImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Tariff Code", "TitleClick", new { name = "TariffCode" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeImageUrl))
+              {
+                                <img id="imgTariffCode" src="@ViewBag.TariffCodeImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Min Usage MWh", "TitleClick", new { name = "UsageMin" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.UsageMinImageUrl))
+              {
+                                <img id="imgUsageMin" src="@ViewBag.UsageMinImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Max Usage MWh", "TitleClick", new { name = "UsageMax" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.UsageMaxImageUrl))
+              {
+                                <img id="imgUsageMax" src="@ViewBag.UsageMaxImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is Eligible", "TitleClick", new { name = "Eligibility" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.EligibilityImageUrl))
+              {
+                                <img id="imgEligibility" src="@ViewBag.EligibilityImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Is HIA", "TitleClick", new { name = "Hia" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.HiaImageUrl))
+              {
+                                <img id="imgHia" src="@ViewBag.HiaImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Inactive", "TitleClick", new { name = "Inactive" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+              {
+                                <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Created By", "TitleClick", new { name = "CreatedBy" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+              {
+                                <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Created Date", "TitleClick", new { name = "CreatedDate" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+              {
+                                <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Modified By", "TitleClick", new { name = "LastModifiedBy" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+              {
+                                <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                        <th>
+                            @Html.ActionLink("Modified Date", "TitleClick", new { name = "LastModifiedDate" })
+                            @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+              {
+                                <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"  valign="middle" />
+              }
+                            }
+                        </th>
+                    </tr>
+                    @{
+              foreach (var item in Model.PostEnrollmentIdrRules)
+              {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RateClass)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LoadProfile)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TariffCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MinUsageMWh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaxUsageMWh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsEligible)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsHia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Inactive)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                            </td>
+                        </tr>
+              }
+                    }
+                </table>
+                        </td>
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>@Html.CheckBox("chkBoxPost", new { disabled="disabled" })</td>
+                            <td>Post Enrollment</td>
+                            <td>No Request Mode IDR For Post Enrollment Exists</td>
+                            <td>No</td>
+                            <td><table><tr><th>Rate Class</th><th>Load Profile</th><th>Tariff Code</th><th>Min Usage MWh</th><th>Max Usage MWh</th><th>Is Eligible</th><th>Is HIA</th><th>Inactive</th><th>Created By</th><th>Created Date</th><th>Modified By</th><th>Modified Date</th></tr></table></td>
+                        </tr>
+                    }
+                </table>
+                <br /><br /><br />
+            </div></div>
+        <div class="right_chart">
+            <div class="navscroll rightscroll">
+                <a href="">
+                    <img src="~/Images/navscroll.png" /></a>
+            </div>
+
+            <div id="hideDiv" class="chart_open" style="display: none">
+                <table>
+                    <tr>
+                        <td>
+
+                            <div class="form-details">
+                                <h4>Report</h4>
+                                <div class="form_fieldset">
+                                    <fieldset>
+                                        <legend>IDR Rule</legend>
+                                        <div class="details-data-section">
+                                            <img src="/IdrRule/IdrRuleCountChart" alt="" class="img" />
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <img id="dirImg" src="~/Images/view_chart.png" onclick="showHide('hideDiv',this.id)" />
+        </div>
+          }
+        }
+    </div>
+</div>
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+<script>
+    function Utility_onChange() {
+        if ($("select#UtilityCompanyId").val() != "-1") {
+            $.ajax({
+                type: 'POST',
+                url: "/IdrRule/IndexUtilitySelection",
+                datatype: 'json',
+                async: false,
+                data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                success: function (data) { },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+            document.location.href = '/IdrRule/Index';
+        }
+    };
+</script>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

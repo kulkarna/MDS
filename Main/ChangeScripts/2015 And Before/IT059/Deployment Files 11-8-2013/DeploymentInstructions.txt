@@ -1,0 +1,9 @@
+1. We need to run 2 sql scripts one for libertypower and the other for offerenginedb
+1.1 We run the RunBeforeDataMigration.sql
+2. We need to run the pre-population app on vmstage(or production)
+2.1 We run the RunAfterDataMigration.sql
+3. We deploy ratemanagement and offerengine apps to ws3
+4. We deploy edi file grabber to ws4. In the case of vmstage, we have to make sure that the file server paths specified in the configs for edi file grabber are valid. 
+5. Replicate web.config changes in OfferEngine
+6. Change IIS Authentication in OfferEngine website: set Anonymous Authentication to Disabled and Windows Authentication to Enabled
+7. Upload the mappings ( more of a data set up for end users rather than a deplyment step)

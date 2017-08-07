@@ -1,0 +1,119 @@
+﻿@model DataAccessLayerEntityFramework.UserInterfaceForm
+
+@{
+    ViewBag.Title = "Edit";
+}
+@using UserInterfaceValidationExtensions
+
+<h3>Edit User Interface Form</h3>
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form_fieldset">
+        <fieldset>
+            <legend>UserInterfaceForm</legend>
+
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserInterfaceFormName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserInterfaceFormName)
+                @Html.ValidationMessageFor(model => model.UserInterfaceFormName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Inactive)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Inactive)
+                @Html.ValidationMessageFor(model => model.Inactive)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedBy, "Created By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedBy)
+                @Html.ValidationMessageFor(model => model.CreatedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedDate, "Created Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedDate)
+                @Html.ValidationMessageFor(model => model.CreatedDate)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedBy)
+                @Html.ValidationMessageFor(model => model.LastModifiedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedDate)
+                @Html.ValidationMessageFor(model => model.LastModifiedDate)
+            </div>
+            @if (Session["IsPostBack"] != null && Session["IsPostBack"].ToString() == "true")
+            {
+                <div class="editor-label">
+                    <h3>@Model.GetUserInterfaceFormValidationString()</h3>
+                </div>
+            }
+
+@*<div class="editor-label">
+            @Html.LabelFor(model => model.CreatedBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedBy)
+            @Html.ValidationMessageFor(model => model.CreatedBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedDate)
+            @Html.ValidationMessageFor(model => model.CreatedDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastModifiedBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastModifiedBy)
+            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastModifiedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastModifiedDate)
+            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+        </div>*@
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

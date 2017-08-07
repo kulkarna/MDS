@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E751D62E-2B5B-4695-B289-5D6E30C7E95D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrdersAPITests</RootNamespace>
+    <AssemblyName>OrdersAPITests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\NonBuild\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="AgentProfile.cs" />
+    <Compile Include="ChannelManagementTest.cs" />
+    <Compile Include="CRMServiceTest.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="PricingServicesTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CommonServicesTest.cs" />
+    <Compile Include="Service References\ChannelManagementAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CRMService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CRMTestingAPI.cs" />
+    <Compile Include="Service References\DocumentServiceAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OrderEntryAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PricingServiceAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="OrderEntryTest.cs" />
+    <Compile Include="TabletDocumentSubmissionTest.cs" />
+    <Compile Include="DocumentServiceTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CRMService\OrdersAPITests.CRMService.BusinessActivity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\OrdersAPITests.CRMService.BusinessType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\OrdersAPITests.CRMService.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\OrdersAPITests.CRMService.WSAccountType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\OrdersAPITests.CRMService.WSResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CRMService\configuration.svcinfo" />
+    <None Include="Service References\CRMService\configuration91.svcinfo" />
+    <None Include="Service References\CRMService\CRMService.disco" />
+    <None Include="Service References\ChannelManagementAPI\OrdersAPITests.ChannelManagementAPI.TabletDataCache.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\OrdersAPITests.ChannelManagementAPI.WSSalesChannel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\OrdersAPITests.ChannelManagementAPI.WSSalesChannelApplicationKey.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\OrdersAPITests.ChannelManagementAPI.WSSalesChannelUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\OrdersAPITests.ChannelManagementAPI.WSSalesChannelUserResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\configuration.svcinfo" />
+    <None Include="Service References\ChannelManagementAPI\configuration91.svcinfo" />
+    <None Include="Service References\ChannelManagementAPI\ChannelManagementService.disco" />
+    <None Include="Service References\ChannelManagementAPI\ChannelManagementService.wsdl" />
+    <None Include="Service References\ChannelManagementAPI\ChannelManagementService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\ChannelManagementService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\ChannelManagementService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\ChannelManagementService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\ChannelManagementService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChannelManagementAPI\ChannelManagementService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService.wsdl" />
+    <None Include="Service References\CRMService\CRMService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService210.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.AndroidPackage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.TabletDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.TabletDocumentField.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.TabletDocumentFieldLocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.TabletDocumentMap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.TabletDocumentMappingData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.TabletDocumentType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.WSDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.WSDocumentResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\OrdersAPITests.DocumentServiceAPI.WSDocumentSubmissionStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\configuration.svcinfo" />
+    <None Include="Service References\DocumentServiceAPI\configuration91.svcinfo" />
+    <None Include="Service References\DocumentServiceAPI\DocumentService.disco" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="SampleFiles\SampleContract.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\DocumentServiceAPI\DocumentService.wsdl" />
+    <None Include="Service References\DocumentServiceAPI\DocumentService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentServiceAPI\DocumentService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderEntryAPI\OrderEntry.wsdl" />
+    <None Include="Service References\OrderEntryAPI\OrderEntry.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderEntryAPI\OrderEntry1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderEntryAPI\OrderEntry2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderEntryAPI\OrderEntry3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderEntryAPI\OrderEntry4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderEntryAPI\OrderEntry5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderEntryAPI\OrderEntry6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderEntryAPI\OrdersAPITests.OrderEntryAPI.WSContractSubmissionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PricingServiceAPI\OrdersAPITests.PricingServiceAPI.PriceTier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PricingServiceAPI\OrdersAPITests.PricingServiceAPI.ProductBrand.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PricingServiceAPI\OrdersAPITests.PricingServiceAPI.WSAccountType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PricingServiceAPI\OrdersAPITests.PricingServiceAPI.WSActionResultOfWSProductRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PricingServiceAPI\OrdersAPITests.PricingServiceAPI.WSCrossProductPriceSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PricingServiceAPI\OrdersAPITests.PricingServiceAPI.WSLocationDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PricingServiceAPI\OrdersAPITests.PricingServiceAPI.WSProductRateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PricingServiceAPI\PricingService.wsdl" />
+    <None Include="Service References\PricingServiceAPI\PricingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PricingServiceAPI\PricingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PricingServiceAPI\PricingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PricingServiceAPI\PricingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PricingServiceAPI\PricingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PricingServiceAPI\PricingService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ChannelManagementAPI\" />
+    <WCFMetadataStorage Include="Service References\CRMService\" />
+    <WCFMetadataStorage Include="Service References\DocumentServiceAPI\" />
+    <WCFMetadataStorage Include="Service References\OrderEntryAPI\" />
+    <WCFMetadataStorage Include="Service References\PricingServiceAPI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrderEntryAPI\OrderEntry.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrderEntryAPI\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrderEntryAPI\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrderEntryAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PricingServiceAPI\PricingService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PricingServiceAPI\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PricingServiceAPI\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PricingServiceAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

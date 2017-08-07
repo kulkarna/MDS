@@ -1,0 +1,59 @@
+﻿@model UtilityManagement.Models.LoginModel
+
+@{
+    ViewBag.Title = "Welcome to the Utility Management Web Site";
+}
+    <br />
+    <div>&nbsp;&nbsp;<img src="/Images/logo.png" width="150"/></div>
+
+<br />
+<br />
+
+                <div class="columnOneHeaderTruncutter" id="ctText1">&nbsp;&nbsp;<b>Welcome to the Utility Management Web Site.</b></div>
+                <br />
+                <div class="columnOneHeaderTruncutter" id="ctText1">&nbsp;&nbsp;<b>Please log in using your account or register for a new account.</b></div>
+                <br />
+                @using (Html.BeginForm(new { ReturnUrl = "/" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <fieldset>
+                        <legend>Log in Form</legend>
+                        <ol>
+                            <li>
+                                &nbsp;&nbsp;@Html.LabelFor(m => m.UserName)
+                                @Html.TextBoxFor(m => m.UserName)
+                                @Html.ValidationMessageFor(m => m.UserName)
+                            </li>
+                            <li>
+                                &nbsp;&nbsp;@Html.LabelFor(m => m.Password)
+                                @Html.PasswordFor(m => m.Password)
+                                @Html.ValidationMessageFor(m => m.Password)
+                            </li>
+                            <li>
+                                &nbsp;&nbsp;@Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                            </li>
+                            <li>
+                            </li>
+                        </ol>
+                        @if (this.ViewContext.HttpContext.Request.Browser.Browser.ToLower().Contains("chrome"))
+                        {
+                            <div >
+                                &nbsp;&nbsp;<button id="btnLogIn" name="submitButton" value="Log in" type="submit" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Log&nbsp;in</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                <button id="button" name="submitButton" value="Register" class="button" ><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+                                &nbsp;&nbsp;<button id="btnLogIn" name="submitButton" value="Log in" type="submit" class="img"><b>Log in</b></button> &nbsp;
+                                <button id="button" name="submitButton" value="Register" class="img"><b>Register</b></button>
+                            </div>
+                        }
+                    </fieldset>
+                }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

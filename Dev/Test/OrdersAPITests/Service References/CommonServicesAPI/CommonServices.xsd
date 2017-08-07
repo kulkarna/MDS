@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities.Documents" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities.Documents" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/CommonServices.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="WSDocumentMappingData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentFieldLocations" nillable="true" type="tns:ArrayOfWSDocumentFieldLocation" />
+      <xs:element minOccurs="0" name="DocumentFields" nillable="true" type="tns:ArrayOfWSDocumentField" />
+      <xs:element minOccurs="0" name="DocumentMaps" nillable="true" type="tns:ArrayOfWSDocumentMap" />
+      <xs:element minOccurs="0" name="DocumentTypes" nillable="true" type="tns:ArrayOfWSDocumentType" />
+      <xs:element minOccurs="0" name="Documents" nillable="true" type="tns:ArrayOfWSDocument" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSDocumentMappingData" nillable="true" type="tns:WSDocumentMappingData" />
+  <xs:complexType name="ArrayOfWSDocumentFieldLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSDocumentFieldLocation" nillable="true" type="tns:WSDocumentFieldLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSDocumentFieldLocation" nillable="true" type="tns:ArrayOfWSDocumentFieldLocation" />
+  <xs:complexType name="WSDocumentFieldLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentID" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationX" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationY" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSDocumentFieldLocation" nillable="true" type="tns:WSDocumentFieldLocation" />
+  <xs:complexType name="ArrayOfWSDocumentField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSDocumentField" nillable="true" type="tns:WSDocumentField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSDocumentField" nillable="true" type="tns:ArrayOfWSDocumentField" />
+  <xs:complexType name="WSDocumentField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Prompt1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prompt2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSDocumentField" nillable="true" type="tns:WSDocumentField" />
+  <xs:complexType name="ArrayOfWSDocumentMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSDocumentMap" nillable="true" type="tns:WSDocumentMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSDocumentMap" nillable="true" type="tns:ArrayOfWSDocumentMap" />
+  <xs:complexType name="WSDocumentMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BrandID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentMapID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TemplateTypeID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSDocumentMap" nillable="true" type="tns:WSDocumentMap" />
+  <xs:complexType name="ArrayOfWSDocumentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSDocumentType" nillable="true" type="tns:WSDocumentType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSDocumentType" nillable="true" type="tns:ArrayOfWSDocumentType" />
+  <xs:complexType name="WSDocumentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxRecords" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Sequence" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSDocumentType" nillable="true" type="tns:WSDocumentType" />
+  <xs:complexType name="ArrayOfWSDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSDocument" nillable="true" type="tns:WSDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSDocument" nillable="true" type="tns:ArrayOfWSDocument" />
+  <xs:complexType name="WSDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocOrientation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentID" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSDocument" nillable="true" type="tns:WSDocument" />
+</xs:schema>

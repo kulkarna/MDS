@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b6ab037d-7331-4fd3-b920-87143053a4a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://lpcnocwsgamma1:8081/Accounts/v1" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="v1.disco" MetadataType="Disco" ID="cd92119c-3443-4ab0-aa07-8691740be443" SourceId="1" SourceUrl="http://lpcnocwsgamma1:8081/Accounts/v1?disco" />
+    <MetadataFile FileName="v1.xsd" MetadataType="Schema" ID="8bd70dc1-d176-40f7-ad8e-317eec625275" SourceId="1" SourceUrl="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd2" />
+    <MetadataFile FileName="v11.xsd" MetadataType="Schema" ID="9ef56a4d-8c03-4371-b223-1f8119c52646" SourceId="1" SourceUrl="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd1" />
+    <MetadataFile FileName="v12.xsd" MetadataType="Schema" ID="e57e9821-036c-413c-91e6-a4bc8ded2552" SourceId="1" SourceUrl="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd4" />
+    <MetadataFile FileName="v13.xsd" MetadataType="Schema" ID="301f301d-f7b5-4767-bf17-30d549791a54" SourceId="1" SourceUrl="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd3" />
+    <MetadataFile FileName="Accounts.wsdl" MetadataType="Wsdl" ID="dc3ad880-df5c-4093-8e37-fccb64eeaa00" SourceId="1" SourceUrl="http://lpcnocwsgamma1:8081/Accounts/v1?wsdl" />
+    <MetadataFile FileName="v14.xsd" MetadataType="Schema" ID="94fc4ff2-94fb-4451-bf2c-c6450f9bfb61" SourceId="1" SourceUrl="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd0" />
+    <MetadataFile FileName="v1.wsdl" MetadataType="Wsdl" ID="493630dc-0e72-4ee7-890d-9450d0cf81f9" SourceId="1" SourceUrl="http://lpcnocwsgamma1:8081/Accounts/v1?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

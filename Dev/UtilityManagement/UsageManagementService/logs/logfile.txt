@@ -1,0 +1,45 @@
+2013-07-25 11:06:48.0938 UsageWebService.EventHandler.IstaUsageRequestedEventHandler Ista request failed with message The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+ The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+Value cannot be null.
+Parameter name: Url
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService.SubmitHistoricalUsageRequestPreEnrollment(String accountNumber, String billingAddress1, String billingAddress2, String billingCity, String billingState, String billingZip, String billingContact, String contactEmail, String contactPhone, String customerName, String firstName, String lastName, String LPC_Duns, String utilityDuns, String serviceStreet, String serviceSuite, String serviceCity, String serviceState, String serviceZip, String nameKey, String meter, String billingAccountnumber, String domainUser, String meterType, String utility, String appName, String UsageFlag)
+   at UsageWebService.EventHandler.IstaUsageRequestedEventHandler.Handle(IstaUsageRequested e) in f:\Portfolio\Framework\LPDev\Apps\UsageManagement\UsageWebService\EventHandler\IstaUsageRequestedEventHandler.cs:line 26
+   at Microsoft.Web.Services2.WebServicesClientProtocol.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.IstaEnrollmentService.EnrollmentService.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService..cctor()
+2013-07-25 11:09:47.9468 UsageWebService.EventHandler.IstaUsageRequestedEventHandler Ista request failed with message The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+ The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+Value cannot be null.
+Parameter name: Url
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService.SubmitHistoricalUsageRequestPreEnrollment(String accountNumber, String billingAddress1, String billingAddress2, String billingCity, String billingState, String billingZip, String billingContact, String contactEmail, String contactPhone, String customerName, String firstName, String lastName, String LPC_Duns, String utilityDuns, String serviceStreet, String serviceSuite, String serviceCity, String serviceState, String serviceZip, String nameKey, String meter, String billingAccountnumber, String domainUser, String meterType, String utility, String appName, String UsageFlag)
+   at UsageWebService.EventHandler.IstaUsageRequestedEventHandler.Handle(IstaUsageRequested e) in f:\Portfolio\Framework\LPDev\Apps\UsageManagement\UsageWebService\EventHandler\IstaUsageRequestedEventHandler.cs:line 26
+   at Microsoft.Web.Services2.WebServicesClientProtocol.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.IstaEnrollmentService.EnrollmentService.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService..cctor()
+2013-07-25 11:09:59.7458 UsageWebService.EventHandler.IstaUsageRequestedEventHandler Ista request failed with message The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+ The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+Value cannot be null.
+Parameter name: Url
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService.SubmitHistoricalUsageRequestPreEnrollment(String accountNumber, String billingAddress1, String billingAddress2, String billingCity, String billingState, String billingZip, String billingContact, String contactEmail, String contactPhone, String customerName, String firstName, String lastName, String LPC_Duns, String utilityDuns, String serviceStreet, String serviceSuite, String serviceCity, String serviceState, String serviceZip, String nameKey, String meter, String billingAccountnumber, String domainUser, String meterType, String utility, String appName, String UsageFlag)
+   at UsageWebService.EventHandler.IstaUsageRequestedEventHandler.Handle(IstaUsageRequested e) in f:\Portfolio\Framework\LPDev\Apps\UsageManagement\UsageWebService\EventHandler\IstaUsageRequestedEventHandler.cs:line 26
+   at Microsoft.Web.Services2.WebServicesClientProtocol.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.IstaEnrollmentService.EnrollmentService.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService..cctor()
+2013-07-25 11:11:20.3618 UsageWebService.EventHandler.IstaUsageRequestedEventHandler Ista request failed with message The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+ The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+Value cannot be null.
+Parameter name: Url
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService.SubmitHistoricalUsageRequestPreEnrollment(String accountNumber, String billingAddress1, String billingAddress2, String billingCity, String billingState, String billingZip, String billingContact, String contactEmail, String contactPhone, String customerName, String firstName, String lastName, String LPC_Duns, String utilityDuns, String serviceStreet, String serviceSuite, String serviceCity, String serviceState, String serviceZip, String nameKey, String meter, String billingAccountnumber, String domainUser, String meterType, String utility, String appName, String UsageFlag)
+   at UsageWebService.EventHandler.IstaUsageRequestedEventHandler.Handle(IstaUsageRequested e) in f:\Portfolio\Framework\LPDev\Apps\UsageManagement\UsageWebService\EventHandler\IstaUsageRequestedEventHandler.cs:line 26
+   at Microsoft.Web.Services2.WebServicesClientProtocol.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.IstaEnrollmentService.EnrollmentService.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService..cctor()
+2013-07-25 11:11:55.6328 UsageWebService.EventHandler.IstaUsageRequestedEventHandler Ista request failed with message The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+ The type initializer for 'LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService' threw an exception.
+Value cannot be null.
+Parameter name: Url
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService.SubmitHistoricalUsageRequestPreEnrollment(String accountNumber, String billingAddress1, String billingAddress2, String billingCity, String billingState, String billingZip, String billingContact, String contactEmail, String contactPhone, String customerName, String firstName, String lastName, String LPC_Duns, String utilityDuns, String serviceStreet, String serviceSuite, String serviceCity, String serviceState, String serviceZip, String nameKey, String meter, String billingAccountnumber, String domainUser, String meterType, String utility, String appName, String UsageFlag)
+   at UsageWebService.EventHandler.IstaUsageRequestedEventHandler.Handle(IstaUsageRequested e) in f:\Portfolio\Framework\LPDev\Apps\UsageManagement\UsageWebService\EventHandler\IstaUsageRequestedEventHandler.cs:line 26
+   at Microsoft.Web.Services2.WebServicesClientProtocol.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.IstaEnrollmentService.EnrollmentService.set_Url(String value)
+   at LibertyPower.DataAccess.WebServiceAccess.IstaWebService.UsageService..cctor()

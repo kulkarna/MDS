@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/CommonServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CRMWebServices" />
+  <xs:import schemaLocation="http://localhost:57373/CommonServices.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:57373/CommonServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" />
+  <xs:import schemaLocation="http://localhost:57373/CommonServices.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities.Documents" />
+  <xs:element name="GetUtilitiesByUserGuidAndZipcode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGuid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilitiesByUserGuidAndZipcodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetUtilitiesByUserGuidAndZipcodeResult" nillable="true" type="q1:WSUtilityResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilityById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilityByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetUtilityByIdResult" nillable="true" type="q2:WSUtilityResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveUtilities">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveUtilitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetActiveUtilitiesResult" nillable="true" type="q3:ArrayOfWSUtility" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilitiesByMarketAndSalesChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="market" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="salesChannelCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilitiesByMarketAndSalesChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetUtilitiesByMarketAndSalesChannelResult" nillable="true" type="q4:ArrayOfWSUtility" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilityByUtilityCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="utilityCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilityByUtilityCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetUtilityByUtilityCodeResult" nillable="true" type="q5:WSUtility" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveMarkets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveMarketsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetActiveMarketsResult" nillable="true" type="q6:ArrayOfWSRetailMarket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGuid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetSalesChannelUserResult" nillable="true" type="q7:WSSalesChannelUserResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveSalesChannels">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveSalesChannelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetActiveSalesChannelsResult" nillable="true" type="q8:ArrayOfWSSalesChannel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetSalesChannelByIdResult" nillable="true" type="q9:WSSalesChannel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelSupportEmailList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelId" type="xs:int" />
+        <xs:element minOccurs="0" name="fromEmail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelSupportEmailListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSalesChannelSupportEmailListResult" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarketsBySalesChannelCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarketsBySalesChannelCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetMarketsBySalesChannelCodeResult" nillable="true" type="q11:ArrayOfWSRetailMarket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelUsersByDeviceID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelUsersByDeviceIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetSalesChannelUsersByDeviceIDResult" nillable="true" type="q12:ArrayOfWSSalesChannelUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessActivities">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessActivitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="GetBusinessActivitiesResult" nillable="true" type="q13:ArrayOfBusinessActivity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="GetBusinessTypesResult" nillable="true" type="q14:ArrayOfBusinessType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserIdByUsername">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserIdByUsernameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserIdByUsernameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetDocumentTypesResult" nillable="true" type="q15:ArrayOfWSDocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMasterData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMasterDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities.Documents" minOccurs="0" name="GetDocumentMasterDataResult" nillable="true" type="q16:WSDocumentMappingData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewContractNumber">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewContractNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewContractNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAccountNumberInSystem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAccountNumberInSystemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="IsAccountNumberInSystemResult" nillable="true" type="q17:WSResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAccountNumberValid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAccountNumberValidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="IsAccountNumberValidResult" nillable="true" type="q18:WSResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetAccountTypesResult" nillable="true" type="q19:ArrayOfWSAccountType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

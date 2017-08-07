@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Liberty Power</LicensedTo>
+    <LicenseType>Developer Enterprise Subscription</LicenseType>
+    <LicenseNote>Limited to 1 developer.</LicenseNote>
+    <OrderID>100706152234</OrderID>
+    <OEM>This is not a non-redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Cells for .NET</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>ed427e36-344e-4b86-b130-39da5eee1492</SerialNumber>
+    <SubscriptionExpiry>20110723</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>hhiFqbAthBnyjoRLaEefVg5con2XOd/jYYNFeUhXPGOVYVBVJ19Jqejue/DgKYgA5MucvgjoqGKCMeoM9DcwAGGhk7LLzj7mKn4i1qVCGdSrXbYvYbYZQO+nO2JAHQkk4c65z26UfdgD0jmi7HQOculU0VBvXIGPfVaW8LOTrAI=</Signature>
+</License>

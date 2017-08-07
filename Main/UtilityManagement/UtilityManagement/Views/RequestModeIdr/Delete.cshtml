@@ -1,0 +1,124 @@
+﻿@model DataAccessLayerEntityFramework.RequestModeIdr
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>RequestModeIdr</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UtilityCompany.UtilityCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UtilityCompany.UtilityCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RequestModeEnrollmentType.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RequestModeEnrollmentType.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RequestModeType.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RequestModeType.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AddressForPreEnrollment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AddressForPreEnrollment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmailTemplate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmailTemplate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Instructions)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Instructions)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UtilitysSlaIdrResponseInDays)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UtilitysSlaIdrResponseInDays)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LibertyPowersSlaFollowUpIdrResponseInDays)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LibertyPowersSlaFollowUpIdrResponseInDays)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsLoaRequired)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsLoaRequired)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RequestCostAccount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RequestCostAccount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Inactive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Inactive)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastModifiedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastModifiedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastModifiedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastModifiedDate)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

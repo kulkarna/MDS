@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B32F0A17-23EF-409D-BD13-C282E0714D91}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UsageEventAggregator</RootNamespace>
+    <AssemblyName>UsageEventAggregator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\..\..\..\Reference\NonBuild\Common.Logging.2.0.0\lib\2.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.NLog">
+      <HintPath>..\..\..\..\..\..\Reference\NonBuild\Common.Logging.NLog.2.0.0\lib\2.0\Common.Logging.NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\NonBuild\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\..\..\..\..\Reference\NonBuild\NLog.2.0.1.2\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregator.cs" />
+    <Compile Include="BootStrap.cs" />
+    <Compile Include="Events\AccountPropertyHistory\AccountPropertyHistoryProcessCompleted.cs" />
+    <Compile Include="Events\AccountPropertyHistory\AccountPropertyHistoryProcessFailed.cs" />
+    <Compile Include="Events\AccountPropertyHistory\AccountPropertyHistoryProcessRequested.cs" />
+    <Compile Include="Events\AccountPropertyHistory\DataSyncRequested.cs" />
+    <Compile Include="Events\Collector\CollectUsageFailed.cs" />
+    <Compile Include="Events\Collector\IstaUsageRequested.cs" />
+    <Compile Include="Events\Collector\ScraperRequested.cs" />
+    <Compile Include="Events\Consolidation\UsageConsolidationFailed.cs" />
+    <Compile Include="Events\Consolidation\UsageConsolidationCompleted.cs" />
+    <Compile Include="Events\Consolidation\UsageConsolidationRequested.cs" />
+    <Compile Include="Events\DataProcessed\DataProcessedIdrComplete.cs" />
+    <Compile Include="Events\DataProcessed\DataProcessedIdrFailed.cs" />
+    <Compile Include="Events\DataProcessed\DataProcessedHuComplete.cs" />
+    <Compile Include="Events\DataProcessed\DataProcessedHuFailed.cs" />
+    <Compile Include="Events\DataResponse\DataResponseHuAcceptance.cs" />
+    <Compile Include="Events\DataResponse\DataResponseIdrAcceptance.cs" />
+    <Compile Include="Events\DataResponse\DataResponseIdrRejection.cs" />
+    <Compile Include="Events\DataResponse\DataResponseHuRejection.cs" />
+    <Compile Include="Events\IEventMessage.cs" />
+    <Compile Include="Events\EventTransportMessage.cs" />
+    <Compile Include="Events\Edi\EdiFileParsed.cs" />
+    <Compile Include="Events\Log\UsageLogEvent.cs" />
+    <Compile Include="EventTransports\AbortHandlingCurrentMessageException.cs" />
+    <Compile Include="EventTransports\ITransport.cs" />
+    <Compile Include="EventTransports\SqlPersistance\PublishedMessage.cs" />
+    <Compile Include="EventTransports\SqlPersistance\SqlPersistanceEventAggregator.cs" />
+    <Compile Include="EventTransports\SqlPersistance\SqlPersistanceTransport.cs" />
+    <Compile Include="EventTransports\SqlPersistance\Subscription.cs" />
+    <Compile Include="EventTransports\SqlServiceBroker\Message.cs" />
+    <Compile Include="EventTransports\SqlServiceBroker\ServiceBrokerTransport.cs" />
+    <Compile Include="EventTransports\SqlServiceBroker\ServiceBrokerWrapper.cs" />
+    <Compile Include="EventTransports\SqlServiceBroker\SqlServiceBrokerTransactionManager.cs" />
+    <Compile Include="EventTransports\TransportMessageReceivedEventArgs.cs" />
+    <Compile Include="Helpers\Locator.cs" />
+    <Compile Include="Helpers\Serializer.cs" />
+    <Compile Include="Helpers\WorkerThread.cs" />
+    <Compile Include="IEventAggregator.cs" />
+    <Compile Include="IHandleEvents.cs" />
+    <Compile Include="ISubscriber.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EventTransports\SqlPersistance\Setup.sql" />
+    <Content Include="EventTransports\SqlServiceBroker\Setup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

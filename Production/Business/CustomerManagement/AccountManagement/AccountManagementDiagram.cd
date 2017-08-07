@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.CompanyAccount">
+    <Position X="0.5" Y="3.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>2IAKAKIEAoAiAACAkoBRAAgAETBFEMAAEABAAIAAEAA=</HashCode>
+      <FileName>CompanyAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.Contract">
+    <Position X="0.5" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAABABAAAQAAAIABEACAAQACAAEAIAA=</HashCode>
+      <FileName>Contract.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Accounts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.Prospects.ProspectAccount">
+    <Position X="3.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.CompanyAccountFactory">
+    <Position X="3.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IgABCBBAAAAAACAAAIgEQIABAAAEAgICAAEAAACBZAA=</HashCode>
+      <FileName>CompanyAccountFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ContractFactory">
+    <Position X="3.25" Y="10.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAgAAEIAAAQAAAAAAAAAAAAAAACAAAAAAgAAAA=</HashCode>
+      <FileName>ContractFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UtilityAccount">
+    <Position X="6.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.AccountEventHistory">
+    <Position X="8.75" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>1IADAAIAAwAAEAACAoAAAQCAAAABEEUEkAGMAAAAEgA=</HashCode>
+      <FileName>AccountEventHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.AccountEventHistoryFactory">
+    <Position X="6" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAwAAAAAAAAA=</HashCode>
+      <FileName>AccountEventHistoryFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.AccountEvent">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>AccountEvent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Account" />
+      <Property Name="EventType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.AccountEventFactory">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AccountEventFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.EdiTransactionProcessor">
+    <Position X="8.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAACAAAAIEQEAAAACACQAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>EdiTransactionProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.AccountEventProcessor">
+    <Position X="6" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AccountEventProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.RateChangeProcessor">
+    <Position X="11.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAQkAAAACACQAAAAAAAAiAAAEAAAAAA=</HashCode>
+      <FileName>RateChangeFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.ErrorFactory">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ErrorFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.Email">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Email.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.CommissionProcessor">
+    <Position X="8.5" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommissionProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.AccountManagement.CommissionTransaction">
+    <Position X="6.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAgAAAAAAAAAACgCAAAAAAAiBAAAAgAAAEAAAAAA=</HashCode>
+      <FileName>CommissionTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LibertyPower.Business.CustomerManagement.AccountManagement.AccountEventType">
+    <Position X="3.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQgAAAAAAAAIAAKAAAAAAAYAAADAQBAAAEAgAA=</HashCode>
+      <FileName>AccountEventType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.CustomerManagement.AccountManagement.CompanyAccountType">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAIACAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CompanyAccountType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

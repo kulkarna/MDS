@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21F9E9E2-B012-402A-86BD-88E31287FE8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UsageFileProcessor</RootNamespace>
+    <AssemblyName>UsageFileProcessor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\..\..\..\Framework\Reference\NonBuild\Common.Logging.2.0.0\lib\2.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.NLog">
+      <HintPath>..\..\..\..\..\..\Framework\Reference\NonBuild\Common.Logging.NLog.2.0.0\lib\2.0\Common.Logging.NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="DATA">
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\DATA.dll</HintPath>
+    </Reference>
+    <Reference Include="FieldHistory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\FieldHistory.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\..\..\..\..\Framework\Reference\NonBuild\NLog.2.0.1.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OfferEngineSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\OfferEngineSql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TransactionsSql, Version=11.10.7.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\TransactionsSql.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Enums\FieldHistory.cs" />
+    <Compile Include="Entities\ParserAccount.cs" />
+    <Compile Include="Entities\ParserColumn.cs" />
+    <Compile Include="Entities\ParserSchema.cs" />
+    <Compile Include="Entities\ParserUsage.cs" />
+    <Compile Include="Entities\ParserUtility.cs" />
+    <Compile Include="Entities\UsageFile.cs" />
+    <Compile Include="Entities\Enums\Validation.cs" />
+    <Compile Include="Entities\Validation\CustomAccountCandidateValidationRule.cs" />
+    <Compile Include="Entities\Validation\MinimumDateRule.cs" />
+    <Compile Include="Entities\Validation\NumericValueRule.cs" />
+    <Compile Include="Entities\Validation\UtilityAccountRequiredValuesRule.cs" />
+    <Compile Include="Entities\Validation\ValidateUsageRule.cs" />
+    <Compile Include="Entities\Validation\UsageRequiredValuesRule.cs" />
+    <Compile Include="Entities\Validation\ValidateUtilityAccountRule.cs" />
+    <Compile Include="Entities\Validation\ValueExistsRule.cs" />
+    <Compile Include="Parsers\Aep.cs" />
+    <Compile Include="Parsers\Ctpen.cs" />
+    <Compile Include="Parsers\LpGeneric.cs" />
+    <Compile Include="Parsers\Oncor.cs" />
+    <Compile Include="Parsers\Sharyland.cs" />
+    <Compile Include="Services\DataSetService.cs" />
+    <Compile Include="Services\ParserAccountService.cs" />
+    <Compile Include="Services\ParserUsageService.cs" />
+    <Compile Include="Services\UtilityService.cs" />
+    <Compile Include="Interfaces\IUsageFileParser.cs" />
+    <Compile Include="Parsers\Txnmp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\SqlRepository.cs" />
+    <Compile Include="UsageFileProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DataAccess\SqlAccess\CommonSql\CommonSql.csproj">
+      <Project>{5D28F819-D51A-45BA-9635-E716E67B09A2}</Project>
+      <Name>CommonSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DataAccess\WorkbookAccess\WorkbookAccess.csproj">
+      <Project>{4D0B6E19-7218-4AF3-BC1A-F6272B0C4E16}</Project>
+      <Name>WorkbookAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonBusiness\CommonEntity\CommonEntity.csproj">
+      <Project>{4480D1DD-D888-427E-861F-EFA44578CC59}</Project>
+      <Name>CommonEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonBusiness\CommonExceptions\CommonExceptions.csproj">
+      <Project>{72163baa-3532-4423-8410-30348d0195a7}</Project>
+      <Name>CommonExceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonBusiness\CommonRules\CommonRules.csproj">
+      <Project>{02012d5f-6983-432b-b030-e66c414ed6aa}</Project>
+      <Name>CommonRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonBusiness\CommonSecurity\SecurityManager.csproj">
+      <Project>{CF398D31-956C-4EFD-81CA-0B1115B3C4A2}</Project>
+      <Name>SecurityManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiParser\FileParser\FileParser.csproj">
+      <Project>{CE2FBCF2-E91B-47C8-BAA9-7ABE67477984}</Project>
+      <Name>FileParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsageEventAggregator\UsageEventAggregator.csproj">
+      <Project>{b32f0a17-23ef-409d-bd13-c282e0714d91}</Project>
+      <Name>UsageEventAggregator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityManagement\UtilityManagement.csproj">
+      <Project>{98086321-A541-4063-872B-62FA3A691B24}</Project>
+      <Name>UtilityManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

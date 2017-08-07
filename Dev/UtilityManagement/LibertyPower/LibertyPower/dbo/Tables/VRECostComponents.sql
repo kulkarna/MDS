@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[VRECostComponents] (
+    [ID]                     INT              IDENTITY (1, 1) NOT NULL,
+    [UtilityCode]            VARCHAR (50)     NOT NULL,
+    [Energy]                 BIT              CONSTRAINT [DF_VRECostComponents_Energy] DEFAULT ((0)) NOT NULL,
+    [EnergyLoss]             BIT              CONSTRAINT [DF_VRECostComponents_EnergyLoss] DEFAULT ((0)) NOT NULL,
+    [AncillaryService]       BIT              CONSTRAINT [DF_VRECostComponents_AncillaryService] DEFAULT ((0)) NOT NULL,
+    [OtherAncillaryService]  BIT              CONSTRAINT [DF_VRECostComponents_EnergyReplacementReserve] DEFAULT ((0)) NOT NULL,
+    [RPSPrice]               BIT              CONSTRAINT [DF_VRECostComponents_RPSPrice] DEFAULT ((0)) NOT NULL,
+    [UCap]                   BIT              CONSTRAINT [DF_VRECostComponents_UCap] DEFAULT ((0)) NOT NULL,
+    [TCap]                   BIT              CONSTRAINT [DF_VRECostComponents_TCap] DEFAULT ((0)) NOT NULL,
+    [ARRCharge]              BIT              CONSTRAINT [DF_VRECostComponents_ARRCharge] DEFAULT ((0)) NOT NULL,
+    [ARRChargeValue]         INT              CONSTRAINT [DF_VRECostComponents_ARRChargeValue] DEFAULT ((0)) NOT NULL,
+    [BillingTransactionFee]  BIT              CONSTRAINT [DF_VRECostComponents_BillingTransactionFee] DEFAULT ((0)) NOT NULL,
+    [POR]                    BIT              CONSTRAINT [DF_VRECostComponents_POR] DEFAULT ((0)) NOT NULL,
+    [FinanceFee]             BIT              CONSTRAINT [DF_VRECostComponents_FinanceFee] DEFAULT ((0)) NOT NULL,
+    [ARCreditReserve]        BIT              CONSTRAINT [DF_VRECostComponents_ARCreditReserve] DEFAULT ((0)) NOT NULL,
+    [Markup]                 BIT              CONSTRAINT [DF_VRECostComponents_Markup] DEFAULT ((0)) NOT NULL,
+    [MiscAdder]              BIT              CONSTRAINT [DF_VRECostComponents_MiscAdder] DEFAULT ((0)) NOT NULL,
+    [MeterReadOverlap]       BIT              CONSTRAINT [DF_VRECostComponents_MeterReadOverlap] DEFAULT ((0)) NULL,
+    [MiscAdderDollarsPerMWh] DECIMAL (18, 10) CONSTRAINT [DF_VRECostComponents_MiscAdderDollarsPerMWh] DEFAULT ((0)) NOT NULL,
+    [DefaultIsoZone]         VARCHAR (50)     NULL,
+    [DefaultLoadShapeId]     VARCHAR (50)     NULL,
+    [DateCreated]            DATETIME         CONSTRAINT [DF_VRECostComponents_DateCreated] DEFAULT (getdate()) NOT NULL,
+    [CreatedBy]              INT              CONSTRAINT [DF_VRECostComponents_CreatedBy] DEFAULT ((0)) NOT NULL,
+    [ZoneJUCapPercent]       DECIMAL (5, 4)   NULL,
+    CONSTRAINT [PK_VRECostComponent] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

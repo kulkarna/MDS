@@ -1,0 +1,62 @@
+﻿@model DataAccessLayerEntityFramework.UserInterfaceFormControl
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>User Interface Form Control Details</h3>
+<br />
+<div class="form_fieldset">
+    <fieldset>
+        <legend>UserInterfaceFormControl</legend>
+
+        <div class="display-label">
+            @Html.Label("User Interface Form Name")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UserInterfaceForm.UserInterfaceFormName)
+        </div>
+
+        <div class="display-label">
+            @Html.Label("Control Name")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ControlName)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.Inactive)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Inactive)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.CreatedBy, "Created By")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CreatedBy)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LastModifiedBy)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LastModifiedDate)
+        </div>
+    </fieldset>
+</div>

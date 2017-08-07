@@ -1,0 +1,137 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryManagementCore", "RepositoryManagementCore\RepositoryManagementCore.csproj", "{27FB01C6-7BC6-48ED-A97D-2A3970F57352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryManagementDto", "RepositoryManagementDto\RepositoryManagementDto.csproj", "{31E15BFA-C642-48BA-B414-31E4DA3693F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{70F6AAFC-E53B-45F9-817B-EDA023D35196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core.extensions.data", "..\..\..\..\..\Phoenix\Applications\OfferEngineServices\main\src\extensions\core.extensions.data\core.extensions.data.csproj", "{F6523D1E-514A-4DF4-96C3-128F2167A633}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core.extensions.primitives", "..\..\..\..\..\Phoenix\Applications\OfferEngineServices\main\src\extensions\core.extensions.primitives\core.extensions.primitives.csproj", "{F2560EE2-C341-4481-B6B7-AF1F0B54F241}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryManagementData", "RepositoryManagementData\RepositoryManagementData.csproj", "{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryManagementCommon", "RepositoryManagementCommon\RepositoryManagementCommon.csproj", "{EC412788-BDBF-4F2C-B2B9-6467D8196112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryManagementServices", "RepositoryManagementServices\RepositoryManagementServices.csproj", "{E1144966-A8D7-4AFC-9DD5-814B4014063D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://lpcnocapptfs1:8080/tfs/lpcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\..\\..\\..\\Phoenix\\Applications\\OfferEngineServices\\main\\src\\extensions\\core.extensions.data\\core.extensions.data.csproj
+		SccProjectTopLevelParentUniqueName1 = RepositoryManagement.sln
+		SccProjectName1 = ../../../../../Phoenix/Applications/OfferEngineServices/main/src/extensions/core.extensions.data
+		SccLocalPath1 = ..\\..\\..\\..\\..\\Phoenix\\Applications\\OfferEngineServices\\main\\src\\extensions\\core.extensions.data
+		SccProjectUniqueName2 = ..\\..\\..\\..\\..\\Phoenix\\Applications\\OfferEngineServices\\main\\src\\extensions\\core.extensions.primitives\\core.extensions.primitives.csproj
+		SccProjectTopLevelParentUniqueName2 = RepositoryManagement.sln
+		SccProjectName2 = ../../../../../Phoenix/Applications/OfferEngineServices/main/src/extensions/core.extensions.primitives
+		SccLocalPath2 = ..\\..\\..\\..\\..\\Phoenix\\Applications\\OfferEngineServices\\main\\src\\extensions\\core.extensions.primitives
+		SccProjectUniqueName3 = RepositoryManagementCore\\RepositoryManagementCore.csproj
+		SccProjectName3 = RepositoryManagementCore
+		SccLocalPath3 = RepositoryManagementCore
+		SccProjectUniqueName4 = RepositoryManagementData\\RepositoryManagementData.csproj
+		SccProjectName4 = RepositoryManagementData
+		SccLocalPath4 = RepositoryManagementData
+		SccProjectUniqueName5 = RepositoryManagementDto\\RepositoryManagementDto.csproj
+		SccProjectName5 = RepositoryManagementDto
+		SccLocalPath5 = RepositoryManagementDto
+		SccProjectUniqueName6 = RepositoryManagementCommon\\RepositoryManagementCommon.csproj
+		SccProjectName6 = RepositoryManagementCommon
+		SccLocalPath6 = RepositoryManagementCommon
+		SccProjectUniqueName7 = RepositoryManagementServices\\RepositoryManagementServices.csproj
+		SccProjectName7 = RepositoryManagementServices
+		SccLocalPath7 = RepositoryManagementServices
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{27FB01C6-7BC6-48ED-A97D-2A3970F57352}.Release|x86.ActiveCfg = Release|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{31E15BFA-C642-48BA-B414-31E4DA3693F5}.Release|x86.ActiveCfg = Release|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F6523D1E-514A-4DF4-96C3-128F2167A633}.Release|x86.ActiveCfg = Release|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241}.Release|x86.ActiveCfg = Release|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{24AFEE52-109B-4DFC-A3FB-B61DE8EAA3FC}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EC412788-BDBF-4F2C-B2B9-6467D8196112}.Release|x86.ActiveCfg = Release|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E1144966-A8D7-4AFC-9DD5-814B4014063D}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F6523D1E-514A-4DF4-96C3-128F2167A633} = {70F6AAFC-E53B-45F9-817B-EDA023D35196}
+		{F2560EE2-C341-4481-B6B7-AF1F0B54F241} = {70F6AAFC-E53B-45F9-817B-EDA023D35196}
+	EndGlobalSection
+EndGlobal

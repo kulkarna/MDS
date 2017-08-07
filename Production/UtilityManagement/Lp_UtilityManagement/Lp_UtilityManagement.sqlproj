@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Lp_UtilityManagement</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{b56f1b69-aad9-4792-8b11-cb653317e74e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Lp_UtilityManagement</RootNamespace>
+    <AssemblyName>Lp_UtilityManagement</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Snapshots" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="bin\Release" />
+    <Folder Include="bin" />
+    <Folder Include="dbo\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\zAuditUtilityCompany.sql" />
+    <Build Include="dbo\Tables\zAuditRequestModeHistoricalUsage.sql" />
+    <Build Include="dbo\Tables\UtilityLegacy.sql" />
+    <Build Include="dbo\Tables\UtilityCompanyToUtilityLegacy.sql" />
+    <Build Include="dbo\Tables\zAuditRequestModeEnrollmentType.sql" />
+    <Build Include="dbo\Tables\zAuditRequestModeType.sql" />
+    <Build Include="dbo\Tables\RateClassAlias.sql" />
+    <Build Include="dbo\Tables\RequestModeTypeGenre.sql" />
+    <Build Include="dbo\Tables\zAuditLpStandardRateClass.sql" />
+    <Build Include="dbo\Tables\zAuditRequestModeTypeGenre.sql" />
+    <Build Include="dbo\Tables\zAuditRateClassAlias.sql" />
+    <Build Include="dbo\Tables\RequestModeTypeToRequestModeEnrollmentType.sql" />
+    <Build Include="dbo\Tables\zAuditRequestModeTypeToRequestModeEnrollmentType.sql" />
+    <Build Include="dbo\Tables\zAuditRequestModeTypeToRequestModeTypeGenre.sql" />
+    <Build Include="dbo\Tables\LpStandardLoadProfile.sql" />
+    <Build Include="dbo\Tables\zAuditUserInterfaceControlAndValueGoverningControlVisibility.sql" />
+    <Build Include="dbo\Tables\LoadProfile.sql" />
+    <Build Include="dbo\Tables\RequestModeEnrollmentType.sql" />
+    <Build Include="dbo\Tables\zAuditUserInterfaceControlVisibility.sql" />
+    <Build Include="dbo\Tables\zAuditUserInterfaceForm.sql" />
+    <Build Include="dbo\Tables\LoadProfileAlias.sql" />
+    <Build Include="dbo\Tables\RequestModeType.sql" />
+    <Build Include="dbo\Tables\zAuditUserInterfaceFormControl.sql" />
+    <Build Include="dbo\Tables\UtilityCompany.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\RequestModeTypeToRequestModeTypeGenre.sql" />
+    <Build Include="dbo\Tables\AccountType.sql" />
+    <Build Include="dbo\Tables\ServiceClass.sql" />
+    <Build Include="dbo\Tables\RequestModeHistoricalUsage.sql" />
+    <Build Include="dbo\Tables\zAuditLoadProfile.sql" />
+    <Build Include="dbo\Tables\MeterType.sql" />
+    <Build Include="dbo\Tables\zAuditLpStandardLoadProfile.sql" />
+    <Build Include="dbo\Tables\zAuditLoadProfileAlias.sql" />
+    <Build Include="dbo\Tables\zAuditTariffCode.sql" />
+    <Build Include="dbo\Tables\zAuditLpStandardTariffCode.sql" />
+    <Build Include="dbo\Tables\RequestModeIcap.sql" />
+    <Build Include="dbo\Tables\RateClass.sql" />
+    <Build Include="dbo\Tables\zAuditTariffCodeAlias.sql" />
+    <Build Include="dbo\Tables\TriStateValue.sql" />
+    <Build Include="dbo\Tables\LpStandardTariffCode.sql" />
+    <Build Include="dbo\Tables\UserInterfaceForm.sql" />
+    <Build Include="dbo\Tables\TariffCode.sql" />
+    <Build Include="dbo\Tables\UserInterfaceFormControl.sql" />
+    <Build Include="dbo\Tables\RequestModeIdr.sql" />
+    <Build Include="dbo\Tables\zAuditRequestModeIcap.sql" />
+    <Build Include="dbo\Tables\UserInterfaceControlAndValueGoverningControlVisibility.sql" />
+    <Build Include="dbo\Tables\TariffCodeAlias.sql" />
+    <Build Include="dbo\Tables\UserInterfaceControlVisibility.sql" />
+    <Build Include="dbo\Tables\zAuditAccountType.sql" />
+    <Build Include="dbo\Tables\RequestModeHistoricalUsageParameter.sql" />
+    <Build Include="dbo\Tables\zAuditRequestModeIdr.sql" />
+    <Build Include="dbo\Tables\zAuditServiceClass.sql" />
+    <Build Include="dbo\Tables\Log.sql" />
+    <Build Include="dbo\Tables\zAuditMeterType.sql" />
+    <Build Include="dbo\Tables\PorDriver.sql" />
+    <Build Include="dbo\Tables\PorRecourse.sql" />
+    <Build Include="dbo\Tables\PurchaseOfReceivables.sql" />
+    <Build Include="dbo\Tables\LpStandardRateClass.sql" />
+    <Build Include="dbo\Tables\zAuditRateClass.sql" />
+    <Build Include="dbo\Tables\zAuditPurchaseOfReceivables.sql" />
+    <Build Include="dbo\Tables\ChangeTableVersioning.sql" />
+    <Build Include="Security\LibertyPowerUtilityManagementUser.sql" />
+    <Build Include="Security\LibertyPowerUtilityManagementUser_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PurchaseOfReceivables_SELECT_ByUtilityAndPorDriver.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CheckForExistingUtilityCompanyIdRequestEnrollmentTypeIds.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RequestModeType_SELECT_NameById.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RequestModeEnrollmentType_SELECT_NameById.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditRequestModeHistoricalUsage_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RequestModeTypes_SELECT_By_RequestModeEnrollmentTypeId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CheckForExistingUtilityCompanyIdRequestEnrollmentTypeIdsRequestModeIcap.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RequestModeType_SELECT_DropDownValues_ByRequestModeEnrollmentTypeIdAndRequestModeTypeGenreName.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditRequestModeIcap_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UserInterfaceFormControl_SELECT_By_UserInterfaceFormId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UserInterfaceFormControls_SELECT_By_UserInterfaceFormId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UserInterfaceFormControlValues_SELECT_By_UserInterfaceFormControlId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RequestModeHistoricalUsage_VALIDATE_RequestModeIcapRequestModeType.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RequestModeIcap_VALIDATE_RequestModeHistoricalUsageRequestModeType.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RequestModeHistoricalUsage_VALIDATE_RequestModeIcapRequestModeType_EDIT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CheckForExistingUtilityCompanyIdRequestEnrollmentTypeIdsRequestModeIdr.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RequestModeIcap_VALIDATE_RequestModeHistoricalUsageRequestModeType_EDIT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UserInterfaceForm_SELECT_ControllingControlsAndVisibilityByForm.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TEST_SELECT_RequestModeHistoricalUsage_BY_EnrollmentTypeAndUtility.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UserInterfaceForm_GET_ControllingControlsAndVisibilityByForm.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TEST_SELECT_RequestModeIcap_BY_EnrollmentTypeAndUtility.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RateClass_SELECT_By_UtilityCompanyId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ServiceClass_SELECT_By_UtilityCompanyId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_LoadProfile_SELECT_By_UtilityCompanyId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_MeterType_SELECT_By_UtilityCompanyId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompanies_SELECT_All.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TEST_SELECT_RequestModeIdr_BY_EnrollmentTypeAndUtility.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditRequestModeIdr_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditLoadProfile_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditMeterType_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditRateClass_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditServiceClass_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditTariffCode_SELECT.sql" />
+    <Build Include="dbo\Tables\zAuditIdrRule.sql" />
+    <Build Include="dbo\Tables\IdrRule.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRuleAndRequestMode_Selection.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRuleAndRequestMode_SelectByParams.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRuleAndRequestMode_Select.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_InsufficientInfo.sql" />
+    <Build Include="dbo\Tables\zAuditUtilityTrip.sql" />
+    <Build Include="dbo\Tables\zAuditUtilityBillingType.sql" />
+    <Build Include="dbo\Tables\zAuditMeterReadSchedule.sql" />
+    <Build Include="dbo\Tables\zAuditLpApprovedBillingType.sql" />
+    <Build Include="dbo\Tables\zAuditBillingType.sql" />
+    <Build Include="dbo\Tables\Year.sql" />
+    <Build Include="dbo\Tables\UtilityTrip.sql" />
+    <Build Include="dbo\Tables\UtilityBillingType.sql" />
+    <Build Include="dbo\Tables\Month.sql" />
+    <Build Include="dbo\Tables\MeterReadSchedule.sql" />
+    <Build Include="dbo\Tables\LpDefaultBillingType.sql" />
+    <Build Include="dbo\Tables\LpApprovedBillingType.sql" />
+    <Build Include="dbo\Tables\BillingType.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PurchaseOfReceivables_SELECT_ByUtilityLoadProfileRateClassTariffCodeEffectiveDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_MeterReadSchedule_GetNext.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRuleAndRequestMode_SelectByParam.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ChartOne.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Chart_PorCount.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Chart_PorAvgFlatFee.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Chart_PorAvgDiscountRate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Chart_HuUtilitySla.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Chart_HuLpSla.sql" />
+    <Build Include="dbo\Stored Procedures\usp_BillingType_RetrieveByUtilityRateClassLoadProfileTariffCode.sql" />
+    <Build Include="dbo\Stored Procedures\usp_MeterType_GetCountOfUtilityCompanyIdAndMeterTypeCode.sql" />
+    <Build Include="dbo\Stored Procedures\InsertGenerator.sql" />
+    <Build Include="dbo\Tables\zAuditLpUtilityOfferedBillingType.sql" />
+    <Build Include="dbo\Tables\zAuditLpBillingType.sql" />
+    <Build Include="dbo\Tables\LpUtilityOfferedBillingType.sql" />
+    <Build Include="dbo\Tables\LpBillingType.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TariffCode_SELECT_By_UtilityCompanyId.sql" />
+    <Build Include="dbo\Tables\zAuditAccountInfoFieldRequired.sql" />
+    <Build Include="dbo\Tables\zAuditAccountInfoField.sql" />
+    <Build Include="dbo\Tables\AccountInfoFieldRequired.sql" />
+    <Build Include="dbo\Tables\AccountInfoField.sql" />
+    <Build Include="dbo\Functions\GetAccountFieldInfoUserFriendlyNames.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompany_NotInAccountInfoFieldRequired.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_Match.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_Integrated.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_GuaranteedFactorNotMet.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_Conglomeration.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoFieldRequired_GetByUtility.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountAccountInfoFieldRequired_GetAsGrid.sql" />
+    <Build Include="dbo\Tables\Market.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditTariffCodes_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditRateClasses_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditLoadProfiles_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditAccountInfoFieldRequired_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompany_NotIn_AccountInfoFieldRequired.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Chart_IdrRuleCount.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Chart_HistoricalUsageRequestModeParameters_Count.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Chart_HistoricalUsageRequestModeParameters.sql" />
+    <Build Include="dbo\Stored Procedures\usp_BillingType_RetrieveBy_UtilityRateClassLoadProfileTariffCode.sql" />
+    <Build Include="dbo\Tables\TriStateValuePendingActiveInactive.sql" />
+    <Build Include="dbo\Tables\ServiceAddressZipPattern.sql" />
+    <Build Include="dbo\Tables\ServiceAccountPattern.sql" />
+    <Build Include="dbo\Tables\NameKeyPattern.sql" />
+    <Build Include="dbo\Tables\ISO.sql" />
+    <Build Include="dbo\Tables\BillingAccountPattern.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_Index.sql" />
+    <Build Include="dbo\Tables\StrataPattern.sql" />
+    <Build Include="dbo\Tables\ServiceLevelAgreements.sql" />
+    <Build Include="dbo\Tables\MeterNumberPattern.sql" />
+    <Build Include="dbo\Tables\ICapTCapRefresh.sql" />
+    <Build Include="dbo\Tables\ETL_UtilityInfoForWO08132013.sql" />
+    <Build Include="dbo\Tables\zAuditStrataPattern.sql" />
+    <Build Include="dbo\Tables\zAuditServiceAddressZipPattern.sql" />
+    <Build Include="dbo\Tables\zAuditServiceAccountPattern.sql" />
+    <Build Include="dbo\Tables\zAuditNameKeyPattern.sql" />
+    <Build Include="dbo\Tables\zAuditMeterNumberPattern.sql" />
+    <Build Include="dbo\Tables\zAuditICapTCapRefresh.sql" />
+    <Build Include="dbo\Tables\zAuditBillingAccountPattern.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SynchronizationTables_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_IndexSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompany_Index.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompany_EditSave.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompany_Detail.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompany_Create.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Chart_LpBillingTypeCount_1.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zAuditLpBillingType_SELECT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompany_IndexView.sql" />
+    <Build Include="dbo\Tables\UtilityPermissionToUtilityPermissionLegacy.sql" />
+    <Build Include="dbo\Tables\UtilityPermissionLegacy.sql" />
+    <Build Include="dbo\Tables\UtilityPermission.sql" />
+    <Build Include="dbo\Tables\ImpUtilityCodes.sql" />
+    <Build Include="dbo\Tables\ImpTariffCode.sql" />
+    <Build Include="dbo\Tables\ImpRequestModeIdr.sql" />
+    <Build Include="dbo\Tables\ImpRequestModeICap.sql" />
+    <Build Include="dbo\Tables\ImpRequestModeHistoricalUsage.sql" />
+    <Build Include="dbo\Tables\ImpRateClass.sql" />
+    <Build Include="dbo\Tables\ImpPOR.sql" />
+    <Build Include="dbo\Tables\ImportRateClass.sql" />
+    <Build Include="dbo\Tables\ImpLoadProfile.sql" />
+    <Build Include="dbo\Tables\ImpBillingTypes.sql" />
+    <Build Include="dbo\Tables\ImpAccountInfoRequired.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompany_Index_Select.sql" />
+    <Build Include="dbo\Tables\ImpIdrRule.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_UtiiltyAttributes_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_StrataPattern_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_ServiceLevelAgreements_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_ServiceAddressZipPattern_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_ServiceAccountPattern_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_NameKeyPattern_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_MeterNumberPattern_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_IdrRequestCost_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_ICapTCapRefresh_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DataSync_BillingAccountPattern_GetByLastModifiedDate.sql" />
+    <Build Include="dbo\Stored Procedures\Insert_Generator.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_IndexSelected.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRuleAndRequestMode_SelectByParamWithTariffCode.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_IntegratedWithTariffCode.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UtilityCompany_DoesUtilityCodeBelongToIso.sql" />
+    <Build Include="dbo\Views\vw_UtilityPermission_2.sql" />
+    <Build Include="dbo\Views\vw_Utility_2.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_IntegratedWithTariffCodeAndAlwaysRequestCheck.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_IntegratedWithTariffCodeAndAlwaysRequest.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IdrRule_Integrated_WithAlwaysRequestCheck.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Snapshots\Lp_UtilityManagement_20130723_09-14-54.dacpac" />
+  </ItemGroup>
+</Project>

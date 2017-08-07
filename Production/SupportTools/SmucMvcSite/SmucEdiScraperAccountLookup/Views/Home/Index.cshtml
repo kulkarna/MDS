@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "SMUC--Sales Margin Under Contract";                          
+}
+<style type="text/css">
+    #loading
+    {
+        display:none;
+        position:fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        background:rgba(255,255,255,0.8);
+        z-index:1000;
+    }
+  
+    #loadingcontent
+    {
+        display:table;
+        position:fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+    }
+  
+    #loadingspinner
+    {
+        display: table-cell;
+        vertical-align:middle;
+        width: 100%;
+        text-align: center;
+        font-size:larger;
+        padding-top:80px;
+    }
+</style>
+                               
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1><br />
+                <h2>Your New Home For All Things SMUC!</h2>
+                <h3>Home Page</h3>
+            </hgroup>
+            <table>
+                <tr style="border-color: transparent; background-color: transparent">
+                    <td>
+                        <div class="icotop" >
+                            <table>
+                                <tr>
+                                    <td><img src="http://lpcnocwsdelta1/images/XlUpload.png" width="93" height="93"></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="~/FileUpload">Bulk File Upload<br/>and I-Cap, T-Cap,<br/>Load Profile, Rate Class,<br/>Zone Data Download</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="icotop" >
+                            <table>
+                                <tr>
+                                    <td><img src="~/images/scraper.jpg" width="180" height="93"></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="~/Scraper">Go To Scraper Data Retrieval</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td style="border-color: transparent; background-color: transparent">
+                        <div class="icotop" >
+                            <table>
+                                <tr>
+                                    <td><img src="~/images/edi.png" width="93" height="93"></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="~/Edi">Go To EDI<br/>Data Request</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+<script type="text/javascript">
+    $(function () {
+        $("#submitbtn").click(function () {
+            alert('Hi');
+            $("#loading").fadeIn();
+        });
+    });
+</script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/spin.min.js")"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#submitbtn").click(function () {
+            alert('hi');
+            $("#loading").fadeIn();
+            var opts = {
+                lines: 12, // The number of lines to draw
+                length: 7, // The length of each line
+                width: 4, // The line thickness
+                radius: 10, // The radius of the inner circle
+                color: '#000', // #rgb or #rrggbb
+                speed: 1, // Rounds per second
+                trail: 60, // Afterglow percentage
+                shadow: false, // Whether to render a shadow
+                hwaccel: false // Whether to use hardware acceleration
+            };
+            var target = document.getElementById('loading');
+            var spinner = new Spinner(opts).spin(target);
+        });
+    });
+</script>
+<script>
+    function Utility_onChange() {
+        //if ($("select#UtilityCompanyId").val() != "-1") {
+        $.ajax({
+            type: 'POST',
+            url: "/Home/BulkScraper",
+            datatype: 'json',
+            async: false,
+            data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+            success: function (data) { },
+            error: function (xhr) { alert("Something seems Wrong"); }
+        });
+        document.location.href = '/Home/Index';
+    };
+    //};
+</script>

@@ -1,0 +1,2 @@
+﻿CREATE USER [dmaia] WITHOUT LOGIN;
+

@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[zAuditLpStandardRateClass] (
+    [IdPrimary]                       UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
+    [Id]                              UNIQUEIDENTIFIER NOT NULL,
+    [LpStandardRateClassCode]         NVARCHAR (255)   NOT NULL,
+    [Inactive]                        BIT              NOT NULL,
+    [CreatedBy]                       NVARCHAR (100)   NOT NULL,
+    [CreatedDate]                     DATETIME         NOT NULL,
+    [LastModifiedBy]                  NVARCHAR (100)   NOT NULL,
+    [LastModifiedDate]                DATETIME         NOT NULL,
+    [IdPrevious]                      UNIQUEIDENTIFIER NULL,
+    [LpStandardRateClassCodePrevious] NVARCHAR (255)   NULL,
+    [InactivePrevious]                BIT              NULL,
+    [CreatedByPrevious]               NVARCHAR (100)   NULL,
+    [CreatedDatePrevious]             DATETIME         NULL,
+    [LastModifiedByPrevious]          NVARCHAR (100)   NULL,
+    [LastModifiedDatePrevious]        DATETIME         NULL,
+    [SYS_CHANGE_VERSION]              BIGINT           NULL,
+    [SYS_CHANGE_CREATION_VERSION]     BIGINT           NULL,
+    [SYS_CHANGE_OPERATION]            NCHAR (1)        NULL,
+    [SYS_CHANGE_COLUMNS]              NVARCHAR (1000)  NULL,
+    [UtilityCompanyId]                UNIQUEIDENTIFIER NOT NULL,
+    [UtilityCompanyIdPrevious]        UNIQUEIDENTIFIER NULL,
+    CONSTRAINT [PK_zAuditLpStandardRateClass] PRIMARY KEY CLUSTERED ([IdPrimary] ASC)
+);
+

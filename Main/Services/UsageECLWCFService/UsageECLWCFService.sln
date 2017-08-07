@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageEclWcfService", "UsageECLWCFService\UsageEclWcfService.csproj", "{6F92B757-C429-47A8-BEF8-283603535C1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageEclBusinessLayer", "ECLBusinessLayer\UsageEclBusinessLayer.csproj", "{10162EDC-6B3C-4A05-9351-92E68C7B12FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageEclRepository", "ECLRepository\UsageEclRepository.csproj", "{0034497E-A594-459B-A3CA-07C171350A93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageEclWcfServiceData", "ECLDataService\UsageEclWcfServiceData.csproj", "{769AB112-63EB-4509-8E7D-6D1F8945466C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageEclDataMapper", "UsageEclDataMapper\UsageEclDataMapper\UsageEclDataMapper.csproj", "{F5D72EAB-F9A1-4FEC-B035-2F96A4FDAE41}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://lpcnocapptfs1:8080/tfs/lpcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UsageECLWCFService\\UsageEclWcfService.csproj
+		SccProjectName1 = UsageECLWCFService
+		SccLocalPath1 = UsageECLWCFService
+		SccProjectUniqueName2 = UsageEclDataMapper\\UsageEclDataMapper\\UsageEclDataMapper.csproj
+		SccProjectName2 = UsageEclDataMapper/UsageEclDataMapper
+		SccLocalPath2 = UsageEclDataMapper\\UsageEclDataMapper
+		SccProjectUniqueName3 = ECLRepository\\UsageEclRepository.csproj
+		SccProjectName3 = ECLRepository
+		SccLocalPath3 = ECLRepository
+		SccProjectUniqueName4 = ECLDataService\\UsageEclWcfServiceData.csproj
+		SccProjectName4 = ECLDataService
+		SccLocalPath4 = ECLDataService
+		SccProjectUniqueName5 = ECLBusinessLayer\\UsageEclBusinessLayer.csproj
+		SccProjectName5 = ECLBusinessLayer
+		SccLocalPath5 = ECLBusinessLayer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F92B757-C429-47A8-BEF8-283603535C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F92B757-C429-47A8-BEF8-283603535C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F92B757-C429-47A8-BEF8-283603535C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F92B757-C429-47A8-BEF8-283603535C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10162EDC-6B3C-4A05-9351-92E68C7B12FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10162EDC-6B3C-4A05-9351-92E68C7B12FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10162EDC-6B3C-4A05-9351-92E68C7B12FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10162EDC-6B3C-4A05-9351-92E68C7B12FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0034497E-A594-459B-A3CA-07C171350A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0034497E-A594-459B-A3CA-07C171350A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0034497E-A594-459B-A3CA-07C171350A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0034497E-A594-459B-A3CA-07C171350A93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{769AB112-63EB-4509-8E7D-6D1F8945466C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{769AB112-63EB-4509-8E7D-6D1F8945466C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{769AB112-63EB-4509-8E7D-6D1F8945466C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{769AB112-63EB-4509-8E7D-6D1F8945466C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5D72EAB-F9A1-4FEC-B035-2F96A4FDAE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5D72EAB-F9A1-4FEC-B035-2F96A4FDAE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5D72EAB-F9A1-4FEC-B035-2F96A4FDAE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5D72EAB-F9A1-4FEC-B035-2F96A4FDAE41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

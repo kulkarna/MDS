@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LibertyPower.RepositoryManagement.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LibertyPower.RepositoryManagement.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TrackedField">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AccountType" />
+      <xs:enumeration value="BillingAccount" />
+      <xs:enumeration value="Grid" />
+      <xs:enumeration value="ICap" />
+      <xs:enumeration value="LBMPZone" />
+      <xs:enumeration value="LoadProfile" />
+      <xs:enumeration value="LoadShapeID" />
+      <xs:enumeration value="LossFactor" />
+      <xs:enumeration value="MeterNumber" />
+      <xs:enumeration value="MeterType" />
+      <xs:enumeration value="NameKey" />
+      <xs:enumeration value="RateClass" />
+      <xs:enumeration value="ServiceAddressZipCode" />
+      <xs:enumeration value="ServiceClass" />
+      <xs:enumeration value="Strata" />
+      <xs:enumeration value="TariffCode" />
+      <xs:enumeration value="Utility" />
+      <xs:enumeration value="TCap" />
+      <xs:enumeration value="Voltage" />
+      <xs:enumeration value="Zone" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrackedField" nillable="true" type="tns:TrackedField" />
+</xs:schema>

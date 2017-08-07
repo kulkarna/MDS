@@ -1,0 +1,98 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.ServiceClass>
+@{
+    ViewBag.Title = "Service Class Index";
+}
+
+<div class="form-details">
+    <div class="form-title">
+        <div class="form-title-general">Index:&nbsp;</div>
+        <div class="form-title-specific">Service Class</div>
+    </div>
+    <div class="form-information">&nbsp;&nbsp;Information</div>
+    <div class="details-data-section">
+        <div class="details-full-section">
+<p>
+    @Html.ActionLink("Create New Service Class", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.ActionLink("Utility Code", "UtilityCodeTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Service Class Code", "ServiceClassCodeTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Description", "DescriptionTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Account Type", "AccountTypeTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Liberty Power Standard Service Class", "LpStandardServiceClassTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Inactive", "InactiveTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Created By", "CreatedByTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Created Date", "CreatedDateTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Last Modified By", "LastModifiedByTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Last Modified Date", "LastModifiedDateTitleClick")
+        </th>
+        <th></th>
+    </tr>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceClassCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountType.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LpStandardServiceClass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inactive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+        </td>
+        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id })
+        </td>
+    </tr>
+}
+}
+</table>
+        </div>
+    </div>
+</div>
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}

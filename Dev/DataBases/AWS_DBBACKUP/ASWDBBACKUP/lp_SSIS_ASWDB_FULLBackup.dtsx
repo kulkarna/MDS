@@ -1,0 +1,2302 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/17/2013 3:58:18 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="LPCD7X64-017"
+  DTS:CreatorName="LIBERTYPOWER\lkoewing"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{8FAE26B5-EB15-443E-BD55-4991CC472581}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.5058.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="lp_SSIS_ASW_DBBackup"
+  DTS:PackageType="5"
+  DTS:VersionBuild="562"
+  DTS:VersionGUID="{CD86A015-E076-4B83-AC5E-17AD5573DFE1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[cm_Audit]"
+      DTS:CreationName="OLEDB"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+      DTS:ObjectName="cm_Audit">
+      <DTS:PropertyExpression
+        DTS:Name="InitialCatalog">@[User::cm_Audit_DBName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::cm_Audit_InstanceName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LPCD7X64-074\SQL2012;Initial Catalog=lp_DB_Backup_Audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ffSSISLogFile]"
+      DTS:CreationName="FILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{C9BEB620-400C-4F61-AEA2-06CC91AD8B6C}"
+      DTS:ObjectName="ffSSISLogFile">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::cmLogFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\\SSIS\Logs\lp_SSIS_ASW_DBBackup_20150721083156.log" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ServerCon]"
+      DTS:CreationName="ADO.NET:SQL"
+      DTS:DTSID="{FD0271A6-81B7-4EED-A00C-2B5AABD54C83}"
+      DTS:ObjectName="ServerCon">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::cm_Audit_InstanceName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LPCD7X64-074\SQL2012;Integrated Security=True;Connect Timeout=30;Application Name=SSIS-lp_SSIS_ASW_DBBackup-{FD0271A6-81B7-4EED-A00C-2B5AABD54C83}ServerCon;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
+      DTS:CreationName="SMTP"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{7DAF96FA-CF12-4E9F-A066-8450A1C28BAA}"
+      DTS:ObjectName="SMTP Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="SmtpServer">@[User::SMTPMailServer]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UseWindowsAuthentication">@[User::SMTP_WindowsAuthentication]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=mail.libertypower.local;UseWindowsAuthentication=False;EnableSsl=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="D:\PackageDeployment\ASWDBBACKUP\ASWDBBACKUP.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{D4901EA0-67F1-496B-8177-E91B5CB7591F}"
+      DTS:ObjectName="Cm_Audit" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;SSISFolderRoot&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{BE13398A-92DA-4E81-9FB2-C34B301034B1}"
+      DTS:ObjectName="SSISFolderRoot" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;Mail_FromLine&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{F8FC56B0-C90B-476D-BC99-D06CB63303C6}"
+      DTS:ObjectName="Mail_FromLine" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;Mail_ToLine&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{8BD3D3A8-9759-423B-A387-511831CDA3CE}"
+      DTS:ObjectName="Mail_ToLine" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;SMTP_WindowsAuthentication&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{5C00AFF0-7F76-494D-9BA5-C0716215D271}"
+      DTS:ObjectName="SMTP_WindowsAuthentication" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;Audit_Disable&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{2E39C839-53B8-459B-B266-90DDDC1390B9}"
+      DTS:ObjectName="Audit_Disable" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;ISEmailTriggered&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{72A4217D-BA76-4B23-B49D-5F7ADBEA0DB9}"
+      DTS:ObjectName="ISEmailTriggered" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;SMTPMailServer&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{6C0A8D14-FF5D-48CA-9DFC-17110A3559E5}"
+      DTS:ObjectName="SMTPMailServer" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;LocalDBBackupFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{56F43ECA-FAC6-46EE-A20C-52A4A1591073}"
+      DTS:ObjectName="LocalDBBackupFolder" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;SharedDBBackupFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{59067DD9-1587-49EF-8FBD-23E78D5493B6}"
+      DTS:ObjectName="SharedDBBackupFolder" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;cm_Audit&quot;;&quot;[dbo].[Audit_Configurations]&quot;;&quot;ISCopyBackupFileSharedFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{D6462D0B-D8D0-404B-8726-CC0C360DA34F}"
+      DTS:ObjectName="ISCopyBackupFileSharedFolder" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4F127EDA-4CE8-4305-9F9D-856FFD34E4F2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_DestinationTableName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B13F81CF-0427-43D9-A045-184788EA1E1D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_Disable">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{66E7A4FF-AE60-4787-99BE-FD44D13EE89C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_EndAudit">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AE7E3657-4E3B-4D01-803B-E67C7C6EC90D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_JobID">
+      <DTS:VariableValue
+        DTS:DataType="8">'00000000-0000-0000-0000-000000000000'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B3FDAE64-26FF-481D-A135-5B6143DAE5C6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_JobName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F0B0187D-80AF-44B6-AA48-BA73A1234737}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_Outcome">
+      <DTS:VariableValue
+        DTS:DataType="8">Success</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{18387D5F-57AE-4B13-BAD9-F8E5D1A96A26}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_Parameters">
+      <DTS:VariableValue
+        DTS:DataType="8">N/A</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{665C448C-502B-4DDD-B709-66211B0B6FA5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_RowsDelivered">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{034166F2-27C6-4276-AFD6-01E8A9ABA7E1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_RowsDelivered_SUM">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CCB450B0-2378-45C0-BFC2-BE30F1E41DC2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_SQLJobInstanceName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D2154E19-FD19-4E93-8EED-5B3F5ABC5B0F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_StartAudit">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5437B29F-F160-4C82-A360-B880581E7B06}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_StepID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CF68DFA3-9D8A-4BFD-8D3F-166EB1ED8004}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Audit_StepName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0C1D21E3-BAB9-4BEC-A070-2B8580DCFF3C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SSISFolderLogFiles] +  @[System::PackageName] + &quot;_&quot; + &#xA;REPLACE((DT_WSTR,10) ((DT_DBDATE) @[System::StartTime] ),&quot;-&quot;,&quot;&quot;)+ &#xA;REPLACE((DT_WSTR,10) ((DT_DBTIME) @[System::StartTime] ),&quot;:&quot;,&quot;&quot;)+&quot;.log&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="cmLogFileName">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\\SSIS\Logs\lp_SSIS_ASW_DBBackup_20150721083156.log</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6BE2A62E-9777-4C50-91CE-8C11631D198B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="cm_Audit_DBName">
+      <DTS:VariableValue
+        DTS:DataType="8">lp_DB_Backup_Audit</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{21C7997B-BA7A-4197-B7FA-8A46F85E5F27}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="cm_Audit_InstanceName">
+      <DTS:VariableValue
+        DTS:DataType="8">LPCD7X64-074\SQL2012</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CF4EE9BD-6B8C-44A3-B5C7-92A53B02A7F8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ISCopyBackupFileSharedFolder">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2CB5A698-59E7-4C27-8988-2B1401E849BB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsEmailTrigger">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8FB4E5D4-5D0F-4162-B6F9-F87B1EE95A32}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LocalDBBackupFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\\Temporary Files</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5F981832-7038-471A-9E58-EF371957D20B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Mail_FromLine">
+      <DTS:VariableValue
+        DTS:DataType="8">LPCNOCSBI1ODS_SA_SVC@libertypowercorp.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C5DFD524-AF77-4D45-AE3A-1FCFE90A5A34}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Mail_ToLine">
+      <DTS:VariableValue
+        DTS:DataType="8">srao@libertypowercorp.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{988C79B2-3B6F-43B4-A822-4EBFBEABD3C8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SharedDBBackupFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">\\lpcftlfs1\InformationTechnology\Santosh</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FD91DD56-5FAC-46C4-A0BB-86FE374E139D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTPMailServer">
+      <DTS:VariableValue
+        DTS:DataType="8">mail.libertypower.local</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E759690B-4275-4824-A968-022D34BA8FC1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTP_WindowsAuthentication">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8595DDE2-F738-4F1C-AFB0-0BE584A0D177}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFileName">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\\Temporary Files\msdb_backup_2015_04_27_113331_7015144.bak</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E0F7F07C-DDF2-4B2A-9675-B60056F9B74C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SSISFolderValidRoot] + &quot;AuditCommands\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SSISAuditCommands">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\\SSIS\AuditCommands\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2FB24E34-3B17-45A4-B5A4-235D5911A1C4}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SSISFolderValidRoot] + &quot;Logs\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SSISFolderLogFiles">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\\SSIS\Logs\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2C105132-9DEB-4F4A-AEB9-6C3C61C823A5}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SSISFolderValidRoot] + &quot;Packages\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SSISFolderPackages">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\\SSIS\Packages\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{56DA21E0-4E04-496A-907F-C6EB3ECED39A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SSISFolderRoot">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\\SSIS</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E658FED6-68C0-441B-91FA-E7078879BDC5}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="RIGHT(@[User::SSISFolderRoot], 1) == &quot;\\&quot; ?  @[User::SSISFolderRoot] :  @[User::SSISFolderRoot] + &quot;\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SSISFolderValidRoot">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\\SSIS\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AAA6E4AB-A3CA-4637-8CF5-316C30A86522}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Task_Outcome">
+      <DTS:VariableValue
+        DTS:DataType="8">Success</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="2">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">4,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\End of Audit"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{996B1818-E1B5-485F-B9FA-12B55E0D80E4}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:ISOLevel="256"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End of Audit">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:PropertyExpression
+        DTS:Name="Disable">@[User::Audit_Disable]</DTS:PropertyExpression>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\End of Audit\Get Row Delivered SUM"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{15E9E0CD-F31D-4822-A43E-295C00703208}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ISOLevel="256"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get Row Delivered SUM"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"SELECT SUM(RowsDelivered) AS Audit_RowsDelivered_SUM
+  FROM [dbo].[SSIS_TaskAudit] WITH (NOLOCK)
+  WHERE ExecutionID = '" + @[System::ExecutionInstanceGUID] + "'
+  AND SourceDescription = 'Data Flow Task'"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+              SQLTask:SqlStatementSource="SELECT SUM(RowsDelivered) AS Audit_RowsDelivered_SUM&#xA;  FROM [dbo].[SSIS_TaskAudit] WITH (NOLOCK)&#xA;  WHERE ExecutionID = '{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}'&#xA;  AND SourceDescription = 'Data Flow Task'"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="Audit_RowsDelivered_SUM"
+                SQLTask:DtsVariableName="User::Audit_RowsDelivered_SUM" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\End of Audit\Update SSIS_PackageAudit table"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8DC804AB-44A0-47C2-BB69-F38E9FA97F51}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ISOLevel="256"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update SSIS_PackageAudit table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"UPDATE dbo.SSIS_PackageAudit 
+SET EndTime = CAST(LEFT('" + (DT_WSTR, 35) GETDATE() + "', 19) AS datetime) 
+, Outcome = '" + @[User::Audit_Outcome] + "'
+, RowsDelivered = '" + (DT_WSTR, 100) @[User::Audit_RowsDelivered_SUM] + "'
+, EventType = '" + @[System::TaskName] + "'
+WHERE ExecutionID = '" + @[System::ExecutionInstanceGUID] + "'"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+              SQLTask:SqlStatementSource="UPDATE dbo.SSIS_PackageAudit &#xA;SET EndTime = CAST(LEFT('2015-07-23 08:42:29.308000000', 19) AS datetime) &#xA;, Outcome = 'Success'&#xA;, RowsDelivered = '0'&#xA;, EventType = 'Update SSIS_PackageAudit table'&#xA;WHERE ExecutionID = '{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\End of Audit.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{CCBEEDB5-71B1-4784-94DC-BAA7B45FA141}"
+          DTS:From="Package\End of Audit\Get Row Delivered SUM"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\End of Audit\Update SSIS_PackageAudit table"
+          DTS:Value="2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\lp_SSIS_ASW_DBBackup"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{8C880AAA-D7AE-41B0-8C8E-A5D672E4B81E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="lp_SSIS_ASW_DBBackup">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:PropertyExpression
+        DTS:Name="Name">@[System::PackageName]</DTS:PropertyExpression>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\lp_SSIS_ASW_DBBackup\Back Up Database Task"
+          DTS:CreationName="Microsoft.SqlServer.Management.DatabaseMaintenance.DbMaintenanceBackupTask, Microsoft.SqlServer.MaintenancePlanTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Back Up Database Task"
+          DTS:DTSID="{F4FC5AAE-C957-46D7-815B-6CF9BA085310}"
+          DTS:ExecutableType="Microsoft.SqlServer.Management.DatabaseMaintenance.DbMaintenanceBackupTask, Microsoft.SqlServer.MaintenancePlanTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Back Up Database Task"
+          DTS:TaskContact="Back Up Database Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:PropertyExpression
+            DTS:Name="DestinationAutoFolderPath">@[User::LocalDBBackupFolder]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FD0271A6-81B7-4EED-A00C-2B5AABD54C83}"
+              SQLTask:DatabaseSelectionType="4"
+              SQLTask:ServerVersion="11"
+              SQLTask:ExtendedLogging="True"
+              SQLTask:LocalConnectionForLogging=""
+              SQLTask:TaskName=""
+              SQLTask:IgnoreDatabasesInNotOnlineState="False"
+              SQLTask:BackupAction="0"
+              SQLTask:BackupIsIncremental="False"
+              SQLTask:BackupFileGroupsFiles=""
+              SQLTask:BackupDeviceType="2"
+              SQLTask:BackupPhisycalDestinationType="2"
+              SQLTask:BackupDestinationType="0"
+              SQLTask:BackupDestinationAutoFolderPath="D:\\Temporary Files"
+              SQLTask:BackupActionForExistingBackups="0"
+              SQLTask:BackupCreateSubFolder="False"
+              SQLTask:BackupFileExtension=""
+              SQLTask:BackupVerifyIntegrity="True"
+              SQLTask:ExpireDate="2015-08-06T00:00:00"
+              SQLTask:RetainDays="14"
+              SQLTask:InDays="True"
+              SQLTask:UseExpiration="False"
+              SQLTask:BackupCompressionAction="0"
+              SQLTask:CopyOnlyBackup="False"
+              SQLTask:IgnoreReplicaType="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:SelectedDatabases
+                SQLTask:DatabaseName="lp_SSIS_Audit" />
+              <SQLTask:SelectedDatabases
+                SQLTask:DatabaseName="Market" />
+              <SQLTask:SelectedDatabases
+                SQLTask:DatabaseName="msdb" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to delete files"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{588B6652-CF7F-4FB6-BDBD-038763E5BC96}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Foreach Loop to delete files">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{8DF7B720-786E-404E-B90B-BE431F05E590}"
+            DTS:ObjectName="{8DF7B720-786E-404E-B90B-BE431F05E590}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::LocalDBBackupFolder]</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="D:\\Temporary Files" />
+                <FEFEProperty
+                  FileSpec="*.*" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to delete files\Delete Old Files"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="File System Task"
+              DTS:DTSID="{4bc13b11-5020-4310-9d49-a6a7c7868ea8}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Delete Old Files"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskOperationType="DeleteFile"
+                  TaskSourcePath="User::SourceFileName"
+                  TaskIsSourceVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{54C5F14A-9FF0-4601-AEA1-5FED35B4BBE0}"
+              DTS:ObjectName="{54C5F14A-9FF0-4601-AEA1-5FED35B4BBE0}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::SourceFileName" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to move file to shared location"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{41EB4101-B6F7-4D65-A497-0BD83D080603}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Foreach Loop to move file to shared location">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{FC9E1D76-C5E1-47F6-AE03-074CD7548D10}"
+            DTS:ObjectName="{FC9E1D76-C5E1-47F6-AE03-074CD7548D10}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::LocalDBBackupFolder]</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="D:\\Temporary Files" />
+                <FEFEProperty
+                  FileSpec="*.*" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to move file to shared location\Move Backup File To Shared Location"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="File System Task"
+              DTS:DTSID="{337ebb14-b587-4390-9e42-08904eea4d5b}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Move Backup File To Shared Location"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskSourcePath="User::SourceFileName"
+                  TaskIsSourceVariable="True"
+                  TaskDestinationPath="User::SharedDBBackupFolder"
+                  TaskIsDestinationVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{56C22166-BA5C-4C16-8B3E-408B3BACB560}"
+              DTS:ObjectName="{56C22166-BA5C-4C16-8B3E-408B3BACB560}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::SourceFileName" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\lp_SSIS_ASW_DBBackup.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F84F9055-48A3-4D60-9EF0-10C0AB7582D7}"
+          DTS:From="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to delete files"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\lp_SSIS_ASW_DBBackup\Back Up Database Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\lp_SSIS_ASW_DBBackup.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{D695FD97-45CE-42D9-B692-6A13F844934B}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::ISCopyBackupFileSharedFolder]==TRUE"
+          DTS:From="Package\lp_SSIS_ASW_DBBackup\Back Up Database Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to move file to shared location" />
+      </DTS:PrecedenceConstraints>
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{B6937397-CA43-4982-B651-0BFEDFD9B9E7}"
+          DTS:EventID="167951504"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{C3C00228-0416-42F7-988E-5B28BAFD0B31}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPostExecute]\Audit Post Execute"
+              DTS:CreationName="STOCK:SEQUENCE"
+              DTS:DelayValidation="True"
+              DTS:Description="Sequence Container"
+              DTS:DTSID="{92e7e997-95ab-4290-9d06-0a381c40adec}"
+              DTS:ExecutableType="STOCK:SEQUENCE"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Audit Post Execute">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="Disable">@[User::Audit_Disable]</DTS:PropertyExpression>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPostExecute]\Audit Post Execute\OnPostExecute"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{35b17a51-8a44-4ec9-a9b0-f18a5136768f}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="OnPostExecute"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:PropertyExpression
+                    DTS:Name="SqlStatementSource">"UPDATE dbo.SSIS_TaskAudit SET EndTime = getdate()
+, Outcome = '" + @[User::Task_Outcome] + "'
+, FailedConfigurations = '" +  @[System::FailedConfigurations] + "'
+, RowsDelivered = CASE WHEN (SourceDescription = 'Data Flow Task' OR TaskName = 'Calculate RowsDelivered') and '" + @[User::Task_Outcome] + "' ='Sucess' THEN '" + (DT_WSTR, 50)@[User::Audit_RowsDelivered] + "' ELSE 0 END
+, EventType = '" + @[System::TaskName] + "'
+, OutputNameset = '" + @[User::Audit_Parameters] + "' WHERE ExecutionID = '" + @[System::ExecutionInstanceGUID] + "' AND TaskID = '" + @[System::SourceID] + "' AND ID = ( Select Max(ID) as 'ID' from dbo.SSIS_TaskAudit where  ExecutionID = '" + @[System::ExecutionInstanceGUID] + "' AND TaskID = '" + @[System::SourceID] + "' ) "</DTS:PropertyExpression>
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                      SQLTask:SqlStatementSource="UPDATE dbo.SSIS_TaskAudit SET EndTime = getdate()&#xA;, Outcome = 'Success'&#xA;, FailedConfigurations = ''&#xA;, RowsDelivered = CASE WHEN (SourceDescription = 'Data Flow Task' OR TaskName = 'Calculate RowsDelivered') and 'Success' ='Sucess' THEN '0' ELSE 0 END&#xA;, EventType = 'OnPostExecute'&#xA;, OutputNameset = 'N/A' WHERE ExecutionID = '{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}' AND TaskID = '' AND ID = ( Select Max(ID) as 'ID' from dbo.SSIS_TaskAudit where  ExecutionID = '{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}' AND TaskID = '' ) " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{C54C0545-575F-47E7-AB5B-A1E6EBB33409}"
+          DTS:EventID="167951504"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{C3FA2840-4EFB-445F-AA12-8F8D5EF0F144}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute"
+              DTS:CreationName="STOCK:SEQUENCE"
+              DTS:DelayValidation="True"
+              DTS:Description="Sequence Container"
+              DTS:DTSID="{b38ce367-8637-4d0b-bf91-4281121ad0cd}"
+              DTS:ExecutableType="STOCK:SEQUENCE"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Audit Pre Execute">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="Disable">@[User::Audit_Disable]</DTS:PropertyExpression>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute\OnPreExecute"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:DelayValidation="True"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{bb8fd7e5-86e2-4676-84f8-6e59c95b4fee}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:ISOLevel="256"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="OnPreExecute"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:PropertyExpression
+                    DTS:Name="SqlStatementSource">"INSERT INTO [dbo].[SSIS_TaskAudit]
+           ([ExecutionID]
+           ,[PackageID]
+           ,[TaskName]
+           ,[TaskID]
+           ,[SourceParentGUID]
+           ,[SourceDescription]
+           ,[StartTime]
+           ,[EndTime]
+           ,[RowsDelivered]
+           ,[Outcome]
+           ,[EventType]
+           ,[FailedConfigurations]
+           ,[OutputNameSet])
+
+VALUES('" + @[System::ExecutionInstanceGUID] + "'
+, '" + @[System::PackageID] + "'
+, '" + @[System::SourceName] + "'
+, '" + @[System::SourceID] + "'
+, '" + @[System::SourceParentGUID] + "'
+, '" + @[System::SourceDescription] + "'
+, getdate()
+, NULL
+, NULL
+, NULL
+, '" + @[System::TaskName] + "'
+, NULL
+, '" + @[User::Audit_Parameters] + "')
+"</DTS:PropertyExpression>
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                      SQLTask:SqlStatementSource="INSERT INTO [dbo].[SSIS_TaskAudit]&#xA;           ([ExecutionID]&#xA;           ,[PackageID]&#xA;           ,[TaskName]&#xA;           ,[TaskID]&#xA;           ,[SourceParentGUID]&#xA;           ,[SourceDescription]&#xA;           ,[StartTime]&#xA;           ,[EndTime]&#xA;           ,[RowsDelivered]&#xA;           ,[Outcome]&#xA;           ,[EventType]&#xA;           ,[FailedConfigurations]&#xA;           ,[OutputNameSet])&#xA;&#xA;VALUES('{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}'&#xA;, '{8FAE26B5-EB15-443E-BD55-4991CC472581}'&#xA;, ''&#xA;, ''&#xA;, ''&#xA;, ''&#xA;, getdate()&#xA;, NULL&#xA;, NULL&#xA;, NULL&#xA;, 'OnPreExecute'&#xA;, NULL&#xA;, 'N/A')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute\Set Audit Outcome to Sucess"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:DelayValidation="True"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{6320eca6-ee59-47a1-a6c4-e7e8ae468b5b}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:ISOLevel="256"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Set Audit Outcome to Sucess"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:PropertyExpression
+                    DTS:Name="Disable">@[User::Audit_Disable]</DTS:PropertyExpression>
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                      SQLTask:SqlStatementSource="SELECT 'Sucess' AS Outcome"
+                      SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ResultBinding
+                        SQLTask:ResultName="Outcome"
+                        SQLTask:DtsVariableName="User::Task_Outcome" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute.PrecedenceConstraints[Constraint]"
+                  DTS:CreationName=""
+                  DTS:DTSID="{5faa4040-6bda-4515-81da-439d72de2141}"
+                  DTS:From="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute\Set Audit Outcome to Sucess"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint"
+                  DTS:To="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute\OnPreExecute" />
+              </DTS:PrecedenceConstraints>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnTaskFailed]"
+          DTS:CreationName="OnTaskFailed"
+          DTS:DTSID="{7A880C11-1714-473E-8E7D-8AF5CE9099A3}"
+          DTS:EventID="416107068"
+          DTS:EventName="OnTaskFailed"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{1921055A-B8A3-454F-9FCE-3E20C3F199E1}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnTaskFailed]\Audit OnError"
+              DTS:CreationName="STOCK:SEQUENCE"
+              DTS:DelayValidation="True"
+              DTS:Description="Sequence Container"
+              DTS:DTSID="{0db98d1a-ea1b-4725-9d47-b00c0c8a5647}"
+              DTS:ExecutableType="STOCK:SEQUENCE"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Audit OnError">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="Disable">@[User::Audit_Disable]</DTS:PropertyExpression>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnTaskFailed]\Audit OnError\OnTaskFailed"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{257e80e3-c541-46bb-bca8-c537f65654c5}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="OnTaskFailed"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:PropertyExpression
+                    DTS:Name="SqlStatementSource">"UPDATE dbo.SSIS_TaskAudit 
+SET EndTime = getdate()
+, Outcome = 'Failed'
+, FailedConfigurations = '" +  @[System::FailedConfigurations] + "'
+, RowsDelivered = '" + (DT_WSTR, 50)@[User::Audit_RowsDelivered] + "'
+, EventType = '" + @[System::TaskName] + "'
+, OutputNameset = '" + @[User::Audit_Parameters] + "'
+WHERE ExecutionID = '" + @[System::ExecutionInstanceGUID] + "'
+AND TaskID = '" + @[System::SourceID] + "'
+AND PackageID = '" + @[System::PackageID] + "' AND ID = ( Select Max(ID) as 'ID' from dbo.SSIS_TaskAudit where  ExecutionID = '" + @[System::ExecutionInstanceGUID] + "' AND TaskID = '" + @[System::SourceID] + "' ) "</DTS:PropertyExpression>
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                      SQLTask:SqlStatementSource="UPDATE dbo.SSIS_TaskAudit &#xA;SET EndTime = getdate()&#xA;, Outcome = 'Failed'&#xA;, FailedConfigurations = ''&#xA;, RowsDelivered = '0'&#xA;, EventType = 'OnTaskFailed'&#xA;, OutputNameset = 'N/A'&#xA;WHERE ExecutionID = '{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}'&#xA;AND TaskID = ''&#xA;AND PackageID = '{8FAE26B5-EB15-443E-BD55-4991CC472581}' AND ID = ( Select Max(ID) as 'ID' from dbo.SSIS_TaskAudit where  ExecutionID = '{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}' AND TaskID = '' ) " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start of Audit"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{A2D717EB-13BF-468D-B291-B313222AAB42}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:ISOLevel="256"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start of Audit">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:PropertyExpression
+        DTS:Name="Disable">@[User::Audit_Disable]</DTS:PropertyExpression>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Start of Audit\Check Audit Objects"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9DDB6D63-3FA7-4B78-B106-1896FB08D337}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ISOLevel="256"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Check Audit Objects"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+              SQLTask:SqlStatementSource="SELECT top 1 * FROM [dbo].[Audit_Configurations] WITH (NOLOCK)&#xA;SELECT top 1 * FROM [dbo].[SSIS_PackageAudit] WITH (NOLOCK)&#xA;SELECT top 1 * FROM [dbo].[SSIS_TaskAudit] WITH (NOLOCK)&#xA;SELECT top 1 * FROM [dbo].[SSIS_ErrorLog] WITH (NOLOCK)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Start of Audit\Grab Variables"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5EEFEDCB-1B5A-4507-BD07-B4ED0C6436FE}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ISOLevel="256"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Grab Variables"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"SELECT 'PackageName: " +  @[System::PackageName] + " | Audit Disabled: " + (DT_WSTR, 10) @[User::Audit_Disable] + " | Audit DB: " + @[User::cm_Audit_DBName] + " | Audit Instance: " + @[User::cm_Audit_InstanceName] + " | Job Name: " + @[User::Audit_JobName] + " | Step Name: " + @[User::Audit_StepName] + " | Outcome: " + @[User::Audit_Outcome] + "'
+AS Parameters"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+              SQLTask:SqlStatementSource="SELECT 'PackageName: lp_SSIS_ASW_DBBackup | Audit Disabled: False | Audit DB: lp_DB_Backup_Audit | Audit Instance: LPCD7X64-074\SQL2012 | Job Name:  | Step Name:  | Outcome: Success'&#xA;AS Parameters"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="Parameters"
+                SQLTask:DtsVariableName="User::Audit_Parameters" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Start of Audit\Load SSIS_PackageAudit table"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2EBE8578-7839-4C37-93CA-282CB978A86D}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ISOLevel="256"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load SSIS_PackageAudit table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"INSERT INTO SSIS_PackageAudit 
+(
+[ExecutionID]
+,[PackageID]
+,[PackageName]
+,[DestinationTableName]
+,[MachineName]
+,[SQLJobInstanceName]
+,[JobID]
+,[JobName]
+,[StepID]
+,[StepName]
+,[UserName]
+,[StartTime]
+,[EndTime]
+,[Outcome]
+,[EventType],[Parameters]
+   )
+VALUES
+(
+'" + @[System::ExecutionInstanceGUID] + "'
+, '" + @[System::PackageID] + "'
+, '" + @[System::PackageName] + "'
+, '" + @[User::Audit_DestinationTableName] + "'
+, '" + @[System::MachineName] + "'
+, '" + @[User::Audit_SQLJobInstanceName] + "'
+, " +  @[User::Audit_JobID] + ", 'N/A'
+, '" + @[User::Audit_StepID] + "'
+, 'N/A'
+, '" + @[System::UserName] + "'
+, CAST(LEFT('" + (DT_WSTR, 35) GETDATE() + "', 19) AS datetime)
+, NULL
+, NULL
+, '" + @[System::TaskName] + "', '" + @[User::Audit_Parameters] + "'
+)
+"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+              SQLTask:SqlStatementSource="INSERT INTO SSIS_PackageAudit &#xA;(&#xA;[ExecutionID]&#xA;,[PackageID]&#xA;,[PackageName]&#xA;,[DestinationTableName]&#xA;,[MachineName]&#xA;,[SQLJobInstanceName]&#xA;,[JobID]&#xA;,[JobName]&#xA;,[StepID]&#xA;,[StepName]&#xA;,[UserName]&#xA;,[StartTime]&#xA;,[EndTime]&#xA;,[Outcome]&#xA;,[EventType],[Parameters]&#xA;   )&#xA;VALUES&#xA;(&#xA;'{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}'&#xA;, '{8FAE26B5-EB15-443E-BD55-4991CC472581}'&#xA;, 'lp_SSIS_ASW_DBBackup'&#xA;, ''&#xA;, 'LPCD7X64-074'&#xA;, ''&#xA;, '00000000-0000-0000-0000-000000000000', 'N/A'&#xA;, ''&#xA;, 'N/A'&#xA;, 'LIBERTYPOWER\srao'&#xA;, CAST(LEFT('2015-07-23 08:42:29.312000000', 19) AS datetime)&#xA;, NULL&#xA;, NULL&#xA;, 'Load SSIS_PackageAudit table', 'N/A'&#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Start of Audit.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{152A2BF1-6C0D-458A-BDC6-646E0BA860C3}"
+          DTS:From="Package\Start of Audit\Check Audit Objects"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Start of Audit\Load SSIS_PackageAudit table" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Start of Audit.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{1E690A9A-2D93-4DC4-9770-D956DCEBAF0C}"
+          DTS:From="Package\Start of Audit\Grab Variables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Start of Audit\Check Audit Objects" />
+      </DTS:PrecedenceConstraints>
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Start of Audit.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{5D936564-3432-4E9F-8373-DCC615DC5D3E}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{03E9E8BB-AF6B-45A8-B74A-C42D819D2C81}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing"
+              DTS:CreationName="STOCK:SEQUENCE"
+              DTS:DelayValidation="True"
+              DTS:Description="Sequence Container"
+              DTS:DTSID="{DE821D0B-19E5-496C-B51B-F91CF0C047B1}"
+              DTS:ExecutableType="STOCK:SEQUENCE"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Disable Auditing">
+              <DTS:Variables />
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing\Send failure only in case Auditing is not available"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:DelayValidation="True"
+                  DTS:Description="Send Mail Task"
+                  DTS:DTSID="{310953EF-9B13-4E91-AC5D-394EC268480D}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:ISOLevel="256"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Send failure only in case Auditing is not available"
+                  DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:PropertyExpression
+                    DTS:Name="FromLine">@[User::Mail_FromLine]</DTS:PropertyExpression>
+                  <DTS:PropertyExpression
+                    DTS:Name="MessageSource">"Audit error on: " + @[System::MachineName] + " | SSIS Package: " + @[System::PackageName] + " 
+
+Auditing disabled for the remainder of the package execution. Error emails still go out but aren't logged.
+
+Audit Database: '" + @[User::cm_Audit_DBName] + "'
+Audit Instance: '" +  @[User::cm_Audit_InstanceName] + "'"</DTS:PropertyExpression>
+                  <DTS:PropertyExpression
+                    DTS:Name="Subject">"Audit error on: " + @[System::MachineName] + " | SSIS Package: " + @[System::PackageName]</DTS:PropertyExpression>
+                  <DTS:PropertyExpression
+                    DTS:Name="ToLine">@[User::Mail_ToLine]</DTS:PropertyExpression>
+                  <DTS:ObjectData>
+                    <SendMailTask:SendMailTaskData
+                      SendMailTask:SMTPServer="{7DAF96FA-CF12-4E9F-A066-8450A1C28BAA}"
+                      SendMailTask:From="LPCNOCSBI1ODS_SA_SVC@libertypowercorp.com"
+                      SendMailTask:To="srao@libertypowercorp.com"
+                      SendMailTask:Subject="Audit error on: LPCD7X64-074 | SSIS Package: lp_SSIS_ASW_DBBackup"
+                      SendMailTask:MessageSource="Audit error on: LPCD7X64-074 | SSIS Package: lp_SSIS_ASW_DBBackup &#xA;&#xA;Auditing disabled for the remainder of the package execution. Error emails still go out but aren't logged.&#xA;&#xA;Audit Database: 'lp_DB_Backup_Audit'&#xA;Audit Instance: 'LPCD7X64-074\SQL2012'" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:refId="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing\Set Audit_Disable to True"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:DelayValidation="True"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{EBEC46FC-853F-4E1B-B5CF-CBF0FB4C1476}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:ISOLevel="256"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Set Audit_Disable to True"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                      SQLTask:SqlStatementSource="SELECT 'True' AS Audit_Disable"
+                      SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ResultBinding
+                        SQLTask:ResultName="Audit_Disable"
+                        SQLTask:DtsVariableName="User::Audit_Disable" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:refId="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing.PrecedenceConstraints[Constraint]"
+                  DTS:CreationName=""
+                  DTS:DTSID="{4C17CC45-8F03-43D3-8128-0E4CE00AF937}"
+                  DTS:From="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing\Set Audit_Disable to True"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint"
+                  DTS:To="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing\Send failure only in case Auditing is not available"
+                  DTS:Value="2" />
+              </DTS:PrecedenceConstraints>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{07772EEB-2328-4B75-B07E-1A99A614ABE0}"
+      DTS:From="Package\Start of Audit"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\lp_SSIS_ASW_DBBackup"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{BD0C4A0D-3577-4D7C-BE0D-DE486D6D31A9}"
+      DTS:From="Package\lp_SSIS_ASW_DBBackup"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\End of Audit"
+      DTS:Value="2" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{F1B9392B-7ED9-4789-8E8E-2B633F1EA521}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{61FBAEBE-A9B7-4C71-8AB1-603FF0291228}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:DelayValidation="True"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{43226E07-FC6F-4BCD-9427-E66445C73CD5}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:ISOLevel="256"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log and Email Errors">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[User::Audit_Disable]</DTS:PropertyExpression>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info"
+              DTS:CreationName="STOCK:SEQUENCE"
+              DTS:DelayValidation="True"
+              DTS:Description="Sequence Container"
+              DTS:Disabled="True"
+              DTS:DTSID="{02E5EA81-3EFA-44FA-9B4F-6A2D74671AE9}"
+              DTS:ExecutableType="STOCK:SEQUENCE"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Get Job Info">
+              <DTS:Variables />
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info\Get JobName"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:DelayValidation="True"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{AC8CD534-6AE2-4B39-8E47-468FDD8D180B}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:ISOLevel="256"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Get JobName"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:PropertyExpression
+                    DTS:Name="SqlStatementSource">"SELECT JobName FROM dbo.SSIS_PackageAudit WHERE ExecutionID = '" + @[System::ExecutionInstanceGUID] + "'"</DTS:PropertyExpression>
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                      SQLTask:SqlStatementSource="SELECT JobName FROM dbo.SSIS_PackageAudit WHERE ExecutionID = '{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}'"
+                      SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ResultBinding
+                        SQLTask:ResultName="JobName"
+                        SQLTask:DtsVariableName="User::Audit_JobName" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info\Get StepName"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:DelayValidation="True"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{897B7F63-A45E-4714-89D1-46AF578E9A0B}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:ISOLevel="256"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Get StepName"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:PropertyExpression
+                    DTS:Name="SqlStatementSource">"SELECT StepName FROM dbo.SSIS_PackageAudit WHERE ExecutionID = '" + @[System::ExecutionInstanceGUID] + "'"</DTS:PropertyExpression>
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                      SQLTask:SqlStatementSource="SELECT StepName FROM dbo.SSIS_PackageAudit WHERE ExecutionID = '{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}'"
+                      SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ResultBinding
+                        SQLTask:ResultName="StepName"
+                        SQLTask:DtsVariableName="User::Audit_StepName" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info.PrecedenceConstraints[Constraint 5]"
+                  DTS:CreationName=""
+                  DTS:DTSID="{DF2CCA7C-E7F0-448D-9020-EBF85D0EA50D}"
+                  DTS:From="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info\Get JobName"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint 5"
+                  DTS:To="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info\Get StepName"
+                  DTS:Value="2" />
+              </DTS:PrecedenceConstraints>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors\Insert into Errorlog"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:DelayValidation="True"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{FA415AF5-E49F-43EC-86E6-A8D1DF812A59}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Insert into Errorlog"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="SqlStatementSource">"INSERT INTO dbo.SSIS_ErrorLog
+
+(ExecutionID
+, LogTime
+, PackageID
+, PackageName
+, SourceParentGUID
+, TaskID
+, SourceDescription
+, TaskName
+, MachineName
+, UserName
+, ErrorNumber
+, ErrorDescription
+)
+VALUES 
+( '" + @[System::ExecutionInstanceGUID] + "'
+, getdate()
+, '" + @[System::PackageID] + "'
+, '" + @[System::PackageName] + "'
+, '" + @[System::SourceParentGUID] + "'
+, '" + @[System::SourceID] + "'
+, '" + @[System::SourceDescription] + "'
+, '" + @[System::SourceName] + "'
+, '" + @[System::MachineName] + "'
+, '" + @[System::UserName] + "'
+, '" + (DT_STR, 15, 1252) @[System::ErrorCode] + "'
+, '" + REPLACE(@[System::ErrorDescription], "'"
+, "") + "'
+)"</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                  SQLTask:SqlStatementSource="INSERT INTO dbo.SSIS_ErrorLog&#xA;&#xA;(ExecutionID&#xA;, LogTime&#xA;, PackageID&#xA;, PackageName&#xA;, SourceParentGUID&#xA;, TaskID&#xA;, SourceDescription&#xA;, TaskName&#xA;, MachineName&#xA;, UserName&#xA;, ErrorNumber&#xA;, ErrorDescription&#xA;)&#xA;VALUES &#xA;( '{2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}'&#xA;, getdate()&#xA;, '{8FAE26B5-EB15-443E-BD55-4991CC472581}'&#xA;, 'lp_SSIS_ASW_DBBackup'&#xA;, ''&#xA;, ''&#xA;, ''&#xA;, ''&#xA;, 'LPCD7X64-074'&#xA;, 'LIBERTYPOWER\srao'&#xA;, '0'&#xA;, ''&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors\Set Audit Outcome to Failed"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:DelayValidation="True"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{523D3CD0-8790-47DC-8302-5BC9DB152F6E}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Set Audit Outcome to Failed"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="Disable">@[User::Audit_Disable]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                  SQLTask:SqlStatementSource="SELECT 'Failed' AS Outcome"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Outcome"
+                    SQLTask:DtsVariableName="User::Task_Outcome" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors\Set Outcome to Failed"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:DelayValidation="True"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{EAE89B26-B8CF-4C9B-A1AA-E191E69D0268}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ISOLevel="256"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Set Outcome to Failed"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="Disable">@[User::Audit_Disable]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A81642EC-1A5D-4ED2-B5C0-2E3F715A865A}"
+                  SQLTask:SqlStatementSource="SELECT 'Failed' AS Outcome"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Outcome"
+                    SQLTask:DtsVariableName="User::Audit_Outcome" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{E1807AB3-2018-412C-AB68-AE1B43E84B06}"
+              DTS:From="Package.EventHandlers[OnError]\Log and Email Errors\Set Outcome to Failed"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package.EventHandlers[OnError]\Log and Email Errors\Insert into Errorlog" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{3262EE91-970D-4EBB-ACB7-4A6A7C6C747C}"
+              DTS:From="Package.EventHandlers[OnError]\Log and Email Errors\Insert into Errorlog"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package.EventHandlers[OnError]\Log and Email Errors.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{68927CDF-5A6D-4266-B060-92E22802940E}"
+              DTS:From="Package.EventHandlers[OnError]\Log and Email Errors\Set Audit Outcome to Failed"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package.EventHandlers[OnError]\Log and Email Errors\Set Outcome to Failed" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Send failure email"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{5A7BBCF1-D9FC-4BAB-98D4-5F633D35ED1C}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ISOLevel="256"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send failure email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[User::Mail_FromLine]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"ETL Error on: " + @[System::MachineName] + "
+SSIS Package: " + @[System::PackageName] + "
+SSIS PackageID: " + @[System::PackageID] + "
+SSIS ExecutionID: " + @[System::ExecutionInstanceGUID] + "
+SSIS Task: " +  @[System::SourceName] + "
+Error Number: " + (DT_WSTR, 50)@[System::ErrorCode] + "
+Error Descr.: " + @[System::ErrorDescription] + "
+Machine Name: " + @[System::MachineName] + "
+Instance Name: " + @[User::Audit_SQLJobInstanceName] + "
+Job Name: " + @[User::Audit_JobName] + "
+Step Name: " + @[User::Audit_StepName] + "
+User Name: " + @[System::UserName] + "
+Start Time: '" + (DT_WSTR, 30) @[System::ContainerStartTime] + "'
+Audit Database: " + @[User::cm_Audit_DBName] + "
+Audit Instance: " + @[User::cm_Audit_InstanceName] + "
+Audit Disabled: " +  (DT_WSTR, 10) @[User::Audit_Disable]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">"ETL Error on: " + @[System::MachineName] + " | SSIS Package: " + @[System::PackageName] + " | Task: " + @[System::SourceName] + ""</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[User::Mail_ToLine]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{7DAF96FA-CF12-4E9F-A066-8450A1C28BAA}"
+              SendMailTask:From="LPCNOCSBI1ODS_SA_SVC@libertypowercorp.com"
+              SendMailTask:To="srao@libertypowercorp.com"
+              SendMailTask:Subject="ETL Error on: LPCD7X64-074 | SSIS Package: lp_SSIS_ASW_DBBackup | Task:"
+              SendMailTask:MessageSource="ETL Error on: LPCD7X64-074&#xA;SSIS Package: lp_SSIS_ASW_DBBackup&#xA;SSIS PackageID: {8FAE26B5-EB15-443E-BD55-4991CC472581}&#xA;SSIS ExecutionID: {2AAFD873-32A2-4CD8-8CAC-A30E4BCB9485}&#xA;SSIS Task: &#xA;Error Number: 0&#xA;Error Descr.: &#xA;Machine Name: LPCD7X64-074&#xA;Instance Name: &#xA;Job Name: &#xA;Step Name: &#xA;User Name: LIBERTYPOWER\srao&#xA;Start Time: '7/21/2015 8:31:58 AM'&#xA;Audit Database: lp_DB_Backup_Audit&#xA;Audit Instance: LPCD7X64-074\SQL2012&#xA;Audit Disabled: False" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{35B79B22-94FC-45B3-AC5D-3A68A76315CE}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::IsEmailTrigger]==TRUE"
+          DTS:From="Package.EventHandlers[OnError]\Log and Email Errors"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Send failure email"
+          DTS:Value="2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\End of Audit\Get Row Delivered SUM"
+          TopLeft="53.7142857142857,17.8571428571428" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\End of Audit\Update SSIS_PackageAudit table"
+          TopLeft="33.5714285714286,97.9999999999999" />
+        <EdgeLayout
+          Id="Package\End of Audit.PrecedenceConstraints[Constraint]"
+          TopLeft="150.642857142857,59.8571428571428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.1428571428571"
+              Start="0,0"
+              End="0,30.6428571428571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6428571428571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.304453125,10.5167410714286,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="283,195"
+          Size="162,43"
+          Id="Package\End of Audit"
+          TopLeft="157.340659340661,346.230769230769" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\lp_SSIS_ASW_DBBackup\Back Up Database Task"
+          TopLeft="181,210" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to delete files\Delete Old Files"
+          TopLeft="33,22" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="203,71"
+          Size="203,114"
+          Id="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to delete files"
+          TopLeft="124,23" />
+        <NodeLayout
+          Size="257,42"
+          Id="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to move file to shared location\Move Backup File To Shared Location"
+          TopLeft="25,32" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="322,80"
+          Size="322,123"
+          Id="Package\lp_SSIS_ASW_DBBackup\Foreach Loop to move file to shared location"
+          TopLeft="182,338" />
+        <EdgeLayout
+          Id="Package\lp_SSIS_ASW_DBBackup.PrecedenceConstraints[Constraint 1]"
+          TopLeft="277,252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,86"
+              Start="0,0"
+              End="66,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39"
+                    Point2="0,43"
+                    Point3="4,43" />
+                  <mssgle:LineSegment
+                    End="62,43" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62,43"
+                    Point2="66,43"
+                    Point3="66,47" />
+                  <mssgle:LineSegment
+                    End="66,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25,48,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\lp_SSIS_ASW_DBBackup.PrecedenceConstraints[Constraint]"
+          TopLeft="225.5,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.5,73"
+              Start="0,0"
+              End="51.5,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="4,36.5" />
+                  <mssgle:LineSegment
+                    End="47.5,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.5,36.5"
+                    Point2="51.5,36.5"
+                    Point3="51.5,40.5" />
+                  <mssgle:LineSegment
+                    End="51.5,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="642,739"
+          Size="642,782"
+          Id="Package\lp_SSIS_ASW_DBBackup"
+          TopLeft="511,50" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Start of Audit\Check Audit Objects"
+          TopLeft="30,107.5" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Start of Audit\Grab Variables"
+          TopLeft="43,5.5" />
+        <NodeLayout
+          Size="224,42"
+          Id="Package\Start of Audit\Load SSIS_PackageAudit table"
+          TopLeft="5.50000000000003,209.5" />
+        <EdgeLayout
+          Id="Package\Start of Audit.PrecedenceConstraints[Constraint]"
+          TopLeft="117.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Start of Audit.PrecedenceConstraints[Constraint 1]"
+          TopLeft="117.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="235,306"
+          Size="167,43"
+          Id="Package\Start of Audit"
+          TopLeft="259.47619047619,54.952380952381" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="426.47619047619,76.452380952381">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.52380952381,235.547619047619"
+              Start="0,0"
+              End="77.02380952381,235.547619047619">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.6107343396779,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.6107343396779,0"
+                    Point2="50.6107343396779,0"
+                    Point3="50.6107343396779,4" />
+                  <mssgle:LineSegment
+                    End="50.6107343396779,231.547619047619" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.6107343396779,231.547619047619"
+                    Point2="50.6107343396779,235.547619047619"
+                    Point3="54.6107343396779,235.547619047619" />
+                  <mssgle:LineSegment
+                    End="77.02380952381,235.547619047619" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.3062812146779,-17.609375,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="511,570">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-191.659340659339,-202.269230769231"
+              Start="0,0"
+              End="-184.159340659339,-202.269230769231">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-72.8985409689844,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-72.8985409689844,0"
+                    Point2="-76.8985409689844,0"
+                    Point3="-76.8985409689844,-4" />
+                  <mssgle:LineSegment
+                    End="-76.8985409689844,-198.269230769231" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-76.8985409689844,-198.269230769231"
+                    Point2="-76.8985409689844,-202.269230769231"
+                    Point3="-80.8985409689844,-202.269230769231" />
+                  <mssgle:LineSegment
+                    End="-184.159340659339,-202.269230769231" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-102.202994093984,1,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Generate new GUID after making a copy of SSIS"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="267,58"
+          Id="fb2c2c3a-b08b-4a78-af37-c2e85399d773"
+          TopLeft="610,4" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144,42"
+          Id="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info\Get JobName"
+          TopLeft="92,13" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info\Get StepName"
+          TopLeft="32.5,91" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info.PrecedenceConstraints[Constraint 5]"
+          TopLeft="164,55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57,36"
+              Start="0,0"
+              End="-57,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="-4,18" />
+                  <mssgle:LineSegment
+                    End="-53,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-53,18"
+                    Point2="-57,18"
+                    Point3="-57,22" />
+                  <mssgle:LineSegment
+                    End="-57,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-53.804453125,23,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="241,188"
+          Size="241,231"
+          Id="Package.EventHandlers[OnError]\Log and Email Errors\Get Job Info"
+          TopLeft="133,174" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package.EventHandlers[OnError]\Log and Email Errors\Insert into Errorlog"
+          TopLeft="142,5" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package.EventHandlers[OnError]\Log and Email Errors\Set Audit Outcome to Failed"
+          TopLeft="295,54.5" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package.EventHandlers[OnError]\Log and Email Errors\Set Outcome to Failed"
+          TopLeft="5.5,71" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError]\Log and Email Errors.PrecedenceConstraints[Constraint]"
+          TopLeft="68.5,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131.833333333333,-24"
+              Start="0,0"
+              End="131.833333333333,-16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-7.98961263795715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-7.98961263795715"
+                    Point2="0,-11.9896126379572"
+                    Point3="4,-11.9896126379572" />
+                  <mssgle:LineSegment
+                    End="127.833333333333,-11.9896126379572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="127.833333333333,-11.9896126379572"
+                    Point2="131.833333333333,-11.9896126379572"
+                    Point3="131.833333333333,-15.9896126379572" />
+                  <mssgle:LineSegment
+                    End="131.833333333333,-16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError]\Log and Email Errors.PrecedenceConstraints[Constraint 1]"
+          TopLeft="254.083333333333,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,127"
+              Start="0,0"
+              End="0,119.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,119.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError]\Log and Email Errors.PrecedenceConstraints[Constraint 2]"
+          TopLeft="295,75.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.5,16.5"
+              Start="0,0"
+              End="-97,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-48.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.25,0"
+                    Point2="-52.25,0"
+                    Point3="-52.25,4" />
+                  <mssgle:LineSegment
+                    End="-52.25,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52.25,12.5"
+                    Point2="-52.25,16.5"
+                    Point3="-56.25,16.5" />
+                  <mssgle:LineSegment
+                    End="-97,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="513,460"
+          Size="513,503"
+          Id="Package.EventHandlers[OnError]\Log and Email Errors"
+          TopLeft="275,7" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package.EventHandlers[OnError]\Send failure email"
+          TopLeft="5,20" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="275,258.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-105,-217.5"
+              Start="0,0"
+              End="-97.5,-217.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-48.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.5,0"
+                    Point2="-52.5,0"
+                    Point3="-52.5,-4" />
+                  <mssgle:LineSegment
+                    End="-52.5,-213.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52.5,-213.5"
+                    Point2="-52.5,-217.5"
+                    Point3="-56.5,-217.5" />
+                  <mssgle:LineSegment
+                    End="-97.5,-217.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-86.4655859375,1,67.931171875,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnTaskFailed]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnTaskFailed]\Audit OnError\OnTaskFailed"
+          TopLeft="NaN,NaN" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,55"
+          Size="205,98"
+          Id="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnTaskFailed]\Audit OnError"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute\OnPreExecute"
+          TopLeft="46,66" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute\Set Audit Outcome to Sucess"
+          TopLeft="275,16" />
+        <EdgeLayout
+          Id="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute.PrecedenceConstraints[Constraint]"
+          TopLeft="275,37">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82,50"
+              Start="0,0"
+              End="-74.5,50">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-37,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37,0"
+                    Point2="-41,0"
+                    Point3="-41,4" />
+                  <mssgle:LineSegment
+                    End="-41,46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41,46"
+                    Point2="-41,50"
+                    Point3="-45,50" />
+                  <mssgle:LineSegment
+                    End="-74.5,50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="497,163"
+          Size="497,206"
+          Id="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPreExecute]\Audit Pre Execute"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPostExecute]\Audit Post Execute\OnPostExecute"
+          TopLeft="34,12" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,109"
+          Size="205,152"
+          Id="Package\lp_SSIS_ASW_DBBackup.EventHandlers[OnPostExecute]\Audit Post Execute"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Start of Audit.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="311,42"
+          Id="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing\Send failure only in case Auditing is not available"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing\Set Audit_Disable to True"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing.PrecedenceConstraints[Constraint]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="506,110"
+          Size="506,153"
+          Id="Package\Start of Audit.EventHandlers[OnError]\Disable Auditing"
+          TopLeft="30,46" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

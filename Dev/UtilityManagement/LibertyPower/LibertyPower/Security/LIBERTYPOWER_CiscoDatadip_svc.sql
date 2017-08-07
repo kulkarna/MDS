@@ -1,0 +1,2 @@
+﻿CREATE USER [LIBERTYPOWER\CiscoDatadip_svc] FOR LOGIN [LIBERTYPOWER\CiscoDatadip_svc];
+

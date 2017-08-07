@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="WSContractDetails">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="ContractDetails" nillable="true" type="q1:Contract" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="CustomDetailsPerAccount" nillable="true" type="q2:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="CustomDetailsPerContract" nillable="true" type="q3:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="CustomerDetails" nillable="true" type="q4:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSContractDetails" nillable="true" type="tns:WSContractDetails" />
+  <xs:complexType name="ArrayOfWSContractDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSContractDetails" nillable="true" type="tns:WSContractDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSContractDetails" nillable="true" type="tns:ArrayOfWSContractDetails" />
+  <xs:complexType name="ArrayOfWSDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSDocument" nillable="true" type="tns:WSDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSDocument" nillable="true" type="tns:ArrayOfWSDocument" />
+  <xs:complexType name="WSDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocumentTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileBytes" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Guid" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSDocument" nillable="true" type="tns:WSDocument" />
+</xs:schema>

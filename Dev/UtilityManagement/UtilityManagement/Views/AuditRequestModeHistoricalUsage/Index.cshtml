@@ -1,0 +1,153 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.usp_zAuditRequestModeHistoricalUsage_SELECT1_Result>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="form-details p15">
+<div class="form-information">
+        <div class="form-title-specific float-left">Audit Request Mode Historical Usage Index</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+     <div class="details-data-section">
+ <div class="details-full-section">
+<div class="left_audit">
+<table class="index">
+    <tr>
+        <th>Row Count = @Model.Count()</th>
+        <th>
+            @Html.ActionLink("Id", "IdClick")
+        </th>
+        <th>
+            @Html.ActionLink("Util Co Id", "UtilityCompanyIdClick")
+        </th>
+        <th>
+            @Html.ActionLink("Util Code", "UtilityCodeClick")
+        </th>
+        <th>
+            @Html.ActionLink("Req Mode Enroll Typ Id", "RequestModeEnrollmentTypeIdClick")
+        </th>
+        <th>
+            @Html.ActionLink("Req Mode Enroll Typ", "RequestModeEnrollmentTypeClick")
+        </th>
+        <th>
+            @Html.ActionLink("Req Mode Typ Id", "RequestModeTypeIdClick")
+        </th>
+        <th>
+            @Html.ActionLink("Req Mode Typ", "RequestModeTypeClick")
+        </th>
+        <th>
+            @Html.ActionLink("Address", "AddressForPreEnrollmentClick")
+        </th>
+        <th>
+            @Html.ActionLink("Email", "EmailTemplateClick")
+        </th>
+        <th>
+            @Html.ActionLink("Instructions", "InstructionsClick")
+        </th>
+        <th>
+            @Html.ActionLink("SLA Response", "UtilitysSlaHistoricalUsageResponseInDaysClick")
+        </th>
+        <th>
+            @Html.ActionLink("LP SLA", "LibertyPowersSlaFollowUpHistoricalUsageResponseInDaysClick")
+        </th>
+        <th>
+            @Html.ActionLink("LOA", "IsLoaRequiredClick")
+        </th>
+        <th>
+            @Html.ActionLink("Inactive", "InactiveTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Create By", "CreatedByTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Create Date", "CreatedDateTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Last Mod By", "LastModifiedByTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Last Mod Date", "LastModifiedDateTitleClick")
+        </th>
+        <th>
+            @Html.ActionLink("Change Version", "ChangeVersionClick")
+        </th>
+        <th>
+            @Html.ActionLink("Creation Version", "CreationVersionClick")
+        </th>
+        <th>
+            @Html.ActionLink("Change Operation", "ChangeOperationClick")
+        </th>
+        <th>
+            @Html.ActionLink("Change Columns", "ChangeColumnsClick")
+        </th>
+       
+    </tr>
+    @{
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>Current</td>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilityCompanyId)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilityCode)</td>
+            <td>@Html.DisplayFor(modelItem => item.RequestModeEnrollmentTypeId)</td>
+            <td>@Html.DisplayFor(modelItem => item.RequestModeEnrollmentType)</td>
+            <td>@Html.DisplayFor(modelItem => item.RequestModeTypeId)</td>
+            <td>@Html.DisplayFor(modelItem => item.RequestModeType)</td>
+            <td>@Html.DisplayFor(modelItem => item.AddressForPreEnrollment)</td>
+            <td>@Html.DisplayFor(modelItem => item.EmailTemplate)</td>
+            <td>@Html.DisplayFor(modelItem => item.Instructions)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilitysSlaHistoricalUsageResponseInDays)</td>
+            <td>@Html.DisplayFor(modelItem => item.LibertyPowersSlaFollowUpHistoricalUsageResponseInDays)</td>
+            <td>@Html.DisplayFor(modelItem => item.IsLoaRequired)</td>
+            <td>@Html.DisplayFor(modelItem => item.Inactive)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedBy)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastModifiedBy)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastModifiedDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.SYS_CHANGE_VERSION)</td>
+            <td>@Html.DisplayFor(modelItem => item.SYS_CHANGE_CREATION_VERSION)</td>
+            <td>@Html.DisplayFor(modelItem => item.SYS_CHANGE_OPERATION)</td>
+            <td>@Html.DisplayFor(modelItem => item.SYS_CHANGE_COLUMNS)</td>
+        </tr>
+        <tr>
+            <td>Previous</td>
+            <td>@Html.DisplayFor(modelItem => item.IdPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilityCompanyIdPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilityCodePrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.RequestModeEnrollmentTypeIdPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.RequestModeEnrollmentTypePrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.RequestModeTypeIdPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.RequestModeTypePrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.AddressForPreEnrollmentPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.EmailTemplatePrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.InstructionsPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilitysSlaHistoricalUsageResponseInDaysPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.LibertyPowersSlaFollowUpHistoricalUsageResponseInDaysPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.IsLoaRequiredPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.InactivePrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedByPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedDatePrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastModifiedByPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastModifiedDatePrevious)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        }
+    }
+</table>
+    </div>
+ </div>
+</div>
+</div>
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+
+    });

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.RequestModeEnrollmentType>
+
+@{
+    ViewBag.Title = "Request Mode Enrollment Type Index";
+}
+
+<h3>Index</h3>
+<table>
+    <tr>
+        <th>Row Count = @Model.Count()</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inactive)
+        </th>
+        <th>
+            @Html.DisplayName("Created By")
+        </th>
+        <th>
+            @Html.DisplayName("Created Date")
+        </th>
+        <th>
+            @Html.DisplayName("Last Modified By")
+        </th>
+        <th>
+            @Html.DisplayName("Last Modified Date")
+        </th>
+    </tr>
+
+    @foreach (var item in Model.OrderBy(x => x.Name))
+    {
+        <tr>
+            <td>
+                @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inactive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModifiedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModifiedDate)
+            </td>
+        </tr>
+    }
+</table>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

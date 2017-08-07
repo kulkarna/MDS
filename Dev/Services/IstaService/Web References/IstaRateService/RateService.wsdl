@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://ws.libertypowerbilling.com/RateService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://ws.libertypowerbilling.com/RateService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ws.libertypowerbilling.com/RateService">
+      <s:element name="GetRateTemplateInfoList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRateTemplateInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRateTemplateInfoListResult" type="tns:ArrayOfRateTemplateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRateTemplateInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RateTemplateInfo" nillable="true" type="tns:RateTemplateInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RateTemplateInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RateTemplateID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanType" type="tns:PlanTypeOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateType" type="tns:RateTypeOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateDescription" type="tns:RateDescriptionOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRequired" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="PlanTypeOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="Fixed" />
+          <s:enumeration value="PortfolioVariable" />
+          <s:enumeration value="CustomVariable" />
+          <s:enumeration value="HeatRate" />
+          <s:enumeration value="MCPE" />
+          <s:enumeration value="CustomBilling" />
+          <s:enumeration value="Ruc" />
+          <s:enumeration value="CustomIndex" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="RateTypeOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="Not_Defined" />
+          <s:enumeration value="Energy_Charge_Percent_Of_Consumption" />
+          <s:enumeration value="Flat_Charge_Per_Esi_Id" />
+          <s:enumeration value="Flat_Charge_Per_Meter" />
+          <s:enumeration value="MCPE_Interval_Consumption_Rate" />
+          <s:enumeration value="Heat_Rate_Standard" />
+          <s:enumeration value="Index_Price_Calculation" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="RateDescriptionOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="NonTiered" />
+          <s:enumeration value="MeterCharge" />
+          <s:enumeration value="MeteredEnergyCharges" />
+          <s:enumeration value="MeteredIntervalCharge" />
+          <s:enumeration value="LossFactorPassThru" />
+          <s:enumeration value="FixedAdder" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetRateTemplateInfoListByPlanType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="planType" type="tns:PlanTypeOptions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRateTemplateInfoListByPlanTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRateTemplateInfoListByPlanTypeResult" type="tns:ArrayOfRateTemplateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RateRollover" nillable="true" type="tns:RateRollover" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RateRollover">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESIID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanType" type="tns:PlanTypeOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="LDCRateCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SwitchDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RateRolloverDetailList" type="tns:ArrayOfRateRolloverDetail" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContractStartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContractStopDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRateRolloverDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RateRolloverDetail" nillable="true" type="tns:RateRolloverDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RateRolloverDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RateTemplateID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateEffectiveDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateExpirationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsageClassID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateVariableTypeID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateCustomerRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCustomerRateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerRateWith814Option">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RateRollover" nillable="true" type="tns:RateRollover" />
+            <s:element minOccurs="1" maxOccurs="1" name="send814Flag" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerRateWith814OptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCustomerRateWith814OptionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRateRolloverList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RateRolloverListSearch" nillable="true" type="tns:RateRolloverListSearch" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RateRolloverListSearch">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:RateRolloverStatusOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="RateRolloverStatusOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="New" />
+          <s:enumeration value="PendingMarketApproval" />
+          <s:enumeration value="Failed" />
+          <s:enumeration value="MarketRejected" />
+          <s:enumeration value="MarketApproved" />
+          <s:enumeration value="Complete" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SearchRateRolloverListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchRateRolloverListResult" type="tns:ArrayOfRateRolloverInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRateRolloverInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RateRolloverInfo" nillable="true" type="tns:RateRolloverInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RateRolloverInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RateRolloverID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESIID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanType" type="tns:PlanTypeOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="LDCRateCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SwitchDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEnrollment" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RateRolloverDetailInfoList" type="tns:ArrayOfRateRolloverDetailInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="RateRolloverExceptionInfoList" type="tns:ArrayOfRateRolloverExceptionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRateRolloverDetailInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RateRolloverDetailInfo" nillable="true" type="tns:RateRolloverDetailInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RateRolloverDetailInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RateRolloverDetailID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateTemplateID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateEffectiveDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateExpirationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsageClassID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateVariableTypeID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRateRolloverExceptionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RateRolloverExceptionInfo" nillable="true" type="tns:RateRolloverExceptionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RateRolloverExceptionInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RateRolloverID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InactivateRateRollover">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rateRolloverId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InactivateRateRolloverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InactivateRateRolloverResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateRateRollover">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rateRolloverId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateRateRolloverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActivateRateRolloverResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetRateTemplateInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRateTemplateInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetRateTemplateInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRateTemplateInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRateTemplateInfoListByPlanTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRateTemplateInfoListByPlanType" />
+  </wsdl:message>
+  <wsdl:message name="GetRateTemplateInfoListByPlanTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRateTemplateInfoListByPlanTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerRateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerRate" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerRateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerRateWith814OptionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerRateWith814Option" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerRateWith814OptionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerRateWith814OptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchRateRolloverListSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchRateRolloverList" />
+  </wsdl:message>
+  <wsdl:message name="SearchRateRolloverListSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchRateRolloverListResponse" />
+  </wsdl:message>
+  <wsdl:message name="InactivateRateRolloverSoapIn">
+    <wsdl:part name="parameters" element="tns:InactivateRateRollover" />
+  </wsdl:message>
+  <wsdl:message name="InactivateRateRolloverSoapOut">
+    <wsdl:part name="parameters" element="tns:InactivateRateRolloverResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateRateRolloverSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateRateRollover" />
+  </wsdl:message>
+  <wsdl:message name="ActivateRateRolloverSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateRateRolloverResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RateServiceSoap">
+    <wsdl:operation name="GetRateTemplateInfoList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of rate template records</wsdl:documentation>
+      <wsdl:input message="tns:GetRateTemplateInfoListSoapIn" />
+      <wsdl:output message="tns:GetRateTemplateInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRateTemplateInfoListByPlanType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of rate template records by plan type</wsdl:documentation>
+      <wsdl:input message="tns:GetRateTemplateInfoListByPlanTypeSoapIn" />
+      <wsdl:output message="tns:GetRateTemplateInfoListByPlanTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update customer's rate information</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCustomerRateSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerRateWith814Option">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update customer's rate information, with a flag to optionally send 814.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCustomerRateWith814OptionSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerRateWith814OptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRateRolloverList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search for a list of RateRollover records</wsdl:documentation>
+      <wsdl:input message="tns:SearchRateRolloverListSoapIn" />
+      <wsdl:output message="tns:SearchRateRolloverListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivateRateRollover">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Inactivate a RateRollover record to NOT be processed. The RateRollover record must have a status of New</wsdl:documentation>
+      <wsdl:input message="tns:InactivateRateRolloverSoapIn" />
+      <wsdl:output message="tns:InactivateRateRolloverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateRateRollover">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Activate a RateRollover record to be processed.</wsdl:documentation>
+      <wsdl:input message="tns:ActivateRateRolloverSoapIn" />
+      <wsdl:output message="tns:ActivateRateRolloverSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RateServiceSoap" type="tns:RateServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRateTemplateInfoList">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/RateService/GetRateTemplateInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateTemplateInfoListByPlanType">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/RateService/GetRateTemplateInfoListByPlanType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerRate">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/RateService/UpdateCustomerRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerRateWith814Option">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/RateService/UpdateCustomerRateWith814Option" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRateRolloverList">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/RateService/SearchRateRolloverList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivateRateRollover">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/RateService/InactivateRateRollover" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateRateRollover">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/RateService/ActivateRateRollover" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RateServiceSoap12" type="tns:RateServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRateTemplateInfoList">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/RateService/GetRateTemplateInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateTemplateInfoListByPlanType">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/RateService/GetRateTemplateInfoListByPlanType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerRate">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/RateService/UpdateCustomerRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerRateWith814Option">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/RateService/UpdateCustomerRateWith814Option" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRateRolloverList">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/RateService/SearchRateRolloverList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivateRateRollover">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/RateService/InactivateRateRollover" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateRateRollover">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/RateService/ActivateRateRollover" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RateService">
+    <wsdl:port name="RateServiceSoap" binding="tns:RateServiceSoap">
+      <soap:address location="http://ua.ws.libertypowerbilling.com/RateService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RateServiceSoap12" binding="tns:RateServiceSoap12">
+      <soap12:address location="http://ua.ws.libertypowerbilling.com/RateService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

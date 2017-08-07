@@ -1,0 +1,2 @@
+﻿CREATE USER [svc_sql] WITHOUT LOGIN;
+

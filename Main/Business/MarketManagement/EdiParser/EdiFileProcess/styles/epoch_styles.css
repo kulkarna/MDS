@@ -1,0 +1,131 @@
+/*you can easily strip out all comments and unnecessary whitespace from this file -
+visit http://www.meanfreepath.com/tools/jscompactor.html to use our free JavaScript/CSS code compactor*/
+table.calendar {
+	font-family:Arial;
+	font-size:9pt;
+	color:#800000;
+	border-collapse: collapse;
+	background-color: white;
+	border: solid #999999 1px;
+	background-color: #EFECE3;
+	width: 115px;
+	text-align: center;
+	/*prevent user from selecting text in Mozilla & Safari - check calendar constructor for IE code)*/
+	-moz-user-select: none;
+    /*-khtml-user-select: none;*/
+}
+table.calendar a {
+}
+table.calendar a:hover {
+}
+table.calendar input, table.calendar select {
+	font-family:Arial;
+	font-size:8pt;
+	color:#800000;
+}
+table.calendar td, table.calendar th {
+	border: 0;
+	font-size: 9px;
+	text-align: center;
+}
+div.mainheading {
+	margin: 2px;
+}
+div.mainheading div.closeBtn 
+{
+	float: right;
+	color: red;
+}
+/*all styles related to the main calendar grid*/
+table.cells {
+	border-collapse: collapse;
+	border: solid #CCCCCC 1px;
+	cursor: pointer;
+	empty-cells: show;
+	margin: 0 6px 0 6px;
+}
+/*the day headings*/
+table.cells th {
+	border: solid #CCCCCC 1px;
+	text-align: left;
+	font-weight: normal;
+	font-family:Arial;
+	font-size:8pt;
+	color:#800000;
+	width: 22px;
+}
+table.cells th.wkhead {
+	border-right: double #CCCCCC 3px;
+	cursor: default;
+	width: 22px;
+}
+/*The date cells*/
+table.cells td {
+	border: solid #CCCCCC 1px;
+	vertical-align: top;
+	text-align: center;
+	font-weight: bold;
+	height: 14px; /*IE doesn't like ems*/
+}
+table.cells td.wkhead {
+	background-color: #EFECE3;
+	text-align: center;
+	border-right: double #CCCCCC 3px;
+	font-weight: normal;
+	font-family:Arial;
+	font-size:7pt;
+	color:#800000;
+}
+table.cells td.noselect {
+	background-color: #EEEEEE;
+	color: #BBBBBB;
+	text-decoration: line-through;
+	cursor: default;
+}
+table.cells td.hlday {
+	background-color: #99FF99;
+}
+table.cells td.wkday {
+	background-color: #F1FFF0;
+	font-weight: normal;
+	font-family:Arial;
+	font-size:7pt;
+	color:#1C5E55;	
+}
+table.cells td.wkend {
+	background-color: #F1FFF0;
+	font-weight: normal;
+	font-family:Arial;
+	font-size:7pt;
+	color:#1C5E55;	
+}
+table.cells td.curdate {
+
+}
+table.cells td.cell_selected {
+	background-color: #99CCFF;
+	font-weight: normal;
+	font-family:Arial;
+	font-size:7pt;
+	color:#1C5E55;
+}
+table.cells td.notmnth {
+	background-color: #EFECE3;
+	font-weight: normal;
+	font-family:Arial;
+	font-size:7pt;
+	color:#1C5E55;
+}
+table.cells td.notallowed {
+	background-color: white;
+	color: #EEEEEE;
+	font-style: italic;
+}
+table.cells td.hover {
+	background-color: #1C5E55;
+	color:#FFFFFF;	
+}
+table.cells td div {
+	padding: 1px;
+	margin: 0;
+}

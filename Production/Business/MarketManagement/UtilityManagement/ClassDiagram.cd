@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UtilityFactory">
+    <Position X="9.75" Y="4.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAAAgQAQAIAAAAADYFAAggiAgEAAAAAACRLAAAAAA=</HashCode>
+      <FileName>UtilityFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.Utility" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gEAoAQkIQABhAECEoRAgCggSYIBAC+SAQUBoAEAAAiE=</HashCode>
+      <FileName>Utility.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UtilityDictionary">
+    <Position X="0.5" Y="4.5" Width="1.75" />
+    <NestedTypes>
+      <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UtilityDictionary.SerializedItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>UtilityDictionary.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAQAAACAIAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>UtilityDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.MeterReadScheduleItem">
+    <Position X="0.5" Y="7.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAABgQAACZAAAAgQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeterReadScheduleItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UtilityAccount">
+    <Position X="5" Y="2.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAIWg4ECthGAgCAUhgKQDIZE0AlEAEAlwYBAoMEAApg=</HashCode>
+      <FileName>UtilityAccount.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Usages" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.MeterReadScheduleFactory">
+    <Position X="15.25" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAACAAAAAQABAAAAAAAAgAAAAAAAAI=</HashCode>
+      <FileName>MeterReadScheduleFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.MeterReadScheduleList" Collapsed="true">
+    <Position X="2.75" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeterReadScheduleList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UtilityAccountList" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UtilityAccountList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.Meter">
+    <Position X="7.75" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAQAAEAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Meter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MeterType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.MeterRead">
+    <Position X="10" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABBAAAAAQAAAAAAAAAAQAAAAEAAAAAAA=</HashCode>
+      <FileName>MeterRead.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.MeterList" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeterList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UtilityAccountDictionary" Collapsed="true">
+    <Position X="5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UtilityAccountDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.Zone">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAAAAACAAAAAAgAAgASAAAAUgABACIQAAMAAAAAAAiA=</HashCode>
+      <FileName>Zone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.ZoneDictionary">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ZoneDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.Usage">
+    <Position X="12.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAAACQAIAggAgAIUECCAGZQggAsEIEQgQChEZEQAAl0=</HashCode>
+      <FileName>Usage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.IcapFactor">
+    <Position X="10" Y="11.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAAAAABAAAAAgAAAAAiAAAAIgAAAAAAAAAACAEAAAgA=</HashCode>
+      <FileName>IcapFactor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.IcapFactorList">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IcapFactorList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.CapsMarketExemptionFactory">
+    <Position X="15.25" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>CapsMarketExemptionFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UsageDictionary">
+    <Position X="5" Y="12.5" Width="2" />
+    <NestedTypes>
+      <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.UsageDictionary.SerializedItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>UsageDictionary.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAACAIAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>UsageDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.EdiMeterReadFactory">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>EdiMeterReadFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.IdrUsage">
+    <Position X="17.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAICAAAAAAAgAAAABAAAAgAAAAAA=</HashCode>
+      <FileName>IdrUsage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UtilityManagement.ServiceClass">
+    <Position X="0.5" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAgACiAAAAAAAAAIAAAEAEAAAIAiA=</HashCode>
+      <FileName>ServiceClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LibertyPower.Business.MarketManagement.UtilityManagement.MeterType">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIAAAAAABA=</HashCode>
+      <FileName>MeterType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.MarketManagement.UtilityManagement.DateReturn">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DateReturn.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.MarketManagement.UtilityManagement.UsageSource">
+    <Position X="12.75" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAABCAAAAAAAAAEAAAAAACAAAAACAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>UsageSource.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.MarketManagement.UtilityManagement.UsageType">
+    <Position X="12.75" Y="9.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABQAAAAggAgAAAABAAAAAEAAEAAAAAAQAAAAA=</HashCode>
+      <FileName>UsageType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.MarketManagement.UtilityManagement.AccountType">
+    <Position X="15.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AccountType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.MarketManagement.UtilityManagement.ReasonCode">
+    <Position X="12.75" Y="12.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>BAABogAAgAgAAAAAAAAAAAABCACABAAQAABQAAAAQEQ=</HashCode>
+      <FileName>ReasonCode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,169 @@
+﻿@model DataAccessLayerEntityFramework.RateClass
+@{
+    ViewBag.Title = "Create Rate Class";
+}
+@using UserInterfaceValidationExtensions
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="rate_ico"></div>
+            <div class="edit_header_desc"><h4>Rate Class</h4>
+            <h3>New Record</h3>
+            @*Enrollment Type*@
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Rate Class</legend>
+
+                <div class="textblock">
+                <div class="details-data-section">
+                    <div id="Gen"  class="activable">
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                    <div id="hideContent" class="editdetails">
+                    <div class="details-full-section">
+                        @Html.HiddenFor(model => model.UtilityCompanyId, new { id = "UtilityCompanyId", name = "UtilityCompanyId" })
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UtilityCompanyId, "Utility Company")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.Label((string)ViewBag.UtilityCode)
+                        </div>
+
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.RateClassId, "Rate Class ID")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.RateClassId)
+                            @Html.ValidationMessageFor(model => model.RateClassId)
+                        </div>
+
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.RateClassCode, "Rate Class Code")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.RateClassCode)
+                            @Html.ValidationMessageFor(model => model.RateClassCode, "The current Rate Class Code field value is invalid.")
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.RateClassCodeValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="RateClassCode" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Description)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Description)
+                            @Html.ValidationMessageFor(model => model.Description)
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.DescriptionValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="Description" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.AccountTypeId, "AccountType")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("AccountTypeId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.AccountTypeId, "The current Account Type field value is invalid.")
+                        </div>
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.Label("LP Standard Rate Class")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("LpStandardRateClassId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.LpStandardRateClassId, "The current LP Standard Rate Class field value is invalid.")
+                        </div>
+                    </div>
+                    </div>
+                        </div>
+                       <br />
+                    <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.Inactive)
+                            @Html.ValidationMessageFor(model => model.Inactive)
+                        </div>
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                            @Html.ValidationMessageFor(model => model.CreatedBy)
+                        </div>
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                            @Html.ValidationMessageFor(model => model.CreatedDate)
+                        </div>
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                        </div>
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                        </div>
+                        </div>
+                </div>
+                      </div>
+            </fieldset>
+        </div>
+    </div>
+}
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

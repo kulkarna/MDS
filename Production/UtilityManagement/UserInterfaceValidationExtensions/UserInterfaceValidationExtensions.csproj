@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB605DBC-3846-4908-819B-0C5572DC94AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UserInterfaceValidationExtensions</RootNamespace>
+    <AssemblyName>UserInterfaceValidationExtensions</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\SharedVersionInfo.cs">
+      <Link>Properties\SharedVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AccountTypeValidation.cs" />
+    <Compile Include="AccountInfoFieldRequiredValidation.cs" />
+    <Compile Include="AccountInfoFieldValidation.cs" />
+    <Compile Include="CapacityTresholdValidation.cs" />
+    <Compile Include="PaymentTermValidation.cs" />
+    <Compile Include="MeterReadCalendarValidation.cs" />
+    <Compile Include="LpBillingTypeValidation.cs" />
+    <Compile Include="PurchaseOfReceivableValidation.cs" />
+    <Compile Include="LoadProfileAliasValidation.cs" />
+    <Compile Include="RateClassValidation.cs" />
+    <Compile Include="LpStandardLoadProfileValidation.cs" />
+    <Compile Include="LpStandardTariffCodeValidation.cs" />
+    <Compile Include="TariffCodeAliasValidation.cs" />
+    <Compile Include="LpStandardRateClassValidation.cs" />
+    <Compile Include="RateClassAliasValidation.cs" />
+    <Compile Include="RequestModeHistoricalUsageParameterValidation.cs" />
+    <Compile Include="IdrRuleValidation.cs" />
+    <Compile Include="MeterTypeValidation.cs" />
+    <Compile Include="LoadProfileValidation.cs" />
+    <Compile Include="ReqeustModeTypeGenreValidation.cs" />
+    <Compile Include="RequestModeHistoricalUsageValidation.cs" />
+    <Compile Include="RequestModeIcapValidation.cs" />
+    <Compile Include="RequestModeIdrValidation.cs" />
+    <Compile Include="RequestModeTypeToRequestModeEnrollmentTypeValidation.cs" />
+    <Compile Include="RequestModeTypeToRequestModeTypeGenreValidation.cs" />
+    <Compile Include="RequestModeTypeValidation.cs" />
+    <Compile Include="TariffCodeValidation.cs" />
+    <Compile Include="UserInterfaceControlAndValueGoverningControlVisibilityValidation.cs" />
+    <Compile Include="UserInterfaceControlVisibilityValidation.cs" />
+    <Compile Include="UserInterfaceFormControlValidation.cs" />
+    <Compile Include="UserInterfaceFormValidation.cs" />
+    <Compile Include="ValidationExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayerEntityFramework\DataAccessLayerEntityFramework.csproj">
+      <Project>{7974ae22-3122-4895-82df-30ba364ae30f}</Project>
+      <Name>DataAccessLayerEntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{985638c5-4931-489a-a175-0c2d44c4f63a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

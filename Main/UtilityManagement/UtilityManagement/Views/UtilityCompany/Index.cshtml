@@ -1,0 +1,300 @@
+﻿@model List<DataAccessLayerEntityFramework.usp_UtilityCompany_Index_Select_Result> 
+
+@{
+    ViewBag.Title = "Utility Company Index";
+
+    
+}
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Utility Company</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button></div>
+        </div>
+    </div>
+    <div class="details-data-section">
+
+        <div class="detail_table">
+            <div class="left_container">
+            <table class="index">
+                <tr>
+                    <th>Row Count = @Model.Count()</th>
+                    <th>
+                        @Html.ActionLink("Utility Code", "TitleClick", new { name = "UtilityCode" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityCodeImageUrl))
+                            {
+                        <img id="imgUtilityCode" src="@ViewBag.UtilityCodeImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Full Name", "TitleClick", new { name = "FullName" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.FullNameImageUrl))
+                            {
+                        <img id="imgFullName" src="@ViewBag.FullNameImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("ISO", "TitleClick", new { name = "ISO" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.IsoImageUrl))
+                            {
+                        <img id="imgIso" src="@ViewBag.IsoImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Market", "TitleClick", new { name = "Market" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.MarketImageUrl))
+                            {
+                        <img id="imgMarket" src="@ViewBag.MarketImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Primary DUNS Number", "TitleClick", new { name = "PrimaryDunsNumber" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.PrimaryDunsNumberImageUrl))
+                            {
+                        <img id="imgPrimaryDunsNumber" src="@ViewBag.PrimaryDunsNumberImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("LP Entity Id", "TitleClick", new { name = "LpEntityId" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LpEntityIdImageUrl))
+                            {
+                        <img id="imgLpEntityId" src="@ViewBag.LpEntityIdImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Utility Status", "TitleClick", new { name = "UtilityStatus" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityStatusImageUrl))
+                            {
+                        <img id="imgUtilityStatus" src="@ViewBag.UtilityStatusImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Enrollment Lead Days", "TitleClick", new { name = "EnrollmentLeadDays" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.EnrollmentLeadDaysImageUrl))
+                            {
+                        <img id="imgEnrollmentLeadDays" src="@ViewBag.EnrollmentLeadDaysImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Billing Type", "TitleClick", new { name = "BillingType" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.BillingTypeImageUrl))
+                            {
+                        <img id="imgBillingType" src="@ViewBag.BillingTypeImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Account Length", "TitleClick", new { name = "AccountLength" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.AccountLengthImageUrl))
+                            {
+                        <img id="imgAccountLength" src="@ViewBag.AccountLengthImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Account Number Prefix", "TitleClick", new { name = "AccountNumberPrefix" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.AccountNumberPrefixImageUrl))
+                            {
+                        <img id="imgAccountNumberPrefix" src="@ViewBag.AccountNumberPrefixImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("POR Option", "TitleClick", new { name = "PorOption" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.PorOptionImageUrl))
+                            {
+                        <img id="imgPorOption" src="@ViewBag.PorOptionImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Meter Number Required", "TitleClick", new { name = "MeterNumberRequired" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.MeterNumberRequiredImageUrl))
+                            {
+                        <img id="imgMeterNumberRequired" src="@ViewBag.MeterNumberRequiredImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Meter Number Length", "TitleClick", new { name = "MeterNumberLength" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.MeterNumberLengthImageUrl))
+                            {
+                        <img id="imgMeterNumberLength" src="@ViewBag.MeterNumberLengthImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("EDI Capable", "TitleClick", new { name = "EdiCapable" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.EdiCapableImageUrl))
+                            {
+                        <img id="imgEdiCapable" src="@ViewBag.EdiCapableImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Utility Phone Number", "TitleClick", new { name = "UtilityPhoneNumber" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityPhoneNumberImageUrl))
+                            {
+                        <img id="imgUtilityPhoneNumber" src="@ViewBag.UtilityPhoneNumberImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Inactive", "TitleClick", new { name = "Inactive" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+                            {
+                        <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created By", "TitleClick", new { name = "CreatedBy" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+                            {
+                        <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created Date", "TitleClick", new { name = "CreatedDate" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+                            {
+                        <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Last Modified By", "TitleClick", new { name = "LastModifiedBy" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+                            {
+                        <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Last Modified Date", "TitleClick", new { name = "LastModifiedDate" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+                            {
+                        <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                </tr>
+                @{
+                    foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                            <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UtilityCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ISO)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Market)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PrimaryDunsNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LpEntityId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UtilityStatus)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EnrollmentLeadDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BillingType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccountLength)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccountNumberPrefix)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PorOption)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MeterNumberRequired)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MeterNumberLength)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EdiCapable)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UtilityPhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Inactive)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                        </td>
+                    </tr>
+                    }
+                }
+            </table>
+                </div></div>
+                <div class="right_chart">
+               </div>
+        </div></div>
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

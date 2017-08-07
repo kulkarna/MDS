@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UtilityManagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUtilityManagementService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilities" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilitiesNoTrace_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilitiesNoTrace" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllUtilitiesNoTrace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtilitiesNoTraceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestModeEnrollmentTypes" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestModeEnrollmentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestModeEnrollmentTypesNoTrace" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestModeEnrollmentTypesNoTraceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetHistoricalUsageRequestModes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalUsageRequestModes" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetHistoricalUsageRequestModes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoricalUsageRequestModesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetIcapRequestModes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIcapRequestModes" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetIcapRequestModes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIcapRequestModesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetIdrRequestModes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdrRequestModes" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetIdrRequestModes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdrRequestModesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetPurchaseOfReceivables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurchaseOfReceivables" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityManagementService_GetPurchaseOfReceivables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurchaseOfReceivablesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUtilityManagementService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetData" message="tns:IUtilityManagementService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetDataResponse" message="tns:IUtilityManagementService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilities" message="tns:IUtilityManagementService_GetAllUtilities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesResponse" message="tns:IUtilityManagementService_GetAllUtilities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilitiesNoTrace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesNoTrace" message="tns:IUtilityManagementService_GetAllUtilitiesNoTrace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesNoTraceResponse" message="tns:IUtilityManagementService_GetAllUtilitiesNoTrace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestModeEnrollmentTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypes" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesResponse" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestModeEnrollmentTypesNoTrace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesNoTrace" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesNoTraceResponse" message="tns:IUtilityManagementService_GetAllRequestModeEnrollmentTypesNoTrace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalUsageRequestModes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetHistoricalUsageRequestModes" message="tns:IUtilityManagementService_GetHistoricalUsageRequestModes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetHistoricalUsageRequestModesResponse" message="tns:IUtilityManagementService_GetHistoricalUsageRequestModes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIcapRequestModes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetIcapRequestModes" message="tns:IUtilityManagementService_GetIcapRequestModes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetIcapRequestModesResponse" message="tns:IUtilityManagementService_GetIcapRequestModes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdrRequestModes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetIdrRequestModes" message="tns:IUtilityManagementService_GetIdrRequestModes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetIdrRequestModesResponse" message="tns:IUtilityManagementService_GetIdrRequestModes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseOfReceivables">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUtilityManagementService/GetPurchaseOfReceivables" message="tns:IUtilityManagementService_GetPurchaseOfReceivables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUtilityManagementService/GetPurchaseOfReceivablesResponse" message="tns:IUtilityManagementService_GetPurchaseOfReceivables_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUtilityManagementService" type="tns:IUtilityManagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilities">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAllUtilities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtilitiesNoTrace">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAllUtilitiesNoTrace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestModeEnrollmentTypes">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestModeEnrollmentTypesNoTrace">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetAllRequestModeEnrollmentTypesNoTrace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalUsageRequestModes">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetHistoricalUsageRequestModes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIcapRequestModes">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetIcapRequestModes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdrRequestModes">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetIdrRequestModes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseOfReceivables">
+      <soap:operation soapAction="http://tempuri.org/IUtilityManagementService/GetPurchaseOfReceivables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UtilityManagementService">
+    <wsdl:port name="BasicHttpBinding_IUtilityManagementService" binding="tns:BasicHttpBinding_IUtilityManagementService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/UtilityManagementService/UtilityManagementService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,65 @@
+1- Deploy the web app WsoMtM to lpcnocws4
+
+2- Update the dlls to the following services: 
+
+	* MarkToMarketServiceHost under lpcnocws4 --> C:\Program Files (x86)\Liberty Power\MarkToMarketServiceLibraryHostSetup:
+		(which is located under Apps/Services/MarkToMarketServiceLibraryHost)
+		a- First stop the service MarkToMarketServiceHost.
+		b- Copy the new dlls.
+		c- Start the service MarkToMarketServiceHost.
+
+	* MarkToMarketSetup under lpcnocws4 --> C:\Program Files\Liberty Power\MarkToMarketSetup
+		(which is located under Apps/Services/MarkToMarketServices)
+		a- First stop the services: MarkToMarketBatchForecastingService, MarkToMarketWatcherService.
+		b- Copy the new dlls.
+		c- Start the services: MarkToMarketBatchForecastingService, MarkToMarketWatcherService.
+
+	* MarkToMarketSetup under lpcnocrm1 --> C:\Program Files\Liberty Power\MarkToMarketSetup
+		(which is located under Apps/Services/MarkToMarketServices) same as the previous one
+		a- First stop the services: MarkToMarketETPService.
+		b- Copy the new dlls.
+		c- Start the service MarkToMarketETPService.
+
+3- Copy the following connection string in the <configuration> section
+
+	<connectionStrings>
+		<add name="RO_OracleConnection" connectionString ="Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.20.0.12)(PORT=1521)) (CONNECT_DATA=(SERVER=DEDICATED) (SERVICE_NAME = LPC1)));User ID=LIBERTY;Password=LIBERTY" />
+                <add name="DealCapture" connectionString="Data Source=SQLINTPROD;Initial Catalog=lp_deal_capture;user id=sa;password=Sp@c3ch@1r" providerName="System.Data.SqlClient" />
+	</connectionStrings>
+
+ to ....
+
+	lpcnocws4 --> WsoMtM under lpcnocws4 --> C:\inetpub\wwwroot\WsoMtM\web.config
+	lpcnocws4 --> MarkToMarketServiceLibraryHost under lpcnocws4 --> C:\Program Files (x86)\Liberty Power\MarkToMarketServiceLibraryHostSetup\MtMServiceLibraryHost.exe.config
+	lpcnocws4 --> MarkToMarketSetup under lpcnocws4 --> C:\Program Files\Liberty Power\MarkToMarketSetup\MarkToMarketSetup.exe.config
+	lpcnocrm1 --> MarkToMarketSetup under C:\Program Files\Liberty Power\MarkToMarketSetup\MarkToMarketSetup.exe.config
+
+AppSettings
+Put this in the WsoMtM web.config on WS4
+<add key="ConnectionString" value="Data Source=SqlIntProd;initial catalog=lp_deal_capture;user=sa;password=Sp@c3ch@1r;timeout=180" />
+
+
+4- Modify the web.config of WsoMtM to have the following value:
+
+ <appSettings>
+	<add key="CustomFixedBrandID" value="8" />
+ </appSettings>
+
+ 5- Deploy the SQL scripts in the following order:
+	1- lp_MtM.UpdateTables.sql
+	2- lp_MtM.NewTables.sql
+	2- lp_MtM.NewStoredProcedures.sql   Need permissions to deploy this to Production
+	3- the rest of the scripts
+
+IIS
+WSOMTM - Update Authentication - ASP.NET Impersonation Enabled
+Windows Authentication - Enabled
+Disable Anonymous Authentication
+
+
+Create a new app pool on WS4 WsoMtM
+Name: M2M
+4.0
+Classic pipeline
+Enable 32 bit
+Identity: LocalSystem

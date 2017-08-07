@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ac8c0a0911ee46fba05d20803d0d28e5" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.AccountsPerZipCodeByTimeSlouse" Width="1.5" PointX="2.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.DemographicData" Width="3.75" PointX="10.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.Search" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.SearchCriteria" Width="1.5" PointX="0.625" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.SearchToSearchCriteria" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.Segment" Width="2.375" PointX="5.125" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" Width="1.5" PointX="5.375" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.sysdiagram" Width="1.5" PointX="0.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.TimeSlouse" Width="1.5" PointX="0.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.USState" Width="1.5" PointX="7.875" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lp_DemographicDataModel.ZipCode" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_AccountsPerZipCodeByTimeSlice_TimeSlice" ManuallyRouted="false" />
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_AccountsPerZipCodeByTimeSlice_ZipCode" ManuallyRouted="false" />
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments1_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments2_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments3_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_DemographicData_ZipCode" ManuallyRouted="false" />
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_SearchToSearchCriteria_SearchId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_SearchToSearchCriteria_SearchCriteriaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity_ZipCode_Id" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="Lp_DemographicDataModel.FK_ZipCode_USState" ManuallyRouted="true" >
+          <ConnectorPoint PointX="9.375" PointY="4.4326508300411493" />
+          <ConnectorPoint PointX="9.75" PointY="4.4326508300411493" />
+          <ConnectorPoint PointX="9.75" PointY="5.5896589583333309" />
+          <ConnectorPoint PointX="6.75" PointY="5.5896589583333309" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

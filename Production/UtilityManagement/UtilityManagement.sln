@@ -1,0 +1,239 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayerEntityFramework", "DataAccessLayerEntityFramework\DataAccessLayerEntityFramework.csproj", "{7974AE22-3122-4895-82DF-30BA364AE30F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityManagement", "UtilityManagement\UtilityManagement.csproj", "{27F550F9-6BA9-4046-AF36-6CA983068B1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{985638C5-4931-489A-A175-0C2D44C4F63A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterfaceValidationExtensions", "UserInterfaceValidationExtensions\UserInterfaceValidationExtensions.csproj", "{AB605DBC-3846-4908-819B-0C5572DC94AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityManagementRepository", "UtilityManagementRepository\UtilityManagementRepository.csproj", "{16766DAF-3539-4ACA-BF01-EAEA0524DDAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityUnityLogging", "UtilityUnityLogging\UtilityUnityLogging.csproj", "{1E6DDDF1-E516-48CC-BEC2-243BE783406A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityLogging", "UtilityLogging\UtilityLogging.csproj", "{B550B746-31A5-4487-A8E4-31A357030A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityManagementServiceData", "UtilityManagementServiceData\UtilityManagementServiceData.csproj", "{59B219B4-7629-4BCC-A369-B3F41A948CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityManagementBusinessLayer", "UtilityManagementBusinessLayer\UtilityManagementBusinessLayer.csproj", "{94F38147-A5C2-4E62-A534-AA4E71D24121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityManagementDataMapper", "UtilityManagementDataMapper\UtilityManagementDataMapper.csproj", "{FDC3F5E6-72A4-42E4-93F0-FE2C14223B1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{AB8A28C3-313C-4D06-917D-EB5561B710BE}"
+	ProjectSection(SolutionItems) = preProject
+		lib\Aspose.Cells.DLL = lib\Aspose.Cells.DLL
+		lib\CuteWebUI.AjaxUploader.dll = lib\CuteWebUI.AjaxUploader.dll
+		lib\FieldHistory.dll = lib\FieldHistory.dll
+		lib\GemBox.Spreadsheet.dll = lib\GemBox.Spreadsheet.dll
+		lib\GemBox.Spreadsheet.WinFormsUtilities.dll = lib\GemBox.Spreadsheet.WinFormsUtilities.dll
+		lib\GemBox.Spreadsheet.WinFormsUtilities.XML = lib\GemBox.Spreadsheet.WinFormsUtilities.XML
+		lib\GemBox.Spreadsheet.XML = lib\GemBox.Spreadsheet.XML
+		lib\log4net.dll = lib\log4net.dll
+		lib\Microsoft.Office.Interop.Excel.dll = lib\Microsoft.Office.Interop.Excel.dll
+		lib\Microsoft.Office.Interop.Excel.xml = lib\Microsoft.Office.Interop.Excel.xml
+		lib\Microsoft.Practices.ServiceLocation.dll = lib\Microsoft.Practices.ServiceLocation.dll
+		lib\Microsoft.Practices.Unity.Configuration.dll = lib\Microsoft.Practices.Unity.Configuration.dll
+		lib\Microsoft.Practices.Unity.dll = lib\Microsoft.Practices.Unity.dll
+		lib\Microsoft.Practices.Unity.Interception.Configuration.dll = lib\Microsoft.Practices.Unity.Interception.Configuration.dll
+		lib\Microsoft.Practices.Unity.Interception.dll = lib\Microsoft.Practices.Unity.Interception.dll
+		lib\Microsoft.Practices.Unity.Mvc.dll = lib\Microsoft.Practices.Unity.Mvc.dll
+		lib\Microsoft.Practices.Unity.NetCore.dll = lib\Microsoft.Practices.Unity.NetCore.dll
+		lib\Microsoft.Practices.Unity.NetCore.pri = lib\Microsoft.Practices.Unity.NetCore.pri
+		lib\Microsoft.Practices.Unity.WebApi.dll = lib\Microsoft.Practices.Unity.WebApi.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{01959A47-7089-40A2-87B4-4D4B6316644E}"
+	ProjectSection(SolutionItems) = preProject
+		DatabaseScript.sql = DatabaseScript.sql
+		ETL.sql = ETL.sql
+		InsertScripts.sql = InsertScripts.sql
+		UtilityExcelDataImport.dtsx = UtilityExcelDataImport.dtsx
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityManagementService", "UtilityManagementService\UtilityManagementService.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D319FB6-374B-45D1-8420-63D70696842A}"
+	ProjectSection(SolutionItems) = preProject
+		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
+		SharedVersionInfo.cs = SharedVersionInfo.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{A8F45BC8-EC28-4AC3-946F-7B4DE65A1DF0}"
+	ProjectSection(SolutionItems) = preProject
+		Build.bat = Build.bat
+		Build.proj = Build.proj
+		BuildFast.bat = BuildFast.bat
+		BuildReleaseFast.bat = BuildReleaseFast.bat
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageManagementService", "UsageManagementService\UsageManagementService.csproj", "{98B2CC62-CE66-4FCF-BB18-1469D0CC1560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageManagementServiceProxy", "UsageManagementServiceProxy\UsageManagementServiceProxy.csproj", "{4734A520-B227-46B7-8C26-73180AB19430}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsServiceProxy", "AccountsServiceProxy\AccountsServiceProxy.csproj", "{A1C37FED-177C-48C8-A3A9-BFC118CBD4DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityManagementServiceProxy", "UtilityManagementServiceProxy\UtilityManagementServiceProxy.csproj", "{0A6C2C5A-A46A-4F96-AB43-8FEE4425EE75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelLibrary", "ExcelLibrary\ExcelLibrary.csproj", "{0F6CAF86-99FB-4CA5-9CD4-83F4B2AA6B99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBusinessLayer", "ExcelBusinessLayer\ExcelBusinessLayer.csproj", "{46E13023-2563-4657-8C93-64C5CE8417BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityDto", "UtilityDto\UtilityDto.csproj", "{F5A935CC-AF82-4282-A262-2E9E29B5871C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServiceProxy", "AuthorizationServiceProxy\AuthorizationServiceProxy\AuthorizationServiceProxy.csproj", "{A103876D-6AF1-4F03-8A7D-55DB5A0C4838}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 20
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://lpcnocapptfs1:8080/tfs/lpcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DataAccessLayerEntityFramework\\DataAccessLayerEntityFramework.csproj
+		SccProjectName1 = DataAccessLayerEntityFramework
+		SccLocalPath1 = DataAccessLayerEntityFramework
+		SccProjectUniqueName2 = UtilityManagement\\UtilityManagement.csproj
+		SccProjectName2 = UtilityManagement
+		SccLocalPath2 = UtilityManagement
+		SccProjectUniqueName3 = Utilities\\Utilities.csproj
+		SccProjectName3 = Utilities
+		SccLocalPath3 = Utilities
+		SccProjectUniqueName4 = UserInterfaceValidationExtensions\\UserInterfaceValidationExtensions.csproj
+		SccProjectName4 = UserInterfaceValidationExtensions
+		SccLocalPath4 = UserInterfaceValidationExtensions
+		SccProjectUniqueName5 = UtilityManagementRepository\\UtilityManagementRepository.csproj
+		SccProjectName5 = UtilityManagementRepository
+		SccLocalPath5 = UtilityManagementRepository
+		SccProjectUniqueName6 = UtilityUnityLogging\\UtilityUnityLogging.csproj
+		SccProjectName6 = UtilityUnityLogging
+		SccLocalPath6 = UtilityUnityLogging
+		SccProjectUniqueName7 = UtilityLogging\\UtilityLogging.csproj
+		SccProjectName7 = UtilityLogging
+		SccLocalPath7 = UtilityLogging
+		SccProjectUniqueName8 = UtilityManagementServiceData\\UtilityManagementServiceData.csproj
+		SccProjectName8 = UtilityManagementServiceData
+		SccLocalPath8 = UtilityManagementServiceData
+		SccProjectUniqueName9 = UtilityManagementBusinessLayer\\UtilityManagementBusinessLayer.csproj
+		SccProjectName9 = UtilityManagementBusinessLayer
+		SccLocalPath9 = UtilityManagementBusinessLayer
+		SccProjectUniqueName10 = UtilityManagementDataMapper\\UtilityManagementDataMapper.csproj
+		SccProjectName10 = UtilityManagementDataMapper
+		SccLocalPath10 = UtilityManagementDataMapper
+		SccProjectUniqueName11 = UtilityManagementService\\UtilityManagementService.csproj
+		SccProjectName11 = UtilityManagementService
+		SccLocalPath11 = UtilityManagementService
+		SccProjectUniqueName12 = UsageManagementService\\UsageManagementService.csproj
+		SccProjectName12 = UsageManagementService
+		SccLocalPath12 = UsageManagementService
+		SccProjectUniqueName13 = UsageManagementServiceProxy\\UsageManagementServiceProxy.csproj
+		SccProjectName13 = UsageManagementServiceProxy
+		SccLocalPath13 = UsageManagementServiceProxy
+		SccProjectUniqueName14 = AccountsServiceProxy\\AccountsServiceProxy.csproj
+		SccProjectName14 = AccountsServiceProxy
+		SccLocalPath14 = AccountsServiceProxy
+		SccProjectUniqueName15 = UtilityManagementServiceProxy\\UtilityManagementServiceProxy.csproj
+		SccProjectName15 = UtilityManagementServiceProxy
+		SccLocalPath15 = UtilityManagementServiceProxy
+		SccProjectUniqueName16 = ExcelLibrary\\ExcelLibrary.csproj
+		SccProjectName16 = ExcelLibrary
+		SccLocalPath16 = ExcelLibrary
+		SccProjectUniqueName17 = ExcelBusinessLayer\\ExcelBusinessLayer.csproj
+		SccProjectName17 = ExcelBusinessLayer
+		SccLocalPath17 = ExcelBusinessLayer
+		SccProjectUniqueName18 = UtilityDto\\UtilityDto.csproj
+		SccProjectName18 = UtilityDto
+		SccLocalPath18 = UtilityDto
+		SccProjectUniqueName19 = AuthorizationServiceProxy\\AuthorizationServiceProxy\\AuthorizationServiceProxy.csproj
+		SccProjectName19 = AuthorizationServiceProxy/AuthorizationServiceProxy
+		SccLocalPath19 = AuthorizationServiceProxy\\AuthorizationServiceProxy
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7974AE22-3122-4895-82DF-30BA364AE30F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7974AE22-3122-4895-82DF-30BA364AE30F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7974AE22-3122-4895-82DF-30BA364AE30F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7974AE22-3122-4895-82DF-30BA364AE30F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F550F9-6BA9-4046-AF36-6CA983068B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F550F9-6BA9-4046-AF36-6CA983068B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F550F9-6BA9-4046-AF36-6CA983068B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F550F9-6BA9-4046-AF36-6CA983068B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{985638C5-4931-489A-A175-0C2D44C4F63A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{985638C5-4931-489A-A175-0C2D44C4F63A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{985638C5-4931-489A-A175-0C2D44C4F63A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{985638C5-4931-489A-A175-0C2D44C4F63A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB605DBC-3846-4908-819B-0C5572DC94AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB605DBC-3846-4908-819B-0C5572DC94AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB605DBC-3846-4908-819B-0C5572DC94AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB605DBC-3846-4908-819B-0C5572DC94AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16766DAF-3539-4ACA-BF01-EAEA0524DDAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16766DAF-3539-4ACA-BF01-EAEA0524DDAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16766DAF-3539-4ACA-BF01-EAEA0524DDAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16766DAF-3539-4ACA-BF01-EAEA0524DDAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E6DDDF1-E516-48CC-BEC2-243BE783406A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E6DDDF1-E516-48CC-BEC2-243BE783406A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E6DDDF1-E516-48CC-BEC2-243BE783406A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E6DDDF1-E516-48CC-BEC2-243BE783406A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B550B746-31A5-4487-A8E4-31A357030A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B550B746-31A5-4487-A8E4-31A357030A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B550B746-31A5-4487-A8E4-31A357030A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B550B746-31A5-4487-A8E4-31A357030A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B219B4-7629-4BCC-A369-B3F41A948CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B219B4-7629-4BCC-A369-B3F41A948CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B219B4-7629-4BCC-A369-B3F41A948CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B219B4-7629-4BCC-A369-B3F41A948CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F38147-A5C2-4E62-A534-AA4E71D24121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F38147-A5C2-4E62-A534-AA4E71D24121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F38147-A5C2-4E62-A534-AA4E71D24121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F38147-A5C2-4E62-A534-AA4E71D24121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC3F5E6-72A4-42E4-93F0-FE2C14223B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC3F5E6-72A4-42E4-93F0-FE2C14223B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC3F5E6-72A4-42E4-93F0-FE2C14223B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC3F5E6-72A4-42E4-93F0-FE2C14223B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B2CC62-CE66-4FCF-BB18-1469D0CC1560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B2CC62-CE66-4FCF-BB18-1469D0CC1560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B2CC62-CE66-4FCF-BB18-1469D0CC1560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B2CC62-CE66-4FCF-BB18-1469D0CC1560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4734A520-B227-46B7-8C26-73180AB19430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4734A520-B227-46B7-8C26-73180AB19430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4734A520-B227-46B7-8C26-73180AB19430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4734A520-B227-46B7-8C26-73180AB19430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C37FED-177C-48C8-A3A9-BFC118CBD4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C37FED-177C-48C8-A3A9-BFC118CBD4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C37FED-177C-48C8-A3A9-BFC118CBD4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C37FED-177C-48C8-A3A9-BFC118CBD4DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A6C2C5A-A46A-4F96-AB43-8FEE4425EE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A6C2C5A-A46A-4F96-AB43-8FEE4425EE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A6C2C5A-A46A-4F96-AB43-8FEE4425EE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A6C2C5A-A46A-4F96-AB43-8FEE4425EE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6CAF86-99FB-4CA5-9CD4-83F4B2AA6B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6CAF86-99FB-4CA5-9CD4-83F4B2AA6B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6CAF86-99FB-4CA5-9CD4-83F4B2AA6B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6CAF86-99FB-4CA5-9CD4-83F4B2AA6B99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E13023-2563-4657-8C93-64C5CE8417BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E13023-2563-4657-8C93-64C5CE8417BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E13023-2563-4657-8C93-64C5CE8417BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E13023-2563-4657-8C93-64C5CE8417BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A935CC-AF82-4282-A262-2E9E29B5871C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A935CC-AF82-4282-A262-2E9E29B5871C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A935CC-AF82-4282-A262-2E9E29B5871C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A935CC-AF82-4282-A262-2E9E29B5871C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A103876D-6AF1-4F03-8A7D-55DB5A0C4838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A103876D-6AF1-4F03-8A7D-55DB5A0C4838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A103876D-6AF1-4F03-8A7D-55DB5A0C4838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A103876D-6AF1-4F03-8A7D-55DB5A0C4838}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

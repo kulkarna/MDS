@@ -1,0 +1,80 @@
+﻿@model List<UtilityManagement.Models.ZipCodesWithSimilarDemographicDataItem>
+@{
+    ViewBag.Title = "Zip Codes With Similar Demographic Data Index";
+}
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Zip Codes With Similar Demographic Data</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button></div>
+        </div>
+    </div>
+    <div class="details-data-section">
+
+        <div class="detail_table">
+            <div class="left_container">
+
+            <table class="index">
+                <tr>
+                    <th>Row Count = @this.Model.Count</th>
+                    <th>Zip Code</th>
+                    <th>City State</th>
+                    <th>Median Age (25-37)</th>
+                    <th>Median Household Income ($26K-$50K)</th>
+                    <th>Median Net Worth ($11K-$21K)</th>
+                </tr>
+                    @{
+                           if (this.Model == null)
+                         {
+                            <tr><td>Model is null</td></tr>
+                         }
+                         else
+                         {
+                             if (this.Model.Count == 0)
+                             {
+                                        <tr><td>Model.Count==0</td></tr>
+                             }
+                             else
+                             {
+                                 foreach (var item in this.Model)
+                                 {
+                                    <tr>
+                                        <td>
+                                            @{string checkBoxId = string.Format("CheckBoxSelection_{0}", Guid.NewGuid().ToString());}
+                                            <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ZipCode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CityState)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MedianAge)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MedianIncome)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MedianNetWorth)
+                                        </td>
+                                    </tr>
+                                 }
+                             }
+                         }
+                    }
+            </table>
+                </div></div>
+                <div class="right_chart">
+               </div>
+        </div></div>
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://ua.ws.libertypowerbilling.com/EnrollmentService.asmx?wsdl" docRef="http://ua.ws.libertypowerbilling.com/EnrollmentService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://ua.ws.libertypowerbilling.com/EnrollmentService.asmx" xmlns:q1="https://ws.libertypowerbilling.com/EnrollmentService" binding="q1:EnrollmentServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://ua.ws.libertypowerbilling.com/EnrollmentService.asmx" xmlns:q2="https://ws.libertypowerbilling.com/EnrollmentService" binding="q2:EnrollmentServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

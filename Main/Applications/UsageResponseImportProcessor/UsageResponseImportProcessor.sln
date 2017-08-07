@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageResponseImportProcessor", "UsageResponseImportProcessor\UsageResponseImportProcessor.csproj", "{D9BC5965-5586-4294-80C5-1D529F3C8C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageResponseImportProcessor.Tests", "UsageResponseImportProcessor.Tests\UsageResponseImportProcessor.Tests.csproj", "{A37C305A-380E-46BF-AE3A-2C848F5F078B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://lpcnocapptfs1:8080/tfs/lpcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UsageResponseImportProcessor.Tests\\UsageResponseImportProcessor.Tests.csproj
+		SccProjectName1 = UsageResponseImportProcessor.Tests
+		SccLocalPath1 = UsageResponseImportProcessor.Tests
+		SccProjectUniqueName2 = UsageResponseImportProcessor\\UsageResponseImportProcessor.csproj
+		SccProjectName2 = UsageResponseImportProcessor
+		SccLocalPath2 = UsageResponseImportProcessor
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9BC5965-5586-4294-80C5-1D529F3C8C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9BC5965-5586-4294-80C5-1D529F3C8C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9BC5965-5586-4294-80C5-1D529F3C8C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9BC5965-5586-4294-80C5-1D529F3C8C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A37C305A-380E-46BF-AE3A-2C848F5F078B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A37C305A-380E-46BF-AE3A-2C848F5F078B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A37C305A-380E-46BF-AE3A-2C848F5F078B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A37C305A-380E-46BF-AE3A-2C848F5F078B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

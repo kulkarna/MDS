@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4F70445-B2DE-4824-BD09-CC5022093090}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtilityManagmentService.Tests</RootNamespace>
+    <AssemblyName>UtilityManagmentService.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\SharedVersionInfo.cs">
+      <Link>Properties\SharedVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Copy of DataRepositoryMockGetAllUtiltiesReceiveIdrErrorPath.cs" />
+    <Compile Include="DataRepositoryMockGetAllUtiltiesReceiveIdrNoValueReturnedPath.cs" />
+    <Compile Include="DataRepositoryMockGetAllUtiltiesReceiveIdrOnlyHappyPath.cs" />
+    <Compile Include="DataRepositoryMockGetPreviousMeterReadDateHappyPath.cs" />
+    <Compile Include="DataRepositoryMockGetPreviousMeterReadDateNoReturnValueNullDataSet.cs" />
+    <Compile Include="DataRepositoryMockGetPreviousMeterReadDateNoReturnValue.cs" />
+    <Compile Include="DataRepositoryMockGetPreviousMeterReadDateValueOutOfRange.cs" />
+    <Compile Include="DataRepositoryMockGetNextMeterReadDateValueOutOfRange.cs" />
+    <Compile Include="DataRepositoryMockGetNextMeterReadDateNoReturnValue.cs" />
+    <Compile Include="DataRepositoryMockGetNextMeterReadDateHappyPath.cs" />
+    <Compile Include="Service References\UtiltyManagementService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UtilityManagementBusinessLayerTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityManagementServiceTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\UtilityManagementServiceData.GetAllRequestModeEnrollmentTypesResponse.datasource" />
+    <None Include="Properties\DataSources\UtilityManagementServiceData.GetAllUtilitiesResponse.datasource" />
+    <None Include="Properties\DataSources\UtilityManagementServiceData.GetHistoricalUsageRequestModeResponse.datasource" />
+    <None Include="Properties\DataSources\UtilityManagementServiceData.GetIcapRequestModeResponse.datasource" />
+    <None Include="Properties\DataSources\UtilityManagementServiceData.GetIdrRequestModeResponse.datasource" />
+    <None Include="Properties\DataSources\UtilityManagementServiceData.GetPurchaseOfReceivablesResponse.datasource" />
+    <None Include="Service References\UtiltyManagementService\service.wsdl" />
+    <None Include="Service References\UtiltyManagementService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UtiltyManagementService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UtiltyManagementService\UtilityManagementServiceData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayerEntityFramework\DataAccessLayerEntityFramework.csproj">
+      <Project>{7974ae22-3122-4895-82df-30ba364ae30f}</Project>
+      <Name>DataAccessLayerEntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{985638c5-4931-489a-a175-0c2d44c4f63a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityManagementBusinessLayer\UtilityManagementBusinessLayer.csproj">
+      <Project>{94f38147-a5c2-4e62-a534-aa4e71d24121}</Project>
+      <Name>UtilityManagementBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityManagementRepository\UtilityManagementRepository.csproj">
+      <Project>{16766daf-3539-4aca-bf01-eaea0524ddad}</Project>
+      <Name>UtilityManagementRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityManagementServiceData\UtilityManagementServiceData.csproj">
+      <Project>{59b219b4-7629-4bcc-a369-b3f41a948cc6}</Project>
+      <Name>UtilityManagementServiceData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\UtiltyManagementService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UtiltyManagementService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UtiltyManagementService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UtiltyManagementService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

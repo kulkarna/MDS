@@ -1,0 +1,245 @@
+﻿@model  UtilityManagement.Models.LoadProfileModel
+@{ViewBag.Title = "Load Profile Index";}
+    <div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Load Profile</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="form-information">&nbsp;&nbsp;Information</div>*@
+    <div class="details-data-section">
+       <div class="f10"> @Html.Label("Utility Company")
+        @Html.DropDownList("UtilityCompanyId", null, new{@onchange = "Utility_onChange()"})
+        </div>
+        @{if (@Model.SelectedUtilityCompanyId != null && @Model.SelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+          {
+             <div class="details-full-section" style="overflow:hidden;">
+                 <br />
+                <div style="overflow-x:scroll;" id="bheight">
+            <table>
+                <tr>
+                    <td style="vertical-align:top">
+                <div class="form-title-specific p5">Liberty Power Standard Load Profile</div>
+@*                <div class="details-center-section">*@
+                    <table class="index2 top_border left_border">
+
+                        <tr>
+                    <th>Row Count = @Model.LpStandardRateList.Count()</th>
+                            <th>
+                                @Html.DisplayName("Utility Code")
+                            </th>
+                            <th>
+                                @Html.ActionLink("LP Std Load Profile", "LpStandardLoadProfileTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LpStandardLoadProfileImageUrl))
+              {
+                                    <img id="imgLpStandardLoadProfile" src="@ViewBag.LpStandardLoadProfileImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                        </tr>
+                        @{
+              foreach (var item in Model.LpStandardRateList)
+              {
+                            <tr>
+                                <td>
+                                    @{string checkBoxLpStandardRateListId = string.Format("CheckBoxSelection_LpStandard_{0}", item.Id);}
+                                    <input type="checkbox" class="check-box" id="@checkBoxLpStandardRateListId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxLpStandardRateListId');">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LpStandardLoadProfileCode)
+                                </td>
+                            </tr>
+              }
+                        }
+                    </table>
+@*                </div>*@
+                    </td>
+                        <td style="vertical-align:top">
+@*                <br/>
+                <br />*@
+               <div class="form-title-specific p5">Load Profile</div>
+@*                <div class="clear"></div>
+                <div class="details-center-section">*@
+                    <table class="index2 top_border left_border">
+                        <tr>
+                            <th>Row Count = @Model.LoadProfileList.Count</th>
+                            <th>
+                                @Html.DisplayName("Utility Code")
+                            </th>
+                            <th>
+                                @Html.ActionLink("Load Profile ID", "LoadProfileIdTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileIdImageUrl))
+              {
+                                    <img id="imgLoadProfileId" src="@ViewBag.LoadProfileIdImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Load Profile Code", "LoadProfileCodeTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileCodeImageUrl))
+              {
+                                    <img id="imgLoadProfileCode" src="@ViewBag.LoadProfileCodeImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Description", "DescriptionTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.DescriptionImageUrl))
+              {
+                                    <img id="imgDescription" src="@ViewBag.DescriptionImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Account Type", "AccountTypeTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.AccountTypeImageUrl))
+              {
+                                    <img id="imgAccountType" src="@ViewBag.AccountTypeImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Liberty Power Standard Load Profile", "LoadProfileLpStandardLoadProfileTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileLpStandardLoadProfileImageUrl))
+              {
+                                    <img id="imgLoadProfileLpStandardLoadProfile" src="@ViewBag.LoadProfileLpStandardLoadProfileImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Inactive", "InactiveTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+              {
+                                    <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                        </tr>
+                        @{
+              foreach (var item in Model.LoadProfileList)
+              {
+                            <tr>
+                                <td>
+                                    @{string checkBoxLoadProfileListId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                                    <input type="checkbox" class="check-box" id="@checkBoxLoadProfileListId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxLoadProfileListId');">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LoadProfileId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LoadProfileCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AccountType.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LpStandardLoadProfile.LpStandardLoadProfileCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Inactive)
+                                </td>
+                            </tr>
+              }
+                        }
+                    </table>
+@*                </div>*@
+                    </td>
+                    <td style="vertical-align:top">
+@*                <br/>
+                <br />*@
+               <div class="form-title-specific p5">Load Profile Alias</div>
+@*                <div class="clear"></div>
+                <div class="details-center-section">*@
+                    <table class="index2 top_border left_border">
+                        <tr>
+                            <th>Row Count = @Model.LoadProfileAliasList.Count</th>
+                            <th>
+                                @Html.ActionLink("Load Profile ID", "LoadProfileAliasLoadProfileIdTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileAliasLoadProfileIdImageUrl))
+              {
+                                    <img id="imgLoadProfileAliasLoadProfileId" src="@ViewBag.LoadProfileAliasLoadProfileIdImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Load Profile Alias", "LoadProfileCodeAliasTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileCodeAliasImageUrl))
+              {
+                                    <img id="imgInactive" src="@ViewBag.LoadProfileCodeAliasImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                        </tr>
+                        @{
+              foreach (var item in Model.LoadProfileAliasList)
+              {
+                            <tr>
+                                <td>
+                                    @{string checkBoxLoadProfileAliasListId = string.Format("CheckBoxSelection_Alias_{0}", item.Id);}
+                                    <input type="checkbox" class="check-box" id="@checkBoxLoadProfileAliasListId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxLoadProfileAliasListId');">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LoadProfile.LoadProfileId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LoadProfileCodeAlias)
+                                </td>
+                            </tr>
+              }
+                        }
+                    </table>
+@*                </div>*@
+                    </td>
+                </tr>
+            </table>
+            </div></div>
+          }
+        }
+    </div>
+</div>
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+<script>
+    function Utility_onChange() {
+        $.ajax(
+        {
+            type: 'POST',
+            url: '/LoadProfile/IndexUtilitySelection',
+            datatype: 'json',
+            async: false,
+            data: { utilityCompanyId: $('select#UtilityCompanyId').val() },
+            success: function (data) { },
+            error: function (xhr) { alert('Something seems Wrong'); }
+        });
+        document.location.href = '/LoadProfile/Index';
+    };
+</script>
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+        $("#accordion").accordion();
+    });
+

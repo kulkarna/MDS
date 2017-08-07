@@ -1,0 +1,552 @@
+﻿<div id="tabs">
+    <div class="file openv">
+        <a href="#" class="blue">File</a>
+    </div>
+    <div class="openmenu">
+        @{
+            string saveClass = "lf inactive";
+            string newClass = "lf";
+            bool vbNull = ViewBag == null;
+            bool vbPnNull = ViewBag.PageName == null;
+            string closeUrl = string.Empty;
+            string vbPn = " ";
+            if (!(vbNull || vbPnNull))
+            {
+                vbPn = ViewBag.PageName;
+                if (!vbPn.Contains("home") && !vbPn.ToLower().Contains("login"))
+                {
+                    closeUrl = vbPn;
+                }
+                if (vbPn == "home")
+                {
+                    newClass = "lf inactive";
+                }
+            }
+            if (Request.Url.ToString().ToLower().Contains("edit") || Request.Url.ToString().ToLower().Contains("create"))
+            {
+                saveClass = "lf opene";
+            }
+            string s = string.Empty;
+        }
+        <div class="@saveClass">
+            @if(Request.Url.ToString().ToLower().Contains("capacitythreshold"))
+            {
+          <a onclick="var $allListElements = $('form');$allListElements[0].submit(); return false;" href="javascript:{}">
+                <span class="img">
+                    <img src="/images/saves_ico.png">
+                </span>
+                  <span class="text">Save</span>
+              </a>
+              }
+        else 
+                {
+              <a href="javascript:$('form').submit();return false;">
+                    <span class="img">
+                    <img src="/images/saves_ico.png">
+                </span>
+                  <span class="text">Save</span>
+              </a>}
+           
+              
+        </div>
+        <div class="lf inactive">
+            <a href="#">
+                <span class="img">
+                    <img src="/images/new_activity_ico.png">
+                </span>
+                <span class="text">New Activity</span>
+            </a>
+        </div>
+        <div class="@saveClass nwcls">
+            <a href="@string.Format("/{0}/Create", vbPn)">
+                <span class="img">
+                    <img src="/images/new_record_ico.png">
+                </span>
+                <span class="text">New Record</span>
+            </a>
+        </div>
+        <div class="lf inactive top">
+            <a href="#">
+                <span class="img">
+                    <img src="/images/new_record_ico.png">
+                </span>
+                <span class="text">Properties</span>
+            </a>
+        </div>
+        @{
+            var varSelectedUtilityCompanyId = string.Empty;
+            try
+            {
+                varSelectedUtilityCompanyId = @Model.SelectedUtilityCompanyId;
+            }
+            catch
+            {
+
+            }
+        }
+        <div class="lf inactive">
+            <a href="#">
+                <span class="img">
+                    <img src="/images/print_preview_ico.png">
+                </span>
+                <span class="text">Print Preview</span>
+            </a>
+        </div>
+        <div class="lf">
+            <a href="/">
+                <span class="img">
+                    <img src="/images/help_ico.png">
+                </span>
+                <span class="text">Help</span>
+            </a>
+        </div>
+        <div class="lf top closev">
+            <a href="@closeUrl">
+                <span class="img">
+                    <img src="/images/close_ico.png">
+                </span>
+                <span class="text">Close</span>
+            </a>
+        </div>
+    </div>
+    @if (!Request.Url.ToString().ToLower().Contains("unauthorizeduser"))
+    {
+        if (Request.Url.ToString().ToLower().Contains("edit") || Request.Url.ToString().ToLower().Contains("create"))
+        { 
+        <div>
+            <ul>
+                <li><a href="#tabs-1">@ViewBag.PageDisplayName</a></li>
+                <li><a href="#tabs-2">Add</a></li>
+            </ul>
+            <div id="tabs-1">
+                <div class="icotop">
+                    <a href="javascript:{}" onclick="var $allListElements = $('form');$allListElements[0].submit(); return false;" id="btnSave">
+                        <img src="/images/save.png">
+                        <br />
+                        Save
+                    </a>
+                </div>
+                @if (Request.Url.ToString().ToLower().Contains("edit"))
+                { 
+                    <div class="icotop">
+                        <div onclick="DetailsEdit('@Request.Url.ToString()')">
+                            <img src="/images/detail.png">
+                            <br />
+                            Details
+                        </div>
+                    </div>
+                }
+                <div class="icotop">
+                    <a href="/@ViewBag.IndexPageName">
+                        <img src="/images/save_new.png">
+                        Back to List
+                    </a>
+                </div>
+            </div>
+            <div id="tabs-2">
+                <div class="icotop">
+                    <a href="javascript:{}" onclick="var $allListElements = $('form');$allListElements[0].submit(); return false;">
+                        <img src="/images/save.png">
+                        <br />
+                        Save
+                    </a>
+                </div>
+            </div>
+        </div>
+        }
+        else if (Request.Url.ToString().ToLower().Contains("details"))
+        { 
+        <div>
+            <ul>
+                <li><a href="#tabs-1">@ViewBag.PageDisplayName</a></li>
+            </ul>
+            <div id="tabs-1">
+                @if ((Request.Url.ToString().ToLower().IndexOf("pattern") == -1 && Request.Url.ToString().ToLower().IndexOf("period") == -1)
+                                || Request.Url.ToString().ToLower().IndexOf("serviceaccountpattern") >= 0
+                                || Request.Url.ToString().ToLower().IndexOf("serviceaddresszippattern") >= 0
+                                || Request.Url.ToString().ToLower().IndexOf("icaptcaprefreshperiod") >= 0
+                                || Request.Url.ToString().ToLower().IndexOf("stratapattern") >= 0)
+                {
+                    <div class="icotop">
+                        <div onclick="EditDetails('@Request.Url.ToString()');">
+                            <img src="/images/edit.png">
+                            <br />
+                            Edit
+                        </div>
+                    </div>
+                }
+                @if (Request.Url.ToString().ToLower().Contains("requestmodeidr"))
+                { 
+                    <div class="icotop" onclick="RulesCommon()">
+                        <img src="/images/idr_rule_large_icon.png">
+                        <br />
+                        Rule
+                    </div>
+                }
+                <div class="icotop">
+                    <a href="/@ViewBag.IndexPageName">
+                        <img src="/images/save_new.png">
+                        Back to List
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        }
+        else
+        {
+            string newLpStdUrl = string.Format("/LpStandard{0}/Create", vbPn);
+            string newUrl = string.Format("/{0}/Create", vbPn);
+            string newAliasUrl = string.Format("/{0}Alias/Create", vbPn);
+            string downloadUrl = string.Format("/{0}/Download", vbPn);
+            string downloadAllUrl = string.Format("/{0}/DownloadAll", vbPn);
+            string downloadUndefinedUrl = string.Format("/{0}/DownloadUndefined", vbPn);
+            string downloadAllAndUndefinedUrl = string.Format("/{0}/DownloadAllAndUndefined", vbPn);
+            string downloadSummaryUrl = string.Format("/{0}/DownloadSummary", vbPn);
+            string uploadUrl = string.Format("/{0}/Upload", vbPn);
+            string summary = "";
+            if (Model != null && (Model is UtilityManagement.Models.RateClassModel || Model is UtilityManagement.Models.LoadProfileModel || Model is UtilityManagement.Models.TariffCodeModel) && Model.ResultData != null)
+            {
+                foreach (string item in Model.ResultData)
+                {
+                    summary += item;
+                }
+            }
+        <div>
+            <ul>
+                <li>
+                    <a href="#tabs-1">@ViewBag.PageDisplayName</a>
+                </li>
+            </ul>
+            @{
+            string url = Request.Url.ToString().ToLower();
+            bool threeNews = (url.Contains("loadprofile") || url.Contains("rateclass") || url.Contains("tariffcode"));
+            bool pagesHavingAllData = (url.Contains("requestmodeicap") || url.Contains("meternumberpattern") || url.Contains("namekeypattern") || url.Contains("billingaccountpattern") || url.Contains("stratapattern") || url.Contains("serviceaddresszippattern") || url.Contains("serviceaccountpattern") || url.Contains("billingaccountpattern") || url.Contains("icaptcaprefreshperiod") || url.Contains("requestmodehistoricalusage") || url.Contains("requestmodehistoricalusageparameter") || url.Contains("utilitycompany") || url.Contains("requestmodeidr") || url.Contains("accountinfofieldrequired"));
+            if (url.LastIndexOf("/") < url.Length - 1)
+            {
+                <div id="tabs-1">
+                    @if (url.Contains("/authentication") && !url.Contains("register"))
+                    {
+                        <div class="icotop">
+                            <a href="javascript:{}" onclick="var $allListElements = $('form');$allListElements[0].submit(); return false;">
+                                <img src="/images/login.jpg" width="35">
+                                <br />
+                                Login
+                            </a>
+                        </div>                                
+                        <div class="icotop">
+                            <a href="/Authentication/Register">
+                                <img src="/images/icon_register.gif" width="29">
+                                <br />
+                                Register
+                            </a>
+                        </div>                                
+                    }
+                    else if (url.Contains("/authentication/register"))
+                    {
+                        <div class="icotop">
+                            <a href="javascript:{}" onclick="var $allListElements = $('form');$allListElements[0].submit(); return false;">
+                                <img src="/images/save.png" width="35">
+                                <br />
+                                Save
+                            </a>
+                        </div>                                
+                    }
+                    else
+                    {
+                        if (threeNews && (!string.IsNullOrEmpty(varSelectedUtilityCompanyId) || pagesHavingAllData) && varSelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+                        {
+                        <div class="icotop">
+                            <a href="@newLpStdUrl">
+                                <img src="/images/new.png">
+                                <br />
+                                New LP Std
+                            </a>
+                        </div>
+                        }
+                        if (Request.Url.ToString().ToLower().IndexOf("idrrule") != -1)
+                        {
+                            if ((!string.IsNullOrEmpty(varSelectedUtilityCompanyId) || pagesHavingAllData) && varSelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+                            {
+                        <script type="text/javascript">
+
+                            $(".nwcls").switchClass("If inactive", "If", 100);
+                        </script>
+                        <div class="icotop" onclick="NewCommon()">
+                            <img src="/images/new.png">
+                            <br />
+                            New                    
+                        </div>
+                            }
+                        }
+                        else if (threeNews)
+                        {
+                            if ((!string.IsNullOrEmpty(varSelectedUtilityCompanyId) || pagesHavingAllData) && varSelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+                            {
+                        <script type="text/javascript">
+
+                            $(".nwcls").switchClass("If inactive", "If", 100);
+                        </script>
+                        <div class="icotop">
+                            <a href="@newUrl">
+                                <img src="/images/new.png">
+                                <br />
+                                New
+                            </a>
+                        </div>
+                            }
+                        }
+                        else
+                        {
+                            if ((Request.Url.ToString().ToLower().IndexOf("pattern") == -1 && Request.Url.ToString().ToLower().IndexOf("period") == -1) || Request.Url.ToString().ToLower().IndexOf("serviceaddresszippattern") >= 0 || Request.Url.ToString().ToLower().IndexOf("stratapattern") >= 0)
+                            {
+
+
+                                if ((!string.IsNullOrEmpty(varSelectedUtilityCompanyId) || pagesHavingAllData) && varSelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+                                {
+                        <script type="text/javascript">
+
+                            $(".nwcls").switchClass("If inactive", "If", 100);
+                        </script>
+                        <div class="icotop">
+                            <a href="@newUrl">
+                                <img src="/images/new.png">
+                                <br />
+                                New
+                            </a>
+                        </div>
+                                }
+
+                            }
+                        }
+                        if (threeNews && ((!string.IsNullOrEmpty(varSelectedUtilityCompanyId) || pagesHavingAllData) && varSelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000"))
+                        {
+                        <div class="icotop">
+                            <a href="@newAliasUrl">
+                                <img src="/images/new.png">
+                                <br />
+                                New Alias</a>
+                        </div>
+                        }
+                        if ((((!string.IsNullOrEmpty(varSelectedUtilityCompanyId) || pagesHavingAllData) && varSelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")))
+                        {
+                            if ((Request.Url.ToString().ToLower().IndexOf("pattern") == -1 && Request.Url.ToString().ToLower().IndexOf("period") == -1)
+                            || Request.Url.ToString().ToLower().IndexOf("serviceaccountpattern") >= 0
+                            || Request.Url.ToString().ToLower().IndexOf("serviceaddresszippattern") >= 0
+                            || Request.Url.ToString().ToLower().IndexOf("icaptcaprefreshperiod") >= 0
+                            || Request.Url.ToString().ToLower().IndexOf("stratapattern") >= 0)
+                            {
+                        <div class="icotop">
+                            <div onclick="EditCommon()">
+                                <img src="/images/edit.png">
+                                <br />
+                                Edit
+                            </div>
+                        </div>
+                            }
+                        <div class="icotop">
+                            <div onclick="DetailsCommon()">
+                                <img src="/images/detail.png">
+                                <br />
+                                Details
+                            </div>
+                        </div>
+                        }
+                        if (Request.Url.ToString().ToLower().Contains("requestmodeidr"))
+                        { 
+                        <div class="icotop" onclick="RulesCommon()">
+                            <img src="/images/idr_rule_large_icon.png">
+                            <br />
+                            Rule
+                        </div>
+                        }
+                        if (Request.Url.ToString().ToLower().Contains("idrrule") && ((varSelectedUtilityCompanyId != null || pagesHavingAllData) && varSelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000"))
+                        { 
+                        <div class="icotop" onclick="IdrRequestModeCommon()" style="text-align: center">
+                            <img src="/images/idr_large_icon.png">
+                            <br />
+                            IDR Req Mode
+                        </div>
+                        }
+                        if ((threeNews && (!string.IsNullOrEmpty(varSelectedUtilityCompanyId) || pagesHavingAllData) && varSelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+                            || (Request.Url.ToString().ToLower().Contains("purchaseofreceivable") && Session["PurchaseOfReceivable_UtilityCompanyId_Set"] != null)
+                            || (Request.Url.ToString().ToLower().Contains("lpbillingtype") && Session["LpBillingType_UtilityCompanyId_Set"] != null)
+                            || (Request.Url.ToString().ToLower().Contains("paymentterm") && Session["PaymentTerm_UtilityCompanyId_Set"] != null)
+                            || (Request.Url.ToString().ToLower().Contains("meterreadcalendar") && Session["MeterReadCalendar_UtilityCompanyId_Set"] != null)
+                            || (Request.Url.ToString().ToLower().Contains("capacitythreshold") && Session["CapacityTreshold_UtilityCompanyId_Set"] != null))
+                        {
+                        <div class="icotop" onclick="window.location = '@downloadUrl';">
+                            <img src="/images/XlDownload.png" width="31" height="31">
+                            <br />
+                            Export
+                        </div>
+                           
+                        <div class="icotop" onclick="window.location = '@downloadAllUrl';">
+                            <img src="/images/XlDownload.png" width="31" height="31">
+                            <br />
+                            Ex All Util
+                        </div>
+                                if (Request.Url.ToString().ToLower().Contains("purchaseofreceivable") && Session["PurchaseOfReceivable_UtilityCompanyId_Set"] != null)
+                                {
+                        <div class="icotop" onclick="window.location = '@downloadUndefinedUrl';">
+                            <img src="/images/XlDownload.png" width="31" height="31">
+                            <br />
+                            Ex Undef
+                        </div>
+                        <div class="icotop" onclick="window.location = '@downloadAllAndUndefinedUrl';">
+                            <img src="/images/XlDownload.png" width="31" height="31">
+                            <br />
+                            Ex All & Undef
+                        </div>
+                                }
+                        <div class="icotop" onclick="if(document.getElementById('UploadDiv').style.display == 'none') {document.getElementById('UploadDiv').style.display = 'block'} else {document.getElementById('UploadDiv').style.display = 'none'}">
+                            <img src="/images/XlUpload.png" width="31" height="31">
+                            <br />
+                            Import
+                        </div>
+                            
+                        <table>
+                            <tr style="border-color: transparent; background-color: transparent">
+                                <td style="border-color: transparent; background-color: transparent">
+                                    <div id="UploadDiv" style="display: none">
+                                        <form action="" method="post" enctype="multipart/form-data">
+                                            <table>
+                                                <tr style="border-color: transparent; background-color: transparent">
+                                                    <td style="border-color: transparent; background-color: transparent">
+                                                        <input type="file" name="files" id="file1" />
+                                                    </td>
+                                                    <td style="border-color: transparent; background-color: transparent">
+                                                        <input type="submit" name="files" id="submit" value="Upload" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td style="border-color: transparent; background-color: transparent">
+                                    @if
+                                                    (
+                                                        Model != null &&
+                                                        (
+                                                            (
+                                                                (
+                                                                    Model is UtilityManagement.Models.RateClassModel
+                                                                    || Model is UtilityManagement.Models.LoadProfileModel
+                                                                    || Model is UtilityManagement.Models.TariffCodeModel
+                                                                )
+                                                                &&
+                                                                Model.ResultData != null
+                                                            )
+                                                            ||
+                                                            (
+                                                                Request.Url.ToString().ToLower().Contains("purchaseofreceivable")
+                                                                &&
+                                                                Session["ResultData"] != null
+                                                            )
+                                                            ||
+                                                            (
+                                                                Request.Url.ToString().ToLower().Contains("lpbillingtype")
+                                                                &&
+                                                                Session["ResultData"] != null
+                                                            )
+                                                            ||
+                                                            (
+                                                                Request.Url.ToString().ToLower().Contains("meterreadcalendar")
+                                                                &&
+                                                                Session["ResultData"] != null
+                                                            )
+                                                            ||
+                                                            (
+                                                                Request.Url.ToString().ToLower().Contains("paymentterm")
+                                                                &&
+                                                                Session["ResultData"] != null
+                                                            )
+                                         ||
+                                        (
+                                            Request.Url.ToString().ToLower().Contains("capacitythreshold")
+                                            &&
+                                            Session["ResultData"] != null
+                                        )
+                                                        )
+                                                    )
+                                    { 
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="icotop" onclick="window.location = '@downloadSummaryUrl';">
+                                                            <img src="/images/XlDownload.png" width="31" height="31">
+                                                            <br />
+                                                            Download Summary
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <table>
+                                                            <tr style="border-color: transparent; background-color: transparent">
+                                                                <td style="border-color: transparent; background-color: transparent; font-weight: 900">Import Summary</td>
+                                                            </tr>
+                                                            @{
+                                        List<string> resultData = new List<string>();
+                                        if (Session["ResultData"] != null)
+                                        {
+                                            resultData = (List<string>)Session["ResultData"];
+                                        }
+                                        else
+                                        {
+                                            resultData = Model.ResultData;
+                                        }
+                                        if (resultData != null)
+                                        {
+                                            foreach (string item in resultData)
+                                            {
+                                                                <tr style="border-color: transparent; background-color: transparent">
+                                                                    <td style="border-color: transparent; background-color: transparent">@item</td>
+                                                                </tr>
+                                            }
+                                        }
+                                                            }
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    }
+                                </td>
+                            </tr>
+                        </table>
+                        }
+                    }
+                </div>
+            }
+            else
+            {
+                <div id="tabs-1">
+                    <div class="icotop">
+                        @*     <img src="/images/new.png">
+                                    <br />
+                                    New*@
+                    </div>
+                </div> 
+            }
+            }
+        </div>
+        }
+    }
+    else if (!Request.Url.ToString().ToLower().Contains("/authentication/"))
+    {
+        <div>
+            <ul>
+                <li><a href="#tabs-1">@ViewBag.PageDisplayName</a></li>
+                <li></li>
+            </ul>
+            <div id="tabs-1">&nbsp;</div>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".inactive a").attr('disabled', 'true');
+    });
+</script>
+

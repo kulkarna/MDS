@@ -1,0 +1,177 @@
+﻿@model List<DataAccessLayerEntityFramework.ServiceAccountPattern> 
+
+@{
+    ViewBag.Title = "Service Account Pattern Index";
+}
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Service Account Pattern</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button></div>
+        </div>
+    </div>
+    <div class="details-data-section">
+
+        <div class="detail_table">
+            <div class="left_container">
+            <table class="index">
+                <tr>
+                    <th>Row Count = @Model.Count()</th>
+                    <th>
+                        @Html.ActionLink("Utility Code", "TitleClick", new { name = "UtilityCode" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityCodeImageUrl))
+                            {
+                        <img id="imgUtilityCode" src="@ViewBag.UtilityCodeImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Service Account Pattern", "TitleClick", new { name = "ServiceAccountPattern" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.ServiceAccountPatternImageUrl))
+                            {
+                        <img id="imgServiceAccountPattern" src="@ViewBag.ServiceAccountPatternImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Service Account Pattern Description", "TitleClick", new { name = "ServiceAccountPatternDescription" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.ServiceAccountPatternDescriptionImageUrl))
+                            {
+                        <img id="imgServiceAccountPatternDescription" src="@ViewBag.ServiceAccountPatternDescriptionImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Service Account Add Leading Zero", "TitleClick", new { name = "ServiceAccountAddLeadingZero" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.ServiceAccountAddLeadingZeroImageUrl))
+                            {
+                        <img id="imgServiceAccountAddLeadingZero" src="@ViewBag.ServiceAccountAddLeadingZeroImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Service Account Truncate Last", "TitleClick", new { name = "ServiceAccountTruncateLast" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.ServiceAccountTruncateLastImageUrl))
+                            {
+                        <img id="imgServiceAccountTruncateLast" src="@ViewBag.ServiceAccountTruncateLastImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Service Account Required For EDI Request", "TitleClick", new { name = "ServiceAccountRequiredForEDIRequest" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.ServiceAccountRequiredForEDIRequestImageUrl))
+                            {
+                        <img id="imgServiceAccountRequiredForEDIRequest" src="@ViewBag.ServiceAccountRequiredForEDIRequestImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Inactive", "TitleClick", new { name = "Inactive" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+                            {
+                        <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created By", "TitleClick", new { name = "CreatedBy" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+                            {
+                        <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created Date", "TitleClick", new { name = "CreatedDate" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+                            {
+                        <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Last Modified By", "TitleClick", new { name = "LastModifiedBy" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+                            {
+                        <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Last Modified Date", "TitleClick", new { name = "LastModifiedDate" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+                            {
+                        <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                </tr>
+                @{
+                    foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                            <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ServiceAccountPattern1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ServiceAccountPatternDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ServiceAccountAddLeadingZero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ServiceAccountTruncateLast)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ServiceAccountRequiredForEDIRequest)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Inactive)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                        </td>
+                    </tr>
+                    }
+                }
+            </table>
+        </div></div>
+        <div class="right_chart">         
+            </div>
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

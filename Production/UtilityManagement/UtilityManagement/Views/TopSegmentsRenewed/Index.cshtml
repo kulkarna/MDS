@@ -1,0 +1,164 @@
+﻿@model List<UtilityManagement.Models.TopDemographicSegmentsItem>
+@{
+    ViewBag.Title = "Zip Codes With Similar Demographic Data Index";
+}
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Top Demographic Segments</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button></div>
+        </div>
+    </div>
+    <div class="details-data-section">
+
+        <div class="detail_table">
+            <div class="left_container">
+            <table class="index">
+                <tr>
+@*                    <th>Row Count = @this.Model.Count</th>*@
+                    <th>Seg Name</th>	
+                    <th>Pop</th>	
+                    <th>% Of Pop</th>	
+                    <th>Inc Class</th>	
+                    <th>Md Age</th>	
+                    <th>Md Income</th>	
+                    <th>Md Net Worth</th>	
+                    <th>Md Home Val</th>	
+                    <th>Notes</th>	
+                    <th>Hobbies</th>
+                    <th>% Fam Hshlds</th>	
+                    <th>% Fam W Chldn</th>	
+                    <th>Avg Fam Size</th>	
+                    <th>Typical Housing</th>	
+                    <th>Home Own %</th>	
+                    <th>Housing Built Before</th>	
+                    <th>Top Purchased Items</th>	
+                    <th>Phone Call Types</th>	
+                    <th>Stores</th>	
+                    <th>Watches</th>		
+                    <th>Listens To</th>	
+                    <th>Attends</th>	
+                    <th>Drinks</th>	
+                    <th>Auto Pref</th>	
+                    <th>Emplmnt Types</th>	
+                    <th>Geo Clusters</th>	
+                </tr>
+                    @{
+                        if (this.Model == null)
+                        {
+                            <tr><td>Model is null</td></tr>
+                        }
+                        else
+                        {
+                            if (this.Model.Count == 0)
+                            {
+                                        <tr><td>Model.Count==0</td></tr>
+                            }
+                            else
+                            {
+                                foreach (var item in this.Model)
+                                {
+                                    <tr>
+@*                                        <td>
+                                            @{string checkBoxId = string.Format("CheckBoxSelection_{0}", Guid.NewGuid().ToString());}
+                                            <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SegmentName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SegmentPopulation)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PercentOfSegmentPopulation)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IncomeClass)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MedianAge)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MedianHouseholdIncome)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MedianNetWorth)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MedianHomeValue)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Notes)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Hobbies)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PercentFamilyHouseholds)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PercentFamiliesWithChildren)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AverageFamilySize)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TypicalResidence)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.HomeOwnershipPercent)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.HousingBuiltBefore)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TopPurchasedItems)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PhoneCallTypes)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.StoresFrequented)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TypicallyWatches)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TypicallyListensTo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TypicallyAttends)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TypicallyDrinks)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AutomobileBrandPreference)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EmploymentTypes)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.GeographicClusterings)
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }
+                    }
+            </table>
+                </div></div>
+                <div class="right_chart">
+               </div>
+        </div>
+</div>
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

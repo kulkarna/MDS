@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IstaSql", "..\..\DataAccess\SqlAccess\IstaSql\IstaSql.csproj", "{C0897342-C763-4B4A-9770-384507B7CFE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IstaWebService", "IstaWebService.csproj", "{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://lpcnocapptfs1:8080/tfs/lpcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\DataAccess\\SqlAccess\\IstaSql\\IstaSql.csproj
+		SccProjectName1 = ../../DataAccess/SqlAccess/IstaSql
+		SccLocalPath1 = ..\\..\\DataAccess\\SqlAccess\\IstaSql
+		SccProjectUniqueName2 = IstaWebService.csproj
+		SccLocalPath2 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Debug|x64.ActiveCfg = Debug|x64
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Debug|x64.Build.0 = Debug|x64
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Debug|x86.ActiveCfg = Debug|x86
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Debug|x86.Build.0 = Debug|x86
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Release|x64.ActiveCfg = Release|x64
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Release|x64.Build.0 = Release|x64
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Release|x86.ActiveCfg = Release|x86
+		{C0897342-C763-4B4A-9770-384507B7CFE0}.Release|x86.Build.0 = Release|x86
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Debug|x64.ActiveCfg = Debug|x64
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Debug|x64.Build.0 = Debug|x64
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Debug|x86.ActiveCfg = Debug|x86
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Debug|x86.Build.0 = Debug|x86
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Release|x64.ActiveCfg = Release|x64
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Release|x64.Build.0 = Release|x64
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Release|x86.ActiveCfg = Release|x86
+		{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

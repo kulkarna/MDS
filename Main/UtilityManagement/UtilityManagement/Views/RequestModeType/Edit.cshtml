@@ -1,0 +1,91 @@
+﻿@model DataAccessLayerEntityFramework.RequestModeType
+
+@{
+    ViewBag.Title = "Edit Request Mode Type";
+}
+@using UserInterfaceValidationExtensions
+
+<h3>Edit Request Mode Type</h3>
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form_fieldset">
+        <fieldset>
+            <legend>Request Mode Type</legend>
+
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Description)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Inactive)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Inactive)
+                @Html.ValidationMessageFor(model => model.Inactive)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedBy, "Created By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedBy)
+                @Html.ValidationMessageFor(model => model.CreatedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedDate, "Created Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedDate)
+                @Html.ValidationMessageFor(model => model.CreatedDate)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedBy)
+                @Html.ValidationMessageFor(model => model.LastModifiedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedDate)
+                @Html.ValidationMessageFor(model => model.LastModifiedDate)
+            </div>
+            @if (Session["IsPostBack"] != null && Session["IsPostBack"].ToString() == "true")
+            {
+                <div class="editor-label">
+                    <h3>@Model.GetRequestModeTypeValidationString()</h3>
+                </div>
+            }
+        </fieldset>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.DailyUsage">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DailyUsage.cs</FileName>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAACAAAABAAEAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.DailyUsageDictionary">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>DailyUsageDictionary.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.PeakProfileNotFoundException">
+    <Position X="5" Y="4.25" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>PeakProfileNotFoundException.cs</FileName>
+      <NewMemberFileName>NormalizedProfileNotFoundException.cs</NewMemberFileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.DailyUsageNotFoundException">
+    <Position X="5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>DailyUsageNotFoundException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.InvalidFlowStartDateException">
+    <Position X="5" Y="3" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>InvalidFlowStartDateException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.InsufficientUsageException">
+    <Position X="5" Y="1.75" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>InsufficientUsageException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.MonthlyUsageAggregate">
+    <Position X="0.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <FileName>MonthlyUsageAggregate.cs</FileName>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgABAAAAAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.UsageFiller">
+    <Position X="9" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>UsageFiller.cs</FileName>
+      <HashCode>AAAAQAAICwACAIAGAAABAAAAACAAERARAAQAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.UsageFactory">
+    <Position X="9" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>UsageFactory.cs</FileName>
+      <HashCode>AAAACAAAAAAAAAAAAAAAABAIAAAAAAAIAAwAAAAAAAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.InvalidDateRange">
+    <Position X="5" Y="5.5" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>InvalidDateRange.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.PeakProfile">
+    <Position X="12" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>PeakProfile.cs</FileName>
+      <HashCode>AABAAAAAQAAAAADAAIAAwACAACAAAAAgAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.PeakProfileDictionary">
+    <Position X="14.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>PeakProfileDictionary.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.PeakProfileFactory">
+    <Position X="12" Y="3" Width="2" />
+    <TypeIdentifier>
+      <FileName>PeakProfileFactory.cs</FileName>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.ProfileDetail">
+    <Position X="12" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <FileName>ProfileDetail.cs</FileName>
+      <HashCode>QABAAEAAQAACAADAAIAAwACAAAACAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.ProfileFactory">
+    <Position X="12" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>ProfileFactory.cs</FileName>
+      <HashCode>AAAAABBBAAAAAAIAQAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.UsageManagement.InsufficientProfilesException">
+    <Position X="5" Y="7" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>InsufficientProfilesException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

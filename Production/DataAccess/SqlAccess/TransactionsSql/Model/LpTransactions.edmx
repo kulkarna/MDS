@@ -1,0 +1,1388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LpTransactions.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LpTransactionsStoreContainer">
+          <EntitySet Name="DataShift" EntityType="LpTransactions.Store.DataShift" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IdrAccountDetail" EntityType="LpTransactions.Store.IdrAccountDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IdrAccountStageInfo" EntityType="LpTransactions.Store.IdrAccountStageInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IdrAccountVsHuDiscrepancies" EntityType="LpTransactions.Store.IdrAccountVsHuDiscrepancies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IdrFileLogDetail" EntityType="LpTransactions.Store.IdrFileLogDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IdrFileLogHeader" EntityType="LpTransactions.Store.IdrFileLogHeader" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IdrFileVsHuDiscrepancies" EntityType="LpTransactions.Store.IdrFileVsHuDiscrepancies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IdrNonEdiDetail" EntityType="LpTransactions.Store.IdrNonEdiDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IdrNonEdiHeader" EntityType="LpTransactions.Store.IdrNonEdiHeader" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IdrUtilityRawParser" EntityType="LpTransactions.Store.IdrUtilityRawParser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Utility" EntityType="LpTransactions.Store.Utility" store:Type="Views" store:Schema="dbo" store:Name="Utility">
+            <DefiningQuery>SELECT 
+      [Utility].[ID] AS [ID], 
+      [Utility].[UtilityCode] AS [UtilityCode], 
+      [Utility].[FullName] AS [FullName], 
+      [Utility].[ShortName] AS [ShortName], 
+      [Utility].[MarketID] AS [MarketID], 
+      [Utility].[DunsNumber] AS [DunsNumber], 
+      [Utility].[EntityId] AS [EntityId], 
+      [Utility].[EnrollmentLeadDays] AS [EnrollmentLeadDays], 
+      [Utility].[BillingType] AS [BillingType], 
+      [Utility].[AccountLength] AS [AccountLength], 
+      [Utility].[AccountNumberPrefix] AS [AccountNumberPrefix], 
+      [Utility].[LeadScreenProcess] AS [LeadScreenProcess], 
+      [Utility].[DealScreenProcess] AS [DealScreenProcess], 
+      [Utility].[PorOption] AS [PorOption], 
+      [Utility].[Field01Label] AS [Field01Label], 
+      [Utility].[Field01Type] AS [Field01Type], 
+      [Utility].[Field02Label] AS [Field02Label], 
+      [Utility].[Field02Type] AS [Field02Type], 
+      [Utility].[Field03Label] AS [Field03Label], 
+      [Utility].[Field03Type] AS [Field03Type], 
+      [Utility].[Field04Label] AS [Field04Label], 
+      [Utility].[Field04Type] AS [Field04Type], 
+      [Utility].[Field05Label] AS [Field05Label], 
+      [Utility].[Field05Type] AS [Field05Type], 
+      [Utility].[Field06Label] AS [Field06Label], 
+      [Utility].[Field06Type] AS [Field06Type], 
+      [Utility].[Field07Label] AS [Field07Label], 
+      [Utility].[Field07Type] AS [Field07Type], 
+      [Utility].[Field08Label] AS [Field08Label], 
+      [Utility].[Field08Type] AS [Field08Type], 
+      [Utility].[Field09Label] AS [Field09Label], 
+      [Utility].[Field09Type] AS [Field09Type], 
+      [Utility].[Field10Label] AS [Field10Label], 
+      [Utility].[Field10Type] AS [Field10Type], 
+      [Utility].[DateCreated] AS [DateCreated], 
+      [Utility].[UserName] AS [UserName], 
+      [Utility].[InactiveInd] AS [InactiveInd], 
+      [Utility].[ActiveDate] AS [ActiveDate], 
+      [Utility].[ChgStamp] AS [ChgStamp], 
+      [Utility].[MeterNumberRequired] AS [MeterNumberRequired], 
+      [Utility].[MeterNumberLength] AS [MeterNumberLength], 
+      [Utility].[AnnualUsageMin] AS [AnnualUsageMin], 
+      [Utility].[Qualifier] AS [Qualifier], 
+      [Utility].[EdiCapable] AS [EdiCapable], 
+      [Utility].[WholeSaleMktID] AS [WholeSaleMktID], 
+      [Utility].[Phone] AS [Phone], 
+      [Utility].[RateCodeRequired] AS [RateCodeRequired], 
+      [Utility].[HasZones] AS [HasZones], 
+      [Utility].[ZoneDefault] AS [ZoneDefault], 
+      [Utility].[Field11Label] AS [Field11Label], 
+      [Utility].[Field11Type] AS [Field11Type], 
+      [Utility].[Field12Label] AS [Field12Label], 
+      [Utility].[Field12Type] AS [Field12Type], 
+      [Utility].[Field13Label] AS [Field13Label], 
+      [Utility].[Field13Type] AS [Field13Type], 
+      [Utility].[Field14Label] AS [Field14Label], 
+      [Utility].[Field14Type] AS [Field14Type], 
+      [Utility].[Field15Label] AS [Field15Label], 
+      [Utility].[Field15Type] AS [Field15Type], 
+      [Utility].[RateCodeFormat] AS [RateCodeFormat], 
+      [Utility].[RateCodeFields] AS [RateCodeFields], 
+      [Utility].[LegacyName] AS [LegacyName], 
+      [Utility].[SSNIsRequired] AS [SSNIsRequired], 
+      [Utility].[PricingModeID] AS [PricingModeID], 
+      [Utility].[isIDR_EDI_Capable] AS [isIDR_EDI_Capable], 
+      [Utility].[HU_RequestType] AS [HU_RequestType], 
+      [Utility].[MultipleMeters] AS [MultipleMeters], 
+      [Utility].[MeterReadOverlap] AS [MeterReadOverlap]
+      FROM [dbo].[Utility] AS [Utility]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Holidays_Calendar" EntityType="LpTransactions.Store.vw_Holidays_Calendar" store:Type="Views" store:Schema="dbo" store:Name="vw_Holidays_Calendar">
+            <DefiningQuery>SELECT 
+      [vw_Holidays_Calendar].[Id] AS [Id], 
+      [vw_Holidays_Calendar].[Calendar] AS [Calendar], 
+      [vw_Holidays_Calendar].[Date] AS [Date], 
+      [vw_Holidays_Calendar].[Description] AS [Description], 
+      [vw_Holidays_Calendar].[Created] AS [Created], 
+      [vw_Holidays_Calendar].[CreatedBy] AS [CreatedBy]
+      FROM [dbo].[vw_Holidays_Calendar] AS [vw_Holidays_Calendar]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_FileHeader_FileDetail" Association="LpTransactions.Store.FK_FileHeader_FileDetail">
+            <End Role="IdrFileLogHeader" EntitySet="IdrFileLogHeader" />
+            <End Role="IdrFileLogDetail" EntitySet="IdrFileLogDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdrAccountDetail_IdrAccountStageInfo" Association="LpTransactions.Store.FK_IdrAccountDetail_IdrAccountStageInfo">
+            <End Role="IdrAccountStageInfo" EntitySet="IdrAccountStageInfo" />
+            <End Role="IdrAccountDetail" EntitySet="IdrAccountDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdrAccountVsHuDiscrepancies_IdrAccountStageInfo" Association="LpTransactions.Store.FK_IdrAccountVsHuDiscrepancies_IdrAccountStageInfo">
+            <End Role="IdrAccountStageInfo" EntitySet="IdrAccountStageInfo" />
+            <End Role="IdrAccountVsHuDiscrepancies" EntitySet="IdrAccountVsHuDiscrepancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdrNonEdiDetail_IdrNonEdiHeader" Association="LpTransactions.Store.FK_IdrNonEdiDetail_IdrNonEdiHeader">
+            <End Role="IdrNonEdiHeader" EntitySet="IdrNonEdiHeader" />
+            <End Role="IdrNonEdiDetail" EntitySet="IdrNonEdiDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdrVsHuDiscrepancies_IdrFileLogDetail" Association="LpTransactions.Store.FK_IdrVsHuDiscrepancies_IdrFileLogDetail">
+            <End Role="IdrFileLogDetail" EntitySet="IdrFileLogDetail" />
+            <End Role="IdrFileVsHuDiscrepancies" EntitySet="IdrFileVsHuDiscrepancies" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DataShift">
+          <Key>
+            <PropertyRef Name="Iso" />
+            <PropertyRef Name="Utility" />
+          </Key>
+          <Property Name="Iso" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Utility" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Shift" Type="smallint" />
+        </EntityType>
+        <EntityType Name="IdrAccountDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Intervals" Type="varchar(max)" Nullable="false" />
+          <Property Name="IdrAccountId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IdrAccountStageInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountNumber" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="UtilityCode" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Stage" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="Notes" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="IdrAccountVsHuDiscrepancies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdrAcctStageInfoId" Type="int" Nullable="false" />
+          <Property Name="FromDate" Type="datetime" Nullable="false" />
+          <Property Name="ToDate" Type="datetime" Nullable="false" />
+          <Property Name="HUKwh" Type="int" Nullable="false" />
+          <Property Name="IDRKwh" Type="decimal" Precision="14" Scale="2" />
+          <Property Name="Difference" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="EffectiveToDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="30" />
+          <Property Name="Adjusted" Type="smallint" />
+        </EntityType>
+        <EntityType Name="IdrFileLogDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FileLogHeaderId" Type="int" Nullable="false" />
+          <Property Name="Tab" Type="varchar" MaxLength="50" />
+          <Property Name="UtilityCode" Type="varchar" MaxLength="50" />
+          <Property Name="Information" Type="varchar" MaxLength="4000" />
+          <Property Name="IsProcessed" Type="tinyint" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="50" />
+          <Property Name="FormatType" Type="smallint" />
+          <Property Name="AverageDifference" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="MeterNumber" Type="varchar" MaxLength="50" />
+          <Property Name="RecorderNumber" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IdrFileLogHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FileGuid" Type="varchar" MaxLength="100" />
+          <Property Name="FileName" Type="varchar" MaxLength="500" />
+          <Property Name="Attempts" Type="smallint" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="FileType" Type="tinyint" />
+          <Property Name="Notes" Type="varchar" MaxLength="800" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="IsARawFile" Type="bit" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IdrFileVsHuDiscrepancies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdrFileLogDetailId" Type="int" Nullable="false" />
+          <Property Name="FromDate" Type="datetime" Nullable="false" />
+          <Property Name="ToDate" Type="datetime" Nullable="false" />
+          <Property Name="HUKwh" Type="int" Nullable="false" />
+          <Property Name="IDRKwh" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="Difference" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="EffectiveToDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IdrNonEdiDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdrAccountId" Type="int" Nullable="false" />
+          <Property Name="IdrDate" Type="datetime" Nullable="false" />
+          <Property Name="Peak" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="OffPeak" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="Intervals" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="IdrNonEdiHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UtilityCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="AccountNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MeterNumber" Type="varchar" MaxLength="50" />
+          <Property Name="RecorderNumber" Type="varchar" MaxLength="50" />
+          <Property Name="UsageSource" Type="smallint" Nullable="false" />
+          <Property Name="UsageType" Type="smallint" Nullable="false" />
+          <Property Name="AverageDifference" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="Intervals" Type="smallint" />
+          <Property Name="OriginalUnit" Type="varchar" MaxLength="10" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IdrUtilityRawParser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UtilityId" Type="int" Nullable="false" />
+          <Property Name="ParserType" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="IsAccountNumberInFile" Type="bit" Nullable="false" />
+          <Property Name="FileStartstWith" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_transactions.dbo.Utility' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Utility">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="UtilityCode" />
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="ShortName" />
+            <PropertyRef Name="MarketID" />
+            <PropertyRef Name="RateCodeFormat" />
+            <PropertyRef Name="RateCodeFields" />
+            <PropertyRef Name="LegacyName" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UtilityCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FullName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ShortName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MarketID" Type="int" Nullable="false" />
+          <Property Name="DunsNumber" Type="varchar" MaxLength="30" />
+          <Property Name="EntityId" Type="varchar" MaxLength="15" />
+          <Property Name="EnrollmentLeadDays" Type="int" />
+          <Property Name="BillingType" Type="varchar" MaxLength="15" />
+          <Property Name="AccountLength" Type="int" />
+          <Property Name="AccountNumberPrefix" Type="varchar" MaxLength="10" />
+          <Property Name="LeadScreenProcess" Type="varchar" MaxLength="15" />
+          <Property Name="DealScreenProcess" Type="varchar" MaxLength="15" />
+          <Property Name="PorOption" Type="varchar" MaxLength="3" />
+          <Property Name="Field01Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field01Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field02Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field02Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field03Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field03Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field04Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field04Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field05Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field05Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field06Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field06Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field07Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field07Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field08Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field08Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field09Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field09Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field10Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field10Type" Type="varchar" MaxLength="30" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="UserName" Type="nchar" MaxLength="200" />
+          <Property Name="InactiveInd" Type="char" MaxLength="1" />
+          <Property Name="ActiveDate" Type="datetime" />
+          <Property Name="ChgStamp" Type="smallint" />
+          <Property Name="MeterNumberRequired" Type="smallint" />
+          <Property Name="MeterNumberLength" Type="smallint" />
+          <Property Name="AnnualUsageMin" Type="int" />
+          <Property Name="Qualifier" Type="varchar" MaxLength="50" />
+          <Property Name="EdiCapable" Type="smallint" />
+          <Property Name="WholeSaleMktID" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" />
+          <Property Name="RateCodeRequired" Type="tinyint" />
+          <Property Name="HasZones" Type="tinyint" />
+          <Property Name="ZoneDefault" Type="int" />
+          <Property Name="Field11Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field11Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field12Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field12Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field13Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field13Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field14Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field14Type" Type="varchar" MaxLength="30" />
+          <Property Name="Field15Label" Type="varchar" MaxLength="20" />
+          <Property Name="Field15Type" Type="varchar" MaxLength="30" />
+          <Property Name="RateCodeFormat" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="RateCodeFields" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LegacyName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SSNIsRequired" Type="bit" />
+          <Property Name="PricingModeID" Type="int" />
+          <Property Name="isIDR_EDI_Capable" Type="bit" />
+          <Property Name="HU_RequestType" Type="nchar" MaxLength="10" />
+          <Property Name="MultipleMeters" Type="bit" />
+          <Property Name="MeterReadOverlap" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_transactions.dbo.vw_Holidays_Calendar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_Holidays_Calendar">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Calendar" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Created" />
+            <PropertyRef Name="CreatedBy" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Calendar" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_FileHeader_FileDetail">
+          <End Role="IdrFileLogHeader" Type="LpTransactions.Store.IdrFileLogHeader" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IdrFileLogDetail" Type="LpTransactions.Store.IdrFileLogDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdrFileLogHeader">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IdrFileLogDetail">
+              <PropertyRef Name="FileLogHeaderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdrAccountDetail_IdrAccountStageInfo">
+          <End Role="IdrAccountStageInfo" Type="LpTransactions.Store.IdrAccountStageInfo" Multiplicity="1" />
+          <End Role="IdrAccountDetail" Type="LpTransactions.Store.IdrAccountDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdrAccountStageInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IdrAccountDetail">
+              <PropertyRef Name="IdrAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdrAccountVsHuDiscrepancies_IdrAccountStageInfo">
+          <End Role="IdrAccountStageInfo" Type="LpTransactions.Store.IdrAccountStageInfo" Multiplicity="1" />
+          <End Role="IdrAccountVsHuDiscrepancies" Type="LpTransactions.Store.IdrAccountVsHuDiscrepancies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdrAccountStageInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IdrAccountVsHuDiscrepancies">
+              <PropertyRef Name="IdrAcctStageInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdrNonEdiDetail_IdrNonEdiHeader">
+          <End Role="IdrNonEdiHeader" Type="LpTransactions.Store.IdrNonEdiHeader" Multiplicity="1" />
+          <End Role="IdrNonEdiDetail" Type="LpTransactions.Store.IdrNonEdiDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdrNonEdiHeader">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IdrNonEdiDetail">
+              <PropertyRef Name="IdrAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdrVsHuDiscrepancies_IdrFileLogDetail">
+          <End Role="IdrFileLogDetail" Type="LpTransactions.Store.IdrFileLogDetail" Multiplicity="1" />
+          <End Role="IdrFileVsHuDiscrepancies" Type="LpTransactions.Store.IdrFileVsHuDiscrepancies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdrFileLogDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IdrFileVsHuDiscrepancies">
+              <PropertyRef Name="IdrFileLogDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="usp_DeleteAccountData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountNumber" Type="varchar" Mode="In" />
+          <Parameter Name="UtilityCode" Type="varchar" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_EdiGetAccountAgregatedData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UtilityCode" Type="varchar" Mode="In" />
+          <Parameter Name="AccountNumber" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_GetZoneInformation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountNumber" Type="varchar" Mode="In" />
+          <Parameter Name="UtilityCode" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LpTransactions" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LpTransactionsContainer">
+          <EntitySet Name="IdrFileLogDetails" EntityType="LpTransactions.IdrFileLogDetail" />
+          <EntitySet Name="IdrFileLogHeaders" EntityType="LpTransactions.IdrFileLogHeader" />
+          <AssociationSet Name="FK_FileHeader_FileDetail" Association="LpTransactions.FK_FileHeader_FileDetail">
+            <End Role="IdrFileLogHeader" EntitySet="IdrFileLogHeaders" />
+            <End Role="IdrFileLogDetail" EntitySet="IdrFileLogDetails" />
+          </AssociationSet>
+          <EntitySet Name="IdrNonEdiHeaders" EntityType="LpTransactions.IdrNonEdiHeader" />
+          <EntitySet Name="IdrAccountStageInfoes" EntityType="LpTransactions.IdrAccountStageInfo" />
+          <EntitySet Name="Utilities" EntityType="LpTransactions.Utility" />
+          <EntitySet Name="IdrUtilityRawParsers" EntityType="LpTransactions.IdrUtilityRawParser" />
+          <EntitySet Name="IdrFileVsHuDiscrepancies" EntityType="LpTransactions.IdrFileVsHuDiscrepancy" />
+          <AssociationSet Name="FK_IdrVsHuDiscrepancies_IdrFileLogDetail" Association="LpTransactions.FK_IdrVsHuDiscrepancies_IdrFileLogDetail">
+            <End Role="IdrFileLogDetail" EntitySet="IdrFileLogDetails" />
+            <End Role="IdrFileVsHuDiscrepancy" EntitySet="IdrFileVsHuDiscrepancies" />
+          </AssociationSet>
+          <EntitySet Name="IdrNonEdiDetails" EntityType="LpTransactions.IdrNonEdiDetail" />
+          <AssociationSet Name="FK_IdrNonEdiDetail_IdrNonEdiHeader" Association="LpTransactions.FK_IdrNonEdiDetail_IdrNonEdiHeader">
+            <End Role="IdrNonEdiHeader" EntitySet="IdrNonEdiHeaders" />
+            <End Role="IdrNonEdiDetail" EntitySet="IdrNonEdiDetails" />
+          </AssociationSet>
+          <EntitySet Name="IdrAccountDetails" EntityType="LpTransactions.IdrAccountDetail" />
+          <AssociationSet Name="FK_IdrAccountDetail_IdrAccountStageInfo" Association="LpTransactions.FK_IdrAccountDetail_IdrAccountStageInfo">
+            <End Role="IdrAccountStageInfo" EntitySet="IdrAccountStageInfoes" />
+            <End Role="IdrAccountDetail" EntitySet="IdrAccountDetails" />
+          </AssociationSet>
+          <EntitySet Name="DataShift" EntityType="LpTransactions.DataShift" />
+          <FunctionImport Name="usp_EdiGetAccountAgregatedData" ReturnType="Collection(LpTransactions.usp_EdiGetAccountAgregatedData_Result)">
+            <Parameter Name="UtilityCode" Mode="In" Type="String" />
+            <Parameter Name="AccountNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteIDRData">
+            <Parameter Name="UtilityCode" Mode="In" Type="String" />
+            <Parameter Name="IdrFileLogHeaderId" Mode="In" Type="Int32" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteAccountData">
+            <Parameter Name="AccountNumber" Mode="In" Type="String" />
+            <Parameter Name="UtilityCode" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="vw_Holidays_Calendar" EntityType="LpTransactions.vw_Holidays_Calendar" />
+          <FunctionImport Name="usp_GetZoneInformation" ReturnType="Collection(String)">
+            <Parameter Name="AccountNumber" Mode="In" Type="String" />
+            <Parameter Name="UtilityCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="IdrAccountVsHuDiscrepancies" EntityType="LpTransactions.IdrAccountVsHuDiscrepancy" />
+          <AssociationSet Name="FK_IdrAccountVsHuDiscrepancies_IdrAccountStageInfo" Association="LpTransactions.FK_IdrAccountVsHuDiscrepancies_IdrAccountStageInfo">
+            <End Role="IdrAccountStageInfo" EntitySet="IdrAccountStageInfoes" />
+            <End Role="IdrAccountVsHuDiscrepancy" EntitySet="IdrAccountVsHuDiscrepancies" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="IdrFileLogDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Tab" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UtilityCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Information" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="IsProcessed" />
+          <Property Type="DateTime" Name="TimeStamp" Nullable="false" Precision="3" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="String" Name="AccountNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="IdrFileLogHeader" Relationship="LpTransactions.FK_FileHeader_FileDetail" FromRole="IdrFileLogDetail" ToRole="IdrFileLogHeader" />
+          <Property Type="Int16" Name="FormatType" />
+          <Property Type="Decimal" Name="AverageDifference" Precision="9" Scale="2" />
+          <NavigationProperty Name="IdrFileVsHuDiscrepancies" Relationship="LpTransactions.FK_IdrVsHuDiscrepancies_IdrFileLogDetail" FromRole="IdrFileLogDetail" ToRole="IdrFileVsHuDiscrepancy" />
+          <Property Type="String" Name="MeterNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RecorderNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IdrFileLogHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="FileGuid" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FileName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="Attempts" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TimeStamp" Nullable="false" Precision="3" />
+          <Property Type="Byte" Name="FileType" />
+          <Property Type="String" Name="Notes" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <NavigationProperty Name="IdrFileLogDetails" Relationship="LpTransactions.FK_FileHeader_FileDetail" FromRole="IdrFileLogHeader" ToRole="IdrFileLogDetail" />
+          <Property Type="Boolean" Name="IsARawFile" />
+          <Property Type="String" Name="ModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_FileHeader_FileDetail">
+          <End Type="LpTransactions.IdrFileLogHeader" Role="IdrFileLogHeader" Multiplicity="1" />
+          <End Type="LpTransactions.IdrFileLogDetail" Role="IdrFileLogDetail" Multiplicity="*" />
+        </Association>
+        <EntityType Name="IdrNonEdiHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UtilityCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AccountNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MeterNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RecorderNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="UsageSource" Nullable="false" />
+          <Property Type="Int16" Name="UsageType" Nullable="false" />
+          <Property Type="Decimal" Name="AverageDifference" Precision="9" Scale="2" />
+          <Property Type="Int16" Name="Intervals" />
+          <Property Type="String" Name="OriginalUnit" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TimeStamp" Nullable="false" Precision="3" />
+          <NavigationProperty Name="IdrNonEdiDetails" Relationship="LpTransactions.FK_IdrNonEdiDetail_IdrNonEdiHeader" FromRole="IdrNonEdiHeader" ToRole="IdrNonEdiDetail" />
+          </EntityType>
+        <EntityType Name="IdrAccountStageInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="AccountNumber" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UtilityCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Stage" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="Status" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TimeStamp" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="IdrAccountDetails" Relationship="LpTransactions.FK_IdrAccountDetail_IdrAccountStageInfo" FromRole="IdrAccountStageInfo" ToRole="IdrAccountDetail" />
+          <NavigationProperty Name="IdrAccountVsHuDiscrepancies" Relationship="LpTransactions.FK_IdrAccountVsHuDiscrepancies_IdrAccountStageInfo" FromRole="IdrAccountStageInfo" ToRole="IdrAccountVsHuDiscrepancy" />
+        </EntityType>
+        <EntityType Name="Utility">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="UtilityCode" />
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="ShortName" />
+            <PropertyRef Name="MarketID" />
+            <PropertyRef Name="RateCodeFormat" />
+            <PropertyRef Name="RateCodeFields" />
+            <PropertyRef Name="LegacyName" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UtilityCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShortName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="MarketID" Nullable="false" />
+          <Property Type="String" Name="DunsNumber" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EntityId" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="EnrollmentLeadDays" />
+          <Property Type="String" Name="BillingType" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AccountLength" />
+          <Property Type="String" Name="AccountNumberPrefix" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LeadScreenProcess" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DealScreenProcess" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PorOption" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field01Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field01Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field02Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field02Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field03Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field03Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field04Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field04Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field05Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field05Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field06Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field06Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field07Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field07Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field08Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field08Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field09Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field09Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field10Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field10Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DateCreated" Precision="3" />
+          <Property Type="String" Name="UserName" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="InactiveInd" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="ActiveDate" Precision="3" />
+          <Property Type="Int16" Name="ChgStamp" />
+          <Property Type="Int16" Name="MeterNumberRequired" />
+          <Property Type="Int16" Name="MeterNumberLength" />
+          <Property Type="Int32" Name="AnnualUsageMin" />
+          <Property Type="String" Name="Qualifier" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="EdiCapable" />
+          <Property Type="String" Name="WholeSaleMktID" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="RateCodeRequired" />
+          <Property Type="Byte" Name="HasZones" />
+          <Property Type="Int32" Name="ZoneDefault" />
+          <Property Type="String" Name="Field11Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field11Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field12Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field12Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field13Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field13Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field14Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field14Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field15Label" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Field15Type" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RateCodeFormat" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RateCodeFields" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LegacyName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="SSNIsRequired" />
+          <Property Type="Int32" Name="PricingModeID" />
+          <Property Type="Boolean" Name="isIDR_EDI_Capable" />
+          <Property Type="String" Name="HU_RequestType" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Boolean" Name="MultipleMeters" />
+          <Property Type="Boolean" Name="MeterReadOverlap" />
+        </EntityType>
+        <EntityType Name="IdrUtilityRawParser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="UtilityId" Nullable="false" />
+          <Property Type="String" Name="ParserType" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsAccountNumberInFile" Nullable="false" />
+          <Property Type="String" Name="FileStartstWith" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IdrFileVsHuDiscrepancy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="DateTime" Name="FromDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ToDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="HUKwh" Nullable="false" />
+          <Property Type="Decimal" Name="IDRKwh" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="Difference" Precision="9" Scale="2" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+          <Property Type="DateTime" Name="EffectiveToDate" Precision="3" />
+          <NavigationProperty Name="IdrFileLogDetail" Relationship="LpTransactions.FK_IdrVsHuDiscrepancies_IdrFileLogDetail" FromRole="IdrFileVsHuDiscrepancy" ToRole="IdrFileLogDetail" />
+        </EntityType>
+        <Association Name="FK_IdrVsHuDiscrepancies_IdrFileLogDetail">
+          <End Type="LpTransactions.IdrFileLogDetail" Role="IdrFileLogDetail" Multiplicity="1" />
+          <End Type="LpTransactions.IdrFileVsHuDiscrepancy" Role="IdrFileVsHuDiscrepancy" Multiplicity="*" />
+        </Association>
+        <EntityType Name="IdrNonEdiDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="DateTime" Name="IdrDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="IdrNonEdiHeader" Relationship="LpTransactions.FK_IdrNonEdiDetail_IdrNonEdiHeader" FromRole="IdrNonEdiDetail" ToRole="IdrNonEdiHeader" />
+          <Property Type="Decimal" Name="Peak" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="OffPeak" Precision="9" Scale="2" />
+          <Property Type="String" Name="Intervals" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_IdrNonEdiDetail_IdrNonEdiHeader">
+          <End Type="LpTransactions.IdrNonEdiHeader" Role="IdrNonEdiHeader" Multiplicity="1" />
+          <End Type="LpTransactions.IdrNonEdiDetail" Role="IdrNonEdiDetail" Multiplicity="*" />
+        </Association>
+        <EntityType Name="IdrAccountDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Intervals" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="IdrAccountStageInfo" Relationship="LpTransactions.FK_IdrAccountDetail_IdrAccountStageInfo" FromRole="IdrAccountDetail" ToRole="IdrAccountStageInfo" />
+        </EntityType>
+        <Association Name="FK_IdrAccountDetail_IdrAccountStageInfo">
+          <End Type="LpTransactions.IdrAccountStageInfo" Role="IdrAccountStageInfo" Multiplicity="1" />
+          <End Type="LpTransactions.IdrAccountDetail" Role="IdrAccountDetail" Multiplicity="*" />
+        </Association>
+        <EntityType Name="DataShift">
+          <Key>
+            <PropertyRef Name="Iso" />
+            <PropertyRef Name="Utility" />
+          </Key>
+          <Property Type="String" Name="Iso" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Utility" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="Shift" />
+        </EntityType>
+        <ComplexType Name="usp_EdiGetAgregatedData_Result">
+          <Property Type="String" Name="UtilityCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AccountNumber" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="C0" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C15" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C30" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C45" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C100" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C115" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C130" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C145" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C200" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C215" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C230" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C245" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C300" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C315" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C330" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C345" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C400" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C451" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C430" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C445" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C500" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C515" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C530" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C545" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C600" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C615" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C630" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C645" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C700" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C715" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C730" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C745" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C800" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C815" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C830" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C845" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C900" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C915" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C930" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C945" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1000" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1015" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1030" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1045" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1100" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1115" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1130" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1145" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1200" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1215" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1230" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1245" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1300" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1315" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1330" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1345" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1400" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1415" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1430" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1445" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1500" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1515" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1530" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1545" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1600" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1615" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1630" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1645" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1700" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1715" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1730" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1745" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1800" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1815" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1830" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1845" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1900" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1915" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1930" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1945" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2000" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2015" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2030" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2045" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2100" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2115" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2130" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2145" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2200" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2215" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2230" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2245" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2300" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2315" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2330" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2345" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2359" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="CInt98" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="CInt99" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="CInt100" Nullable="true" Precision="38" Scale="4" />
+        </ComplexType>
+        <ComplexType Name="usp_EdiGetAccountAgregatedData_Result">
+          <Property Type="String" Name="UtilityCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AccountNumber" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="C0" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C15" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C30" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C45" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C100" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C115" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C130" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C145" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C200" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C215" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C230" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C245" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C300" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C315" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C330" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C345" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C400" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C415" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C430" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C445" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C500" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C515" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C530" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C545" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C600" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C615" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C630" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C645" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C700" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C715" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C730" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C745" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C800" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C815" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C830" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C845" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C900" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C915" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C930" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C945" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1000" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1015" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1030" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1045" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1100" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1115" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1130" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1145" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1200" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1215" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1230" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1245" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1300" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1315" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1330" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1345" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1400" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1415" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1430" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1445" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1500" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1515" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1530" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1545" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1600" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1615" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1630" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1645" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1700" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1715" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1730" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1745" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1800" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1815" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1830" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1845" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1900" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1915" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1930" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C1945" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2000" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2015" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2030" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2045" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2100" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2115" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2130" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2145" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2200" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2215" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2230" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2245" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2300" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2315" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2330" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2345" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="C2359" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="Int98" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="Int99" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="Int100" Nullable="true" Precision="38" Scale="4" />
+        </ComplexType>
+        <EntityType Name="vw_Holidays_Calendar">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Calendar" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Created" />
+            <PropertyRef Name="CreatedBy" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Calendar" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Created" Nullable="false" Precision="3" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IdrAccountVsHuDiscrepancy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="IdrAcctStageInfoId" Nullable="false" />
+          <Property Type="DateTime" Name="FromDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ToDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="HUKwh" Nullable="false" />
+          <Property Type="Decimal" Name="IDRKwh" Precision="14" Scale="2" />
+          <Property Type="Decimal" Name="Difference" Precision="9" Scale="2" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+          <Property Type="DateTime" Name="EffectiveToDate" Precision="3" />
+          <Property Type="String" Name="CreatedBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="Adjusted" />
+          <NavigationProperty Name="IdrAccountStageInfo" Relationship="LpTransactions.FK_IdrAccountVsHuDiscrepancies_IdrAccountStageInfo" FromRole="IdrAccountVsHuDiscrepancy" ToRole="IdrAccountStageInfo" />
+        </EntityType>
+        <Association Name="FK_IdrAccountVsHuDiscrepancies_IdrAccountStageInfo">
+          <End Type="LpTransactions.IdrAccountStageInfo" Role="IdrAccountStageInfo" Multiplicity="1" />
+          <End Type="LpTransactions.IdrAccountVsHuDiscrepancy" Role="IdrAccountVsHuDiscrepancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdrAccountStageInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IdrAccountVsHuDiscrepancy">
+              <PropertyRef Name="IdrAcctStageInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <Alias Key="Model" Value="LpTransactions" />
+        <Alias Key="Target" Value="LpTransactions.Store" />
+        <EntityContainerMapping CdmEntityContainer="LpTransactionsContainer" StorageEntityContainer="LpTransactionsStoreContainer">
+          <EntitySetMapping Name="IdrFileLogDetails">
+            <EntityTypeMapping TypeName="LpTransactions.IdrFileLogDetail">
+              <MappingFragment StoreEntitySet="IdrFileLogDetail">
+                <ScalarProperty Name="RecorderNumber" ColumnName="RecorderNumber" />
+                <ScalarProperty Name="MeterNumber" ColumnName="MeterNumber" />
+                <ScalarProperty Name="AverageDifference" ColumnName="AverageDifference" />
+                <ScalarProperty Name="FormatType" ColumnName="FormatType" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+                <ScalarProperty Name="Information" ColumnName="Information" />
+                <ScalarProperty Name="UtilityCode" ColumnName="UtilityCode" />
+                <ScalarProperty Name="Tab" ColumnName="Tab" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdrFileLogHeaders">
+            <EntityTypeMapping TypeName="LpTransactions.IdrFileLogHeader">
+              <MappingFragment StoreEntitySet="IdrFileLogHeader">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="IsARawFile" ColumnName="IsARawFile" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Attempts" ColumnName="Attempts" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileGuid" ColumnName="FileGuid" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_FileHeader_FileDetail" TypeName="LpTransactions.FK_FileHeader_FileDetail" StoreEntitySet="IdrFileLogDetail">
+            <EndProperty Name="IdrFileLogDetail">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+            <EndProperty Name="IdrFileLogHeader">
+              <ScalarProperty Name="ID" ColumnName="FileLogHeaderId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="IdrNonEdiHeaders">
+            <EntityTypeMapping TypeName="LpTransactions.IdrNonEdiHeader">
+              <MappingFragment StoreEntitySet="IdrNonEdiHeader">
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="OriginalUnit" ColumnName="OriginalUnit" />
+                <ScalarProperty Name="Intervals" ColumnName="Intervals" />
+                <ScalarProperty Name="AverageDifference" ColumnName="AverageDifference" />
+                <ScalarProperty Name="UsageType" ColumnName="UsageType" />
+                <ScalarProperty Name="UsageSource" ColumnName="UsageSource" />
+                <ScalarProperty Name="RecorderNumber" ColumnName="RecorderNumber" />
+                <ScalarProperty Name="MeterNumber" ColumnName="MeterNumber" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="UtilityCode" ColumnName="UtilityCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdrAccountStageInfoes">
+            <EntityTypeMapping TypeName="LpTransactions.IdrAccountStageInfo">
+              <MappingFragment StoreEntitySet="IdrAccountStageInfo">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="UtilityCode" ColumnName="UtilityCode" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Utilities">
+            <EntityTypeMapping TypeName="LpTransactions.Utility">
+              <MappingFragment StoreEntitySet="Utility">
+                <ScalarProperty Name="MeterReadOverlap" ColumnName="MeterReadOverlap" />
+                <ScalarProperty Name="MultipleMeters" ColumnName="MultipleMeters" />
+                <ScalarProperty Name="HU_RequestType" ColumnName="HU_RequestType" />
+                <ScalarProperty Name="isIDR_EDI_Capable" ColumnName="isIDR_EDI_Capable" />
+                <ScalarProperty Name="PricingModeID" ColumnName="PricingModeID" />
+                <ScalarProperty Name="SSNIsRequired" ColumnName="SSNIsRequired" />
+                <ScalarProperty Name="LegacyName" ColumnName="LegacyName" />
+                <ScalarProperty Name="RateCodeFields" ColumnName="RateCodeFields" />
+                <ScalarProperty Name="RateCodeFormat" ColumnName="RateCodeFormat" />
+                <ScalarProperty Name="Field15Type" ColumnName="Field15Type" />
+                <ScalarProperty Name="Field15Label" ColumnName="Field15Label" />
+                <ScalarProperty Name="Field14Type" ColumnName="Field14Type" />
+                <ScalarProperty Name="Field14Label" ColumnName="Field14Label" />
+                <ScalarProperty Name="Field13Type" ColumnName="Field13Type" />
+                <ScalarProperty Name="Field13Label" ColumnName="Field13Label" />
+                <ScalarProperty Name="Field12Type" ColumnName="Field12Type" />
+                <ScalarProperty Name="Field12Label" ColumnName="Field12Label" />
+                <ScalarProperty Name="Field11Type" ColumnName="Field11Type" />
+                <ScalarProperty Name="Field11Label" ColumnName="Field11Label" />
+                <ScalarProperty Name="ZoneDefault" ColumnName="ZoneDefault" />
+                <ScalarProperty Name="HasZones" ColumnName="HasZones" />
+                <ScalarProperty Name="RateCodeRequired" ColumnName="RateCodeRequired" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="WholeSaleMktID" ColumnName="WholeSaleMktID" />
+                <ScalarProperty Name="EdiCapable" ColumnName="EdiCapable" />
+                <ScalarProperty Name="Qualifier" ColumnName="Qualifier" />
+                <ScalarProperty Name="AnnualUsageMin" ColumnName="AnnualUsageMin" />
+                <ScalarProperty Name="MeterNumberLength" ColumnName="MeterNumberLength" />
+                <ScalarProperty Name="MeterNumberRequired" ColumnName="MeterNumberRequired" />
+                <ScalarProperty Name="ChgStamp" ColumnName="ChgStamp" />
+                <ScalarProperty Name="ActiveDate" ColumnName="ActiveDate" />
+                <ScalarProperty Name="InactiveInd" ColumnName="InactiveInd" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Field10Type" ColumnName="Field10Type" />
+                <ScalarProperty Name="Field10Label" ColumnName="Field10Label" />
+                <ScalarProperty Name="Field09Type" ColumnName="Field09Type" />
+                <ScalarProperty Name="Field09Label" ColumnName="Field09Label" />
+                <ScalarProperty Name="Field08Type" ColumnName="Field08Type" />
+                <ScalarProperty Name="Field08Label" ColumnName="Field08Label" />
+                <ScalarProperty Name="Field07Type" ColumnName="Field07Type" />
+                <ScalarProperty Name="Field07Label" ColumnName="Field07Label" />
+                <ScalarProperty Name="Field06Type" ColumnName="Field06Type" />
+                <ScalarProperty Name="Field06Label" ColumnName="Field06Label" />
+                <ScalarProperty Name="Field05Type" ColumnName="Field05Type" />
+                <ScalarProperty Name="Field05Label" ColumnName="Field05Label" />
+                <ScalarProperty Name="Field04Type" ColumnName="Field04Type" />
+                <ScalarProperty Name="Field04Label" ColumnName="Field04Label" />
+                <ScalarProperty Name="Field03Type" ColumnName="Field03Type" />
+                <ScalarProperty Name="Field03Label" ColumnName="Field03Label" />
+                <ScalarProperty Name="Field02Type" ColumnName="Field02Type" />
+                <ScalarProperty Name="Field02Label" ColumnName="Field02Label" />
+                <ScalarProperty Name="Field01Type" ColumnName="Field01Type" />
+                <ScalarProperty Name="Field01Label" ColumnName="Field01Label" />
+                <ScalarProperty Name="PorOption" ColumnName="PorOption" />
+                <ScalarProperty Name="DealScreenProcess" ColumnName="DealScreenProcess" />
+                <ScalarProperty Name="LeadScreenProcess" ColumnName="LeadScreenProcess" />
+                <ScalarProperty Name="AccountNumberPrefix" ColumnName="AccountNumberPrefix" />
+                <ScalarProperty Name="AccountLength" ColumnName="AccountLength" />
+                <ScalarProperty Name="BillingType" ColumnName="BillingType" />
+                <ScalarProperty Name="EnrollmentLeadDays" ColumnName="EnrollmentLeadDays" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="DunsNumber" ColumnName="DunsNumber" />
+                <ScalarProperty Name="MarketID" ColumnName="MarketID" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UtilityCode" ColumnName="UtilityCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdrUtilityRawParsers">
+            <EntityTypeMapping TypeName="LpTransactions.IdrUtilityRawParser">
+              <MappingFragment StoreEntitySet="IdrUtilityRawParser">
+                <ScalarProperty Name="FileStartstWith" ColumnName="FileStartstWith" />
+                <ScalarProperty Name="IsAccountNumberInFile" ColumnName="IsAccountNumberInFile" />
+                <ScalarProperty Name="ParserType" ColumnName="ParserType" />
+                <ScalarProperty Name="UtilityId" ColumnName="UtilityId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdrFileVsHuDiscrepancies">
+            <EntityTypeMapping TypeName="LpTransactions.IdrFileVsHuDiscrepancy">
+              <MappingFragment StoreEntitySet="IdrFileVsHuDiscrepancies">
+                <ScalarProperty Name="EffectiveToDate" ColumnName="EffectiveToDate" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Difference" ColumnName="Difference" />
+                <ScalarProperty Name="IDRKwh" ColumnName="IDRKwh" />
+                <ScalarProperty Name="HUKwh" ColumnName="HUKwh" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_IdrVsHuDiscrepancies_IdrFileLogDetail" TypeName="LpTransactions.FK_IdrVsHuDiscrepancies_IdrFileLogDetail" StoreEntitySet="IdrFileVsHuDiscrepancies">
+            <EndProperty Name="IdrFileVsHuDiscrepancy">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+            <EndProperty Name="IdrFileLogDetail">
+              <ScalarProperty Name="ID" ColumnName="IdrFileLogDetailId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="IdrNonEdiDetails">
+            <EntityTypeMapping TypeName="LpTransactions.IdrNonEdiDetail">
+              <MappingFragment StoreEntitySet="IdrNonEdiDetail">
+                <ScalarProperty Name="Intervals" ColumnName="Intervals" />
+                <ScalarProperty Name="OffPeak" ColumnName="OffPeak" />
+                <ScalarProperty Name="Peak" ColumnName="Peak" />
+                <ScalarProperty Name="IdrDate" ColumnName="IdrDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_IdrNonEdiDetail_IdrNonEdiHeader" TypeName="LpTransactions.FK_IdrNonEdiDetail_IdrNonEdiHeader" StoreEntitySet="IdrNonEdiDetail">
+            <EndProperty Name="IdrNonEdiDetail">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+            <EndProperty Name="IdrNonEdiHeader">
+              <ScalarProperty Name="ID" ColumnName="IdrAccountId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="IdrAccountDetails">
+            <EntityTypeMapping TypeName="LpTransactions.IdrAccountDetail">
+              <MappingFragment StoreEntitySet="IdrAccountDetail">
+                <ScalarProperty Name="Intervals" ColumnName="Intervals" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_IdrAccountDetail_IdrAccountStageInfo" TypeName="LpTransactions.FK_IdrAccountDetail_IdrAccountStageInfo" StoreEntitySet="IdrAccountDetail">
+            <EndProperty Name="IdrAccountDetail">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+            <EndProperty Name="IdrAccountStageInfo">
+              <ScalarProperty Name="Id" ColumnName="IdrAccountId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="DataShift">
+            <EntityTypeMapping TypeName="LpTransactions.DataShift">
+              <MappingFragment StoreEntitySet="DataShift">
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="Utility" ColumnName="Utility" />
+                <ScalarProperty Name="Iso" ColumnName="Iso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_EdiGetAccountAgregatedData" FunctionName="LpTransactions.Store.usp_EdiGetAccountAgregatedData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LpTransactions.usp_EdiGetAccountAgregatedData_Result">
+                <ScalarProperty Name="UtilityCode" ColumnName="UtilityCode" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="C0" ColumnName="C0" />
+                <ScalarProperty Name="C15" ColumnName="C15" />
+                <ScalarProperty Name="C30" ColumnName="C30" />
+                <ScalarProperty Name="C45" ColumnName="C45" />
+                <ScalarProperty Name="C100" ColumnName="C100" />
+                <ScalarProperty Name="C115" ColumnName="C115" />
+                <ScalarProperty Name="C130" ColumnName="C130" />
+                <ScalarProperty Name="C145" ColumnName="C145" />
+                <ScalarProperty Name="C200" ColumnName="C200" />
+                <ScalarProperty Name="C215" ColumnName="C215" />
+                <ScalarProperty Name="C230" ColumnName="C230" />
+                <ScalarProperty Name="C245" ColumnName="C245" />
+                <ScalarProperty Name="C300" ColumnName="C300" />
+                <ScalarProperty Name="C315" ColumnName="C315" />
+                <ScalarProperty Name="C330" ColumnName="C330" />
+                <ScalarProperty Name="C345" ColumnName="C345" />
+                <ScalarProperty Name="C400" ColumnName="C400" />
+                <ScalarProperty Name="C415" ColumnName="C415" />
+                <ScalarProperty Name="C430" ColumnName="C430" />
+                <ScalarProperty Name="C445" ColumnName="C445" />
+                <ScalarProperty Name="C500" ColumnName="C500" />
+                <ScalarProperty Name="C515" ColumnName="C515" />
+                <ScalarProperty Name="C530" ColumnName="C530" />
+                <ScalarProperty Name="C545" ColumnName="C545" />
+                <ScalarProperty Name="C600" ColumnName="C600" />
+                <ScalarProperty Name="C615" ColumnName="C615" />
+                <ScalarProperty Name="C630" ColumnName="C630" />
+                <ScalarProperty Name="C645" ColumnName="C645" />
+                <ScalarProperty Name="C700" ColumnName="C700" />
+                <ScalarProperty Name="C715" ColumnName="C715" />
+                <ScalarProperty Name="C730" ColumnName="C730" />
+                <ScalarProperty Name="C745" ColumnName="C745" />
+                <ScalarProperty Name="C800" ColumnName="C800" />
+                <ScalarProperty Name="C815" ColumnName="C815" />
+                <ScalarProperty Name="C830" ColumnName="C830" />
+                <ScalarProperty Name="C845" ColumnName="C845" />
+                <ScalarProperty Name="C900" ColumnName="C900" />
+                <ScalarProperty Name="C915" ColumnName="C915" />
+                <ScalarProperty Name="C930" ColumnName="C930" />
+                <ScalarProperty Name="C945" ColumnName="C945" />
+                <ScalarProperty Name="C1000" ColumnName="C1000" />
+                <ScalarProperty Name="C1015" ColumnName="C1015" />
+                <ScalarProperty Name="C1030" ColumnName="C1030" />
+                <ScalarProperty Name="C1045" ColumnName="C1045" />
+                <ScalarProperty Name="C1100" ColumnName="C1100" />
+                <ScalarProperty Name="C1115" ColumnName="C1115" />
+                <ScalarProperty Name="C1130" ColumnName="C1130" />
+                <ScalarProperty Name="C1145" ColumnName="C1145" />
+                <ScalarProperty Name="C1200" ColumnName="C1200" />
+                <ScalarProperty Name="C1215" ColumnName="C1215" />
+                <ScalarProperty Name="C1230" ColumnName="C1230" />
+                <ScalarProperty Name="C1245" ColumnName="C1245" />
+                <ScalarProperty Name="C1300" ColumnName="C1300" />
+                <ScalarProperty Name="C1315" ColumnName="C1315" />
+                <ScalarProperty Name="C1330" ColumnName="C1330" />
+                <ScalarProperty Name="C1345" ColumnName="C1345" />
+                <ScalarProperty Name="C1400" ColumnName="C1400" />
+                <ScalarProperty Name="C1415" ColumnName="C1415" />
+                <ScalarProperty Name="C1430" ColumnName="C1430" />
+                <ScalarProperty Name="C1445" ColumnName="C1445" />
+                <ScalarProperty Name="C1500" ColumnName="C1500" />
+                <ScalarProperty Name="C1515" ColumnName="C1515" />
+                <ScalarProperty Name="C1530" ColumnName="C1530" />
+                <ScalarProperty Name="C1545" ColumnName="C1545" />
+                <ScalarProperty Name="C1600" ColumnName="C1600" />
+                <ScalarProperty Name="C1615" ColumnName="C1615" />
+                <ScalarProperty Name="C1630" ColumnName="C1630" />
+                <ScalarProperty Name="C1645" ColumnName="C1645" />
+                <ScalarProperty Name="C1700" ColumnName="C1700" />
+                <ScalarProperty Name="C1715" ColumnName="C1715" />
+                <ScalarProperty Name="C1730" ColumnName="C1730" />
+                <ScalarProperty Name="C1745" ColumnName="C1745" />
+                <ScalarProperty Name="C1800" ColumnName="C1800" />
+                <ScalarProperty Name="C1815" ColumnName="C1815" />
+                <ScalarProperty Name="C1830" ColumnName="C1830" />
+                <ScalarProperty Name="C1845" ColumnName="C1845" />
+                <ScalarProperty Name="C1900" ColumnName="C1900" />
+                <ScalarProperty Name="C1915" ColumnName="C1915" />
+                <ScalarProperty Name="C1930" ColumnName="C1930" />
+                <ScalarProperty Name="C1945" ColumnName="C1945" />
+                <ScalarProperty Name="C2000" ColumnName="C2000" />
+                <ScalarProperty Name="C2015" ColumnName="C2015" />
+                <ScalarProperty Name="C2030" ColumnName="C2030" />
+                <ScalarProperty Name="C2045" ColumnName="C2045" />
+                <ScalarProperty Name="C2100" ColumnName="C2100" />
+                <ScalarProperty Name="C2115" ColumnName="C2115" />
+                <ScalarProperty Name="C2130" ColumnName="C2130" />
+                <ScalarProperty Name="C2145" ColumnName="C2145" />
+                <ScalarProperty Name="C2200" ColumnName="C2200" />
+                <ScalarProperty Name="C2215" ColumnName="C2215" />
+                <ScalarProperty Name="C2230" ColumnName="C2230" />
+                <ScalarProperty Name="C2245" ColumnName="C2245" />
+                <ScalarProperty Name="C2300" ColumnName="C2300" />
+                <ScalarProperty Name="C2315" ColumnName="C2315" />
+                <ScalarProperty Name="C2330" ColumnName="C2330" />
+                <ScalarProperty Name="C2345" ColumnName="C2345" />
+                <ScalarProperty Name="C2359" ColumnName="C2359" />
+                <ScalarProperty Name="Int98" ColumnName="Int98" />
+                <ScalarProperty Name="Int99" ColumnName="Int99" />
+                <ScalarProperty Name="Int100" ColumnName="Int100" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_DeleteAccountData" FunctionName="LpTransactions.Store.usp_DeleteAccountData" />
+          <EntitySetMapping Name="vw_Holidays_Calendar">
+            <EntityTypeMapping TypeName="LpTransactions.vw_Holidays_Calendar">
+              <MappingFragment StoreEntitySet="vw_Holidays_Calendar">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Calendar" ColumnName="Calendar" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetZoneInformation" FunctionName="LpTransactions.Store.usp_GetZoneInformation" />
+          <EntitySetMapping Name="IdrAccountVsHuDiscrepancies">
+            <EntityTypeMapping TypeName="LpTransactions.IdrAccountVsHuDiscrepancy">
+              <MappingFragment StoreEntitySet="IdrAccountVsHuDiscrepancies">
+                <ScalarProperty Name="Adjusted" ColumnName="Adjusted" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="EffectiveToDate" ColumnName="EffectiveToDate" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Difference" ColumnName="Difference" />
+                <ScalarProperty Name="IDRKwh" ColumnName="IDRKwh" />
+                <ScalarProperty Name="HUKwh" ColumnName="HUKwh" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="IdrAcctStageInfoId" ColumnName="IdrAcctStageInfoId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <edmx:Diagram Name="LpTransactions" ZoomLevel="85">
+        <edmx:EntityTypeShape EntityType="LpTransactions.IdrFileLogDetail" Width="2.125" PointX="3.375" PointY="0.5" Height="3.7109993489583335" />
+        <edmx:EntityTypeShape EntityType="LpTransactions.IdrFileLogHeader" Width="1.75" PointX="0.5" PointY="0.5" Height="2.9417936197916674" />
+        <edmx:AssociationConnector Association="LpTransactions.FK_FileHeader_FileDetail">
+          <edmx:ConnectorPoint PointX="2.25" PointY="1.9708968098958337" />
+          <edmx:ConnectorPoint PointX="3.375" PointY="1.9708968098958337" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="LpTransactions.IdrNonEdiHeader" Width="2.25" PointX="10.375" PointY="0.5" Height="3.1340950520833317" />
+        <edmx:EntityTypeShape EntityType="LpTransactions.IdrAccountStageInfo" Width="2.375" PointX="3.25" PointY="4.875" Height="2.7494921874999996" />
+        <edmx:EntityTypeShape EntityType="LpTransactions.Utility" Width="1.5" PointX="6.25" PointY="4.875" Height="14.115276692708331" />
+        <edmx:EntityTypeShape EntityType="LpTransactions.IdrUtilityRawParser" Width="1.875" PointX="0.5" PointY="4.875" Height="1.9802864583333326" />
+        <edmx:EntityTypeShape EntityType="LpTransactions.IdrFileVsHuDiscrepancy" Width="2.25" PointX="6.125" PointY="1.5" Height="2.7494921875000031" />
+        <edmx:AssociationConnector Association="LpTransactions.FK_IdrVsHuDiscrepancies_IdrFileLogDetail" >
+          <edmx:ConnectorPoint PointX="5.5" PointY="2.8554996744791667" />
+          <edmx:ConnectorPoint PointX="6.125" PointY="2.8554996744791667" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="LpTransactions.IdrNonEdiDetail" Width="1.875" PointX="9.5" PointY="4.875" Height="2.1725878906249996" />
+        <edmx:AssociationConnector Association="LpTransactions.FK_IdrNonEdiDetail_IdrNonEdiHeader" >
+          <edmx:ConnectorPoint PointX="10.875" PointY="4.2109993489583326" />
+          <edmx:ConnectorPoint PointX="10.875" PointY="4.875" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="LpTransactions.IdrAccountDetail" Width="1.875" PointX="3.375" PointY="9" Height="1.7879850260416674" />
+        <edmx:AssociationConnector Association="LpTransactions.FK_IdrAccountDetail_IdrAccountStageInfo" >
+          <edmx:ConnectorPoint PointX="4.3125" PointY="7.6244921875" />
+          <edmx:ConnectorPoint PointX="4.3125" PointY="9" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="LpTransactions.DataShift" Width="1.5" PointX="0.75" PointY="7.75" Height="1.5956835937500031" />
+        <edmx:EntityTypeShape EntityType="LpTransactions.vw_Holidays_Calendar" Width="1.5" PointX="1.1175673311192391" PointY="2.2032002965934576" />
+        <edmx:EntityTypeShape EntityType="LpTransactions.IdrAccountVsHuDiscrepancy" Width="2.625" PointX="12.375" PointY="4.625" />
+        <edmx:AssociationConnector Association="LpTransactions.FK_IdrAccountVsHuDiscrepancies_IdrAccountStageInfo" />
+        </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

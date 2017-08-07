@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Liberty Power Corp</LicensedTo>
+    <LicenseType>Developer Enterprise Subscription</LicenseType>
+    <LicenseNote>Limited to 1 developer.</LicenseNote>
+    <OrderID>090728131402</OrderID>
+    <OEM>This is a redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Pdf</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>b739c55d-a517-4b76-bc7d-2b3a6fe1b764</SerialNumber>
+    <SubscriptionExpiry>20100728</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>0iFGbMdQEeX3vpv9ARLPoOCaelYiFEurpI2Vsxe2XRrvi1Rts5u8F1UMqhRRPCdZpxfV9f8yC/yG5vbh0wAm91hiHfAV6BH1tlNY0wyBstr0gDZcpkVhEWVbzypPDOsoFLDOWvAR8p094Bb2e9qJd88Qq0SPwXUY9ECggADNDiE=</Signature>
+</License>

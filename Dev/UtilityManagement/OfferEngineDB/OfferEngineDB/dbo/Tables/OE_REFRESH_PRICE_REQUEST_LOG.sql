@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[OE_REFRESH_PRICE_REQUEST_LOG] (
+    [ID]             INT          IDENTITY (1, 1) NOT NULL,
+    [REQUEST_ID]     VARCHAR (50) NULL,
+    [SUBMITION_DATE] DATETIME     NULL
+);
+

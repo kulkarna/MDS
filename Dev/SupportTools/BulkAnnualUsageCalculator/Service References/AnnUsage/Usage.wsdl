@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Usage" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://lpcnocwsdelta1:8089/Usage.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://lpcnocwsdelta1:8089/Usage.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://lpcnocwsdelta1:8089/Usage.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UsageWebService.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUsage_GetUsageDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsageDate" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_GetUsageDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsageDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_GetIdrUsageDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdrUsageDate" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_GetIdrUsageDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdrUsageDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_GetUsageDateV1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsageDateV1" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_GetUsageDateV1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsageDateV1Response" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_SubmitHistoricalUsageRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitHistoricalUsageRequest" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_SubmitHistoricalUsageRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitHistoricalUsageRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_RunScraper_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunScraper" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_RunScraper_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunScraperResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_GetAnnualUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualUsage" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_GetAnnualUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnualUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_IsIdrEligible_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsIdrEligible" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_IsIdrEligible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsIdrEligibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_IsServiceRunning_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsServiceRunning" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_IsServiceRunning_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsServiceRunningResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_Version_InputMessage">
+    <wsdl:part name="parameters" element="tns:Version" />
+  </wsdl:message>
+  <wsdl:message name="IUsage_Version_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUsage">
+    <wsdl:operation name="GetUsageDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsage/GetUsageDate" message="tns:IUsage_GetUsageDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsage/GetUsageDateResponse" message="tns:IUsage_GetUsageDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdrUsageDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsage/GetIdrUsageDate" message="tns:IUsage_GetIdrUsageDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsage/GetIdrUsageDateResponse" message="tns:IUsage_GetIdrUsageDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsageDateV1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsage/GetUsageDateV1" message="tns:IUsage_GetUsageDateV1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsage/GetUsageDateV1Response" message="tns:IUsage_GetUsageDateV1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitHistoricalUsageRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsage/SubmitHistoricalUsageRequest" message="tns:IUsage_SubmitHistoricalUsageRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsage/SubmitHistoricalUsageRequestResponse" message="tns:IUsage_SubmitHistoricalUsageRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RunScraper">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsage/RunScraper" message="tns:IUsage_RunScraper_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsage/RunScraperResponse" message="tns:IUsage_RunScraper_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualUsage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsage/GetAnnualUsage" message="tns:IUsage_GetAnnualUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsage/GetAnnualUsageResponse" message="tns:IUsage_GetAnnualUsage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsIdrEligible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsage/IsIdrEligible" message="tns:IUsage_IsIdrEligible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsage/IsIdrEligibleResponse" message="tns:IUsage_IsIdrEligible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsServiceRunning">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsage/IsServiceRunning" message="tns:IUsage_IsServiceRunning_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsage/IsServiceRunningResponse" message="tns:IUsage_IsServiceRunning_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsage/Version" message="tns:IUsage_Version_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsage/VersionResponse" message="tns:IUsage_Version_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpEndpoint" type="tns:IUsage">
+    <wsp:PolicyReference URI="#BasicHttpEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsageDate">
+      <soap:operation soapAction="http://tempuri.org/IUsage/GetUsageDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdrUsageDate">
+      <soap:operation soapAction="http://tempuri.org/IUsage/GetIdrUsageDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsageDateV1">
+      <soap:operation soapAction="http://tempuri.org/IUsage/GetUsageDateV1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitHistoricalUsageRequest">
+      <soap:operation soapAction="http://tempuri.org/IUsage/SubmitHistoricalUsageRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunScraper">
+      <soap:operation soapAction="http://tempuri.org/IUsage/RunScraper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnualUsage">
+      <soap:operation soapAction="http://tempuri.org/IUsage/GetAnnualUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsIdrEligible">
+      <soap:operation soapAction="http://tempuri.org/IUsage/IsIdrEligible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsServiceRunning">
+      <soap:operation soapAction="http://tempuri.org/IUsage/IsServiceRunning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <soap:operation soapAction="http://tempuri.org/IUsage/Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Usage">
+    <wsdl:port name="BasicHttpEndpoint" binding="tns:BasicHttpEndpoint">
+      <soap:address location="http://lpcnocwsdelta1:8089/Usage.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

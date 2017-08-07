@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98086321-A541-4063-872B-62FA3A691B24}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibertyPower.Business.MarketManagement.UtilityManagement</RootNamespace>
+    <AssemblyName>UtilityManagement</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/UtilityManagement/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=7.1.2.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Reference\NonBuild\Aspose\7.1\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonEntity, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonExceptions, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonExceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonHelper, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonRules, Version=11.12.7.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonRules.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonShared, Version=13.1.9.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonShared.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Temp\CommonSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FieldHistory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\FieldHistory.dll</HintPath>
+    </Reference>
+    <Reference Include="HistoricalInfoSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Reference\Market\HistoricalInfoSql.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\..\..\..\Framework\Reference\NonBuild\Other\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="IdrUsageManagement">
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\IdrUsageManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="IstaSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\IstaSql.dll</HintPath>
+    </Reference>
+    <Reference Include="LibertyPowerSql, Version=12.2.10.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\LibertyPowerSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OfferEngineSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\OfferEngineSql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TransactionsSql, Version=11.10.7.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\TransactionsSql.dll</HintPath>
+    </Reference>
+    <Reference Include="WebScraperManagement, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\WebScraperManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="WorkbookAccess, Version=2011.3.6.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\WorkbookAccess.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountBillingInfo.cs" />
+    <Compile Include="AccountBillingInfoFactory.cs" />
+    <Compile Include="AccountBillingInfoList.cs" />
+    <Compile Include="AccountType.cs" />
+    <Compile Include="BindableFieldMap.cs" />
+    <Compile Include="CapsMarketExemptionFactory.cs" />
+    <Compile Include="AccountMeterTypeNonIdrRule.cs" />
+    <Compile Include="DateReturn.cs" />
+    <Compile Include="DeterminantAlias.cs" />
+    <Compile Include="EdiMeterReadFactory.cs" />
+    <Compile Include="Exceptions\UtilityMappingDriverNotFoundException.cs" />
+    <Compile Include="FieldMap.cs" />
+    <Compile Include="FileMeterReadFactory.cs" />
+    <Compile Include="IcapFactor.cs" />
+    <Compile Include="IcapFactorList.cs" />
+    <Compile Include="IcapFactorNotFoundException.cs" />
+    <Compile Include="CapsMarketExemption.cs" />
+    <Compile Include="CapsMarketExemptionDictionary.cs" />
+    <Compile Include="IdrUsage.cs" />
+    <Compile Include="IstaMeterReadFactory.cs" />
+    <Compile Include="IUsageBase.cs" />
+    <Compile Include="IUsagePeak.cs" />
+    <Compile Include="LoadShapeIdExistsRule.cs" />
+    <Compile Include="MappingRuleType.cs" />
+    <Compile Include="MarketFactory.cs" />
+    <Compile Include="Meter.cs" />
+    <Compile Include="MeterList.cs" />
+    <Compile Include="MeterMapType.cs" />
+    <Compile Include="MeterMapTypeList.cs" />
+    <Compile Include="MeterRead.cs" />
+    <Compile Include="MeterReadDateNotFoundException.cs" />
+    <Compile Include="MeterReadScheduleItem.cs" />
+    <Compile Include="MeterReadScheduleFactory.cs" />
+    <Compile Include="MeterReadScheduleList.cs" />
+    <Compile Include="MeterType.cs" />
+    <Compile Include="MeterTypeNonIdrRule.cs" />
+    <Compile Include="PricingMode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProspectAccountBillingInfo.cs" />
+    <Compile Include="ProspectAccountBillingInfoFactory.cs" />
+    <Compile Include="ProspectAccountBillingInfoList.cs" />
+    <Compile Include="ProxyUsage.cs" />
+    <Compile Include="ReasonCode.cs" />
+    <Compile Include="RetailMarket.cs" />
+    <Compile Include="RetailMarketDictionary.cs" />
+    <Compile Include="RetailMarketList.cs" />
+    <Compile Include="RetailMarketSalesTax.cs" />
+    <Compile Include="Rules\UtilityMappingDriverExistsRule.cs" />
+    <Compile Include="ScraperFactory.cs" />
+    <Compile Include="Service References\DataSynchronizationServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceClass.cs" />
+    <Compile Include="ServiceClassFactory.cs" />
+    <Compile Include="ServiceClassList.cs" />
+    <Compile Include="ServiceClassNotFoundException.cs" />
+    <Compile Include="SufficientUsageForEstimateRule.cs" />
+    <Compile Include="TaxTemplate.cs" />
+    <Compile Include="TaxTemplateFactory.cs" />
+    <Compile Include="Usage.cs" />
+    <Compile Include="UsageDictionary.cs" />
+    <Compile Include="UsageList.cs" />
+    <Compile Include="UsageManagementException.cs" />
+    <Compile Include="UsageNotFoundException.cs" />
+    <Compile Include="UsagePeakDictionary.cs" />
+    <Compile Include="UsageSource.cs" />
+    <Compile Include="UsageType.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="UtilityAccount.cs" />
+    <Compile Include="UtilityAccountDictionary.cs" />
+    <Compile Include="AccountNumberRule.cs" />
+    <Compile Include="UtilityAccountRuleException.cs" />
+    <Compile Include="UtilityAccountList.cs" />
+    <Compile Include="UtilityClassMapping.cs" />
+    <Compile Include="UtilityClassMappingDeterminant.cs" />
+    <Compile Include="UtilityClassMappingDeterminantList.cs" />
+    <Compile Include="UtilityClassMappingList.cs" />
+    <Compile Include="UtilityClassMappingResultant.cs" />
+    <Compile Include="UtilityClassMappingResultantList.cs" />
+    <Compile Include="UtilityDictionary.cs" />
+    <Compile Include="UtilityFactory.cs" />
+    <Compile Include="UtilityFileDelimiter.cs" />
+    <Compile Include="UtilityFileDelimiterDictionary.cs" />
+    <Compile Include="UtilityList.cs" />
+    <Compile Include="UtilityManagementException.cs" />
+    <Compile Include="UtilityMapping.cs" />
+    <Compile Include="UtilityMappingExistsRule.cs" />
+    <Compile Include="UtilityMappingFactory.cs" />
+    <Compile Include="UtilityMappingLog.cs" />
+    <Compile Include="UtilityMappingLogger.cs" />
+    <Compile Include="UtilityMappingLogList.cs" />
+    <Compile Include="UtilityMappingValidMappingSchemaRule.cs" />
+    <Compile Include="UtilityMappingValidRule.cs" />
+    <Compile Include="UtilityNotFoundException.cs" />
+    <Compile Include="UtilityPaymentTerms.cs" />
+    <Compile Include="UtilityPaymentTermsFactory.cs" />
+    <Compile Include="UtilityZoneMapping.cs" />
+    <Compile Include="UtilityZoneMappingList.cs" />
+    <Compile Include="UtilityZoneMappingValidRule.cs" />
+    <Compile Include="VoltageType.cs" />
+    <Compile Include="VoltageTypeList.cs" />
+    <Compile Include="WebScraperManagement\Ameren.cs" />
+    <Compile Include="WebScraperManagement\AmerenFactory.cs" />
+    <Compile Include="WebScraperManagement\AmerenParser.cs" />
+    <Compile Include="WebScraperManagement\AmerenUsage.cs" />
+    <Compile Include="WebScraperManagement\AvailableColumns.cs" />
+    <Compile Include="WebScraperManagement\Bge.cs" />
+    <Compile Include="WebScraperManagement\BgeFactory.cs" />
+    <Compile Include="WebScraperManagement\BgeParser.cs" />
+    <Compile Include="WebScraperManagement\BgeUsage.cs" />
+    <Compile Include="WebScraperManagement\Cenhud.cs" />
+    <Compile Include="WebScraperManagement\CenhudFactory.cs" />
+    <Compile Include="WebScraperManagement\CenhudParser.cs" />
+    <Compile Include="WebScraperManagement\CenhudUsage.cs" />
+    <Compile Include="WebScraperManagement\Cmp.cs" />
+    <Compile Include="WebScraperManagement\CmpFactory.cs" />
+    <Compile Include="WebScraperManagement\CmpParser.cs" />
+    <Compile Include="WebScraperManagement\CmpUsage.cs" />
+    <Compile Include="WebScraperManagement\Comed.cs" />
+    <Compile Include="WebScraperManagement\ComedFactory.cs" />
+    <Compile Include="WebScraperManagement\ComedParser.cs" />
+    <Compile Include="WebScraperManagement\ComedUsage.cs" />
+    <Compile Include="WebScraperManagement\Coned.cs" />
+    <Compile Include="WebScraperManagement\ConedFactory.cs" />
+    <Compile Include="WebScraperManagement\ConedParser.cs" />
+    <Compile Include="WebScraperManagement\ConedUsage.cs" />
+    <Compile Include="WebScraperManagement\IDRParser.cs" />
+    <Compile Include="WebScraperManagement\IDRUtility.cs" />
+    <Compile Include="WebScraperManagement\Logs\ExceptionLogger.cs" />
+    <Compile Include="WebScraperManagement\Logs\Logger.cs" />
+    <Compile Include="WebScraperManagement\IDRFacotry.cs" />
+    <Compile Include="WebScraperManagement\IDRPecoParser.cs" />
+    <Compile Include="WebScraperManagement\IDRAccount.cs" />
+    <Compile Include="WebScraperManagement\MessageFormatter.cs" />
+    <Compile Include="WebScraperManagement\Nimo.cs" />
+    <Compile Include="WebScraperManagement\NimoFactory.cs" />
+    <Compile Include="WebScraperManagement\NimoParser.cs" />
+    <Compile Include="WebScraperManagement\NimoUsage.cs" />
+    <Compile Include="WebScraperManagement\Nyseg.cs" />
+    <Compile Include="WebScraperManagement\NysegFactory.cs" />
+    <Compile Include="WebScraperManagement\NysegParser.cs" />
+    <Compile Include="WebScraperManagement\NysegUsage.cs" />
+    <Compile Include="WebScraperManagement\Peco.cs" />
+    <Compile Include="WebScraperManagement\PecoFactory.cs" />
+    <Compile Include="WebScraperManagement\PecoParser.cs" />
+    <Compile Include="WebScraperManagement\PecoUsage.cs" />
+    <Compile Include="WebScraperManagement\Rge.cs" />
+    <Compile Include="WebScraperManagement\RgeFactory.cs" />
+    <Compile Include="WebScraperManagement\RgeParser.cs" />
+    <Compile Include="WebScraperManagement\RgeUsage.cs" />
+    <Compile Include="WebScraperManagement\Rules\AmerenAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\AmerenAccountWebDataExistRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\AmerenUsageDataExistRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\AmerenUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\BgeAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\BgeAccountWebDataExistRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\BgeUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\BgeUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\CenhudAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\CenhudAccountWebDataExistRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\CenhudUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\CenhudUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\CmpAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\CmpUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\CmpUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\ComedAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\ComedUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\ComedUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\ConedAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\ConedUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\ConedUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\DataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\DateTimeDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\GenericCompositeDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\GenericDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\ListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\NimoAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\NimoUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\NimoUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\NumericalDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\NysegAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\NysegUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\NysegUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\PecoAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\PecoAccountWebDataExistRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\PecoUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\PecoUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\RgeAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\RgeUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\RgeUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\StringDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\WebAccountDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\WebUsageDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\Rules\WebUsageListDataExistsRule.cs" />
+    <Compile Include="WebScraperManagement\WebAccount.cs" />
+    <Compile Include="WebScraperManagement\WebAccountList.cs" />
+    <Compile Include="WebScraperManagement\WebAccountLog.cs" />
+    <Compile Include="WebScraperManagement\WebManagerException.cs" />
+    <Compile Include="WebScraperManagement\WebUsage.cs" />
+    <Compile Include="WebScraperManagement\WebUsageList.cs" />
+    <Compile Include="WholesaleMarket.cs" />
+    <Compile Include="WholesaleMarketList.cs" />
+    <Compile Include="Zone.cs" />
+    <Compile Include="ZoneDictionary.cs" />
+    <Compile Include="ZoneExistsRule.cs" />
+    <Compile Include="ZoneFactory.cs" />
+    <Compile Include="ZoneList.cs" />
+    <Compile Include="ZoneNotFoundException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Service References\DataSynchronizationServiceReference\DataSynchronization.wsdl" />
+    <None Include="Service References\DataSynchronizationServiceReference\DataSynchronization.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSynchronizationServiceReference\DataSynchronization1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WebScraperManagement\WebScraperDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DataSynchronizationServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataSynchronizationServiceReference\DataSynchronization.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataSynchronizationServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataSynchronizationServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataSynchronizationServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

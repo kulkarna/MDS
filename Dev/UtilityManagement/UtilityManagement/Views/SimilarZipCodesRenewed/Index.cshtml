@@ -1,0 +1,86 @@
+﻿@model  UtilityManagement.Models.SimilarZipCodesModel
+@{ViewBag.Title = "Similar Zip Codes Index";
+}
+
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Similar Zip Codes</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+    <div class="details-data-section">
+        <div class="f10">
+@*        @Html.Label("Time Slice")
+        @Html.DropDownList("TimeSliceId", null, new{@onchange = "TimeSlice_onChange()"})*@
+        </div>
+@*        @{if (@Model.SelectedUtilityCompanyId != null && @Model.SelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+          {
+            *@<div class="details-full-section">
+                 <br />
+                <table>
+                    <tr>
+                        <td style="vertical-align:top">
+                <div class="form-title-specific p5">Similar Zip Codes Renewed Accounts--Median Age:32-43.9, Median Household Income:$37.8K-$68K, Median Net Worth:$47.7K-$159.8K</div>
+                    <table class="index2 top_border">
+                        <tr>
+                            <th>Row Count = @Model.SimilarZipCodeList.Count</th>
+                            <th>@Html.DisplayName("Zip Code")</th>
+                            <th>@Html.DisplayName("Location")</th>
+                            <th>@Html.DisplayName("2014 Population Density")</th>
+                            <th>@Html.DisplayName("2014 Median Age")</th>
+                            <th>@Html.DisplayName("2014 Median Net Worth")</th>
+                            <th>@Html.DisplayName("2014 Median Median Household Income")</th>
+                        </tr>
+                        @{
+              foreach (var item in Model.SimilarZipCodeList)
+              {
+                            <tr>
+                                 <td></td>
+                                 <td>@item.ZipCode</td>
+                                 <td>@item.Description</td>
+                                 <td>@item.PopulationDensity.ToString("N")</td>
+                                 <td>@item.MedianAge.ToString("N")</td>
+@*                                 <td>@Html.DisplayFor(modelItem => item.MedianNetWorth)</td>*@
+                                 <td>@item.MedianNetWorth.ToString("C")</td>
+                                 <td>@item.MedianHouseholdIncome.ToString("C")</td>
+                            </tr>
+              }
+                        }
+                    </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+          @*}
+        }*@
+    </div>
+</div>
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+<script>
+    function TimeSlice_onChange() {
+        if ($("select#TimeSliceId").val() != "-1") {
+            $.ajax({
+                type: 'POST',
+                url: "/SimilarZipCodes/IndexTimeSliceSelection",
+                datatype: 'json',
+                async: false,
+                data: { utilityCompanyId: $("select#TimeSliceId").val() },
+                success: function (data) { },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+            document.location.href = '/SimilarZipCodes/Index';
+        }
+    };
+</script>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

@@ -1,0 +1,114 @@
+﻿@model DataAccessLayerEntityFramework.AccountInfoField
+
+@{
+    ViewBag.Title = "Create Account Info Field";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form-details">
+        <div class="form-title">
+            <div class="form-title-general">Create:&nbsp;</div>
+            <div class="form-title-specific">Account Info Field</div>
+        </div>
+        <div class="form-information">&nbsp;&nbsp;Information</div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Account Info Field</legend>
+
+                <div class="details-data-section">
+                    <div class="details-left-section">
+
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.NameUserFriendly, "User Friendly Name")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.NameUserFriendly)
+                        </div>
+                        <div class="editor-validation-field">
+                            @Html.ValidationMessageFor(model => model.NameUserFriendly, "The current User Friendly Name field value is invalid.")
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.NameMachineUnfriendly, "Machine Unfriendly Name")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.NameMachineUnfriendly)
+                        </div>
+                        <div class="editor-validation-field">
+                            @Html.ValidationMessageFor(model => model.NameMachineUnfriendly, "The current Machine Unfriendly Name field value is invalid.")
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Description, "Description")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Description)
+                        </div>
+                        <div class="editor-validation-field">
+                            @Html.ValidationMessageFor(model => model.Description, "The current Description field value is invalid.")
+                        </div>
+                    </div>
+                    <div class="details-right-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-validation-field">
+                            @Html.ValidationMessageFor(model => model.Inactive)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                        </div>
+                        <div class="editor-validation-field">
+                            @Html.ValidationMessageFor(model => model.CreatedBy)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                        </div>
+                        <div class="editor-validation-field">
+                            @Html.ValidationMessageFor(model => model.CreatedDate)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                        </div>
+                        <div class="editor-validation-field">
+                            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                        </div>
+                        <div class="editor-validation-field">
+                            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

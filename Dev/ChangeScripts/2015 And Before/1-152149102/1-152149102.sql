@@ -1,0 +1,1 @@
+insert into Libertypower..Accountcontract values(530522,482672,null,null,getdate(),1972,getdate(),160,0,0)

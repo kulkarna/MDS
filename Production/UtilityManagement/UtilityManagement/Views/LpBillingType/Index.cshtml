@@ -1,0 +1,277 @@
+﻿@model UtilityManagement.Models.LibertyPowerBillingTypeModel
+@{
+    ViewBag.Title = "LP Billing Types Index";
+}
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">LP  Billing Types</div>
+        <div class="float-right">
+            <input type="text" class="text-box2">
+            <div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-data-section chartlink">
+	    <div class="f10">
+            @Html.Label("Utility Company")
+            @Html.DropDownList("UtilityCompanyId", null, new { @onchange = "Utility_onChange()" })
+		</div>
+        @{if (@Model.SelectedUtilityCompanyId != null && @Model.SelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+          {
+        <div class="details-full-section" style="overflow:hidden;">
+            <div class="right_chart" id="resizable2" >
+                <div id="hideDiv" class="chart_open" style="display: none">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="form-details">
+                                    <h4>Report</h4>
+                                    <div class="form_fieldset">
+                                        <fieldset>
+                                            <legend>Request Mode Historical Usage</legend>
+                                            <div class="details-data-section">
+                                                <img src="/LpBillingType/LpBillingCountChart" alt="" class="img" />
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="ui-resizable-handle ui-resizable-w" onclick="showHide('hideDiv',this.id)"></div>
+                <img id="dirImg" src="../Images/view_chart.png" onclick="showHide('hideDiv',this.id)" />
+            </div>
+            <br />
+            <div style="overflow-x:scroll;" id="bheight">
+                <table>
+                    <tr>
+                        <td style="vertical-align:top">
+                            <div class="form-title-specific p5">Liberty Power Billing Type</div>
+                            <table class="index2 top_border left_border">
+                                <tr>
+                                    <th>Row Count = @Model.LpBillingTypeList.Count()</th>
+                                    <th>
+                                        @Html.DisplayName("Utility Code")
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Driver", "PorDriverTileClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.DriverImageUrl))
+                                              {
+                                        <img id="imgDriver" src="@ViewBag.DriverImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Rate Class", "RateClassTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassImageUrl))
+                                              {
+                                        <img id="imgRateClass" src="@ViewBag.RateClassImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Load Profile", "LoadProfileTileClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileImageUrl))
+                                              {
+                                        <img id="imgLoadProfile" src="@ViewBag.LoadProfileImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Tariff Code", "TariffCodeTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeImageUrl))
+                                              {
+                                        <img id="imgTariffCode" src="@ViewBag.TariffCodeImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Default Billing Type", "DefaultBillingTypeTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.DefaultBillingTypeImageUrl))
+                                              {
+                                        <img id="imgDefaultBillingType" src="@ViewBag.DefaultBillingTypeImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Utility Offered Billing Type", "UtilityOfferedBillingTypeTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityOfferedBillingTypeImageUrl))
+                                              {
+                                        <img id="imgUtilityOfferedBillingType" src="@ViewBag.UtilityOfferedBillingTypeImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("LP Approved Billing Type", "LpApprovedBillingTypeTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.LpApprovedBillingTypeImageUrl))
+                                              {
+                                        <img id="imgLpApprovedBillingType" src="@ViewBag.LpApprovedBillingTypeImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Terms", "TermsTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.TermsImageUrl))
+                                              {
+                                        <img id="imgTerms" src="@ViewBag.TermsImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Account Type", "AccountTypeTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.AccountTypeImageUrl))
+                                              {
+                                        <img id="imgAccountType" src="@ViewBag.AccountTypeImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Inactive", "InactiveTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+                                              {
+                                        <img id="imgInactive" src="@ViewBag.InactiveImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Created By", "CreatedByTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+                                              {
+                                        <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Created Date", "CreatedDateTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+                                              {
+                                        <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Modified By", "LastModifiedByTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+                                              {
+                                        <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Modified Date", "LastModifiedDateTitleClick")
+                                        @{
+                                              if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+                                              {
+                                        <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"/>
+                                              }
+                                        }
+                                    </th>
+                                </tr>
+                            @{
+                                  foreach (var item in Model.LpBillingTypeList)
+                                  {
+                                <tr>
+                                    <td>
+                                          @{string checkBoxId = string.Format("CheckBoxSelection_{0}_{1}_{2}", item.Id, item.UtilityOfferedBillingTypeId, item.LpApprovedBillingTypeId );}
+                                        <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId    ');">
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UtilityCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PorDriverName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RateClassCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoadProfileCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TariffCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DefaultBillingTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UtilityOfferedBillingTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LpApprovedBillingTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Terms)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AccountTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Inactive)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                                    </td>
+                                </tr>
+                                  }
+                            }
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+          }
+        }
+    </div>
+</div>
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+<script>
+    function Utility_onChange() {
+        if ($("select#UtilityCompanyId").val() != "-1") {
+            $.ajax({
+                type: 'POST',
+                url: "/LpBillingType/IndexUtilitySelection",
+                datatype: 'json',
+                async: false,
+                data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                success: function (data) { },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+            document.location.href = '/LpBillingType/Index';
+        }
+    };
+</script>
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

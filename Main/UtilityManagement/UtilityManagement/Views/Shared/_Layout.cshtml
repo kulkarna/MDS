@@ -1,0 +1,613 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<title>@ViewBag.Title - Liberty Power Utility Management Site</title>
+    
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="scripts/jquery-ui.js"></script>
+
+<script>
+    $(function ()
+    {
+        $("#tabs").tabs();
+    });
+</script>
+   
+<script language="JavaScript">
+    function UncheckAllButThis(id, state)
+    {
+        id = id.trim();
+        var allSelectionCheckBoxes = document.getElementsByName("SelectionCheckBox");
+        var currentCheckedState = document.getElementById(id).checked;
+        for (i = 0; i < allSelectionCheckBoxes.length; i++)
+        {
+            allSelectionCheckBoxes[i].checked = false;
+        }
+        document.getElementById(id).checked = currentCheckedState;
+    }
+
+    function CommonBase(pageName)
+    {
+        var allSelectionCheckBoxes = document.getElementsByName("SelectionCheckBox");
+        var oneCheckBoxHasBeenSelected = false;
+        var urlComplete = '';
+        var currentUrl = '@Request.Url.ToString()';
+        if (allSelectionCheckBoxes.length == 0 && currentUrl.indexOf('RequestModeIdr/Details') > 0) {
+            var indOfSlash = currentUrl.lastIndexOf('/');
+            var parsedIdSlash = currentUrl.substring(indOfSlash + 1);
+            var currentUtilityCompanyId = '@Session["UtilityCompanyId"]';
+            var finUrl = '/idrrule/index/' + parsedIdSlash + ';' + currentUtilityCompanyId;
+            window.location = finUrl;
+        }
+        else {
+            for (i = 0; i < allSelectionCheckBoxes.length; i++) {
+                if (allSelectionCheckBoxes[i].checked == true) {
+                    var selectedId = allSelectionCheckBoxes[i].getAttribute('id');
+                    var indOf = selectedId.lastIndexOf('_');
+                    var parsedId = selectedId.substring(indOf + 1);
+
+                    if (selectedId.indexOf('LpStandard') != -1) {
+                        urlComplete = '/LpStandard' + '@ViewBag.PageName' + '/' + pageName + '/' + parsedId;
+                    }
+                    else if (selectedId.indexOf('Alias') != -1) {
+                        urlComplete = '/' + '@ViewBag.PageName' + 'Alias/' + pageName + '/' + parsedId;
+                    }
+                    else if (selectedId.indexOf('EnrollmentCheckBox') != -1) {
+                        if (pageName == 'IdrRequestMode') {
+                            if (selectedId.substring(indOf + 1) == '00000000-0000-0000-0000-000000000000') {
+                                urlComplete = '/IdrRule';
+                            }
+                            else {
+                                urlComplete = '/RequestModeIdr/Details/' + selectedId.substring(indOf + 1);
+                            }
+                        }
+                        else {
+                            urlComplete = '/@ViewBag.PageName/' + pageName + '/' + parsedId;
+                        }
+                    }
+                    else if (selectedId.indexOf('IDRRM') != -1 && pageName == 'Rules') {
+                        var idrrm = selectedId.lastIndexOf('IDRRM');
+                        var sub = selectedId.substring(idrrm + 6, indOf);
+                        urlComplete = '/idrrule/index/' + parsedId + ';' + sub;
+                    }
+                    else if (selectedId.length == 128) {
+                        urlComplete = '/' + '@ViewBag.PageName' + '/' + pageName + '/' + selectedId;
+                    }
+                    else {
+                        urlComplete = '/' + '@ViewBag.PageName' + '/' + pageName + '/' + parsedId;
+                    }
+                    window.location = urlComplete;
+                    oneCheckBoxHasBeenSelected = true;
+                }
+            }
+            if (oneCheckBoxHasBeenSelected == false) {
+                alert('Please select an item before selecting ' + pageName + ' button!');
+            }
+        }
+    }
+
+    function EditCommon()
+    {
+        CommonBase('Edit');
+    }
+
+    function DetailsCommon()
+    {
+        CommonBase('Details');
+    }
+
+    function RulesCommon()
+    {
+        CommonBase('Rules');
+    }
+
+    function NewCommon()
+    {
+        var allSelectionCheckBoxes = document.getElementsByName("SelectionCheckBox");
+        var oneCheckBoxHasBeenSelected = false;
+        var urlComplete = '';
+        for (i = 0; i < allSelectionCheckBoxes.length; i++)
+        {
+            if (allSelectionCheckBoxes[i].checked == true)
+            {
+                var selectedId = allSelectionCheckBoxes[i].getAttribute('id');
+                var lastIndexOf = selectedId.lastIndexOf('_');
+                var firstIndexOf = selectedId.indexOf('_') + 1;
+                var parsedId = selectedId.substring(firstIndexOf, lastIndexOf);
+                oneCheckBoxHasBeenSelected = true;
+                window.location = '/IdrRule/Create/' + parsedId;
+            }
+        }
+        if (oneCheckBoxHasBeenSelected == false) {
+            alert('Please select an item before selecting New button!');
+        }
+    }
+
+    function IdrRequestModeCommon()
+    {
+        CommonBase('IdrRequestMode');
+    }
+
+    function EditDetails(url)
+    {
+        var urlParsed = url.replace('Details', 'Edit');
+        window.location = urlParsed;
+    }
+
+    function DetailsEdit(url)
+    {
+        var urlParsed = url.replace('Edit', 'Details');
+        window.location = urlParsed;
+    }
+</script>
+
+    
+     @Styles.Render("~/Content/css")
+     @Styles.Render("~/Content/jquery.treeview.css")
+        @Scripts.Render("~/Scripts/jquery-1.7.1.min.js")
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    
+    @Scripts.Render("~/Scripts/jquery.treeview.js")
+     @Scripts.Render("~/Scripts/dropdown-menu.js")
+     @Scripts.Render("~/Scripts/jquery.cookie.js")
+     @Scripts.Render("~/Scripts/jquery.nav.js")
+     @Scripts.Render("~/Scripts/jquery.scrollTo.js")
+   
+    <script> $(function () { $("#accordion").accordion(); });</script>
+       <script type="text/javascript">
+           jQuery(document).ready(function () {
+               $('#nav').onePageNav();
+
+               $('.index2 tr, .index tr').click(function () {
+                   $('tr td').css({ 'background-color': '#fff' });
+                   $('td', this).css({ 'background-color': '#a7cdf0' });
+               });
+
+               $("#accordion").accordion({
+                   activate: function (event, ui) {
+                       $.cookie('saved_index', null);
+                       $.cookie('saved_index', $("#accordion")
+                               .accordion("option", "active"));
+                   },
+                   active: parseInt($.cookie('saved_index')),
+               });
+
+               var catTopPosition = jQuery('.details-data-section').offset().top;
+
+               jQuery('.navtop a').click(function () {
+                   // Scroll down to 'catTopPosition'
+                   jQuery('html, body').animate({ scrollTop: catTopPosition }, 'slow');
+                   // Stop the link from acting like a normal anchor link
+                   return false;
+               });
+
+           });
+           $(function () {
+               $('.dropdown').dropdown_menu({
+
+                   vertical: true
+               });
+
+               $(".navigation").treeview();
+
+               var rows = $('.index2 tr, .index tr');
+               rows.children().click(function () {
+                   rows.children().removeClass('highlight');
+                   var index = $(this).prevAll().length;
+                   $(this).closest('table').find('tr td:nth-child(' + (index + 1) + ')').addClass('highlight');
+                   $(this).closest('table').find('tr th:nth-child(' + (index + 1) + ')').addClass('highlight');
+
+               });
+           });
+           $(document).ready(function () { addClass(); });
+
+           function addClass() {
+
+               var viewPortWidth = $(window).width();
+
+               if (viewPortWidth >= 1300) { $('body').addClass('extraWide').removeClass('wide, standard, narrow, extraNarrow') }
+               else if (viewPortWidth >= 1260) { $('body').addClass('wide').removeClass('extraWide, standard, narrow, extraNarrow') }
+               else if (viewPortWidth >= 1130) { $('body').addClass('standard').removeClass('extraWide, wide, narrow, extraNarrow') }
+               else if (viewPortWidth >= 900) { $('body').addClass('narrow').removeClass('extraWide, wide, standard, extraNarrow') }
+               else { $('body').addClass('extraNarrow').removeClass('extraWide, standard, wide, narrow') }
+
+
+               setTimeout(addClass, 1000);
+           }
+    </script>
+
+    <script type="text/javascript" >
+
+        function setWid() {
+            var width;
+            if ($('.details-data-section .right_chart .chart_open').is(":visible")) {
+                width = 66.2;
+            } else {
+                width = 97.6;
+            }
+            $('.wide .details-data-section .left_table').css('width', width + '%');
+            $('.extraWide .details-data-section .left_table').css('width', width + '%');
+            $('.standard .details-data-section .left_table').css('width', width - .2 + '%');
+            $('.narrow .details-data-section .left_table').css('width', width - .8 + '%');
+            $('.extraNarrow .details-data-section .left_table').css('width', width - .8 + '%');
+        }
+
+        function showHide(divID, imgID) {
+            if (document.getElementById(divID).style.display == "none") {
+                document.getElementById(divID).style.display = "block";
+                document.getElementById(imgID).src = "/Images/hide_chart.png";
+                setWid();
+            } else {
+                document.getElementById(divID).style.display = "none";
+                document.getElementById(imgID).src = "/Images/view_chart.png ";
+                setWid();
+            }
+        }
+        $(document).ready(function () {
+            setWid();
+        });
+
+        function showDiv(divID, imgID) {
+            if (document.getElementById(divID).style.display == "none") {
+                document.getElementById(divID).style.display = "block";
+                document.getElementById(imgID).src = "/Images/arrow_open.png";
+
+            } else {
+                document.getElementById(divID).style.display = "none";
+                document.getElementById(imgID).src = "/Images/arrow_close.png";
+
+            }
+        }
+        function byId(id) { return document.getElementById(id); }
+        function set_width() {
+            var value = byId('rwidth').value;
+            byId('resizable').style.width = value + "px";
+        }
+
+        $(function () {
+            $("#resizable").resizable({ handles: 'e' });
+            $("#resizable2").resizable({
+                handles: 'w'
+            });
+        });
+
+        //&lt;![CDATA[ 
+        $(function () {
+            var button = $('.open');
+            var elem = $('.recView');
+
+            $(button).on('click', function (e) {
+                $(elem).toggle();
+                e.stopPropagation();
+            });
+
+            $(document).on('click', function (e) {
+                if ($(e.target).closest(elem).length === 0) {
+                    $(elem).hide();
+                }
+            });
+
+            $(document).on('keydown', function (e) {
+                if (e.keyCode === 27) {
+                    $(elem).hide();
+                }
+            });
+
+        });//]]&gt; 
+        $(function () {
+            var button = $('.openv');
+            var elemn = $('.openmenu');
+
+            $(button).on('click', function (e) {
+                $(elemn).toggle();
+                e.stopPropagation();
+            });
+
+            $(document).on('click', function (e) {
+                if ($(e.target).closest(elemn).length === 0) {
+                    $(elemn).hide();
+                }
+            });
+            $('.closev').on('click', function (e) {
+                $(elemn).hide();
+            });
+
+            $(document).on('keydown', function (e) {
+                if (e.keyCode === 27) {
+                    $(elemn).hide();
+                }
+            });
+
+        });
+
+        $(function () {
+            var button = $('.opene');
+            var elemnt = $('.opendropdown');
+
+            $(button).on('mouseenter', function (e) {
+                $(elemnt).toggle();
+                e.stopPropagation();
+            });
+
+            $(document).on('mouseleave', function (e) {
+                if ($(e.target).closest(elemnt).length === 0) {
+                    $(elemnt).hide();
+                }
+            });
+
+        });
+        
+        $(window).resize(function () {
+            var t = $("#resizable");
+            if (t.width() > 125) {
+
+                $(".full").show();
+                $(".abbreviated").hide();
+
+            } else {
+                $(".abbreviated").show();
+                $(".full").hide();
+
+            }
+        });
+        $(function () {
+            var t = $("#resizable");
+            if (t.width() > 180) {
+
+                $(".full").show();
+                $(".abbreviated").hide();
+
+            } else {
+                $(".abbreviated").show();
+                $(".full").hide();
+
+            }
+        });
+        function openPanel(divID, imgID) {
+            if (document.getElementById(divID).style.display == "none") {
+                document.getElementById(divID).style.display = "block";
+                document.getElementById(imgID).src = "../Images/arrow_up.png";
+            } else {
+                document.getElementById(divID).style.display = "none";
+                document.getElementById(imgID).src = "../Images/arrow_down.png";
+            }
+        }
+      
+        $(window).resize(function () {
+            var column_height = $("body").height();
+            column_height = column_height - 130; // header height
+            column_height = column_height + "px";
+            $(".nav_left, #content, #body").css("height", column_height);
+
+            var column_height = $("body").height();
+            column_height = column_height - 170; // header height
+            column_height = column_height + "px";
+            $(".left_table,.right_chart,.inner_scroll , .detail_table ").css("height", column_height);
+
+            var column_height = $("body").height();
+            column_height = column_height - 184 + "px";
+            $(" .left_audit").css("height", column_height);
+
+        });
+        $(window).load(function () {
+            var column_height = $("body").height();
+            column_height = column_height - 130; // header height
+            column_height = column_height + "px";
+            $(".nav_left, #content, #body").css("height", column_height);
+
+
+            var column_height = $("body").height();
+            column_height = column_height - 170; // header height
+            column_height = column_height + "px";
+            $(".left_table,.right_chart, .inner_scroll ,.detail_table ").css("height", column_height);
+
+            var column_height = $("body").height();
+            column_height = column_height - 184 + "px";
+            $(" .left_audit").css("height", column_height);
+
+            
+
+                $("#bheight").css("height", window.innerHeight - 220);
+
+           
+
+        });
+
+        $(function () {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+
+            // passes on every "a" tag 
+            $(".navigation a").each(function () {
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("active");
+                }
+            });
+        });
+       
+               
+        $(function () {
+            $(".scrollnav").scroll(function () {
+          
+                 if ($(".scrollnav").scrollTop() == 0) {
+                    $('.scrollnav').removeClass("scrollbotm"); 
+                }
+                else {
+                    $('.scrollnav').addClass("scrollbotm");
+                }
+            });
+        });
+        
+        function ExcelUploadDownloadSetInvisible(){
+            document.getElementById(LpStdUpload).style.display = "none";
+            document.getElementById(LpStdDownload).style.display = "none";
+            document.getElementById(Upload).style.display = "none";
+            document.getElementById(Download).style.display = "none";
+            document.getElementById(UploadAlias).style.display = "none";
+            document.getElementById(DownloadAlias).style.display = "none";
+        }
+</script>
+ 
+</head>
+<body onload="pageLoad();">
+    <div id="main">
+        @{
+            string path = Request.PhysicalApplicationPath + "bin\\UtilityManagement.dll";
+            System.Text.StringBuilder display = new System.Text.StringBuilder(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            //path = Request.PhysicalApplicationPath + "bin\\AccountsServiceProxy.dll";
+            //display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            //display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\Antlr3.Runtime.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\DataAccessLayerEntityFramework.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\DotNetOpenAuth.AspNet.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\DotNetOpenAuth.Core.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\DotNetOpenAuth.OAuth.Consumer.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\DotNetOpenAuth.OAuth.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\DotNetOpenAuth.OpenId.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\DotNetOpenAuth.OpenId.RelyingParty.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\EntityFramework.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\log4net.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\Microsoft.Web.Infrastructure.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\Microsoft.Web.WebPages.OAuth.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\Newtonsoft.Json.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Net.Http.Formatting.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Web.Helpers.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Web.Http.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Web.Http.WebHost.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Web.Mvc.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Web.Optimization.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Web.Razor.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Web.WebPages.Deployment.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Web.WebPages.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\System.Web.WebPages.Razor.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\UsageManagementServiceProxy.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\UserInterfaceValidationExtensions.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\Utilities.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\UtilityLogging.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\UtilityManagementBusinessLayer.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\UtilityManagementDataMapper.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\UtilityManagementRepository.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\UtilityManagementServiceData.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\UtilityUnityLogging.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\WebGrease.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\WebMatrix.Data.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+            path = Request.PhysicalApplicationPath + "bin\\WebMatrix.WebData.dll";
+            display.Append(System.Reflection.Assembly.LoadFrom(path).GetName().Name + ":" + System.Reflection.Assembly.LoadFrom(path).GetName().Version.ToString());
+            display.Append("; ");
+        }
+    @if (!Request.Url.ToString().ToLower().Contains("login"))
+    {
+    <div class="logo" onclick="alert('@display.ToString()');">
+        <table style="border-color:white"><tr><td style="border-color:white"><img src="~/Images/logo.png" width="155"/></td><td style="font:9px arial; border-color:white">&copy; @DateTime.Now.Year - Liberty Power Utility Management Application</td></tr></table>
+@*        <table style="border-color:white"><tr><td style="border-color:white"><img src="~/Images/logo.png" width="165"/></td><td style="font:9px arial; border-color:white">&copy; @DateTime.Now.Year - Liberty Power Demographics Application</td></tr></table>*@
+    </div>
+    }
+    @Html.Partial("_RibbonPartial")
+    <div id="body">
+        <div  class="nav_left" id="resizable">
+            <nav>
+                @Html.Partial("_NavigationPartial")
+            </nav>
+        </div>
+       @*  <div class="navscroll"><a href=""><img src="~/Images/navscroll.png" /></a></div>*@
+        @RenderSection("featured", required: false)
+        <div id="content">
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - Liberty Power Utility Management Application </p>
+@*                  <p>&copy; @DateTime.Now.Year - Liberty Power Demographics Application </p>*@
+            </div>
+        </div>
+    </footer>
+
+    @*@Scripts.Render("~/bundles/jquery")  *@  
+    @Scripts.Render("~/bundles/jqueryui")    
+    @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

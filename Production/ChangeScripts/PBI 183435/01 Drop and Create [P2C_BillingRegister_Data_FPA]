@@ -1,0 +1,69 @@
+USE [LP_RPTObjects]
+GO
+
+/****** Object:  Table [dbo].[P2C_BillingRegister_Data_FPA]    Script Date: 5/10/2017 2:58:55 PM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P2C_BillingRegister_Data_FPA]') AND type in (N'U'))
+DROP TABLE [dbo].[P2C_BillingRegister_Data_FPA]
+GO
+
+/****** Object:  Table [dbo].[P2C_BillingRegister_Data_FPA]    Script Date: 5/10/2017 2:58:55 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P2C_BillingRegister_Data_FPA]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[P2C_BillingRegister_Data_FPA](
+	[BillRegisterID] [int] IDENTITY(1,1) NOT NULL,
+	[Invoiceid] [varchar](50) NULL,
+	[InvoiceDate] [datetime] NULL,
+	[PrintDate] [datetime] NULL,
+	[PostDate] [datetime] NULL,
+	[Legacy_Account_Num] [varchar](25) NULL,
+	[Revenue_Class_Desc] [varchar](30) NULL,
+	[CUSTOMER_TKN] [int] NOT NULL,
+	[CUSTOMER_ACCT_TKN] [tinyint] NOT NULL,
+	[ACCOUNT_PKG_TKN] [smallint] NOT NULL,
+	[ACCOUNT_CHARGE_TKN] [int] NOT NULL,
+	[BILLING_CHARGE_TKN] [int] NOT NULL,
+	[BillMethod] [varchar](21) NULL,
+	[Cust_Statement_Tkn] [int] NULL,
+	[Invoice_Num] [varchar](30) NULL,
+	[Bill_Calculator_Desc] [varchar](25) NULL,
+	[Bill_Presenter_Desc] [varchar](25) NULL,
+	[PostDate_Charge] [date] NULL,
+	[InvDate_Process] [date] NULL,
+	[Current_Stmt_Date] [date] NULL,
+	[processing_date] [date] NULL,
+	[billing_factor_date] [date] NULL,
+	[charge_date] [date] NULL,
+	[delinquent_date] [date] NULL,
+	[account_invoice_tkn] [int] NULL,
+	[Calc_Price_Amt] [numeric](10, 2) NULL,
+	[Adjustment_Amt] [numeric](10, 2) NULL,
+	[Price_Tax_Amt] [numeric](10, 2) NULL,
+	[InvoiceAmtWithTax] [numeric](12, 2) NULL,
+	[InvoiceAmtNoTax] [numeric](11, 2) NULL,
+	[InvoiceTaxAmount] [numeric](10, 2) NULL,
+	[BC_type_desc] [varchar](50) NULL,
+	[Charge_Sub_Type_Desc] [varchar](50) NULL,
+	[DateLoaded] [datetime] NULL,
+	[RevenueReportMonth] [int] NULL,
+	[RevenueReportYear] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[BillRegisterID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

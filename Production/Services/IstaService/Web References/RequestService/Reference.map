@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://lpcnocws4:8077/Request.svc?wsdl" filename="Request.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://lpcnocws4:8077/Request.svc?xsd=xsd5" filename="Request.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://lpcnocws4:8077/Request.svc?xsd=xsd4" filename="Request0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://lpcnocws4:8077/Request.svc?disco" filename="Request.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://lpcnocws4:8077/Request.svc?xsd=xsd1" filename="Request1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://lpcnocws4:8077/Request.svc?xsd=xsd0" filename="Request2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://lpcnocws4:8077/Request.svc?xsd=xsd3" filename="Request3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://lpcnocws4:8077/Request.svc?xsd=xsd2" filename="Request4.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

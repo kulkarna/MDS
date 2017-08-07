@@ -1,0 +1,107 @@
+Apps
+--------
+DO NOT DEPLOY - EnrollmentWebservices (CRMService) - find this under Apps/Services/- NEW
+Deal Capture - UPDATE
+Enrollment - UPDATE
+Daily pricing app - UPDATE
+DailyPricingClientWcf - UPDATE
+DailyPricingHostWcf - UPDATE
+
+--------
+web.config
+---------
+DailyPricing
+DailyPricingHostWcf
+DailyPricingClientWcf
+DealCapture
+
+
+--------
+DB
+--------
+lp_Account..usp_account_renewal_ins.sql
+lp_account..tr_AccountRenewalInsteadOfUpdate.sql - Jaime's trigger
+
+MD084DataScript.sql - NEW - Rick's DB script
+
+AddRecords_MultiTermWinServiceStatus_table.sql - Lev's DB script -
+
+alter_table(add column)_lp_deal_capture_Deal_Contract_Print.sql
+alter_storedProc_LibertyPower_usp_UpdateStatusMultiTermRecord.sql
+alter_storedProc_lp_deal_capture_usp_print_contracts_ins.sql
+alter_storedProc_lp_document_usp_document_print_template_table_mulitrate_sel.sql
+alter_StoredProc_lp-account_usp_account_renewal_sel_list.sql
+
+libertypower..usp_AccountContractRateByAcctNoUtilityIDSelect.sql
+libertypower..usp_AccountContractRateUpdate.sql
+libertypower..usp_PriceSelect.sql
+libertypower..usp_PricesSelect.sql
+
+
+Combined Comm Rel 1 - Run Once.sql - Gail Commissions
+Combined Comm Rel 1.sql - Gail Commissions
+
+
+
+--------
+Services
+--------
+Lev's service -
+RateChangeWinService - WS4
+Run Setup
+C:\Program Files (x86)\Liberty Power\RateChangeScheduler\
+Modify web.config ISTA settings to point to Prod and not UA.
+Start Service Automatic
+
+--------
+
+Cathy's service - UPDATE
+WS4
+MarkToMarketServiceHost
+Stop Service
+Uninstall Old Service
+Install New One
+C:\Program Files (x86)\Liberty Power\MarkToMarketServiceLibraryHostSetup
+Everyone
+Start Service Automatic
+--------
+
+IIS WS4 - Pre-Deployed already in Prod
+--------
+EnrollmentWebServices
+Add Bindings
+Host Name lporders
+Port 80
+IP *
+
+Delete all but the lporders
+
+--------
+IIS WS3
+--------
+Change the app pools for the 3 daily pricing  to framework 4.0 classic.
+
+Another change due to framework 4.0.
+
+At the IIS server level, the 4.0 Isapi and Cgi restrictions need to be set to “allow”.
+
+
+
+
+Post VMStage Issues
+-------------------
+
+EnrollmentWebServices (CRMService) is pulled from the deployed as it was pre-deployed 
+DealCapture web.config needed multiple modifications.
+RateChangeWinService needed to have it’s config file modified.
+DailyPricingApp appPool needed to be modified
+DailyPricingHostWcf appPool needed to be modified
+DailyPricingClientWcf appPool needed to be modified
+IIS Server Isapi and Cgi restrictions needed to be modified
+IIS Bindings for EnrollmentWebServices needed to be modified
+
+
+
+
+
+

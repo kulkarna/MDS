@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://LibertyPowerCorp.com/RepositoryManagement/Common/1.0.0" elementFormDefault="qualified" targetNamespace="http://LibertyPowerCorp.com/RepositoryManagement/Common/1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SystemError">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="SystemError" nillable="true" type="tns:SystemError" />
+  <xs:complexType name="DataStoreError">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="DataStoreError" nillable="true" type="tns:DataStoreError" />
+  <xs:complexType name="BusinessProcessError">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BusinessProcessError" nillable="true" type="tns:BusinessProcessError" />
+</xs:schema>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lpcd7x64-065.libertypower.local/UtilityManagementWcf/UtilityManagementService.UtilityManagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://lpcd7x64-065.libertypower.local/UtilityManagementWcf/UtilityManagementService.UtilityManagementService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:simpleType name="EnrollmentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PreEnrollment" />
+      <xs:enumeration value="PostEnrollment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnrollmentType" nillable="true" type="tns:EnrollmentType" />
+  <xs:complexType name="RequestMode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnrollmentType" type="tns:EnrollmentType" />
+      <xs:element minOccurs="0" name="Instructions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLoaRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LibertyPowerSlaResponse" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestModeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilitySlaResponse" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestMode" nillable="true" type="tns:RequestMode" />
+  <xs:complexType name="UtilityManagementException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UtilityManagementException" nillable="true" type="tns:UtilityManagementException" />
+  <xs:complexType name="GetAllRequestModeEnrollmentTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestModeEnrollmentTypes" nillable="true" type="tns:ArrayOfGetAllRequestModeEnrollmentTypeResponseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllRequestModeEnrollmentTypesResponse" nillable="true" type="tns:GetAllRequestModeEnrollmentTypesResponse" />
+  <xs:complexType name="ArrayOfGetAllRequestModeEnrollmentTypeResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetAllRequestModeEnrollmentTypeResponseItem" nillable="true" type="tns:GetAllRequestModeEnrollmentTypeResponseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetAllRequestModeEnrollmentTypeResponseItem" nillable="true" type="tns:ArrayOfGetAllRequestModeEnrollmentTypeResponseItem" />
+  <xs:complexType name="GetAllRequestModeEnrollmentTypeResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnrollmentType" type="tns:EnrollmentType" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestModeEnrollmentTypeId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllRequestModeEnrollmentTypeResponseItem" nillable="true" type="tns:GetAllRequestModeEnrollmentTypeResponseItem" />
+  <xs:complexType name="GetAllUtilitiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Utilities" nillable="true" type="tns:ArrayOfGetAllUtilitiesResponseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllUtilitiesResponse" nillable="true" type="tns:GetAllUtilitiesResponse" />
+  <xs:complexType name="ArrayOfGetAllUtilitiesResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetAllUtilitiesResponseItem" nillable="true" type="tns:GetAllUtilitiesResponseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetAllUtilitiesResponseItem" nillable="true" type="tns:ArrayOfGetAllUtilitiesResponseItem" />
+  <xs:complexType name="GetAllUtilitiesResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LegacyUtilityId" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllUtilitiesResponseItem" nillable="true" type="tns:GetAllUtilitiesResponseItem" />
+  <xs:complexType name="ArrayOfBillingType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BillingType" type="tns:BillingType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBillingType" nillable="true" type="tns:ArrayOfBillingType" />
+  <xs:simpleType name="BillingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BillReady">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dual">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RateReady">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SupplierConsolidated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BillingType" nillable="true" type="tns:BillingType" />
+  <xs:complexType name="IdrRequestMode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestMode">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsProhibited" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdrRequestMode" nillable="true" type="tns:IdrRequestMode" />
+  <xs:complexType name="GetNextMeterReadRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TripNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNextMeterReadRequest" nillable="true" type="tns:GetNextMeterReadRequest" />
+  <xs:complexType name="GetNextMeterReadResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextMeterRead" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNextMeterReadResponse" nillable="true" type="tns:GetNextMeterReadResponse" />
+  <xs:complexType name="HasPurchaseOfReceivableAssuranceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasPurchaseOfReceivableAssuranceList" nillable="true" type="tns:ArrayOfPurchaseOfReceivable" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HasPurchaseOfReceivableAssuranceResponse" nillable="true" type="tns:HasPurchaseOfReceivableAssuranceResponse" />
+  <xs:complexType name="ArrayOfPurchaseOfReceivable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseOfReceivable" nillable="true" type="tns:PurchaseOfReceivable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPurchaseOfReceivable" nillable="true" type="tns:ArrayOfPurchaseOfReceivable" />
+  <xs:complexType name="PurchaseOfReceivable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsPorAssurance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPorOffered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPorParticipated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PorDiscountEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PorDiscountExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PorDiscountRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PorFlatFee" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PurchaseOfReceivableRecourse" type="tns:PurchaseOfReceivableRecourse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PurchaseOfReceivable" nillable="true" type="tns:PurchaseOfReceivable" />
+  <xs:simpleType name="PurchaseOfReceivableRecourse">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Recourse" />
+      <xs:enumeration value="NonRecourse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PurchaseOfReceivableRecourse" nillable="true" type="tns:PurchaseOfReceivableRecourse" />
+  <xs:complexType name="ArrayOfAccountInfoRequiredFields">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountInfoRequiredFields" nillable="true" type="tns:AccountInfoRequiredFields" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountInfoRequiredFields" nillable="true" type="tns:ArrayOfAccountInfoRequiredFields" />
+  <xs:complexType name="AccountInfoRequiredFields">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RequiredFields" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountInfoRequiredFields" nillable="true" type="tns:AccountInfoRequiredFields" />
+</xs:schema>

@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[ImpIdrRule] (
+    [UtilityCode]                   NVARCHAR (255) NULL,
+    [EnrollmentType]                NVARCHAR (255) NULL,
+    [Mode]                          NVARCHAR (255) NULL,
+    [RateClassCode]                 NVARCHAR (255) NULL,
+    [LoadProfileCode]               NVARCHAR (255) NULL,
+    [MinUsageMWh]                   NVARCHAR (255) NULL,
+    [MaxUsageMWh]                   NVARCHAR (255) NULL,
+    [IsOnEligibleCustomerList]      NVARCHAR (255) NULL,
+    [IsHistoricalIntervalAvailable] NVARCHAR (255) NULL,
+    [F10]                           NVARCHAR (255) NULL,
+    [F11]                           NVARCHAR (255) NULL,
+    [F12]                           NVARCHAR (255) NULL,
+    [F13]                           NVARCHAR (255) NULL,
+    [F14]                           NVARCHAR (255) NULL,
+    [F15]                           NVARCHAR (255) NULL,
+    [F16]                           NVARCHAR (255) NULL,
+    [F17]                           NVARCHAR (255) NULL,
+    [F18]                           NVARCHAR (255) NULL,
+    [F19]                           NVARCHAR (255) NULL,
+    [F20]                           NVARCHAR (255) NULL,
+    [F21]                           NVARCHAR (255) NULL,
+    [F22]                           NVARCHAR (255) NULL,
+    [F23]                           NVARCHAR (255) NULL,
+    [F24]                           NVARCHAR (255) NULL
+);
+

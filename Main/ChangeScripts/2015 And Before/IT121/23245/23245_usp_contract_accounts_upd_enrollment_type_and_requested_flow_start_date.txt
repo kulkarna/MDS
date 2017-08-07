@@ -1,0 +1,32 @@
+USE [Lp_deal_capture]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_contract_accounts_upd_enrollment_type_and_requested_flow_start_date]    Script Date: 11/12/2013 14:50:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------------------------------------
+-- Added	: Fernando ML Alves
+-- Date		: 12/11/2013
+-- Description	: Proc to update the enrollment type id and requested flow start date for each the accounts and contract.
+-- Format:	: exec usp_contract_accounts_upd_enrollment_type_and_requested_flow_start_date contractNumber,accountNumber,enrollment_type,requestedFlowStartDate
+---------------------------------------------------------------------------------------------------
+
+ALTER PROCEDURE [dbo].[usp_contract_accounts_upd_enrollment_type_and_requested_flow_start_date](
+	@p_contract_nbr char(12),
+	@p_account_nbr char(80),
+	@p_enrollment_type bigint,
+	@p_requested_flow_start_date Datetime) AS 
+BEGIN 
+	SET NOCOUNT ON;
+
+	UPDATE 
+		deal_contract_account 
+	SET 
+		enrollment_type=@p_enrollment_type,
+		requested_flow_start_date=@p_requested_flow_start_date
+	WHERE 
+		contract_nbr=@p_contract_nbr AND account_number=@p_account_nbr;
+
+	SET NOCOUNT OFF;
+END;

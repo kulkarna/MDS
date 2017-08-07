@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibertyPower.Business.CommonBusiness.SecurityManager.Activity">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAACQAAEAAAABCAAAAAgAQAAEAEAARAAAAEEAAAABk=</HashCode>
+      <FileName>Activity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.SecurityManager.ActivityFactory">
+    <Position X="6" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAAgBAACAAAAAAAAAAAAAAEAhIAAAAAAEAAAgIAAAAQ=</HashCode>
+      <FileName>ActivityFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SecurityMgr.ActivityList" Collapsed="true">
+    <Position X="11" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActivityList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.SecurityManager.AppName">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAACQAAEAAAABCAAAAAwAQAAEAEAAQAAAAEAAAAAAk=</HashCode>
+      <FileName>AppName.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.SecurityManager.AppNameFactory">
+    <Position X="9" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEBAAAAAAAAAAAAAAABAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>AppNameFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SecurityMgr.AppNameList">
+    <Position X="7.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AppNameList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.SecurityManager.Role">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAACQIAAAAiAAAEYAAABAQAAAAEAAQAAAAEEAAAABk=</HashCode>
+      <FileName>Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SecurityMgr.RoleList">
+    <Position X="9.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoleList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.SecurityManager.SecurityCommon">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>SecurityCommon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.SecurityManager.User">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BQAAGcEAADjAQAAkGQAAAA4QAAAkGAQKAAgEGgEQAAk=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListOfRoles" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.SecurityManager.UserFactory">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IoQACAAAQQAQBBAHKICAIAIACQdIQCQQkAgAgCEIIAE=</HashCode>
+      <FileName>UserFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSecuritySQLProj.LPSecuritySQL">
+    <Position X="9.75" Y="4.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PortalSecuritySQLProj.PortalSecuritySQL">
+    <Position X="9.75" Y="5.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SecuritySiteSQLProj.SecuritySQL">
+    <Position X="9.75" Y="3.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LibertyPower.Business.CommonBusiness.SecurityManager.RoleFactory">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAEAAAAAAAAAAACAECICAAAAAAAADAEAEAAAkAA=</HashCode>
+      <FileName>RoleFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LibertyPower.Business.CommonBusiness.SecurityManager.TypeofUser">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>TypeofUser.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

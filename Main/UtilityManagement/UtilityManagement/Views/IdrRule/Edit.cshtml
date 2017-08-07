@@ -1,0 +1,143 @@
+﻿@model UtilityManagement.Models.IdrRuleEditListModel
+@{
+    ViewBag.Title = "Edit IDR Rule";
+    string headerText = string.Empty;
+    string enrollmentType = string.Empty;
+    string requestModeType = string.Empty;
+    if (Model.IdrRuleEditRowList != null && Model.IdrRuleEditRowList.Count > 0 && Model.IdrRuleEditRowList[0] != null)
+    {
+        headerText = Model.IdrRuleEditRowList[0].UtilityCode ?? string.Empty + " " + Model.IdrRuleEditRowList[0].EnrollmentType ?? string.Empty + " " + Model.IdrRuleEditRowList[0].RequestModeType ?? string.Empty;
+        enrollmentType = Model.IdrRuleEditRowList[0].EnrollmentType;
+        requestModeType = Model.IdrRuleEditRowList[0].RequestModeType;
+    }
+    else if (Model.IdrRuleEditRowList != null && Model.IdrRuleEditRowList.Count > 0 && Model.IdrRuleEditRowList[0] != null)
+    {
+        headerText = Model.IdrRuleEditRowList[0].UtilityCode ?? string.Empty + " " + Model.IdrRuleEditRowList[0].EnrollmentType ?? string.Empty + " " + Model.IdrRuleEditRowList[0].RequestModeType ?? string.Empty;
+        enrollmentType = Model.IdrRuleEditRowList[0].EnrollmentType;
+        requestModeType = Model.IdrRuleEditRowList[0].RequestModeType;
+    }
+}
+@using UserInterfaceValidationExtensions
+<script>
+    $("#UtilityCompanyId option").attr("disabled", "true");
+</script>
+@using (Html.BeginForm())
+{
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="idrRule_ico"></div>
+            <div class="edit_header_desc"><h4>IDR Rule</h4>
+            <h3>Edit Record</h3>@headerText
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>IDR Rule</legend>
+                <div class="textblock" style="overflow:scroll">
+
+       
+                <table class="index2 top_border">
+                    <tr>
+                        <th>Enrollment Type</th>
+                        <th>Request Mode</th>
+                        <th>Always Request</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>@enrollmentType</td>
+                        <td>@requestModeType</td>
+                        <td>@Html.CheckBoxFor(model => model.PreEnrollmentRequestModeIdrAlwaysRequest)</td>
+                        <td>
+                            <table class="index2 top_border">
+                                <tr>
+                                    <th>Rate Class</th>
+                                    <th>Load Profile</th>
+                                    <th>Tariff Code</th>
+                                    <th>Min Usage MWh</th>
+                                    <th>Max Usage MWh</th>
+                                    <th>Is Eligible</th>
+                                    <th>Is HIA</th>
+                                    <th>Inactive</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                    <th>Modified By</th>
+                                    <th>Modified Date</th>
+                                    <th></th>
+                                </tr>
+                    @{
+    int counter = 0;
+    if (Model.IdrRuleEditRowList != null && Model.IdrRuleEditRowList.Count > 0)
+    {
+        foreach (var item in Model.IdrRuleEditRowList)
+        {
+                                <tr>
+                            <td>
+                                @Html.HiddenFor(modelItem => item.EnrollmentType, new { id = "EnrollmentType_" + counter })
+                                @Html.HiddenFor(modelItem => item.RequestModeType, new { id = "RequestModeType_" + counter })
+                                @Html.HiddenFor(modelItem => item.UtilityCode, new { id = "UtilityCode_" + counter })
+                                @Html.HiddenFor(modelItem => item.IdrRuleId, new { id = "IdrRuleId_" + counter })
+                                @Html.HiddenFor(modelItem => item.RequestModeIdrId, new { id = "RequestModeIdrId_" + counter })
+                                @Html.HiddenFor(modelItem => item.CreatedBy, new { id = "CreatedBy_" + counter })
+                                @Html.HiddenFor(modelItem => item.CreatedDate, new { id = "CreatedDate_" + counter })
+                                @{
+            SelectList selectListRateClass = new SelectList(@ViewBag.RateClassId, "Value", "Text", item.RateClassId);
+            SelectList selectListLoadProfile = new SelectList(@ViewBag.LoadProfileId, "Value", "Text", item.LoadProfileId);
+            SelectList selectListTariffCode = new SelectList(@ViewBag.TariffCodeId, "Value", "Text", item.TariffCodeId);
+                                }
+                                @Html.DropDownList("RateClassId_" + counter, selectListRateClass, new { id = "RateClassId_" + counter })
+                            </td>
+                            <td>
+                                @Html.DropDownList("LoadProfileId_" + counter, selectListLoadProfile, new { id = "LoadProfileId__" + counter })
+                            </td>
+                            <td>
+                                @Html.DropDownList("TariffCodeId_" + counter, selectListTariffCode, new { id = "TariffCodeId__" + counter })
+                            </td>
+                            <td>
+                                @Html.EditorFor(modelItem => item.MinUsageMWh, new { id = "MinUsageMWh_" + counter })
+                            </td>
+                            <td>
+                                @Html.EditorFor(modelItem => item.MaxUsageMWh, new { id = "MaxUsageMWh_" + counter })
+                            </td>
+                            <td>
+                                @Html.EditorFor(modelItem => item.IsEligible, new { id = "IsEligible_" + counter })
+                            </td>
+                            <td>
+                                @Html.EditorFor(modelItem => item.IsHia, new { id = "IsHia_" + counter })
+                            </td>
+                            <td>
+                                @Html.EditorFor(modelItem => item.Inactive, new { id = "Inactive_" + counter })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedBy, new { id = "CreatedBy_" + counter })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedDate, new { id = "CreatedDate_" + counter })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastModifiedBy, new { id = "LastModifiedBy_" + counter })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastModifiedDate, new { id = "LastModifiedDate_" + counter })
+                            </td>
+                            <td >
+                                <div style="color: red; width: 120px">@Html.DisplayFor(modelItem => item.ErrorMessage)</div>
+                            </td>
+                        </tr>
+            counter = counter + 1;
+        }
+    }
+                    }
+                            </table>
+                        </td>
+                    </tr>
+
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

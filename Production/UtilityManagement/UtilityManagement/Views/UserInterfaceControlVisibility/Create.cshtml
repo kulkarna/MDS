@@ -1,0 +1,151 @@
+﻿@model DataAccessLayerEntityFramework.UserInterfaceControlVisibility
+
+@{
+    ViewBag.Title = "Create";
+}
+@using UserInterfaceValidationExtensions
+<h3>Create User Interface Control Visibility</h3>
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form_fieldset">
+        <fieldset>
+            <legend>UserInterfaceControlVisibility</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserInterfaceFormId, "User Interface Form")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("UserInterfaceFormId", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserInterfaceFormId)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserInterfaceFormControlId, "User Interface Form Control")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("UserInterfaceFormControlId", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserInterfaceFormControlId)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserInterfaceControlAndValueGoverningControlVisibilityId, "User Interface Control And Value Governing Control Visibility")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("UserInterfaceControlAndValueGoverningControlVisibilityId", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserInterfaceControlAndValueGoverningControlVisibilityId)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Inactive)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Inactive)
+                @Html.ValidationMessageFor(model => model.Inactive)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedBy, "Created By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedBy)
+                @Html.ValidationMessageFor(model => model.CreatedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedDate, "Created Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedDate)
+                @Html.ValidationMessageFor(model => model.CreatedDate)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedBy)
+                @Html.ValidationMessageFor(model => model.LastModifiedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedDate)
+                @Html.ValidationMessageFor(model => model.LastModifiedDate)
+            </div>
+            @if (Session["IsPostBack"] != null && Session["IsPostBack"].ToString() == "true")
+            {
+                <div class="editor-label" style="color: red">
+                    <h3>
+                        @Model.GetUserInterfaceControlVisibilityValidationString()
+
+                    </h3>
+                </div>
+            }
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("select#UserInterfaceFormId").change(function (evt) {
+            if ($("select#UserInterfaceFormId").val() != "-1") {
+                $.ajax({
+                    url: "/UserInterfaceControlVisibility/PopulateUserInterfaceFormIdList",
+                    type: 'POST',
+                    data: { userInterfaceFormId: $("select#UserInterfaceFormId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Id + "'>" + val.ControlName + "</option>";
+                        });
+
+                        $("select#UserInterfaceFormControlId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+            }
+        });
+    });
+
+    $(function () {
+        $("select#UserInterfaceFormId").change(function (evt) {
+            if ($("select#UserInterfaceFormId").val() != "-1") {
+                $.ajax({
+                    url: "/UserInterfaceControlAndValueGoverningControlVisibility/PopulateUserInterfaceFormControlValueList",
+                    type: 'POST',
+                    data: { userInterfaceFormId: $("select#UserInterfaceFormId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Id + "'>" + val.ControlValueGoverningVisibiltiy + "</option>";
+                        });
+
+                        $("select#UserInterfaceControlAndValueGoverningControlVisibilityId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+            }
+        });
+    });
+
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

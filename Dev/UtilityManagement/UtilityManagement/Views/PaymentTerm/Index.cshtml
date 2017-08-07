@@ -1,0 +1,222 @@
+﻿@model UtilityManagement.Models.PaymentTermModel 
+@*List<DataAccessLayerEntityFramework.PaymentTerm> *@
+
+@{
+    ViewBag.Title = "Payment Term Index";
+}
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Payment Term</div>
+        <div class="float-right">
+            <input type="text" class="text-box2">
+            <div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-data-section chartlink">
+	    <div class="f10">
+            @Html.Label("Utility Company")
+            @Html.DropDownList("UtilityCompanyId", null, new { @onchange = "Utility_onChange()" })
+		</div>
+        @{
+            if (Session["PaymentTerm_UtilityCompanyId_Set"] != null && Session["PaymentTerm_UtilityCompanyId_Set"].ToString() != "00000000-0000-0000-0000-000000000000")
+            {
+                <div class="details-full-section" style="overflow:hidden;">
+                    <div class="right_chart" id="resizable2" >
+                        <div id="hideDiv" class="chart_open" style="display: none">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="form-details">
+                                            <h4>Report</h4>
+                                            <div class="form_fieldset">
+                                                <fieldset>
+                                                    <legend>Payment Term</legend>
+                                                    <div class="details-data-section">
+                                                        @*<img src="/PaymentTerm/LpBillingCountChart" alt="" class="img" />*@
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="ui-resizable-handle ui-resizable-w" onclick="showHide('hideDiv',this.id)"></div>
+                        <img id="dirImg" src="../Images/view_chart.png" onclick="showHide('hideDiv',this.id)" />
+                    </div>
+                    <br />
+                    <div style="overflow-x:scroll;" id="bheight">
+                        <table>
+                        <tr>
+                            <th>Row Count = @Model.PaymentTermList.Count()</th>
+                            <th>
+                                @Html.ActionLink("Utility Code", "TitleClick", new { name = "UtilityCode" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityCodeImageUrl))
+                        {
+                                <img id="imgUtilityCode" src="@ViewBag.UtilityCodeImageUrl"  valign="middle" />
+                        }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Account Type", "TitleClick", new { name = "BusinessAccountType" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.BusinessAccountTypeImageUrl))
+                        {
+                                <img id="imgAccountTypeRefresh" src="@ViewBag.BusinessAccountTypeImageUrl"  valign="middle" />
+                        }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Billing Type", "TitleClick", new { name = "BillingType" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.BillingTypeImageUrl))
+                        {
+                                <img id="imgMonth" src="@ViewBag.BillingTypeImageUrl"  valign="middle" />
+                        }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Market", "TitleClick", new { name = "Market" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.MarketImageUrl))
+                        {
+                                <img id="imgMarket" src="@ViewBag.MarketImageUrl"  valign="middle" />
+                        }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Payment Term", "TitleClick", new { name = "PaymentTerm" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.PaymentTermImageUrl))
+                        {
+                                <img id="imgReadDate" src="@ViewBag.PaymentTermImageUrl"  valign="middle" />
+                        }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Inactive", "TitleClick", new { name = "Inactive" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+                        {
+                                <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+                        }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Created By", "TitleClick", new { name = "CreatedBy" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+                        {
+                                <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"  valign="middle" />
+                        }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Created Date", "TitleClick", new { name = "CreatedDate" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+                        {
+                                <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"  valign="middle" />
+                        }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Last Modified By", "TitleClick", new { name = "LastModifiedBy" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+                        {
+                                <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"  valign="middle" />
+                        }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Last Modified Date", "TitleClick", new { name = "LastModifiedDate" })
+                                @{
+                        if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+                        {
+                                <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"  valign="middle" />
+                        } 
+                                }
+                            </th>
+                        </tr>
+                        @{
+                            foreach (var item in Model.PaymentTermList)
+                            {
+                              <tr>
+                                <td>
+                                    @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                                    <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UtilityCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BusinessAccountType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BillingType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Market)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PaymentTerm)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Inactive)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{
+    <h3>@Session["ErrorMessage"].ToString()</h3>
+}
+<script>
+    function Utility_onChange() {
+        if ($("select#UtilityCompanyId").val() != "-1") {
+            $.ajax({
+                type: 'POST',
+                url: "/PaymentTerm/IndexUtilitySelection",
+                datatype: 'json',
+                async: false,
+                data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                success: function (data) { },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+            document.location.href = '/PaymentTerm/Index';
+        }
+    };
+</script>
+
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

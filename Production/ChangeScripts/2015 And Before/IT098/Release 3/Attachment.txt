@@ -1,0 +1,50 @@
+Ron, please create the following 3 groups in WS4 (you can see how they are setup on VM3); let me know if you need help.. thx,
+
+
+IdrPricing:
+
+Alberto O'Naghten
+Daniel Pena
+Gabriel Diaz
+Jeremy Ennen
+Jose Albarran
+Krishan Ramgulam
+Meagan Barrett
+Mihir Sanghavi
+Rajiv Kakar
+Randy Coots
+Richard F. Gomez
+Ted Etson
+Trudy McNeil
+
+
+IdrSalesSupport:
+
+Angelina Mariani
+Carmela Owens
+Christine Baker
+Daniel Perrillo
+Eddie Guevara
+Eric Wilson
+Erica Lanosa
+Evon Chappell
+Joshua Kirsch
+Ketina Moussignac
+Mario Sturla
+Meghan Eccher
+Melanie Wright
+Michael Cofer
+Nareicy Crespo
+Peter Maliska
+Sandra Laird
+Shantel Wallace
+Sharief Pereira
+Thomas D'Annunzio
+Tony Gilbert
+
+
+IdrItanos:
+
+eduardo patino
+alian hernandez
+leslie

@@ -1,0 +1,699 @@
+USE [LP_RPTObjects]
+GO
+
+/****** Object:  StoredProcedure [dbo].[usp_Load_P2C_BillingRegister_Data_FPA]    Script Date: 5/16/2017 10:54:49 AM ******/
+DROP PROCEDURE [dbo].[usp_Load_P2C_BillingRegister_Data_FPA]
+GO
+
+/****** Object:  StoredProcedure [dbo].[usp_Load_P2C_BillingRegister_Data_FPA]    Script Date: 5/16/2017 10:54:49 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE procedure [dbo].[usp_Load_P2C_BillingRegister_Data_FPA]
+
+AS
+
+/* Created 11/2/2016
+JKacprzak
+
+Daily load of processed charges into tables for Test Revenue Report. 
+1. get last date in the table
+2. delete the data for that date
+3. reload the data from the last processing date forward
+4. any other date filters should come from the report parameters
+
+TFS 183435 - Reload Billing Register without depositions
+
+----------------------------------------------------
+TFS 183435 and 178280
+
+Created JKacprzak
+Modified JKacprzak 5/16/2017
+
+added back and updated the logic for the detail table. I had separated out the stored procedures but I am putting them back together. 
+needed to clean up the way the taxes were being loaded. Some tax records were being added twice. I filtered out all taxes from the second insert statement and 
+updated the last two inserts to only handle taxes
+
+----------------------------------------------------
+
+*/
+
+Set NoCount on
+
+set transaction isolation level read uncommitted
+
+
+
+Declare @Processing_Date datetime  = '1/1/2016', @Loadprocessing_Date datetime  = '1/1/2016'
+
+--select top 1 * from lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA]
+
+
+If  @@Rowcount <> 0 
+select @processing_Date =  max(InvoiceDate) from lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA]
+
+/* 
+
+See if the table is empty. If not, get the last processing date (invoice date). If it is
+empty, set the date to October 1 and reload
+
+*/
+ 
+
+
+
+/*Delete the records in the table and then delete the previous day. Reload from the previous day */
+
+-- delete the records from the detail first because there is a foreign key from the detail to the main table
+
+	Delete from  lp_rptobjects.dbo.[P2C_BillingRegister_DataDetail]
+	where invdate  > = dateadd(d,-1,@Processing_Date)
+
+	 
+	Delete from  lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA]
+	where invoicedate  > = dateadd(d,-1,@Processing_Date)
+
+	--print 'deleted 1'
+
+
+	/* just get the latest processing date from the table after the deletion and go from there. A double check. */
+	--select top 1 * from lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA]
+
+
+If  @@Rowcount <> 0 
+		select @Loadprocessing_Date =  max(invoiceDate) from lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA]
+
+
+Insert into lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA]
+	select 
+	isnull(cast(bc.Cust_Statement_Tkn as varchar(50)),bc.Invoice_Num) as InvoiceID,
+	case when bc.processing_date = '6/1/2016' then 
+			isnull(Charge_Date,bc.Billing_Factor_Date)
+		else bc.Processing_Date
+			End	 as InvoiceDate,
+	NULL as PrintDate,
+	coalesce(CAST(bc.Current_Stmt_Date AS varchar(50)),bc.Billing_Factor_Date,bc.Charge_Date) as PostDate,
+	Legacy_Account_Num,
+	Revenue_Class_Desc,
+	bc.CUSTOMER_TKN,
+	bc.CUSTOMER_ACCT_TKN,
+	bc.ACCOUNT_PKG_TKN,
+	 bc.ACCOUNT_CHARGE_TKN,
+	bc.BILLING_CHARGE_TKN,
+	 case when bill_presenter_desc = 'ESP' and Bill_Calculator_Desc = 'DUAL' then 'Supplier Consolidated' 
+			else	case when bill_presenter_desc = 'LDC' and Bill_Calculator_Desc = 'DUAL' then 'Bill Ready' 
+					else case when bill_presenter_desc = 'LDC' and Bill_Calculator_Desc = 'LDC' then 'Rate Ready' 
+							else case when bill_presenter_desc = 'DUAL' and Bill_Calculator_Desc = 'DUAL' then 'DUAL' end-- should be a statement
+						end 
+					end
+			end		as BillMethod,
+	bc.Cust_Statement_Tkn,
+	bc.Invoice_Num,
+	Bill_Calculator_Desc,Bill_Presenter_Desc,
+	bc.charge_date as PostDate_Charge,
+	bc.processing_date as InvDate_Process,
+	bc.Current_Stmt_Date,bc.processing_date,bc.billing_factor_date,bc.charge_date,
+	bc.delinquent_date,
+	account_Invoice_tkn account_invoice_tkn,
+	Calc_Price_Amt,
+	Adjustment_Amt,
+	Price_Tax_Amt,
+	Calc_Price_Amt+Adjustment_Amt+Price_Tax_Amt as InvoiceAmtWithTax,
+	Calc_Price_Amt+Adjustment_Amt as InvoiceAmtNoTax,
+	Price_tax_amt as InvoiceTaxAmount,
+	bc.type_desc as BC_type_desc,
+	Charge_Sub_Type_Desc,
+	getdate() as DateLoaded,
+	Month(Processing_Date) as RevenueReportMonth,
+	Year(Processing_Date) as RevenueReportYear
+	from esgdatamart.dbo.BILLING_CHARGE bc with (nolock)
+	join esgdatamart.dbo.CUSTOMER c  with (nolock) on bc.CUSTOMER_TKN = c.CUSTOMER_TKN
+	join esgdatamart.dbo.ACCOUNT a  with (nolock) on a.CUSTOMER_TKN = bc.CUSTOMER_TKN
+		and a.CUSTOMER_ACCT_TKN = bc.CUSTOMER_ACCT_TKN
+		and a.ACCOUNT_PKG_TKN = bc.ACCOUNT_PKG_TKN
+	where 1=1
+	and bc.Type_Desc Not In ( 'Conversion Balance Forward',   'Payment')
+	and bc.processing_date> @Loadprocessing_Date
+	and bc.Transaction_Type_Desc not like '%Deposit%'
+
+
+
+	-- check the last invoice date from the detail table as well
+		--select @Loadprocessing_Date =    max(invdate) from lp_rptobjects.dbo.[P2C_BillingRegister_DataDetail_FPA]
+
+
+
+		  
+
+/* load fixed adder separately because we need the usage from the usage detail table to calculate the rate */
+;with CTE_UsageDetail
+as
+(
+
+select 
+	ud.customer_tkn
+	,ud.CUSTOMER_ACCT_TKN	
+	,ud.ACCOUNT_PKG_TKN	
+	--,Usage_Tkn
+	,SUM(ud.Usage_Num) Usage_Num
+	,ud.Detail_Begin_Read_Date
+	,ud.Detail_End_Read_Date
+	,ud.Account_Charge_Tkn	  Account_Charge_Tkn	
+	,ud.Billing_Charge_Tkn  Billing_Charge_Tkn
+--	,*
+from  ESGDataMart.dbo.Usage_Detail ud with (nolock) 
+WHERE 1=1
+	and Unit_Measure_Desc = 'KWH'
+	and Historical_Ind <> 'Y'
+	and Account_Charge_Tkn is not null
+	and Billing_Charge_Tkn is not null
+
+group by 
+	ud.customer_tkn
+	,ud.CUSTOMER_ACCT_TKN	
+	,ud.ACCOUNT_PKG_TKN	
+	--,ud.usage_tkn
+	,ud.Detail_Begin_Read_Date
+	,ud.Detail_End_Read_Date
+	,ud.Account_Charge_Tkn	  	
+	,ud.Billing_Charge_Tkn  
+
+
+)
+--select * from CTE_UsageDetail
+
+,cte_usageTotal
+as
+(
+select 
+ud.customer_tkn
+	,ud.CUSTOMER_ACCT_TKN	
+	,ud.ACCOUNT_PKG_TKN	
+	,SUM(ud.Usage_Num) Usage_Num
+	,ud.Account_Charge_Tkn	  Account_Charge_Tkn	
+	,ud.Billing_Charge_Tkn  Billing_Charge_Tkn
+from CTE_UsageDetail ud
+group by ud.customer_tkn
+	,ud.CUSTOMER_ACCT_TKN	
+	,ud.ACCOUNT_PKG_TKN	
+	,ud.Account_Charge_Tkn	  	
+	,ud.Billing_Charge_Tkn  
+)
+--select * from cte_usageTotal
+
+
+,CTE_RateCalc
+as
+(
+select case when t.Usage_Num <> 0 then d.Usage_Num/t.Usage_Num else 0 end as PctUsage,t.Usage_Num as TotalUsageNum,d.Usage_Num as DetailUsageNum,
+t.customer_tkn	,t.CUSTOMER_ACCT_TKN	,t.ACCOUNT_PKG_TKN,t.Account_Charge_Tkn,
+t.Billing_Charge_Tkn,d.Detail_Begin_Read_Date,	
+d.Detail_End_Read_Date
+from cte_usageTotal t
+join CTE_UsageDetail d on d.Customer_Tkn = t.Customer_Tkn
+and d.Customer_Acct_Tkn = t.Customer_Acct_Tkn
+and d.Account_Pkg_Tkn = t.Account_Pkg_Tkn
+and d.Account_Charge_Tkn = t.Account_Charge_Tkn
+and d.Billing_Charge_Tkn = t.Billing_Charge_Tkn
+)
+--select * from CTE_RateCalc
+
+--/*
+INSERT INTO [dbo].[P2C_BillingRegister_DataDetail_FPA]
+           (BillRegisterID
+           ,[invoiceid]
+           ,[invdate]
+           ,[postdate]
+           ,[revenue_Class_Desc]
+           ,[Customer_Tkn]
+           ,[Customer_Acct_Tkn]
+           ,[Account_Pkg_Tkn]
+		   ,ACCOUNT_CHARGE_TKN
+           ,[Billing_Charge_Tkn]
+           ,[BC_type_desc]
+           ,[BillMethod]
+           ,[Cust_Statement_Tkn]
+           ,[Invoice_Num]
+           ,[Bill_Calculator_Desc]
+           ,[Bill_Presenter_Desc]
+           ,[InvoiceAmtNoTax]
+           ,[InvoiceTaxAmount]
+           ,[InvDetDesc]
+           ,[CategoryID]
+           ,[ServiceFrom]
+           ,[ServiceTo]
+		   ,[Rate] 
+           ,[invdetamt]
+           ,[invdetamtNoTax]
+           ,[Tax]
+           ,[invdetqty]
+           ,[Charge_Amt]
+           ,[Tax_Amt]
+           ,[Charge_Type_Desc]
+           ,[Demand_Adjust_Amt]
+           ,[Canceled_Date]
+           ,[Type_Desc]
+           ,[Demand_Chrg_Amt]
+           ,[Usage_Adjust_Amt]
+           ,[Usage_Chrg_Amt]
+           ,[Usage_Total_Num]
+           ,[Usage_Days_Cnt]
+		    ,Acct_Component_Tkn
+			,Component_Chg_Tkn)
+--*/
+select --*--TOP 100 -- bc.*,cc.*,u.*,uOrig.*
+	BR.BillRegisterID,
+	BR.invoiceid,
+	BR.invoicedate,
+	BR.postdate,
+	BR.revenue_Class_Desc,
+	BR.Customer_Tkn,
+	BR.Customer_Acct_Tkn,
+	BR.Account_Pkg_Tkn,
+	BR.ACCOUNT_CHARGE_TKN,
+	BR.Billing_Charge_Tkn,
+	BR.BC_type_desc,
+	BR.BillMethod,
+	BR.Cust_Statement_Tkn,
+	BR.Invoice_Num,
+	BR.Bill_Calculator_Desc,
+	BR.Bill_Presenter_Desc,
+	BR.InvoiceAmtNoTax,
+	BR.InvoiceTaxAmount,
+	cc.type_desc as InvDetDesc,
+	case BR.BC_type_desc
+		--when 'Level Pay Contract' then 99 
+		--when 'Transfer to Payment Contract' then 99 
+		when 'Misc. Adjustment' then 
+				case when bc.Charge_Sub_Type_Desc like '%tax%' then 6 
+				else  coalesce(rd.categoryID,td.categoryid,5)
+				end
+	else coalesce(rd.categoryID,td.categoryid,5) end as CategoryID,
+ServiceFrom		= coalesce(u.Detail_Begin_Read_Date,dateadd(d,-abs((cc.usage_days_cnt)),cc.usage_date),bc.charge_date) ,
+ServiceTo		= coalesce(u.Detail_End_Read_Date,cc.Usage_Date,bc.charge_date) ,
+/* if we use the usage_num from the usage table first, we get a rate for fixed adder rows. If we only use the usage_total_num it will be 0 for fixed adder*/
+Rate			= abs(case when coalesce(u.DetailUsageNum,uCncl.DetailUsageNum,cc.usage_total_num,0)  <> 0 
+							then cc.usage_chrg_amt/coalesce(u.DetailUsageNum,uCncl.DetailUsageNum,cc.usage_total_num) 
+					else 0 
+					end) ,
+invdetamt		=	(Charge_Amt+Demand_Adjust_Amt+Demand_Chrg_Amt+Usage_Adjust_Amt+Usage_Chrg_Amt)  * isnull(u.PctUsage,1) ,
+invdetamtNoTax	=	(Charge_Amt+Demand_Adjust_Amt+Demand_Chrg_Amt+Usage_Adjust_Amt+Usage_Chrg_Amt)  * isnull(u.PctUsage,1) ,
+Tax				= 	0 ,
+	invdetqty = 0,
+	  cc.Charge_Amt,
+	 cc.Tax_Amt,
+	 cc.Charge_Type_Desc,
+	 cc.Demand_Adjust_Amt,
+	 cc.Canceled_Date,
+	 cc.Type_Desc,
+	 cc.Demand_Chrg_Amt,
+	 cc.Usage_Adjust_Amt,
+	cc.Usage_Chrg_Amt,
+	cc.Usage_Total_Num,
+	cc.[Usage_Days_Cnt],
+	cc.Acct_Component_Tkn,
+	cc.Component_Chg_Tkn
+
+from lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA] BR 
+join   esgdatamart.dbo.Billing_Charge bc
+on BR.CUSTOMER_TKN = bc.CUSTOMER_TKN
+		and BR.CUSTOMER_ACCT_TKN = bc.CUSTOMER_ACCT_TKN
+		and BR.ACCOUNT_PKG_TKN = bc.ACCOUNT_PKG_TKN
+		and BR.ACCOUNT_CHARGE_TKN = bc.ACCOUNT_CHARGE_TKN
+		and BR.BILLING_CHARGE_TKN = bc.BILLING_CHARGE_TKN
+left join  esgdatamart.dbo.COMPONENT_CHARGE cc
+	on cc.CUSTOMER_TKN = bc.CUSTOMER_TKN
+		and cc.CUSTOMER_ACCT_TKN = bc.CUSTOMER_ACCT_TKN
+		and cc.ACCOUNT_PKG_TKN = bc.ACCOUNT_PKG_TKN
+		and cc.ACCOUNT_CHARGE_TKN = bc.ACCOUNT_CHARGE_TKN
+		and cc.BILLING_CHARGE_TKN = bc.BILLING_CHARGE_TKN
+
+left join ISTA.dbo.TDSP_charges td with (nolock) on td.code = cc.Type_Desc
+left join ista.[dbo].[RateDescription] RD with (nolock) on RD.RateDescription = cc.Type_Desc
+LEFT 	join  CTE_RateCalc u with (nolock) on br.customer_tkn = u.customer_tkn
+		and br.customer_acct_tkn = u.customer_acct_tkn
+		and br.account_pkg_tkn = u.account_pkg_tkn
+		and br.Account_Charge_Tkn = u.Account_Charge_Tkn
+		and br.Billing_Charge_Tkn = u.Billing_Charge_Tkn
+
+		-- for cancellations, to get the original meter read, you need to join back to the billing charge table on the original charge column
+LEFT 	join  CTE_RateCalc uCncl with (nolock) on bc.customer_tkn = uCncl.customer_tkn
+		and bc.customer_acct_tkn = uCncl.customer_acct_tkn
+		and bc.account_pkg_tkn = uCncl.account_pkg_tkn
+		and bc.Account_Charge_Tkn = uCncl.Account_Charge_Tkn
+		and bc.Original_Charge_tkn = uCncl.Billing_Charge_Tkn
+where 1=1
+and isnull(bc.Charge_Sub_Type_Desc,'') not like '%tax%'
+and isnull(cc.Contract_Type_Desc,'') not in  ('Deposit') -- added per Carol. Looks like Billing Register is Not including this
+and cc.type_desc = 'fixed adder' 
+and coalesce(rd.categoryID,td.categoryid,5) = 1 -- just added this 5/5/2017
+and bc.processing_date>= @Loadprocessing_Date
+
+----------------- NON Fixed Adder and TAXES
+--/*
+INSERT INTO [dbo].[P2C_BillingRegister_DataDetail_FPA]
+           (BillRegisterID
+           ,[invoiceid]
+           ,[invdate]
+           ,[postdate]
+           ,[revenue_Class_Desc]
+           ,[Customer_Tkn]
+           ,[Customer_Acct_Tkn]
+           ,[Account_Pkg_Tkn]
+		   ,ACCOUNT_CHARGE_TKN
+           ,[Billing_Charge_Tkn]
+           ,[BC_type_desc]
+           ,[BillMethod]
+           ,[Cust_Statement_Tkn]
+           ,[Invoice_Num]
+           ,[Bill_Calculator_Desc]
+           ,[Bill_Presenter_Desc]
+           ,[InvoiceAmtNoTax]
+           ,[InvoiceTaxAmount]
+           ,[InvDetDesc]
+           ,[CategoryID]
+           ,[ServiceFrom]
+           ,[ServiceTo]
+		   ,[Rate] 
+           ,[invdetamt]
+           ,[invdetamtNoTax]
+           ,[Tax]
+           ,[invdetqty]
+           ,[Charge_Amt]
+           ,[Tax_Amt]
+           ,[Charge_Type_Desc]
+           ,[Demand_Adjust_Amt]
+           ,[Canceled_Date]
+           ,[Type_Desc]
+           ,[Demand_Chrg_Amt]
+           ,[Usage_Adjust_Amt]
+           ,[Usage_Chrg_Amt]
+           ,[Usage_Total_Num]
+           ,[Usage_Days_Cnt]
+		    ,Acct_Component_Tkn
+			,Component_Chg_Tkn)
+--*/
+select --TOP 100 -- bc.*,cc.*,u.*,uOrig.*
+	BR.BillRegisterID,
+	BR.invoiceid,
+	BR.invoicedate,
+	BR.postdate,
+	BR.revenue_Class_Desc,
+	BR.Customer_Tkn,
+	BR.Customer_Acct_Tkn,
+	BR.Account_Pkg_Tkn,
+	BR.ACCOUNT_CHARGE_TKN,
+	BR.Billing_Charge_Tkn,
+	BR.BC_type_desc,
+	BR.BillMethod,
+	BR.Cust_Statement_Tkn,
+	BR.Invoice_Num,
+	BR.Bill_Calculator_Desc,
+	BR.Bill_Presenter_Desc,
+	BR.InvoiceAmtNoTax,
+	BR.InvoiceTaxAmount,
+	isnull(cc.type_desc,bc.type_desc) as InvDetDesc,
+	case Bc.type_desc
+		--when 'Level Pay Contract' then 99 
+		--when 'Transfer to Payment Contract' then 99 
+		when 'Misc. Adjustment' then 
+				case when bc.Charge_Sub_Type_Desc like '%tax%' then 6 
+				else  coalesce(rd.categoryID,td.categoryid,5)
+				end
+	else coalesce(rd.categoryID,td.categoryid,5) end as CategoryID,
+ServiceFrom		= coalesce(dateadd(d,-abs((cc.usage_days_cnt)),cc.usage_date),bc.charge_date) ,
+ServiceTo		= coalesce(cc.Usage_Date,bc.charge_date) ,
+/* if we use the usage_num from the usage table first, we get a rate for fixed adder rows. If we only use the usage_total_num it will be 0 for fixed adder*/
+Rate			= case when coalesce(cc.usage_total_num,0)  <> 0 
+					then cc.usage_chrg_amt/coalesce(cc.usage_total_num,0) 
+					end,
+invdetamt		=	isnull(Charge_Amt+Demand_Adjust_Amt+Demand_Chrg_Amt+Usage_Adjust_Amt+Usage_Chrg_Amt ,br.InvoiceAmtNoTax+br.InvoiceTaxAmount),
+invdetamtNoTax	=	isnull(Charge_Amt+Demand_Adjust_Amt+Demand_Chrg_Amt+Usage_Adjust_Amt+Usage_Chrg_Amt ,br.InvoiceAmtNoTax),
+Tax				= 	case when rd.categoryID = 6  then  coalesce(Tax_Amt,bc.Price_Tax_Amt) 
+						else case when br.BC_type_desc = 'Misc. Adjustment'  and bc.Charge_Sub_Type_Desc like '%tax%' then  coalesce(cc.Tax_Amt,bc.Price_Tax_Amt)  
+							 else 0 
+							end
+					end,
+	invdetqty = coalesce(cc.usage_total_num,0)	,	
+	 cc.Charge_Amt,
+	 cc.Tax_Amt,
+	 cc.Charge_Type_Desc,
+	 cc.Demand_Adjust_Amt,
+	 cc.Canceled_Date,
+	 cc.Type_Desc,
+	 cc.Demand_Chrg_Amt,
+	 cc.Usage_Adjust_Amt,
+	cc.Usage_Chrg_Amt,
+	cc.Usage_Total_Num,
+	cc.[Usage_Days_Cnt],
+	cc.Acct_Component_Tkn,
+	cc.Component_Chg_Tkn
+
+--select top 100 BC_type_desc
+--,*
+from lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA] BR 
+join   esgdatamart.dbo.Billing_Charge bc
+on BR.CUSTOMER_TKN = bc.CUSTOMER_TKN
+		and BR.CUSTOMER_ACCT_TKN = bc.CUSTOMER_ACCT_TKN
+		and BR.ACCOUNT_PKG_TKN = bc.ACCOUNT_PKG_TKN
+		and BR.ACCOUNT_CHARGE_TKN = bc.ACCOUNT_CHARGE_TKN
+		and BR.BILLING_CHARGE_TKN = bc.BILLING_CHARGE_TKN
+left join  esgdatamart.dbo.COMPONENT_CHARGE cc
+	on cc.CUSTOMER_TKN = bc.CUSTOMER_TKN
+		and cc.CUSTOMER_ACCT_TKN = bc.CUSTOMER_ACCT_TKN
+		and cc.ACCOUNT_PKG_TKN = bc.ACCOUNT_PKG_TKN
+		and cc.ACCOUNT_CHARGE_TKN = bc.ACCOUNT_CHARGE_TKN
+		and cc.BILLING_CHARGE_TKN = bc.BILLING_CHARGE_TKN
+
+left join ISTA.dbo.TDSP_charges td with (nolock) on td.code = cc.Type_Desc
+left join ista.[dbo].[RateDescription] RD with (nolock) on RD.RateDescription = cc.Type_Desc
+		
+ where 1=1
+and isnull(cc.Contract_Type_Desc,'') not in ('Deposit') -- added per Carol. Looks like Billing Register is Not including this
+and isnull(bc.Charge_Sub_Type_Desc,'') not like '%tax%'
+and isnull(cc.type_desc,'') <> 'fixed adder' 
+and bc.processing_date>= @Loadprocessing_Date
+
+/* TAXES */
+INSERT INTO [dbo].[P2C_BillingRegister_DataDetail_FPA]
+           (BillRegisterID
+            ,[invoiceid]
+           ,[invdate]
+           ,[postdate]
+           ,[revenue_Class_Desc]
+           ,[Customer_Tkn]
+           ,[Customer_Acct_Tkn]
+           ,[Account_Pkg_Tkn]
+		   ,ACCOUNT_CHARGE_TKN
+           ,[Billing_Charge_Tkn]
+           ,[BC_type_desc]
+           ,[BillMethod]
+           ,[Cust_Statement_Tkn]
+           ,[Invoice_Num]
+           ,[Bill_Calculator_Desc]
+           ,[Bill_Presenter_Desc]
+           ,[InvoiceAmtNoTax]
+           ,[InvoiceTaxAmount]
+           ,[InvDetDesc]
+           ,[CategoryID]
+           ,[ServiceFrom]
+           ,[ServiceTo]
+		   ,[Rate] 
+           ,[invdetamt]
+           ,[invdetamtNoTax]
+           ,[Tax]
+           ,[invdetqty]
+           ,[Charge_Amt]
+           ,[Tax_Amt]
+           ,[Charge_Type_Desc]
+           ,[Demand_Adjust_Amt]
+           ,[Canceled_Date]
+           ,[Type_Desc]
+           ,[Demand_Chrg_Amt]
+           ,[Usage_Adjust_Amt]
+           ,[Usage_Chrg_Amt]
+           ,[Usage_Total_Num]
+           ,[Usage_Days_Cnt]
+		   ,Acct_Component_Tkn
+		   ,Component_Chg_Tkn)
+--*/
+select 
+
+	BR.BillRegisterID,
+	BR.invoiceid,
+	BR.invoicedate,
+	BR.postdate,
+	BR.revenue_Class_Desc,
+	BR.Customer_Tkn,
+	BR.Customer_Acct_Tkn,
+	BR.Account_Pkg_Tkn,
+	BR.ACCOUNT_CHARGE_TKN,
+	BR.Billing_Charge_Tkn,
+	BR.BC_type_desc,
+	BR.BillMethod,
+	BR.Cust_Statement_Tkn,
+	BR.Invoice_Num,
+	BR.Bill_Calculator_Desc,
+	BR.Bill_Presenter_Desc,
+	BR.InvoiceAmtNoTax,
+	BR.InvoiceTaxAmount,
+	cc.type_desc as InvDetDesc,
+CategoryID		= 6,
+
+
+ServiceFrom		= coalesce(dateadd(d,-abs((cc.usage_days_cnt)),cc.usage_date),bc.charge_date) ,
+ServiceTo		= coalesce(cc.Usage_Date,bc.charge_date) ,
+
+Rate			= 0,--case when coalesce(u.usage_num,cc.usage_total_num,0)  <> 0 then cc.usage_chrg_amt/coalesce(u.Usage_Num,cc.usage_total_num) else 0 end ,
+invdetamt		=	cc.Tax_Amt,
+invdetamtNoTax	=	0 ,
+Tax				= 	coalesce(cc.Tax_Amt,bc.Price_Tax_Amt) ,
+invdetqty		= 0,
+cc.Charge_Amt,
+cc.Tax_Amt,
+cc.Charge_Type_Desc,
+cc.Demand_Adjust_Amt,
+cc.Canceled_Date,
+cc.Type_Desc,
+cc.Demand_Chrg_Amt,
+cc.Usage_Adjust_Amt,
+cc.Usage_Chrg_Amt,
+cc.Usage_Total_Num,
+cc.[Usage_Days_Cnt],
+cc.Acct_Component_Tkn,
+cc.Component_Chg_Tkn
+from lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA] BR 
+join   esgdatamart.dbo.Billing_Charge bc
+on BR.CUSTOMER_TKN = bc.CUSTOMER_TKN
+		and BR.CUSTOMER_ACCT_TKN = bc.CUSTOMER_ACCT_TKN
+		and BR.ACCOUNT_PKG_TKN = bc.ACCOUNT_PKG_TKN
+		and BR.ACCOUNT_CHARGE_TKN = bc.ACCOUNT_CHARGE_TKN
+		and BR.BILLING_CHARGE_TKN = bc.BILLING_CHARGE_TKN
+left join  esgdatamart.dbo.COMPONENT_CHARGE cc
+	on cc.CUSTOMER_TKN = bc.CUSTOMER_TKN
+		and cc.CUSTOMER_ACCT_TKN = bc.CUSTOMER_ACCT_TKN
+		and cc.ACCOUNT_PKG_TKN = bc.ACCOUNT_PKG_TKN
+		and cc.ACCOUNT_CHARGE_TKN = bc.ACCOUNT_CHARGE_TKN
+		and cc.BILLING_CHARGE_TKN = bc.BILLING_CHARGE_TKN
+left join ISTA.dbo.TDSP_charges td with (nolock) on td.code = cc.Type_Desc
+left join ista.[dbo].[RateDescription] RD with (nolock) on RD.RateDescription = cc.Type_Desc
+	
+where isnull(cc.Contract_Type_Desc,'') not in   ('Deposit') -- added per Carol. Looks like Billing Register is Not including this
+and cc.Tax_Amt <> 0.00
+and bc.processing_date>= @Loadprocessing_Date
+--/*
+INSERT INTO [dbo].[P2C_BillingRegister_DataDetail_FPA]
+           (BillRegisterID
+            ,[invoiceid]
+           ,[invdate]
+           ,[postdate]
+           ,[revenue_Class_Desc]
+           ,[Customer_Tkn]
+           ,[Customer_Acct_Tkn]
+           ,[Account_Pkg_Tkn]
+		   ,ACCOUNT_CHARGE_TKN
+           ,[Billing_Charge_Tkn]
+           ,[BC_type_desc]
+           ,[BillMethod]
+           ,[Cust_Statement_Tkn]
+           ,[Invoice_Num]
+           ,[Bill_Calculator_Desc]
+           ,[Bill_Presenter_Desc]
+           ,[InvoiceAmtNoTax]
+           ,[InvoiceTaxAmount]
+           ,[InvDetDesc]
+           ,[CategoryID]
+           ,[ServiceFrom]
+           ,[ServiceTo]
+		   ,[Rate] 
+           ,[invdetamt]
+           ,[invdetamtNoTax]
+           ,[Tax]
+           ,[invdetqty]
+           ,[Charge_Amt]
+           ,[Tax_Amt]
+           ,[Charge_Type_Desc]
+           ,[Demand_Adjust_Amt]
+           ,[Canceled_Date]
+           ,[Type_Desc]
+           ,[Demand_Chrg_Amt]
+           ,[Usage_Adjust_Amt]
+           ,[Usage_Chrg_Amt]
+           ,[Usage_Total_Num]
+           ,[Usage_Days_Cnt]
+		   ,Acct_Component_Tkn
+		   ,Component_Chg_Tkn)
+--*/
+
+select 
+
+	BR.BillRegisterID,
+	BR.invoiceid,
+	BR.invoicedate,
+	BR.postdate,
+	BR.revenue_Class_Desc,
+	BR.Customer_Tkn,
+	BR.Customer_Acct_Tkn,
+	BR.Account_Pkg_Tkn,
+	BR.ACCOUNT_CHARGE_TKN,
+	BR.Billing_Charge_Tkn,
+	BR.BC_type_desc,
+	BR.BillMethod,
+	BR.Cust_Statement_Tkn,
+	BR.Invoice_Num,
+	BR.Bill_Calculator_Desc,
+	BR.Bill_Presenter_Desc,
+	BR.InvoiceAmtNoTax,
+	BR.InvoiceTaxAmount,
+	cc.type_desc as InvDetDesc,
+CategoryID		= 6,
+
+
+ServiceFrom		= coalesce(dateadd(d,-abs((cc.usage_days_cnt)),cc.usage_date),bc.charge_date) ,
+ServiceTo		= coalesce(cc.Usage_Date,bc.charge_date) ,
+
+Rate			= 0,--case when coalesce(u.usage_num,cc.usage_total_num,0)  <> 0 then cc.usage_chrg_amt/coalesce(u.Usage_Num,cc.usage_total_num) else 0 end ,
+invdetamt		=	BR.InvoiceAmtNoTax,--cc.Tax_Amt,
+invdetamtNoTax	=	0 ,
+Tax				= 	BR.InvoiceAmtNoTax,--coalesce(cc.Tax_Amt,br.Price_Tax_Amt) ,
+invdetqty		= 0,
+cc.Charge_Amt,
+cc.Tax_Amt,
+cc.Charge_Type_Desc,
+cc.Demand_Adjust_Amt,
+cc.Canceled_Date,
+cc.Type_Desc,
+cc.Demand_Chrg_Amt,
+cc.Usage_Adjust_Amt,
+cc.Usage_Chrg_Amt,
+cc.Usage_Total_Num,
+cc.[Usage_Days_Cnt],
+cc.Acct_Component_Tkn,
+cc.Component_Chg_Tkn
+from lp_rptobjects.dbo.[P2C_BillingRegister_Data_FPA] BR 
+join   esgdatamart.dbo.Billing_Charge bc
+on BR.CUSTOMER_TKN = bc.CUSTOMER_TKN
+		and BR.CUSTOMER_ACCT_TKN = bc.CUSTOMER_ACCT_TKN
+		and BR.ACCOUNT_PKG_TKN = bc.ACCOUNT_PKG_TKN
+		and BR.ACCOUNT_CHARGE_TKN = bc.ACCOUNT_CHARGE_TKN
+		and BR.BILLING_CHARGE_TKN = bc.BILLING_CHARGE_TKN
+left join  esgdatamart.dbo.COMPONENT_CHARGE cc
+	on cc.CUSTOMER_TKN = bc.CUSTOMER_TKN
+		and cc.CUSTOMER_ACCT_TKN = bc.CUSTOMER_ACCT_TKN
+		and cc.ACCOUNT_PKG_TKN = bc.ACCOUNT_PKG_TKN
+		and cc.ACCOUNT_CHARGE_TKN = bc.ACCOUNT_CHARGE_TKN
+		and cc.BILLING_CHARGE_TKN = bc.BILLING_CHARGE_TKN
+left join ISTA.dbo.TDSP_charges td with (nolock) on td.code = cc.Type_Desc
+left join ista.[dbo].[RateDescription] RD with (nolock) on RD.RateDescription = cc.Type_Desc
+where 1=1
+and isnull(cc.Contract_Type_Desc,'') not in ('Deposit') -- added per Carol. Looks like Billing Register is Not including this
+and br.BC_type_desc = 'Misc. Adjustment' and bc.Charge_Sub_Type_Desc like '%tax%' 
+and bc.processing_date>= @Loadprocessing_Date
+
+GO
+

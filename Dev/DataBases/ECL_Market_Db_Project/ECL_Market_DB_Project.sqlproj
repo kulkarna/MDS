@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ECL_Market_DB_Project</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{af3d2595-77f4-4a7c-9fef-3197872668c7}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ECL_Market_DB_Project</RootNamespace>
+    <AssemblyName>ECL_Market_DB_Project</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Staging\" />
+    <Folder Include="Staging\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Staging\Tables\FirstEnergyWPPHIECL.sql" />
+    <Build Include="Staging\Tables\OfferEngineEPICONCOR.sql" />
+    <Build Include="dbo\Tables\FileImport.sql" />
+    <Build Include="Staging\Tables\FirstEnergyOH.sql" />
+    <Build Include="Staging\Tables\OfferEngineEPICAEP.sql" />
+    <Build Include="Staging\Tables\FirstEnergyNJ.sql" />
+    <Build Include="Staging\Tables\FirstEnergyPennPowerHIECL.sql" />
+    <Build Include="Staging\Tables\FirstEnergyMETEDHIECL.sql" />
+    <Build Include="Staging\Tables\FirstEnergyPENELECHIECL.sql" />
+    <Build Include="Staging\Tables\OfferEngineEPICPEG1.sql" />
+    <Build Include="Staging\Tables\FirstEnergyMETEDHUECL.sql" />
+    <Build Include="Staging\Tables\FirstEnergyJcplHIECL.sql" />
+    <Build Include="Staging\Tables\OfferEngineEPICPEG2.sql" />
+    <Build Include="Staging\Tables\FirstEnergyPENELECHUECL.sql" />
+    <Build Include="Staging\Tables\FirstEnergyCEIHU.sql" />
+    <Build Include="Staging\Tables\FirstEnergyPennPowerHUECL.sql" />
+    <Build Include="dbo\Tables\SourceType_Test.sql" />
+    <Build Include="dbo\Tables\Source_Test.sql" />
+    <Build Include="Staging\Tables\FirstEnergyWPPECLHU.sql" />
+    <Build Include="dbo\Tables\AccountsTest.sql" />
+    <Build Include="dbo\Tables\ESITESTDATA.sql" />
+    <Build Include="Staging\Tables\PECOECLHU.sql" />
+    <Build Include="dbo\Tables\FileImport_1.sql" />
+    <Build Include="dbo\Tables\FileImport_11.sql" />
+    <Build Include="Staging\Tables\OEEPICTPENAccount.sql" />
+    <Build Include="Staging\Tables\PPLHUECL.sql" />
+    <Build Include="Staging\Tables\OEEPICTPENEsidata.sql" />
+    <Build Include="Staging\Tables\FirstEnergyAlleghnyMdHIECL.sql" />
+    <Build Include="dbo\Tables\Sheet1_.sql" />
+    <Build Include="Staging\Tables\UGIHUECL.sql" />
+    <Build Include="Staging\Tables\FirstEnergyToledoHIECL.sql" />
+    <Build Include="Staging\Tables\Meco.sql" />
+    <Build Include="Staging\Tables\FirstEnergyCeiHIECL.sql" />
+    <Build Include="Staging\Tables\DUQECLHU.sql" />
+    <Build Include="Staging\Tables\FOCUSECLHU.sql" />
+    <Build Include="Staging\Tables\FirstEnergyOhioEdisonHIECL.sql" />
+    <Build Include="Staging\Tables\FirstEnergyPE.sql" />
+    <Build Include="dbo\Tables\FileImport_test.sql" />
+    <Build Include="Staging\Tables\Nantucket.sql" />
+    <Build Include="Staging\Tables\FirstEnergyPP.sql" />
+    <Build Include="dbo\Tables\WPPHIECLTest_1.sql" />
+    <Build Include="Staging\Tables\FirstEnergyWP.sql" />
+    <Build Include="dbo\Tables\NYSEG.sql" />
+    <Build Include="Staging\Tables\FirstEnergyPA.sql" />
+    <Build Include="dbo\Tables\WPPHIECLTest.sql" />
+    <Build Include="dbo\Tables\Fileimport_Temp.sql" />
+    <Build Include="dbo\Tables\SSIS ConfigurationsTest.sql" />
+    <Build Include="dbo\Tables\Source.sql" />
+    <Build Include="dbo\Tables\SourceType.sql" />
+    <Build Include="dbo\Stored Procedures\test1.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetStagingTblSchema.sql" />
+    <Build Include="dbo\Stored Procedures\GetImportFileIdAfterInsertFinal.sql" />
+    <Build Include="dbo\Stored Procedures\spGetRecordByFileId.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataOEEPICONCOR.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateIsValidFlagPenelecHiEcl.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataOEEPICAEP.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateIsValidFlagPennPowerHiEcl.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateIsValidFlagMETEDHIECL.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataECLCEIHU.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataOEEPICPEG1.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataECLPECOHU.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataOEEPICPEG2.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateIsValidFlagJcplHIECL.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclWppHU.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataOEEPICTEPN.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RollbackdataFileImport.sql" />
+    <Build Include="dbo\Stored Procedures\GetIdForEsiId.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclUGIHU.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclWppHI.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetStagingTblSchema_Test.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataECLPPLHU.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclWppHI_1.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclMETEDHU.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclPENELECHU.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclPennPowerHU.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CreateRecodInMeterReadCal.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DeleteRecodFromMeterReadCal.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataMeco.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RollbackdataNant.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CreateRecodInMeterReadCalNant.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RollbackdataNstar.sql" />
+    <Build Include="dbo\Stored Procedures\GetImportFileIdAfterInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CreateRecodInMeterReadCalNstar.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclPennPowerHI.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataECLDUQHU.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclMETEDHI.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclJcplHI.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclToledoHI.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclOhioEditionHI.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataPE.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclOhioEdisonHI.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataPP.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RollbackdataFocusEcl.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataWP.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataPA.sql" />
+    <Build Include="dbo\Stored Procedures\Rollbackdata.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclCEIHI.sql" />
+    <Build Include="dbo\Stored Procedures\testrollback.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_RollbackdataEclAlleghnyMdHI.sql" />
+    <Build Include="dbo\Stored Procedures\RollbackdataNJ.sql" />
+    <Build Include="Security\Staging.sql" />
+    <Build Include="Security\Test.sql" />
+    <Build Include="dbo\Stored Procedures\Test.sql" />
+    <Build Include="dbo\Stored Procedures\TestSQLDBProjectSP.sql" />
+    <Build Include="dbo\Stored Procedures\Test_Dev.sql" />
+    <Build Include="dbo\Stored Procedures\TestDev.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ECL_Market_DB_Project_19450.publish.xml" />
+  </ItemGroup>
+</Project>

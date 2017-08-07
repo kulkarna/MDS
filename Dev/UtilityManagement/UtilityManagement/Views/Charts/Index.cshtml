@@ -1,0 +1,43 @@
+﻿@model UtilityManagement.Models.AnnualSalesDataModel
+@{
+    ViewBag.Title = "Idr Rule Details";
+}
+
+    <div class="form-details">
+        <div class="form-title">
+            <div class="form-title-general">Details:&nbsp;</div>
+            <div class="form-title-specific">IDR Rule</div>
+        </div>
+        <div class="form-information">&nbsp;&nbsp;Information</div>
+        <fieldset>
+            <legend>IDR Rule</legend>
+            <div class="details-data-section">
+                        <p>
+            <input type="submit" value="Show Sales Data!" />
+        </p>
+        
+        <% 
+        // Only show the chart if the inputs have been selected
+        if (!string.IsNullOrEmpty(Model.CategoryName)) { %>
+            <hr />
+            <div style="text-align: center">
+                <%: Html.Chart("SalesByYear",   // Action
+                               "Charts",        // Controller
+                               new {            // RouteData
+                                   CategoryName = Model.CategoryName,
+                                   OrderYear = Model.OrderYear
+                               },
+                               new {            // HTML attributes
+                                   alt = "Sales for " + Model.CategoryName + " in " + Model.OrderYear,
+                                   title = "Sales for " + Model.CategoryName + " in " + Model.OrderYear,
+                               }) %>
+            </div>
+
+        <% } %>
+    <% } %>
+
+</div>
+            </fieldset>
+    </div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}

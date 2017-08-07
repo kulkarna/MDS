@@ -1,0 +1,45 @@
+﻿CREATE TABLE [dbo].[RequestModeHistoricalUsageParameter] (
+    [Id]                               UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
+    [UtilityCompanyId]                 UNIQUEIDENTIFIER NOT NULL,
+    [IsBillingAccountNumberRequiredId] UNIQUEIDENTIFIER NOT NULL,
+    [IsZipCodeRequiredId]              UNIQUEIDENTIFIER NOT NULL,
+    [IsNameKeyRequiredId]              UNIQUEIDENTIFIER NOT NULL,
+    [IsMdmaId]                         UNIQUEIDENTIFIER NOT NULL,
+    [IsServiceProviderId]              UNIQUEIDENTIFIER NOT NULL,
+    [IsMeterInstallerId]               UNIQUEIDENTIFIER NOT NULL,
+    [IsMeterReaderId]                  UNIQUEIDENTIFIER NOT NULL,
+    [IsMeterOwnerId]                   UNIQUEIDENTIFIER NOT NULL,
+    [IsSchedulingCoordinatorId]        UNIQUEIDENTIFIER NOT NULL,
+    [HasReferenceNumberId]             UNIQUEIDENTIFIER NOT NULL,
+    [HasCustomerNumberId]              UNIQUEIDENTIFIER NOT NULL,
+    [HasPodIdNumberId]                 UNIQUEIDENTIFIER NOT NULL,
+    [HasMeterTypeId]                   UNIQUEIDENTIFIER NOT NULL,
+    [IsMeterNumberRequiredId]          UNIQUEIDENTIFIER NOT NULL,
+    [Inactive]                         BIT              NOT NULL,
+    [CreatedBy]                        NVARCHAR (100)   NOT NULL,
+    [CreatedDate]                      DATETIME         NOT NULL,
+    [LastModifiedBy]                   NVARCHAR (100)   NOT NULL,
+    [LastModifiedDate]                 DATETIME         NOT NULL,
+    CONSTRAINT [PK_RequestModeHistoricalUsageParameter] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_HasCustomerNumberId] FOREIGN KEY ([HasCustomerNumberId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_HasMeterTypeId] FOREIGN KEY ([HasMeterTypeId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_HasPodIdNumberId] FOREIGN KEY ([HasPodIdNumberId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_HasReferenceNumberId] FOREIGN KEY ([HasReferenceNumberId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsBillingAccountNumberRequiredId] FOREIGN KEY ([IsBillingAccountNumberRequiredId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMdmaId] FOREIGN KEY ([IsMdmaId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMeterInstallerId] FOREIGN KEY ([IsMeterInstallerId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMeterNumberRequiredId] FOREIGN KEY ([IsMeterNumberRequiredId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMeterOwnerId] FOREIGN KEY ([IsMeterOwnerId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMeterReaderId] FOREIGN KEY ([IsMeterReaderId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsNameKeyRequiredId] FOREIGN KEY ([IsNameKeyRequiredId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsSchedulingCoordinatorId] FOREIGN KEY ([IsSchedulingCoordinatorId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsServiceProviderId] FOREIGN KEY ([IsServiceProviderId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_TriStateValue_IsZipCodeRequiredId] FOREIGN KEY ([IsZipCodeRequiredId]) REFERENCES [dbo].[TriStateValue] ([Id]),
+    CONSTRAINT [FK_RequestModeHistoricalUsageParameter_UtilityCompanyId] FOREIGN KEY ([UtilityCompanyId]) REFERENCES [dbo].[UtilityCompany] ([Id]),
+    CONSTRAINT [UQC_RequestModeHistoricalUsageParameter] UNIQUE NONCLUSTERED ([UtilityCompanyId] ASC)
+);
+
+
+
+
+

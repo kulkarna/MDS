@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46E13023-2563-4657-8C93-64C5CE8417BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcelBusinessLayer</RootNamespace>
+    <AssemblyName>ExcelBusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\SharedVersionInfo.cs">
+      <Link>Properties\SharedVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="CapacityTresholdRuleBusinessLayer.cs" />
+    <Compile Include="CapacityTresholdTabBusinessLayer.cs" />
+    <Compile Include="CapacityTresholdTabsBusinessLayer.cs" />
+    <Compile Include="ExcelTabImportSummaryCapacityThreshold.cs" />
+    <Compile Include="PaymentTermBusinessLayer.cs" />
+    <Compile Include="PaymentTermTabBusinessLayer.cs" />
+    <Compile Include="PaymentTermTabsBusinessLayer.cs" />
+    <Compile Include="MeterReadCalendarTabBusinessLayer.cs" />
+    <Compile Include="MeterReadCalendarTabsBusinessLayer.cs" />
+    <Compile Include="MeterReadCalendarBusinessLayer.cs" />
+    <Compile Include="ExcelTabImportSummary.cs" />
+    <Compile Include="ExcelWorksheetImportSummary.cs" />
+    <Compile Include="ITabBusinessLayer.cs" />
+    <Compile Include="ITabsBusinessLayer.cs" />
+    <Compile Include="LoadProfileAliasTabBusinessLayer.cs" />
+    <Compile Include="LoadProfileTabBusinessLayer.cs" />
+    <Compile Include="LoadProfileTabsBusinessLayer.cs" />
+    <Compile Include="LpBillingTypeBusinessLayer.cs" />
+    <Compile Include="LpBillingTypeTabBusinessLayer.cs" />
+    <Compile Include="LpBillingTypeTabsBusinessLayer.cs" />
+    <Compile Include="LpStandardLoadProfileTabBusinessLayer.cs" />
+    <Compile Include="LpStandardRateClassTabBusinessLayer.cs" />
+    <Compile Include="PurchaseOfReceivableBusinessLayer.cs" />
+    <Compile Include="PurchaseOfReceivableTabBusinessLayer.cs" />
+    <Compile Include="PurchaseOfReceivableTabsBusinessLayer.cs" />
+    <Compile Include="RateClassAliasTabBusinessLayer.cs" />
+    <Compile Include="RateClassTabBusinessLayer.cs" />
+    <Compile Include="RateClassTabsBusinessLayer.cs" />
+    <Compile Include="SheetBusinessLayer.cs" />
+    <Compile Include="ISheetBusinessLayer.cs" />
+    <Compile Include="LoadProfileBusinessLayer.cs" />
+    <Compile Include="LpStandardTariffTabCodeBusinessLayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabBusinessLayer.cs" />
+    <Compile Include="TabsBusinessLayer.cs" />
+    <Compile Include="TariffCodeAliasTabBusinessLayer.cs" />
+    <Compile Include="RateClassBusinessLayer.cs" />
+    <Compile Include="TariffCodeBusinessLayer.cs" />
+    <Compile Include="TariffCodeTabBusinessLayer.cs" />
+    <Compile Include="TariffCodeTabsBusinessLayer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayerEntityFramework\DataAccessLayerEntityFramework.csproj">
+      <Project>{7974ae22-3122-4895-82df-30ba364ae30f}</Project>
+      <Name>DataAccessLayerEntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelLibrary\ExcelLibrary.csproj">
+      <Project>{0f6caf86-99fb-4ca5-9cd4-83f4b2aa6b99}</Project>
+      <Name>ExcelLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{985638c5-4931-489a-a175-0c2d44c4f63a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityDto\UtilityDto.csproj">
+      <Project>{f5a935cc-af82-4282-a262-2e9e29b5871c}</Project>
+      <Name>UtilityDto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityLogging\UtilityLogging.csproj">
+      <Project>{b550b746-31a5-4487-a8e4-31a357030a23}</Project>
+      <Name>UtilityLogging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityManagementDataMapper\UtilityManagementDataMapper.csproj">
+      <Project>{fdc3f5e6-72a4-42e4-93f0-fe2c14223b1f}</Project>
+      <Name>UtilityManagementDataMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityManagementRepository\UtilityManagementRepository.csproj">
+      <Project>{16766daf-3539-4aca-bf01-eaea0524ddad}</Project>
+      <Name>UtilityManagementRepository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

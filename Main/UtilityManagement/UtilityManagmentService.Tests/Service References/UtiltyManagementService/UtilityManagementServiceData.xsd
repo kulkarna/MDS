@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GetAllUtilitiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Utilities" nillable="true" type="tns:ArrayOfGetAllUtilitiesResponseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllUtilitiesResponse" nillable="true" type="tns:GetAllUtilitiesResponse" />
+  <xs:complexType name="ArrayOfGetAllUtilitiesResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetAllUtilitiesResponseItem" nillable="true" type="tns:GetAllUtilitiesResponseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetAllUtilitiesResponseItem" nillable="true" type="tns:ArrayOfGetAllUtilitiesResponseItem" />
+  <xs:complexType name="GetAllUtilitiesResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LegacyUtilityId" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllUtilitiesResponseItem" nillable="true" type="tns:GetAllUtilitiesResponseItem" />
+  <xs:complexType name="GetAllRequestModeEnrollmentTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestModeEnrollmentTypes" nillable="true" type="tns:ArrayOfGetAllRequestModeEnrollmentTypeResponseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllRequestModeEnrollmentTypesResponse" nillable="true" type="tns:GetAllRequestModeEnrollmentTypesResponse" />
+  <xs:complexType name="ArrayOfGetAllRequestModeEnrollmentTypeResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetAllRequestModeEnrollmentTypeResponseItem" nillable="true" type="tns:GetAllRequestModeEnrollmentTypeResponseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetAllRequestModeEnrollmentTypeResponseItem" nillable="true" type="tns:ArrayOfGetAllRequestModeEnrollmentTypeResponseItem" />
+  <xs:complexType name="GetAllRequestModeEnrollmentTypeResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnrollmentType" type="tns:EnrollmentType" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestModeEnrollmentTypeId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllRequestModeEnrollmentTypeResponseItem" nillable="true" type="tns:GetAllRequestModeEnrollmentTypeResponseItem" />
+  <xs:simpleType name="EnrollmentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PreEnrollment" />
+      <xs:enumeration value="PostEnrollment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnrollmentType" nillable="true" type="tns:EnrollmentType" />
+  <xs:complexType name="GetHistoricalUsageRequestModesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnrollmentType" nillable="true" type="tns:EnrollmentType" />
+      <xs:element minOccurs="0" name="LegacyUtilityId" type="xs:int" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestModeEnrollmentTypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetHistoricalUsageRequestModesRequest" nillable="true" type="tns:GetHistoricalUsageRequestModesRequest" />
+  <xs:complexType name="GetHistoricalUsageRequestModeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HistoricalUsageRequestModeList" nillable="true" type="tns:ArrayOfHistoricalUsageRequestMode" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetHistoricalUsageRequestModeResponse" nillable="true" type="tns:GetHistoricalUsageRequestModeResponse" />
+  <xs:complexType name="ArrayOfHistoricalUsageRequestMode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoricalUsageRequestMode" nillable="true" type="tns:HistoricalUsageRequestMode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoricalUsageRequestMode" nillable="true" type="tns:ArrayOfHistoricalUsageRequestMode" />
+  <xs:complexType name="HistoricalUsageRequestMode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnrollmentType" type="tns:EnrollmentType" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Instructions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLoaRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LibertyPowerSlaResponse" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilityLegacyId" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilitySlaResponse" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoricalUsageRequestMode" nillable="true" type="tns:HistoricalUsageRequestMode" />
+  <xs:complexType name="GetIcapRequestModesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnrollmentType" nillable="true" type="tns:EnrollmentType" />
+      <xs:element minOccurs="0" name="LegacyUtilityId" type="xs:int" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestModeEnrollmentTypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetIcapRequestModesRequest" nillable="true" type="tns:GetIcapRequestModesRequest" />
+  <xs:complexType name="GetIcapRequestModeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IcapRequestModeList" nillable="true" type="tns:ArrayOfIcapRequestMode" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetIcapRequestModeResponse" nillable="true" type="tns:GetIcapRequestModeResponse" />
+  <xs:complexType name="ArrayOfIcapRequestMode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IcapRequestMode" nillable="true" type="tns:IcapRequestMode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIcapRequestMode" nillable="true" type="tns:ArrayOfIcapRequestMode" />
+  <xs:complexType name="IcapRequestMode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnrollmentType" type="tns:EnrollmentType" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Instructions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLoaRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LibertyPowerSlaResponse" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilityLegacyId" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilitySlaResponse" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IcapRequestMode" nillable="true" type="tns:IcapRequestMode" />
+  <xs:complexType name="GetIdrRequestModesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnrollmentType" nillable="true" type="tns:EnrollmentType" />
+      <xs:element minOccurs="0" name="LegacyUtilityId" type="xs:int" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestModeEnrollmentTypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetIdrRequestModesRequest" nillable="true" type="tns:GetIdrRequestModesRequest" />
+  <xs:complexType name="GetIdrRequestModeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdrRequestModeList" nillable="true" type="tns:ArrayOfIdrRequestMode" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetIdrRequestModeResponse" nillable="true" type="tns:GetIdrRequestModeResponse" />
+  <xs:complexType name="ArrayOfIdrRequestMode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdrRequestMode" nillable="true" type="tns:IdrRequestMode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIdrRequestMode" nillable="true" type="tns:ArrayOfIdrRequestMode" />
+  <xs:complexType name="IdrRequestMode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnrollmentType" type="tns:EnrollmentType" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Instructions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLoaRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LibertyPowerSlaResponse" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestCostAccount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RequestMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilityLegacyId" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilitySlaResponse" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdrRequestMode" nillable="true" type="tns:IdrRequestMode" />
+  <xs:complexType name="GetPurchaseOfReceivablesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DriverId" type="ser:guid" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchaseOfReceivableDiscountEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PurchaseOfReceivableDriver" type="tns:PurchaseOfReceivableDriver" />
+      <xs:element minOccurs="0" name="UtilityIdInt" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPurchaseOfReceivablesRequest" nillable="true" type="tns:GetPurchaseOfReceivablesRequest" />
+  <xs:simpleType name="PurchaseOfReceivableDriver">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LoadProfile" />
+      <xs:enumeration value="TariffCode" />
+      <xs:enumeration value="RateClass" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PurchaseOfReceivableDriver" nillable="true" type="tns:PurchaseOfReceivableDriver" />
+  <xs:complexType name="GetPurchaseOfReceivablesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchaseOfReceivableList" nillable="true" type="tns:ArrayOfPurchaseOfReceivable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPurchaseOfReceivablesResponse" nillable="true" type="tns:GetPurchaseOfReceivablesResponse" />
+  <xs:complexType name="ArrayOfPurchaseOfReceivable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseOfReceivable" nillable="true" type="tns:PurchaseOfReceivable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPurchaseOfReceivable" nillable="true" type="tns:ArrayOfPurchaseOfReceivable" />
+  <xs:complexType name="PurchaseOfReceivable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsPorAssurance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPorOffered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPorParticipated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PorDiscountEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PorDiscountExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PorDiscountRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PorFlatFee" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PurchaseOfReceivableRecourse" type="tns:PurchaseOfReceivableRecourse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PurchaseOfReceivable" nillable="true" type="tns:PurchaseOfReceivable" />
+  <xs:simpleType name="PurchaseOfReceivableRecourse">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Recourse" />
+      <xs:enumeration value="NonRecourse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PurchaseOfReceivableRecourse" nillable="true" type="tns:PurchaseOfReceivableRecourse" />
+</xs:schema>

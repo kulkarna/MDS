@@ -1,0 +1,1845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Lp_DemographicDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Lp_DemographicDataModelStoreContainer">
+          <EntitySet Name="AccountsPerZipCodeByTimeSlice" EntityType="Lp_DemographicDataModel.Store.AccountsPerZipCodeByTimeSlice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DemographicData" EntityType="Lp_DemographicDataModel.Store.DemographicData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Search" EntityType="Lp_DemographicDataModel.Store.Search" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SearchCriteria" EntityType="Lp_DemographicDataModel.Store.SearchCriteria" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SearchToSearchCriteria" EntityType="Lp_DemographicDataModel.Store.SearchToSearchCriteria" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Segment" EntityType="Lp_DemographicDataModel.Store.Segment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" EntityType="Lp_DemographicDataModel.Store.SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="Lp_DemographicDataModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TimeSlice" EntityType="Lp_DemographicDataModel.Store.TimeSlice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USState" EntityType="Lp_DemographicDataModel.Store.USState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ZipCode" EntityType="Lp_DemographicDataModel.Store.ZipCode" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_AccountsPerZipCodeByTimeSlice_TimeSlice" Association="Lp_DemographicDataModel.Store.FK_AccountsPerZipCodeByTimeSlice_TimeSlice">
+            <End Role="TimeSlice" EntitySet="TimeSlice" />
+            <End Role="AccountsPerZipCodeByTimeSlice" EntitySet="AccountsPerZipCodeByTimeSlice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountsPerZipCodeByTimeSlice_ZipCode" Association="Lp_DemographicDataModel.Store.FK_AccountsPerZipCodeByTimeSlice_ZipCode">
+            <End Role="ZipCode" EntitySet="ZipCode" />
+            <End Role="AccountsPerZipCodeByTimeSlice" EntitySet="AccountsPerZipCodeByTimeSlice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemographicData_Top3TapestrySegments1_Segment" Association="Lp_DemographicDataModel.Store.FK_DemographicData_Top3TapestrySegments1_Segment">
+            <End Role="Segment" EntitySet="Segment" />
+            <End Role="DemographicData" EntitySet="DemographicData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemographicData_Top3TapestrySegments2_Segment" Association="Lp_DemographicDataModel.Store.FK_DemographicData_Top3TapestrySegments2_Segment">
+            <End Role="Segment" EntitySet="Segment" />
+            <End Role="DemographicData" EntitySet="DemographicData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemographicData_Top3TapestrySegments3_Segment" Association="Lp_DemographicDataModel.Store.FK_DemographicData_Top3TapestrySegments3_Segment">
+            <End Role="Segment" EntitySet="Segment" />
+            <End Role="DemographicData" EntitySet="DemographicData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemographicData_ZipCode" Association="Lp_DemographicDataModel.Store.FK_DemographicData_ZipCode">
+            <End Role="ZipCode" EntitySet="ZipCode" />
+            <End Role="DemographicData" EntitySet="DemographicData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SearchToSearchCriteria_SearchCriteriaId" Association="Lp_DemographicDataModel.Store.FK_SearchToSearchCriteria_SearchCriteriaId">
+            <End Role="SearchCriteria" EntitySet="SearchCriteria" />
+            <End Role="SearchToSearchCriteria" EntitySet="SearchToSearchCriteria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SearchToSearchCriteria_SearchId" Association="Lp_DemographicDataModel.Store.FK_SearchToSearchCriteria_SearchId">
+            <End Role="Search" EntitySet="Search" />
+            <End Role="SearchToSearchCriteria" EntitySet="SearchToSearchCriteria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity_ZipCode_Id" Association="Lp_DemographicDataModel.Store.FK_SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity_ZipCode_Id">
+            <End Role="ZipCode" EntitySet="ZipCode" />
+            <End Role="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" EntitySet="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZipCode_USState" Association="Lp_DemographicDataModel.Store.FK_ZipCode_USState">
+            <End Role="USState" EntitySet="USState" />
+            <End Role="ZipCode" EntitySet="ZipCode" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AccountsPerZipCodeByTimeSlice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ZipCodeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NumberOfAccounts" Type="decimal" Nullable="false" />
+          <Property Name="TimeSliceId" Type="uniqueidentifier" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DemographicData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ZipCodeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MileRadius" Type="int" Nullable="false" />
+          <Property Name="TotalPopulation2000" Type="decimal" />
+          <Property Name="TotalPopulation2010" Type="decimal" />
+          <Property Name="TotalPopulation2013" Type="decimal" />
+          <Property Name="GroupQuarters2013" Type="decimal" />
+          <Property Name="TotalPopulation2018" Type="decimal" />
+          <Property Name="PopulationSummaryAnnualRate20132018" Type="decimal" />
+          <Property Name="HouseholdSummaryHouseholds2000" Type="decimal" />
+          <Property Name="HouseholdSummaryAverageHouseholdSize2000" Type="decimal" />
+          <Property Name="HouseholdSummaryHouseholds2010" Type="decimal" />
+          <Property Name="HouseholdSummaryAverageHouseholdSize" Type="decimal" />
+          <Property Name="HouseholdSummaryHouseholds2013" Type="decimal" />
+          <Property Name="HouseholdSummaryAverageHouseholdSize2013" Type="decimal" />
+          <Property Name="HouseholdSummaryHouseholds2018" Type="decimal" />
+          <Property Name="HouseholdSummaryAverageHouseholdSize2018" Type="decimal" />
+          <Property Name="HouseholdSummaryHouseholdAnnualRate20132018" Type="decimal" />
+          <Property Name="HouseholdSummaryFamilies2010" Type="decimal" />
+          <Property Name="HouseholdSummaryAverageFamilySize2010" Type="decimal" />
+          <Property Name="HouseholdSummaryFamilies2013" Type="decimal" />
+          <Property Name="HouseholdSummaryAverageFamilySize2013" Type="decimal" />
+          <Property Name="HouseholdSummaryFamilies2018" Type="decimal" />
+          <Property Name="HouseholdSummaryAverageFamilySize2018" Type="decimal" />
+          <Property Name="HouseholdSummaryFamiliesAnnualRate2018" Type="decimal" />
+          <Property Name="HousingUnits2000" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnits2000" Type="decimal" />
+          <Property Name="RenterOccupiedHousingUnits2000" Type="decimal" />
+          <Property Name="VacantHousingUnits2000" Type="decimal" />
+          <Property Name="HousingUnits2010" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnits2010" Type="decimal" />
+          <Property Name="RenterOccupiedHousingUnits2010" Type="decimal" />
+          <Property Name="VacantHousingUnits2010" Type="decimal" />
+          <Property Name="HousingUnits2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnits2013" Type="decimal" />
+          <Property Name="RenterOccupiedHousingUnits2013" Type="decimal" />
+          <Property Name="VacantHousingUnits2013" Type="decimal" />
+          <Property Name="HousingUnits2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnits2018" Type="decimal" />
+          <Property Name="RenterOccupiedHousingUnits2018" Type="decimal" />
+          <Property Name="VacantHousingUnits2018" Type="decimal" />
+          <Property Name="MedianHouseholdIncome2013" Type="decimal" />
+          <Property Name="MedianHouseholdIncome2018" Type="decimal" />
+          <Property Name="MedianHomeValue2013" Type="decimal" />
+          <Property Name="MedianHomeValue2018" Type="decimal" />
+          <Property Name="PerCapitaIncome2013" Type="decimal" />
+          <Property Name="PerCapitaIncome2018" Type="decimal" />
+          <Property Name="MedianAge2010" Type="decimal" />
+          <Property Name="MedianAge2013" Type="decimal" />
+          <Property Name="MedianAge2018" Type="decimal" />
+          <Property Name="HouseholdIncomeBase2013" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_15K2013" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_15K_25K2013" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_25K_35K2013" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_35K_50K2013" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_50K_75K2013" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_75K_100K2013" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_100K_150K2013" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_150K_200K2013" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_200K2013" Type="decimal" />
+          <Property Name="AverageHouseholdIncome2013" Type="decimal" />
+          <Property Name="HouseholdIncomeBase2018" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_15K2018" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_15K_25K2018" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_25K_35K2018" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_35K_50K2018" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_50K_75K2018" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_75K_100K2018" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_100K_150K2018" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_150K_200K2018" Type="decimal" />
+          <Property Name="HouseholdsbyIncome_200K2018" Type="decimal" />
+          <Property Name="AverageHouseholdIncome2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValueTotal2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue50K2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue50K_100K2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue100K_150K2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue150K_200K2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue200K_250K2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue250K_300K2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue300K_400K2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue400K_500K2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue500K_750K2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue750K_1M2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue1M2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValueAverage2013" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValueTotal2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue50K2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue50K_100K2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue100K_150K2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue150K_200K2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue200K_250K2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue250K_300K2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue300K_400K2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue400K_500K2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue500K_750K2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue750K_1M2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue1M2018" Type="decimal" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValueAverage2018" Type="decimal" />
+          <Property Name="PopulationByAgeTotal2010" Type="decimal" />
+          <Property Name="PopulationByAge0_42010" Type="decimal" />
+          <Property Name="PopulationByAge5_92010" Type="decimal" />
+          <Property Name="PopulationByAge10_142010" Type="decimal" />
+          <Property Name="PopulationByAge15_242010" Type="decimal" />
+          <Property Name="PopulationByAge25_342010" Type="decimal" />
+          <Property Name="PopulationByAge35_442010" Type="decimal" />
+          <Property Name="PopulationByAge45_542010" Type="decimal" />
+          <Property Name="PopulationByAge55_642010" Type="decimal" />
+          <Property Name="PopulationByAge65_742010" Type="decimal" />
+          <Property Name="PopulationByAge75_842010" Type="decimal" />
+          <Property Name="PopulationByAge852010" Type="decimal" />
+          <Property Name="PopulationByAge18Plus2010" Type="decimal" />
+          <Property Name="PopulationByAgeTotal2013" Type="decimal" />
+          <Property Name="PopulationByAge0_42013" Type="decimal" />
+          <Property Name="PopulationByAge5_92013" Type="decimal" />
+          <Property Name="PopulationByAge10_142013" Type="decimal" />
+          <Property Name="PopulationByAge15_242013" Type="decimal" />
+          <Property Name="PopulationByAge25_342013" Type="decimal" />
+          <Property Name="PopulationByAge35_442013" Type="decimal" />
+          <Property Name="PopulationByAge45_542013" Type="decimal" />
+          <Property Name="PopulationByAge55_642013" Type="decimal" />
+          <Property Name="PopulationByAge65_742013" Type="decimal" />
+          <Property Name="PopulationByAge75_842013" Type="decimal" />
+          <Property Name="PopulationByAge852013" Type="decimal" />
+          <Property Name="PopulationByAge18Plus2013" Type="decimal" />
+          <Property Name="PopulationByAgeTotal2018" Type="decimal" />
+          <Property Name="PopulationByAge0_42018" Type="decimal" />
+          <Property Name="PopulationByAge5_92018" Type="decimal" />
+          <Property Name="PopulationByAge10_142018" Type="decimal" />
+          <Property Name="PopulationByAge15_242018" Type="decimal" />
+          <Property Name="PopulationByAge25_342018" Type="decimal" />
+          <Property Name="PopulationByAge35_442018" Type="decimal" />
+          <Property Name="PopulationByAge45_542018" Type="decimal" />
+          <Property Name="PopulationByAge55_642018" Type="decimal" />
+          <Property Name="PopulationByAge65_742018" Type="decimal" />
+          <Property Name="PopulationByAge75_842018" Type="decimal" />
+          <Property Name="PopulationByAge852018" Type="decimal" />
+          <Property Name="PopulationByAge18Plus2018" Type="decimal" />
+          <Property Name="PopulationBySexMales2010" Type="decimal" />
+          <Property Name="PopulationBySexFemales2010" Type="decimal" />
+          <Property Name="PopulationBySexMales2013" Type="decimal" />
+          <Property Name="PopulationBySexFemales2013" Type="decimal" />
+          <Property Name="PopulationBySexMales2018" Type="decimal" />
+          <Property Name="PopulationBySexFemales2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityTotal2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityWhiteAlone2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityBlackAlone2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityAmericanIndianAlone2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityAsianAlone2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityPacificIslanderAlone2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicitySomeOtherRaceAlone2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityTwoOrMoreRaces2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityHispanicOrigin2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityDiversityIndex2010" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityTotal2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityWhiteAlone2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityBlackAlone2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityAmericanIndianAlone2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityAsianAlone2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityPacificIslanderAlone2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicitySomeOtherRaceAlone2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityTwoOrMoreRaces2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityHispanicOrigin2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityDiversityIndex2013" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityTotal2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityWhiteAlone2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityBlackAlone2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityAmericanIndianAlone2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityAsianAlone2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityPacificIslanderAlone2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicitySomeOtherRaceAlone2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityTwoOrMoreRaces2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityHispanicOrigin2018" Type="decimal" />
+          <Property Name="PopulationByRaceEthnicityDiversityIndex2018" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeTotal2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInHouseholds2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInFamilyHouseholds2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeHouseholder2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeSpouse2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeChild2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeOtherRelative2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeNonRelative2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInNonfamilyHouseholds2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInGroupQuarters2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInstitutionalizedPopulation2010" Type="decimal" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeNoninstitutionalizedPopulation2010" Type="decimal" />
+          <Property Name="Population25ByEducationalAttainmentTotal2013" Type="decimal" />
+          <Property Name="Population25ByEducationalAttainmentLessThan9thGrade2013" Type="decimal" />
+          <Property Name="Population25ByEducationalAttainment9th_12thGradeNoDiploma2013" Type="decimal" />
+          <Property Name="Population25ByEducationalAttainmentHighSchoolGraduate2013" Type="decimal" />
+          <Property Name="Population25ByEducationalAttainmentSomeCollegeNoDegree2013" Type="decimal" />
+          <Property Name="Population25ByEducationalAttainmentAssociateDegree2013" Type="decimal" />
+          <Property Name="Population25ByEducationalAttainmentBachelorsDegree2013" Type="decimal" />
+          <Property Name="Population25ByEducationalAttainmentGraduateProfessionalDegree2013" Type="decimal" />
+          <Property Name="Population15ByMaritalStatusTotal2013" Type="decimal" />
+          <Property Name="Population15ByMaritalStatusNeverMarried2013" Type="decimal" />
+          <Property Name="Population15ByMaritalStatusMarried2013" Type="decimal" />
+          <Property Name="Population15ByMaritalStatusWidowed2013" Type="decimal" />
+          <Property Name="Population15ByMaritalStatusDivorced2013" Type="decimal" />
+          <Property Name="CivilianPopulation16InLaborForceCivilianEmployed2013" Type="decimal" />
+          <Property Name="CivilianPopulation16InLaborForceCivilianUnemployed2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryTotal2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryAgricultureMining2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryConstruction2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryManufacturing2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryWholesaleTrade2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryRetailTrade2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryTransportationUtilities2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryInformation2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryFinanceInsuranceRealEstate2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryServices2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByIndustryPublicAdministration2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationTotal2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationWhiteCollar2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationManagementBusinessFinancial2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationProfessional2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationSales2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationAdministrativeSupport2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationServices2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationBlueCollar2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationFarmingForestryFishing2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationConstructionExtraction2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationInstallationMaintenanceRepair2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationProduction2013" Type="decimal" />
+          <Property Name="EmployedPopulation16ByOccupationTransportationMaterialMoving2013" Type="decimal" />
+          <Property Name="HouseholdsByTypeTotal2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeHouseholdsWith1Person2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeHouseholdsWith2PlusPeople2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeFamilyHouseholds2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeHusbandWifeFamilies2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeHusbandWifeFamiliesWithRelatedChildren2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeOtherFamilyNoSpousePresent2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeOtherFamilyWithMaleHouseholder2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeOtherFamilyWithMaleHouseholderWithRelatedChildren2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeOtherFamilyWithFemaleHouseholder2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeOtherFamilyWithFemaleHouseholderWithRelatedChildren2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeNonfamilyHouseholds2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeAllHouseholdsWithChildren2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeMultigenerationalHouseholds2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeUnmarriedPartnerHouseholds2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeMaleFemale2010" Type="decimal" />
+          <Property Name="HouseholdsByTypeSameSex2010" Type="decimal" />
+          <Property Name="HouseholdsBySizeTotal2010" Type="decimal" />
+          <Property Name="HouseholdsBySize1PersonHousehold2010" Type="decimal" />
+          <Property Name="HouseholdsBySize2PersonHousehold2010" Type="decimal" />
+          <Property Name="HouseholdsBySize3PersonHousehold2010" Type="decimal" />
+          <Property Name="HouseholdsBySize4PersonHousehold2010" Type="decimal" />
+          <Property Name="HouseholdsBySize5PersonHousehold2010" Type="decimal" />
+          <Property Name="HouseholdsBySize6PersonHousehold2010" Type="decimal" />
+          <Property Name="HouseholdsBySize7PlusPersonHousehold2010" Type="decimal" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusTotal2010" Type="decimal" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusOwnerOccupied2010" Type="decimal" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusOwnedWithAMortgageLoan2010" Type="decimal" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusOwnedFreeAndClear2010" Type="decimal" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusRenterOccupied2010" Type="decimal" />
+          <Property Name="Top3TapestrySegments1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Top3TapestrySegments2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Top3TapestrySegments3" Type="nvarchar" MaxLength="255" />
+          <Property Name="ConsumerSpendingApparelAndServicesTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingApparelAndServicesAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingApparelAndServicesSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingComputersAndAccessories2013" Type="decimal" />
+          <Property Name="ConsumerSpendingComputersAndAccessoriesAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingComputersAndAccessoriesSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingEducationTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingEducationAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingEducationSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingEntertainmentRecreationTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingEntertainmentRecreationAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingEntertainmentRecreationSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingFoodAtHomeTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingFoodAtHomeAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingFoodAtHomeSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingFoodAtHomeFoodAwayFromHomeTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingFoodAtHomeFoodAwayFromHomeAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingFoodAtHomeFoodAwayFromHomeSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingHealthCareTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingHealthCareAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingHealthCareSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingHHFurnishingsAndEquipmentTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingHHFurnishingsAndEquipmentAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingHHFurnishingsAndEquipmentSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingInvestmentsTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingInvestmentsAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingInvestmentsSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingRetailGoodsTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingRetailGoodsAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingRetailGoodsSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingShelterTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingShelterAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingShelterSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingTVVideoAudioTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingTVVideoAudioAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingTVVideoAudioSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingTravelTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingTravelAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingTravelSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="ConsumerSpendingVehicleMaintenanceAndRepairsTotal2013" Type="decimal" />
+          <Property Name="ConsumerSpendingVehicleMaintenanceAndRepairsAverageSpent2013" Type="decimal" />
+          <Property Name="ConsumerSpendingVehicleMaintenanceAndRepairsSpendingPotentialIndex2013" Type="decimal" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Segment1Percent" Type="decimal" />
+          <Property Name="Segment2Percent" Type="decimal" />
+          <Property Name="Segment3Percent" Type="decimal" />
+          <Property Name="Top3TapestrySegments1Id" Type="uniqueidentifier" />
+          <Property Name="Top3TapestrySegments2Id" Type="uniqueidentifier" />
+          <Property Name="Top3TapestrySegments3Id" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Search">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SearchName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="SearchDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SearchCriteria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CriteriaName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="SearchToSearchCriteria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SearchId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SearchCriteriaId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Segment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SegmentName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="IncomeClass" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="MedianAge" Type="decimal" Nullable="false" />
+          <Property Name="MedianHouseholdIncome" Type="decimal" />
+          <Property Name="MedianNetWorth" Type="decimal" />
+          <Property Name="MedianHomeValue" Type="decimal" />
+          <Property Name="PercentFamilyHouseholds" Type="decimal" />
+          <Property Name="PercentFamiliesWithChildren" Type="decimal" />
+          <Property Name="AverageFamilySize" Type="decimal" />
+          <Property Name="PercentBlack" Type="decimal" />
+          <Property Name="PercentHispanic" Type="decimal" />
+          <Property Name="PercentAsian" Type="decimal" />
+          <Property Name="PercentWhite" Type="decimal" />
+          <Property Name="PercentTwoRaces" Type="decimal" />
+          <Property Name="PercentDifficultySpeakingEnglish" Type="decimal" />
+          <Property Name="LaborForceParticipation" Type="decimal" />
+          <Property Name="UnemploymentRate" Type="decimal" />
+          <Property Name="PercentWageEarners" Type="decimal" />
+          <Property Name="TypicalFamilyOwnsOrRents" Type="nvarchar" MaxLength="500" />
+          <Property Name="HomeOwndershipPercent" Type="decimal" />
+          <Property Name="HousingBuiltBefore" Type="decimal" />
+          <Property Name="TopPurchasedItems" Type="nvarchar" MaxLength="500" />
+          <Property Name="PhoneCallTypes" Type="nvarchar" MaxLength="500" />
+          <Property Name="Trips" Type="nvarchar" MaxLength="500" />
+          <Property Name="Stores" Type="nvarchar" MaxLength="500" />
+          <Property Name="FavoriteDrugStore" Type="nvarchar" MaxLength="500" />
+          <Property Name="Watches" Type="nvarchar" MaxLength="500" />
+          <Property Name="Reads" Type="nvarchar" MaxLength="500" />
+          <Property Name="ListensTo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attends" Type="nvarchar" MaxLength="500" />
+          <Property Name="Drinks" Type="nvarchar" MaxLength="500" />
+          <Property Name="AutomobileBrandPreference" Type="nvarchar" MaxLength="500" />
+          <Property Name="EmploymentTypes" Type="nvarchar" MaxLength="500" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+          <Property Name="GeographicClusterLocations" Type="nvarchar" MaxLength="255" />
+          <Property Name="Hobbies" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ZIP Codes" Type="nvarchar" MaxLength="255" />
+          <Property Name="2014 Population Density" Type="nvarchar" MaxLength="255" />
+          <Property Name="2014 Median Age" Type="nvarchar" MaxLength="255" />
+          <Property Name="2014 Median Net Worth" Type="nvarchar" MaxLength="255" />
+          <Property Name="2014 Median Household Income" Type="nvarchar" MaxLength="255" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ZipCode5" Type="nvarchar" MaxLength="255" />
+          <Property Name="ZipCodeId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TimeSlice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TimeSliceBeginDate" Type="datetime" />
+          <Property Name="TimeSliceEndDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="USState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StateAbbreviation" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StateName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ZipCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ZipCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StateId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AccountsPerZipCodeByTimeSlice_TimeSlice">
+          <End Role="TimeSlice" Type="Lp_DemographicDataModel.Store.TimeSlice" Multiplicity="0..1" />
+          <End Role="AccountsPerZipCodeByTimeSlice" Type="Lp_DemographicDataModel.Store.AccountsPerZipCodeByTimeSlice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeSlice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountsPerZipCodeByTimeSlice">
+              <PropertyRef Name="TimeSliceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountsPerZipCodeByTimeSlice_ZipCode">
+          <End Role="ZipCode" Type="Lp_DemographicDataModel.Store.ZipCode" Multiplicity="1" />
+          <End Role="AccountsPerZipCodeByTimeSlice" Type="Lp_DemographicDataModel.Store.AccountsPerZipCodeByTimeSlice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZipCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountsPerZipCodeByTimeSlice">
+              <PropertyRef Name="ZipCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemographicData_Top3TapestrySegments1_Segment">
+          <End Role="Segment" Type="Lp_DemographicDataModel.Store.Segment" Multiplicity="0..1" />
+          <End Role="DemographicData" Type="Lp_DemographicDataModel.Store.DemographicData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemographicData">
+              <PropertyRef Name="Top3TapestrySegments1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemographicData_Top3TapestrySegments2_Segment">
+          <End Role="Segment" Type="Lp_DemographicDataModel.Store.Segment" Multiplicity="0..1" />
+          <End Role="DemographicData" Type="Lp_DemographicDataModel.Store.DemographicData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemographicData">
+              <PropertyRef Name="Top3TapestrySegments2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemographicData_Top3TapestrySegments3_Segment">
+          <End Role="Segment" Type="Lp_DemographicDataModel.Store.Segment" Multiplicity="0..1" />
+          <End Role="DemographicData" Type="Lp_DemographicDataModel.Store.DemographicData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemographicData">
+              <PropertyRef Name="Top3TapestrySegments3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemographicData_ZipCode">
+          <End Role="ZipCode" Type="Lp_DemographicDataModel.Store.ZipCode" Multiplicity="1" />
+          <End Role="DemographicData" Type="Lp_DemographicDataModel.Store.DemographicData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZipCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemographicData">
+              <PropertyRef Name="ZipCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SearchToSearchCriteria_SearchCriteriaId">
+          <End Role="SearchCriteria" Type="Lp_DemographicDataModel.Store.SearchCriteria" Multiplicity="1" />
+          <End Role="SearchToSearchCriteria" Type="Lp_DemographicDataModel.Store.SearchToSearchCriteria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SearchCriteria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SearchToSearchCriteria">
+              <PropertyRef Name="SearchCriteriaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SearchToSearchCriteria_SearchId">
+          <End Role="Search" Type="Lp_DemographicDataModel.Store.Search" Multiplicity="1" />
+          <End Role="SearchToSearchCriteria" Type="Lp_DemographicDataModel.Store.SearchToSearchCriteria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Search">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SearchToSearchCriteria">
+              <PropertyRef Name="SearchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity_ZipCode_Id">
+          <End Role="ZipCode" Type="Lp_DemographicDataModel.Store.ZipCode" Multiplicity="0..1" />
+          <End Role="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" Type="Lp_DemographicDataModel.Store.SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZipCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity">
+              <PropertyRef Name="ZipCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZipCode_USState">
+          <End Role="USState" Type="Lp_DemographicDataModel.Store.USState" Multiplicity="1" />
+          <End Role="ZipCode" Type="Lp_DemographicDataModel.Store.ZipCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ZipCode">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'Lp_DemographicData.dbo.AlbertosData' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="AlbertosData">
+        <Property Name="ServiceAccountState" Type="nvarchar" MaxLength="255" />
+        <Property Name="ServiceAccountZip" Type="float" />
+        <Property Name="AccountCount" Type="float" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Lp_DemographicDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Lp_DemographicDataEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountsPerZipCodeByTimeSlice" EntityType="Lp_DemographicDataModel.AccountsPerZipCodeByTimeSlouse" />
+          <EntitySet Name="DemographicDatas" EntityType="Lp_DemographicDataModel.DemographicData" />
+          <EntitySet Name="Searches" EntityType="Lp_DemographicDataModel.Search" />
+          <EntitySet Name="SearchCriterias" EntityType="Lp_DemographicDataModel.SearchCriteria" />
+          <EntitySet Name="SearchToSearchCriterias" EntityType="Lp_DemographicDataModel.SearchToSearchCriteria" />
+          <EntitySet Name="Segments" EntityType="Lp_DemographicDataModel.Segment" />
+          <EntitySet Name="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensities" EntityType="Lp_DemographicDataModel.SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" />
+          <EntitySet Name="sysdiagrams" EntityType="Lp_DemographicDataModel.sysdiagram" />
+          <EntitySet Name="TimeSlice" EntityType="Lp_DemographicDataModel.TimeSlouse" />
+          <EntitySet Name="USStates" EntityType="Lp_DemographicDataModel.USState" />
+          <EntitySet Name="ZipCodes" EntityType="Lp_DemographicDataModel.ZipCode" />
+          <AssociationSet Name="FK_AccountsPerZipCodeByTimeSlice_TimeSlice" Association="Lp_DemographicDataModel.FK_AccountsPerZipCodeByTimeSlice_TimeSlice">
+            <End Role="TimeSlice" EntitySet="TimeSlice" />
+            <End Role="AccountsPerZipCodeByTimeSlice" EntitySet="AccountsPerZipCodeByTimeSlice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountsPerZipCodeByTimeSlice_ZipCode" Association="Lp_DemographicDataModel.FK_AccountsPerZipCodeByTimeSlice_ZipCode">
+            <End Role="ZipCode" EntitySet="ZipCodes" />
+            <End Role="AccountsPerZipCodeByTimeSlice" EntitySet="AccountsPerZipCodeByTimeSlice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemographicData_Top3TapestrySegments1_Segment" Association="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments1_Segment">
+            <End Role="Segment" EntitySet="Segments" />
+            <End Role="DemographicData" EntitySet="DemographicDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemographicData_Top3TapestrySegments2_Segment" Association="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments2_Segment">
+            <End Role="Segment" EntitySet="Segments" />
+            <End Role="DemographicData" EntitySet="DemographicDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemographicData_Top3TapestrySegments3_Segment" Association="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments3_Segment">
+            <End Role="Segment" EntitySet="Segments" />
+            <End Role="DemographicData" EntitySet="DemographicDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemographicData_ZipCode" Association="Lp_DemographicDataModel.FK_DemographicData_ZipCode">
+            <End Role="ZipCode" EntitySet="ZipCodes" />
+            <End Role="DemographicData" EntitySet="DemographicDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SearchToSearchCriteria_SearchId" Association="Lp_DemographicDataModel.FK_SearchToSearchCriteria_SearchId">
+            <End Role="Search" EntitySet="Searches" />
+            <End Role="SearchToSearchCriteria" EntitySet="SearchToSearchCriterias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SearchToSearchCriteria_SearchCriteriaId" Association="Lp_DemographicDataModel.FK_SearchToSearchCriteria_SearchCriteriaId">
+            <End Role="SearchCriteria" EntitySet="SearchCriterias" />
+            <End Role="SearchToSearchCriteria" EntitySet="SearchToSearchCriterias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity_ZipCode_Id" Association="Lp_DemographicDataModel.FK_SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity_ZipCode_Id">
+            <End Role="ZipCode" EntitySet="ZipCodes" />
+            <End Role="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" EntitySet="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZipCode_USState" Association="Lp_DemographicDataModel.FK_ZipCode_USState">
+            <End Role="USState" EntitySet="USStates" />
+            <End Role="ZipCode" EntitySet="ZipCodes" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Lp_DemographicDataModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Lp_DemographicDataModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <EntityType Name="AccountsPerZipCodeByTimeSlouse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ZipCodeId" Type="Guid" Nullable="false" />
+          <Property Name="NumberOfAccounts" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="TimeSliceId" Type="Guid" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TimeSlouse" Relationship="Lp_DemographicDataModel.FK_AccountsPerZipCodeByTimeSlice_TimeSlice" FromRole="AccountsPerZipCodeByTimeSlice" ToRole="TimeSlice" />
+          <NavigationProperty Name="ZipCode" Relationship="Lp_DemographicDataModel.FK_AccountsPerZipCodeByTimeSlice_ZipCode" FromRole="AccountsPerZipCodeByTimeSlice" ToRole="ZipCode" />
+        </EntityType>
+        <EntityType Name="DemographicData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ZipCodeId" Type="Guid" Nullable="false" />
+          <Property Name="MileRadius" Type="Int32" Nullable="false" />
+          <Property Name="TotalPopulation2000" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalPopulation2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalPopulation2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GroupQuarters2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalPopulation2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationSummaryAnnualRate20132018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryHouseholds2000" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryAverageHouseholdSize2000" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryHouseholds2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryAverageHouseholdSize" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryHouseholds2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryAverageHouseholdSize2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryHouseholds2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryAverageHouseholdSize2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryHouseholdAnnualRate20132018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryFamilies2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryAverageFamilySize2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryFamilies2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryAverageFamilySize2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryFamilies2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryAverageFamilySize2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdSummaryFamiliesAnnualRate2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HousingUnits2000" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnits2000" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RenterOccupiedHousingUnits2000" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VacantHousingUnits2000" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HousingUnits2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnits2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RenterOccupiedHousingUnits2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VacantHousingUnits2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HousingUnits2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnits2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RenterOccupiedHousingUnits2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VacantHousingUnits2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HousingUnits2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnits2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RenterOccupiedHousingUnits2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VacantHousingUnits2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedianHouseholdIncome2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedianHouseholdIncome2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedianHomeValue2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedianHomeValue2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PerCapitaIncome2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PerCapitaIncome2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedianAge2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedianAge2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedianAge2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdIncomeBase2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_15K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_15K_25K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_25K_35K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_35K_50K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_50K_75K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_75K_100K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_100K_150K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_150K_200K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_200K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AverageHouseholdIncome2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdIncomeBase2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_15K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_15K_25K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_25K_35K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_35K_50K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_50K_75K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_75K_100K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_100K_150K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_150K_200K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsbyIncome_200K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AverageHouseholdIncome2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValueTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue50K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue50K_100K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue100K_150K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue150K_200K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue200K_250K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue250K_300K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue300K_400K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue400K_500K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue500K_750K2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue750K_1M2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue1M2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValueAverage2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValueTotal2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue50K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue50K_100K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue100K_150K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue150K_200K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue200K_250K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue250K_300K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue300K_400K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue400K_500K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue500K_750K2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue750K_1M2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValue1M2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OwnerOccupiedHousingUnitsbyValueAverage2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAgeTotal2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge0_42010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge5_92010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge10_142010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge15_242010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge25_342010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge35_442010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge45_542010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge55_642010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge65_742010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge75_842010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge852010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge18Plus2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAgeTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge0_42013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge5_92013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge10_142013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge15_242013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge25_342013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge35_442013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge45_542013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge55_642013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge65_742013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge75_842013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge852013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge18Plus2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAgeTotal2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge0_42018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge5_92018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge10_142018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge15_242018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge25_342018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge35_442018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge45_542018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge55_642018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge65_742018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge75_842018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge852018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByAge18Plus2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationBySexMales2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationBySexFemales2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationBySexMales2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationBySexFemales2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationBySexMales2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationBySexFemales2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityTotal2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityWhiteAlone2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityBlackAlone2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityAmericanIndianAlone2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityAsianAlone2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityPacificIslanderAlone2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicitySomeOtherRaceAlone2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityTwoOrMoreRaces2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityHispanicOrigin2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityDiversityIndex2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityWhiteAlone2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityBlackAlone2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityAmericanIndianAlone2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityAsianAlone2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityPacificIslanderAlone2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicitySomeOtherRaceAlone2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityTwoOrMoreRaces2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityHispanicOrigin2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityDiversityIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityTotal2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityWhiteAlone2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityBlackAlone2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityAmericanIndianAlone2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityAsianAlone2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityPacificIslanderAlone2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicitySomeOtherRaceAlone2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityTwoOrMoreRaces2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityHispanicOrigin2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRaceEthnicityDiversityIndex2018" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeTotal2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInHouseholds2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInFamilyHouseholds2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeHouseholder2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeSpouse2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeChild2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeOtherRelative2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeNonRelative2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInNonfamilyHouseholds2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInGroupQuarters2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeInstitutionalizedPopulation2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PopulationByRelationshipAndHouseholdTypeNoninstitutionalizedPopulation2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population25ByEducationalAttainmentTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population25ByEducationalAttainmentLessThan9thGrade2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population25ByEducationalAttainment9th_12thGradeNoDiploma2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population25ByEducationalAttainmentHighSchoolGraduate2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population25ByEducationalAttainmentSomeCollegeNoDegree2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population25ByEducationalAttainmentAssociateDegree2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population25ByEducationalAttainmentBachelorsDegree2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population25ByEducationalAttainmentGraduateProfessionalDegree2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population15ByMaritalStatusTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population15ByMaritalStatusNeverMarried2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population15ByMaritalStatusMarried2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population15ByMaritalStatusWidowed2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Population15ByMaritalStatusDivorced2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CivilianPopulation16InLaborForceCivilianEmployed2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CivilianPopulation16InLaborForceCivilianUnemployed2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryAgricultureMining2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryConstruction2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryManufacturing2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryWholesaleTrade2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryRetailTrade2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryTransportationUtilities2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryInformation2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryFinanceInsuranceRealEstate2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryServices2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByIndustryPublicAdministration2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationWhiteCollar2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationManagementBusinessFinancial2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationProfessional2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationSales2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationAdministrativeSupport2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationServices2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationBlueCollar2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationFarmingForestryFishing2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationConstructionExtraction2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationInstallationMaintenanceRepair2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationProduction2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployedPopulation16ByOccupationTransportationMaterialMoving2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeTotal2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeHouseholdsWith1Person2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeHouseholdsWith2PlusPeople2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeFamilyHouseholds2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeHusbandWifeFamilies2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeHusbandWifeFamiliesWithRelatedChildren2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeOtherFamilyNoSpousePresent2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeOtherFamilyWithMaleHouseholder2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeOtherFamilyWithMaleHouseholderWithRelatedChildren2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeOtherFamilyWithFemaleHouseholder2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeOtherFamilyWithFemaleHouseholderWithRelatedChildren2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeNonfamilyHouseholds2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeAllHouseholdsWithChildren2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeMultigenerationalHouseholds2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeUnmarriedPartnerHouseholds2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeMaleFemale2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTypeSameSex2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsBySizeTotal2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsBySize1PersonHousehold2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsBySize2PersonHousehold2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsBySize3PersonHousehold2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsBySize4PersonHousehold2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsBySize5PersonHousehold2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsBySize6PersonHousehold2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsBySize7PlusPersonHousehold2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusTotal2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusOwnerOccupied2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusOwnedWithAMortgageLoan2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusOwnedFreeAndClear2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HouseholdsByTenureAndMortgageStatusRenterOccupied2010" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Top3TapestrySegments1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Top3TapestrySegments2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Top3TapestrySegments3" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ConsumerSpendingApparelAndServicesTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingApparelAndServicesAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingApparelAndServicesSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingComputersAndAccessories2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingComputersAndAccessoriesAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingComputersAndAccessoriesSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingEducationTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingEducationAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingEducationSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingEntertainmentRecreationTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingEntertainmentRecreationAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingEntertainmentRecreationSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingFoodAtHomeTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingFoodAtHomeAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingFoodAtHomeSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingFoodAtHomeFoodAwayFromHomeTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingFoodAtHomeFoodAwayFromHomeAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingFoodAtHomeFoodAwayFromHomeSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingHealthCareTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingHealthCareAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingHealthCareSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingHHFurnishingsAndEquipmentTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingHHFurnishingsAndEquipmentAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingHHFurnishingsAndEquipmentSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingInvestmentsTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingInvestmentsAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingInvestmentsSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingRetailGoodsTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingRetailGoodsAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingRetailGoodsSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingShelterTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingShelterAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingShelterSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingTVVideoAudioTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingTVVideoAudioAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingTVVideoAudioSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingTravelTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingTravelAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingTravelSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingVehicleMaintenanceAndRepairsTotal2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingVehicleMaintenanceAndRepairsAverageSpent2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ConsumerSpendingVehicleMaintenanceAndRepairsSpendingPotentialIndex2013" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Segment1Percent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Segment2Percent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Segment3Percent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Top3TapestrySegments1Id" Type="Guid" />
+          <Property Name="Top3TapestrySegments2Id" Type="Guid" />
+          <Property Name="Top3TapestrySegments3Id" Type="Guid" />
+          <NavigationProperty Name="Segment" Relationship="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments1_Segment" FromRole="DemographicData" ToRole="Segment" />
+          <NavigationProperty Name="Segment1" Relationship="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments2_Segment" FromRole="DemographicData" ToRole="Segment" />
+          <NavigationProperty Name="Segment2" Relationship="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments3_Segment" FromRole="DemographicData" ToRole="Segment" />
+          <NavigationProperty Name="ZipCode" Relationship="Lp_DemographicDataModel.FK_DemographicData_ZipCode" FromRole="DemographicData" ToRole="ZipCode" />
+        </EntityType>
+        <EntityType Name="Search">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SearchName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="SearchDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="SearchToSearchCriterias" Relationship="Lp_DemographicDataModel.FK_SearchToSearchCriteria_SearchId" FromRole="Search" ToRole="SearchToSearchCriteria" />
+        </EntityType>
+        <EntityType Name="SearchCriteria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CriteriaName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="SearchToSearchCriterias" Relationship="Lp_DemographicDataModel.FK_SearchToSearchCriteria_SearchCriteriaId" FromRole="SearchCriteria" ToRole="SearchToSearchCriteria" />
+        </EntityType>
+        <EntityType Name="SearchToSearchCriteria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SearchId" Type="Guid" Nullable="false" />
+          <Property Name="SearchCriteriaId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Search" Relationship="Lp_DemographicDataModel.FK_SearchToSearchCriteria_SearchId" FromRole="SearchToSearchCriteria" ToRole="Search" />
+          <NavigationProperty Name="SearchCriteria" Relationship="Lp_DemographicDataModel.FK_SearchToSearchCriteria_SearchCriteriaId" FromRole="SearchToSearchCriteria" ToRole="SearchCriteria" />
+        </EntityType>
+        <EntityType Name="Segment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SegmentName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IncomeClass" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MedianAge" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="MedianHouseholdIncome" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedianNetWorth" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MedianHomeValue" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PercentFamilyHouseholds" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PercentFamiliesWithChildren" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AverageFamilySize" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PercentBlack" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PercentHispanic" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PercentAsian" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PercentWhite" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PercentTwoRaces" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PercentDifficultySpeakingEnglish" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LaborForceParticipation" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UnemploymentRate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PercentWageEarners" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TypicalFamilyOwnsOrRents" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="HomeOwndershipPercent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="HousingBuiltBefore" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TopPurchasedItems" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneCallTypes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Trips" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Stores" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="FavoriteDrugStore" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Watches" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Reads" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ListensTo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Attends" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Drinks" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="AutomobileBrandPreference" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="EmploymentTypes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Notes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="GeographicClusterLocations" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Hobbies" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="DemographicDatas" Relationship="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments1_Segment" FromRole="Segment" ToRole="DemographicData" />
+          <NavigationProperty Name="DemographicDatas1" Relationship="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments2_Segment" FromRole="Segment" ToRole="DemographicData" />
+          <NavigationProperty Name="DemographicDatas2" Relationship="Lp_DemographicDataModel.FK_DemographicData_Top3TapestrySegments3_Segment" FromRole="Segment" ToRole="DemographicData" />
+        </EntityType>
+        <EntityType Name="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ZIP_Codes" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="C2014_Population_Density" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="C2014_Median_Age" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="C2014_Median_Net_Worth" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="C2014_Median_Household_Income" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ZipCode5" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ZipCodeId" Type="Guid" />
+          <NavigationProperty Name="ZipCode" Relationship="Lp_DemographicDataModel.FK_SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity_ZipCode_Id" FromRole="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" ToRole="ZipCode" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TimeSlouse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TimeSliceBeginDate" Type="DateTime" Precision="3" />
+          <Property Name="TimeSliceEndDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="AccountsPerZipCodeByTimeSlice" Relationship="Lp_DemographicDataModel.FK_AccountsPerZipCodeByTimeSlice_TimeSlice" FromRole="TimeSlice" ToRole="AccountsPerZipCodeByTimeSlice" />
+        </EntityType>
+        <EntityType Name="USState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="StateAbbreviation" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StateName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ZipCodes" Relationship="Lp_DemographicDataModel.FK_ZipCode_USState" FromRole="USState" ToRole="ZipCode" />
+        </EntityType>
+        <EntityType Name="ZipCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ZipCode1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StateId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="AccountsPerZipCodeByTimeSlice" Relationship="Lp_DemographicDataModel.FK_AccountsPerZipCodeByTimeSlice_ZipCode" FromRole="ZipCode" ToRole="AccountsPerZipCodeByTimeSlice" />
+          <NavigationProperty Name="DemographicDatas" Relationship="Lp_DemographicDataModel.FK_DemographicData_ZipCode" FromRole="ZipCode" ToRole="DemographicData" />
+          <NavigationProperty Name="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensities" Relationship="Lp_DemographicDataModel.FK_SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity_ZipCode_Id" FromRole="ZipCode" ToRole="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" />
+          <NavigationProperty Name="USState" Relationship="Lp_DemographicDataModel.FK_ZipCode_USState" FromRole="ZipCode" ToRole="USState" />
+        </EntityType>
+        <Association Name="FK_AccountsPerZipCodeByTimeSlice_TimeSlice">
+          <End Role="TimeSlice" Type="Lp_DemographicDataModel.TimeSlouse" Multiplicity="0..1" />
+          <End Role="AccountsPerZipCodeByTimeSlice" Type="Lp_DemographicDataModel.AccountsPerZipCodeByTimeSlouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeSlice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountsPerZipCodeByTimeSlice">
+              <PropertyRef Name="TimeSliceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountsPerZipCodeByTimeSlice_ZipCode">
+          <End Role="ZipCode" Type="Lp_DemographicDataModel.ZipCode" Multiplicity="1" />
+          <End Role="AccountsPerZipCodeByTimeSlice" Type="Lp_DemographicDataModel.AccountsPerZipCodeByTimeSlouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZipCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountsPerZipCodeByTimeSlice">
+              <PropertyRef Name="ZipCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemographicData_Top3TapestrySegments1_Segment">
+          <End Role="Segment" Type="Lp_DemographicDataModel.Segment" Multiplicity="0..1" />
+          <End Role="DemographicData" Type="Lp_DemographicDataModel.DemographicData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemographicData">
+              <PropertyRef Name="Top3TapestrySegments1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemographicData_Top3TapestrySegments2_Segment">
+          <End Role="Segment" Type="Lp_DemographicDataModel.Segment" Multiplicity="0..1" />
+          <End Role="DemographicData" Type="Lp_DemographicDataModel.DemographicData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemographicData">
+              <PropertyRef Name="Top3TapestrySegments2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemographicData_Top3TapestrySegments3_Segment">
+          <End Role="Segment" Type="Lp_DemographicDataModel.Segment" Multiplicity="0..1" />
+          <End Role="DemographicData" Type="Lp_DemographicDataModel.DemographicData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemographicData">
+              <PropertyRef Name="Top3TapestrySegments3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemographicData_ZipCode">
+          <End Role="ZipCode" Type="Lp_DemographicDataModel.ZipCode" Multiplicity="1" />
+          <End Role="DemographicData" Type="Lp_DemographicDataModel.DemographicData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZipCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemographicData">
+              <PropertyRef Name="ZipCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SearchToSearchCriteria_SearchId">
+          <End Role="Search" Type="Lp_DemographicDataModel.Search" Multiplicity="1" />
+          <End Role="SearchToSearchCriteria" Type="Lp_DemographicDataModel.SearchToSearchCriteria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Search">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SearchToSearchCriteria">
+              <PropertyRef Name="SearchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SearchToSearchCriteria_SearchCriteriaId">
+          <End Role="SearchCriteria" Type="Lp_DemographicDataModel.SearchCriteria" Multiplicity="1" />
+          <End Role="SearchToSearchCriteria" Type="Lp_DemographicDataModel.SearchToSearchCriteria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SearchCriteria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SearchToSearchCriteria">
+              <PropertyRef Name="SearchCriteriaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity_ZipCode_Id">
+          <End Role="ZipCode" Type="Lp_DemographicDataModel.ZipCode" Multiplicity="0..1" />
+          <End Role="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" Type="Lp_DemographicDataModel.SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZipCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity">
+              <PropertyRef Name="ZipCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZipCode_USState">
+          <End Role="USState" Type="Lp_DemographicDataModel.USState" Multiplicity="1" />
+          <End Role="ZipCode" Type="Lp_DemographicDataModel.ZipCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ZipCode">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Lp_DemographicDataModelStoreContainer" CdmEntityContainer="Lp_DemographicDataEntities">
+          <EntitySetMapping Name="AccountsPerZipCodeByTimeSlice">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.AccountsPerZipCodeByTimeSlouse">
+              <MappingFragment StoreEntitySet="AccountsPerZipCodeByTimeSlice">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ZipCodeId" ColumnName="ZipCodeId" />
+                <ScalarProperty Name="NumberOfAccounts" ColumnName="NumberOfAccounts" />
+                <ScalarProperty Name="TimeSliceId" ColumnName="TimeSliceId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DemographicDatas">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.DemographicData">
+              <MappingFragment StoreEntitySet="DemographicData">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ZipCodeId" ColumnName="ZipCodeId" />
+                <ScalarProperty Name="MileRadius" ColumnName="MileRadius" />
+                <ScalarProperty Name="TotalPopulation2000" ColumnName="TotalPopulation2000" />
+                <ScalarProperty Name="TotalPopulation2010" ColumnName="TotalPopulation2010" />
+                <ScalarProperty Name="TotalPopulation2013" ColumnName="TotalPopulation2013" />
+                <ScalarProperty Name="GroupQuarters2013" ColumnName="GroupQuarters2013" />
+                <ScalarProperty Name="TotalPopulation2018" ColumnName="TotalPopulation2018" />
+                <ScalarProperty Name="PopulationSummaryAnnualRate20132018" ColumnName="PopulationSummaryAnnualRate20132018" />
+                <ScalarProperty Name="HouseholdSummaryHouseholds2000" ColumnName="HouseholdSummaryHouseholds2000" />
+                <ScalarProperty Name="HouseholdSummaryAverageHouseholdSize2000" ColumnName="HouseholdSummaryAverageHouseholdSize2000" />
+                <ScalarProperty Name="HouseholdSummaryHouseholds2010" ColumnName="HouseholdSummaryHouseholds2010" />
+                <ScalarProperty Name="HouseholdSummaryAverageHouseholdSize" ColumnName="HouseholdSummaryAverageHouseholdSize" />
+                <ScalarProperty Name="HouseholdSummaryHouseholds2013" ColumnName="HouseholdSummaryHouseholds2013" />
+                <ScalarProperty Name="HouseholdSummaryAverageHouseholdSize2013" ColumnName="HouseholdSummaryAverageHouseholdSize2013" />
+                <ScalarProperty Name="HouseholdSummaryHouseholds2018" ColumnName="HouseholdSummaryHouseholds2018" />
+                <ScalarProperty Name="HouseholdSummaryAverageHouseholdSize2018" ColumnName="HouseholdSummaryAverageHouseholdSize2018" />
+                <ScalarProperty Name="HouseholdSummaryHouseholdAnnualRate20132018" ColumnName="HouseholdSummaryHouseholdAnnualRate20132018" />
+                <ScalarProperty Name="HouseholdSummaryFamilies2010" ColumnName="HouseholdSummaryFamilies2010" />
+                <ScalarProperty Name="HouseholdSummaryAverageFamilySize2010" ColumnName="HouseholdSummaryAverageFamilySize2010" />
+                <ScalarProperty Name="HouseholdSummaryFamilies2013" ColumnName="HouseholdSummaryFamilies2013" />
+                <ScalarProperty Name="HouseholdSummaryAverageFamilySize2013" ColumnName="HouseholdSummaryAverageFamilySize2013" />
+                <ScalarProperty Name="HouseholdSummaryFamilies2018" ColumnName="HouseholdSummaryFamilies2018" />
+                <ScalarProperty Name="HouseholdSummaryAverageFamilySize2018" ColumnName="HouseholdSummaryAverageFamilySize2018" />
+                <ScalarProperty Name="HouseholdSummaryFamiliesAnnualRate2018" ColumnName="HouseholdSummaryFamiliesAnnualRate2018" />
+                <ScalarProperty Name="HousingUnits2000" ColumnName="HousingUnits2000" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnits2000" ColumnName="OwnerOccupiedHousingUnits2000" />
+                <ScalarProperty Name="RenterOccupiedHousingUnits2000" ColumnName="RenterOccupiedHousingUnits2000" />
+                <ScalarProperty Name="VacantHousingUnits2000" ColumnName="VacantHousingUnits2000" />
+                <ScalarProperty Name="HousingUnits2010" ColumnName="HousingUnits2010" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnits2010" ColumnName="OwnerOccupiedHousingUnits2010" />
+                <ScalarProperty Name="RenterOccupiedHousingUnits2010" ColumnName="RenterOccupiedHousingUnits2010" />
+                <ScalarProperty Name="VacantHousingUnits2010" ColumnName="VacantHousingUnits2010" />
+                <ScalarProperty Name="HousingUnits2013" ColumnName="HousingUnits2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnits2013" ColumnName="OwnerOccupiedHousingUnits2013" />
+                <ScalarProperty Name="RenterOccupiedHousingUnits2013" ColumnName="RenterOccupiedHousingUnits2013" />
+                <ScalarProperty Name="VacantHousingUnits2013" ColumnName="VacantHousingUnits2013" />
+                <ScalarProperty Name="HousingUnits2018" ColumnName="HousingUnits2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnits2018" ColumnName="OwnerOccupiedHousingUnits2018" />
+                <ScalarProperty Name="RenterOccupiedHousingUnits2018" ColumnName="RenterOccupiedHousingUnits2018" />
+                <ScalarProperty Name="VacantHousingUnits2018" ColumnName="VacantHousingUnits2018" />
+                <ScalarProperty Name="MedianHouseholdIncome2013" ColumnName="MedianHouseholdIncome2013" />
+                <ScalarProperty Name="MedianHouseholdIncome2018" ColumnName="MedianHouseholdIncome2018" />
+                <ScalarProperty Name="MedianHomeValue2013" ColumnName="MedianHomeValue2013" />
+                <ScalarProperty Name="MedianHomeValue2018" ColumnName="MedianHomeValue2018" />
+                <ScalarProperty Name="PerCapitaIncome2013" ColumnName="PerCapitaIncome2013" />
+                <ScalarProperty Name="PerCapitaIncome2018" ColumnName="PerCapitaIncome2018" />
+                <ScalarProperty Name="MedianAge2010" ColumnName="MedianAge2010" />
+                <ScalarProperty Name="MedianAge2013" ColumnName="MedianAge2013" />
+                <ScalarProperty Name="MedianAge2018" ColumnName="MedianAge2018" />
+                <ScalarProperty Name="HouseholdIncomeBase2013" ColumnName="HouseholdIncomeBase2013" />
+                <ScalarProperty Name="HouseholdsbyIncome_15K2013" ColumnName="HouseholdsbyIncome_15K2013" />
+                <ScalarProperty Name="HouseholdsbyIncome_15K_25K2013" ColumnName="HouseholdsbyIncome_15K_25K2013" />
+                <ScalarProperty Name="HouseholdsbyIncome_25K_35K2013" ColumnName="HouseholdsbyIncome_25K_35K2013" />
+                <ScalarProperty Name="HouseholdsbyIncome_35K_50K2013" ColumnName="HouseholdsbyIncome_35K_50K2013" />
+                <ScalarProperty Name="HouseholdsbyIncome_50K_75K2013" ColumnName="HouseholdsbyIncome_50K_75K2013" />
+                <ScalarProperty Name="HouseholdsbyIncome_75K_100K2013" ColumnName="HouseholdsbyIncome_75K_100K2013" />
+                <ScalarProperty Name="HouseholdsbyIncome_100K_150K2013" ColumnName="HouseholdsbyIncome_100K_150K2013" />
+                <ScalarProperty Name="HouseholdsbyIncome_150K_200K2013" ColumnName="HouseholdsbyIncome_150K_200K2013" />
+                <ScalarProperty Name="HouseholdsbyIncome_200K2013" ColumnName="HouseholdsbyIncome_200K2013" />
+                <ScalarProperty Name="AverageHouseholdIncome2013" ColumnName="AverageHouseholdIncome2013" />
+                <ScalarProperty Name="HouseholdIncomeBase2018" ColumnName="HouseholdIncomeBase2018" />
+                <ScalarProperty Name="HouseholdsbyIncome_15K2018" ColumnName="HouseholdsbyIncome_15K2018" />
+                <ScalarProperty Name="HouseholdsbyIncome_15K_25K2018" ColumnName="HouseholdsbyIncome_15K_25K2018" />
+                <ScalarProperty Name="HouseholdsbyIncome_25K_35K2018" ColumnName="HouseholdsbyIncome_25K_35K2018" />
+                <ScalarProperty Name="HouseholdsbyIncome_35K_50K2018" ColumnName="HouseholdsbyIncome_35K_50K2018" />
+                <ScalarProperty Name="HouseholdsbyIncome_50K_75K2018" ColumnName="HouseholdsbyIncome_50K_75K2018" />
+                <ScalarProperty Name="HouseholdsbyIncome_75K_100K2018" ColumnName="HouseholdsbyIncome_75K_100K2018" />
+                <ScalarProperty Name="HouseholdsbyIncome_100K_150K2018" ColumnName="HouseholdsbyIncome_100K_150K2018" />
+                <ScalarProperty Name="HouseholdsbyIncome_150K_200K2018" ColumnName="HouseholdsbyIncome_150K_200K2018" />
+                <ScalarProperty Name="HouseholdsbyIncome_200K2018" ColumnName="HouseholdsbyIncome_200K2018" />
+                <ScalarProperty Name="AverageHouseholdIncome2018" ColumnName="AverageHouseholdIncome2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValueTotal2013" ColumnName="OwnerOccupiedHousingUnitsbyValueTotal2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue50K2013" ColumnName="OwnerOccupiedHousingUnitsbyValue50K2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue50K_100K2013" ColumnName="OwnerOccupiedHousingUnitsbyValue50K_100K2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue100K_150K2013" ColumnName="OwnerOccupiedHousingUnitsbyValue100K_150K2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue150K_200K2013" ColumnName="OwnerOccupiedHousingUnitsbyValue150K_200K2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue200K_250K2013" ColumnName="OwnerOccupiedHousingUnitsbyValue200K_250K2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue250K_300K2013" ColumnName="OwnerOccupiedHousingUnitsbyValue250K_300K2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue300K_400K2013" ColumnName="OwnerOccupiedHousingUnitsbyValue300K_400K2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue400K_500K2013" ColumnName="OwnerOccupiedHousingUnitsbyValue400K_500K2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue500K_750K2013" ColumnName="OwnerOccupiedHousingUnitsbyValue500K_750K2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue750K_1M2013" ColumnName="OwnerOccupiedHousingUnitsbyValue750K_1M2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue1M2013" ColumnName="OwnerOccupiedHousingUnitsbyValue1M2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValueAverage2013" ColumnName="OwnerOccupiedHousingUnitsbyValueAverage2013" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValueTotal2018" ColumnName="OwnerOccupiedHousingUnitsbyValueTotal2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue50K2018" ColumnName="OwnerOccupiedHousingUnitsbyValue50K2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue50K_100K2018" ColumnName="OwnerOccupiedHousingUnitsbyValue50K_100K2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue100K_150K2018" ColumnName="OwnerOccupiedHousingUnitsbyValue100K_150K2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue150K_200K2018" ColumnName="OwnerOccupiedHousingUnitsbyValue150K_200K2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue200K_250K2018" ColumnName="OwnerOccupiedHousingUnitsbyValue200K_250K2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue250K_300K2018" ColumnName="OwnerOccupiedHousingUnitsbyValue250K_300K2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue300K_400K2018" ColumnName="OwnerOccupiedHousingUnitsbyValue300K_400K2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue400K_500K2018" ColumnName="OwnerOccupiedHousingUnitsbyValue400K_500K2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue500K_750K2018" ColumnName="OwnerOccupiedHousingUnitsbyValue500K_750K2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue750K_1M2018" ColumnName="OwnerOccupiedHousingUnitsbyValue750K_1M2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValue1M2018" ColumnName="OwnerOccupiedHousingUnitsbyValue1M2018" />
+                <ScalarProperty Name="OwnerOccupiedHousingUnitsbyValueAverage2018" ColumnName="OwnerOccupiedHousingUnitsbyValueAverage2018" />
+                <ScalarProperty Name="PopulationByAgeTotal2010" ColumnName="PopulationByAgeTotal2010" />
+                <ScalarProperty Name="PopulationByAge0_42010" ColumnName="PopulationByAge0_42010" />
+                <ScalarProperty Name="PopulationByAge5_92010" ColumnName="PopulationByAge5_92010" />
+                <ScalarProperty Name="PopulationByAge10_142010" ColumnName="PopulationByAge10_142010" />
+                <ScalarProperty Name="PopulationByAge15_242010" ColumnName="PopulationByAge15_242010" />
+                <ScalarProperty Name="PopulationByAge25_342010" ColumnName="PopulationByAge25_342010" />
+                <ScalarProperty Name="PopulationByAge35_442010" ColumnName="PopulationByAge35_442010" />
+                <ScalarProperty Name="PopulationByAge45_542010" ColumnName="PopulationByAge45_542010" />
+                <ScalarProperty Name="PopulationByAge55_642010" ColumnName="PopulationByAge55_642010" />
+                <ScalarProperty Name="PopulationByAge65_742010" ColumnName="PopulationByAge65_742010" />
+                <ScalarProperty Name="PopulationByAge75_842010" ColumnName="PopulationByAge75_842010" />
+                <ScalarProperty Name="PopulationByAge852010" ColumnName="PopulationByAge852010" />
+                <ScalarProperty Name="PopulationByAge18Plus2010" ColumnName="PopulationByAge18Plus2010" />
+                <ScalarProperty Name="PopulationByAgeTotal2013" ColumnName="PopulationByAgeTotal2013" />
+                <ScalarProperty Name="PopulationByAge0_42013" ColumnName="PopulationByAge0_42013" />
+                <ScalarProperty Name="PopulationByAge5_92013" ColumnName="PopulationByAge5_92013" />
+                <ScalarProperty Name="PopulationByAge10_142013" ColumnName="PopulationByAge10_142013" />
+                <ScalarProperty Name="PopulationByAge15_242013" ColumnName="PopulationByAge15_242013" />
+                <ScalarProperty Name="PopulationByAge25_342013" ColumnName="PopulationByAge25_342013" />
+                <ScalarProperty Name="PopulationByAge35_442013" ColumnName="PopulationByAge35_442013" />
+                <ScalarProperty Name="PopulationByAge45_542013" ColumnName="PopulationByAge45_542013" />
+                <ScalarProperty Name="PopulationByAge55_642013" ColumnName="PopulationByAge55_642013" />
+                <ScalarProperty Name="PopulationByAge65_742013" ColumnName="PopulationByAge65_742013" />
+                <ScalarProperty Name="PopulationByAge75_842013" ColumnName="PopulationByAge75_842013" />
+                <ScalarProperty Name="PopulationByAge852013" ColumnName="PopulationByAge852013" />
+                <ScalarProperty Name="PopulationByAge18Plus2013" ColumnName="PopulationByAge18Plus2013" />
+                <ScalarProperty Name="PopulationByAgeTotal2018" ColumnName="PopulationByAgeTotal2018" />
+                <ScalarProperty Name="PopulationByAge0_42018" ColumnName="PopulationByAge0_42018" />
+                <ScalarProperty Name="PopulationByAge5_92018" ColumnName="PopulationByAge5_92018" />
+                <ScalarProperty Name="PopulationByAge10_142018" ColumnName="PopulationByAge10_142018" />
+                <ScalarProperty Name="PopulationByAge15_242018" ColumnName="PopulationByAge15_242018" />
+                <ScalarProperty Name="PopulationByAge25_342018" ColumnName="PopulationByAge25_342018" />
+                <ScalarProperty Name="PopulationByAge35_442018" ColumnName="PopulationByAge35_442018" />
+                <ScalarProperty Name="PopulationByAge45_542018" ColumnName="PopulationByAge45_542018" />
+                <ScalarProperty Name="PopulationByAge55_642018" ColumnName="PopulationByAge55_642018" />
+                <ScalarProperty Name="PopulationByAge65_742018" ColumnName="PopulationByAge65_742018" />
+                <ScalarProperty Name="PopulationByAge75_842018" ColumnName="PopulationByAge75_842018" />
+                <ScalarProperty Name="PopulationByAge852018" ColumnName="PopulationByAge852018" />
+                <ScalarProperty Name="PopulationByAge18Plus2018" ColumnName="PopulationByAge18Plus2018" />
+                <ScalarProperty Name="PopulationBySexMales2010" ColumnName="PopulationBySexMales2010" />
+                <ScalarProperty Name="PopulationBySexFemales2010" ColumnName="PopulationBySexFemales2010" />
+                <ScalarProperty Name="PopulationBySexMales2013" ColumnName="PopulationBySexMales2013" />
+                <ScalarProperty Name="PopulationBySexFemales2013" ColumnName="PopulationBySexFemales2013" />
+                <ScalarProperty Name="PopulationBySexMales2018" ColumnName="PopulationBySexMales2018" />
+                <ScalarProperty Name="PopulationBySexFemales2018" ColumnName="PopulationBySexFemales2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicityTotal2010" ColumnName="PopulationByRaceEthnicityTotal2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicityWhiteAlone2010" ColumnName="PopulationByRaceEthnicityWhiteAlone2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicityBlackAlone2010" ColumnName="PopulationByRaceEthnicityBlackAlone2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicityAmericanIndianAlone2010" ColumnName="PopulationByRaceEthnicityAmericanIndianAlone2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicityAsianAlone2010" ColumnName="PopulationByRaceEthnicityAsianAlone2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicityPacificIslanderAlone2010" ColumnName="PopulationByRaceEthnicityPacificIslanderAlone2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicitySomeOtherRaceAlone2010" ColumnName="PopulationByRaceEthnicitySomeOtherRaceAlone2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicityTwoOrMoreRaces2010" ColumnName="PopulationByRaceEthnicityTwoOrMoreRaces2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicityHispanicOrigin2010" ColumnName="PopulationByRaceEthnicityHispanicOrigin2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicityDiversityIndex2010" ColumnName="PopulationByRaceEthnicityDiversityIndex2010" />
+                <ScalarProperty Name="PopulationByRaceEthnicityTotal2013" ColumnName="PopulationByRaceEthnicityTotal2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicityWhiteAlone2013" ColumnName="PopulationByRaceEthnicityWhiteAlone2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicityBlackAlone2013" ColumnName="PopulationByRaceEthnicityBlackAlone2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicityAmericanIndianAlone2013" ColumnName="PopulationByRaceEthnicityAmericanIndianAlone2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicityAsianAlone2013" ColumnName="PopulationByRaceEthnicityAsianAlone2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicityPacificIslanderAlone2013" ColumnName="PopulationByRaceEthnicityPacificIslanderAlone2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicitySomeOtherRaceAlone2013" ColumnName="PopulationByRaceEthnicitySomeOtherRaceAlone2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicityTwoOrMoreRaces2013" ColumnName="PopulationByRaceEthnicityTwoOrMoreRaces2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicityHispanicOrigin2013" ColumnName="PopulationByRaceEthnicityHispanicOrigin2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicityDiversityIndex2013" ColumnName="PopulationByRaceEthnicityDiversityIndex2013" />
+                <ScalarProperty Name="PopulationByRaceEthnicityTotal2018" ColumnName="PopulationByRaceEthnicityTotal2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicityWhiteAlone2018" ColumnName="PopulationByRaceEthnicityWhiteAlone2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicityBlackAlone2018" ColumnName="PopulationByRaceEthnicityBlackAlone2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicityAmericanIndianAlone2018" ColumnName="PopulationByRaceEthnicityAmericanIndianAlone2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicityAsianAlone2018" ColumnName="PopulationByRaceEthnicityAsianAlone2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicityPacificIslanderAlone2018" ColumnName="PopulationByRaceEthnicityPacificIslanderAlone2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicitySomeOtherRaceAlone2018" ColumnName="PopulationByRaceEthnicitySomeOtherRaceAlone2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicityTwoOrMoreRaces2018" ColumnName="PopulationByRaceEthnicityTwoOrMoreRaces2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicityHispanicOrigin2018" ColumnName="PopulationByRaceEthnicityHispanicOrigin2018" />
+                <ScalarProperty Name="PopulationByRaceEthnicityDiversityIndex2018" ColumnName="PopulationByRaceEthnicityDiversityIndex2018" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeTotal2010" ColumnName="PopulationByRelationshipAndHouseholdTypeTotal2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeInHouseholds2010" ColumnName="PopulationByRelationshipAndHouseholdTypeInHouseholds2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeInFamilyHouseholds2010" ColumnName="PopulationByRelationshipAndHouseholdTypeInFamilyHouseholds2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeHouseholder2010" ColumnName="PopulationByRelationshipAndHouseholdTypeHouseholder2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeSpouse2010" ColumnName="PopulationByRelationshipAndHouseholdTypeSpouse2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeChild2010" ColumnName="PopulationByRelationshipAndHouseholdTypeChild2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeOtherRelative2010" ColumnName="PopulationByRelationshipAndHouseholdTypeOtherRelative2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeNonRelative2010" ColumnName="PopulationByRelationshipAndHouseholdTypeNonRelative2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeInNonfamilyHouseholds2010" ColumnName="PopulationByRelationshipAndHouseholdTypeInNonfamilyHouseholds2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeInGroupQuarters2010" ColumnName="PopulationByRelationshipAndHouseholdTypeInGroupQuarters2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeInstitutionalizedPopulation2010" ColumnName="PopulationByRelationshipAndHouseholdTypeInstitutionalizedPopulation2010" />
+                <ScalarProperty Name="PopulationByRelationshipAndHouseholdTypeNoninstitutionalizedPopulation2010" ColumnName="PopulationByRelationshipAndHouseholdTypeNoninstitutionalizedPopulation2010" />
+                <ScalarProperty Name="Population25ByEducationalAttainmentTotal2013" ColumnName="Population25ByEducationalAttainmentTotal2013" />
+                <ScalarProperty Name="Population25ByEducationalAttainmentLessThan9thGrade2013" ColumnName="Population25ByEducationalAttainmentLessThan9thGrade2013" />
+                <ScalarProperty Name="Population25ByEducationalAttainment9th_12thGradeNoDiploma2013" ColumnName="Population25ByEducationalAttainment9th_12thGradeNoDiploma2013" />
+                <ScalarProperty Name="Population25ByEducationalAttainmentHighSchoolGraduate2013" ColumnName="Population25ByEducationalAttainmentHighSchoolGraduate2013" />
+                <ScalarProperty Name="Population25ByEducationalAttainmentSomeCollegeNoDegree2013" ColumnName="Population25ByEducationalAttainmentSomeCollegeNoDegree2013" />
+                <ScalarProperty Name="Population25ByEducationalAttainmentAssociateDegree2013" ColumnName="Population25ByEducationalAttainmentAssociateDegree2013" />
+                <ScalarProperty Name="Population25ByEducationalAttainmentBachelorsDegree2013" ColumnName="Population25ByEducationalAttainmentBachelorsDegree2013" />
+                <ScalarProperty Name="Population25ByEducationalAttainmentGraduateProfessionalDegree2013" ColumnName="Population25ByEducationalAttainmentGraduateProfessionalDegree2013" />
+                <ScalarProperty Name="Population15ByMaritalStatusTotal2013" ColumnName="Population15ByMaritalStatusTotal2013" />
+                <ScalarProperty Name="Population15ByMaritalStatusNeverMarried2013" ColumnName="Population15ByMaritalStatusNeverMarried2013" />
+                <ScalarProperty Name="Population15ByMaritalStatusMarried2013" ColumnName="Population15ByMaritalStatusMarried2013" />
+                <ScalarProperty Name="Population15ByMaritalStatusWidowed2013" ColumnName="Population15ByMaritalStatusWidowed2013" />
+                <ScalarProperty Name="Population15ByMaritalStatusDivorced2013" ColumnName="Population15ByMaritalStatusDivorced2013" />
+                <ScalarProperty Name="CivilianPopulation16InLaborForceCivilianEmployed2013" ColumnName="CivilianPopulation16InLaborForceCivilianEmployed2013" />
+                <ScalarProperty Name="CivilianPopulation16InLaborForceCivilianUnemployed2013" ColumnName="CivilianPopulation16InLaborForceCivilianUnemployed2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryTotal2013" ColumnName="EmployedPopulation16ByIndustryTotal2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryAgricultureMining2013" ColumnName="EmployedPopulation16ByIndustryAgricultureMining2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryConstruction2013" ColumnName="EmployedPopulation16ByIndustryConstruction2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryManufacturing2013" ColumnName="EmployedPopulation16ByIndustryManufacturing2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryWholesaleTrade2013" ColumnName="EmployedPopulation16ByIndustryWholesaleTrade2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryRetailTrade2013" ColumnName="EmployedPopulation16ByIndustryRetailTrade2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryTransportationUtilities2013" ColumnName="EmployedPopulation16ByIndustryTransportationUtilities2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryInformation2013" ColumnName="EmployedPopulation16ByIndustryInformation2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryFinanceInsuranceRealEstate2013" ColumnName="EmployedPopulation16ByIndustryFinanceInsuranceRealEstate2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryServices2013" ColumnName="EmployedPopulation16ByIndustryServices2013" />
+                <ScalarProperty Name="EmployedPopulation16ByIndustryPublicAdministration2013" ColumnName="EmployedPopulation16ByIndustryPublicAdministration2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationTotal2013" ColumnName="EmployedPopulation16ByOccupationTotal2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationWhiteCollar2013" ColumnName="EmployedPopulation16ByOccupationWhiteCollar2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationManagementBusinessFinancial2013" ColumnName="EmployedPopulation16ByOccupationManagementBusinessFinancial2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationProfessional2013" ColumnName="EmployedPopulation16ByOccupationProfessional2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationSales2013" ColumnName="EmployedPopulation16ByOccupationSales2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationAdministrativeSupport2013" ColumnName="EmployedPopulation16ByOccupationAdministrativeSupport2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationServices2013" ColumnName="EmployedPopulation16ByOccupationServices2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationBlueCollar2013" ColumnName="EmployedPopulation16ByOccupationBlueCollar2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationFarmingForestryFishing2013" ColumnName="EmployedPopulation16ByOccupationFarmingForestryFishing2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationConstructionExtraction2013" ColumnName="EmployedPopulation16ByOccupationConstructionExtraction2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationInstallationMaintenanceRepair2013" ColumnName="EmployedPopulation16ByOccupationInstallationMaintenanceRepair2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationProduction2013" ColumnName="EmployedPopulation16ByOccupationProduction2013" />
+                <ScalarProperty Name="EmployedPopulation16ByOccupationTransportationMaterialMoving2013" ColumnName="EmployedPopulation16ByOccupationTransportationMaterialMoving2013" />
+                <ScalarProperty Name="HouseholdsByTypeTotal2010" ColumnName="HouseholdsByTypeTotal2010" />
+                <ScalarProperty Name="HouseholdsByTypeHouseholdsWith1Person2010" ColumnName="HouseholdsByTypeHouseholdsWith1Person2010" />
+                <ScalarProperty Name="HouseholdsByTypeHouseholdsWith2PlusPeople2010" ColumnName="HouseholdsByTypeHouseholdsWith2PlusPeople2010" />
+                <ScalarProperty Name="HouseholdsByTypeFamilyHouseholds2010" ColumnName="HouseholdsByTypeFamilyHouseholds2010" />
+                <ScalarProperty Name="HouseholdsByTypeHusbandWifeFamilies2010" ColumnName="HouseholdsByTypeHusbandWifeFamilies2010" />
+                <ScalarProperty Name="HouseholdsByTypeHusbandWifeFamiliesWithRelatedChildren2010" ColumnName="HouseholdsByTypeHusbandWifeFamiliesWithRelatedChildren2010" />
+                <ScalarProperty Name="HouseholdsByTypeOtherFamilyNoSpousePresent2010" ColumnName="HouseholdsByTypeOtherFamilyNoSpousePresent2010" />
+                <ScalarProperty Name="HouseholdsByTypeOtherFamilyWithMaleHouseholder2010" ColumnName="HouseholdsByTypeOtherFamilyWithMaleHouseholder2010" />
+                <ScalarProperty Name="HouseholdsByTypeOtherFamilyWithMaleHouseholderWithRelatedChildren2010" ColumnName="HouseholdsByTypeOtherFamilyWithMaleHouseholderWithRelatedChildren2010" />
+                <ScalarProperty Name="HouseholdsByTypeOtherFamilyWithFemaleHouseholder2010" ColumnName="HouseholdsByTypeOtherFamilyWithFemaleHouseholder2010" />
+                <ScalarProperty Name="HouseholdsByTypeOtherFamilyWithFemaleHouseholderWithRelatedChildren2010" ColumnName="HouseholdsByTypeOtherFamilyWithFemaleHouseholderWithRelatedChildren2010" />
+                <ScalarProperty Name="HouseholdsByTypeNonfamilyHouseholds2010" ColumnName="HouseholdsByTypeNonfamilyHouseholds2010" />
+                <ScalarProperty Name="HouseholdsByTypeAllHouseholdsWithChildren2010" ColumnName="HouseholdsByTypeAllHouseholdsWithChildren2010" />
+                <ScalarProperty Name="HouseholdsByTypeMultigenerationalHouseholds2010" ColumnName="HouseholdsByTypeMultigenerationalHouseholds2010" />
+                <ScalarProperty Name="HouseholdsByTypeUnmarriedPartnerHouseholds2010" ColumnName="HouseholdsByTypeUnmarriedPartnerHouseholds2010" />
+                <ScalarProperty Name="HouseholdsByTypeMaleFemale2010" ColumnName="HouseholdsByTypeMaleFemale2010" />
+                <ScalarProperty Name="HouseholdsByTypeSameSex2010" ColumnName="HouseholdsByTypeSameSex2010" />
+                <ScalarProperty Name="HouseholdsBySizeTotal2010" ColumnName="HouseholdsBySizeTotal2010" />
+                <ScalarProperty Name="HouseholdsBySize1PersonHousehold2010" ColumnName="HouseholdsBySize1PersonHousehold2010" />
+                <ScalarProperty Name="HouseholdsBySize2PersonHousehold2010" ColumnName="HouseholdsBySize2PersonHousehold2010" />
+                <ScalarProperty Name="HouseholdsBySize3PersonHousehold2010" ColumnName="HouseholdsBySize3PersonHousehold2010" />
+                <ScalarProperty Name="HouseholdsBySize4PersonHousehold2010" ColumnName="HouseholdsBySize4PersonHousehold2010" />
+                <ScalarProperty Name="HouseholdsBySize5PersonHousehold2010" ColumnName="HouseholdsBySize5PersonHousehold2010" />
+                <ScalarProperty Name="HouseholdsBySize6PersonHousehold2010" ColumnName="HouseholdsBySize6PersonHousehold2010" />
+                <ScalarProperty Name="HouseholdsBySize7PlusPersonHousehold2010" ColumnName="HouseholdsBySize7PlusPersonHousehold2010" />
+                <ScalarProperty Name="HouseholdsByTenureAndMortgageStatusTotal2010" ColumnName="HouseholdsByTenureAndMortgageStatusTotal2010" />
+                <ScalarProperty Name="HouseholdsByTenureAndMortgageStatusOwnerOccupied2010" ColumnName="HouseholdsByTenureAndMortgageStatusOwnerOccupied2010" />
+                <ScalarProperty Name="HouseholdsByTenureAndMortgageStatusOwnedWithAMortgageLoan2010" ColumnName="HouseholdsByTenureAndMortgageStatusOwnedWithAMortgageLoan2010" />
+                <ScalarProperty Name="HouseholdsByTenureAndMortgageStatusOwnedFreeAndClear2010" ColumnName="HouseholdsByTenureAndMortgageStatusOwnedFreeAndClear2010" />
+                <ScalarProperty Name="HouseholdsByTenureAndMortgageStatusRenterOccupied2010" ColumnName="HouseholdsByTenureAndMortgageStatusRenterOccupied2010" />
+                <ScalarProperty Name="Top3TapestrySegments1" ColumnName="Top3TapestrySegments1" />
+                <ScalarProperty Name="Top3TapestrySegments2" ColumnName="Top3TapestrySegments2" />
+                <ScalarProperty Name="Top3TapestrySegments3" ColumnName="Top3TapestrySegments3" />
+                <ScalarProperty Name="ConsumerSpendingApparelAndServicesTotal2013" ColumnName="ConsumerSpendingApparelAndServicesTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingApparelAndServicesAverageSpent2013" ColumnName="ConsumerSpendingApparelAndServicesAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingApparelAndServicesSpendingPotentialIndex2013" ColumnName="ConsumerSpendingApparelAndServicesSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingComputersAndAccessories2013" ColumnName="ConsumerSpendingComputersAndAccessories2013" />
+                <ScalarProperty Name="ConsumerSpendingComputersAndAccessoriesAverageSpent2013" ColumnName="ConsumerSpendingComputersAndAccessoriesAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingComputersAndAccessoriesSpendingPotentialIndex2013" ColumnName="ConsumerSpendingComputersAndAccessoriesSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingEducationTotal2013" ColumnName="ConsumerSpendingEducationTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingEducationAverageSpent2013" ColumnName="ConsumerSpendingEducationAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingEducationSpendingPotentialIndex2013" ColumnName="ConsumerSpendingEducationSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingEntertainmentRecreationTotal2013" ColumnName="ConsumerSpendingEntertainmentRecreationTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingEntertainmentRecreationAverageSpent2013" ColumnName="ConsumerSpendingEntertainmentRecreationAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingEntertainmentRecreationSpendingPotentialIndex2013" ColumnName="ConsumerSpendingEntertainmentRecreationSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingFoodAtHomeTotal2013" ColumnName="ConsumerSpendingFoodAtHomeTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingFoodAtHomeAverageSpent2013" ColumnName="ConsumerSpendingFoodAtHomeAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingFoodAtHomeSpendingPotentialIndex2013" ColumnName="ConsumerSpendingFoodAtHomeSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingFoodAtHomeFoodAwayFromHomeTotal2013" ColumnName="ConsumerSpendingFoodAtHomeFoodAwayFromHomeTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingFoodAtHomeFoodAwayFromHomeAverageSpent2013" ColumnName="ConsumerSpendingFoodAtHomeFoodAwayFromHomeAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingFoodAtHomeFoodAwayFromHomeSpendingPotentialIndex2013" ColumnName="ConsumerSpendingFoodAtHomeFoodAwayFromHomeSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingHealthCareTotal2013" ColumnName="ConsumerSpendingHealthCareTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingHealthCareAverageSpent2013" ColumnName="ConsumerSpendingHealthCareAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingHealthCareSpendingPotentialIndex2013" ColumnName="ConsumerSpendingHealthCareSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingHHFurnishingsAndEquipmentTotal2013" ColumnName="ConsumerSpendingHHFurnishingsAndEquipmentTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingHHFurnishingsAndEquipmentAverageSpent2013" ColumnName="ConsumerSpendingHHFurnishingsAndEquipmentAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingHHFurnishingsAndEquipmentSpendingPotentialIndex2013" ColumnName="ConsumerSpendingHHFurnishingsAndEquipmentSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingInvestmentsTotal2013" ColumnName="ConsumerSpendingInvestmentsTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingInvestmentsAverageSpent2013" ColumnName="ConsumerSpendingInvestmentsAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingInvestmentsSpendingPotentialIndex2013" ColumnName="ConsumerSpendingInvestmentsSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingRetailGoodsTotal2013" ColumnName="ConsumerSpendingRetailGoodsTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingRetailGoodsAverageSpent2013" ColumnName="ConsumerSpendingRetailGoodsAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingRetailGoodsSpendingPotentialIndex2013" ColumnName="ConsumerSpendingRetailGoodsSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingShelterTotal2013" ColumnName="ConsumerSpendingShelterTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingShelterAverageSpent2013" ColumnName="ConsumerSpendingShelterAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingShelterSpendingPotentialIndex2013" ColumnName="ConsumerSpendingShelterSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingTVVideoAudioTotal2013" ColumnName="ConsumerSpendingTVVideoAudioTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingTVVideoAudioAverageSpent2013" ColumnName="ConsumerSpendingTVVideoAudioAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingTVVideoAudioSpendingPotentialIndex2013" ColumnName="ConsumerSpendingTVVideoAudioSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingTravelTotal2013" ColumnName="ConsumerSpendingTravelTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingTravelAverageSpent2013" ColumnName="ConsumerSpendingTravelAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingTravelSpendingPotentialIndex2013" ColumnName="ConsumerSpendingTravelSpendingPotentialIndex2013" />
+                <ScalarProperty Name="ConsumerSpendingVehicleMaintenanceAndRepairsTotal2013" ColumnName="ConsumerSpendingVehicleMaintenanceAndRepairsTotal2013" />
+                <ScalarProperty Name="ConsumerSpendingVehicleMaintenanceAndRepairsAverageSpent2013" ColumnName="ConsumerSpendingVehicleMaintenanceAndRepairsAverageSpent2013" />
+                <ScalarProperty Name="ConsumerSpendingVehicleMaintenanceAndRepairsSpendingPotentialIndex2013" ColumnName="ConsumerSpendingVehicleMaintenanceAndRepairsSpendingPotentialIndex2013" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="Segment1Percent" ColumnName="Segment1Percent" />
+                <ScalarProperty Name="Segment2Percent" ColumnName="Segment2Percent" />
+                <ScalarProperty Name="Segment3Percent" ColumnName="Segment3Percent" />
+                <ScalarProperty Name="Top3TapestrySegments1Id" ColumnName="Top3TapestrySegments1Id" />
+                <ScalarProperty Name="Top3TapestrySegments2Id" ColumnName="Top3TapestrySegments2Id" />
+                <ScalarProperty Name="Top3TapestrySegments3Id" ColumnName="Top3TapestrySegments3Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Searches">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.Search">
+              <MappingFragment StoreEntitySet="Search">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SearchName" ColumnName="SearchName" />
+                <ScalarProperty Name="SearchDate" ColumnName="SearchDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SearchCriterias">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.SearchCriteria">
+              <MappingFragment StoreEntitySet="SearchCriteria">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CriteriaName" ColumnName="CriteriaName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SearchToSearchCriterias">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.SearchToSearchCriteria">
+              <MappingFragment StoreEntitySet="SearchToSearchCriteria">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SearchId" ColumnName="SearchId" />
+                <ScalarProperty Name="SearchCriteriaId" ColumnName="SearchCriteriaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Segments">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.Segment">
+              <MappingFragment StoreEntitySet="Segment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SegmentName" ColumnName="SegmentName" />
+                <ScalarProperty Name="IncomeClass" ColumnName="IncomeClass" />
+                <ScalarProperty Name="MedianAge" ColumnName="MedianAge" />
+                <ScalarProperty Name="MedianHouseholdIncome" ColumnName="MedianHouseholdIncome" />
+                <ScalarProperty Name="MedianNetWorth" ColumnName="MedianNetWorth" />
+                <ScalarProperty Name="MedianHomeValue" ColumnName="MedianHomeValue" />
+                <ScalarProperty Name="PercentFamilyHouseholds" ColumnName="PercentFamilyHouseholds" />
+                <ScalarProperty Name="PercentFamiliesWithChildren" ColumnName="PercentFamiliesWithChildren" />
+                <ScalarProperty Name="AverageFamilySize" ColumnName="AverageFamilySize" />
+                <ScalarProperty Name="PercentBlack" ColumnName="PercentBlack" />
+                <ScalarProperty Name="PercentHispanic" ColumnName="PercentHispanic" />
+                <ScalarProperty Name="PercentAsian" ColumnName="PercentAsian" />
+                <ScalarProperty Name="PercentWhite" ColumnName="PercentWhite" />
+                <ScalarProperty Name="PercentTwoRaces" ColumnName="PercentTwoRaces" />
+                <ScalarProperty Name="PercentDifficultySpeakingEnglish" ColumnName="PercentDifficultySpeakingEnglish" />
+                <ScalarProperty Name="LaborForceParticipation" ColumnName="LaborForceParticipation" />
+                <ScalarProperty Name="UnemploymentRate" ColumnName="UnemploymentRate" />
+                <ScalarProperty Name="PercentWageEarners" ColumnName="PercentWageEarners" />
+                <ScalarProperty Name="TypicalFamilyOwnsOrRents" ColumnName="TypicalFamilyOwnsOrRents" />
+                <ScalarProperty Name="HomeOwndershipPercent" ColumnName="HomeOwndershipPercent" />
+                <ScalarProperty Name="HousingBuiltBefore" ColumnName="HousingBuiltBefore" />
+                <ScalarProperty Name="TopPurchasedItems" ColumnName="TopPurchasedItems" />
+                <ScalarProperty Name="PhoneCallTypes" ColumnName="PhoneCallTypes" />
+                <ScalarProperty Name="Trips" ColumnName="Trips" />
+                <ScalarProperty Name="Stores" ColumnName="Stores" />
+                <ScalarProperty Name="FavoriteDrugStore" ColumnName="FavoriteDrugStore" />
+                <ScalarProperty Name="Watches" ColumnName="Watches" />
+                <ScalarProperty Name="Reads" ColumnName="Reads" />
+                <ScalarProperty Name="ListensTo" ColumnName="ListensTo" />
+                <ScalarProperty Name="Attends" ColumnName="Attends" />
+                <ScalarProperty Name="Drinks" ColumnName="Drinks" />
+                <ScalarProperty Name="AutomobileBrandPreference" ColumnName="AutomobileBrandPreference" />
+                <ScalarProperty Name="EmploymentTypes" ColumnName="EmploymentTypes" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="GeographicClusterLocations" ColumnName="GeographicClusterLocations" />
+                <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensities">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity">
+              <MappingFragment StoreEntitySet="SimilarZipCodesMedianAgeIncomeNetWorthPopulationDensity">
+                <ScalarProperty Name="ZIP_Codes" ColumnName="ZIP Codes" />
+                <ScalarProperty Name="C2014_Population_Density" ColumnName="2014 Population Density" />
+                <ScalarProperty Name="C2014_Median_Age" ColumnName="2014 Median Age" />
+                <ScalarProperty Name="C2014_Median_Net_Worth" ColumnName="2014 Median Net Worth" />
+                <ScalarProperty Name="C2014_Median_Household_Income" ColumnName="2014 Median Household Income" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ZipCode5" ColumnName="ZipCode5" />
+                <ScalarProperty Name="ZipCodeId" ColumnName="ZipCodeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeSlice">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.TimeSlouse">
+              <MappingFragment StoreEntitySet="TimeSlice">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TimeSliceBeginDate" ColumnName="TimeSliceBeginDate" />
+                <ScalarProperty Name="TimeSliceEndDate" ColumnName="TimeSliceEndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USStates">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.USState">
+              <MappingFragment StoreEntitySet="USState">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StateAbbreviation" ColumnName="StateAbbreviation" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZipCodes">
+            <EntityTypeMapping TypeName="Lp_DemographicDataModel.ZipCode">
+              <MappingFragment StoreEntitySet="ZipCode">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ZipCode1" ColumnName="ZipCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Lp_DemographicDataModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Lp_DemographicDataModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Lp_DemographicDataModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Lp_DemographicDataModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Lp_DemographicDataModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Lp_DemographicDataModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Lp_DemographicDataModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Lp_DemographicDataModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Lp_DemographicDataModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Liberty Power</LicensedTo>
+    <LicenseType>Developer Small Business</LicenseType>
+    <LicenseNote>Limited to 1 developer.</LicenseNote>
+    <OrderID>121204102606</OrderID>
+    <OEM>This is not a non-redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Words for .NET</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>55cbebb9-ad5f-4700-85fd-bf6d0fee9dd3</SerialNumber>
+    <SubscriptionExpiry>20131204</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>ElS56Cjc+4FUg1mNsxqx3V6SX19W9mFNKpQffwfFzIKC/rUv+9jU2sJYa25Nc5Dj9gwYWlYZ7XWXlxbTqWZ73SW7vLFT7LGkvzX3WTK1Cx6D8OtgxGl6WxoqfKTIlKBjLJw6a2ZI5kep5RnD1glYS+tZBUrMlPYvLlz0ZMaaflU=</Signature>
+</License>

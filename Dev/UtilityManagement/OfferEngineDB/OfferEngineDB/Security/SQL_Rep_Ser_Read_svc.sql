@@ -1,0 +1,2 @@
+﻿CREATE USER [SQL_Rep_Ser_Read_svc] WITHOUT LOGIN;
+

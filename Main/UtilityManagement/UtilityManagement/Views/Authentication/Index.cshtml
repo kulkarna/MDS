@@ -1,0 +1,56 @@
+﻿@model UtilityManagement.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="edit_section">
+        <div class="edit_header">
+            <img src="~/Images/user-icon.png" width="80px">
+            <div class="edit_header_desc"><h4> Users</h4>
+            <h3>Login</h3>
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Login</legend>
+                <div class="textblock">
+                    <div class="details-data-section">
+                       <div id="Gen"  class="activable">
+                            <div id="hideContent" class="editdetails">
+                                <div class="details-full-section">
+                                    <div class="details-left-section">
+                                        <div class="editor-label">@Html.LabelFor(model => model.UserName, "User Name")</div>
+                                        <div class="editor-field">@Html.EditorFor(model => model.UserName)</div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">@Html.LabelFor(model => model.Password, "Password")</div>
+                                        <div class="editor-field">@Html.EditorFor(model => model.Password) </div>
+                                        @if (Session["LoginError"] == "true")
+                                        {
+                                            <br /><br />
+                                            <div class="editor-label"></div><div class="editor-field"><span class="field-validation-error" data-valmsg-for="Login" data-valmsg-replace="true" style="width:1000px">Invalid user name password combination.</span></div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                       <br />
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+
+    });

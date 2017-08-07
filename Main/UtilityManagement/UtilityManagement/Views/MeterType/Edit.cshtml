@@ -1,0 +1,180 @@
+﻿@model DataAccessLayerEntityFramework.MeterType
+@{
+    ViewBag.Title = "Edit Meter Type";
+}
+@using UserInterfaceValidationExtensions
+
+<script>
+    $("#UtilityCompanyId option").attr("disabled", "true");
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+     
+     <div class="edit_section">
+        <div class="edit_header">
+            <div class="folder_ico"></div>
+            <div class="edit_header_desc"><h4>Meter Type</h4>
+            <h3>Edit Record</h3>
+            @{string displayName = @Model.UtilityCompany.UtilityCode + " " + @Model.MeterTypeCode;}
+                @displayName
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Meter Type</legend>
+
+                @Html.HiddenFor(model => model.Id)
+                  <div class="textblock">
+                    <div class="details-data-section">
+                    <div id="Gen"  class="activable">
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                    <div id="hideContent" class="editdetails">
+                    <div class="details-full-section">
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UtilityCompanyId, "Utility Company")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.UtilityCompany.UtilityCode)
+                            @Html.ValidationMessageFor(model => model.UtilityCompanyId)
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.MeterTypeCode, "Meter Type Code")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.MeterTypeCode)
+                            @Html.ValidationMessageFor(model => model.MeterTypeCode)
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.MeterTypeCodeValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="MeterTypeCode" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Description)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Description)
+                            @Html.ValidationMessageFor(model => model.Description)
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.DescriptionValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="Description" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.AccountTypeId, "Account Type")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("AccountTypeId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.AccountTypeId, "The current Account Type field value is invalid.")
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LpStandardMeterType, "Liberty Power Standard Meter Type")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.LpStandardMeterType)
+                            @Html.ValidationMessageFor(model => model.LpStandardMeterType)
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.LpStandardMeterTypeValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="LpStandardMeterType" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Sequence)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Sequence)
+                            @Html.ValidationMessageFor(model => model.Sequence)
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.SequenceMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="Sequence" data-valmsg-replace="true">The current Sequence field value is invalid.</span>
+                            }
+                        </div>
+                    </div>
+                    </div>
+                        </div>
+                       
+                     <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Inactive)
+                            @Html.ValidationMessageFor(model => model.Inactive)
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                            @Html.ValidationMessageFor(model => model.CreatedBy)
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                            @Html.ValidationMessageFor(model => model.CreatedDate)
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                    </div></div>
+                </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+
+@section Scripts {@Scripts.Render("~/bundles/jqueryval")}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

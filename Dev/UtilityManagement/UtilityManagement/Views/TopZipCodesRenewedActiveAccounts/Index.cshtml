@@ -1,0 +1,81 @@
+﻿@model UtilityManagement.Models.TopZipCodesActiveRenewedAccountsModel
+@{
+    ViewBag.Title = "Top Zip Codes Active Renewed Accounts Index";
+}
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Top Zip Codes Active Renewed Accounts</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button></div>
+        </div>
+    </div>
+    <div class="details-data-section">
+
+        <div class="detail_table">
+            <div class="left_container">
+                <table class="index">
+                    <tr>
+                        <th>Row Count = @this.Model.TopZipCodesActiveRenewedAccountsItems.Count</th>
+                        <th>Zip Code</th>
+                        <th>Description</th>
+                        <th>Residential Count</th>
+                        <th>SOHO Count</th>
+                        <th>Commercial Count</th>
+                        <th>LCI Count</th>
+                        <th>Residential SOHO Count</th>
+                        <th>Mass Market Count</th>
+                        <th>Commercial LCI Count</th>
+                        <th>Total Count</th>
+                    </tr>
+                        @{
+                            if (this.Model == null || this.Model.TopZipCodesActiveRenewedAccountsItems == null)
+                            {
+                                <tr><td>Model is null</td></tr>
+                            }
+                            else
+                            {
+                                if (this.Model.TopZipCodesActiveRenewedAccountsItems.Count == 0)
+                                {
+                                            <tr><td>Model.Count==0</td></tr>
+                                }
+                                else
+                                {
+                                    int count = 1;
+                                    foreach (var item in this.Model.TopZipCodesActiveRenewedAccountsItems)
+                                    {
+                                        <tr>
+                                            <td>@count</td>
+                                            <td>@item.ZipCode</td>
+                                            <td>@item.Description</td>
+                                            <td>@item.ResidentialAccountCount</td>
+                                            <td>@item.SohoAccountCount</td>
+                                            <td>@item.CommercialAccountCount</td>
+                                            <td>@item.LciAccountCount</td>
+                                            <td>@item.ResidentialAndSohoAccountCount</td>
+                                            <td>@item.MassMarketAccountCount</td>
+                                            <td>@item.CommercialAndLciAccountCount</td>
+                                            <td>@item.TotalAccountCount</td>
+                                        </tr>
+                                        count++;
+                                    }
+                                }
+                            }
+                        }
+                </table>
+            </div>
+        </div>
+        <div class="right_chart">
+        </div>
+    </div>
+</div>
+@*    </div>
+</div>*@
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

@@ -1,0 +1,941 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27F550F9-6BA9-4046-AF36-6CA983068B1D}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtilityManagement</RootNamespace>
+    <AssemblyName>UtilityManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CuteWebUI.AjaxUploader">
+      <HintPath>..\lib\CuteWebUI.AjaxUploader.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.MVC.2.1.1\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.6.1.1\lib\net45\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.6.1.1\lib\net45\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\SharedVersionInfo.cs">
+      <Link>Properties\SharedVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ChartHelpers\ChartBuilder.cs" />
+    <Compile Include="ChartHelpers\MeterReadCalendarCountChartBuilder.cs" />
+    <Compile Include="ChartHelpers\LpBillingCountChartBuilder.cs" />
+    <Compile Include="ChartHelpers\IdrRuleCountChartBuilder.cs" />
+    <Compile Include="ChartHelpers\HistoricalUsageRequestParameterFunnelChartBuilder.cs" />
+    <Compile Include="ChartHelpers\HistoricalUsageFunnelChartBuilder.cs" />
+    <Compile Include="ChartHelpers\HistoricalUsageChartBuilder.cs" />
+    <Compile Include="ChartHelpers\PorCountChartBuilder.cs" />
+    <Compile Include="ChartHelpers\SalesByCategoryChartBuilder.cs" />
+    <Compile Include="ChartHelpers\Top25ZipCodesChartBuilder.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountInfoFieldRequiredController.cs" />
+    <Compile Include="Controllers\AccountTypeController.cs" />
+    <Compile Include="Controllers\AuditLoadProfileController.cs" />
+    <Compile Include="Controllers\AuditRequestModeHistoricalUsageController.cs" />
+    <Compile Include="Controllers\AuditRequestModeIcapController.cs" />
+    <Compile Include="Controllers\AuditRequestModeIdrController.cs" />
+    <Compile Include="Controllers\AuditUtilityCompanyController.cs" />
+    <Compile Include="Controllers\AuditMeterTypeController.cs" />
+    <Compile Include="Controllers\AuditRateClassController.cs" />
+    <Compile Include="Controllers\AuditServiceClassController.cs" />
+    <Compile Include="Controllers\AuditTariffCodeController.cs" />
+    <Compile Include="Controllers\CapacityThresholdController.cs" />
+    <Compile Include="Controllers\ChartsController.cs" />
+    <Compile Include="Controllers\AccountInfoFieldController.cs" />
+    <Compile Include="Controllers\CompositeIndexAction.cs" />
+    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\AuditAccountInfoFieldRequiredController.cs" />
+    <Compile Include="Controllers\AuditBillingTypeController.cs" />
+    <Compile Include="Controllers\BillingAccountPatternController.cs" />
+    <Compile Include="Controllers\ControllerBaseWithUtilDropDown.cs" />
+    <Compile Include="Controllers\ControllerBaseWithoutUtilDropDown.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\PaymentTermController.cs" />
+    <Compile Include="Controllers\MeterReadCalendarController.cs" />
+    <Compile Include="Controllers\DemographicDataByZipCodeRenewedController.cs" />
+    <Compile Include="Controllers\TopSegmentsRenewedController.cs" />
+    <Compile Include="Controllers\SimilarZipCodesRenewedController.cs" />
+    <Compile Include="Controllers\TopZipCodesRenewedActiveAccountsController.cs" />
+    <Compile Include="Controllers\TopZipCodesActiveAccountsController.cs" />
+    <Compile Include="Controllers\SimilarZipCodesController.cs" />
+    <Compile Include="Controllers\UnauthorizedUserController.cs" />
+    <Compile Include="Controllers\ZipCodesWithSimilarDemographicDataController.cs" />
+    <Compile Include="Controllers\DemographicDataByZipCodeController.cs" />
+    <Compile Include="Controllers\TopSegmentsController.cs" />
+    <Compile Include="Controllers\Top25ZipCodesController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ICapTCapRefreshPeriodController.cs" />
+    <Compile Include="Controllers\StrataPatternController.cs" />
+    <Compile Include="Controllers\ServiceAddressZipPatternController.cs" />
+    <Compile Include="Controllers\NameKeyPatternController.cs" />
+    <Compile Include="Controllers\MeterNumberPatternController.cs" />
+    <Compile Include="Controllers\IdrController.cs" />
+    <Compile Include="Controllers\LoadProfileSelectList.cs" />
+    <Compile Include="Controllers\LoadProfileSelectListItem.cs" />
+    <Compile Include="Controllers\LpBillingTypeController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\PurchaseOfReceivableController.cs" />
+    <Compile Include="Controllers\LoadProfileAliasController.cs" />
+    <Compile Include="Controllers\LpStandardLoadProfileController.cs" />
+    <Compile Include="Controllers\LpStandardTariffCodeController.cs" />
+    <Compile Include="Controllers\RateClassSelectList.cs" />
+    <Compile Include="Controllers\RateClassSelectListItem.cs" />
+    <Compile Include="Controllers\ServiceAccountPatternController.cs" />
+    <Compile Include="Controllers\TariffCodeAliasController.cs" />
+    <Compile Include="Controllers\RateClassAliasController.cs" />
+    <Compile Include="Controllers\LpStandardRateClassController.cs" />
+    <Compile Include="Controllers\RequestModeHistoricalUsageParameterController.cs" />
+    <Compile Include="Controllers\LoadProfileController.cs" />
+    <Compile Include="Controllers\MeterTypeController.cs" />
+    <Compile Include="Controllers\RateClassController.cs" />
+    <Compile Include="Controllers\RequestModeIcapController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RequestModeEnrollmentTypeController.cs" />
+    <Compile Include="Controllers\RequestModeHistoricalUsageController.cs" />
+    <Compile Include="Controllers\RequestModeIdrController.cs" />
+    <Compile Include="Controllers\RequestModeTypeController.cs" />
+    <Compile Include="Controllers\RequestModeTypeGenreController.cs" />
+    <Compile Include="Controllers\RequestModeTypeToRequestModeEnrollmentTypeController.cs" />
+    <Compile Include="Controllers\RequestModeTypeToRequestModeTypeGenreController.cs" />
+    <Compile Include="Controllers\TariffCodeController.cs" />
+    <Compile Include="Controllers\TariffCodeSelectList.cs" />
+    <Compile Include="Controllers\TariffCodeSelectListItem.cs" />
+    <Compile Include="Controllers\UtilityCompanyController.cs" />
+    <Compile Include="FileUploadProcessors\UtilityCompanyFileProcessor.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClasses\MyHtmlHelpers.cs" />
+    <Compile Include="Models\AccountInfoFieldRequiredIndexModel.cs" />
+    <Compile Include="Models\AccountInfoFieldRequiredModel.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AnnualSalesDataModel.cs" />
+    <Compile Include="Models\CapacityTresholdListModel.cs" />
+    <Compile Include="Models\CapacityTresholdModel.cs" />
+    <Compile Include="Models\PaymentTermListModel.cs" />
+    <Compile Include="Models\PaymentTermModel.cs" />
+    <Compile Include="Models\MeterReadCalendarListModel.cs" />
+    <Compile Include="Models\MeterReadCalendarModel.cs" />
+    <Compile Include="Models\PurchaseOfReceivableModelList.cs" />
+    <Compile Include="Models\RequestModeHistoricalUsageList.cs" />
+    <Compile Include="Models\RequestModeIcap.cs" />
+    <Compile Include="Models\RequestModeIdrModel.cs" />
+    <Compile Include="Models\TopZipCodesActiveRenewedAccountsItem.cs" />
+    <Compile Include="Models\TopZipCodesActiveRenewedAccountsModel.cs" />
+    <Compile Include="Models\TopZipCodesActiveAccountsItem.cs" />
+    <Compile Include="Models\TopZipCodesActiveAccountsModel.cs" />
+    <Compile Include="Models\DemographicDataByZipCodeItem.cs" />
+    <Compile Include="Models\DemographicDataByZipCodeModel.cs" />
+    <Compile Include="Models\SimilarZipCodesItem.cs" />
+    <Compile Include="Models\SimilarZipCodesModel.cs" />
+    <Compile Include="Models\TopDemographicSegmentsItem.cs" />
+    <Compile Include="Models\TopDemographicSegmentsModel.cs" />
+    <Compile Include="Models\Top25ZipCodesItem.cs" />
+    <Compile Include="Models\Top25ZipCodesModel.cs" />
+    <Compile Include="Models\FileDownloadModel.cs" />
+    <Compile Include="Models\FileUploadModel.cs" />
+    <Compile Include="Models\HuChartDataModel.cs" />
+    <Compile Include="Models\IdrRuleCreateModel.cs" />
+    <Compile Include="Models\IdrRuleEditListModel.cs" />
+    <Compile Include="Models\IdrRuleEditRowModel.cs" />
+    <Compile Include="Models\IdrRuleModel.cs" />
+    <Compile Include="Models\IdrRulePerEnrollmentTypeModel.cs" />
+    <Compile Include="Models\LibertyPowerBillingTypeListModel.cs" />
+    <Compile Include="Models\LibertyPowerBillingTypeModel.cs" />
+    <Compile Include="Models\LoadProfileModel.cs" />
+    <Compile Include="Models\PorCountDataModel.cs" />
+    <Compile Include="Models\PurchaseOfReceivableModel.cs" />
+    <Compile Include="Models\ReportModel.cs" />
+    <Compile Include="Models\TariffCodeModel.cs" />
+    <Compile Include="Models\RateClassModel.cs" />
+    <Compile Include="Models\RequestModeHistoricalUsageModel.cs" />
+    <Compile Include="Models\UnauthorizedUserModel.cs" />
+    <Compile Include="Models\ZipCodesWithSimilarDemographicDataItem.cs" />
+    <Compile Include="Models\ZipCodesWithSimilarDemographicDataModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\coretools\CrmSvcUtil.exe" />
+    <Content Include="bin\coretools\CrmSvcUtil.xml" />
+    <Content Include="bin\coretools\Microsoft.Xrm.Sdk.dll" />
+    <Content Include="bin\coretools\SolutionPackager.exe" />
+    <Content Include="Content\core.css" />
+    <Content Include="Content\crm_colors.css" />
+    <Content Include="Content\images\black-asc.gif" />
+    <Content Include="Content\images\black-desc.gif" />
+    <Content Include="Content\images\black-unsorted.gif" />
+    <Content Include="Content\images\CapacityTreshold.png" />
+    <Content Include="Content\images\dropbox-asc-hovered.png" />
+    <Content Include="Content\images\dropbox-asc.png" />
+    <Content Include="Content\images\dropbox-desc-hovered.png" />
+    <Content Include="Content\images\dropbox-desc.png" />
+    <Content Include="Content\images\green-asc.gif" />
+    <Content Include="Content\images\green-desc.gif" />
+    <Content Include="Content\images\green-header.gif" />
+    <Content Include="Content\images\green-unsorted.gif" />
+    <Content Include="Content\images\ice-asc.gif" />
+    <Content Include="Content\images\ice-desc.gif" />
+    <Content Include="Content\images\ice-unsorted.gif" />
+    <Content Include="Content\images\white-asc.gif" />
+    <Content Include="Content\images\white-desc.gif" />
+    <Content Include="Content\images\white-unsorted.gif" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery.treeview.css" />
+    <Content Include="Content\second.css" />
+    <Content Include="Content\Site_9.9.css" />
+    <Content Include="Content\theme.default.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\uxguidestyles.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\calendar.jpg" />
+    <Content Include="Images\CapacityTreshold.png" />
+    <Content Include="Images\meter_read_calendar_large_icon.png" />
+    <Content Include="Images\payment_term_large_icon.png" />
+    <Content Include="Images\payment_term_small_icon.png" />
+    <Content Include="Images\StopSignPerson.jpg" />
+    <Content Include="Images\StopTalkToTheHand.png" />
+    <Content Include="Images\Stop_sign.png" />
+    <Content Include="Images\CapacityTreshhold.png" />
+    <Content Include="Images\user-icon.png" />
+    <Content Include="Images\user_logout-icon.gif" />
+    <Content Include="Licenses\Aspose.Cells.lic" />
+    <None Include="Properties\PublishProfiles\UtilityManagementDeployment.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Images\account_info_large_icon.png" />
+    <Content Include="Images\account_info_reqd_icon.png" />
+    <Content Include="Images\arrow_close.png" />
+    <Content Include="Images\arrow_down.png" />
+    <Content Include="Images\arrow_open.png" />
+    <Content Include="Images\arrow_right.png" />
+    <Content Include="Images\arrow_up.png" />
+    <Content Include="Images\bilingtype_large_icon.png" />
+    <Content Include="Images\billingicon.jpg" />
+    <Content Include="Images\billingicon.png" />
+    <Content Include="Images\billing_ico.png" />
+    <Content Include="Images\billing_pat_ico.png" />
+    <Content Include="Images\billing_pat_large.png" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\ButtonNormalGradient.png" />
+    <Content Include="Images\ButtonSelectedGradient.png" />
+    <Content Include="Images\close_ico.png" />
+    <Content Include="Images\control_imgs.png" />
+    <Content Include="Images\detail.png" />
+    <Content Include="Images\dummyimage.gif" />
+    <Content Include="Images\dummy_img.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\folder_ico.png" />
+    <Content Include="Images\FormNavTreeLine.png" />
+    <Content Include="Images\FormNavTreeLineBottom.png" />
+    <Content Include="Images\GridColumnArrowDown_Blue.png" />
+    <Content Include="Images\GridColumnArrowUp_Blue.png" />
+    <Content Include="Images\GridColumnGradientHover_Blue.png" />
+    <Content Include="Images\GridColumnGradient_Blue.png" />
+    <Content Include="Images\GridColumnVerticalLine_Blue.png" />
+    <Content Include="Images\GridToolbarDivider_White.png" />
+    <Content Include="Images\hbar.png" />
+    <Content Include="Images\help_ico.png" />
+    <Content Include="Images\hide_chart.png" />
+    <Content Include="Images\historical_ico.png" />
+    <Content Include="Images\historical_large_icon.png" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\Hover_16.png" />
+    <Content Include="Images\huParameter_ico.png" />
+    <Content Include="Images\huParam_large_icon.png" />
+    <Content Include="Images\icap_ico.png" />
+    <Content Include="Images\icap_ico_large.png" />
+    <Content Include="Images\icap_ico_small.png" />
+    <Content Include="Images\icap_large_icon.png" />
+    <Content Include="Images\idrRules_ico.png" />
+    <Content Include="Images\idr_ico.png" />
+    <Content Include="Images\idr_large_icon.png" />
+    <Content Include="Images\idr_rule_large_icon.png" />
+    <Content Include="Images\ImageStrip.png" />
+    <Content Include="Images\leftnav_open.png" />
+    <Content Include="Images\loadProfile_ico.png" />
+    <Content Include="Images\load_profile_large_icon.png" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\metericon.jpg" />
+    <Content Include="Images\MeterNumber.jpg" />
+    <Content Include="Images\meterType_ico.png" />
+    <Content Include="Images\meter_no_ico.png" />
+    <Content Include="Images\meter_no_large.png" />
+    <Content Include="Images\name_key_ico.png" />
+    <Content Include="Images\name_key_ico_tiny.png" />
+    <Content Include="Images\NavExpandedArrow16_Silver.gif" />
+    <Content Include="Images\navscroll.png" />
+    <Content Include="Images\new.png" />
+    <Content Include="Images\new_activity_ico.png" />
+    <Content Include="Images\new_record_ico.png" />
+    <Content Include="Images\OpenFolderIcon.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\print_preview_ico.png" />
+    <Content Include="Images\properties_ico.png" />
+    <Content Include="Images\purchaseReceivables_ico.png" />
+    <Content Include="Images\purchase_large_icon.png" />
+    <Content Include="Images\rateClass_ico.png" />
+    <Content Include="Images\rate_large_icon.png" />
+    <Content Include="Images\recently_viewed.png" />
+    <Content Include="Images\requestmode.png" />
+    <Content Include="Images\ribbon_top.png" />
+    <Content Include="Images\rules.jpg" />
+    <Content Include="Images\rules.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\saveClose_ico.png" />
+    <Content Include="Images\saveNew_ico.png" />
+    <Content Include="Images\saves_ico.png" />
+    <Content Include="Images\save_close.png" />
+    <Content Include="Images\save_new.png" />
+    <Content Include="Images\search_ico.png" />
+    <Content Include="Images\serviceicon.jpg" />
+    <Content Include="Images\service_address_ico.png" />
+    <Content Include="Images\service_address_large.png" />
+    <Content Include="Images\sortAscending_arrow.png" />
+    <Content Include="Images\sortDescending_arrow.png" />
+    <Content Include="Images\starta_ico.png" />
+    <Content Include="Images\starta_pat_large.png" />
+    <Content Include="Images\strataicon.jpg" />
+    <Content Include="Images\submenu_hover.png" />
+    <Content Include="Images\tabbg.png" />
+    <Content Include="Images\tariffCode_ico.png" />
+    <Content Include="Images\tariff_large_icon.png" />
+    <Content Include="Images\th.jpg" />
+    <Content Include="Images\th_border.png" />
+    <Content Include="Images\th_large_icon.png" />
+    <Content Include="Images\treeview-default.gif" />
+    <Content Include="Images\Utility_ico.png" />
+    <Content Include="Images\utility_large_icon.jpg" />
+    <Content Include="Images\utility_large_icon.png" />
+    <Content Include="Images\view_chart.png" />
+    <Content Include="Images\view_chart_hover.png" />
+    <Content Include="Images\XLDownload.png" />
+    <Content Include="Images\XLUpload.png" />
+    <Content Include="Images\zipicon.jpg" />
+    <Content Include="Scripts\ddaccordion %282%29.js" />
+    <Content Include="Scripts\ddaccordion.js" />
+    <Content Include="Scripts\dropdown-menu.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.cookies.js" />
+    <Content Include="Scripts\jquery.fixheadertable.min.js" />
+    <Content Include="Scripts\jquery.nav.js" />
+    <Content Include="Scripts\jquery.scrollTo.js" />
+    <Content Include="Scripts\jquery.splitter.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.widgets.min.js" />
+    <Content Include="Scripts\jquery.treeview.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Views\LpBillingType\Create.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\LpBillingType\Details.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\LpBillingType\Edit.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\LpBillingType\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\LpStandardLoadProfile\Create.cshtml" />
+    <Content Include="Views\RateClass\Create.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\RequestModeEnrollmentType\Create.cshtml" />
+    <Content Include="Views\RequestModeEnrollmentType\Details.cshtml" />
+    <Content Include="Views\RequestModeEnrollmentType\Edit.cshtml" />
+    <Content Include="Views\RequestModeEnrollmentType\Index.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsage\Create.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsage\Details.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsage\Edit.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsage\Index.cshtml" />
+    <Content Include="Views\RequestModeType\Create.cshtml" />
+    <Content Include="Views\RequestModeType\Details.cshtml" />
+    <Content Include="Views\RequestModeType\Edit.cshtml" />
+    <Content Include="Views\RequestModeType\Index.cshtml" />
+    <Content Include="Views\UtilityCompany\Create.cshtml" />
+    <Content Include="Views\UtilityCompany\Details.cshtml" />
+    <Content Include="Views\UtilityCompany\Edit.cshtml" />
+    <Content Include="Views\UtilityCompany\Index.cshtml" />
+    <Content Include="Views\RequestModeTypeToRequestModeEnrollmentType\Index.cshtml" />
+    <Content Include="Views\RequestModeTypeToRequestModeEnrollmentType\Details.cshtml" />
+    <Content Include="Views\RequestModeTypeToRequestModeEnrollmentType\Create.cshtml" />
+    <Content Include="Views\RequestModeTypeToRequestModeEnrollmentType\Edit.cshtml" />
+    <Content Include="Views\RequestModeTypeToRequestModeTypeGenre\Index.cshtml" />
+    <Content Include="Views\RequestModeTypeToRequestModeTypeGenre\Details.cshtml" />
+    <Content Include="Views\RequestModeTypeToRequestModeTypeGenre\Create.cshtml" />
+    <Content Include="Views\RequestModeTypeToRequestModeTypeGenre\Edit.cshtml" />
+    <Content Include="Views\RequestModeTypeGenre\Index.cshtml" />
+    <Content Include="Views\RequestModeTypeGenre\Details.cshtml" />
+    <Content Include="Views\RequestModeTypeGenre\Create.cshtml" />
+    <Content Include="Views\RequestModeTypeGenre\Edit.cshtml" />
+    <Content Include="Views\UserInterfaceForm\Index.cshtml" />
+    <Content Include="Views\UserInterfaceForm\Details.cshtml" />
+    <Content Include="Views\UserInterfaceForm\Create.cshtml" />
+    <Content Include="Views\UserInterfaceForm\Edit.cshtml" />
+    <Content Include="Views\UserInterfaceFormControl\Index.cshtml" />
+    <Content Include="Views\UserInterfaceFormControl\Details.cshtml" />
+    <Content Include="Views\UserInterfaceFormControl\Create.cshtml" />
+    <Content Include="Views\UserInterfaceFormControl\Edit.cshtml" />
+    <Content Include="Views\UserInterfaceControlAndValueGoverningControlVisibility\Index.cshtml" />
+    <Content Include="Views\UserInterfaceControlAndValueGoverningControlVisibility\Details.cshtml" />
+    <Content Include="Views\UserInterfaceControlAndValueGoverningControlVisibility\Create.cshtml" />
+    <Content Include="Views\UserInterfaceControlAndValueGoverningControlVisibility\Edit.cshtml" />
+    <Content Include="Views\UserInterfaceControlVisibility\Index.cshtml" />
+    <Content Include="Views\UserInterfaceControlVisibility\Details.cshtml" />
+    <Content Include="Views\UserInterfaceControlVisibility\Create.cshtml" />
+    <Content Include="Views\UserInterfaceControlVisibility\Edit.cshtml" />
+    <Content Include="Views\AuditUtilityCompany\Index.cshtml" />
+    <Content Include="Views\AuditRequestModeHistoricalUsage\Index.cshtml" />
+    <Content Include="Views\RequestModeIcap\Index.cshtml" />
+    <Content Include="Views\RequestModeIcap\Details.cshtml" />
+    <Content Include="Views\RequestModeIcap\Create.cshtml" />
+    <Content Include="Views\RequestModeIcap\Edit.cshtml" />
+    <Content Include="Views\AuditRequestModeIcap\Index.cshtml" />
+    <Content Include="Views\RateClass\Index.cshtml" />
+    <Content Include="Views\RateClass\Details.cshtml" />
+    <Content Include="Views\RateClass\Edit.cshtml" />
+    <Content Include="Views\AccountType\Index.cshtml" />
+    <Content Include="Views\AccountType\Details.cshtml" />
+    <Content Include="Views\AccountType\Create.cshtml" />
+    <Content Include="Views\AccountType\Edit.cshtml" />
+    <Content Include="Views\MeterType\Index.cshtml" />
+    <Content Include="Views\MeterType\Details.cshtml" />
+    <Content Include="Views\MeterType\Create.cshtml" />
+    <Content Include="Views\MeterType\Edit.cshtml" />
+    <Content Include="Views\IdrRule\Index.cshtml" />
+    <Content Include="Views\IdrRule\Details.cshtml" />
+    <Content Include="Views\IdrRule\Create.cshtml" />
+    <Content Include="Views\IdrRule\Edit.cshtml" />
+    <Content Include="Views\RequestModeIdr\Index.cshtml" />
+    <Content Include="Views\RequestModeIdr\Details.cshtml" />
+    <Content Include="Views\RequestModeIdr\Create.cshtml" />
+    <Content Include="Views\RequestModeIdr\Edit.cshtml" />
+    <Content Include="Views\AuditRequestModeIdr\Index.cshtml" />
+    <Content Include="Views\AuditLoadProfile\Index.cshtml" />
+    <Content Include="Views\AuditMeterType\Index.cshtml" />
+    <Content Include="Views\AuditRateClass\Index.cshtml" />
+    <Content Include="Views\AuditServiceClass\Index.cshtml" />
+    <Content Include="Views\AuditTariffCode\Index.cshtml" />
+    <Content Include="Views\Shared\_NavigationPartial.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsageParameter\Create.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsageParameter\Details.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsageParameter\Edit.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsageParameter\Index.cshtml" />
+    <Content Include="Views\LpStandardRateClass\Create.cshtml" />
+    <Content Include="Views\LpStandardRateClass\Details.cshtml" />
+    <Content Include="Views\LpStandardRateClass\Edit.cshtml" />
+    <Content Include="Views\LpStandardRateClass\Index.cshtml" />
+    <Content Include="Views\RateClass\IndexRateClassOnly.cshtml" />
+    <Content Include="Views\RateClassAlias\Create.cshtml" />
+    <Content Include="Views\RateClassAlias\Details.cshtml" />
+    <Content Include="Views\RateClassAlias\Edit.cshtml" />
+    <Content Include="Views\LpStandardLoadProfile\Details.cshtml" />
+    <Content Include="Views\LpStandardLoadProfile\Edit.cshtml" />
+    <Content Include="Views\LpStandardLoadProfile\Index.cshtml" />
+    <Content Include="Views\LpStandardTariffCode\Create.cshtml" />
+    <Content Include="Views\LpStandardTariffCode\Details.cshtml" />
+    <Content Include="Views\LpStandardTariffCode\Edit.cshtml" />
+    <Content Include="Views\LpStandardTariffCode\Index.cshtml" />
+    <Content Include="Views\LoadProfile\Create.cshtml" />
+    <Content Include="Views\LoadProfile\Details.cshtml" />
+    <Content Include="Views\LoadProfile\Edit.cshtml" />
+    <Content Include="Views\LoadProfile\Index.cshtml" />
+    <Content Include="Views\LoadProfile\IndexRateClassOnly.cshtml" />
+    <Content Include="Views\TariffCode\Create.cshtml" />
+    <Content Include="Views\TariffCode\Details.cshtml" />
+    <Content Include="Views\TariffCode\Edit.cshtml" />
+    <Content Include="Views\TariffCode\Index.cshtml" />
+    <Content Include="Views\LoadProfileAlias\Create.cshtml" />
+    <Content Include="Views\LoadProfileAlias\Details.cshtml" />
+    <Content Include="Views\LoadProfileAlias\Edit.cshtml" />
+    <Content Include="Views\TariffCodeAlias\Create.cshtml" />
+    <Content Include="Views\TariffCodeAlias\Details.cshtml" />
+    <Content Include="Views\TariffCodeAlias\Edit.cshtml" />
+    <Content Include="Views\PurchaseOfReceivable\Create.cshtml" />
+    <Content Include="Views\PurchaseOfReceivable\Edit.cshtml" />
+    <Content Include="Views\PurchaseOfReceivable\Details.cshtml" />
+    <Content Include="Views\PurchaseOfReceivable\Index.cshtml" />
+    <Content Include="Views\Charts\Index.cshtml" />
+    <Content Include="Views\Shared\_Charts.cshtml" />
+    <Content Include="Views\PurchaseOfReceivable\PorCountChart.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsage\HuChart.cshtml" />
+    <Content Include="Views\RequestModeIcap\Report.cshtml" />
+    <Content Include="Views\RequestModeHistoricalUsage\Report.cshtml" />
+    <Content Include="Views\PurchaseOfReceivable\Report.cshtml" />
+    <Content Include="Views\LpBillingType\Report.cshtml" />
+    <Content Include="Views\RequestModeIdr\Report.cshtml" />
+    <Content Include="Views\AccountInfoField\Create.cshtml" />
+    <Content Include="Views\AccountInfoField\Details.cshtml" />
+    <Content Include="Views\AccountInfoField\Edit.cshtml" />
+    <Content Include="Views\AccountInfoField\Index.cshtml" />
+    <Content Include="Views\Shared\_RibbonPartial.cshtml" />
+    <Content Include="Views\AccountInfoFieldRequired\Create.cshtml" />
+    <Content Include="Views\AccountInfoFieldRequired\Details.cshtml" />
+    <Content Include="Views\AccountInfoFieldRequired\Edit.cshtml" />
+    <Content Include="Views\AccountInfoFieldRequired\Index.cshtml" />
+    <Content Include="Views\AuditAccountInfoFieldRequired\Index.cshtml" />
+    <Content Include="Views\AuditLpBillingType\Index.cshtml" />
+    <Content Include="Views\ServiceAccountPattern\Create.cshtml" />
+    <Content Include="Views\ServiceAccountPattern\Details.cshtml" />
+    <Content Include="Views\ServiceAccountPattern\Edit.cshtml" />
+    <Content Include="Views\ServiceAccountPattern\Index.cshtml" />
+    <Content Include="Views\MeterNumberPattern\Create.cshtml" />
+    <Content Include="Views\MeterNumberPattern\Details.cshtml" />
+    <Content Include="Views\MeterNumberPattern\Edit.cshtml" />
+    <Content Include="Views\MeterNumberPattern\Index.cshtml" />
+    <Content Include="Views\BillingAccountPattern\Create.cshtml" />
+    <Content Include="Views\BillingAccountPattern\Details.cshtml" />
+    <Content Include="Views\BillingAccountPattern\Edit.cshtml" />
+    <Content Include="Views\BillingAccountPattern\Index.cshtml" />
+    <Content Include="Views\ServiceAddressZipPattern\Create.cshtml" />
+    <Content Include="Views\ServiceAddressZipPattern\Details.cshtml" />
+    <Content Include="Views\ServiceAddressZipPattern\Edit.cshtml" />
+    <Content Include="Views\ServiceAddressZipPattern\Index.cshtml" />
+    <Content Include="Views\StrataPattern\Create.cshtml" />
+    <Content Include="Views\StrataPattern\Details.cshtml" />
+    <Content Include="Views\StrataPattern\Edit.cshtml" />
+    <Content Include="Views\StrataPattern\Index.cshtml" />
+    <Content Include="Views\NameKeyPattern\Create.cshtml" />
+    <Content Include="Views\NameKeyPattern\Details.cshtml" />
+    <Content Include="Views\NameKeyPattern\Edit.cshtml" />
+    <Content Include="Views\NameKeyPattern\Index.cshtml" />
+    <Content Include="Views\ICapTCapRefreshPeriod\Create.cshtml" />
+    <Content Include="Views\ICapTCapRefreshPeriod\Details.cshtml" />
+    <Content Include="Views\ICapTCapRefreshPeriod\Edit.cshtml" />
+    <Content Include="Views\ICapTCapRefreshPeriod\Index.cshtml" />
+    <Content Include="Views\FileDownload\Index.cshtml" />
+    <Content Include="Views\FileUpload\Large_File_Upload.cshtml" />
+    <Content Include="Views\FileUpload\multiple_files_upload.cshtml" />
+    <Content Include="Views\FileUpload\multiple_files_upload_control_file_number.cshtml" />
+    <Content Include="Views\FileUpload\selecting_multiple_files.cshtml" />
+    <Content Include="Views\FileUpload\simple_upload.cshtml" />
+    <Content Include="Views\FileUpload\simple_upload_UI.cshtml" />
+    <Content Include="Views\FileUpload\simple_upload_Validation.cshtml" />
+    <Content Include="Views\FileUpload\Start_uploading_manually.cshtml" />
+    <Content Include="Views\FileUpload\Index.cshtml" />
+    <Content Include="Views\FileDownload\UploadHandler.ashx" />
+    <Content Include="Views\FileUpload\UploadHandler.ashx" />
+    <Content Include="Views\UploadHandler.ashx" />
+    <Content Include="Views\Shared\FileNotFound.cshtml" />
+    <Content Include="Views\Shared\UnauthorizedAccess.cshtml" />
+    <Content Include="Views\ZipCodesWithSimilarDemographicData\Index.cshtml" />
+    <Content Include="Views\Top25ZipCodes\Index.cshtml" />
+    <Content Include="Views\TopSegments\Index.cshtml" />
+    <Content Include="Views\DemographicDataByZipCode\Index.cshtml" />
+    <Content Include="Views\TopZipCodesActiveAccounts\Index.cshtml" />
+    <Content Include="Views\TopZipCodesRenewedActiveAccounts\Index.cshtml" />
+    <Content Include="Views\SimilarZipCodesRenewed\Index.cshtml" />
+    <Content Include="Views\TopSegmentsRenewed\Index.cshtml" />
+    <Content Include="Views\DemographicDataByZipCodeRenewed\Index.cshtml" />
+    <Content Include="Views\MeterReadCalendar\Create.cshtml" />
+    <Content Include="Views\MeterReadCalendar\Details.cshtml" />
+    <Content Include="Views\MeterReadCalendar\Edit.cshtml" />
+    <Content Include="Views\MeterReadCalendar\Index.cshtml" />
+    <Content Include="Views\UnauthorizedUser\About.cshtml" />
+    <Content Include="Views\UnauthorizedUser\Contact.cshtml" />
+    <Content Include="Views\UnauthorizedUser\Index.cshtml" />
+    <Content Include="Views\PaymentTerm\Create.cshtml" />
+    <Content Include="Views\PaymentTerm\Details.cshtml" />
+    <Content Include="Views\PaymentTerm\Edit.cshtml" />
+    <Content Include="Views\PaymentTerm\Index.cshtml" />
+    <Content Include="Views\Login.cshtml" />
+    <Content Include="Views\Authentication\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Authentication\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Authentication\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Authentication\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Authentication\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Authentication\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Authentication\Manage.cshtml" />
+    <Content Include="Views\Authentication\Index.cshtml" />
+    <Content Include="Views\Authentication\Register.cshtml" />
+    <Content Include="Views\CapacityThreshold\Create.cshtml" />
+    <Content Include="Views\CapacityThreshold\Details.cshtml" />
+    <Content Include="Views\CapacityThreshold\Edit.cshtml" />
+    <Content Include="Views\CapacityThreshold\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Readme\" />
+    <Folder Include="Temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AuthorizationServiceProxy\AuthorizationServiceProxy\AuthorizationServiceProxy.csproj">
+      <Project>{a103876d-6af1-4f03-8a7d-55db5a0c4838}</Project>
+      <Name>AuthorizationServiceProxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayerEntityFramework\DataAccessLayerEntityFramework.csproj">
+      <Project>{7974ae22-3122-4895-82df-30ba364ae30f}</Project>
+      <Name>DataAccessLayerEntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelBusinessLayer\ExcelBusinessLayer.csproj">
+      <Project>{46e13023-2563-4657-8c93-64c5ce8417bc}</Project>
+      <Name>ExcelBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelLibrary\ExcelLibrary.csproj">
+      <Project>{0f6caf86-99fb-4ca5-9cd4-83f4b2aa6b99}</Project>
+      <Name>ExcelLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsageManagementServiceProxy\UsageManagementServiceProxy.csproj">
+      <Project>{4734a520-b227-46b7-8c26-73180ab19430}</Project>
+      <Name>UsageManagementServiceProxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserInterfaceValidationExtensions\UserInterfaceValidationExtensions.csproj">
+      <Project>{ab605dbc-3846-4908-819b-0c5572dc94ae}</Project>
+      <Name>UserInterfaceValidationExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{985638c5-4931-489a-a175-0c2d44c4f63a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityLogging\UtilityLogging.csproj">
+      <Project>{b550b746-31a5-4487-a8e4-31a357030a23}</Project>
+      <Name>UtilityLogging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityManagementBusinessLayer\UtilityManagementBusinessLayer.csproj">
+      <Project>{94f38147-a5c2-4e62-a534-aa4e71d24121}</Project>
+      <Name>UtilityManagementBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityManagementRepository\UtilityManagementRepository.csproj">
+      <Project>{16766daf-3539-4aca-bf01-eaea0524ddad}</Project>
+      <Name>UtilityManagementRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityUnityLogging\UtilityUnityLogging.csproj">
+      <Project>{1e6dddf1-e516-48cc-bec2-243be783406a}</Project>
+      <Name>UtilityUnityLogging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64996</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49568/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

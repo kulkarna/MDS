@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CommonExceptions</name>
+    </assembly>
+    <members>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonExceptions.NullParameterException">
+            <summary>
+            The NullParameterException class is an example of how framework exceptions should inherit from their base class.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.BusinessException">
+            <summary>
+            The BusinessException class should be used as the base class for all exceptions found in the LibertyPower.Business namespace.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.LibertyPowerException">
+            <summary>
+            The LibertyPowerException class is the base class for layer specific exceptions.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.LibertyPowerException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.LibertyPowerException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.LibertyPowerException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.LibertyPowerException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.LibertyPowerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.LibertyPowerException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:LibertyPower.Business.BusinessException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.BusinessException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.BusinessException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.BusinessException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.BusinessException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.BusinessException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonExceptions.NullParameterException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonExceptions.NullParameterException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonExceptions.NullParameterException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonExceptions.NullParameterException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonExceptions.NullParameterException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonExceptions.NullParameterException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CustomerAcquisition.CustomerAcquisitionException">
+            <summary>
+            The main exception for the LibertyPower.Business.CustomerAcquisition
+            namespace.
+            </summary>
+            <remarks>All exception classes declared in LibertyPower.Business.CustomerAcquisition
+            namespace and in any child namespace must inherit from this class.</remarks>
+        </member>
+        <member name="M:LibertyPower.Business.CustomerAcquisition.CustomerAcquisitionException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CustomerAcquisition.CustomerAcquisitionException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CustomerAcquisition.CustomerAcquisitionException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CustomerAcquisition.CustomerAcquisitionException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CustomerAcquisition.CustomerAcquisitionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CustomerAcquisition.CustomerAcquisitionException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+    </members>
+</doc>

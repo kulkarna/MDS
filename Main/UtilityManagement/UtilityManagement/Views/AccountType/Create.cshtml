@@ -1,0 +1,92 @@
+﻿@model DataAccessLayerEntityFramework.AccountType
+
+@{
+    ViewBag.Title = "Create Account Type";
+}
+@using UserInterfaceValidationExtensions
+<h3>Create Account Type</h3>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>AccountType</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Inactive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Inactive)
+            @Html.ValidationMessageFor(model => model.Inactive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedBy, "Created By")
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CreatedBy)
+            @Html.ValidationMessageFor(model => model.CreatedBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CreatedDate)
+            @Html.ValidationMessageFor(model => model.CreatedDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.LastModifiedBy)
+            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.LastModifiedDate)
+            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+        </div>
+        @if(Session["IsPostBack"] != null && Session["IsPostBack"].ToString() == "true")
+        {
+        <div class="editor-label" style="color:red">
+            <h3>
+                @Model.GetAccountTypeValidationString()
+
+            </h3>
+        </div>
+        }
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+        @if(Session["ErrorMessage"] != null) {<h3>@Session["ErrorMessage"].ToString()</h3>}

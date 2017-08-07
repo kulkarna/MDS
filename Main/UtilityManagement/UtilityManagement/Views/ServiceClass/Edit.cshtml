@@ -1,0 +1,152 @@
+﻿@model DataAccessLayerEntityFramework.ServiceClass
+@{
+    ViewBag.Title = "Edit Service Class";
+}
+@using UserInterfaceValidationExtensions
+
+<script>
+    $("#UtilityCompanyId option").attr("disabled", "true");
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form-details">
+        <div class="form-title">
+            <div class="form-title-general">Edit:&nbsp;</div>
+            <div class="form-title-specific">Service Class</div>
+        </div>
+        <div class="form-information">&nbsp;&nbsp;Information</div>
+
+        <fieldset>
+            <legend>Service Class</legend>
+
+            @Html.HiddenFor(model => model.Id)
+            <div class="details-data-section">
+                <div class="details-left-section">
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.UtilityCompanyId, "Utility Company")
+                    </div>
+                    <div class="editor-field-display">
+                        @Html.DisplayFor(model => model.UtilityCompany.UtilityCode)
+                        @Html.ValidationMessageFor(model => model.UtilityCompanyId)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ServiceClassCode, "Service Class Code")
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.ServiceClassCode)
+                        @Html.ValidationMessageFor(model => model.ServiceClassCode)
+                        @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.ServiceClassCodeValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                            <span class="field-validation-error" data-valmsg-for="ServiceClassCode" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                        }
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Description)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Description)
+                        @Html.ValidationMessageFor(model => model.Description)
+                        @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.DescriptionValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                            <span class="field-validation-error" data-valmsg-for="Description" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                        }
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.AccountTypeId, "Account Type")
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownList("AccountTypeId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.AccountTypeId)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.LpStandardServiceClass, "Liberty Power Standard Service Class")
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.LpStandardServiceClass)
+                        @Html.ValidationMessageFor(model => model.LpStandardServiceClass)
+                        @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.LpStandardServiceClassValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                            <span class="field-validation-error" data-valmsg-for="LpStandardServiceClass" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                        }
+                    </div>
+                </div>
+                <div class="details-right-section">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Inactive)
+                    </div>
+                    <div class="editor-field-display">
+                        @Html.EditorFor(model => model.Inactive)
+                        @Html.ValidationMessageFor(model => model.Inactive)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CreatedBy, "Created By")
+                    </div>
+                    <div class="editor-field-display">
+                        @Html.DisplayFor(model => model.CreatedBy)
+                        @Html.ValidationMessageFor(model => model.CreatedBy)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                    </div>
+                    <div class="editor-field-display">
+                        @Html.DisplayFor(model => model.CreatedDate)
+                        @Html.ValidationMessageFor(model => model.CreatedDate)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                    </div>
+                    <div class="editor-field-display">
+                        @Html.DisplayFor(model => model.LastModifiedBy)
+                        @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                    </div>
+                    <div class="editor-field-display">
+                        @Html.DisplayFor(model => model.LastModifiedDate)
+                        @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                    </div>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <button id="btnSave" name="submitButton" value="Save" type="submit" class="button">Save</button></td>
+                    <td>
+                        <button id="btnBackToList" name="submitButton" value="Back to List" type="submit" class="button">Back to List</button></td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+}
+
+@section Scripts {@Scripts.Render("~/bundles/jqueryval")}

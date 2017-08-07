@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/Message" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CRMWebServices" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities.Documents" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/DocumentRepository.Classes" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="GetResourceFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/Message" name="GetResourceFileResult" type="q1:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMasterData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="documentInputParamsList" nillable="true" type="q2:ArrayOfTabletDocumentInputParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMasterDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentMasterDataResult" nillable="true" type="q3:ArrayOfTabletDocumentMappingData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentsByChannelResult" nillable="true" type="q4:ArrayOfTabletDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByChannelAndMarket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+        <xs:element minOccurs="0" name="marketID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByChannelAndMarketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentsByChannelAndMarketResult" nillable="true" type="q5:ArrayOfTabletDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByChannelAndMarketAndProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+        <xs:element minOccurs="0" name="marketID" type="xs:int" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByChannelAndMarketAndProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentsByChannelAndMarketAndProductResult" nillable="true" type="q6:ArrayOfTabletDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldsByChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldsByChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentFieldsByChannelResult" nillable="true" type="q7:ArrayOfTabletDocumentField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldsByChannelAndMarket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+        <xs:element minOccurs="0" name="marketID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldsByChannelAndMarketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentFieldsByChannelAndMarketResult" nillable="true" type="q8:ArrayOfTabletDocumentField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldsByChannelAndMarketAndProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+        <xs:element minOccurs="0" name="marketID" type="xs:int" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldsByChannelAndMarketAndProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentFieldsByChannelAndMarketAndProductResult" nillable="true" type="q9:ArrayOfTabletDocumentField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldLocationsByChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldLocationsByChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentFieldLocationsByChannelResult" nillable="true" type="q10:ArrayOfTabletDocumentFieldLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldLocationsByChannelAndMarket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+        <xs:element minOccurs="0" name="marketID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldLocationsByChannelAndMarketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentFieldLocationsByChannelAndMarketResult" nillable="true" type="q11:ArrayOfTabletDocumentFieldLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldLocationsByChannelAndMarketAndProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+        <xs:element minOccurs="0" name="marketID" type="xs:int" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFieldLocationsByChannelAndMarketAndProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentFieldLocationsByChannelAndMarketAndProductResult" nillable="true" type="q12:ArrayOfTabletDocumentFieldLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMapsByChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMapsByChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentMapsByChannelResult" nillable="true" type="q13:ArrayOfTabletDocumentMap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMapsByChannelAndMarket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+        <xs:element minOccurs="0" name="marketID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMapsByChannelAndMarketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentMapsByChannelAndMarketResult" nillable="true" type="q14:ArrayOfTabletDocumentMap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMapsByChannelAndMarketAndProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelID" type="xs:int" />
+        <xs:element minOccurs="0" name="marketID" type="xs:int" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentMapsByChannelAndMarketAndProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentMapsByChannelAndMarketAndProductResult" nillable="true" type="q15:ArrayOfTabletDocumentMap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetDocumentTypesResult" nillable="true" type="q16:ArrayOfTabletDocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="newDocument" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="documentName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contractNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="SaveDocumentResult" nillable="true" type="q17:WSDocumentResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveContractSupportingFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities.Documents" minOccurs="0" name="fileDetails" nillable="true" type="q18:WSContractFileDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveContractSupportingFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="SaveContractSupportingFileResult" nillable="true" type="q19:WSDocumentResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateContractDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities" minOccurs="0" name="wsContractDetails" nillable="true" type="q20:WSContractDetails" />
+        <xs:element minOccurs="0" name="documentType" type="xs:int" />
+        <xs:element minOccurs="0" name="showContractNumber" type="xs:boolean" />
+        <xs:element minOccurs="0" name="includeAssociatedDocs" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateContractDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DocumentRepository.Classes" minOccurs="0" name="GenerateContractDocumentsResult" nillable="true" type="q21:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateContractDocumentsCollection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities" minOccurs="0" name="wsContractDetails" nillable="true" type="q22:ArrayOfWSContractDetails" />
+        <xs:element minOccurs="0" name="documentType" type="xs:int" />
+        <xs:element minOccurs="0" name="showContractNumber" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateContractDocumentsCollectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DocumentRepository.Classes" minOccurs="0" name="GenerateContractDocumentsCollectionResult" nillable="true" type="q23:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZippedDocumentByFileId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZippedDocumentByFileIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DocumentRepository.Classes" minOccurs="0" name="GetZippedDocumentByFileIdResult" nillable="true" type="q24:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateContractDocumentUsingGUID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="guid" type="q25:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateContractDocumentUsingGUIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DocumentRepository.Classes" minOccurs="0" name="GenerateContractDocumentUsingGUIDResult" nillable="true" type="q26:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentSubmissionStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contractNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentSubmissionStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetDocumentSubmissionStatusResult" nillable="true" type="q27:WSDocumentSubmissionStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentByGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documentGUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentByGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CRMWebServices.WSEntities" minOccurs="0" name="GetDocumentByGuidResult" nillable="true" type="q28:WSDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTabletDocumentByDocumentId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documentId" type="xs:int" />
+        <xs:element minOccurs="0" name="salesAgentGUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTabletDocumentByDocumentIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetTabletDocumentByDocumentIdResult" nillable="true" type="q29:TabletDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTabletLatestAPK">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="getFile" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTabletLatestAPKResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" minOccurs="0" name="GetTabletLatestAPKResult" nillable="true" type="q30:AndroidPackage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTabletLatestAPKRawFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTabletLatestAPKRawFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTabletLatestAPKRawFileResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Echo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="input" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EchoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EchoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

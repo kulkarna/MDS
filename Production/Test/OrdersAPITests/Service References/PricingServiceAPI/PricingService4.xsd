@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CRMWebServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CRMWebServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/PricingService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="WSProductRateResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProducRates" nillable="true" type="tns:ArrayOfWSProductRate" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WSProductRateResult" nillable="true" type="tns:WSProductRateResult" />
+  <xs:complexType name="WSResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSResult" nillable="true" type="tns:WSResult" />
+  <xs:complexType name="ArrayOfWSProductRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSProductRate" nillable="true" type="tns:WSProductRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSProductRate" nillable="true" type="tns:ArrayOfWSProductRate" />
+  <xs:complexType name="WSProductRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChannelGroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="ChannelTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="CostRateEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CostRateExpirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GrossMargin" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MarketID" type="xs:int" />
+      <xs:element minOccurs="0" name="PriceDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriceId" type="xs:long" />
+      <xs:element minOccurs="0" name="PriceTier" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductBrandId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductCrossPriceID" type="xs:long" />
+      <xs:element minOccurs="0" name="ProductCrossPriceSetID" type="xs:int" />
+      <xs:element minOccurs="0" name="Rate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SegmentId" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceClassId" type="xs:int" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Term" type="xs:int" />
+      <xs:element minOccurs="0" name="TierDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityID" type="xs:int" />
+      <xs:element minOccurs="0" name="ZoneCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSProductRate" nillable="true" type="tns:WSProductRate" />
+  <xs:complexType name="ArrayOfWSAccountType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSAccountType" nillable="true" type="tns:WSAccountType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSAccountType" nillable="true" type="tns:ArrayOfWSAccountType" />
+  <xs:complexType name="WSAccountType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSAccountType" nillable="true" type="tns:WSAccountType" />
+  <xs:complexType name="WSCrossProductPriceSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Identity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSCrossProductPriceSet" nillable="true" type="tns:WSCrossProductPriceSet" />
+  <xs:complexType name="WSActionResultOfWSProductRate">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="WSActionResultOf{0}" Namespace="http://schemas.datacontract.org/2004/07/CRMWebServices" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="WSProductRate" Namespace="http://schemas.datacontract.org/2004/07/CRMWebServices" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceResult" nillable="true" type="tns:ArrayOfWSProductRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSActionResultOfWSProductRate" nillable="true" type="tns:WSActionResultOfWSProductRate" />
+  <xs:complexType name="ArrayOfWSLocationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSLocationDetails" nillable="true" type="tns:WSLocationDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSLocationDetails" nillable="true" type="tns:ArrayOfWSLocationDetails" />
+  <xs:complexType name="WSLocationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MarketCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketId" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneId" type="xs:int" />
+      <xs:element minOccurs="0" name="ZoneName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSLocationDetails" nillable="true" type="tns:WSLocationDetails" />
+</xs:schema>

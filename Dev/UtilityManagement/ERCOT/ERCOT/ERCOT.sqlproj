@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ERCOT</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{9edb2484-f690-4d22-95a1-c2a36d0ad644}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ERCOT</RootNamespace>
+    <AssemblyName>ERCOT</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\CSC_TRANSMISSION_PATH.sql" />
+    <Build Include="dbo\Tables\PUBLIC_MARKET_INTERVAL_DATA-02-OCT-08.sql" />
+    <Build Include="dbo\Tables\DETERMINANT.sql" />
+    <Build Include="dbo\Tables\LOG_DAM_PRICE_DROPPED.sql" />
+    <Build Include="dbo\Tables\DETERMINANT_CHARGE.sql" />
+    <Build Include="dbo\Tables\DIRECT_CURRENT_TIE_LINE.sql" />
+    <Build Include="dbo\Tables\DAM_PRICE.sql" />
+    <Build Include="dbo\Tables\FACTOR.sql" />
+    <Build Include="dbo\Tables\FACTOR_VALUE.sql" />
+    <Build Include="dbo\Tables\DAM_PRICE_15MIN.sql" />
+    <Build Include="dbo\Tables\GENERATION_UNIT.sql" />
+    <Build Include="dbo\Tables\GENERATION_UNIT_DETERMINANT.sql" />
+    <Build Include="dbo\Tables\MARKET_INTERVAL.sql" />
+    <Build Include="dbo\Tables\MARKET_INTERVAL_STATUS.sql" />
+    <Build Include="dbo\Tables\MARKET_INTERVAL_HEADER.sql" />
+    <Build Include="dbo\Tables\MARKET_INTERVAL_DATA.sql" />
+    <Build Include="dbo\Tables\MEASUREMENT_UNITS.sql" />
+    <Build Include="dbo\Tables\SCHEDULING_ENTITY.sql" />
+    <Build Include="dbo\Tables\SETTLEMENT_INTERVAL.sql" />
+    <Build Include="dbo\Tables\ESIID.sql" />
+    <Build Include="dbo\Tables\ESIIDSERVICEHIST.sql" />
+    <Build Include="dbo\Tables\ESIIDSERVICEHIST_DELETE.sql" />
+    <Build Include="dbo\Tables\ESIIDUSAGE.sql" />
+    <Build Include="dbo\Tables\USAGE_FILE_MAP.sql" />
+    <Build Include="dbo\Tables\ESIIDUSAGE_DELETE.sql" />
+    <Build Include="dbo\Tables\USAGE_FILE_TYPE.sql" />
+    <Build Include="dbo\Tables\CMZONE.sql" />
+    <Build Include="dbo\Tables\STATION.sql" />
+    <Build Include="dbo\Tables\LOG_FILE_DROPPED.sql" />
+    <Build Include="dbo\Tables\STATIONSERVICEHIST.sql" />
+    <Build Include="dbo\Tables\LOG_FILE_PROCESSED.sql" />
+    <Build Include="dbo\Tables\SETTLEMENTPOINT.sql" />
+    <Build Include="dbo\Tables\small.sql" />
+    <Build Include="dbo\Tables\SETLPOINTTYPE.sql" />
+    <Build Include="dbo\Tables\SETLPOINTHISTORY.sql" />
+    <Build Include="dbo\Tables\TDSP_ESIID.sql" />
+    <Build Include="dbo\Tables\AccountInfoAccounts.sql" />
+    <Build Include="dbo\Tables\AccountInfoAccounts_TEMP.sql" />
+    <Build Include="dbo\Tables\AccountInfoSettlement.sql" />
+    <Build Include="dbo\Tables\AccountInfoSettlement_TEMP.sql" />
+    <Build Include="dbo\Tables\AccountInfoFileLog.sql" />
+    <Build Include="dbo\Tables\AccountInfoAccountLog.sql" />
+    <Build Include="dbo\Tables\OLE DB Destination.sql" />
+    <Build Include="dbo\Tables\EXTRACT_TABLE_COUNTS.sql" />
+    <Build Include="dbo\Tables\AccountInfoZoneMapping.sql" />
+    <Build Include="dbo\Tables\MARKET_FILE_MAP.sql" />
+    <Build Include="dbo\Tables\MARKET_FILE_TYPE.sql" />
+    <Build Include="dbo\Tables\LOG_MARKET_DROPPED.sql" />
+    <Build Include="dbo\Tables\LOG_MARKET_PROCESSED.sql" />
+    <Build Include="dbo\Tables\CHARGE_TYPE.sql" />
+    <Build Include="dbo\Tables\INTERVAL_PROFILES.sql" />
+    <Build Include="dbo\Tables\CONGESTION_COST.sql" />
+    <Build Include="dbo\Tables\SSIS Configurations.sql" />
+    <Build Include="dbo\Tables\CONGESTION_MGMT_ZONES.sql" />
+    <Build Include="dbo\Views\tblIntervalProfiles_vw.sql" />
+    <Build Include="dbo\Views\esiid_service_history.sql" />
+    <Build Include="dbo\Views\station_code_history.sql" />
+    <Build Include="dbo\Views\VW_ACTIVE_FILE_MAP.sql" />
+    <Build Include="dbo\Views\VW_ESIIDSERVICESHIST_DELETE_FAIL.sql" />
+    <Build Include="Security\LIBERTYPOWER_webadmin.sql" />
+    <Build Include="Security\BUILTIN_Administrators.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQLProdSupportRO.sql" />
+    <Build Include="Security\LIBERTYPOWER_lpapplications_svc.sql" />
+    <Build Include="Security\dmaia.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Reporting_ReadOn.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Rep_Ser_Read_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_mbaseman.sql" />
+    <Build Include="Security\LIBERTYPOWER_dmoretti.sql" />
+    <Build Include="Security\SQL_Rep_Ser_RW_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_gworthington.sql" />
+    <Build Include="Security\LIBERTYPOWER_atafur.sql" />
+    <Build Include="Security\readonly_msoffice.sql" />
+    <Build Include="Security\LIBERTYPOWER_lfreedman.sql" />
+    <Build Include="Security\libertypower_pperez.sql" />
+    <Build Include="Security\ReadOnly_Access_v1.sql" />
+    <Build Include="Security\ReadOnly_Excel_v1.sql" />
+    <Build Include="Security\LIBERTYPOWER_sscott.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Comm_Rep_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_jmarsh.sql" />
+    <Build Include="Security\libertypower_lrosenblum.sql" />
+    <Build Include="Security\LIBERTYPOWER_rrusson.sql" />
+    <Build Include="Security\LIBERTYPOWER_tetson.sql" />
+    <Build Include="Security\LIBERTYPOWER_tmcneil.sql" />
+    <Build Include="Security\LIBERTYPOWER_jennen.sql" />
+    <Build Include="Security\LIBERTYPOWER_msanghavi.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQLProdSupportRW.sql" />
+    <Build Include="Security\libertypower_aonaghten.sql" />
+    <Build Include="Security\libertypower_dpena.sql" />
+    <Build Include="Security\libertypower_gdiaz.sql" />
+    <Build Include="Security\libertypower_jalbarran.sql" />
+    <Build Include="Security\libertypower_kramgulam.sql" />
+    <Build Include="Security\libertypower_mbarrett.sql" />
+    <Build Include="Security\libertypower_rcoots.sql" />
+    <Build Include="Security\libertypower_rfgomez.sql" />
+    <Build Include="Security\libertypower_wampofo.sql" />
+    <Build Include="Security\LIBERTYPOWER_jforero.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_DAM_PRICE_DROPPED_INS.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_DAM_PRICE_DROPPED_UPD.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoFileLogInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoFileLogSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoFileLogGetID.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoFileLogUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoAccountLogInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoAccounts_TEMP_DELETE.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoAccountsInsertFromTemp.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoSettlementInsertFromTemp.sql" />
+    <Build Include="dbo\Stored Procedures\USP_ESIIDSERVICEHIST_DELETE_DEL.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountInfoAccountsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\USP_ESIIDUSAGE_DELETE_DEL.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_FILE_DROPPED_INS.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_FILE_DROPPED_UPD.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_FILE_PROCESSED_INS.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_FILE_PROCESSED_UPD.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ErcotAccountInfoAccounts_GetZoneAndZipByAccountNumber.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_MARKET_DROPPED_INS.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_MARKET_DROPPED_UPD.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_MARKET_PROCESSED_INS.sql" />
+    <Build Include="dbo\Stored Procedures\USP_LOG_MARKET_PROCESSED_UPD.sql" />
+    <Build Include="dbo\Stored Procedures\USP_DUPLICATE_MARKET_DROP_FILE_SEL.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Comm_Rep_svc_1.sql" />
+    <Build Include="Security\readonly_msoffice_1.sql" />
+  </ItemGroup>
+</Project>

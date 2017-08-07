@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="LibertyPower.MarketDataServices.EdiParserWcfService.EdiParserWcfService" CodeBehind="EdiParserWcfService.svc.cs" %>

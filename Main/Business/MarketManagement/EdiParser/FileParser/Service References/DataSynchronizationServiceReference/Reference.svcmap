@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="919e6454-6346-4c86-b19d-15c77ad5b659" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:88/DataSynchronization.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataSynchronization2.xsd" MetadataType="Schema" ID="ea7b9a02-63d9-47f8-8509-5bce9a3fb802" SourceId="1" SourceUrl="http://localhost:88/DataSynchronization.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataSynchronization1.disco" MetadataType="Disco" ID="40660e9d-3fc3-4b2c-a58b-edc8b4959729" SourceId="1" SourceUrl="http://localhost:88/DataSynchronization.svc?disco" />
+    <MetadataFile FileName="DataSynchronization21.xsd" MetadataType="Schema" ID="2aed9e45-43dd-4675-a3f9-6cfe3c0a0eb1" SourceId="1" SourceUrl="http://localhost:88/DataSynchronization.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataSynchronization1.wsdl" MetadataType="Wsdl" ID="34784b74-b4ed-493c-98f2-b92786283647" SourceId="1" SourceUrl="http://localhost:88/DataSynchronization.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

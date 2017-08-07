@@ -1,0 +1,106 @@
+﻿@model DataAccessLayerEntityFramework.ServiceAddressZipPattern
+
+@{
+    ViewBag.Title = "Create Service Address Zip Pattern";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+<div class="edit_section">
+    <div class="edit_header">
+        <div class="addressZipPattern_ico"></div>
+        <div class="edit_header_desc"><h4>Service Address Zip Pattern</h4> <h3>New Record</h3> </div>
+    </div>
+    <div class="form-details">
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Load Profile</legend>
+                <div class="textblock">
+                    <div class="details-data-section">
+                        <div id="Gen"  class="activable">
+                            <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                            <div class="edit_section_heading" onclick="showDiv('hideContent',this.id)">General</div>
+                            <div id="hideContent" class="editdetails">
+                                <div class="details-full-section">
+                                    <div class="details-left-section">
+                                    <div class="editor-label">@Html.LabelFor(model => model.UtilityCompany.UtilityCode, "Utility Code")</div>
+                                    <div class="editor-field">@Html.DropDownList("UtilityCompanyId", String.Empty)
+                            @{
+    if (Session["IsPostBack"] == "true" && (Model.UtilityCompanyId == null || Model.UtilityCompanyId == Guid.Empty))
+    { 
+                                <span class="field-validation-error" data-valmsg-for="UtilityCompanyId" data-valmsg-replace="true">Utility Code is required.</span>
+    }
+                            }</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label">@Html.LabelFor(model => model.ServiceAddressZipPattern1, "Service Address Zip Pattern")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.ServiceAddressZipPattern1)  
+                            @{
+    if (Session["IsPostBack"] == "true" && string.IsNullOrWhiteSpace(Model.ServiceAddressZipPattern1))
+    { 
+                                <span class="field-validation-error" data-valmsg-for="ServiceAddressZipPattern1" data-valmsg-replace="true">Service Address Zip Pattern is required.</span>
+    }
+                            }</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label">@Html.LabelFor(model => model.ServiceAddressZipPatternDescription, "Service Address Zip Pattern Description")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.ServiceAddressZipPatternDescription)
+                            @{
+    if (Session["IsPostBack"] == "true" && string.IsNullOrWhiteSpace(Model.ServiceAddressZipPatternDescription))
+    { 
+                                <span class="field-validation-error" data-valmsg-for="ServiceAddressZipPatternDescription" data-valmsg-replace="true">Service Address Zip Pattern Description is required.</span>
+    }
+                            }</div>
+                                    <div class="clear"></div>
+                                        </div>
+                                    <div class="details-right-section">
+                                    <div class="editor-label">@Html.LabelFor(model => model.ServiceAddressZipAddLeadingZero, "Service Address Zip Add Leading Zero")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.ServiceAddressZipAddLeadingZero) @Html.ValidationMessageFor(model => model.ServiceAddressZipAddLeadingZero)</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label">@Html.LabelFor(model => model.ServiceAddressZipTruncateLast, "Service Address Zip Truncate Last")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.ServiceAddressZipTruncateLast) @Html.ValidationMessageFor(model => model.ServiceAddressZipTruncateLast)</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label">@Html.LabelFor(model => model.ServiceAddressZipRequiredForEDIRequest, "Service Address Zip Required For EDI Request")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.ServiceAddressZipRequiredForEDIRequest) @Html.ValidationMessageFor(model => model.ServiceAddressZipRequiredForEDIRequest)</div>
+                                </div></div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="info"  class="activable">
+                            <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                            <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                            <div id="hideContent2" class="editdetails" >
+                                <div class="details-full-section">
+                                    <div class="editor-label">@Html.LabelFor(model => model.Inactive)</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.Inactive) @Html.ValidationMessageFor(model => model.Inactive)</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.CreatedBy, "Created By") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.CreatedBy) @Html.ValidationMessageFor(model => model.CreatedBy) </div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.CreatedDate, "Created Date") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.CreatedDate) @Html.ValidationMessageFor(model => model.CreatedDate) </div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.LastModifiedBy) @Html.ValidationMessageFor(model => model.LastModifiedBy) </div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.LastModifiedDate) @Html.ValidationMessageFor(model => model.LastModifiedDate) </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+
+    });

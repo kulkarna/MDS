@@ -1,0 +1,261 @@
+﻿@model UtilityManagement.Models.RequestModeHistoricalUsageModel
+@{
+    ViewBag.Title = "Request Mode Historical Usage Index";
+}
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Historical Usage Request Mode</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+    <div class="details-data-section chartlink">
+        <div class="left_table" >
+             <div class="left_container" >
+            <table class="index historicalmode">
+                <tr>
+                    <th>Row Count = @Model.RequestModeHistoricalList.Count()</th>
+                    <th width="50">
+                        @Html.ActionLink("Utility Code", "UtilityCodeTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityCodeImageUrl))
+                            {
+                            <img id="imgUtilityCode" src="@ViewBag.UtilityCodeImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Enrollment Type", "EnrollmentTypeTileClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.EnrollmentTypeImageUrl))
+                            {
+                            <img id="imgEnrollmentType" src="@ViewBag.EnrollmentTypeImageUrl"  valign="middle"  />
+                            }
+                        }
+                    </th>
+                    <th width="72">
+                        @Html.ActionLink("Request Mode Type", "RequestModeTypeClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.RequestModeTypeImageUrl))
+                            {
+                            <img id="imgRequestModeType" src="@ViewBag.RequestModeTypeImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Address For Pre Enrollment", "AddressClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.AddressImageUrl))
+                            {
+                            <img id="imgAddress" src="@ViewBag.AddressImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Email Template", "EmailTemplateClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.TemplateImageUrl))
+                            {
+                            <img id="imgTemplate" src="@ViewBag.TemplateImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th width="75">
+                        @Html.ActionLink("Instructions", "InstructionsClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.InstructionImageUrl))
+                            {
+                            <img id="imgInstructions" src="@ViewBag.InstructionImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Utility SLA", "UtilitySlaClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.UtilitySlaImageUrl))
+                            {
+                            <img id="imgUtilitySql" src="@ViewBag.UtilitySlaImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th width="70">
+                        @Html.ActionLink("Liberty Power SLA", "LibertyPowerSlaClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LibertyPowerSlaImageUrl))
+                            {
+                            <img id="imgLpSla" src="@ViewBag.LibertyPowerSlaImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th width="62">
+                        @Html.ActionLink("LOA Required", "LoaClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LoaImageUrl))
+                            {
+                            <img id="imgLoaRequired" src="@ViewBag.LoaRequiredImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th width="52">
+                        @Html.ActionLink("Inactive", "InactiveTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+                            {
+                            <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created By", "CreatedByTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+                            {
+                            <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created Date", "CreatedDateTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+                            {
+                            <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Modified By", "LastModifiedByTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+                            {
+                            <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Modified Date", "LastModifiedDateTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+                            {
+                            <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                </tr>
+                @{
+
+                    foreach (var item in Model.RequestModeHistoricalList)
+                    {
+                    <tr>
+                        <td>
+                            @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                            <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestModeEnrollmentType.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestModeType.Name)
+                        </td>
+                        @{
+                        if (item.RequestModeType.Name.ToLower() == "edi" || item.RequestModeType.Name.ToLower() == "scraper")
+                        {
+                            <td>NA</td>
+                        }
+                        else
+                        {
+                            <td>@Html.DisplayFor(modelItem => item.AddressForPreEnrollment)</td>
+                        }
+                        if (item.RequestModeType.Name.ToLower().Trim() == "e-mail")
+                        {
+                            <td>@Html.DisplayFor(modelItem => item.EmailTemplate)</td>
+                        }
+                        else
+                        {
+                            <td>NA</td>
+                        }
+                        }
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Instructions)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UtilitysSlaHistoricalUsageResponseInDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LibertyPowersSlaFollowUpHistoricalUsageResponseInDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsLoaRequired)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Inactive)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                        </td>
+                    </tr>
+                    }
+                }
+            </table>
+        </div>
+            </div>
+
+
+        <div class="right_chart" id="resizable2">
+           @* <div class="navscroll rightscroll">
+                <a href="">
+                    <img src="~/Images/navscroll.png" /></a>
+            </div>*@
+            <div class="ui-resizable-handle ui-resizable-w" onclick="showHide('hideDiv',this.id)"></div>
+            <div id="hideDiv" class="chart_open" style="display: none">
+                <table>
+                    <tr>
+                        <td>
+
+                            <div class="form-details">
+                                <h4>Report</h4>
+                                <div class="form_fieldset">
+                                    <fieldset>
+                                        <legend>Request Mode Historical Usage</legend>
+                                        <div class="details-data-section">
+                                            <img src="/RequestModeHistoricalUsage/HuChart" alt="" class="img" />
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+
+                        </td>
+
+                    </tr>
+
+                </table>
+            </div>
+            <img id="dirImg" src="~/Images/view_chart.png" onclick="showHide('hideDiv',this.id)" />
+        </div>
+
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+
+    });
+

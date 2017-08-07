@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CostumerService.Entities.Enumerators" />
+  <xs:complexType name="UsageRequestDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameKey" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CostumerService.Entities.Enumerators" minOccurs="0" name="UsageType" type="q1:UsageType" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsageRequestDTO" nillable="true" type="tns:UsageRequestDTO" />
+  <xs:complexType name="ArrayOfResponseDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResponseDTO" nillable="true" type="tns:ResponseDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponseDTO" nillable="true" type="tns:ArrayOfResponseDTO" />
+  <xs:complexType name="ResponseDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionRequestId" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseDTO" nillable="true" type="tns:ResponseDTO" />
+  <xs:complexType name="DeEnrollmentRequestDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FlowRequestDTO">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeEnrollmentRequestDTO" nillable="true" type="tns:DeEnrollmentRequestDTO" />
+  <xs:complexType name="FlowRequestDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlowRequestDTO" nillable="true" type="tns:FlowRequestDTO" />
+  <xs:complexType name="ReEnrollmentRequestDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FlowRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContractId" type="xs:int" />
+          <xs:element minOccurs="0" name="RateCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReEnrollmentRequestDTO" nillable="true" type="tns:ReEnrollmentRequestDTO" />
+  <xs:complexType name="EnrollmentRequestDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FlowRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContractId" type="xs:int" />
+          <xs:element minOccurs="0" name="EnrollmentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PriorityMoveIn" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RateCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnrollmentRequestDTO" nillable="true" type="tns:EnrollmentRequestDTO" />
+</xs:schema>

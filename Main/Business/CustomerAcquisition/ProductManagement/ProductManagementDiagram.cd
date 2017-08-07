@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Evaluate the EstimatedValue for the IndexedProduct. Ask Douglas.">
+    <Position X="1.51" Y="9.378" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="These notions exist in App_Code in OMS and should be refactored and moved out to here">
+    <Position X="13.875" Y="3.556" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.BlockIndexProduct">
+    <Position X="6.25" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAACA=</HashCode>
+      <FileName>BlockIndexProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.FixedProduct">
+    <Position X="1.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>FixedProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.IndexedProduct">
+    <Position X="6.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAA=</HashCode>
+      <FileName>IndexedProduct.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Index" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.ProductOffer">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="ProductRates" Type="LibertyPower.Business.CustomerAcquisition.ProductManagement.ProductRate">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.124" Y="0.282" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductOffer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ProductRates" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.Product">
+    <Position X="2.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAQAAACAA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.ProductIndex">
+    <Position X="8.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAIAAA=</HashCode>
+      <FileName>ProductIndex.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IndexType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.VariableProduct">
+    <Position X="5.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>VariableProduct.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SubCategory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.FixedProductRate">
+    <Position X="11.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAAAA=</HashCode>
+      <FileName>FixedProductRate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.VariableProductRate">
+    <Position X="9" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VariableProductRate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.ProductRate">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAIAAAAAAAAAAABCAAQAgAAAAAAAAAAAogAIAAAA=</HashCode>
+      <FileName>ProductRate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+      <Property Name="AccountType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.ProductRateFactory">
+    <Position X="14.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductRateFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.ProductFactory">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>ProductFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.ProductCategory">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABAAAA=</HashCode>
+      <FileName>ProductCategory.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.ProductIndexType">
+    <Position X="11.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductIndexType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.AccountType">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAI=</HashCode>
+      <FileName>AccountType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.CustomerAcquisition.ProductManagement.ProductSubCategory">
+    <Position X="1.75" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEBAAAA=</HashCode>
+      <FileName>ProductSubCategory.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

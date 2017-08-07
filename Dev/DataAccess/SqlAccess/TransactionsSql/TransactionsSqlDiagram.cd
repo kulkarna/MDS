@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.TransactionsSql">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>EGmACATEKAigAgQIBoARwEHMggACAADYUIAKiERECAo=</HashCode>
+      <FileName>TransactionsSql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.Model.IdrAccountDetail">
+    <Position X="4.25" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAAAAAgAAAAIAAAAAAAAAAACABAAAgQAAAAAA=</HashCode>
+      <FileName>Model\IdrAccountDetailExtended.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.Model.IdrValueExtended">
+    <Position X="6.75" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAgIggAACA=</HashCode>
+      <FileName>Model\IdrValueExtended.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.MisoSql">
+    <Position X="4.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>MisoSql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.NeIsoSql">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>NeIsoSql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.PjmIsoSql">
+    <Position X="8" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAgAAAAAAAAAAAAAAAIAAAAAAAQAEAAAAAABAAA=</HashCode>
+      <FileName>PjmIsoSql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.Model.IdrFileLogDetail">
+    <Position X="12.75" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAEACEABAgkAAAAACAgAAABAgEAAAAAAAAAgQAACA=</HashCode>
+      <FileName>Model\IdrFileLogDetailExtended.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.Model.IdrJsonConverter">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IdrJsonConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.Model.IdrNonEdiDetail">
+    <Position X="11" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAECAAEgAAAAIAAAAAAAAAAAAAgAAAgAAAAAAA=</HashCode>
+      <FileName>Model\IdrNonEdiDetailExtended.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.Model.FileStatus">
+    <Position X="4.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAgAAAAAAAAAAAAAAAAAAAgAAAgCACQAQAAAAIBA=</HashCode>
+      <FileName>Model\FileStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.Model.FileTabStatus">
+    <Position X="6" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAgAAAgAACQAQAAAAAAA=</HashCode>
+      <FileName>Model\FileTabStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.Model.FileType">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAQAAAAAADAAAAAAAEAAAAAAACAAIAAA=</HashCode>
+      <FileName>Model\FileType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.DataAccess.SqlAccess.TransactionsSql.Model.FormatType">
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKEAAAAAAAAAAAAEBECAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\FormatType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

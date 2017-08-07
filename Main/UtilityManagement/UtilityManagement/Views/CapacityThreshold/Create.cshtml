@@ -1,0 +1,234 @@
+﻿@model DataAccessLayerEntityFramework.CapacityThresholdRule
+
+@{
+    ViewBag.Title = "Capacity Threshold Create";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="meterreadcalendar_ico"></div>
+            <div class="edit_header_desc">
+                <h4>Capacity Threshold Rule</h4>
+                <h3>New Record</h3>
+            </div>
+        </div>
+        <div class="form-details">
+            <div class="form_fieldset">
+                <fieldset>
+                    <legend>Capacity Threshold Rule</legend>
+                    <div class="textblock">
+                        <div class="details-data-section">
+                            <div id="Gen" class="activable">
+                                <img id="dirImg2" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" />
+                                <div class="edit_section_heading" onclick="showDiv('hideContent',this.id)">General</div>
+                                <div id="hideContent" class="editdetails">
+                                    <div class="details-full-section cts">
+                                        <div class="details-left-section">
+                                            <div class="editor-label">@Html.LabelFor(model => model.UtilityCompany.UtilityCode, "Utility Company :")</div>
+                                            <div class="editor-field">
+                                                @Html.LabelFor(model => model.UtilityCompany.UtilityCode, (string)ViewBag.UtilityCode)
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.CustomerAccountType.AccountType, "Account Type :")</div>
+                                            <div class="editor-field" style="width: 17%">@Html.DropDownList("CustomerAccountTypeId", string.Empty) @Html.ValidationMessageFor(model => model.CustomerAccountTypeId, "The current Account Type is invalid.")</div>
+
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.Label("Use Capacity Threshold :")</div>
+                                            @if (IsPost)
+                                            {
+                                                 <div class="editor-field">
+                                                @Html.CheckBoxFor(model => model.IgnoreCapacityFactor, new {  @class = "chkUseCapacityFactor" })
+                                                     @Html.HiddenFor(model => model.IgnoreCapacityFactor, new { @id = "hdnCheckfactor" })
+                                            </div>
+                                            }
+                                            else 
+                                            {
+                                            <div class="editor-field">
+                                                @Html.CheckBoxFor(model => model.IgnoreCapacityFactor, new { @checked = "checked", @class = "chkUseCapacityFactor" })
+                                            </div>
+                                            }
+
+
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.Label("Threshold :")</div>
+                                            @if(IsPost)
+                                            {
+                                            <div class="editor-field min-fix">
+                                                <span>
+                                                    <span class="input-label ">Min</span>
+                                                    <span class="inline-radio ">@Html.TextBoxFor(model => model.CapacityThreshold, new {  @type = "number",@id="txtCapacityTresholdMinValue" ,@maxlength = "3", @onkeypress = "return ValidateNumber(event,this);" })
+                                                        <span class="input-label" style="margin-left: 5px;">%</span> 
+                                                        <p class="editor-label">
+                                                        @Html.ValidationMessageFor(model => model.CapacityThreshold, "Capacity Threshold Min is Required.")
+                                                    </p>
+                                                    </span>
+                                                    
+                                                   
+                                                </span>
+
+                                                <span>
+                                                    <span class="input-label">Max</span>
+                                                    <span class="inline-radio ">@Html.TextBoxFor(model => model.CapacityThresholdMax, new { @type = "number",@id="txtCapacityTresholdMaxValue" ,@maxlength = "3", @onkeypress = "return ValidateNumber(event,this);" })
+                                                        <span class="input-label" style="margin-left: 5px;">%</span> 
+                                                        <p class="editor-label">
+                                                        @Html.ValidationMessageFor(model => model.CapacityThresholdMax, "Capacity Threshold Max is Required.")
+                                                    </p>
+                                                    </span>
+                                                    
+                                                   
+                                                </span>
+                                            </div>
+                                            }
+                                            else 
+                                            {
+                                                 <div class="editor-field min-fix">
+                                                <span>
+                                                    <span class="input-label">Min</span>
+                                                    <span class="inline-radio ">@Html.TextBoxFor(model => model.CapacityThreshold, new {  @Value="0",@type = "number",@id="txtCapacityTresholdMinValue", @maxlength = "3", @onkeypress = "return ValidateNumber(event,this);" })
+                                                        <span class="input-label" style="margin-left: 5px;">%</span> 
+                                                        <p class="editor-label">
+                                                        @Html.ValidationMessageFor(model => model.CapacityThreshold, "Capacity Threshold Min is Required.")
+                                                    </p>
+                                                    </span>
+
+                                                   
+                                                </span>
+
+                                                <span>
+                                                    <span class="input-label">Max</span>
+                                                    <span class="inline-radio ">@Html.TextBoxFor(model => model.CapacityThresholdMax, new { @Value="999", @type = "number",@id="txtCapacityTresholdMaxValue", @maxlength = "3", @onkeypress = "return ValidateNumber(event,this);" })
+                                                        <span class="input-label" style="margin-left: 5px;">%</span> 
+                                                        <p class="editor-label">
+                                                        @Html.ValidationMessageFor(model => model.CapacityThresholdMax, "Capacity Threshold Max is Required.")
+                                                    </p>
+                                                    </span>
+                                                   
+                                                </span>
+                                            </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="info" class="activable">
+                                <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" />
+                                <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                                <div id="hideContent2" class="editdetails">
+                                    <div class="details-full-section">
+                                        <div class="details-left-section">
+                                            <div class="editor-label">@Html.LabelFor(model => model.Inactive)</div>
+                                            <div class="editor-field">@Html.EditorFor(model => model.Inactive) @Html.ValidationMessageFor(model => model.Inactive)</div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.CreatedBy, "Created By") </div>
+                                            <div class="editor-field">@Html.DisplayFor(model => model.CreatedBy) @Html.ValidationMessageFor(model => model.CreatedBy) </div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.CreatedDate, "Created Date") </div>
+                                            <div class="editor-field">@Html.DisplayFor(model => model.CreatedDate) @Html.ValidationMessageFor(model => model.CreatedDate) </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="details-right-section">
+                                            <div class="editor-label">@Html.LabelFor(model => model.LastModifiedBy, "Last Modified By") </div>
+                                            <div class="editor-field">@Html.DisplayFor(model => model.LastModifiedBy) @Html.ValidationMessageFor(model => model.LastModifiedBy) </div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date") </div>
+                                            <div class="editor-field">@Html.DisplayFor(model => model.LastModifiedDate) @Html.ValidationMessageFor(model => model.LastModifiedDate) </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+<script type="text/javascript">
+
+
+    // THE SCRIPT THAT CHECKS IF THE KEY PRESSED IS A NUMERIC OR DECIMAL VALUE.
+    function ValidateNumber(evt, element) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        var elementValue = parseInt($(element).val());
+        if ((charCode < 48 || charCode > 57))
+            return false;
+        else if ((elementValue < 0 || elementValue >= 999) || $(element).val().length >= 3)
+            return false;
+        else
+            return true;
+
+    }
+
+
+    $(document).ready(function () {
+        //var input = $(".chkUseCapacityFactor").val();
+        var input = $("input[type=hidden][id='hdnCheckfactor']").val();
+        if (input.toLowerCase() == "false") {
+            enabledDisabled(false, false);
+            $(".chkUseCapacityFactor").attr('checked') = false;
+        }
+        else {
+            $(".chkUseCapacityFactor").attr('checked') = true;
+            enabledDisabled(true, false);
+        }
+        
+        if ($(".chkUseCapacityFactor").attr('checked', true) && $("#txtCapacityTresholdMaxValue").val() == "") {
+            $("#txtCapacityTresholdMaxValue").val(" ");
+        }
+        if ($(".chkUseCapacityFactor").attr('checked', true) && $("#txtCapacityTresholdMinValue").val() == "") {
+            $("#txtCapacityTresholdMinValue").val(" ");
+        }
+    });
+
+
+    function enabledDisabled(input,isLowCapacity) {
+        if (input) {
+            $("input[type=number]").attr("disabled", false);
+            $("input[type=number]").removeClass("diabledcolor");
+            $("#txtCapacityTresholdMinValue").val("0");
+            $("#txtCapacityTresholdMaxValue").val("999");
+
+        } else if (isLowCapacity) {
+            $("input[type=number]").attr("disabled", true);
+            $("input[type=number]").addClass("diabledcolor");
+            $("#txtCapacityTresholdMinValue").val(" ");
+            $("#txtCapacityTresholdMaxValue").val(" ");
+            $(".field-validation-error").remove();
+            $(".input-validation-error").removeClass("input-validation-error");
+        }
+        else {
+            $("input[type=number]").attr("disabled", true);
+            $("input[type=number]").addClass("diabledcolor");
+            $("#txtCapacityTresholdMinValue").val(" ");
+            $("#txtCapacityTresholdMaxValue").val(" ");
+        }
+    }
+
+
+    $(".chkUseCapacityFactor").change(function () {
+        if (this.checked) {
+            enabledDisabled(true, true);
+        }
+        else {
+            enabledDisabled(false,true);
+
+        }
+
+    });
+
+
+</script>
+

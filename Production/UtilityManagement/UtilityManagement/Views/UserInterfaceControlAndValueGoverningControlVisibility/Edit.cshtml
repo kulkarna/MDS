@@ -1,0 +1,98 @@
+﻿@model DataAccessLayerEntityFramework.UserInterfaceControlAndValueGoverningControlVisibility
+
+@{
+    ViewBag.Title = "Edit";
+}
+@using UserInterfaceValidationExtensions
+
+<h3>Edit User Interface Control And Value Governing Control Visibility</h3>
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form_fieldset">
+        <fieldset>
+            <legend>UserInterfaceControlAndValueGoverningControlVisibility</legend>
+
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserInterfaceFormId, "User Interface Form")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("UserInterfaceFormId", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserInterfaceFormId)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserInterfaceFormControlGoverningVisibilityId, "User Interface Form Control")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("UserInterfaceFormControlGoverningVisibilityId", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserInterfaceFormControlGoverningVisibilityId)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ControlValueGoverningVisibiltiy, "Control Value Governing Visibility")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ControlValueGoverningVisibiltiy)
+                @Html.ValidationMessageFor(model => model.ControlValueGoverningVisibiltiy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Inactive)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Inactive)
+                @Html.ValidationMessageFor(model => model.Inactive)
+            </div>
+
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedBy, "Created By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedBy)
+                @Html.ValidationMessageFor(model => model.CreatedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedDate, "Created Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedDate)
+                @Html.ValidationMessageFor(model => model.CreatedDate)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedBy)
+                @Html.ValidationMessageFor(model => model.LastModifiedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedDate)
+                @Html.ValidationMessageFor(model => model.LastModifiedDate)
+            </div>
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

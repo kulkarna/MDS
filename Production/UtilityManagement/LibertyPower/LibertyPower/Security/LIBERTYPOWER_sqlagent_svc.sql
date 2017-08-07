@@ -1,0 +1,2 @@
+﻿CREATE USER [LIBERTYPOWER\sqlagent_svc] FOR LOGIN [LIBERTYPOWER\sqlagent_svc];
+

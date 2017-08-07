@@ -1,0 +1,2 @@
+﻿CREATE USER [LIBERTYPOWER\Offer_PowerEndUser] FOR LOGIN [LIBERTYPOWER\Offer_PowerEndUser];
+

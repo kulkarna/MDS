@@ -1,0 +1,216 @@
+﻿@model List<UtilityManagement.Models.AccountInfoFieldRequiredModel>
+@{
+    ViewBag.Title = "Account Info Field Required Index";
+}
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Account Info Field Required</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+    <div class="details-data-section chartlink">
+        <div class="left_table">
+             <div class="left_container">
+            <table class="index historicalmode">
+                <tr>
+                    <th>Row Count = @Model.Count()</th>
+                    <th>
+                        @Html.ActionLink("Utility Code", "TitleClick", new { name = "UtilityCode" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.UtilityCodeImageUrl))
+                            {
+                            <img id="imgUtilityCode" src="@ViewBag.UtilityCodeImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Grid", "TitleClick", new { name = "Grid" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.GridImageUrl))
+                            {
+                            <img id="imgGrid" src="@ViewBag.GridImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("I-Cap", "TitleClick", new { name = "ICap" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.ICapImageUrl))
+                            {
+                            <img id="imgICap" src="@ViewBag.ICapImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("LBMP Zone", "TitleClick", new { name = "LbmpZone" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LbmpZoneImageUrl))
+                            {
+                            <img id="imgLbmpZone" src="@ViewBag.LbmpZoneImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Load Profile", "TitleClick", new { name = "LoadProfile" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LoadProfileImageUrl))
+                            {
+                            <img id="imgLoadProfile" src="@ViewBag.LoadProfileImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Meter Owner", "TitleClick", new { name = "MeterOwner" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.MeterOwnerImageUrl))
+                            {
+                            <img id="imgMeterOwner" src="@ViewBag.MeterOwnerImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Meter Type", "TitleClick", new { name = "MeterType" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.MeterTypeImageUrl))
+                            {
+                            <img id="imgMeterType" src="@ViewBag.MeterTypeImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Rate Class", "TitleClick", new { name = "RateClass" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassImageUrl))
+                            {
+                            <img id="imgRateClass" src="@ViewBag.RateClassImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Tariff Code", "TitleClick", new { name = "TariffCode" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeImageUrl))
+                            {
+                            <img id="imgTariffCode" src="@ViewBag.TariffCodeImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("T-Cap", "TitleClick", new { name = "TCap" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.TCapImageUrl))
+                            {
+                            <img id="imgTCap" src="@ViewBag.TCapImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Voltage", "TitleClick", new { name = "Voltage" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.VoltageImageUrl))
+                            {
+                            <img id="imgVoltage" src="@ViewBag.VoltageImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Zone", "TitleClick", new { name = "Zone" })
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.ZoneImageUrl))
+                            {
+                            <img id="imgZone" src="@ViewBag.ZoneImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                </tr>
+                @{
+                    foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.UtilityCompanyId);}
+                            <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId    ');">
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UtilityCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Grid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ICap)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LbmpZone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LoadProfile)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MeterOwner)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MeterType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RateClass)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TariffCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TCap)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Voltage)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Zone)
+                        </td>
+                    </tr>
+                    }
+                }
+            </table>
+        </div></div>
+        <div class="right_chart">
+            <div class="navscroll rightscroll">
+                <a href="">
+                    <img src="~/Images/navscroll.png" /></a>
+            </div>
+
+            <div id="hideDiv" class="chart_open" style="display: none">
+                <table>
+                    <tr>
+                        <td>
+
+                            <div class="form-details">
+                                <h4>Report</h4>
+                                <div class="form_fieldset">
+                                    <fieldset>
+                                        <legend>Request Mode I-Cap</legend>
+                                        <div class="details-data-section">
+                                            <img src="/AccountInfoFieldRequired/HuFunnelChart" alt="" class="img" />
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <img id="dirImg" src="~/Images/view_chart.png" onclick="showHide('hideDiv',this.id)" />
+        </div>
+    </div>
+
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

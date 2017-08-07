@@ -1,0 +1,2 @@
+﻿CREATE USER [LIBERTYPOWER\SQL_Rep_Ser_Read_svc] FOR LOGIN [LIBERTYPOWER\SQL_Rep_Ser_Read_svc];
+

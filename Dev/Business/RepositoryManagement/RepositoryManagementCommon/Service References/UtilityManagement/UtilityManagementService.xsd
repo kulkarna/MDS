@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lpcd7x64-065.libertypower.local/UtilityManagementWcf/UtilityManagementService.UtilityManagementService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" />
+  <xs:element name="GetAIRequestMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="enrollmentType" type="q1:EnrollmentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAIRequestModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetAIRequestModeResult" nillable="true" type="q2:RequestMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRequestModeEnrollmentTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRequestModeEnrollmentTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetAllRequestModeEnrollmentTypesResult" nillable="true" type="q3:GetAllRequestModeEnrollmentTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRequestModeEnrollmentTypesNoTrace">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRequestModeEnrollmentTypesNoTraceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetAllRequestModeEnrollmentTypesNoTraceResult" nillable="true" type="q4:GetAllRequestModeEnrollmentTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUtilities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUtilitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetAllUtilitiesResult" nillable="true" type="q5:GetAllUtilitiesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUtilitiesNoTrace">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUtilitiesNoTraceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetAllUtilitiesNoTraceResult" nillable="true" type="q6:GetAllUtilitiesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilityIdByUtilityCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilityIdByUtilityCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUtilityIdByUtilityCodeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilityCodeByUtilityId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtilityCodeByUtilityIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUtilityCodeByUtilityIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillingTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element minOccurs="0" name="rateClass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="loadProfile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tariffCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillingTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetBillingTypesResult" nillable="true" type="q7:ArrayOfBillingType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHURequestMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="enrollmentType" type="q8:EnrollmentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHURequestModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetHURequestModeResult" nillable="true" type="q9:RequestMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIDRRequestModeData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element minOccurs="0" name="serviceAccount" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="enrollmentType" type="q10:EnrollmentType" />
+        <xs:element minOccurs="0" name="loadProfile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rateClass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tariffCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="annualUsage" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="hasEligibilityRuleBeenSatisfied" type="xs:boolean" />
+        <xs:element minOccurs="0" name="hia" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIDRRequestModeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetIDRRequestModeDataResult" nillable="true" type="q11:IdrRequestMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextMeterRead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="getNextMeterReadRequest" nillable="true" type="q12:GetNextMeterReadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextMeterReadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetNextMeterReadResult" nillable="true" type="q13:GetNextMeterReadResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextMeterReadDateForAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element minOccurs="0" name="serviceAccountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tripNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contextdate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextMeterReadDateForAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNextMeterReadDateForAccountResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasPorAssurance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element minOccurs="0" name="rateClass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="loadProfile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tariffCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="billingType" type="q14:BillingType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasPorAssuranceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HasPorAssuranceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PorAssurance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element minOccurs="0" name="rateClass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="loadProfile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tariffCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PorAssuranceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="PorAssuranceResult" nillable="true" type="q15:HasPurchaseOfReceivableAssuranceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUtilityAccountInfoRequiredFields">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUtilityAccountInfoRequiredFieldsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/UtilityManagementServiceData" minOccurs="0" name="GetAllUtilityAccountInfoRequiredFieldsResult" nillable="true" type="q16:ArrayOfAccountInfoRequiredFields" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoesUtilityCodeBelongToIso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Iso" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoesUtilityCodeBelongToIsoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DoesUtilityCodeBelongToIsoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

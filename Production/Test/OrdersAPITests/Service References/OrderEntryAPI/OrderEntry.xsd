@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/OrderEntry.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" />
+  <xs:import schemaLocation="http://localhost:57373/OrderEntry.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/CRMWebServices" />
+  <xs:element name="Echo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="input" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EchoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EchoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewContractNumber">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewContractNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewContractNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="newContract" nillable="true" type="q1:Contract" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="newCustomer" nillable="true" type="q2:Customer" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="SubmitContractResult" nillable="true" type="q3:WSContractSubmissionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitContractTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="newContract" nillable="true" type="q4:Contract" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="newCustomer" nillable="true" type="q5:Customer" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitContractTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="SubmitContractTestResult" nillable="true" type="q6:WSContractSubmissionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitNewResidentialContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="contractTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="contractSignedDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="contractStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="rateId" type="xs:long" />
+        <xs:element minOccurs="0" name="rate" type="xs:double" />
+        <xs:element minOccurs="0" name="retailMarketCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element minOccurs="0" name="termsMonths" type="xs:int" />
+        <xs:element minOccurs="0" name="customerTitle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerFirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerLastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contactEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contactPhoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ssnEncrypted" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceStreet1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceStreet2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceState" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceZip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="billingStreet1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="billingStreet2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="billingCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="billingState" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="billingZip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="salesChannel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="salesRep" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="externalNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="goGreenOption" type="xs:boolean" />
+        <xs:element minOccurs="0" name="optoutSpecialOffers" type="xs:boolean" />
+        <xs:element minOccurs="0" name="languageId" type="xs:int" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="origin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitNewResidentialContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="SubmitNewResidentialContractResult" nillable="true" type="q7:WSContractSubmissionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitContractAmmendment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="newcontract" nillable="true" type="q8:Contract" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" minOccurs="0" name="customer" nillable="true" type="q9:Customer" />
+        <xs:element minOccurs="0" name="currentContract" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitContractAmmendmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="SubmitContractAmmendmentResult" nillable="true" type="q10:WSContractSubmissionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

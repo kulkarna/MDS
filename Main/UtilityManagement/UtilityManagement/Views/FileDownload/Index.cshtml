@@ -1,0 +1,99 @@
+﻿@model IEnumerable<UtilityManagement.Models.FileNames>
+@{
+    ViewBag.Title = "File Download Index";
+    ViewBag.PageName = "FileDownloadIndex";
+}
+<h2>Index</h2>
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">File Download</div>
+        <div class="float-right">
+            <input type="text" class="text-box2">
+                <div class="seachbtn">
+                    <button class="button" type="submit" value="Search for records" id="search">search</button>
+                </div>
+        </div>
+    </div>
+    <div class="details-data-section">
+        <div class="detail_table">
+            <div class="left_container">
+
+                <table class="index">
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.ActionLink(item.LinkedText, "Download", new { id = item.FileId }) 
+                        </td>
+                    </tr>
+                    }
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>
+                    <tr>
+                        <td>
+                            @{Html.BeginForm();}
+	                            @Html.Raw(ViewBag.uploaderhtml)
+                            <br />
+                            <br />
+                            <button id="SubmitButton" onclick="return submitbutton_click()">Submit</button>			
+                            @{Html.EndForm();}
+                            <br />
+                            <br />
+                            <div>
+                                <textarea id="text_info" style="height:200px; width:400px;"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <div class="right_chart">         
+        </div>
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+@*<script type="text/javascript">
+    function submitbutton_click() {
+        var submitbutton = document.getElementById('SubmitButton');
+        var uploadobj = document.getElementById('myuploader');
+        if (!window.filesuploaded) {
+            if (uploadobj.getqueuecount() > 0) {
+                uploadobj.startupload();
+            }
+            else {
+                var uploadedcount = parseInt(submitbutton.getAttribute("itemcount")) || 0;
+                if (uploadedcount > 0) {
+                    return true;
+                }
+                alert("Please browse files for upload");
+            }
+            return false;
+        }
+        window.filesuploaded = false;
+        return true;
+    }
+    function CuteWebUI_AjaxUploader_OnPostback() {
+        window.filesuploaded = true;
+        var submitbutton = document.getElementById('SubmitButton');
+        submitbutton.click();
+        return false;
+    }
+    function GetTrace() {
+        var html = '@Convert.ToString(ViewBag.UploadedMessage)' || '';
+        if (html) {
+            document.getElementById("text_info").value = html;
+        }
+    }
+    GetTrace();
+</script>*@
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

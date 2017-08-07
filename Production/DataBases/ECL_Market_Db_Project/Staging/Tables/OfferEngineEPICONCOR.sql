@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Staging].[OfferEngineEPICONCOR] (
+    [ID]              INT            IDENTITY (1, 1) NOT NULL,
+    [EsiId]           NVARCHAR (255) NULL,
+    [CustomerName]    NVARCHAR (255) NULL,
+    [RateClassCode]   NVARCHAR (255) NULL,
+    [ZipCode]         NVARCHAR (50)  NULL,
+    [MeteredKW]       FLOAT (53)     NULL,
+    [ActualKWH]       FLOAT (53)     NULL,
+    [BilledKW]        FLOAT (53)     NULL,
+    [TDSPCharges]     FLOAT (53)     NULL,
+    [StartDate]       NVARCHAR (50)  NULL,
+    [EndDate]         NVARCHAR (50)  NULL,
+    [MeterReadCycle]  NVARCHAR (50)  NULL,
+    [ServiceAddress1] NVARCHAR (255) NULL,
+    [ServiceAddress2] NVARCHAR (255) NULL,
+    [ServiceAddress3] NVARCHAR (255) NULL,
+    [LoadProfile]     NVARCHAR (255) NULL,
+    [PowerFactor]     FLOAT (53)     NULL,
+    [ERCOTRegion]     NVARCHAR (255) NULL,
+    [MeteredKVA]      NVARCHAR (255) NULL,
+    [BilledKVA]       NVARCHAR (255) NULL,
+    [ContextDate]     DATETIME       NOT NULL,
+    [DateCreated]     DATETIME       DEFAULT (getdate()) NOT NULL,
+    [FileImportID]    INT            NULL,
+    CONSTRAINT [OFFEPICONCOR_id_fk] FOREIGN KEY ([FileImportID]) REFERENCES [dbo].[FileImport] ([ID])
+);
+

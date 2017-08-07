@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Account" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAkUHMCAEAMFQCBkQhkAUQIiAEgEhFGAQEQEADkCALE=</HashCode>
+      <FileName>Account.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BillingContact" />
+      <Property Name="BillingAddress" />
+      <Property Name="ServiceAddress" />
+      <Property Name="Customer" />
+      <Property Name="Details" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Address" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQCAAAAAAAAAAMABkBCAQAAEAABAAAAAIkhAAAABE=</HashCode>
+      <FileName>Address.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.AccountDetail" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AggQCAAAAEAAAAAAAhkAAAAAAEgQBAAAAAAEAAAAABE=</HashCode>
+      <FileName>AccountDetail.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.CustomerPreference" BaseTypeListCollapsed="true">
+    <Position X="23" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAAAAAAAABABkCAAAAYkAABAAAAAAEAAAAABE=</HashCode>
+      <FileName>CustomerPreference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Contact" BaseTypeListCollapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCEAAgCAAAEAAABkAAAAAAEAIBAEAAAAEIAAAABk=</HashCode>
+      <FileName>Contact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Customer">
+    <Position X="14.25" Y="9.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QAASCABAAAAAgABBGx2AQAAAUlAQBBGEAAgEAAAFIFE=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CustomerAddress" />
+      <Property Name="Contact" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.AccountContract">
+    <Position X="17.25" Y="3.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAARDAAIAAEAAAAAAhkABAAAAEAABAMAAAAMAAAAAlE=</HashCode>
+      <FileName>AccountContract.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Account" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Contract">
+    <Position X="18.5" Y="11.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>gIAQDABAAAAAAFAgAVmAAAAgAcQAFAaCAAQERMACABE=</HashCode>
+      <FileName>Contract.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums.AccountType" Collapsed="true">
+    <Position X="8" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACIACAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\AccountType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums.BillingType" Collapsed="true">
+    <Position X="8" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAQABAAAAAAAAAAAgAACA=</HashCode>
+      <FileName>Enums\BillingType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums.CreditAgencyType" Collapsed="true">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAgAAAAAAAAAAAAAAIAAEAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\CreditAgencyType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums.EnrollmentType" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAgAAAAAAAAIAAAAAAAAAAAEAAARA=</HashCode>
+      <FileName>Enums\EnrollmentType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

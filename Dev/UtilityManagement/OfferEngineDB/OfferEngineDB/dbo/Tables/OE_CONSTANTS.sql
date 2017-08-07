@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[OE_CONSTANTS] (
+    [ID]           INT IDENTITY (1, 1) NOT NULL,
+    [BATCH_NUMBER] INT NULL,
+    [QUOTE_NUMBER] INT NULL
+);
+

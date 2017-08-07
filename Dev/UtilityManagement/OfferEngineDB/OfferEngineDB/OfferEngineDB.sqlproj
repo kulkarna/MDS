@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>OfferEngineDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{28987c2b-7583-4036-8893-6e7d6f4ae627}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>OfferEngineDB</RootNamespace>
+    <AssemblyName>OfferEngineDB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\ISTA_PremID.sql" />
+    <Build Include="dbo\Tables\LOG.sql" />
+    <Build Include="dbo\Tables\OE_ACCOUNT.sql" />
+    <Build Include="dbo\Tables\OE_ACCOUNT_ADDRESS.sql" />
+    <Build Include="dbo\Tables\OE_ACCOUNT_METERS.sql" />
+    <Build Include="dbo\Tables\OE_ACCOUNT_NUMBER_MAPPED.sql" />
+    <Build Include="dbo\Tables\OE_ACCOUNT032009.sql" />
+    <Build Include="dbo\Tables\OE_ACCOUNT092010.sql" />
+    <Build Include="dbo\Tables\OE_CONSTANTS.sql" />
+    <Build Include="dbo\Tables\OE_CONTRACTED_OFFERS.sql" />
+    <Build Include="dbo\Tables\OE_EPR_LOGS.sql" />
+    <Build Include="dbo\Tables\OE_FILE_TYPES.sql" />
+    <Build Include="dbo\Tables\OE_KEYS.sql" />
+    <Build Include="dbo\Tables\OE_KEYS_OFFER_REFRESH.sql" />
+    <Build Include="dbo\Tables\OE_MATPRICE_FILE.sql" />
+    <Build Include="dbo\Tables\OE_OFFER.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_ACCOUNTS.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_AGGREGATES.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_COMPONENT_DETAILS.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_FLOW_DATES.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_MARKET_PRICES_DETAIL.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_MARKETS.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_NEW_USAGE.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_PRICE_FILES.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_REFRESH_LOG.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_STATUS_MESSAGE.sql" />
+    <Build Include="dbo\Tables\OE_OFFER_UTILITIES.sql" />
+    <Build Include="dbo\Tables\OE_PRICE_MATRIX.sql" />
+    <Build Include="dbo\Tables\OE_PRICE_MATRIX_EXCEPTIONS.sql" />
+    <Build Include="dbo\Tables\OE_PRICES.sql" />
+    <Build Include="dbo\Tables\OE_PRICING_REQUEST.sql" />
+    <Build Include="dbo\Tables\OE_PRICING_REQUEST_ACCOUNTS.sql" />
+    <Build Include="dbo\Tables\OE_PRICING_REQUEST_FILES.sql" />
+    <Build Include="dbo\Tables\OE_PRICING_REQUEST_OFFER.sql" />
+    <Build Include="dbo\Tables\OE_PRICING_REQUEST_REFRESH.sql" />
+    <Build Include="dbo\Tables\OE_REFRESH_PRICE_REQUEST_LOG.sql" />
+    <Build Include="dbo\Tables\OE_SERVICE_LOG.sql" />
+    <Build Include="dbo\Tables\OE_TERMS_AND_PRICES.sql" />
+    <Build Include="dbo\Tables\OeIcaps.sql" />
+    <Build Include="dbo\Tables\OeTcaps.sql" />
+    <Build Include="dbo\Tables\OF-013975-Zones.sql" />
+    <Build Include="dbo\Tables\OF014920Accounts.sql" />
+    <Build Include="dbo\Tables\OF-018245-LoadShapes.sql" />
+    <Build Include="dbo\Tables\OfferUsageStatus.sql" />
+    <Build Include="dbo\Tables\ProspectAccountIcapFactor.sql" />
+    <Build Include="dbo\Tables\SYS_MAP_PRODUCTS_TO_DC.sql" />
+    <Build Include="dbo\Tables\TimeTracking.sql" />
+    <Build Include="dbo\Tables\zEDI_TRACKING.sql" />
+    <Build Include="dbo\Tables\zErrors.sql" />
+    <Build Include="dbo\Tables\zOE_ACCOUNT_AUDIT.sql" />
+    <Build Include="dbo\Tables\zOE_ACCOUNT_AUDIT-051110.sql" />
+    <Build Include="dbo\Tables\zOE_OFFER_AUDIT.sql" />
+    <Build Include="dbo\Tables\OE_PRICING_REQUEST_OFFER_HISTORY.sql" />
+    <Build Include="dbo\Tables\zOE_OFFER_AUDIT-051110.sql" />
+    <Build Include="dbo\Tables\zPROCESS_TRACKING.sql" />
+    <Build Include="dbo\Tables\OE_PRICING_REQUEST_OFFER_HISTORY_OFFER.sql" />
+    <Build Include="dbo\Tables\zPROCESS_TRACKING-051110.sql" />
+    <Build Include="dbo\Tables\AccountManagedFiles.sql" />
+    <Build Include="dbo\Tables\AD_DATA_SET_TIMING.sql" />
+    <Build Include="dbo\Tables\AD_ROLES.sql" />
+    <Build Include="dbo\Tables\AD_SYSTEM_PARAMETER.sql" />
+    <Build Include="dbo\Tables\AD_SYSTEM_PARAMETERS_GROUP.sql" />
+    <Build Include="dbo\Tables\AD_USER.sql" />
+    <Build Include="dbo\Tables\DailyProfileByOffer.sql" />
+    <Build Include="dbo\Views\vw_814_usage_request.sql" />
+    <Build Include="dbo\Views\vw_PricingRequest.sql" />
+    <Build Include="dbo\Views\vw_PricingRequestReturnValueFormat.sql" />
+    <Build Include="Security\Offer_UAT.sql" />
+    <Build Include="Security\Offer_Support.sql" />
+    <Build Include="Security\Offer_RelMgr.sql" />
+    <Build Include="Security\Offer_QA.sql" />
+    <Build Include="Security\Offer_PowerEndUser.sql" />
+    <Build Include="Security\Offer_EndUser.sql" />
+    <Build Include="Security\Offer_Developer.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQLProdSupportRO.sql" />
+    <Build Include="Security\LIBERTYPOWER_lpapplications_svc.sql" />
+    <Build Include="Security\readonly_msoffice.sql" />
+    <Build Include="Security\dmaia.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Reporting_ReadOn.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Rep_Ser_Read_svc.sql" />
+    <Build Include="Security\SQL_Rep_Ser_Read_svc.sql" />
+    <Build Include="Security\SQL_Rep_Ser_RW_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_gworthington.sql" />
+    <Build Include="Security\LIBERTYPOWER_atafur.sql" />
+    <Build Include="Security\LIBERTYPOWER_sqlagent_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_dmoretti.sql" />
+    <Build Include="Security\libertypower_pperez.sql" />
+    <Build Include="Security\LIBERTYPOWER_gkovacs.sql" />
+    <Build Include="Security\ReadOnly_Access_v1.sql" />
+    <Build Include="Security\ReadOnly_Excel_v1.sql" />
+    <Build Include="Security\LIBERTYPOWER_sscott.sql" />
+    <Build Include="Security\LnkSrvFrmSQL9Txn.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Comm_Rep_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_jmarsh.sql" />
+    <Build Include="Security\libertypower_lrosenblum.sql" />
+    <Build Include="Security\LIBERTYPOWER_rrusson.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQLProdSupportRW.sql" />
+    <Build Include="Security\LIBERTYPOWER_jforero.sql" />
+    <Build Include="Security\LIBERTYPOWER_OfferEngine_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_Offer_UAT.sql" />
+    <Build Include="Security\LIBERTYPOWER_Offer_Support.sql" />
+    <Build Include="Security\LIBERTYPOWER_Offer_RelMgr.sql" />
+    <Build Include="Security\LIBERTYPOWER_Offer_QA.sql" />
+    <Build Include="Security\LIBERTYPOWER_Offer_PowerEndUser.sql" />
+    <Build Include="Security\LIBERTYPOWER_Offer_EndUser.sql" />
+    <Build Include="Security\LIBERTYPOWER_Offer_Developer.sql" />
+    <Build Include="Security\LIBERTYPOWER_phasselbring.sql" />
+    <Build Include="Security\LIBERTYPOWER_phasselbring_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\IsNullEmptyOrWhiteSpaceNVarchar.sql" />
+    <Build Include="dbo\Functions\IsNullEmptyOrWhiteSpaceVarchar.sql" />
+    <Build Include="dbo\Functions\NullIfEmptyOrWhiteSpaceNVarchar.sql" />
+    <Build Include="dbo\Functions\NullIfEmptyOrWhiteSpaceVarchar.sql" />
+    <Build Include="dbo\Stored Procedures\usp_generate_id.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetMeterNumber.sql" />
+    <Build Include="dbo\Stored Procedures\usp_hist_load_max_date_by_offer_id_zone_utility_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_hist_load_min_date_by_offer_id_zone_utility_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_hist_load_zone_utility_by_offer_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_historical_load_by_offer_id_zone_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_historical_load_by_offer_id_zone_utility_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_IcapTcapInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ista_usage_by_account_number_exists.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ista_usage_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ista_usage_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_LogServiceCall.sql" />
+    <Build Include="dbo\Stored Procedures\usp_LossesForAccountUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_market_by_offer_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_market_list_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_markets_by_pricing_request_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_mat_price_zone_by_utility_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_meter_read_dates_by_offer_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_meter_reads_by_offer_utility_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_name_key_required_length_by_utility_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_name_key_required_length_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_NstarUtilityCodeUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OE_FIX.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_account_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_accounts_status_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_add_terms_prices_flow_dates.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_annual_usage_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_calculated_price_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_component_details_ins_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_component_details_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_create_or_update.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_del.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_flow_date_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_market_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_mkt_prices_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_mkt_prices_ins_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_mkt_prices_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_price_files_del.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_price_files_ins_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_status_message_ins_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_status_message_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_status_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_status_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offer_utility_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferAccountAnnualUsageUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferAccountDelete.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferAccountEstimatesAnnualUsageUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferAccountSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferGetNextOfferId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferAccountsHavingZeroUsageSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferAccountsNeedUsageUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferAccountsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferAnnualUsageUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferFlowStartDatesTermsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferForecastStartEndDatesSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferGraphSave.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferIdsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferMarketSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferPriceResultInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferUsageStatusDelete.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferUsageStatusInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferUtilitiesDelete.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OfferZoneUtilitySelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_price_matrix_exceptions_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_price_matrix_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_price_matrix_markets_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_price_matrix_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_price_request_ready_for_contract_search_sel.sql" />
+    <Build Include="dbo\Stored Procedures\aggregateICAPTCAP.sql" />
+    <Build Include="dbo\Stored Procedures\usp_price_request_search_sel.sql" />
+    <Build Include="dbo\Stored Procedures\aggregateLosses.sql" />
+    <Build Include="dbo\Stored Procedures\usp_price_request_status_upd.sql" />
+    <Build Include="dbo\Stored Procedures\archiveMatPriceFiles.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_request_account_ins.sql" />
+    <Build Include="dbo\Stored Procedures\archivePricingRequests.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_request_account_upd.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllTableSizes.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_request_account_upd_ex.sql" />
+    <Build Include="dbo\Stored Procedures\usp_a_clean_slate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_request_by_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_address_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_request_files_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_exists.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_request_offers_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_markets_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_request_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_name_key_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_requests_completed_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_utilities_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_requests_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_zero_out_usage.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestOfferHistorySave.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestGraphGet.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountAddressSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestOfferHistoryOfferSave.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestGraphSave.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountGetIDByNumberAndUtility.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountPropertyHistory_SELECT_ByUtilityIdIntAndAccountNumber.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountIcapTcapUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestOfferHistory_GetOffersForMostRecentPricingRequest.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestOfferListGraphGet.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountManagedFileInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestOffersDelete.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountManagedFileSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Determinants_SetAccountProperties.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountMeterSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestSelectWithServiceAccounts.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountMissingLoadShapeIdsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\InsertGenerator.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_accounts_by_offer_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OEAccountAddress_GetByAccountNumber.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_by_utility_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_accounts_by_pricing_request_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_OEAccountAddress_GetZipByAccountNumber.sql" />
+    <Build Include="dbo\Stored Procedures\usp_prospect_accounts_active_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_prospect_deals_offer_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountsExistingByOfferSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ProspectAccountIcapFactorIns.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ProspectAccountIcapFactorSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ProspectAccountsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_AccountUsageInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RebuildIndexes.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ad_users_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_recheck_usage_complete_for_offer.sql" />
+    <Build Include="dbo\Stored Procedures\usp_aggregate_icap_tcap_by_offer.sql" />
+    <Build Include="dbo\Stored Procedures\usp_retail_mkt_id_list_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_aggregate_losses_by_offer.sql" />
+    <Build Include="dbo\Stored Procedures\usp_terms_and_prices_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_aggregated_icap_tcap_losses_by_offer_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_terms_and_prices_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_aggregated_total_hourly_load_by_offer_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TimeTrackingInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_aggregated_total_meter_reads_by_offer_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TimeTrackingPricingRequestSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_aggregates_by_offer_id_del.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateAccount.sql" />
+    <Build Include="dbo\Stored Procedures\usp_aggregates_by_offer_id_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateAccountWithScrapedData.sql" />
+    <Build Include="dbo\Stored Procedures\usp_aggregates_by_offer_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_usage_data_by_offer_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_analyst_pricing_requests_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_usage_from_lp_historical_info_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_avg_read_days_by_offer_utility_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_user_role_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_billing_account_required_length_by_utility_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utilities_by_offer_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_billing_account_required_length_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utilities_by_pricing_request_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_check_historical_load_by_zone_complete.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utility_duns_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_check_usage_complete_for_offer.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utility_id_list_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_generate_id.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utility_list_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_histloadbyzone_by_offer_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utility_zone_xref_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_accounts_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zIstaUsageRequest.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_aggregates_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zIstaUsageRequestUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_component_details_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zprocess_tracking_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_exec.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_flow_dates_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_market_prices_detail_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_markets_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_price_files_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_status_message_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_offer_utilities_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_price_request_offer_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_prospectaccounts_by_offer_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_clone_prospectdeals_by_offer_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_cloned_offer_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_county_zone_xref_by_mkt_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyProfileByOfferInsert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_edi_usage_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_EdiTransactionStatusSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_error_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_errors_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_flow_start_dates_sel.sql" />
+    <Build Include="dbo\User Defined Types\tvp_ocou_accounts.sql" />
+    <Build Include="dbo\User Defined Types\tvp_ocou_terms_prices_flow_dates.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Comm_Rep_svc_1.sql" />
+    <Build Include="Security\LnkSrvFrmSQL9Txn_1.sql" />
+    <Build Include="Security\readonly_msoffice_1.sql" />
+  </ItemGroup>
+</Project>

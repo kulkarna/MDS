@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="18d39dd5fb494d27a10d2b44fac800ed" Name="Diagram1" ZoomLevel="42">
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRequestModeEnrollmentType" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRequestModeType" Width="1.5" PointX="7.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRequestModeTypeToRequestModeEnrollmentType" Width="1.5" PointX="2.25" PointY="7.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RequestModeEnrollmentType" Width="3" PointX="11" PointY="52.875" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RequestModeHistoricalUsage" Width="3" PointX="14.75" PointY="62.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RequestModeType" Width="3" PointX="11" PointY="57.625" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RequestModeTypeGenre" Width="3" PointX="11" PointY="41.625" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RequestModeTypeToRequestModeEnrollmentType" Width="4.375" PointX="14.75" PointY="53.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RequestModeTypeToRequestModeTypeGenre" Width="3.25" PointX="17.75" PointY="58" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsage_RequestModeEnrollmentType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeTypeToRequestModeEnrollmentType_RequestModeEnrollmentType" ></AssociationConnector>
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsage_RequestModeType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeTypeToRequestModeEnrollmentType_RequestModeType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeTypeToRequestModeTypeGenre_RequestModeType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeTypeToRequestModeTypeGenre_RequestModeTypeGenre" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UserInterfaceControlAndValueGoverningControlVisibility" Width="3.875" PointX="9.875" PointY="5.25" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UserInterfaceControlVisibility" Width="2.75" PointX="14.5" PointY="5.25" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UserInterfaceForm" Width="2.25" PointX="2.25" PointY="3.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UserInterfaceFormControl" Width="3.875" PointX="5.25" PointY="7.25" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UserInterfaceControlAndValueGoverningControlVisibility_UserInterfaceForm" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UserInterfaceControlAndValueGoverningControlVisibility_UserInterfaceFormControl" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UserInterfaceControlVisibility_UserInterfaceControlAndValueGoverningControlVisibility" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UserInterfaceControlVisibility_UserInterfaceForm" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UserInterfaceControlVisibility_UserInterfaceFormControl" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UserInterfaceFormControl_UserInterfaceForm" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UtilityLegacy" Width="2.75" PointX="6.25" PointY="29" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UtilityCompanyToUtilityLegacy" Width="3" PointX="9.75" PointY="62.125" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityCompanyToUtilityLegacy_UtilityLegacy" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.User" Width="1.5" PointX="9.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RequestModeIcap" Width="2.5" PointX="18.75" PointY="66.375" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeIcap_RequestModeEnrollmentType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeIcap_RequestModeType" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.AccountType" Width="1.5" PointX="46.375" PointY="56.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RequestModeIdr" Width="2.75" PointX="16.75" PointY="77" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeIdr_RequestModeEnrollmentType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeIdr_RequestModeType" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.MeterType" Width="1.5" PointX="9.75" PointY="66.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterType_AccountType" ManuallyRouted="true" >
+          <ConnectorPoint PointX="47.875" PointY="58.534151649728742" />
+          <ConnectorPoint PointX="50.730511075856782" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="47.208333333333336" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="47.041666666666664" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="46.802080833333335" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="46.635414166666664" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="42.864583333333336" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="42.697916666666664" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="42.348955833333335" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="42.182289166666664" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="41.083333333333336" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="40.916666666666664" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="38.458333333333336" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="38.291666666666664" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="34.25" PointY="63.05710937500001" />
+          <ConnectorPoint PointX="34.25" PointY="62.125" />
+          <ConnectorPoint PointX="33.739585833333336" PointY="62.125" />
+          <ConnectorPoint PointX="33.572919166666665" PointY="62.125" />
+          <ConnectorPoint PointX="33.333333333333336" PointY="62.125" />
+          <ConnectorPoint PointX="33.166666666666664" PointY="62.125" />
+          <ConnectorPoint PointX="33.130207083333339" PointY="62.125" />
+          <ConnectorPoint PointX="32.963540416666667" PointY="62.125" />
+          <ConnectorPoint PointX="32.927080833333335" PointY="62.125" />
+          <ConnectorPoint PointX="32.760414166666664" PointY="62.125" />
+          <ConnectorPoint PointX="32.72395508333333" PointY="62.125" />
+          <ConnectorPoint PointX="32.557288416666658" PointY="62.125" />
+          <ConnectorPoint PointX="32.333333333333336" PointY="62.125" />
+          <ConnectorPoint PointX="32.166666666666664" PointY="62.125" />
+          <ConnectorPoint PointX="29.208333333333332" PointY="62.125" />
+          <ConnectorPoint PointX="29.041666666666668" PointY="62.125" />
+          <ConnectorPoint PointX="28.958333333333332" PointY="62.125" />
+          <ConnectorPoint PointX="28.791666666666668" PointY="62.125" />
+          <ConnectorPoint PointX="28.75" PointY="62.125" />
+          <ConnectorPoint PointX="28.75" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="27.958333333333332" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="27.791666666666668" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="26.989583333333332" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="26.822916666666668" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="21.958333333333332" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="21.791666666666668" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="21.770833333333332" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="21.291666666666668" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="21.239583333333332" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="21.041664166666667" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="62.73020507812501" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="61.84375" />
+          <ConnectorPoint PointX="18.489583333333332" PointY="61.84375" />
+          <ConnectorPoint PointX="18.322916666666668" PointY="61.84375" />
+          <ConnectorPoint PointX="18.208333333333332" PointY="61.84375" />
+          <ConnectorPoint PointX="18.041666666666668" PointY="61.84375" />
+          <ConnectorPoint PointX="15.036458333333334" PointY="61.84375" />
+          <ConnectorPoint PointX="14.104166666666666" PointY="61.84375" />
+          <ConnectorPoint PointX="13.489583333333334" PointY="61.84375" />
+          <ConnectorPoint PointX="13.166666166666667" PointY="61.84375" />
+          <ConnectorPoint PointX="13.083333333333334" PointY="61.84375" />
+          <ConnectorPoint PointX="12.854166666666666" PointY="61.84375" />
+          <ConnectorPoint PointX="10.052083333333334" PointY="61.84375" />
+          <ConnectorPoint PointX="9.8854166666666661" PointY="61.84375" />
+          <ConnectorPoint PointX="9.5416666666666661" PointY="61.84375" />
+          <ConnectorPoint PointX="9.5416666666666661" PointY="66.375" />
+          <ConnectorPoint PointX="10.296873999999999" PointY="66.375" />
+          <ConnectorPoint PointX="10.296873999999999" PointY="66.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeTypeToRequestModeEnrollmentType_RequestModeTypeGenre" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RequestModeHistoricalUsageParameter" Width="2.25" PointX="14.75" PointY="67.625" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.TriStateValue" Width="1.5" PointX="12.5" PointY="45.875" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_HasCustomerNumberId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_HasMeterTypeId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_HasPodIdNumberId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_HasReferenceNumberId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsBillingAccountNumberRequiredId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMdmaId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMeterInstallerId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMeterNumberRequiredId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMeterOwnerId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsMeterReaderId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsNameKeyRequiredId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsSchedulingCoordinatorId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsZipCodeRequiredId" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.LpStandardRateClass" Width="3" PointX="6.75" PointY="85.25" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RateClassAlia" Width="1.5" PointX="16.75" PointY="83.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditLpStandardRateClass" Width="2.125" PointX="10.25" PointY="9.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRateClassAlia" Width="1.75" PointX="4.25" PointY="11.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.RateClass" Width="1.5" PointX="14.5" PointY="76.375" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RateClass_AccountType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RateClass_LpStandardRateClass" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RateClassAlias_RateClass" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditMeterType" Width="1.5" PointX="7.25" PointY="11.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRateClass" Width="1.5" PointX="13.25" PointY="9.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRequestModeHistoricalUsage" Width="1.5" PointX="15.25" PointY="9.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRequestModeIcap" Width="1.5" PointX="9.25" PointY="15.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRequestModeIdr" Width="1.5" PointX="17.25" PointY="9.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditServiceClass" Width="2.5" PointX="18.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.LoadProfileAlia" Width="1.5" PointX="16.25" PointY="96.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.LpStandardLoadProfile" Width="1.5" PointX="6.75" PointY="77.875" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.LpStandardTariffCode" Width="1.5" PointX="6.75" PointY="81.5" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.TariffCodeAlia" Width="1.5" PointX="11.25" PointY="89.625" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditLoadProfileAlia" Width="2.625" PointX="2.25" PointY="17.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditLpStandardLoadProfile" Width="2" PointX="19.25" PointY="7.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditLpStandardTariffCode" Width="1.5" PointX="11.25" PointY="17.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditTariffCodeAlia" Width="2.75" PointX="19.25" PointY="13.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.LoadProfile" Width="1.5" PointX="14" PointY="82.625" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.TariffCode" Width="1.5" PointX="37.625" PointY="63.5" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditLoadProfile" Width="1.5" PointX="13.25" PointY="18.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditTariffCode" Width="1.5" PointX="6.25" PointY="19.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LoadProfile_AccountType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_TariffCode_AccountType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LoadProfile_LpStandardLoadProfile" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LoadProfileAlias_LoadProfile" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_TariffCode_LpStandardTariffCode" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_TariffCodeAlias_TariffCode" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.PorDriver" Width="1.5" PointX="26.75" PointY="46.125" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.PorRecourse" Width="1.5" PointX="18.5" PointY="87.125" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.PurchaseOfReceivable" Width="1.5" PointX="20.75" PointY="75.625" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditPurchaseOfReceivable" Width="3.375" PointX="15.25" PointY="19.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PurchaseOfReceivables_PorDriver" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PurchaseOfReceivables_PorRecourse" />
+        <!--<AssociationConnector Association="Lp_UtilityManagementModel.FK_IdrRule_RequestModeType" />-->
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.BillingType" Width="1.5" PointX="27.125" PointY="58" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UtilityBillingType" Width="1.5" PointX="9.75" PointY="71.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditBillingType" Width="1.5" PointX="21.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditUtilityBillingType" Width="1.5" PointX="19.25" PointY="19.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityBillingType_BillingType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PurchaseOfReceivables_LoadProfile" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityBillingType_LoadProfile" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PurchaseOfReceivables_RateClass" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PurchaseOfReceivables_TariffCode" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityBillingType_RateClass" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityBillingType_TariffCode" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.MeterReadSchedule" Width="1.5" PointX="11" PointY="84.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.Month" Width="1.5" PointX="15.5" PointY="88.875" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UtilityTrip" Width="1.5" PointX="6.75" PointY="88.875" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.Year" Width="1.5" PointX="15.5" PointY="58.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditMeterReadSchedule" Width="1.5" PointX="21.25" PointY="19.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditUtilityTrip" Width="3.25" PointX="22.25" PointY="7.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterReadSchedule_Month" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterReadSchedule_UtilityTrip" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterReadSchedule_Year" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.LpBillingType" Width="1.5" PointX="40.25" PointY="57.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.LpUtilityOfferedBillingType" Width="1.5" PointX="12" PointY="76" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditLpBillingType" Width="1.5" PointX="23.25" PointY="13.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditLpUtilityOfferedBillingType" Width="1.5" PointX="23.25" PointY="0.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpBillingType_BillingType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpUtilityOfferedBillingType_LpBillingType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpUtilityOfferedBillingType_UtilityOfferedBillingType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpBillingType_LoadProfile" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpBillingType_PorDriver" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpBillingType_RateClass" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpBillingType_TariffCode" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.LpApprovedBillingType" Width="1.5" PointX="12" PointY="71.875" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditLpApprovedBillingType" Width="1.5" PointX="23.25" PointY="21.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpApprovedBillingType_ApprovedBillingType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpApprovedBillingType_LpBillingType" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.AccountInfoField" Width="1.5" PointX="9.5" PointY="93.125" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditAccountInfoField" Width="1.5" PointX="25.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditAccountInfoFieldRequired" Width="1.5" PointX="2.25" PointY="23.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpApprovedBillingType_LpBillingType1" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpUtilityOfferedBillingType_LpBillingType1" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.AccountInfoFieldRequired" Width="1.5" PointX="11.75" PointY="80" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_AccountInfoFieldRequired_AccountInfoField" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_TriStateValue_IsServiceProviderId" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.ISO" Width="3" PointX="0.75" PointY="77.5" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.Market" Width="3" PointX="40.75" PointY="53.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.TriStateValuePendingActiveInactive" Width="3" PointX="0.75" PointY="81" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditUtilityCompany" Width="1.5" PointX="25.25" PointY="13.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.BillingAccountPattern" Width="1.5" PointX="6.75" PointY="98.5" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.ICapTCapRefresh" Width="2.5" PointX="6.75" PointY="53.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.MeterNumberPattern" Width="1.5" PointX="6.75" PointY="94.25" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.NameKeyPattern" Width="1.5" PointX="6.75" PointY="49.5" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.ServiceAccountPattern" Width="1.5" PointX="6.75" PointY="66.5" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.ServiceAddressZipPattern" Width="1.5" PointX="6.75" PointY="57.875" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.ServiceLevelAgreement" Width="1.5" PointX="6.75" PointY="62.125" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.StrataPattern" Width="1.5" PointX="6.75" PointY="102.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UtilityCompany" Width="1.5" PointX="32.5" PointY="62.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UtilityPermission" Width="1.5" PointX="4.5" PointY="63.375" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UtilityPermissionLegacy" Width="1.5" PointX="16.5" PointY="50" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.UtilityPermissionToUtilityPermissionLegacy" Width="1.5" PointX="18.75" PointY="62.625" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_AccountInfoFieldRequired_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_BillingAccountPattern_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityCompany_BillingType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_ICapTCapRefresh_UtilityCompany" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityCompany_ISO" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LoadProfile_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpBillingType_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpStandardLoadProfile_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpStandardRateClass_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_LpStandardTariffCode_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityCompany_Market" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityPermission_Market" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterNumberPattern_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterReadSchedule_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterType_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_NameKeyPattern_UtilityCompany" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PurchaseOfReceivables_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RateClass_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsage_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeHistoricalUsageParameter_UtilityCompanyId" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeIcap_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_RequestModeIdr_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_ServiceAccountPattern_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_ServiceAddressZipPattern_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_ServiceLevelAgreements_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_StrataPattern_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_TariffCode_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityCompany_TriStateValuePendingActiveInactive" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityBillingType_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityCompanyToUtilityLegacy_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityTrip_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityPermissionToUtilityPermissionLegacy_UtilityPermission" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityPermissionToUtilityPermissionLegacy_UtilityPermissionLegacy" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.IdrRule" Width="1.5" PointX="23.25" PointY="74.875" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_IdrRule_LoadProfile" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_IdrRule_RateClass" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_IdrRule_RequestModeIdr" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_IdrRule_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_IdrRules_LoadProfile" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_IdrRules_TariffCode" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditIdrRule" Width="1.5" PointX="25.25" PointY="22.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.ChangeTableVersioning" Width="1.5" PointX="2.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.Log" Width="1.5" PointX="11.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditAccountType" Width="1.5" PointX="26.25" PointY="7.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditBillingAccountPattern" Width="1.5" PointX="10.25" PointY="24.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditICapTCapRefresh" Width="1.5" PointX="27.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditMeterNumberPattern" Width="1.5" PointX="27.25" PointY="13.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditNameKeyPattern" Width="1.5" PointX="27.25" PointY="21.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRequestModeTypeGenre" Width="1.5" PointX="28.25" PointY="7.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditRequestModeTypeToRequestModeTypeGenre" Width="1.5" PointX="12.25" PointY="26.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditServiceAccountPattern" Width="1.5" PointX="29.25" PointY="13.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditServiceAddressZipPattern" Width="1.5" PointX="19.25" PointY="27.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditStrataPattern" Width="1.5" PointX="29.25" PointY="21.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditUserInterfaceControlAndValueGoverningControlVisibility" Width="1.5" PointX="29.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditUserInterfaceControlVisibility" Width="1.5" PointX="21.25" PointY="28.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditUserInterfaceForm" Width="1.5" PointX="30.25" PointY="7.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.zAuditUserInterfaceFormControl" Width="1.5" PointX="31.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.MeterReadCalendar" Width="1.5" PointX="17.75" PointY="71.75" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.ZETL_meter_read_calendar" Width="1.5" PointX="31.25" PointY="13.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_UtilityBillingType_PorDriver" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterReadCalendar_Month" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterReadCalendar_UtilityCompany" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_MeterReadCalendar_Year" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.BusinessAccountType" Width="2.375" PointX="1.375" PointY="13.25" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_BusinessAccountType_AccountType" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.PaymentTerm" Width="2.625" PointX="12.75" PointY="110.75" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PaymentTerms_BillingType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PaymentTerms_BusinessAccountType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PaymentTerms_Market" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_PaymentTerms_UtilityCompany" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.sysdiagram" Width="1.5" PointX="3.0180078218774904" PointY="8.5586797336855351" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.CustomerAccountType" Width="1.5" PointX="1.366437491665798" PointY="27.229395432038881" />
+        <EntityTypeShape EntityType="Lp_UtilityManagementModel.CapacityThresholdRule" Width="1.5" PointX="10.678182424361902" PointY="11.069843878536412" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_CapacityThresholdRule_CustomerAccountType" />
+        <AssociationConnector Association="Lp_UtilityManagementModel.FK_CapacityThresholdRule_UtilityCompany" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

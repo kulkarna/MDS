@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" xmlns="" id="RateDS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="RateDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element msprop:typedPlural="Rates" msprop:typedName="Rate" name="Rate">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="RateID" type="xs:int" />
+              <xs:element minOccurs="0" name="CSPID" type="xs:int" />
+              <xs:element name="RateCode" type="xs:string" />
+              <xs:element msprop:typedName="Description" minOccurs="0" name="RateDesc" type="xs:string" />
+              <xs:element name="EffectiveDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="RateType" type="xs:string" />
+              <xs:element minOccurs="0" name="PlanType" type="xs:short" />
+              <xs:element minOccurs="0" name="IsMajority" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TemplateFlag" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element msprop:typedPlural="PropertyRates" msprop:typedName="PropertyRate" name="PropertyRate">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="RateID" type="xs:int" />
+              <xs:element minOccurs="0" name="PropertyID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="RatePK">
+      <xs:selector xpath=".//Rate" />
+      <xs:field xpath="RateID" />
+    </xs:unique>
+  </xs:element>
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="RateDetailDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element msprop:typedPlural="RateDetails" msprop:typedName="RateDetail" name="RateDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:typedName="RateDetailID" name="RateDetID" type="xs:int" />
+              <xs:element name="RateID" type="xs:int" />
+              <xs:element minOccurs="0" name="PremiseID" type="xs:int" />
+              <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+              <xs:element minOccurs="0" name="TaxCategoryID" type="xs:int" />
+              <xs:element minOccurs="0" name="RateTypeID" type="xs:int" />
+              <xs:element msprop:typedName="RateDescriptionID" minOccurs="0" name="RateDescID" type="xs:int" />
+              <xs:element minOccurs="0" name="ServiceTypeID" type="xs:int" />
+              <xs:element minOccurs="0" name="ConsUnitID" type="xs:int" />
+              <xs:element minOccurs="0" name="UtilityID" type="xs:int" />
+              <xs:element minOccurs="0" name="UtilityInvoiceTemplateDetailID" type="xs:int" />
+              <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+              <xs:element msprop:typedName="RateAmount" name="RateAmt" type="xs:decimal" />
+              <xs:element msprop:typedName="MinAmount" minOccurs="0" name="MinDetAmt" type="xs:decimal" />
+              <xs:element msprop:typedName="MaxAmount" minOccurs="0" name="MaxDetAmt" type="xs:decimal" />
+              <xs:element minOccurs="0" name="GLAcct" type="xs:string" />
+              <xs:element minOccurs="0" name="RangeLower" type="xs:decimal" />
+              <xs:element minOccurs="0" name="RangeUpper" type="xs:decimal" />
+              <xs:element minOccurs="0" name="CustType" type="xs:string" />
+              <xs:element minOccurs="0" name="Graduated" type="xs:string" />
+              <xs:element minOccurs="0" name="Progressive" type="xs:string" />
+              <xs:element minOccurs="0" name="AmountCap" type="xs:string" />
+              <xs:element msprop:typedName="MaxRateAmount" minOccurs="0" name="MaxRateAmt" type="xs:string" />
+              <xs:element msprop:typedName="MinRateAmount" minOccurs="0" name="MinRateAmt" type="xs:string" />
+              <xs:element minOccurs="0" name="CategoryRollup" type="xs:string" />
+              <xs:element minOccurs="0" name="Taxable" type="xs:string" />
+              <xs:element minOccurs="0" name="ChargeType" type="xs:string" />
+              <xs:element minOccurs="0" name="MiscData1" type="xs:string" />
+              <xs:element minOccurs="0" name="Building" type="xs:string" />
+              <xs:element msprop:typedName="RateAmount2" minOccurs="0" name="RateAmt2" type="xs:decimal" />
+              <xs:element msprop:typedName="RateAmount3" minOccurs="0" name="RateAmt3" type="xs:decimal" />
+              <xs:element minOccurs="0" name="FixedAdder" type="xs:decimal" />
+              <xs:element minOccurs="0" name="FixedCapRate" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ScaleFactor1" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ScaleFactor2" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" msprop:typedName="CategoryDescription" minOccurs="0" name="CatDesc" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PrintOrder" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RollupFlag" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" msprop:typedName="RateDescriptionType" minOccurs="0" name="RateDescType" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RateDescription" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="GroupCode" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ItemCode" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RateTypeCategoryID" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msprop:typedName="RateTypeDescription" minOccurs="0" name="RateTypeDesc" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RateTypeProgID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RateTypeCategoryDescription" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ServiceTypeCode" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ServiceTypeDescription" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" msprop:typedName="ConsumptionUnit" minOccurs="0" name="Unit" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" msprop:typedName="ConsumptionUnitMultiplier" minOccurs="0" name="UnitMultiplier" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" msprop:typedName="ConsumptionStandardUnit" minOccurs="0" name="StandardUnit" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" msprop:typedName="ConsumptionUnitDescription" minOccurs="0" name="UnitDesc" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" msprop:typedName="ConsumptionUnitType" minOccurs="0" name="Type" type="xs:string" />
+              <xs:element minOccurs="0" name="AssemblyName" type="xs:string" />
+              <xs:element minOccurs="0" name="ClassName" type="xs:string" />
+              <xs:element minOccurs="0" name="IsCustomerRate" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IsGraduated" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IsMajority" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Margin" type="xs:decimal" />
+              <xs:element minOccurs="0" name="UsageClassId" type="xs:int" />
+              <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Status" type="xs:int" />
+              <xs:element minOccurs="0" name="RateVariableTypeId" type="xs:int" />
+              <xs:element minOccurs="0" name="MinDays" type="xs:int" />
+              <xs:element minOccurs="0" name="MaxDays" type="xs:int" />
+              <xs:element minOccurs="0" default="0" name="BlockPriceIndicator" type="xs:int" />
+              <xs:element minOccurs="0" name="MeterMultiplierFlag" type="xs:boolean" />
+              <xs:element minOccurs="0" name="BlendRatio" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="RateDetailPK">
+      <xs:selector xpath=".//RateDetail" />
+      <xs:field xpath="RateDetID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

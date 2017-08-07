@@ -1,0 +1,128 @@
+﻿@model UtilityManagement.Models.IdrRuleModel
+@{
+    ViewBag.Title = "Idr Rule Details";
+    string requestModeEnrollmentTypeName = "NA";
+    string requestModeTypeName = "NA";
+    string alwaysRequest = "No";
+    if (!(Model.PreEnrollmentIdrRules == null || Model.PreEnrollmentIdrRules.Count == 0))
+    {
+        requestModeEnrollmentTypeName = Model.PreEnrollmentIdrRules[0].RequestModeEnrollmentTypeName;
+        requestModeTypeName = Model.PreEnrollmentIdrRules[0].RequestModeTypeName;
+        alwaysRequest = Model.PreEnrollmentRequestModeIdrAlwaysRequest ? "Yes" : "No";
+    }
+    else if (!(Model.PostEnrollmentIdrRules == null || Model.PostEnrollmentIdrRules.Count == 0))
+    {
+        requestModeEnrollmentTypeName = Model.PostEnrollmentIdrRules[0].RequestModeEnrollmentTypeName;
+        requestModeTypeName = Model.PostEnrollmentIdrRules[0].RequestModeTypeName;
+        alwaysRequest = Model.PostEnrollmentRequestModeIdrAlwaysRequest ? "Yes" : "No";
+    }
+}
+
+@using (Html.BeginForm())
+{
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="idrRule_ico"></div>
+            <div class="edit_header_desc">
+                <h4>IDR Rule</h4>
+                <h3>Details Record</h3>
+            @{string displayName = @Model.UtilityCode + " " + @Model.PreEnrollmentIdrRules[0].RequestModeTypeName;}
+                @displayName
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>IDR Rule</legend>
+                <div class="textblock">
+
+        <div>
+            <br />
+                <table class="index2 top_border">
+                    <tr>
+                        <th class="left_border">Enrollment Type</th>
+                        <th>Request Mode</th>
+                        <th>Always Request</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>@requestModeEnrollmentTypeName</td>
+                        <td>@requestModeTypeName</td>
+                        <td>@alwaysRequest</td>
+                        <td>
+                            <table class="index2 top_border">
+                                <tr>
+                                    <th>Rate Class</th>
+                                    <th>Load Profile</th>
+                                    <th>Tariff Code</th>
+                                    <th>Min Usage MWh</th>
+                                    <th>Max Usage MWh</th>
+                                    <th>Is Eligible</th>
+                                    <th>Is HIA</th>
+                                    <th>Inactive</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                    <th>Modified By</th>
+                                    <th>Modified Date</th>
+                                </tr>
+                    @{
+              foreach (var item in Model.PreEnrollmentIdrRules)
+              {
+                                <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RateClass)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LoadProfile)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TariffCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MinUsageMWh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaxUsageMWh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsEligible)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsHia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Inactive)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                            </td>
+                        </tr>
+              }
+                    }
+                            </table>
+                        </td>
+                    </tr>
+
+                    </table>
+            </div>
+
+
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

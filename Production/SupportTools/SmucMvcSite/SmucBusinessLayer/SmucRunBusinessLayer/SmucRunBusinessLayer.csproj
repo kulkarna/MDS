@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6D98BAE-2E25-40B2-91E3-17B71D818C96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmucRunBusinessLayer</RootNamespace>
+    <AssemblyName>SmucRunBusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonHelper">
+      <HintPath>..\..\..\..\..\..\..\Reference\Core\CommonHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EnrollmentBusiness">
+      <HintPath>..\..\..\..\..\..\..\Reference\Temp\EnrollmentBusiness.dll</HintPath>
+    </Reference>
+    <Reference Include="IstaWebService">
+      <HintPath>..\..\..\..\..\..\..\Reference\CRM\IstaWebService.dll</HintPath>
+    </Reference>
+    <Reference Include="Prospects">
+      <HintPath>..\..\..\..\..\..\..\Reference\Pricing\Prospects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utilities, Version=14.9.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Reference\Market\Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="UtilityLogging, Version=14.9.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Reference\Market\UtilityLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="UtilityManagement">
+      <HintPath>..\..\..\..\..\..\..\Reference\Market\UtilityManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="UtilityUnityLogging, Version=14.9.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Reference\Market\UtilityUnityLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="VOHBMSQLSERVER">
+      <HintPath>..\..\..\..\..\..\..\Reference\Pricing\VOHBMSQLSERVER.dll</HintPath>
+    </Reference>
+    <Reference Include="VOHBMSQLSERVERHistoricalData">
+      <HintPath>..\..\..\..\..\..\..\Reference\Pricing\VOHBMSQLSERVERHistoricalData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer.cs" />
+    <Compile Include="IBusinessLayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SmucDataAccessLayer\SmucRunDataAccessLayer\SmucRunDataAccessLayer.csproj">
+      <Project>{28c8313b-54eb-4c00-835f-3f56ea08745c}</Project>
+      <Name>SmucRunDataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SmucRunDto\SmucRunDto\SmucRunDto.csproj">
+      <Project>{5944fdb2-5f87-40df-b523-d371abe9951d}</Project>
+      <Name>SmucRunDto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

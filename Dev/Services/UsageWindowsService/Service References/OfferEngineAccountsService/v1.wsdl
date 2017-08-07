@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/Imports">
+      <xsd:import schemaLocation="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd0" namespace="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0" />
+      <xsd:import schemaLocation="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd2" namespace="http://LibertyPowerCorp.com/RepositoryManagement/Common/1.0.0" />
+      <xsd:import schemaLocation="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.RepositoryManagement.Dto" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAccounts_SubmitServiceAccountUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitServiceAccountUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IAccounts_SubmitServiceAccountUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitServiceAccountUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccounts_SubmitServiceAccountUpdate_SystemErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://LibertyPowerCorp.com/RepositoryManagement/Common/1.0.0" name="detail" element="q1:SystemError" />
+  </wsdl:message>
+  <wsdl:message name="IAccounts_SubmitServiceAccountUpdate_DataStoreErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://LibertyPowerCorp.com/RepositoryManagement/Common/1.0.0" name="detail" element="q2:DataStoreError" />
+  </wsdl:message>
+  <wsdl:message name="IAccounts_SubmitServiceAccountUpdate_BusinessProcessErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://LibertyPowerCorp.com/RepositoryManagement/Common/1.0.0" name="detail" element="q3:BusinessProcessError" />
+  </wsdl:message>
+  <wsdl:message name="IAccounts_UpdateCrmIfAccountMeetsPropertiesRequirements_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCrmIfAccountMeetsPropertiesRequirements" />
+  </wsdl:message>
+  <wsdl:message name="IAccounts_GetServiceAccountProperties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceAccountProperties" />
+  </wsdl:message>
+  <wsdl:message name="IAccounts_GetServiceAccountProperties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceAccountPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccounts_UpdateServiceAccountProperties_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceAccountProperties" />
+  </wsdl:message>
+  <wsdl:message name="IAccounts_UpdateServiceAccountProperties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceAccountPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAccounts">
+    <wsdl:operation name="SubmitServiceAccountUpdate">
+      <wsdl:input wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/SubmitServiceAccountUpdate" message="tns:IAccounts_SubmitServiceAccountUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/SubmitServiceAccountUpdateResponse" message="tns:IAccounts_SubmitServiceAccountUpdate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/SubmitServiceAccountUpdateSystemErrorFault" name="SystemErrorFault" message="tns:IAccounts_SubmitServiceAccountUpdate_SystemErrorFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/SubmitServiceAccountUpdateDataStoreErrorFault" name="DataStoreErrorFault" message="tns:IAccounts_SubmitServiceAccountUpdate_DataStoreErrorFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/SubmitServiceAccountUpdateBusinessProcessErrorFault" name="BusinessProcessErrorFault" message="tns:IAccounts_SubmitServiceAccountUpdate_BusinessProcessErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCrmIfAccountMeetsPropertiesRequirements">
+      <wsdl:input wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/UpdateCrmIfAccountMeetsPropertiesRequirements" message="tns:IAccounts_UpdateCrmIfAccountMeetsPropertiesRequirements_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceAccountProperties">
+      <wsdl:input wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/GetServiceAccountProperties" message="tns:IAccounts_GetServiceAccountProperties_InputMessage" />
+      <wsdl:output wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/GetServiceAccountPropertiesResponse" message="tns:IAccounts_GetServiceAccountProperties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServiceAccountProperties">
+      <wsdl:input wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/UpdateServiceAccountProperties" message="tns:IAccounts_UpdateServiceAccountProperties_InputMessage" />
+      <wsdl:output wsaw:Action="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0/IAccounts/UpdateServiceAccountPropertiesResponse" message="tns:IAccounts_UpdateServiceAccountProperties_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

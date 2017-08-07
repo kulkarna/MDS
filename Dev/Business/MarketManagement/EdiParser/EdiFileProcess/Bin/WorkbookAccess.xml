@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WorkbookAccess</name>
+    </assembly>
+    <members>
+        <member name="T:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess">
+            <summary>
+            Retrieves information and data from an Excel 8.0 file.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.ExtractRegion(System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32,System.Data.DataTable)">
+            <summary>		
+            Extract a region from a source DataTable and return a new DataTable with the DataColumn names equals to the header, if had it.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.GetWorkbook(System.String)">
+            <summary>
+            Gets data from an Excel workbook file using Infragistics.
+            </summary>
+            <param name="filePath">The pathname of the Excel file to read.</param>
+            <returns>A DataSet object containing data retrieved from the
+            Excel file specified.</returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.GetWorkbook(System.IO.Stream,System.String)">
+            <summary>
+            Gets data from an Excel workbook file using Infragistics.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="fileName">Name of the file.</param>
+            <returns>
+            A DataSet object containing data retrieved from the
+            Excel file specified.
+            </returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.LoadWorkbook(System.Data.DataSet)">
+            <summary>
+            Creates a Memory Stream containing an XLSX workbook representation of a DataSet.
+            </summary>
+            <param name="dataset">A Dataset.</param>
+            <returns>Memory Stream containing an XLSX workbook.</returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.ConvertColumnNameToInt32(System.String)">
+            <summary>
+            Converts the alpha based column names to a numeric equivalent
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DataSetFromExcel(System.String)">
+            <summary>
+            Converts excel file to a dataset, inflating Excel's sparse array format to a DataSet  containing null padded datatables
+            </summary>
+            <param name="FileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DataTableFromWorksheet(Infragistics.Documents.Excel.Worksheet)">
+            <summary>
+            Datas the table from worksheet.
+            </summary>
+            <param name="worksheet">The worksheet.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DataSetFromExcel(System.IO.Stream)">
+            <summary>
+            Converts excel file to a dataset, inflating Excel's sparse array format to a DataSet containing null padded datatables
+            </summary>
+            <param name="stream">The stream.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DetermineControllingHeight(Infragistics.Documents.Excel.Worksheet)">
+            <summary>
+            Determines the controlling height (as number of rows) of an excel worksheet
+            </summary>
+            <param name="ws">The ws.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DetermineControllingWidth(Infragistics.Documents.Excel.Worksheet)">
+            <summary>
+            Determines the width populated portion of a worksheet;  for example a worksheet with a 
+            single value in cell Sheet1!$C$5 would have a controlling width of 3
+            </summary>
+            <param name="ws">The ws.</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.ParseColumnName(System.String)">
+            <summary>
+            Parses the column name from the cell name in the format 'Portfolio Rates'!$E$1
+            </summary>
+            <param name="cellName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DataTableFromWorksheetEx(Aspose.Cells.Worksheet)">
+            <summary>
+            Datas the table from worksheet.
+            </summary>
+            <param name="worksheet">The worksheet.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DetermineControllingHeightEx(Aspose.Cells.Worksheet)">
+            <summary>
+            Determines the controlling height (as number of rows) of an excel worksheet
+            </summary>
+            <param name="ws">The ws.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DetermineControllingWidthEx(Aspose.Cells.Worksheet)">
+            <summary>
+            Determines the width populated portion of a worksheet;  for example a worksheet with a 
+            single value in cell Sheet1!$C$5 would have a controlling width of 3
+            </summary>
+            <param name="ws">The ws.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.GetWorkbookEx(System.IO.Stream,System.String)">
+            <summary>
+            Gets data from an Excel workbook file using Aspose.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="fileName">Name of the file.</param>
+            <returns>
+            A DataSet object containing data retrieved from the
+            Excel file specified.
+            </returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DataSetFromExcelEx(System.String)">
+            <summary>
+            Converts excel file to a dataset, inflating Excel's sparse array format to a DataSet  containing null padded datatables
+            </summary>
+            <param name="FileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.DataAccess.WorkbookAccess.ExcelAccess.DataSetFromExcelEx(System.IO.Stream)">
+            <summary>
+            Converts excel file to a dataset, inflating Excel's sparse array format to a DataSet containing null padded datatables
+            </summary>
+            <param name="stream">The stream.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

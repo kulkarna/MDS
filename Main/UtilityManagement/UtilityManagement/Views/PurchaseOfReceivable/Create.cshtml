@@ -1,0 +1,373 @@
+﻿@model DataAccessLayerEntityFramework.PurchaseOfReceivable
+
+@{
+    ViewBag.Title = "Purchase Of Receivables";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    
+    
+     <div class="edit_section">
+        <div class="edit_header">
+            <div class="purchase_ico"></div>
+            <div class="edit_header_desc"><h4>Purchase Of Receivable</h4>
+            <h3>New Record</h3>
+            @*Enrollment Type*@
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Purchase Of Receivables</legend>
+
+                <div class="textblock">
+                    <div class="details-data-section">
+                    <div id="Gen"  class="activable">
+                     <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                    <div id="hideContent" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="details-left-section">
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UtilityCompanyId, "Utility Company")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("UtilityCompanyId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.UtilityCompanyId, "The current Utility Company field value is invalid.")
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorDriver.Name, "POR Driver")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("PorDriverId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.PorDriverId, "The current POR Driver field value is invalid.")
+                        </div>
+                          <div class="clear"></div>
+                        <div id="PorRateClass">
+                            <div class="editor-label">
+                                @Html.Label("Rate Class")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("RateClassId", String.Empty)
+@*                                @Html.ValidationMessageFor(model => model.RateClassId, "The current Rate Class field value is invalid.")*@
+                                @if (Session["IsPostBack"] == "true" && Model != null && Model.PorDriverId != null 
+                                    && Model.PorDriverId == Utilities.Common.NullSafeGuid(Session["PorDriver_RateClassId"]) 
+                                    && (Model.RateClassId == null || Model.RateClassId == Guid.Empty)
+                                    )
+                                {                                     
+                                    <br /><br /><span class="field-validation-error" data-valmsg-for="RateClass" data-valmsg-replace="true">Invalid Rate Class</span>
+                                }
+                            </div>
+                        </div>
+                          <div class="clear"></div>
+                        <div id="PorLoadProfile">
+                            <div class="editor-label">
+                                @Html.Label("Load Profile")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("LoadProfileId", String.Empty)
+@*                                @Html.ValidationMessageFor(model => model.LoadProfileId, "The current Load Profile field value is invalid.")*@
+                                @if (Session["IsPostBack"] == "true" && Model != null && Model.PorDriverId != null
+                                    && Model.PorDriverId == Utilities.Common.NullSafeGuid(Session["PorDriver_LoadProfileId"])
+                                    && (Model.LoadProfileId == null || Model.LoadProfileId == Guid.Empty)
+                                    )
+                                { 
+                                    <br /><br />
+                                    <div><span class="field-validation-error" data-valmsg-for="LoadProfile" data-valmsg-replace="true">Invalid Load Profile</span></div>
+                                }
+                            </div>
+                        </div>
+                          <div class="clear"></div>
+                        <div id="PorTariffCode">
+                            <div class="editor-label">
+                                @Html.Label("Tariff Code")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("TariffCodeId", String.Empty)
+                             @*   @Html.ValidationMessageFor(model => model.TariffCodeId, "The current Tariff Code field value is invalid.")*@
+                                @if (Session["IsPostBack"] == "true" && Model != null && Model.PorDriverId != null
+                                    && Model.PorDriverId == Utilities.Common.NullSafeGuid(Session["PorDriver_TariffCodeId"])
+                                    && (Model.TariffCodeId == null || Model.TariffCodeId == Guid.Empty)
+                                    )
+                                { 
+                                    <br /><br /><span class="field-validation-error" data-valmsg-for="TariffCode" data-valmsg-replace="true">Invalid Tariff Code</span>
+                                }
+                            </div>
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.IsPorOffered, "Is POR Offered")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.IsPorOffered)
+                            @Html.ValidationMessageFor(model => model.IsPorOffered)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.IsPorParticipated, "Is POR Participated")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.IsPorParticipated)
+                            @Html.ValidationMessageFor(model => model.IsPorParticipated)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.IsPorAssurance, "Is POR Eligible")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.IsPorAssurance)
+                            @Html.ValidationMessageFor(model => model.IsPorAssurance)
+                        </div>
+                          <div class="clear"></div>
+                         </div>
+                        <div class="details-right-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorRecourse.Name, "POR Recourse")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("PorRecourseId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.PorRecourseId, "The current POR Recourse field value is invalid.")
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorDiscountRate, "POR Discount Rate")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.PorDiscountRate)
+                            @Html.ValidationMessageFor(model => model.PorDiscountRate, "The POR Discount Rate Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.PorDiscountRateValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="PorDiscountRate" data-valmsg-replace="true">The current POR Discount Rate field value is invalid.</span>
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorFlatFee, "POR Flat Fee")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.PorFlatFee)
+                            @Html.ValidationMessageFor(model => model.PorFlatFee, "The POR Flat Fee Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.PorFlatFeeValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="PorFlatFee" data-valmsg-replace="true">The current POR Flat Fee field value is invalid.</span>
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorDiscountEffectiveDate, "POR Discount Effective Date")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.PorDiscountEffectiveDate)
+                            @Html.ValidationMessageFor(model => model.PorFlatFee, "The POR Discount Effective Date Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.PorDiscountEffectiveDateValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="PorFlatFee" data-valmsg-replace="true">The current POR Discount Effective Date field value is invalid.</span>
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorDiscountExpirationDate, "POR Discount Expiration Date")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.PorDiscountExpirationDate)
+                            @Html.ValidationMessageFor(model => model.PorDiscountExpirationDate, "The POR Discount Expiration Date Is Not Valid.")
+@*                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.PorDiscountExpirationDateValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="PorFlatFee" data-valmsg-replace="true">The current POR Discount Effective Date field value is invalid.</span>
+                            }*@
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                        </div>
+                     <br />
+                          <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails" >
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.Inactive)
+                            @Html.ValidationMessageFor(model => model.Inactive)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                            @Html.ValidationMessageFor(model => model.CreatedBy)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                            @Html.ValidationMessageFor(model => model.CreatedDate)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                    </div>
+                      </div></div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+
+    $(function () {
+        $("select#PorDriverId").change(function (evt) {
+            if ($("select#PorDriverId").val() != "-1") {
+                var selectedText = $("select#PorDriverId option:selected").text();
+                if (selectedText == "Load Profile") {
+                    $("#PorLoadProfile").show();
+                    $("#PorRateClass").hide();
+                    $("#PorTariffCode").hide();
+                }
+                else if (selectedText == "Tariff Code") {
+                    $("#PorLoadProfile").hide();
+                    $("#PorRateClass").hide();
+                    $("#PorTariffCode").show();
+                }
+                else if (selectedText == "Rate Class") {
+                    $("#PorLoadProfile").hide();
+                    $("#PorRateClass").show();
+                    $("#PorTariffCode").hide();
+                }
+                else {
+                    $("#PorLoadProfile").hide();
+                    $("#PorRateClass").hide();
+                    $("#PorTariffCode").hide();
+                }
+            }
+
+        });
+    });
+
+    $(document).ready(function () {
+        if ($("select#PorDriverId").val() != "-1") {
+            var selectedText = $("select#PorDriverId option:selected").text();
+            if (selectedText == "Load Profile") {
+                $("#PorLoadProfile").show();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").hide();
+            }
+            else if (selectedText == "Tariff Code") {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").show();
+            }
+            else if (selectedText == "Rate Class") {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").show();
+                $("#PorTariffCode").hide();
+            }
+            else {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").hide();
+            }
+        }
+    });
+
+    $(function () {
+        $("select#UtilityCompanyId").change(function (evt) {
+            if ($("select#UtilityCompanyId").val() != "-1") {
+                $.ajax({
+                    url: "/PurchaseOfReceivable/GetRateClassSelectListJson",
+                    type: 'POST',
+                    data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Value + "'>" + val.Text + "</option>";
+                        });
+
+                        $("select#RateClassId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+
+                $.ajax({
+                    url: "/PurchaseOfReceivable/GetLoadProfileSelectListJson",
+                    type: 'POST',
+                    data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Value + "'>" + val.Text + "</option>";
+                        });
+
+                        $("select#LoadProfileId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+
+                $.ajax({
+                    url: "/PurchaseOfReceivable/GetTariffCodeSelectListJson",
+                    type: 'POST',
+                    data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Value + "'>" + val.Text + "</option>";
+                        });
+
+                        $("select#TariffCodeId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+
+            }
+        });
+    });
+
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+@if (Session["IsPostBack"] != null && Session["IsPostBack"].ToString() == "true")
+{
+
+    var errorMessage = Model.GetPurchaseOfReceivableValidationString();
+    if (errorMessage != null)
+    {
+    <h3>@errorMessage</h3>
+    }
+}
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE2FBCF2-E91B-47C8-BAA9-7ABE67477984}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibertyPower.Business.MarketManagement.EdiParser.FileParser</RootNamespace>
+    <AssemblyName>FileParser</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\FtpFileGrabber\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>429,0618</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\Reference\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\..\..\..\..\Reference\FileParser.XML</DocumentationFile>
+    <NoWarn>429</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\..\..\Reference\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\Reference\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\..\..\..\..\Reference\FileParser.XML</DocumentationFile>
+    <NoWarn>429</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\..\..\..\..\Reference\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Jaime_Rebel|AnyCPU'">
+    <OutputPath>bin\Jaime_Rebel\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Jaime_Rebel|x86'">
+    <OutputPath>bin\x86\Jaime_Rebel\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Jaime_Rebel|x64'">
+    <OutputPath>bin\x64\Jaime_Rebel\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonEntity">
+      <HintPath>..\..\..\..\..\..\..\Reference\Core\CommonEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonExceptions">
+      <HintPath>..\..\..\..\..\..\..\Reference\Core\CommonExceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonHelper">
+      <HintPath>..\..\..\..\..\..\..\Reference\Core\CommonHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonRules">
+      <HintPath>..\..\..\..\..\..\..\Reference\Core\CommonRules.dll</HintPath>
+    </Reference>
+    <Reference Include="FieldHistory">
+      <HintPath>..\..\..\..\..\..\..\Reference\Pricing\FieldHistory.dll</HintPath>
+    </Reference>
+    <Reference Include="FileManager, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Reference\Market\FileManager.dll</HintPath>
+    </Reference>
+    <Reference Include="FormatParser">
+      <HintPath>..\..\..\..\..\..\..\Reference\Market\FormatParser.dll</HintPath>
+    </Reference>
+    <Reference Include="LibertyPowerSql, Version=12.2.10.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Reference\Market\LibertyPowerSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OfferEngineSql">
+      <HintPath>..\..\..\..\..\..\..\Reference\Pricing\OfferEngineSql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TextAccess">
+      <HintPath>..\..\..\..\..\..\..\Reference\Core\TextAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="UsageManagement">
+      <HintPath>..\..\..\..\..\..\..\Reference\Market\UsageManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="UtilityManagement">
+      <HintPath>..\..\..\..\..\..\..\Reference\Market\UtilityManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="WorkbookAccess">
+      <HintPath>..\..\..\..\..\..\..\Reference\Core\WorkbookAccess.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressType.cs" />
+    <Compile Include="EdiDailyTransaction.cs" />
+    <Compile Include="CustomXmlSerializer.cs" />
+    <Compile Include="DateHelper.cs" />
+    <Compile Include="EdiAccountContact.cs" />
+    <Compile Include="EdiAccountLog.cs" />
+    <Compile Include="EdiAccountLogList.cs" />
+    <Compile Include="EdiFileList.cs" />
+    <Compile Include="EdiFileLog.cs" />
+    <Compile Include="EdiFileLogList.cs" />
+    <Compile Include="EdiFileType.cs" />
+    <Compile Include="EdiProcessLog.cs" />
+    <Compile Include="ExceptionLogger.cs" />
+    <Compile Include="Exceptions\EdiFileException.cs" />
+    <Compile Include="Exceptions\LogInsertException.cs" />
+    <Compile Include="FileAccount.cs" />
+    <Compile Include="FileAccountList.cs" />
+    <Compile Include="FileController.cs" />
+    <Compile Include="FileFactory.cs" />
+    <Compile Include="FileRow.cs" />
+    <Compile Include="FileRowList.cs" />
+    <Compile Include="FileStatusInfo.cs" />
+    <Compile Include="FileTypeDiscoverer.cs" />
+    <Compile Include="EdiIdrUsage.cs" />
+    <Compile Include="EdiIdrUsageList.cs" />
+    <Compile Include="HistoricalSection.cs" />
+    <Compile Include="Icap.cs" />
+    <Compile Include="IcapList.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Mappers814\AddressParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mappers814\Ameren814Mapper.cs" />
+    <Compile Include="Mappers814\DynamicParser.cs" />
+    <Compile Include="Mappers814\IcapDateParser.cs" />
+    <Compile Include="Mappers814\IcapDecimalParser.cs" />
+    <Compile Include="Mappers814\IL814Mapper.cs" />
+    <Compile Include="Mappers814\Illinois814Mapper.cs" />
+    <Compile Include="Mappers814\Bge814Mapper.cs" />
+    <Compile Include="Mappers814\Clp814Mapper.cs" />
+    <Compile Include="Mappers814\ContactParser.cs" />
+    <Compile Include="Mappers814\NullableDateParser.cs" />
+    <Compile Include="Mappers814\NY814Mapper.cs" />
+    <Compile Include="Mappers814\OH814Mapper.cs" />
+    <Compile Include="Mappers814\Ohio814Mapper.cs" />
+    <Compile Include="Mappers814\DateParser.cs" />
+    <Compile Include="Mappers814\DecimalParser.cs" />
+    <Compile Include="Mappers814\DunsNumberParser.cs" />
+    <Compile Include="Mappers814\EdiAccountMap814Builder.cs" />
+    <Compile Include="Mappers814\EdiAccountMap814.cs" />
+    <Compile Include="Mappers814\EdiAccountTexasMap814.cs" />
+    <Compile Include="Mappers814\Field.cs" />
+    <Compile Include="Mappers814\FieldResolver.cs" />
+    <Compile Include="Mappers814\FileMapper814.cs" />
+    <Compile Include="Mappers814\FileMapper814Builder.cs" />
+    <Compile Include="Mappers814\IntParser.cs" />
+    <Compile Include="Mappers814\IPropertySetter.cs" />
+    <Compile Include="Mappers814\Marker814Builder.cs" />
+    <Compile Include="Mappers814\MeterMultiplierParser.cs" />
+    <Compile Include="Mappers814\Or814Mapper.cs" />
+    <Compile Include="Mappers814\ServiceParser.cs" />
+    <Compile Include="Mappers814\ShortParser.cs" />
+    <Compile Include="Mappers814\StringParser.cs" />
+    <Compile Include="Mappers814\TcapDateParser.cs" />
+    <Compile Include="Mappers814\TcapDecimalParser.cs" />
+    <Compile Include="Mappers814\UtilitiesCodes.cs" />
+    <Compile Include="Mappers814\UtilityCodeResolver.cs" />
+    <Compile Include="Mappers814\UtilityCodeSetter.cs" />
+    <Compile Include="Mappers814\Wmeco814Mapper.cs" />
+    <Compile Include="Mappers\AceMapper814.cs" />
+    <Compile Include="Mappers\AceMapper867.cs" />
+    <Compile Include="Mappers\AlleghenyMapper867.cs" />
+    <Compile Include="Mappers\BangorMapper867.cs" />
+    <Compile Include="Mappers\BgeMapper867.cs" />
+    <Compile Include="Mappers\CmpMapper867.cs" />
+    <Compile Include="Mappers\ComedMapper867.cs" />
+    <Compile Include="Mappers\AmerenMapper867.cs" />
+    <Compile Include="Mappers\AepnoMapper867.cs" />
+    <Compile Include="Mappers\CenhudMapper867.cs" />
+    <Compile Include="Mappers\AepceMapper867.cs" />
+    <Compile Include="Mappers\ConedMapper867.cs" />
+    <Compile Include="Mappers\CspMapper867.cs" />
+    <Compile Include="Mappers\DailyControlMapper.cs" />
+    <Compile Include="Mappers\DaytonMapper867.cs" />
+    <Compile Include="Mappers\DukeMapper867.cs" />
+    <Compile Include="Mappers\MetedPenelec867.cs" />
+    <Compile Include="Mappers\OhioGeneric.cs" />
+    <Compile Include="Mappers\OhpMapper867.cs" />
+    <Compile Include="Mappers\PecoMapper867.cs" />
+    <Compile Include="Mappers\PennPrMapper867.cs" />
+    <Compile Include="Mappers\SdgeMapper867.cs" />
+    <Compile Include="Mappers\SceMapper867.cs" />
+    <Compile Include="Mappers\PgeMapper867.cs" />
+    <Compile Include="Mappers\UgiMapper867.cs" />
+    <Compile Include="Mappers\NantMapper867.cs" />
+    <Compile Include="Mappers\RgeMapper867.cs" />
+    <Compile Include="Mappers\UnitilMapper867.cs" />
+    <Compile Include="Mappers\TxnmpMapper867.cs" />
+    <Compile Include="Mappers\OrMapper867.cs" />
+    <Compile Include="Mappers\CtpenMapper867.cs" />
+    <Compile Include="Mappers\OncorMapper867.cs" />
+    <Compile Include="Mappers\NysegMapper867.cs" />
+    <Compile Include="Mappers\NimoMapper867.cs" />
+    <Compile Include="Mappers\NecoMapper867.cs" />
+    <Compile Include="Mappers\DelmarvaMapper867.cs" />
+    <Compile Include="Mappers\SharylandMapper867.cs" />
+    <Compile Include="Mappers\UiMapper867.cs" />
+    <Compile Include="Mappers\DuqMapper867.cs" />
+    <Compile Include="Mappers\MecoMapper867.cs" />
+    <Compile Include="Mappers\NstarMapper867.cs" />
+    <Compile Include="Mappers\PepcodcMapper867.cs" />
+    <Compile Include="Mappers\PepcomdMapper867.cs" />
+    <Compile Include="Mappers\PplMapper867.cs" />
+    <Compile Include="Mappers\WmecoMapper867.cs" />
+    <Compile Include="Mappers\JcplMapper867.cs" />
+    <Compile Include="Mappers\PsegMapper867.cs" />
+    <Compile Include="Mappers814\ClassMap.cs" />
+    <Compile Include="Mappers814\PropertyParser.cs" />
+    <Compile Include="Mappers\WppMapper867.cs" />
+    <Compile Include="Markers814\AepceMarker814.cs" />
+    <Compile Include="Markers814\AepnoMarker814.cs" />
+    <Compile Include="Markers814\CLPMarker814.cs" />
+    <Compile Include="Markers814\ILMarker814 .cs" />
+    <Compile Include="Markers814\NstarMarker814.cs" />
+    <Compile Include="Markers814\NyMarker814.cs" />
+    <Compile Include="Markers814\CtpenMarker814.cs" />
+    <Compile Include="Markers814\DelmdMarker814.cs" />
+    <Compile Include="Markers814\JcplMarker814.cs" />
+    <Compile Include="Markers814\MecoMarker814.cs" />
+    <Compile Include="Markers814\MetedMarker814.cs" />
+    <Compile Include="Markers814\NecoMarker814.cs" />
+    <Compile Include="Markers814\NysegMarker814.cs" />
+    <Compile Include="Markers814\OHMarker814.cs" />
+    <Compile Include="Markers814\OncorMarker814.cs" />
+    <Compile Include="Markers814\ORMarker814.cs" />
+    <Compile Include="Markers814\PenelecMarker814.cs" />
+    <Compile Include="Markers814\RgeMarker814.cs" />
+    <Compile Include="Markers814\SharylandMarker814.cs" />
+    <Compile Include="Markers814\TxnmpMarker814.cs" />
+    <Compile Include="Markers814\WppMarker814.cs" />
+    <Compile Include="Markers\AceMarker.cs" />
+    <Compile Include="Markers814\AceMarker814.cs" />
+    <Compile Include="Markers\AlleghenyMarker.cs" />
+    <Compile Include="Markers\BangorMarker.cs" />
+    <Compile Include="Markers\BgeMarker.cs" />
+    <Compile Include="Markers814\BgeMarker814.cs" />
+    <Compile Include="Markers\CmpMarker.cs" />
+    <Compile Include="Markers\ComedMarker.cs" />
+    <Compile Include="Markers\AmerenMarker.cs" />
+    <Compile Include="Markers\AepnoMarker.cs" />
+    <Compile Include="Markers\CenhudMarker.cs" />
+    <Compile Include="Markers\AepceMarker.cs" />
+    <Compile Include="Markers\ConedMarker.cs" />
+    <Compile Include="Markers\CspMaker.cs" />
+    <Compile Include="Markers\DaytonMaker.cs" />
+    <Compile Include="Markers\DukeMaker.cs" />
+    <Compile Include="Markers\MetedPenelecMaker.cs" />
+    <Compile Include="Markers\OhioMaker.cs" />
+    <Compile Include="Markers\OhpMaker.cs" />
+    <Compile Include="Markers\PecoMarker.cs" />
+    <Compile Include="Markers\PennPrMarker.cs" />
+    <Compile Include="Markers\SdgeMarker.cs" />
+    <Compile Include="Markers\SceMarker.cs" />
+    <Compile Include="Markers\PgeMarker.cs" />
+    <Compile Include="Markers814\StandardMarker814.cs" />
+    <Compile Include="Markers\UgiMarker.cs" />
+    <Compile Include="Markers\NantMarker.cs" />
+    <Compile Include="Markers\RgeMarker.cs" />
+    <Compile Include="Markers\UnitilMarker.cs" />
+    <Compile Include="Markers\TxnmpMarker.cs" />
+    <Compile Include="Markers\OrMarker.cs" />
+    <Compile Include="Markers\CtpenMarker.cs" />
+    <Compile Include="Markers\OncorMarker.cs" />
+    <Compile Include="Markers\NysegMarker.cs" />
+    <Compile Include="Markers\NimoMarker.cs" />
+    <Compile Include="Markers\NecoMarker.cs" />
+    <Compile Include="Markers\DelmarvaMarker.cs" />
+    <Compile Include="Markers\SharylandMarker.cs" />
+    <Compile Include="Markers\UiMarker.cs" />
+    <Compile Include="Markers\DuqMarker.cs" />
+    <Compile Include="Markers\MecoMarker.cs" />
+    <Compile Include="Markers\NstarMarker.cs" />
+    <Compile Include="Markers\PepcodcMarker.cs" />
+    <Compile Include="Markers\PepcomdMarker.cs" />
+    <Compile Include="Markers\PplMarker.cs" />
+    <Compile Include="Markers\WmecoMarker.cs" />
+    <Compile Include="Markers\WppMarker.cs" />
+    <Compile Include="ParserFactory.cs" />
+    <Compile Include="Rules\AccountDataExistsRule.cs" />
+    <Compile Include="ConfigurationFactory.cs" />
+    <Compile Include="Rules\DataExistsRule.cs" />
+    <Compile Include="Rules\EdiFileValidRule.cs" />
+    <Compile Include="Rules\FieldDelimiterExistsRule.cs" />
+    <Compile Include="Rules\DunsNumberExistsRule.cs" />
+    <Compile Include="Rules\FileConfigDataExistsRule.cs" />
+    <Compile Include="Rules\FileNotTruncatedRule.cs" />
+    <Compile Include="Rules\UsageDataExistsRule.cs" />
+    <Compile Include="DataInserter.cs" />
+    <Compile Include="Exceptions\DataMissingException.cs" />
+    <Compile Include="EdiAccount.cs" />
+    <Compile Include="Exceptions\EdiAccountException.cs" />
+    <Compile Include="EdiAccountList.cs" />
+    <Compile Include="EdiUsage.cs" />
+    <Compile Include="Exceptions\EdiUsageException.cs" />
+    <Compile Include="EdiUsageList.cs" />
+    <Compile Include="EdiFile.cs" />
+    <Compile Include="Mappers\Mapper.cs" />
+    <Compile Include="Mappers\MapperBase.cs" />
+    <Compile Include="Mappers\ClpMapper867.cs" />
+    <Compile Include="Rules\UsageListDataExistsRule.cs" />
+    <Compile Include="Rules\UtilityConfigExistsRule.cs" />
+    <Compile Include="Serializer.cs" />
+    <Compile Include="Service References\DataSynchronizationServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tcap.cs" />
+    <Compile Include="TcapList.cs" />
+    <Compile Include="Terminator.cs" />
+    <Compile Include="TransformationFactory.cs" />
+    <Compile Include="UtilityConfig.cs" />
+    <Compile Include="UtilityConfigDictionary.cs" />
+    <Compile Include="Markers\ClpMarker.cs" />
+    <Compile Include="Markers\JcplMarker.cs" />
+    <Compile Include="Markers\PsegMarker.cs" />
+    <Compile Include="Markers\MarkerBase.cs" />
+    <Compile Include="Processor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityIdrUsage.cs" />
+    <Compile Include="UtilityIdrUsageList.cs" />
+    <Compile Include="UtilityUsage.cs" />
+    <Compile Include="UtilityUsageAccount.cs" />
+    <Compile Include="UtilityUsageAccountList.cs" />
+    <Compile Include="UtilityUsageList.cs" />
+    <Compile Include="Validator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Mappers814\Mappers814.cd" />
+    <None Include="FileParser.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DataSynchronizationServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataSynchronizationServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataSynchronizationServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataSynchronizationServiceReference\DataSynchronization1.wsdl" />
+    <None Include="Service References\DataSynchronizationServiceReference\DataSynchronization2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSynchronizationServiceReference\DataSynchronization21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSynchronizationServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataSynchronizationServiceReference\DataSynchronization1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\DataAccess\SqlAccess\TransactionsSql\TransactionsSql.csproj">
+      <Project>{2b0ceaf2-6ce6-4909-a797-a24efd55c130}</Project>
+      <Name>TransactionsSql</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

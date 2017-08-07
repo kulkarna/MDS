@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[zAuditAccountInfoField] (
+    [IdPrimary]                     UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
+    [Id]                            UNIQUEIDENTIFIER NOT NULL,
+    [NameUserFriendly]              NVARCHAR (255)   NOT NULL,
+    [NameMachineUnfriendly]         NVARCHAR (255)   NOT NULL,
+    [Description]                   NVARCHAR (255)   NOT NULL,
+    [Inactive]                      BIT              NOT NULL,
+    [CreatedBy]                     NVARCHAR (100)   NOT NULL,
+    [CreatedDate]                   DATETIME         NOT NULL,
+    [LastModifiedBy]                NVARCHAR (100)   NOT NULL,
+    [LastModifiedDate]              DATETIME         NOT NULL,
+    [IdPrevious]                    UNIQUEIDENTIFIER NULL,
+    [NameUserFriendlyPrevious]      NVARCHAR (255)   NULL,
+    [NameMachineUnfriendlyPrevious] NVARCHAR (255)   NULL,
+    [DescriptionPrevious]           NVARCHAR (255)   NULL,
+    [InactivePrevious]              BIT              NULL,
+    [CreatedByPrevious]             NVARCHAR (100)   NULL,
+    [CreatedDatePrevious]           DATETIME         NULL,
+    [LastModifiedByPrevious]        NVARCHAR (100)   NULL,
+    [LastModifiedDatePrevious]      DATETIME         NULL,
+    [SYS_CHANGE_VERSION]            BIGINT           NULL,
+    [SYS_CHANGE_CREATION_VERSION]   BIGINT           NULL,
+    [SYS_CHANGE_OPERATION]          NCHAR (1)        NULL,
+    [SYS_CHANGE_COLUMNS]            NVARCHAR (1000)  NULL,
+    CONSTRAINT [PK_zAuditAccountInfoField] PRIMARY KEY CLUSTERED ([IdPrimary] ASC)
+);
+

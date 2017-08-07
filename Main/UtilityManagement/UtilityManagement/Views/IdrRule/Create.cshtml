@@ -1,0 +1,256 @@
+﻿@model UtilityManagement.Models.IdrRuleCreateModel
+
+@{
+    ViewBag.Title = "Create Idr Rule";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="idrRule_ico"></div>
+            <div class="edit_header_desc">
+                <h4>IDR Rule</h4>
+                <h3>New Record</h3>
+            </div>
+        </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Create IDR Rule</legend>
+                <div class="textblock">
+                    <div class="details-data-section">
+                        <div id="Gen"  class="activable">
+                            <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                            <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                            <div id="hideContent" class="editdetails">
+                                <div class="details-full-section">
+                                    <div class="details-left-section">
+                                        @Html.HiddenFor(model => model.UtilityCompanyId, new { id = "UtilityCompanyId", name = "UtilityCompanyId" })
+                                        @Html.HiddenFor(model => model.EnrollmentTypeId)
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.UtilityCompanyId, "Utility Company")
+                                        </div>
+                                        <div class="editor-field">
+                                            @Html.Label((string)ViewBag.UtilityCode)
+                                            @Html.ValidationMessageFor(model => model.UtilityCompanyId, "The current Utility Company field value is invalid.")
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.EnrollmentTypeId, "Enrollment Type")
+                                        </div>
+                                        <div class="editor-field">
+                                            @Html.Label((string)ViewBag.EnrollmentTypeText)
+                                            @Html.ValidationMessageFor(model => model.EnrollmentTypeId, "The current Enrollment Type value is invalid.")
+                                        </div>
+                                        <div class="editor-label">
+                                            @Html.Label("IDR Request Mode")
+                                        </div>
+                                        <div class="editor-field">
+                                            @Html.Label((string)ViewBag.RequestModeTypeText)
+                                        </div>
+                                        <div class="clear"></div>
+                                            @{
+                                                SelectList selectListRateClass = @ViewBag.RateClassId;
+                                                SelectList selectListLoadProfile = @ViewBag.LoadProfileId;
+                                                SelectList selectListTariffCode = @ViewBag.TariffCodeId;
+                                            }
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.AlwaysRequest, "Always Request")
+                                        </div>
+                                        <div class="editor-field">
+                                            @Html.CheckBoxFor(model => model.AlwaysRequest)
+
+@*                                            @Html.DisplayFor(model => model.AlwaysRequest)*@
+                                        </div>
+                                         <div class="clear"></div>
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.RateClassId, "Rate Class")
+                                        </div>
+                                        <div class="editor-field" style="width:50%">
+                                            @Html.DropDownList("RateClassId", selectListRateClass, new { id = "RateClassId" })
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.LoadProfileId, "Load Profile")
+                                        </div>
+                                        <div class="editor-field" style="width:50%">
+                                            @Html.DropDownList("LoadProfileId", selectListLoadProfile, new { id = "LoadProfileId" })
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.TariffCodeId, "Tariff Code")
+                                        </div>
+                                        <div class="editor-field" style="width:50%">
+                                            @Html.DropDownList("TariffCodeId", selectListTariffCode, new { id = "TariffCodeId" })
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="details-right-section">
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.MinimumUsageMWh, "Minimum Usage MWh")
+                                        </div>
+                                        <div class="editor-field">
+                                            @Html.EditorFor(model => model.MinimumUsageMWh)
+                                            @Html.ValidationMessageFor(model => model.MinimumUsageMWh, "The current Minimum Usage MWh value is invalid.")
+                                            @if (Session["IsPostBack"] == "true" && Model.MinimumUsageMWh != null && Model.MinimumUsageMWh < 0)
+                                            { 
+                                            <span class="field-validation-error" data-valmsg-for="MinUsageMWh" data-valmsg-replace="true">The current Minimum Usage MWh value is invalid.</span>
+                                            }
+                                            @if (Session["IsPostBack"] == "true" && ((Model.MinimumUsageMWh != null && Model.MaximumUsageMWh == null)))
+                                            { 
+                                            <span class="field-validation-error" data-valmsg-for="MinUsageMWh" data-valmsg-replace="true">Either both Minimum Usage MWh and Maximum Usage MWh must be specified or niether should be specified.</span>
+                                            }
+                                            @if (Session["IsPostBack"] == "true" && Model.MinimumUsageMWh != null && Model.MaximumUsageMWh != null && Model.MaximumUsageMWh < Model.MinimumUsageMWh)
+                                            { 
+                                            <span class="field-validation-error" data-valmsg-for="MinUsageMWh" data-valmsg-replace="true">The Minimum Usage MWh must be less than or equal to the Maximum Usage MWh.</span>
+                                            }
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.MaximumUsageMWh, "Maximum Usage MWh")
+                                        </div>
+                                        <div class="editor-field">
+                                            @Html.EditorFor(model => model.MaximumUsageMWh)
+                                            @Html.ValidationMessageFor(model => model.MaximumUsageMWh, "The current Maximum Usage MWh value is invalid.")
+                                            @if (Session["IsPostBack"] == "true" && Model.MaximumUsageMWh != null && Model.MaximumUsageMWh < 0)
+                                            { 
+                                            <span class="field-validation-error" data-valmsg-for="MaxUsageMWh" data-valmsg-replace="true">The current Maximum Usage MWh value is invalid.</span>
+                                            }
+                                            @if (Session["IsPostBack"] == "true" && ((Model.MaximumUsageMWh != null && Model.MinimumUsageMWh == null)))
+                                            { 
+                                            <span class="field-validation-error" data-valmsg-for="MaxUsageMWh" data-valmsg-replace="true">Either both Minimum Usage MWh and Maximum Usage MWh must be specified or niether should be specified.</span>
+                                            }
+                                            @if (Session["IsPostBack"] == "true" && Model.MaximumUsageMWh != null && Model.MinimumUsageMWh != null && Model.MaximumUsageMWh < Model.MinimumUsageMWh)
+                                            { 
+                                            <span class="field-validation-error" data-valmsg-for="MaxUsageMWh" data-valmsg-replace="true">The Maximum Usage MWh must be greater than or equal to Minimum Usage MWh.</span>
+                                            }
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.IsEligible, "Is On Eligble Customer List")
+                                        </div>
+                                        <div class="editor-field">
+                                            @Html.EditorFor(model => model.IsEligible)
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">
+                                            @Html.LabelFor(model => model.IsHia, "Is Historical Interval Available")
+                                        </div>
+                                        <div class="editor-field">
+                                            @Html.EditorFor(model => model.IsHia)
+                                        </div>
+                                        @if (Session["IsPostBack"] == "true" && Model.MaximumUsageMWh == null && Model.MinimumUsageMWh == null && Model.RateClassId == Guid.Empty && Model.LoadProfileId == Guid.Empty && Model.TariffCodeId == Guid.Empty && Model.IsEligible == false && Model.IsHia == false)
+                                        {
+                                        <div class="clear"></div>
+                                        <span class="field-validation-error" data-valmsg-for="NoDataEntered" data-valmsg-replace="true">User must specify Rate Class or Load Profile or Min and Max Usage MWh.</span>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field">
+                            @Html.DisplayFor(model => model.Inactive)
+                        </div>
+                             <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field">User</div>
+                             <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field">@DateTime.Now</div>
+                             <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field">User</div>
+                             <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field">@DateTime.Now</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript">
+    $(function () {
+        $("select#UtilityCompanyId").change(function (evt) {
+            if ($("select#UtilityCompanyId").val() != "-1") {
+                $.ajax({
+                    url: "/IdrRule/PopulateRateClassIdList",
+                    type: 'POST',
+                    data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Id + "'>" + val.Name + "</option>";
+                        });
+
+                        $("select#RateClassId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+
+                $.ajax({
+                    url: "/IdrRule/PopulateLoadProfileIdList",
+                    type: 'POST',
+                    data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Id + "'>" + val.Name + "</option>";
+                        });
+
+                        $("select#LoadProfileId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+
+                $.ajax({
+                    url: "/IdrRule/PopulateTariffCodeIdList",
+                    type: 'POST',
+                    data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Id + "'>" + val.Name + "</option>";
+                        });
+
+                        $("select#TariffCodeId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+
+            }
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

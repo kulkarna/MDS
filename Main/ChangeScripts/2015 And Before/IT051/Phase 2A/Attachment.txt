@@ -1,0 +1,9 @@
+-- ----------------------------------------------------------
+Create a new app pool on WS4
+Name: M2M
+4.0
+Classic pipeline
+Enable 32 bit
+Identity: LocalSystem
+
+-- ----------------------------------------------------------

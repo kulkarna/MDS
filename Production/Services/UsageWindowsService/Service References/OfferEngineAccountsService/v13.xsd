@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.RepositoryManagement.Dto" />
+  <xs:complexType name="ArrayOfKeyValueOfTrackedFieldstringwI0mcsWq">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfTrackedFieldstringwI0mcsWq">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LibertyPower.RepositoryManagement.Dto" name="Key" type="q1:TrackedField" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfTrackedFieldstringwI0mcsWq" nillable="true" type="tns:ArrayOfKeyValueOfTrackedFieldstringwI0mcsWq" />
+</xs:schema>

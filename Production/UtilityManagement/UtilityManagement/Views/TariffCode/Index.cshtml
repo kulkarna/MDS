@@ -1,0 +1,250 @@
+﻿@model  UtilityManagement.Models.TariffCodeModel
+@{ViewBag.Title = "Tariff Code Index";
+}
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Tariff Code</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+    <div class="details-data-section">
+        <div class="f10">
+        @Html.Label("Utility Company")
+        @Html.DropDownList("UtilityCompanyId", null, new{@onchange = "Utility_onChange()"})
+        </div>
+        @{if (@Model.SelectedUtilityCompanyId != null && @Model.SelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+          {
+            <div class="details-full-section" style="overflow:hidden;">
+                 <br />
+                <div style="overflow-x:scroll; " id="bheight">
+                <table>
+                    <tr>
+                        <td style="vertical-align:top">
+                <div class="form-title-specific p5">Lp Standard Tariff Code</div>
+@*                <div class="details-center-section">*@
+                    <table class="index2 top_border left_border">
+                        <tr>
+                            <th>Row Count = @Model.LpStandardTariffCodeList.Count</th>
+                            <th>
+                                @Html.DisplayName("Utility Code")
+                            </th>
+                            <th>
+                                @Html.ActionLink("LP Std Tariff Code", "LpStandardTariffCodeTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.LpStandardTariffCodeImageUrl))
+              {
+                                    <img id="imgLpStandardTariffCode" src="@ViewBag.LpStandardTariffCodeImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            
+                        </tr>
+                        @{
+              foreach (var item in Model.LpStandardTariffCodeList)
+              {
+                            <tr>
+                                <td>
+                                    @{string checkBoxLpStandardTariffCodeListId = string.Format("CheckBoxSelection_LpStandard_{0}", item.Id);}
+                                    <input type="checkbox" class="check-box" id="@checkBoxLpStandardTariffCodeListId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxLpStandardTariffCodeListId');">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LpStandardTariffCodeCode)
+                                </td>
+                               
+                            </tr>
+              }
+                        }
+                    </table>
+@*                </div>*@
+                        </td>
+                        <td style="vertical-align:top">
+@*                <div class="clear"></div>
+                 <br/>
+                <br />*@
+               <div class="form-title-specific p5">Tariff Code</div>
+@*                <div class="details-center-section">*@
+                    <table class="index2 top_border left_border">
+                        <tr>
+                            <th>Row Count = @Model.TariffCodeList.Count</th>
+                            <th>
+                                @Html.DisplayName("Utility Code")
+                            </th>
+                            <th>
+                                @Html.ActionLink("Tariff Code ID", "TariffCodeIdTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeIdImageUrl))
+              {
+                                    <img id="imgTariffCodeId" src="@ViewBag.TariffCodeIdImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Tariff Code", "TariffCodeCodeTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeCodeImageUrl))
+              {
+                                    <img id="imgTariffCodeCode" src="@ViewBag.TariffCodeCodeImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Description", "DescriptionTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.DescriptionImageUrl))
+              {
+                                    <img id="imgDescription" src="@ViewBag.DescriptionImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Account Type", "AccountTypeTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.AccountTypeImageUrl))
+              {
+                                    <img id="imgAccountType" src="@ViewBag.AccountTypeImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Liberty Power Standard Tariff Code", "TariffCodeLpStandardTariffCodeTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeLpStandardTariffCodeImageUrl))
+              {
+                                    <img id="imgTariffCodeLpStandardTariffCode" src="@ViewBag.TariffCodeLpStandardTariffCodeImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Inactive", "InactiveTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+              {
+                                    <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                           
+                        </tr>
+                        @{
+              foreach (var item in Model.TariffCodeList)
+              {
+                            <tr>
+                                <td>
+                                    @{string checkBoxTariffCodeListId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                                    <input type="checkbox" class="check-box" id="@checkBoxTariffCodeListId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxTariffCodeListId');">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TariffCodeId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TariffCodeCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AccountType.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LpStandardTariffCode.LpStandardTariffCodeCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Inactive)
+                                </td>
+                               
+                            </tr>
+              }
+                        }
+                    </table>
+@*                </div>*@
+                        </td>
+                        <td style="vertical-align:top">
+@*                <div class="clear"></div>
+               
+                 <br/>
+                <br />*@
+               <div class="form-title-specific p5"> Tariff Code Alias</div>
+@*                <div class="details-center-section">*@
+                    <table class="index2 top_border left_border">
+                        <tr>
+                            <th>Row Count = @Model.TariffCodeAliasList.Count</th>
+                            <th>
+                                @Html.ActionLink("Tariff Code ID", "TariffCodeAliasTariffCodeIdTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeAliasTariffCodeIdImageUrl))
+              {
+                                    <img id="imgTariffCodeAliasTariffCodeId" src="@ViewBag.TariffCodeAliasTariffCodeIdImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                            <th>
+                                @Html.ActionLink("Tariff Code Alias", "TariffCodeCodeAliasTitleClick")
+                                @{
+              if (!string.IsNullOrWhiteSpace(@ViewBag.TariffCodeCodeAliasImageUrl))
+              {
+                                    <img id="imgTariffCodeCodeAlias" src="@ViewBag.TariffCodeCodeAliasImageUrl"  valign="middle" />
+              }
+                                }
+                            </th>
+                           
+                        </tr>
+                        @{
+              foreach (var item in Model.TariffCodeAliasList)
+              {
+                            <tr>
+                                <td>
+                                    @{string checkBoxTariffCodeAliasListId = string.Format("CheckBoxSelection_Alias_{0}", item.Id);}
+                                    <input type="checkbox" class="check-box" id="@checkBoxTariffCodeAliasListId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxTariffCodeAliasListId');">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TariffCode.TariffCodeId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TariffCodeCodeAlias)
+                                </td>
+                               
+                            </tr>
+              }
+                        }
+                    </table>
+@*                </div>*@
+                    </td>
+                </tr>
+                </table>
+            </div></div>
+          }
+        }
+    </div>
+</div>
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+<script>
+    function Utility_onChange() {
+        if ($("select#UtilityCompanyId").val() != "-1") {
+            $.ajax({
+                type: 'POST',
+                url: "/TariffCode/IndexUtilitySelection",
+                datatype: 'json',
+                async: false,
+                data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                success: function (data) { },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+            document.location.href = '/TariffCode/Index';
+        }
+    };
+</script>
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

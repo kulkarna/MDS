@@ -1,0 +1,2 @@
+﻿CREATE USER [LIBERTYPOWER\lfreedman] FOR LOGIN [LIBERTYPOWER\lfreedman];
+

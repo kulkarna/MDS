@@ -1,0 +1,108 @@
+﻿@model DataAccessLayerEntityFramework.ServiceClass
+@{
+    ViewBag.Title = "Service Class Details";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-details">
+        <div class="form-title">
+            <div class="form-title-general">Details:&nbsp;</div>
+            <div class="form-title-specific">Service Class</div>
+        </div>
+        <div class="form-information">&nbsp;&nbsp;Information</div>
+        <fieldset>
+            <legend>Service Class</legend>
+            <div class="details-data-section">
+                <div class="details-left-section">
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.UtilityCompany.UtilityCode, "Utility Code")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.UtilityCompany.UtilityCode)
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.ServiceClassCode, "Service Class Code")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.ServiceClassCode)
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.Description)
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Description)
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.AccountType.Name, "Account Type")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.AccountType.Name)
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.LpStandardServiceClass, "Liberty Power Standard Service Class")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.LpStandardServiceClass)
+                    </div>
+                </div>
+                <div class="details-right-section">
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.Inactive)
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Inactive)
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.CreatedBy, "Created By")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CreatedBy)
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CreatedDate)
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.LastModifiedBy)
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.LastModifiedDate)
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="form-buttons">
+        <table>
+            <tr>
+                <td class="form-buttons">
+                    @if (Session["ErrorMessage"] == null || string.IsNullOrEmpty(Session["ErrorMessage"].ToString()))
+                    {
+                        <button id="btnEdit" name="submitButton" value="Edit" type="submit" class="button">Edit</button>
+                    }
+                </td>
+                <td class="form-buttons">
+                    <button id="btnBackToLilst" name="submitButton" value="Back to List" type="submit" class="button">Back to List</button></td>
+            </tr>
+        </table>
+    </div>
+}
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}

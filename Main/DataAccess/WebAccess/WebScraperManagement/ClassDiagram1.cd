@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WebScraperManagement.ZoneMapping">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABCAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ZoneMapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.NysegScraper">
+    <Position X="11" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAIAAAAgIAAIQAQAAAAIAgAAQAAEAAAAA=</HashCode>
+      <FileName>NysegScraper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.AmerenScraper">
+    <Position X="8.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAACAAAQAAAIAAAAAgAAAAAAA=</HashCode>
+      <FileName>AmerenScraper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.ConedConfigurationValues">
+    <Position X="22" Y="6.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAQAAAQCABAAAAAQAAAAgAACAIAABAAAAAIAAAACA=</HashCode>
+      <FileName>Configuration\ConedConfigurationValues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.ConfigurationValues">
+    <Position X="22" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIQAAACEIAAAAAAAAQAAAAGAAAAAgAACAAAAAgAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationValues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.NimoConfigurationValues">
+    <Position X="22" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAACCAAAABgAAADAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\NimoConfigurationValues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.NysegConfigurationValues">
+    <Position X="18.75" Y="3" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAwAAAAAAAAAAAAAACCAgAABgIAADAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\NysegConfigurationValues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.PecoConfigurationValues">
+    <Position X="24.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Configuration\PecoConfigurationValues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.RgeConfigurationValues">
+    <Position X="24.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAACCAgAABgIAADAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\RgeConfigurationValues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.BgeScraper">
+    <Position X="8.25" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQBAAAAAAAAAAAAAAAAAAAgAAAgAAAQAAg=</HashCode>
+      <FileName>BgeScraper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.DataAccess.WebAccess.WebScraperManagement.HtmlElementValueSelector">
+    <Position X="2.5" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAACAAAAAAAAgAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>HtmlElementValueSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

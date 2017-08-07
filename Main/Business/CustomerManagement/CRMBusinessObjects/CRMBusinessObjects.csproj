@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B81A2E37-1B0A-4C62-9336-9CEF0F247FE2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibertyPower.Business.CustomerManagement.CRMBusinessObjects</RootNamespace>
+    <AssemblyName>CRMBusinessObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Jaime_Rebel|AnyCPU'">
+    <OutputPath>bin\Jaime_Rebel\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AccountManagement, Version=2012.11.15.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\AccountManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="AccountSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Market\AccountSql.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonEncryption, Version=12.1.12.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonEncryption.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonEntity, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonHelper, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\CommonHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonSql, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Temp\CommonSql.dll</HintPath>
+    </Reference>
+    <Reference Include="DailyPricing, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\DailyPricing.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\DocumentManager.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentsSql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\CRM Tools\DocumentsSql.dll</HintPath>
+    </Reference>
+    <Reference Include="ProductManagement, Version=2012.2.15.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Temp\ProductManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="ProspectManagement, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Temp\ProspectManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Prospects, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Pricing\Prospects.dll</HintPath>
+    </Reference>
+    <Reference Include="SalesChannel, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\CRM Tools\SalesChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="SecurityManager, Version=11.11.29.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Reference\Core\SecurityManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="AccountContract.cs" />
+    <Compile Include="AccountContractCommission.cs" />
+    <Compile Include="AccountContractRate.cs" />
+    <Compile Include="AccountContractRateFactory.cs" />
+    <Compile Include="AccountContractRateList.cs" />
+    <Compile Include="AccountContractRateQueue.cs" />
+    <Compile Include="AccountDetail.cs" />
+    <Compile Include="AccountFactory.cs" />
+    <Compile Include="AccountInfo.cs" />
+    <Compile Include="AccountStatus.cs" />
+    <Compile Include="AccountStatusSummary.cs" />
+    <Compile Include="AccountSummary.cs" />
+    <Compile Include="AccountTypeFactory.cs" />
+    <Compile Include="AccountUsage.cs" />
+    <Compile Include="AcrQueueUpdateStatus.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="AddressFactory.cs" />
+    <Compile Include="BusinessActivity.cs" />
+    <Compile Include="BusinessType.cs" />
+    <Compile Include="CancelContractReason.cs" />
+    <Compile Include="CancelContractReasonFactory.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="ContactFactory.cs" />
+    <Compile Include="Contract.cs" />
+    <Compile Include="ContractCurrentStatus.cs" />
+    <Compile Include="ContractFactory.cs" />
+    <Compile Include="ContractQualifier.cs" />
+    <Compile Include="ContractQualifierFactory.cs" />
+    <Compile Include="GasPriceFactory.cs" />
+    <Compile Include="Market.cs" />
+    <Compile Include="SalesAgent.cs" />
+    <Compile Include="TabletIncompleteContractWithReasons.cs" />
+    <Compile Include="CRMBaseFactory.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerAddress.cs" />
+    <Compile Include="CustomerContact.cs" />
+    <Compile Include="CustomerFactory.cs" />
+    <Compile Include="CustomerPreference.cs" />
+    <Compile Include="CustomerPreferenceFactory.cs" />
+    <Compile Include="EfAccountFactory.cs" />
+    <Compile Include="Enums\AccountOrigin.cs" />
+    <Compile Include="Enums\AccountType.cs" />
+    <Compile Include="Enums\BillingType.cs" />
+    <Compile Include="Enums\ContractDealType.cs" />
+    <Compile Include="Enums\ContractStatus.cs" />
+    <Compile Include="Enums\ContractTemplate.cs" />
+    <Compile Include="Enums\ContractType.cs" />
+    <Compile Include="Enums\ClientApplicationType.cs" />
+    <Compile Include="Enums\CreditAgencyType.cs" />
+    <Compile Include="Enums\EmailType.cs" />
+    <Compile Include="Enums\EnrollmentType.cs" />
+    <Compile Include="Enums\LinkIdTableType.cs" />
+    <Compile Include="Enums\MultiTermWinServiceStatus.cs" />
+    <Compile Include="Enums\PromotionStatus.cs" />
+    <Compile Include="Enums\TaxStatus.cs" />
+    <Compile Include="Enums\UsageReqStatus.cs" />
+    <Compile Include="CampaignFulfillment.cs" />
+    <Compile Include="CampaignFulfillmentFactory.cs" />
+    <Compile Include="GenericError.cs" />
+    <Compile Include="IAccountFactory.cs" />
+    <Compile Include="ICrmDal.cs" />
+    <Compile Include="InCompleteContractCancelReason.cs" />
+    <Compile Include="InCompleteContractCancelReasonFactory.cs" />
+    <Compile Include="IPortalUIFactory.cs" />
+    <Compile Include="IValidator.cs" />
+    <Compile Include="MultiTermWinServiceData.cs" />
+    <Compile Include="MultiTermWinServiceDataFactory.cs" />
+    <Compile Include="CampaignCode.cs" />
+    <Compile Include="CampaignCodeFactory.cs" />
+    <Compile Include="PromotionCode.cs" />
+    <Compile Include="PromotionCodeFactory.cs" />
+    <Compile Include="PromotionStatus.cs" />
+    <Compile Include="PromotionStatusFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProspectContract.cs" />
+    <Compile Include="Qualifier.cs" />
+    <Compile Include="QualifierFactory.cs" />
+    <Compile Include="PromotionType.cs" />
+    <Compile Include="SearchHelper.cs" />
+    <Compile Include="SearchResult.cs" />
+    <Compile Include="TabletDocument.cs" />
+    <Compile Include="TabletDocumentFactory.cs" />
+    <Compile Include="TabletIncompleteContract.cs" />
+    <Compile Include="TabletIncompleteContractFactory.cs" />
+    <Compile Include="UtilityRequiredData.cs" />
+    <Compile Include="Enums\UtilityRequiredDataControlType.cs" />
+    <Compile Include="Zipcode.cs" />
+    <Compile Include="ZipcodeFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRMBusinessObjects.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DataAccess\SqlAccess\CustomerManagementEF\CustomerManagementEF.csproj">
+      <Project>{c9ba20ac-b7ef-4616-a82a-84c0f40f8cd7}</Project>
+      <Name>CustomerManagementEF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DataAccess\SqlAccess\LibertyPowerSql\LibertyPowerSql.csproj">
+      <Project>{05913FB9-6F34-4863-A2F3-0A875A4908FF}</Project>
+      <Name>LibertyPowerSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MarketManagement\UtilityManagement\UtilityManagement.csproj">
+      <Project>{98086321-a541-4063-872b-62fa3a691b24}</Project>
+      <Name>UtilityManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EF\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

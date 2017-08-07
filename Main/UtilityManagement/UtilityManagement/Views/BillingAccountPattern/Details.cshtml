@@ -1,0 +1,104 @@
+﻿@model DataAccessLayerEntityFramework.BillingAccountPattern
+
+@{
+    ViewBag.Title = "Billing Account Pattern Details";
+}
+
+@using (Html.BeginForm())
+{
+    
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="billingpattern_ico"></div>
+            <div class="edit_header_desc"><h4> Billing Account Pattern</h4>
+            <h3>Details Record</h3>
+            @Model.UtilityCompany.UtilityCode
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                 <div class="textblock">
+                <div class="details-data-section">
+                    <div id="Gen"  class="activable">
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading">General</div>
+                    <div id="hideContent" class="editdetails">
+               
+                    <div class="details-full-section ">
+                        <div class="details-left-section">
+                        <div class="display-label">@Html.LabelFor(model => model.UtilityCompany.UtilityCode, "Utility Code")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.UtilityCompany.UtilityCode)</div>
+                        <div class="clear"></div>
+                        <div class="display-label">@Html.LabelFor(model => model.BillingAccountPattern1, "Billing Account Pattern")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.BillingAccountPattern1)</div>
+                        <div class="clear"></div>
+                        <div class="display-label">@Html.LabelFor(model => model.BillingAccountPatternDescription, "Billing Account Pattern Description")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.BillingAccountPatternDescription)</div>
+                        <div class="clear"></div> 
+                         </div>
+                        <div class="details-right-section">                           
+                        <div class="display-label">@Html.LabelFor(model => model.BillingAccountAddLeadingZero, "Billing Account Add Leading Zero")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.BillingAccountAddLeadingZero)</div>
+                        <div class="clear"></div>
+                        <div class="display-label">@Html.LabelFor(model => model.BillingAccountTruncateLast, "Billing Account Truncate Last")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.BillingAccountTruncateLast)</div>
+                        <div class="clear"></div>
+                        <div class="display-label">@Html.LabelFor(model => model.BillingAccountRequiredForEDIRequest, "Billing Account Required For EDI Request")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.BillingAccountRequiredForEDIRequest)</div>
+                    </div></div>
+                        </div>
+                        </div>
+                    <br />
+                    <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.Inactive)
+                        </div>
+
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                        </div>
+
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                        </div>
+
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                        </div>
+
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                        </div>
+                        </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

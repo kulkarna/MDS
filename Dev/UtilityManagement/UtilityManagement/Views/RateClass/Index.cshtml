@@ -1,0 +1,260 @@
+﻿@model  UtilityManagement.Models.RateClassModel
+@{ViewBag.Title = "Rate Class Index";
+}
+
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Rate Class</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+    <div class="details-data-section">
+        <div class="f10">
+        @Html.Label("Utility Company")
+        @Html.DropDownList("UtilityCompanyId", null, new{@onchange = "Utility_onChange()"})
+        </div>
+        @{if (@Model.SelectedUtilityCompanyId != null && @Model.SelectedUtilityCompanyId != "00000000-0000-0000-0000-000000000000")
+          {
+            <div class="details-full-section">
+                 <br />
+                <div style="overflow-x:scroll;" id="bheight">
+                    <table>
+                        <tr>
+                            <td style="vertical-align:top">
+                    <div class="form-title-specific p5">Liberty Power Standard Rate Class</div>
+    @*                <div class="details-center-section">*@
+                        <table class="index2 top_border">
+                            <tr>
+                                <th>Row Count = @Model.LpStandardRateList.Count</th>
+                                <th>
+                                    @Html.DisplayName("Utility Code")
+                                </th>
+                                <th>
+                                    @Html.ActionLink("LP Std Rate Class", "LpStandardRateClassTitleClick")
+                                    @{
+                  if (!string.IsNullOrWhiteSpace(@ViewBag.LpStandardRateClassImageUrl))
+                  {
+                                        <img id="imgLpStandardRateClass" src="@ViewBag.LpStandardRateClassImageUrl"  valign="middle" />
+                  }
+                                    }
+                                </th>
+                            
+                            </tr>
+                            @{
+                  foreach (var item in Model.LpStandardRateList)
+                  {
+                                <tr>
+                                   <td>
+                                        @{string checkBoxLpStandardRateListId = string.Format("CheckBoxSelection_LpStandard_{0}", item.Id);}
+                                        <input type="checkbox" class="check-box" id="@checkBoxLpStandardRateListId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxLpStandardRateListId');">
+                                     <td>
+                                        @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LpStandardRateClassCode)
+                                    </td>
+                               
+                                </tr>
+                  }
+                            }
+                        </table>
+    @*                </div>*@
+                            </td>
+                            <td style="vertical-align:top">
+    @*                <div class="clear"></div>
+                    <br/>
+                    <br />*@
+                   <div class="form-title-specific p5">Rate Class</div>
+    @*                <div class="details-center-section">*@
+                        <table class="index2 top_border">
+                            <tr>
+                                <th>
+                                    Row Count = @Model.RateClassList.Count
+                                </th>
+                                <th>
+                                    @Html.DisplayName("Utility Code")
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Rate Class ID", "RateClassIdTitleClick")
+                                    @{
+                  if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassIdImageUrl))
+                  {
+                                        <img id="imgRateClassId" src="@ViewBag.RateClassIdImageUrl"  valign="middle" />
+                  }
+                                    }
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Rate Class Code", "RateClassCodeTitleClick")
+                                    @{
+                  if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassCodeImageUrl))
+                  {
+                                        <img id="imgRateClassCode" src="@ViewBag.RateClassCodeImageUrl"  valign="middle" />
+                  }
+                                    }
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Description", "DescriptionTitleClick")
+                                    @{
+                  if (!string.IsNullOrWhiteSpace(@ViewBag.DescriptionImageUrl))
+                  {
+                                        <img id="imgDescription" src="@ViewBag.DescriptionImageUrl"  valign="middle" />
+                  }
+                                    }
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Account Type", "AccountTypeTitleClick")
+                                    @{
+                  if (!string.IsNullOrWhiteSpace(@ViewBag.AccountTypeImageUrl))
+                  {
+                                        <img id="imgAccountType" src="@ViewBag.AccountTypeImageUrl"  valign="middle" />
+                  }
+                                    }
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Liberty Power Standard Rate Class", "RateClassLpStandardRateClassTitleClick")
+                                    @{
+                  if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassLpStandardRateClassImageUrl))
+                  {
+                                        <img id="imgRateClassLpStandardRateClassTitleClick" src="@ViewBag.RateClassLpStandardRateClassImageUrl"  valign="middle" />
+                  }
+                                    }
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Inactive", "InactiveTitleClick")
+                                    @{
+                  if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+                  {
+                                        <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+                  }
+                                    }
+                                </th>
+                           
+                            </tr>
+                            @{
+                  foreach (var item in Model.RateClassList)
+                  {
+                                <tr>
+                                    <td>
+                                        @{string checkBoxRateClassListId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                                        <input type="checkbox" class="check-box" id="@checkBoxRateClassListId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxRateClassListId');">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RateClassId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RateClassCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AccountType.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LpStandardRateClass.LpStandardRateClassCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Inactive)
+                                    </td>
+                               
+                                </tr>
+                  }
+                            }
+                        </table>
+    @*                </div>*@
+                            </td>
+                            <td style="vertical-align:top">
+                  @*  <div class="clear"></div>
+                    <br/>
+                    <br />*@
+                   <div class="form-title-specific p5">Rate Class Alias</div>
+
+                    <div class="details-center-section">
+                        <table class="index2 top_border">
+                            <tr>
+                                <th>
+                                    Row Count = @Model.RateClassAliasList.Count
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Rate Class ID", "RateClassAliasRateClassIdTitleClick")
+                                    @{
+                  if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassAliasRateClassIdImageUrl))
+                  {
+                                        <img id="imgRateClassAliasRateClassId" src="@ViewBag.RateClassAliasRateClassIdImageUrl"  valign="middle" />
+                  }
+                                    }
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Rate Class Code Alias", "RateClassCodeAliasTitleClick")
+                                    @{
+                  if (!string.IsNullOrWhiteSpace(@ViewBag.RateClassCodeAliasImageUrl))
+                  {
+                                        <img id="imgRateClassCodeAlias" src="@ViewBag.RateClassCodeAliasImageUrl"  valign="middle" />
+                  }
+                                    }
+                                </th>
+                           
+                            </tr>
+                            @{
+                  foreach (var item in Model.RateClassAliasList)
+                  {
+                                <tr>
+                                   <td>
+                                        @{string checkBoxRateClassAliasListId = string.Format("CheckBoxSelection_Alias_{0}", item.Id);}
+                                        <input type="checkbox" class="check-box" id="@checkBoxRateClassAliasListId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxRateClassAliasListId');">
+                                     <td>
+                                        @Html.DisplayFor(modelItem => item.RateClass.RateClassId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RateClassCodeAlias)
+                                    </td>
+                               
+                                </tr>
+                  }
+                            }
+                        </table>
+                    </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+          }
+        }
+    </div>
+</div>
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+<script>
+    function Utility_onChange()
+    {
+        if ($("select#UtilityCompanyId").val() != "-1")
+        {
+            $.ajax(
+            {
+                type: 'POST',
+                url: "/RateClass/IndexUtilitySelection",
+                datatype: 'json',
+                async: false,
+                data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                success: function (data) { },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+            document.location.href = '/RateClass/Index';
+        }
+    };
+</script>
+<script>
+    $(function ()
+    {
+        $("#tabs").tabs();
+    });

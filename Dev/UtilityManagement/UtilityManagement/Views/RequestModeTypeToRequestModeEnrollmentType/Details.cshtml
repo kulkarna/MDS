@@ -1,0 +1,62 @@
+﻿@model DataAccessLayerEntityFramework.RequestModeTypeToRequestModeEnrollmentType
+
+@{
+    ViewBag.Title = "Request Mode Type To Request Mode Enrollment Type Details";
+}
+
+<h3>Request Mode Type To Request Mode Enrollment Type Details</h3>
+<br />
+<div class="form_fieldset">
+    <fieldset>
+        <legend>RequestModeTypeToRequestModeEnrollmentType</legend>
+
+        <div class="display-label">
+            @Html.Label("Request Mode Type")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RequestModeType.Name)
+        </div>
+
+        <div class="display-label">
+            @Html.Label("Request Mode Enrollment Type")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RequestModeEnrollmentType.Name)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.Inactive)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Inactive)
+        </div>
+
+        <div class="display-label">
+            @Html.Label("Created By")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CreatedBy)
+        </div>
+
+        <div class="display-label">
+            @Html.Label("Created Date")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </div>
+
+        <div class="display-label">
+            @Html.Label("Last Modified By")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LastModifiedBy)
+        </div>
+
+        <div class="display-label">
+            @Html.Label("Last Modified Date")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LastModifiedDate)
+        </div>
+    </fieldset>
+</div>

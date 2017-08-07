@@ -1,0 +1,3 @@
+- First script to run is Table Modifications.sql
+- Last script to run is z_MigrateDealPricingID_ToCustomDealID.sql (Please see Cathy before running)
+-- The rest can be ran in any order

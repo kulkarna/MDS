@@ -1,0 +1,104 @@
+﻿@model DataAccessLayerEntityFramework.NameKeyPattern
+
+@{
+    ViewBag.Title = "Name Key Pattern Details";
+}
+
+@using (Html.BeginForm())
+{
+    
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="namekeypattern_ico"></div>
+            <div class="edit_header_desc"><h4> Name Key Pattern</h4>
+            <h3>Details Record</h3>
+            @Model.UtilityCompany.UtilityCode
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                 <div class="textblock">
+                <div class="details-data-section">
+                    <div id="Gen"  class="activable">
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading">General</div>
+                    <div id="hideContent" class="editdetails">
+               
+                    <div class="details-full-section ">
+                        <div class="details-left-section">
+                        <div class="display-label">@Html.LabelFor(model => model.UtilityCompany.UtilityCode, "Utility Code")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.UtilityCompany.UtilityCode)</div>
+                        <div class="clear"></div>
+                        <div class="display-label">@Html.LabelFor(model => model.NameKeyPattern1, "Name Key Pattern")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.NameKeyPattern1)</div>
+                        <div class="clear"></div>
+                        <div class="display-label">@Html.LabelFor(model => model.NameKeyPatternDescription, "Name Key Pattern Description")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.NameKeyPatternDescription)</div>
+                        <div class="clear"></div> 
+                         </div>
+                        <div class="details-right-section">                           
+                        <div class="display-label">@Html.LabelFor(model => model.NameKeyAddLeadingZero, "Name Key Add Leading Zero")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.NameKeyAddLeadingZero)</div>
+                        <div class="clear"></div>
+                        <div class="display-label">@Html.LabelFor(model => model.NameKeyTruncateLast, "Name Key Truncate Last")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.NameKeyTruncateLast)</div>
+                        <div class="clear"></div>
+                        <div class="display-label">@Html.LabelFor(model => model.NameKeyRequiredForEDIRequest, "Name Key Required For EDI Request")</div>
+                        <div class="display-field">@Html.DisplayFor(model => model.NameKeyRequiredForEDIRequest)</div>
+                    </div></div>
+                        </div>
+                        </div>
+                    <br />
+                    <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.Inactive)
+                        </div>
+
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                        </div>
+
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                        </div>
+
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                        </div>
+
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                        </div>
+                        </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

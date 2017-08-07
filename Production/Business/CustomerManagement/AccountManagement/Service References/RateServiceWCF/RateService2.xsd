@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RateService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RateService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53446/RateService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CustomerRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingType" type="tns:BillingType" />
+      <xs:element minOccurs="0" name="CreditInsuranceFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MeterCharge" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductType" type="tns:ProductPlanType" />
+      <xs:element minOccurs="0" name="Rate1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Rate2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Rate3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RateEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RateEndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VariableTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerRate" nillable="true" type="tns:CustomerRate" />
+  <xs:simpleType name="BillingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Dual" />
+      <xs:enumeration value="RateReady" />
+      <xs:enumeration value="BillReady" />
+      <xs:enumeration value="SupplierConsolidated" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BillingType" nillable="true" type="tns:BillingType" />
+  <xs:simpleType name="ProductPlanType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fixed" />
+      <xs:enumeration value="PortfolioVarialble" />
+      <xs:enumeration value="CustomVariable" />
+      <xs:enumeration value="HeatRate" />
+      <xs:enumeration value="IndexTexas">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BlockIndexed" />
+      <xs:enumeration value="Hybrid">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Index">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ruc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CustomIndex">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProductPlanType" nillable="true" type="tns:ProductPlanType" />
+</xs:schema>

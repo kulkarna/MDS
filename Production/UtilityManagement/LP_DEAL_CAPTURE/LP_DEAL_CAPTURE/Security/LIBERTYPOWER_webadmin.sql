@@ -1,0 +1,2 @@
+﻿CREATE USER [LIBERTYPOWER\webadmin] FOR LOGIN [LIBERTYPOWER\webadmin];
+

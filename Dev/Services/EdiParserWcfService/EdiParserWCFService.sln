@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{0259AF39-2D90-4BAF-A808-863CF779D144}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserWcfService", "EdiParserWCFService\EdiParserWcfService.csproj", "{7892F230-C733-485D-BEC0-85E065F169D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserBusinessLayer", "EdiParserBusinessLayer\EdiParserBusinessLayer.csproj", "{1F2C9242-F0E3-47DC-A804-6D6D729A0557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserRepository", "EdiParserRepository\EdiParserRepository.csproj", "{5C437A56-D69E-4E3C-BDCA-48ED951A9914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserWcfServiceData", "EdiParserDataService\EdiParserWcfServiceData.csproj", "{7E6661CE-B745-4807-B695-DF1C0E539889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserDataMapper", "EdiParserDataMapper\EdiParserDataMapper\EdiParserDataMapper.csproj", "{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://lpcnocapptfs1:8080/tfs/lpcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EdiParserBusinessLayer\\EdiParserBusinessLayer.csproj
+		SccProjectName1 = EdiParserBusinessLayer
+		SccLocalPath1 = EdiParserBusinessLayer
+		SccProjectUniqueName2 = EdiParserDataMapper\\EdiParserDataMapper\\EdiParserDataMapper.csproj
+		SccProjectName2 = EdiParserDataMapper/EdiParserDataMapper
+		SccLocalPath2 = EdiParserDataMapper\\EdiParserDataMapper
+		SccProjectUniqueName3 = EdiParserDataService\\EdiParserWcfServiceData.csproj
+		SccProjectName3 = EdiParserDataService
+		SccLocalPath3 = EdiParserDataService
+		SccProjectUniqueName4 = EdiParserRepository\\EdiParserRepository.csproj
+		SccProjectName4 = EdiParserRepository
+		SccLocalPath4 = EdiParserRepository
+		SccProjectUniqueName5 = EdiParserWCFService\\EdiParserWcfService.csproj
+		SccProjectName5 = EdiParserWCFService
+		SccLocalPath5 = EdiParserWCFService
+		SccProjectUniqueName6 = Testing\\Testing.csproj
+		SccProjectName6 = Testing
+		SccLocalPath6 = Testing
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0259AF39-2D90-4BAF-A808-863CF779D144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0259AF39-2D90-4BAF-A808-863CF779D144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0259AF39-2D90-4BAF-A808-863CF779D144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0259AF39-2D90-4BAF-A808-863CF779D144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7892F230-C733-485D-BEC0-85E065F169D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7892F230-C733-485D-BEC0-85E065F169D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7892F230-C733-485D-BEC0-85E065F169D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7892F230-C733-485D-BEC0-85E065F169D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2C9242-F0E3-47DC-A804-6D6D729A0557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2C9242-F0E3-47DC-A804-6D6D729A0557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2C9242-F0E3-47DC-A804-6D6D729A0557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2C9242-F0E3-47DC-A804-6D6D729A0557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C437A56-D69E-4E3C-BDCA-48ED951A9914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C437A56-D69E-4E3C-BDCA-48ED951A9914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C437A56-D69E-4E3C-BDCA-48ED951A9914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C437A56-D69E-4E3C-BDCA-48ED951A9914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6661CE-B745-4807-B695-DF1C0E539889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6661CE-B745-4807-B695-DF1C0E539889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6661CE-B745-4807-B695-DF1C0E539889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6661CE-B745-4807-B695-DF1C0E539889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

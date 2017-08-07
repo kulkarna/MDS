@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://uat.ws.libertypowerbilling.com/InvoiceService.asmx?wsdl" docRef="http://uat.ws.libertypowerbilling.com/InvoiceService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://uat.ws.libertypowerbilling.com/InvoiceService.asmx" xmlns:q1="https://ws.libertypowerbilling.com/InvoiceService" binding="q1:InvoiceServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://uat.ws.libertypowerbilling.com/InvoiceService.asmx" xmlns:q2="https://ws.libertypowerbilling.com/InvoiceService" binding="q2:InvoiceServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

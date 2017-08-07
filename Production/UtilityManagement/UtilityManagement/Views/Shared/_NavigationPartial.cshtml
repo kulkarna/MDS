@@ -1,0 +1,394 @@
+﻿<div id="menudiv">
+    <div class="menu">
+        @if (!Request.Url.ToString().ToLower().Contains("unauthorized") && (Request.Url.ToString().ToLower().Contains("edit") || Request.Url.ToString().ToLower().Contains("create") || Request.Url.ToString().ToLower().Contains("detail")))
+        { 
+            <div>
+                <div class="edit_nav" id="nav">
+<h4>Information</h4>
+                    <div class="menu-item navtop">
+                        <img src="~/Images/FormNavTreeLine.png" /><a href="#Gen">General</a>
+                    </div>
+                    <div class="menu-item navtop">
+                        <img src="~/Images/FormNavTreeLineBottom.png" /><a href="#info">Information</a>
+                    </div>
+                </div>
+                <h4 class="relatedlink">Related </h4>
+                <div class="scrollnav">
+                    <ul class="navigation treeview">
+                      @*  <li class="FormRoleTitle">Business Intelligence
+                            <ul>
+                                <li class="menu-item">
+                                    <a href="/Top25ZipCodes"><img src="~/Images/billing_pat_ico.png" />Top 25 Zip Codes</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/TopSegments"><img src="~/Images/historical_ico.png" />Top Demographic Segments</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/DemographicDataByZipCode"><img src="~/Images/service_address_ico.png" />Data By Zip Code</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/ZipCodesWithSimilarDemographicData"><img src="~/Images/idr_ico.png" />Similar Zip Codes</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/SimilarZipCodes"><img src="~/Images/idr_ico.png" />Similar Zip Codes</a>
+                                </li>
+                            </ul>
+                        </li>*@
+                        <li class="FormRoleTitle">Utilities
+                            <ul>
+                                <li class="menu-item">
+                                    <a href="/UtilityCompany"><img src="~/Images/Utility_ico.png" /> Utility Company</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="FormRoleTitle">Request Mode Drivers
+                           <ul>
+                               <li class="menu-item">
+                                   <a href="/LoadProfile"><img src="~/Images/loadProfile_ico.png" /> Load Profile</a>
+                               </li>
+                               <li class="menu-item">
+                                   <a href="/RateClass"><img src="~/Images/rateClass_ico.png" /> Rate Class</a>
+                               </li>
+                               <li class="menu-item">
+                                   <a href="/TariffCode"><img src="~/Images/tariffCode_ico.png" /> Tariff Code</a>
+                               </li>
+                           </ul>
+                        </li>
+                        <li class="FormRoleTitle">Request Modes
+                           <ul>
+                               <li class="menu-item">
+                                   <a href="/RequestModeHistoricalUsage"><img src="~/Images/historical_ico.png" />Historical Usage</a>
+                               </li>
+                       
+                       <li class="menu-item">
+                           <a href="/RequestModeIcap"><img src="~/Images/icap_ico.png" />I-Cap</a>
+                       </li>
+                       <li class="menu-item">
+                           <a href="/RequestModeIdr"><img src="~/Images/idr_ico.png" />IDR</a>
+                       </li>
+                   </ul>
+                        </li>
+                        <li class="FormRoleTitle">Support Data
+                           <ul>
+                               <li class="menu-item">
+                                   <a href="/AccountInfoFieldRequired"><img src="~/Images/account_info_reqd_icon.png" /> Account Info Field Reqd</a>
+                               </li>
+                                <li class="menu-item">
+
+                                   <a href="/CapacityTreshold"> <img src="/Images/CapacityTreshold.png" width="15px" height="15px"> Capacity Threshold</a>
+                               </li>
+                               <li class="menu-item">
+                                   <a href="/LpBillingType"><img src="~/Images/billing_ico.png" /> Billing Type</a>
+                               </li>
+                               <li class="menu-item ">
+                                   <a href="/RequestModeHistoricalUsageParameter"><img src="~/Images/huParameter_ico.png" /> HU Parameter</a>
+                               </li>
+                               <li class="menu-item">
+                                   <a href="/IdrRule"><img src="~/Images/idrRules_ico.png" /> IDR Rule</a>
+                               </li>
+                               <li class="menu-item ">
+                                   <a href="/MeterReadCalendar"><img src="~/Images/calendar.jpg" /> Meter Read Calendar</a>
+                               </li>
+                               <li class="menu-item ">
+                                   <a href="/PaymentTerm"><img src="~/Images/payment_term_small_icon.png" /> Payment Term</a>
+                               </li>
+                               <li class="menu-item">
+                                   <a href="/PurchaseOfReceivable"><img src="~/Images/purchaseReceivables_ico.png" /> Purchase of Receivable</a>
+                               </li>
+                           </ul>
+                        </li>
+                        <li class="FormRoleTitle">Patterns
+                            <ul>
+                                <li class="menu-item">
+                                    <a href="/BillingAccountPattern"><img src="~/Images/billing_pat_ico.png" /> Billing Account Pattern</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/IcapTcapRefreshPeriod"><img src="~/Images/icap_ico_small.png" /> I-Cap/T-Cap Refresh Period</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/MeterNumberPattern"><img src="~/Images/meter_no_ico.png" /> Meter Number Pattern</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/NameKeyPattern"><img src="~/Images/name_key_ico_tiny.png" /> Name Key Pattern</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/ServiceAccountPattern"><img src="~/Images/th.jpg" /> Service Account Pattern</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/BillingAccountPattern"><img src="~/Images/service_address_ico.png" /> Service Address Zip Pattern</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/StrataPattern"><img src="~/Images/starta_ico.png" /> Strata Pattern</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+        else if(!Request.Url.ToString().ToLower().Contains("login"))
+        {
+            <div id="accordion">
+@*                <h3 class="menuheader firstheader">Liberty Power</h3>*@
+                <h3 class="menuheader firstheader">Utility Management</h3>
+                <div class="categoryitems">
+                    <div class="categoryitemshead full">Utility Management</div>
+                    <div class="categoryitemshead abbreviated" style="display: none">Utility..</div>
+@*                    <div class="categoryitemshead full">Business Intelligence</div>
+                    <div class="categoryitemshead abbreviated" style="display: none">Business..</div>*@
+
+                    <div class="float-right top_ico">
+@*                        @if(Session["UtilityManagement_UserName"] == null || string.IsNullOrWhiteSpace(Session["UtilityManagement_UserName"].ToString()))
+                        {
+                        <a href="/Authentication/Index" class="navs">
+                            <img src="~/Images/user-icon.png" width="16" title="Login"/></a>
+                        }
+                        else
+                        {
+                        <a href="/Authentication/Logoff" class="navs">
+                            <img src="~/Images/user_logout-icon.gif" width="16" title="Logoff"/></a>
+                        }*@
+                        <a href="/" class="navs">
+                            <img src="~/Images/home.png" title="Home" /></a>
+
+                        <div class="open navs">
+                            <img src="~/Images/recently_viewed.png" />
+                        </div>
+                        <div class="recView">
+                            <div class="FormRoleTitle">Recently Visited</div>
+                        </div>
+                    </div>
+                    
+                    <div class="scrollnav">
+                        
+                    <ul class="navigation" >
+@*                        <li class="FormRoleTitle">Business Intelligence
+                            <ul>
+                                <li class="menu-item">
+                                    <a href="/Top25ZipCodes"><img src="~/Images/billing_pat_ico.png" />Top 25 Zip Codes</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/TopZipCodesActiveAccounts"><img src="~/Images/billing_pat_ico.png" />Top Active Account Zip Codes</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/TopZipCodesRenewedActiveAccounts"><img src="~/Images/billing_pat_ico.png" />Top Active Renewed Account Zip Codes</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/DemographicDataByZipCode"><img src="~/Images/service_address_ico.png" />Data By Zip Code Active</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/DemographicDataByZipCodeRenewed"><img src="~/Images/service_address_ico.png" />Data By Zip Code Renewed</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/TopSegments"><img src="~/Images/historical_ico.png" />Top Demog Segments Active</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/TopSegmentsRenewed"><img src="~/Images/historical_ico.png" />Top Demog Segments Renewed</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/SimilarZipCodes"><img src="~/Images/idr_ico.png" />Similar Zip Codes Active</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/SimilarZipCodesRenewed"><img src="~/Images/idr_ico.png" />Similar Zip Codes Renew</a>
+                                </li>
+                            </ul>
+                        </li>*@
+
+
+                        <li class="FormRoleTitle">Utilities
+                        <ul class="dropdown-menu dropdown">
+                            <li class="menu-item">
+                                <a href="/UtilityCompany">
+                                    <img src="~/Images/Utility_ico.png" /> Utility Company   </a>
+                                <ul class="a">
+                                    <li><a href="/UtilityCompany/Create">New Utility Company</a></li>
+                                    <li><a href="/UtilityCompany">View Index</a></li>
+                                </ul>
+                            </li>
+                           
+                            </ul>
+                            </li>
+                        <li class="FormRoleTitle">Request Mode Drivers
+                            <ul class="dropdown-menu dropdown">
+
+                                <li class="menu-item">
+                                    <a href="/LoadProfile"><img src="/Images/loadProfile_ico.png"> Load Profile</a>
+                                    <ul class="a1">
+                                        <li><a href="/LoadProfile">View Index</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/RateClass"><img src="/Images/rateClass_ico.png"> Rate Class</a>
+                                    <ul class="a2">
+                                        <li><a href="/RateClass">View Index</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/TariffCode"><img src="/Images/tariffCode_ico.png"> Tariff Code</a>
+                                    <ul class="a3">
+                                        <li><a href="/TariffCode">View Index</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="FormRoleTitle">Request Modes
+                         <ul class="dropdown-menu dropdown">
+                             <li class="menu-item">
+                                 <a href="/RequestModeHistoricalUsage"><img src="/Images/historical_ico.png"> Historical Usage</a>
+                                 <ul class="a4"> 
+                                     <li><a href="/RequestModeHistoricalUsage/Create">New Historical Usage</a></li>
+                                     <li><a href="/RequestModeHistoricalUsage">View Index</a></li>
+                                 </ul>
+                             </li>
+                            
+                             <li class="menu-item">
+                                 <a href="/RequestModeIcap"><img src="/Images/icap_ico.png"> I-Cap</a>
+                                 <ul class="a5">
+                                     <li><a href="/RequestModeIcap/Create">New I-Cap</a></li>
+                                     <li><a href="/RequestModeIcap">View Index</a></li>
+                                 </ul>
+
+                             </li>
+                             <li class="menu-item">
+                                 <a href="/RequestModeIdr"><img src="/Images/idr_ico.png"> IDR</a>
+                                 <ul class="a6">
+                                     <li><a href="/RequestModeIdr/Create">New IDR</a></li>
+                                     <li><a href="/RequestModeIdr">View Index</a></li>
+                                 </ul>
+                             </li>
+                         </ul>
+                        </li>
+                        <li class="FormRoleTitle">Support Data
+                        <ul class="dropdown-menu dropdown">
+                            <li class="menu-item full">
+                                <a href="/AccountInfoFieldRequired"><img src="/Images/account_info_reqd_icon.png"> Account Info Field Reqd</a>
+                                <ul class="a7">
+                                    <li><a href="/AccountInfoFieldRequired/Create">New Account Info Field Reqd</a></li>
+                                    <li><a href="/AccountInfoFieldRequired">View Index</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item abbreviated" style="display: none">
+                                <a href="/AccountInfoFieldRequired"><img src="/Images/account_info_reqd_icon.png"> Account In..</a>
+                                <ul class="a8">
+                                    <li><a href="/AccountInfoFieldRequired/Create">New Account Info Field Reqd</a></li>
+                                    <li><a href="/AccountInfoFieldRequired">View Index</a></li>
+                                </ul>
+                            </li>
+                             <li class="menu-item">
+                                <a href="/CapacityThreshold">
+                                    <img src="/Images/CapacityTreshold.png" width="15px" height="15px">
+                                    Capacity Threshold</a>
+                                <ul class="a9">
+                                    <li><a href="/CapacityThreshold">View Index</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="menu-item">
+                                <a href="/LpBillingType">
+                                    <img src="/Images/billing_ico.png">
+                                    Billing Type</a>
+                                <ul class="a9">
+                                    <li><a href="/LpBillingType">View Index</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/RequestModeHistoricalUsageParameter"><img src="/Images/huParameter_ico.png"> HU Parameter</a>
+                                <ul class="a10">
+                                    <li><a href="/RequestModeHistoricalUsageParameter/Create">New HU Parameter</a></li>
+                                    <li><a href="/RequestModeHistoricalUsageParameter">View Index</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/IdrRule"><img src="/Images/idrRules_ico.png"> IDR Rule</a>
+                                <ul class="a10">
+                                    <li><a href="/IdrRule">View Index</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/MeterReadCalendar"><img src="/Images/calendar.jpg"> Meter Read Calendar</a>
+                                <ul class="a11">
+                                    <li><a href="/MeterReadCalendar">View Index</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/PaymentTerm"><img src="/Images/payment_term_small_icon.png"> Payment Term</a>
+                                <ul class="a11">
+                                    <li><a href="/PaymentTerm">View Index</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/PurchaseOfReceivable"><img src="/Images/purchaseReceivables_ico.png"> Purchase of Receivable</a>
+                                <ul class="a12">
+                                    <li><a href="/PurchaseOfReceivable">View Index</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </li>
+                        <li class="FormRoleTitle"> Patterns
+                            <ul class="dropdown-menu dropdown">
+                            <li class="menu-item">
+                                <a href="/BillingAccountPattern">
+                                    <img src="~/Images/billing_pat_ico.png" /> Billing Account Pattern</a>
+                                <ul class="a13" >  
+                                    <li><a href="/BillingAccountPattern">View Index</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="/ICapTCapRefreshPeriod">
+                                    <img src="~/Images/icap_ico_small.png" /> I-Cap/T-Cap Refresh Period</a>
+                                <ul class="a14">
+                                    <li><a href="/ICapTCapRefreshPeriod">View Index</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="/MeterNumberPattern">
+                                    <img src="~/Images/meter_no_ico.png" /> Meter Number Pattern</a>
+                                <ul class="a15">
+                                    <li><a href="/ServiceAccountPattern">View Index</a></li>
+                                </ul>
+                            </li>
+
+                          <li class="menu-item">
+                                <a href="/NameKeyPattern">
+                                    <img src="~/Images/name_key_ico_tiny.png" /> Name Key Pattern</a>
+                                <ul class="a16">
+                                    <li><a href="/NameKeyPattern">View Index</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="/ServiceAccountPattern">
+                                    <img src="~/Images/th.jpg" /> Service Account Pattern</a>
+                                <ul class="a17">
+                                    <li><a href="/ServiceAccountPattern">View Index</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li class="menu-item">
+                                <a href="/ServiceAddressZipPattern">
+                                    <img src="~/Images/service_address_ico.png" /> Service Address Zip Pattern</a>
+                                <ul class="a18">
+                                    <li><a href="/ServiceAddressZipPattern">View Index</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="/StrataPattern">
+                                    <img src="~/Images/starta_ico.png" /> Strata Pattern</a>
+                                <ul class="a19">
+                                    <li><a href="/StrataPattern">View Index</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+                     </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

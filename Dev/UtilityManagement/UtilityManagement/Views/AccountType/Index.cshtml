@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.AccountType>
+
+@{
+    ViewBag.Title = "Account Type Index";
+}
+
+<h3>Account Type Index</h3>
+<br />
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inactive)
+        </th>
+        <th>
+            @Html.DisplayName("Created By")
+        </th>
+        <th>
+            @Html.DisplayName("Created Date")
+        </th>
+        <th>
+            @Html.DisplayName("Last Modified By")
+        </th>
+        <th>
+            @Html.DisplayName("Last Modified Date")
+        </th>
+        <th>@Html.DisplayName("Actions")</th>
+    </tr>
+
+@foreach (var item in Model.OrderBy(x => x.Name))
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inactive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+        </td>
+    </tr>
+}
+
+</table>

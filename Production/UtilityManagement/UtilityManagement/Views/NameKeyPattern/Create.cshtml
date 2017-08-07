@@ -1,0 +1,106 @@
+﻿@model DataAccessLayerEntityFramework.NameKeyPattern
+
+@{
+    ViewBag.Title = "Create Name Key Pattern";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+<div class="edit_section">
+    <div class="edit_header">
+        <div class="namekeypattern_ico"></div>
+        <div class="edit_header_desc"><h4>Name Key Pattern</h4> <h3>New Record</h3> </div>
+    </div>
+    <div class="form-details">
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Load Profile</legend>
+                <div class="textblock">
+                    <div class="details-data-section">
+                        <div id="Gen"  class="activable">
+                            <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                            <div class="edit_section_heading" onclick="showDiv('hideContent',this.id)">General</div>
+                            <div id="hideContent" class="editdetails">
+                                <div class="details-full-section">
+                                    <div class="details-left-section">
+                                    <div class="editor-label">@Html.LabelFor(model => model.UtilityCompany.UtilityCode, "Utility Code")</div>
+                                    <div class="editor-field">@Html.DropDownList("UtilityCompanyId", String.Empty)
+                            @{
+    if (Session["IsPostBack"] == "true" && (Model.UtilityCompanyId == null || Model.UtilityCompanyId == Guid.Empty))
+    { 
+                                <span class="field-validation-error" data-valmsg-for="UtilityCompanyId" data-valmsg-replace="true">Utility Code is required.</span>
+    }
+                            }</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label">@Html.LabelFor(model => model.NameKeyPattern1, "Name Key Pattern")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.NameKeyPattern1) 
+                            @{
+    if (Session["IsPostBack"] == "true" && string.IsNullOrWhiteSpace(Model.NameKeyPattern1))
+    { 
+                                <span class="field-validation-error" data-valmsg-for="NameKeyPattern1" data-valmsg-replace="true">Name Key Pattern is required.</span>
+    }
+                            }</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label">@Html.LabelFor(model => model.NameKeyPatternDescription, "Name Key Pattern Description")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.NameKeyPatternDescription) 
+                            @{
+    if (Session["IsPostBack"] == "true" && string.IsNullOrWhiteSpace(Model.NameKeyPatternDescription))
+    { 
+                                <span class="field-validation-error" data-valmsg-for="NameKeyPatternDescription" data-valmsg-replace="true">Name Key Pattern Description is required.</span>
+    }
+                            }</div>
+                                    <div class="clear"></div>
+                                        </div>
+                                    <div class="details-right-section">
+                                    <div class="editor-label">@Html.LabelFor(model => model.NameKeyAddLeadingZero, "Name Key Add Leading Zero")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.NameKeyAddLeadingZero) @Html.ValidationMessageFor(model => model.NameKeyAddLeadingZero)</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label">@Html.LabelFor(model => model.NameKeyTruncateLast, "Name Key Truncate Last")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.NameKeyTruncateLast) @Html.ValidationMessageFor(model => model.NameKeyTruncateLast)</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label">@Html.LabelFor(model => model.NameKeyRequiredForEDIRequest, "Name Key Required For EDI Request")</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.NameKeyRequiredForEDIRequest) @Html.ValidationMessageFor(model => model.NameKeyRequiredForEDIRequest)</div>
+                                </div></div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="info"  class="activable">
+                            <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                            <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                            <div id="hideContent2" class="editdetails" >
+                                <div class="details-full-section">
+                                    <div class="editor-label">@Html.LabelFor(model => model.Inactive)</div>
+                                    <div class="editor-field">@Html.EditorFor(model => model.Inactive) @Html.ValidationMessageFor(model => model.Inactive)</div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.CreatedBy, "Created By") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.CreatedBy) @Html.ValidationMessageFor(model => model.CreatedBy) </div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.CreatedDate, "Created Date") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.CreatedDate) @Html.ValidationMessageFor(model => model.CreatedDate) </div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.LastModifiedBy) @Html.ValidationMessageFor(model => model.LastModifiedBy) </div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.LastModifiedDate) @Html.ValidationMessageFor(model => model.LastModifiedDate) </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+
+    });

@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[OE_KEYS_OFFER_REFRESH] (
+    [OFFER_ID]     NVARCHAR (50) NOT NULL,
+    [OFFER_SUB_ID] INT           NOT NULL
+);
+

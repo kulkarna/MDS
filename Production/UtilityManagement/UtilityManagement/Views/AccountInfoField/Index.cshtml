@@ -1,0 +1,134 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.AccountInfoField>
+@{
+    ViewBag.Title = "Account Info Field Index";
+}
+
+<div class="form-details">
+    <div class="form-title">
+        <div class="form-title-general">Index:&nbsp;</div>
+        <div class="form-title-specific">Account Info Field</div>
+    </div>
+    <div class="form-information">&nbsp;&nbsp;Information</div>
+    <div class="details-data-section">
+        <div class="details-full-section">
+            <table>
+                <tr>
+                    <th>Row Count = @Model.Count()</th>
+                    <th>
+                        @Html.ActionLink("User Friendly Name", "NameUserFriendlyTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.NameUserFriendlyImageUrl))
+                            {
+                            <img id="imgNameUserFriendly" src="@ViewBag.NameUserFriendlyImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Machine Unfriendly Name", "NameMachineUnfriendlyTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.NameMachineUnfriendlyImageUrl))
+                            {
+                            <img id="imgNameMachineUnfriendly" src="@ViewBag.NameMachineUnfriendlyImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Description", "DescriptionTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.DescriptionImageUrl))
+                            {
+                            <img id="imgDescription" src="@ViewBag.DescriptionImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Inactive", "InactiveTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.InactiveImageUrl))
+                            {
+                            <img id="imgInactive" src="@ViewBag.InactiveImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created By", "CreatedByTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedByImageUrl))
+                            {
+                            <img id="imgCreatedBy" src="@ViewBag.CreatedByImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created Date", "CreatedDateTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.CreatedDateImageUrl))
+                            {
+                            <img id="imgCreatedDate" src="@ViewBag.CreatedDateImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Last Modified By", "LastModifiedByTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedByImageUrl))
+                            {
+                            <img id="imgLastModifiedBy" src="@ViewBag.LastModifiedByImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th>
+                        @Html.ActionLink("Last Modified Date", "LastModifiedDateTitleClick")
+                        @{
+                            if (!string.IsNullOrWhiteSpace(@ViewBag.LastModifiedDateImageUrl))
+                            {
+                            <img id="imgLastModifiedDate" src="@ViewBag.LastModifiedDateImageUrl"  valign="middle" />
+                            }
+                        }
+                    </th>
+                    <th></th>
+                </tr>
+                @{
+                    foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                            <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NameUserFriendly)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NameMachineUnfriendly)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Inactive)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                        </td>
+                    </tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

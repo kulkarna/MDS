@@ -1,0 +1,169 @@
+﻿@model UtilityManagement.Models.CapacityTresholdModel
+
+@{
+    ViewBag.Title = "Capacity Threshold Index";
+}
+
+<div class="form-details">
+    <div class="form-information">
+        <div class="form-title-general">Index</div>
+        <div class="form-title-specific float-left">Capacity Threshold</div>
+        <div class="float-right">
+            <input type="text" class="text-box2">
+            <div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-data-section chartlink">
+        <div class="f10">
+            @Html.Label("Utility Company")
+            @Html.DropDownList("UtilityCompanyId", null, new { @onchange = "Utility_onChange()" })
+        </div>
+        @{
+            if (Session["CapacityTreshold_UtilityCompanyId_Set"] != null && Session["CapacityTreshold_UtilityCompanyId_Set"].ToString() != "00000000-0000-0000-0000-000000000000")
+            {
+            <div class="details-full-section" style="overflow: hidden;">
+                <div class="right_chart" id="resizable2">
+                    <div id="hideDiv" class="chart_open" style="display: none">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="form-details">
+                                        <h4>Report</h4>
+                                        <div class="form_fieldset">
+                                            <fieldset>
+                                                <legend>Capacity Threshold</legend>
+                                                <div class="details-data-section">
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="ui-resizable-handle ui-resizable-w" onclick="showHide('hideDiv',this.id)"></div>
+                    <img id="dirImg" src="../Images/view_chart.png" onclick="showHide('hideDiv',this.id)" />
+                </div>
+                <br />
+                <div style="overflow-x: scroll;" id="bheight">
+                    <table class="index2 top_border left_border">
+                        <tr>
+                            <th >Row Count = @Model.CapacityTresholdList.Count()</th>
+                            <th >
+                              Utility Code
+                            </th> <th >
+                               Account Type
+                            </th>
+                            <th >
+                              Use Capacity Threshold
+                            </th>
+                           
+                            <th >
+                              Capacity Threshold Min
+                            </th><th >
+                              Capacity Threshold Max
+                            </th>
+                                      <th>
+                               Inactive
+                            </th>
+                            <th>
+                              Created By
+                            </th>
+                            <th>
+                              Created Date
+                            </th>
+                            <th>
+                              Last Modified By
+                            </th>
+                            <th>
+                              Last Modified Date
+                            </th>
+                        </tr>
+                        @{
+                foreach (var item in Model.CapacityTresholdList)
+                {
+                            <tr>
+                                <td>
+                                    @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                                    <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UtilityCode)
+                                </td> <td>
+                                    @Html.DisplayFor(modelItem => item.AccountType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UseTreshold)
+                                </td>
+                               
+                              @if(item.UseTreshold)
+                                {
+                                 <td>
+                                    @Html.DisplayFor(modelItem => item.CapacityTresholdMin)
+                                </td> <td>
+                                    @Html.DisplayFor(modelItem => item.CapacityTresholdMax)
+                                </td>
+                                }
+                                else 
+                                {
+                                <td>&nbsp;</td>
+                                <td> &nbsp;</td>
+                                }
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Inactive)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                                </td>
+                            </tr>
+                }
+                        }
+                    </table>
+                </div>
+            </div>
+            }
+        }
+    </div>
+</div>
+@if (Session["ErrorMessage"] != null)
+{
+    <h3>@Session["ErrorMessage"].ToString()</h3>
+}
+<script>
+    function Utility_onChange() {
+        if ($("select#UtilityCompanyId").val() != "-1") {
+            $.ajax({
+                type: 'POST',
+                url: "/CapacityThreshold/IndexUtilitySelection",
+                datatype: 'json',
+                async: false,
+                data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                success: function (data) { },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+            document.location.href = '/CapacityThreshold/Index';
+        }
+    };
+</script>
+
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(
+        function () {
+            $("#tabs").tabs();
+        }
+     );
+    

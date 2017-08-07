@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://ws.libertypowerbilling.com/CustomerService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://ws.libertypowerbilling.com/CustomerService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ws.libertypowerbilling.com/CustomerService">
+      <s:element name="UpdateCustomerGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerGroupList" type="tns:ArrayOfCustomerGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCustomerGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomerGroup" nillable="true" type="tns:CustomerGroup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerGroup">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerGroupName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateCustomerGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCustomerGroupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Customer" nillable="true" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DBA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillingCustomerID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MasterCustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingContact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingAddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerGroupName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateCustomerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCustomerInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDropRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DropRequest" nillable="true" type="tns:DropRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DropRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESIID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="tns:DropStatusCodeOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DropStatusCodeOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="A13" />
+          <s:enumeration value="B38" />
+          <s:enumeration value="CHA" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CreateDropRequestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDropStatusCodeInfoList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDropStatusCodeInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDropStatusCodeInfoListResult" type="tns:ArrayOfDropStatusCodeInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDropStatusCodeInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DropStatusCodeInfo" nillable="true" type="tns:DropStatusCodeInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DropStatusCodeInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="tns:DropStatusCodeOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateCustomerGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerGroup" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDropRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDropRequest" />
+  </wsdl:message>
+  <wsdl:message name="CreateDropRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDropRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDropStatusCodeInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDropStatusCodeInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetDropStatusCodeInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDropStatusCodeInfoListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CustomerServiceSoap">
+    <wsdl:operation name="UpdateCustomerGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the customer group for one or more customer records</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCustomerGroupSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update customer information</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCustomerInfoSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDropRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create EDI 814 Drop market transaction request</wsdl:documentation>
+      <wsdl:input message="tns:CreateDropRequestSoapIn" />
+      <wsdl:output message="tns:CreateDropRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDropStatusCodeInfoList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of drop status codes</wsdl:documentation>
+      <wsdl:input message="tns:GetDropStatusCodeInfoListSoapIn" />
+      <wsdl:output message="tns:GetDropStatusCodeInfoListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerServiceSoap" type="tns:CustomerServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateCustomerGroup">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/CustomerService/UpdateCustomerGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerInfo">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/CustomerService/UpdateCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDropRequest">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/CustomerService/CreateDropRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDropStatusCodeInfoList">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/CustomerService/GetDropStatusCodeInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomerServiceSoap12" type="tns:CustomerServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateCustomerGroup">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/CustomerService/UpdateCustomerGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerInfo">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/CustomerService/UpdateCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDropRequest">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/CustomerService/CreateDropRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDropStatusCodeInfoList">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/CustomerService/GetDropStatusCodeInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerService">
+    <wsdl:port name="CustomerServiceSoap" binding="tns:CustomerServiceSoap">
+      <soap:address location="http://uat.ws.libertypowerbilling.com/CustomerService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CustomerServiceSoap12" binding="tns:CustomerServiceSoap12">
+      <soap12:address location="http://uat.ws.libertypowerbilling.com/CustomerService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,14 @@
+USE Libertypower
+GO
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'ProductMarkupRule' AND COLUMN_NAME = 'ProductBrandID')
+	BEGIN
+		ALTER TABLE ProductMarkupRule
+		ADD ProductBrandID int NULL
+	END
+	
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'ProductMarkupRuleRaw' AND COLUMN_NAME = 'ProductBrandID')
+	BEGIN
+		ALTER TABLE ProductMarkupRuleRaw
+		ADD ProductBrandID int NULL
+	END	

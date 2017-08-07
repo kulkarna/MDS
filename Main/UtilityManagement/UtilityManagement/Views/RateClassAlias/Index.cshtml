@@ -1,0 +1,137 @@
+﻿@model  List<DataAccessLayerEntityFramework.RateClassAlia>
+@{ViewBag.Title = "Rate Class Alias Index";
+}
+
+<div class="form-details">
+    <div class="form-title">
+        <div class="form-title-general">Index:&nbsp;</div>
+        <div class="form-title-specific">Rate Class Alias</div>
+    </div>
+    <div class="form-information">&nbsp;&nbsp;Information</div>
+    <div class="details-data-section">
+        @Html.Label("Utility Company")
+        @Html.DropDownList("UtilityCompanyId", string.Empty)
+        <div class="details-full-section">
+            <div class="details-right-section">
+                <p>
+                    @Html.ActionLink("Create New Rate Class Alias", "Create")
+                </p>
+                <table>
+                    <tr>
+                        <th>
+                            @Html.ActionLink("Rate Class Id", "RateClassIdTitleClick")
+                        </th>
+                        <th>
+                            @Html.ActionLink("Rate Class Code Alias", "RateClassCodeAliasTitleClick")
+                        </th>
+                        <th></th>
+                    </tr>
+                    @{
+                        foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RateClass.RateClassId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RateClassCodeAlias)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit",  "Edit", new { id = item.Id })
+                                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                            </td>
+                        </tr>
+                        }
+                    }
+                </table>
+            </div>
+            <div class="details-center-section">
+                <p>
+                    @Html.ActionLink("Create New LP Standard Rate Class Alias", "Create", "LpStandardRateClass")
+                </p>
+                <table>
+                    <tr>
+                        <th>
+                            @Html.ActionLink("Utility Code", "UtilityCodeTitleClick")
+                        </th>
+                        <th>
+                            @Html.ActionLink("LP Std Rate Class Alias", "LpStandardRateClassTitleClick")
+                        </th>
+                        <th></th>
+                    </tr>
+                    @{
+                        foreach (var item in Model.LpStandardRateList)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LpStandardRateClassCode)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", "LpStandardRateClass", new { id = item.Id }, null)
+                                @Html.ActionLink("Details", "Details", "LpStandardRateClass", new { id = item.Id }, null)
+                            </td>
+                        </tr>
+                        }
+                    }
+                </table>
+            </div>
+            <div class="details-left-section">
+                <p>
+                    @Html.ActionLink("Create New Rate Class Alias Alias", "Create", "RateClassAlias")
+                </p>
+                <table>
+                    <tr>
+                        <th>
+                            @Html.ActionLink("Rate Class Alias ID", "RateClassIdTitleClick")
+                        </th>
+                        <th>
+                            @Html.ActionLink("Rate Class Alias Code Alias", "RateClassCodeAliasTitleClick")
+                        </th>
+                        <th></th>
+                    </tr>
+                    @{
+                        foreach (var item in Model.RateClassAliasList)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RateClass.RateClassId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RateClassCodeAlias)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", "RateClassAlias", new { id = item.Id }, null)
+                                @Html.ActionLink("Details", "Details", "RateClassAlias", new { id = item.Id }, null)
+                            </td>
+                        </tr>
+                        }
+                    }
+                </table>
+            </div>        </div>
+    </div>
+</div>
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+<script>
+    $(function () {
+        $("select#UtilityCompanyId").change(function (evt) {
+            if ($("select#UtilityCompanyId").val() != "-1") {
+                $.ajax({
+                    type: 'POST',
+                    url: "/RateClass/IndexUtilitySelection",
+                    datatype: 'json',
+                    async: false,
+                    data: { utilityCompanyId: $("select#UtilityCompanyId").val() },
+                    success: function (data) {  },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+                document.location.href = '/RateClass/Index';
+            }
+        });
+    });
+</script>

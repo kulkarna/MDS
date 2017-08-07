@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.AddressParser">
+    <Position X="8.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\AddressParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.ClassMap">
+    <Position X="4" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAABAAAAAQQAAAAAAEAIAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\ClassMap.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="marker" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.ContactParser">
+    <Position X="5.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\ContactParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiAccountMap814">
+    <Position X="4" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\EdiAccountMap814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.Field">
+    <Position X="16.75" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAQAAAAAABAAAAIQBAECEAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Mappers814\Field.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.FieldResolver">
+    <Position X="15" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAACAAAAAAAAAAAACAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\FieldResolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.PropertyParser&lt;T&gt;">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABgAAAAQAAAAgAAAAAAAAAAAAAAAAAAAAAACAAABAA=</HashCode>
+      <FileName>Mappers814\PropertyParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.ServiceParser">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\ServiceParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.StringParser">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\StringParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.FileMapper814">
+    <Position X="7" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAABAAGAAAAABACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\FileMapper814.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="accountMap" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.MeterMultiplierParser">
+    <Position X="8.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\MeterMultiplierParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.FileMapper814Builder">
+    <Position X="6" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AYAAEAEAgIAACRAABAAmxAYAGCBBAgAigGGAAAEYEGE=</HashCode>
+      <FileName>Mappers814\FileMapper814Builder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiAccountMap814Builder">
+    <Position X="8.25" Y="11.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AYAAEAEAgIAACQAAJDAmxAYAGCBBAgAigGGAAAEYAGE=</HashCode>
+      <FileName>Mappers814\EdiAccountMap814Builder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.Marker814Builder">
+    <Position X="10.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAEAEAgIAACQAABJAmxAYAGCBBAgAigGGAAAEYAGE=</HashCode>
+      <FileName>Mappers814\Marker814Builder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.UtilitiesCodes">
+    <Position X="12.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAEAEAgIAACQAABBAmxAYAGCBBAgAigGGAAAEYAHE=</HashCode>
+      <FileName>Mappers814\UtilitiesCodes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.BgeMarker814">
+    <Position X="11.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Markers814\BgeMarker814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.AceMarker814">
+    <Position X="10.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Markers814\AceMarker814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.StandardMarker814">
+    <Position X="12.75" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Markers814\StandardMarker814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.DelmdMarker814">
+    <Position X="12" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Markers814\DelmdMarker814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.JcplMarker814">
+    <Position X="13.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Markers814\JcplMarker814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.MecoMarker814">
+    <Position X="14.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Markers814\MecoMarker814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.NysegMarker814">
+    <Position X="15.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Markers814\NysegMarker814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.ORMarker814">
+    <Position X="16.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Markers814\ORMarker814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.RgeMarker814">
+    <Position X="13" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Markers814\RgeMarker814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiAccountTexasMap814">
+    <Position X="6.25" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\EdiAccountTexasMap814.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.MarkerBase">
+    <Position X="0.5" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BgABEAAVIAELAEABCwChAMyQAoAhEAQEQRAAIDAAAIA=</HashCode>
+      <FileName>Markers\MarkerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.EdiAccount">
+    <Position X="18.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIIIAAAQEAABACAQCICABgcQRFhEAQEAQQAAIKAgAoA=</HashCode>
+      <FileName>EdiAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="LibertyPower.Business.MarketManagement.EdiParser.FileParser.IPropertySetter">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers814\IPropertySetter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

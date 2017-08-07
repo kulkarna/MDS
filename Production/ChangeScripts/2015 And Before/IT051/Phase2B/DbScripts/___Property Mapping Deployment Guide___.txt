@@ -1,0 +1,16 @@
+
+Within each folder scripts should be run in in the order in which they are numbered. 
+
+DO NOT run scripts marked as '-IGNORE' !!!
+
+Folder order is as follows 
+
+Run Scripts in "Synonyms" folder
+Run Scripts in "Property Mapping"  folder
+Run Scripts in "PBI-9018 - Location Migration"  folder
+Run Scripts in "PBI-9106 - Profile Migration"  folder
+
+Run Scripts in "Account Schema Scripts"  * 
+Run Scripts in "Utility Schema Scripts"  *
+
+		* May be omitted if just the main Property structures are needed.

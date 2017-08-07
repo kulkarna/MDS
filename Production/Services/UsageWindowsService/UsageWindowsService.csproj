@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90953467-62A3-4C49-B0E9-64CF069277F5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UsageWindowsService</RootNamespace>
+    <AssemblyName>UsageWindowsService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>Y:\wwwroot\UsageWindowsService\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <InstallUrl>\\lpcnocwsbeta1\Inetpub\wwwroot\UsageWindowsService\</InstallUrl>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5EAEB07CB7E4949CC3510A55CC8E481220AF111B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>UsageWindowsService_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\..\..\Reference\NonBuild\Common.Logging.2.0.0\lib\2.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.NLog">
+      <HintPath>..\..\..\..\..\Reference\NonBuild\Common.Logging.NLog.2.0.0\lib\2.0\Common.Logging.NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="FieldHistory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Reference\Pricing\FieldHistory.dll</HintPath>
+    </Reference>
+    <Reference Include="IstaWebService">
+      <HintPath>..\..\..\..\..\Reference\Market\IstaWebService.dll</HintPath>
+    </Reference>
+    <Reference Include="LibertyPowerSql">
+      <HintPath>..\..\..\..\..\Reference\Market\LibertyPowerSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin">
+      <HintPath>..\..\..\..\..\Reference\NonBuild\Microsoft.AspNet.SignalR.Owin.1.1.2\lib\net40\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\Reference\NonBuild\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\..\..\..\Reference\NonBuild\NLog.2.0.1.2\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OfferEngineSql">
+      <HintPath>..\..\..\..\..\Reference\Pricing\OfferEngineSql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf">
+      <HintPath>..\..\..\..\..\Reference\NonBuild\TopShelf\Topshelf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\AccountStatusMessageType.cs" />
+    <Compile Include="EventHandler\AccountPropertyHistoryProcessCompletedEventHandler.cs" />
+    <Compile Include="EventHandler\AccountPropertyHistoryProcessFailedEventHandler.cs" />
+    <Compile Include="EventHandler\AccountPropertyHistoryProcessRequestedEventHandler.cs" />
+    <Compile Include="EventHandler\ConsolidationCompletedEventHandler.cs" />
+    <Compile Include="EventHandler\ConsolidationFailedEventHandler.cs" />
+    <Compile Include="EventHandler\ConsolidationRequestedEventHandler.cs" />
+    <Compile Include="EventHandler\DataProcessedHuCompleteEventHandler.cs" />
+    <Compile Include="EventHandler\DataProcessedHuFailedEventHandler.cs" />
+    <Compile Include="EventHandler\DataProcessedIdrCompleteEventHandler.cs" />
+    <Compile Include="EventHandler\DataProcessedIdrFailedEventHandler.cs" />
+    <Compile Include="EventHandler\DataResponseHuAcceptanceEventHandler.cs" />
+    <Compile Include="EventHandler\DataResponseHuRejectionEventHandler.cs" />
+    <Compile Include="EventHandler\DataResponseIdrAcceptanceEventHandler.cs" />
+    <Compile Include="EventHandler\DataResponseIdrRejectionEventHandler.cs" />
+    <Compile Include="EventHandler\DataSyncRequestedEventHandler.cs" />
+    <Compile Include="EventHandler\EdiFileParsedEventHandler.cs" />
+    <Compile Include="EventHandler\IstaUsageRequestedEventHandler.cs" />
+    <Compile Include="EventHandler\ScraperRequestedEventHandler.cs" />
+    <Compile Include="Helpers\NlogUsageEventsTarget.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\SqlRepository.cs" />
+    <Compile Include="Service References\CrmDataRequestService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OfferEngineAccountsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Subscriber\DataProcessedHuCompleteCrmSubscriber.cs" />
+    <Compile Include="Subscriber\DataProcessedHuFailedCrmSubscriber.cs" />
+    <Compile Include="Subscriber\DataProcessedIdrCompleteCrmSubscriber.cs" />
+    <Compile Include="Subscriber\DataProcessedIdrFailedCrmSubscriber.cs" />
+    <Compile Include="Subscriber\DataResponseHuAcceptanceCrmSubscriber.cs" />
+    <Compile Include="Subscriber\DataResponseHuRejectionCrmSubscriber.cs" />
+    <Compile Include="Subscriber\DataResponseIdrAcceptanceCrmSubscriber.cs" />
+    <Compile Include="Subscriber\DataResponseIdrRejectionCrmSubscriber.cs" />
+    <Compile Include="UsageService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CrmDataRequestService\DataRequest.wsdl" />
+    <None Include="Service References\CrmDataRequestService\DataRequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrmDataRequestService\DataRequest1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OfferEngineAccountsService\Accounts.wsdl" />
+    <None Include="Service References\OfferEngineAccountsService\UsageWindowsService.OfferEngineAccountsService.TrackedField.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OfferEngineAccountsService\v1.wsdl" />
+    <None Include="Service References\OfferEngineAccountsService\v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OfferEngineAccountsService\v11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OfferEngineAccountsService\v12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OfferEngineAccountsService\v13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OfferEngineAccountsService\v14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CrmDataRequestService\" />
+    <WCFMetadataStorage Include="Service References\OfferEngineAccountsService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrmDataRequestService\DataRequest.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrmDataRequestService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrmDataRequestService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrmDataRequestService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OfferEngineAccountsService\v1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OfferEngineAccountsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OfferEngineAccountsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OfferEngineAccountsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\MarketManagement\AccountInfoConsolidation\AccountInfoConsolidation.csproj">
+      <Project>{b81d349b-054b-4365-a485-d13fa3e18f53}</Project>
+      <Name>AccountInfoConsolidation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\MarketManagement\UsageEventAggregator\UsageEventAggregator.csproj">
+      <Project>{b32f0a17-23ef-409d-bd13-c282e0714d91}</Project>
+      <Name>UsageEventAggregator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\MarketManagement\UsageManagement\UsageManagement.csproj">
+      <Project>{942f6c2e-682c-4d9b-9d6b-0b2062a43c70}</Project>
+      <Name>UsageManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\MarketManagement\UtilityManagement\UtilityManagement.csproj">
+      <Project>{98086321-a541-4063-872b-62fa3a691b24}</Project>
+      <Name>UtilityManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAccess\SqlAccess\TransactionsSql\TransactionsSql.csproj">
+      <Project>{2b0ceaf2-6ce6-4909-a797-a24efd55c130}</Project>
+      <Name>TransactionsSql</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

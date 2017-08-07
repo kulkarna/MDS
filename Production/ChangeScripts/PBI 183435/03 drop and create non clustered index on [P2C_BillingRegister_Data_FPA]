@@ -1,0 +1,34 @@
+USE [LP_RPTObjects]
+GO
+
+/****** Object:  Index [Idx_FPA_tkn_INCL]    Script Date: 5/10/2017 3:00:25 PM ******/
+IF  EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[P2C_BillingRegister_Data_FPA]') AND name = N'Idx_FPA_tkn_INCL')
+DROP INDEX [Idx_FPA_tkn_INCL] ON [dbo].[P2C_BillingRegister_Data_FPA]
+GO
+
+/****** Object:  Index [Idx_FPA_tkn_INCL]    Script Date: 5/10/2017 3:00:25 PM ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[P2C_BillingRegister_Data_FPA]') AND name = N'Idx_FPA_tkn_INCL')
+CREATE NONCLUSTERED INDEX [Idx_FPA_tkn_INCL] ON [dbo].[P2C_BillingRegister_Data_FPA]
+(
+	[CUSTOMER_TKN] ASC,
+	[CUSTOMER_ACCT_TKN] ASC,
+	[ACCOUNT_PKG_TKN] ASC,
+	[ACCOUNT_CHARGE_TKN] ASC,
+	[BILLING_CHARGE_TKN] ASC
+)
+INCLUDE ( 	[BillRegisterID],
+	[Invoiceid],
+	[InvoiceDate],
+	[PostDate],
+	[Revenue_Class_Desc],
+	[BillMethod],
+	[Cust_Statement_Tkn],
+	[Invoice_Num],
+	[Bill_Calculator_Desc],
+	[Bill_Presenter_Desc],
+	[InvoiceAmtNoTax],
+	[InvoiceTaxAmount],
+	[BC_type_desc]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+GO
+
+

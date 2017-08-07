@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C9BA20AC-B7EF-4616-A82A-84C0F40F8CD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibertyPower.DataAccess.SqlAccess.CustomerManagementEF</RootNamespace>
+    <AssemblyName>CustomerManagementEF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\..\..\Framework\Reference\NonBuild\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="AccountContractDal.cs" />
+    <Compile Include="AccountDal.cs" />
+    <Compile Include="AccountStatus.cs" />
+    <Compile Include="AutoEnums\AccountType.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoEnums\BillingType.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoEnums\ContractDealType.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractDealType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoEnums\ContractStatus.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractStatus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoEnums\ContractTemplateType.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractTemplateType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoEnums\ContractType.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoEnums\EnrollmentType.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnrollmentType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommonDal.cs" />
+    <Compile Include="ConnectionStringHelper.cs" />
+    <Compile Include="Contract.cs" />
+    <Compile Include="ContractDal.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerDal.cs" />
+    <Compile Include="DoNotKnockSQL.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="LibertyPower.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibertyPower.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LpDealCapture.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LpDealCapture.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LpMessageApplication.cs" />
+    <Compile Include="LpAccount.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LpAccount.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LpCommon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LpCommon.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionQualifierSQL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolloverConfigurationDal.cs" />
+    <Compile Include="TabletDataCacheSql.cs" />
+    <Compile Include="TabletDocumentSQL.cs" />
+    <Compile Include="TabletGPSDataDal.cs" />
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="LibertyPower.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LibertyPower.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="LpAccount.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LpAccount.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AutoEnums\AccountType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AccountType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="AutoEnums\AccountTypeEnumGen.ttinclude" />
+    <None Include="AutoEnums\BillingType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BillingType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="AutoEnums\ContractDealType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ContractDealType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="AutoEnums\ContractDealTypeEnumGen.ttinclude" />
+    <None Include="AutoEnums\ContractStatus.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ContractStatus.generated.cs</LastGenOutput>
+    </None>
+    <None Include="AutoEnums\ContractStatusEnumGen.ttinclude" />
+    <None Include="AutoEnums\ContractTemplateType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ContractTemplateType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="AutoEnums\ContractTemplateTypeEnumGen.ttinclude" />
+    <None Include="AutoEnums\ContractType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ContractType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="AutoEnums\EnrollmentType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnrollmentType.generated.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="LpCommon.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LpCommon.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="LpDealCapture.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LpDealCapture.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

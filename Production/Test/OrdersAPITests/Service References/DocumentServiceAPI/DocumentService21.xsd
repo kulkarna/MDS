@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.OnlineDataSynchronization" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfTabletDocumentInputParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabletDocumentInputParams" nillable="true" type="tns:TabletDocumentInputParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabletDocumentInputParams" nillable="true" type="tns:ArrayOfTabletDocumentInputParams" />
+  <xs:complexType name="TabletDocumentInputParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrandID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabletDocumentInputParams" nillable="true" type="tns:TabletDocumentInputParams" />
+  <xs:complexType name="ArrayOfTabletDocumentMappingData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabletDocumentMappingData" nillable="true" type="tns:TabletDocumentMappingData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabletDocumentMappingData" nillable="true" type="tns:ArrayOfTabletDocumentMappingData" />
+  <xs:complexType name="TabletDocumentMappingData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentFieldLocations" nillable="true" type="tns:ArrayOfTabletDocumentFieldLocation" />
+      <xs:element minOccurs="0" name="DocumentFields" nillable="true" type="tns:ArrayOfTabletDocumentField" />
+      <xs:element minOccurs="0" name="DocumentMaps" nillable="true" type="tns:ArrayOfTabletDocumentMap" />
+      <xs:element minOccurs="0" name="DocumentTypes" nillable="true" type="tns:ArrayOfTabletDocumentType" />
+      <xs:element minOccurs="0" name="Documents" nillable="true" type="tns:ArrayOfTabletDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabletDocumentMappingData" nillable="true" type="tns:TabletDocumentMappingData" />
+  <xs:complexType name="ArrayOfTabletDocumentFieldLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabletDocumentFieldLocation" nillable="true" type="tns:TabletDocumentFieldLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabletDocumentFieldLocation" nillable="true" type="tns:ArrayOfTabletDocumentFieldLocation" />
+  <xs:complexType name="TabletDocumentFieldLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentID" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationX" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationY" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabletDocumentFieldLocation" nillable="true" type="tns:TabletDocumentFieldLocation" />
+  <xs:complexType name="ArrayOfTabletDocumentField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabletDocumentField" nillable="true" type="tns:TabletDocumentField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabletDocumentField" nillable="true" type="tns:ArrayOfTabletDocumentField" />
+  <xs:complexType name="TabletDocumentField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Prompt1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prompt2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabletDocumentField" nillable="true" type="tns:TabletDocumentField" />
+  <xs:complexType name="ArrayOfTabletDocumentMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabletDocumentMap" nillable="true" type="tns:TabletDocumentMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabletDocumentMap" nillable="true" type="tns:ArrayOfTabletDocumentMap" />
+  <xs:complexType name="TabletDocumentMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BrandID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentMapID" type="xs:int" />
+      <xs:element minOccurs="0" name="LPBrandID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LPMarketID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TemplateTypeID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabletDocumentMap" nillable="true" type="tns:TabletDocumentMap" />
+  <xs:complexType name="ArrayOfTabletDocumentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabletDocumentType" nillable="true" type="tns:TabletDocumentType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabletDocumentType" nillable="true" type="tns:ArrayOfTabletDocumentType" />
+  <xs:complexType name="TabletDocumentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxRecords" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Sequence" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabletDocumentType" nillable="true" type="tns:TabletDocumentType" />
+  <xs:complexType name="ArrayOfTabletDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabletDocument" nillable="true" type="tns:TabletDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabletDocument" nillable="true" type="tns:ArrayOfTabletDocument" />
+  <xs:complexType name="TabletDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocOrientation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentID" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileBytes" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabletDocument" nillable="true" type="tns:TabletDocument" />
+  <xs:complexType name="AndroidPackage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TabletDocument">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AndroidPackage" nillable="true" type="tns:AndroidPackage" />
+</xs:schema>

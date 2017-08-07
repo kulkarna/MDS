@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://ws.libertypowerbilling.com/EnrollmentService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://ws.libertypowerbilling.com/EnrollmentService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ws.libertypowerbilling.com/EnrollmentService">
+      <s:element name="CreateEnrollment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EnrollCustomer" nillable="true" type="tns:EnrollCustomer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EnrollCustomer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerType" type="tns:LibertyCustomerTypeOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Salutation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DBA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FederalTaxId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingContact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingAddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingEmail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTaxable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLifeSupport" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSpanishBill" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotificationWaiver" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillingType" type="tns:BillingTypeOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerGroup" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisableTransactions" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrintLayout" type="tns:PrintLayoutOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApplyLateFees" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillingCustomerID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MasterCustomerID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LateFeeRate" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LateFeeMaxAmount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ARTerms" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LateFeeGracePeriod" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TDSPDuns" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESPDuns" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubmitHURequest" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContractStartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContractEndDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnrollRate" type="tns:EnrollRate" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnrollDefaultRate" type="tns:EnrollDefaultRate" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnrollPremise" type="tns:EnrollPremise" />
+          <s:element minOccurs="0" maxOccurs="1" name="HistoricalUsageType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PORFlag" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditInsuranceFlag" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LibertyCustomerTypeOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="RES" />
+          <s:enumeration value="SMB" />
+          <s:enumeration value="LCI" />
+          <s:enumeration value="GOVT" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="BillingTypeOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="SupplierConsolidated" />
+          <s:enumeration value="BillReady" />
+          <s:enumeration value="RateReady" />
+          <s:enumeration value="Dual" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="PrintLayoutOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="Standard" />
+          <s:enumeration value="Extended" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="EnrollRate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlanType" type="tns:PlanTypeOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="LDCRateCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnrollRateDetailList" type="tns:ArrayOfEnrollRateDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="PlanTypeOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="Fixed" />
+          <s:enumeration value="PortfolioVariable" />
+          <s:enumeration value="CustomVariable" />
+          <s:enumeration value="HeatRate" />
+          <s:enumeration value="MCPE" />
+          <s:enumeration value="CustomBilling" />
+          <s:enumeration value="Ruc" />
+          <s:enumeration value="CustomIndex" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfEnrollRateDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EnrollRateDetail" nillable="true" type="tns:EnrollRateDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EnrollRateDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RateTemplateID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateEffectiveDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateExpirationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsageClassID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateVariableTypeID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EnrollDefaultRate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlanType" type="tns:PlanTypeOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="LDCRateCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnrollRateDetailList" type="tns:ArrayOfEnrollRateDetail" />
+          <s:element minOccurs="1" maxOccurs="1" name="SwitchDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EnrollPremise">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EsiId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnrollmentType" type="tns:EnrollmentTypeOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpecialReadDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LBMPID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingAccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxAssessmentList" type="tns:ArrayOfTaxAssessmentOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnrollPremiseTaxPercentageList" type="tns:ArrayOfEnrollPremiseTaxPercentage" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterServiceProvider" type="tns:EnrollCustomerPremiseMeterServiceProvider" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarketID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLDC_UnMeteredAcct" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EnrollmentTypeOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="SWITCH" />
+          <s:enumeration value="OFF_CYCLE_SWITCH" />
+          <s:enumeration value="MOVE_IN" />
+          <s:enumeration value="PRIORITY_MOVE_IN" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfTaxAssessmentOptions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TaxAssessmentOptions" type="tns:TaxAssessmentOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TaxAssessmentOptions">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="State" />
+              <s:enumeration value="County" />
+              <s:enumeration value="City" />
+              <s:enumeration value="Special" />
+              <s:enumeration value="PUC" />
+              <s:enumeration value="GRT" />
+              <s:enumeration value="Franchise" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:complexType name="ArrayOfEnrollPremiseTaxPercentage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EnrollPremiseTaxPercentage" nillable="true" type="tns:EnrollPremiseTaxPercentage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EnrollPremiseTaxPercentage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TaxAssessmentValue" type="tns:TaxAssessmentOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="Percentage" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EnrollCustomerPremiseMeterServiceProvider">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnrollPremiseID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerDUNS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InstallerDUNS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReaderDUNS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaintenanceProviderDUNS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataManagementAgentDUNS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SchedulingCoordinatorDUNS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstallPending" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PackageOption" nillable="true" type="tns:PackageOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsageCode" nillable="true" type="tns:UsageCodes" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarketID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TdspDuns" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="PackageOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="UNK" />
+          <s:enumeration value="BASIC" />
+          <s:enumeration value="NEXT" />
+          <s:enumeration value="REAL" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="UsageCodes">
+        <s:restriction base="s:string">
+          <s:enumeration value="UNK" />
+          <s:enumeration value="INTERVAL" />
+          <s:enumeration value="LOADPROFILE" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CreateEnrollmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateEnrollmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessEnrollment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enrollCustId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessEnrollmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessEnrollmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitReEnrollment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReEnrollment" nillable="true" type="tns:ReEnrollment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReEnrollment">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESIID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContractStartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContractStopDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditInsuranceFlag" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubmitReEnrollmentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateHistoricalUsageRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enrollCustId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="historicalUsageType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateHistoricalUsageRequestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreatePreEnrollmentHistoricalUsageRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PreEnrollmentHURequest" nillable="true" type="tns:PreEnrollmentHURequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PreEnrollmentHURequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TDSPDuns" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESPDuns" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingAccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreatePreEnrollmentHistoricalUsageRequestResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateEnrollmentSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEnrollment" />
+  </wsdl:message>
+  <wsdl:message name="CreateEnrollmentSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEnrollmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessEnrollmentSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessEnrollment" />
+  </wsdl:message>
+  <wsdl:message name="ProcessEnrollmentSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessEnrollmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitReEnrollmentSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitReEnrollment" />
+  </wsdl:message>
+  <wsdl:message name="SubmitReEnrollmentSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitReEnrollmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateHistoricalUsageRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateHistoricalUsageRequest" />
+  </wsdl:message>
+  <wsdl:message name="CreateHistoricalUsageRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateHistoricalUsageRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePreEnrollmentHistoricalUsageRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePreEnrollmentHistoricalUsageRequest" />
+  </wsdl:message>
+  <wsdl:message name="CreatePreEnrollmentHistoricalUsageRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePreEnrollmentHistoricalUsageRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EnrollmentServiceSoap">
+    <wsdl:operation name="CreateEnrollment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create an enrollment customer record</wsdl:documentation>
+      <wsdl:input message="tns:CreateEnrollmentSoapIn" />
+      <wsdl:output message="tns:CreateEnrollmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEnrollment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Process an enrollment customer record which creates a new customer record</wsdl:documentation>
+      <wsdl:input message="tns:ProcessEnrollmentSoapIn" />
+      <wsdl:output message="tns:ProcessEnrollmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitReEnrollment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submit customer record for reenrollment</wsdl:documentation>
+      <wsdl:input message="tns:SubmitReEnrollmentSoapIn" />
+      <wsdl:output message="tns:SubmitReEnrollmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateHistoricalUsageRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a historical usage request transaction for a given enrollment customer record</wsdl:documentation>
+      <wsdl:input message="tns:CreateHistoricalUsageRequestSoapIn" />
+      <wsdl:output message="tns:CreateHistoricalUsageRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePreEnrollmentHistoricalUsageRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a historical usage request transaction for pre-enrollment purposes only</wsdl:documentation>
+      <wsdl:input message="tns:CreatePreEnrollmentHistoricalUsageRequestSoapIn" />
+      <wsdl:output message="tns:CreatePreEnrollmentHistoricalUsageRequestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EnrollmentServiceSoap" type="tns:EnrollmentServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateEnrollment">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/CreateEnrollment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEnrollment">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/ProcessEnrollment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitReEnrollment">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/SubmitReEnrollment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateHistoricalUsageRequest">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/CreateHistoricalUsageRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePreEnrollmentHistoricalUsageRequest">
+      <soap:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/CreatePreEnrollmentHistoricalUsageRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EnrollmentServiceSoap12" type="tns:EnrollmentServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateEnrollment">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/CreateEnrollment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEnrollment">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/ProcessEnrollment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitReEnrollment">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/SubmitReEnrollment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateHistoricalUsageRequest">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/CreateHistoricalUsageRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePreEnrollmentHistoricalUsageRequest">
+      <soap12:operation soapAction="https://ws.libertypowerbilling.com/EnrollmentService/CreatePreEnrollmentHistoricalUsageRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EnrollmentService">
+    <wsdl:port name="EnrollmentServiceSoap" binding="tns:EnrollmentServiceSoap">
+      <soap:address location="http://ua.ws.libertypowerbilling.com/EnrollmentService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EnrollmentServiceSoap12" binding="tns:EnrollmentServiceSoap12">
+      <soap12:address location="http://ua.ws.libertypowerbilling.com/EnrollmentService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

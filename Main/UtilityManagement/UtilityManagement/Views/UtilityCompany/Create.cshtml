@@ -1,0 +1,240 @@
+﻿@model DataAccessLayerEntityFramework.UtilityCompany
+@{
+    ViewBag.Title = "Create Utility Company";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm()) 
+{
+    @Html.ValidationSummary(true)
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="utility_ico"></div>
+            <div class="edit_header_desc">
+                <h4>Utility Company</h4>
+                <h3>New Record</h3>
+            </div>
+        </div>
+        <div class="form-details">
+            <div class="form_fieldset">
+                <fieldset>
+                    <legend>Load Profile</legend>
+                    <div class="textblock">
+                        <div class="details-data-section">
+                            <div id="Gen"  class="activable">
+                                <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                                <div class="edit_section_heading" onclick="showDiv('hideContent',this.id)">General</div>
+                                <div id="hideContent" class="editdetails">
+                                    <div class="details-full-section">
+                                        <div class="details-left-section">
+                                            <div class="editor-label">@Html.LabelFor(model => model.UtilityCode, "Utility Code")</div>
+                                            <div class="editor-field">
+                                                @Html.EditorFor(model => model.UtilityCode) 
+                                                @Html.ValidationMessageFor(model => model.UtilityCode)
+                                                @if (Session["IsPostBack"] == "true" && string.IsNullOrWhiteSpace(Model.UtilityCode))
+                                                { 
+                                                    <span class="field-validation-error" data-valmsg-for="UtilityCode" data-valmsg-replace="true">The current Utility Code value is invalid.</span>
+                                                }
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.FullName)</div>
+                                            <div class="editor-field">
+                                                @Html.EditorFor(model => model.FullName) 
+                                                @Html.ValidationMessageFor(model => model.FullName)
+                                                @if (Session["IsPostBack"] == "true" && string.IsNullOrWhiteSpace(Model.FullName))
+                                                { 
+                                                    <span class="field-validation-error" data-valmsg-for="FullName" data-valmsg-replace="true">The current Full Name value is invalid.</span>
+                                                }
+                                            </div>
+                                            <div class="clear"></div>
+                                            @*<div class="editor-label">@Html.LabelFor(model => model.ParentCompany)</div>
+                                            <div class="editor-field">@Html.EditorFor(model => model.ParentCompany) @Html.ValidationMessageFor(model => model.ParentCompany)</div>
+                                            <div class="clear"></div>     *@                       
+                                            <div class="editor-label">@Html.LabelFor(model => model.IsoId, "ISO")</div>
+                                            <div class="editor-field">
+                                                @Html.DropDownList("IsoId", String.Empty) 
+                                                @Html.ValidationMessageFor(model => model.IsoId, "The ISO field is required.")
+                                                @if (Session["IsPostBack"] == "true" && (Model.IsoId == null || Model.IsoId == Guid.Empty))
+                                                { 
+                                                    <span class="field-validation-error" data-valmsg-for="IsoId" data-valmsg-replace="true">The current ISO value is invalid.</span>
+                                                }
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.MarketId, "Market")</div>
+                                            <div class="editor-field">
+                                                @Html.DropDownList("MarketId", String.Empty) 
+                                                @Html.ValidationMessageFor(model => model.MarketId, "The Market field is required.")
+                                                @if (Session["IsPostBack"] == "true" && (Model.MarketId == null || Model.MarketId == Guid.Empty))
+                                                { 
+                                                    <span class="field-validation-error" data-valmsg-for="MarketId" data-valmsg-replace="true">The current Market value is invalid.</span>
+                                                }
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.PrimaryDunsNumber, "Primary DUNS Number")</div>
+                                            <div class="editor-field">
+                                                @Html.EditorFor(model => model.PrimaryDunsNumber) 
+                                                @Html.ValidationMessageFor(model => model.PrimaryDunsNumber)
+                                                @if (Session["IsPostBack"] == "true" && string.IsNullOrWhiteSpace(Model.PrimaryDunsNumber))
+                                                { 
+                                                    <span class="field-validation-error" data-valmsg-for="PrimaryDunsNumber" data-valmsg-replace="true">The current Primary DUNS Number value is invalid.</span>
+                                                }
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.LpEntityId, "LP Entity ID")</div>
+                                            <div class="editor-field">
+                                                @Html.EditorFor(model => model.LpEntityId) 
+                                                @Html.ValidationMessageFor(model => model.LpEntityId)
+                                                @if (Session["IsPostBack"] == "true" && string.IsNullOrWhiteSpace(Model.LpEntityId))
+                                                { 
+                                                    <span class="field-validation-error" data-valmsg-for="LpEntityId" data-valmsg-replace="true">The current LP Entity Id value is invalid.</span>
+                                                }
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.UtilityStatusId, "Utility Status")</div>
+                                            <div class="editor-field">
+                                                @Html.DropDownList("UtilityStatusId", String.Empty) 
+                                                @Html.ValidationMessageFor(model => model.UtilityStatusId, "The Utility Status field is required.")
+                                                @if (Session["IsPostBack"] == "true" && (Model.UtilityStatusId == null || Model.UtilityStatusId == Guid.Empty))
+                                                { 
+                                                    <span class="field-validation-error" data-valmsg-for="UtilityStatusId" data-valmsg-replace="true">The current Utility Status value is invalid.</span>
+                                                }
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="editor-label">@Html.LabelFor(model => model.EnrollmentLeadDays, "Enrollment Lead Days")</div>
+                                            <div class="editor-field">
+                                                @Html.EditorFor(model => model.EnrollmentLeadDays) 
+                                                @Html.ValidationMessageFor(model => model.EnrollmentLeadDays)
+                                                @if (Session["IsPostBack"] == "true" && (Model.EnrollmentLeadDays == null || Model.EnrollmentLeadDays < 0))
+                                                { 
+                                                    <span class="field-validation-error" data-valmsg-for="EnrollmentLeadDays" data-valmsg-replace="true">The current Enrollment Lead Days value is invalid.</span>
+                                                }
+                                            </div>
+                                            <div class="clear"></div>
+                                         </div>
+                                    <div class="details-right-section">
+                                        <div class="editor-label">@Html.LabelFor(model => model.BillingTypeId, "Billing Type")</div>
+                                        <div class="editor-field">
+                                            @Html.DropDownList("BillingTypeId", String.Empty) 
+                                            @Html.ValidationMessageFor(model => model.BillingTypeId)
+                                            @if (Session["IsPostBack"] == "true" && (Model.BillingTypeId == null || Model.BillingTypeId == Guid.Empty))
+                                            { 
+                                                <span class="field-validation-error" data-valmsg-for="EnrollmentLeadDays" data-valmsg-replace="true">The current Billing Type value is invalid.</span>
+                                            }
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">@Html.LabelFor(model => model.AccountLength, "Account Length")</div>
+                                        <div class="editor-field">
+                                            @Html.EditorFor(model => model.AccountLength) 
+                                            @Html.ValidationMessageFor(model => model.AccountLength)
+                                            @if (Session["IsPostBack"] == "true" && (Model.AccountLength == null || Model.AccountLength < 0))
+                                            { 
+                                                <span class="field-validation-error" data-valmsg-for="AccountLength" data-valmsg-replace="true">The current Account Length value is invalid.</span>
+                                            }
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">@Html.LabelFor(model => model.AccountNumberPrefix, "Account Number Prefix")</div>
+                                        <div class="editor-field">
+                                            @Html.EditorFor(model => model.AccountNumberPrefix) 
+                                            @Html.ValidationMessageFor(model => model.AccountNumberPrefix)
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">@Html.LabelFor(model => model.PorOption, "POR Option")</div>
+                                        <div class="editor-field">@Html.EditorFor(model => model.PorOption) @Html.ValidationMessageFor(model => model.PorOption)</div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">@Html.LabelFor(model => model.MeterNumberRequired, "Meter Number Required")</div>
+                                        <div class="editor-field">@Html.EditorFor(model => model.MeterNumberRequired) @Html.ValidationMessageFor(model => model.MeterNumberRequired)</div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">@Html.LabelFor(model => model.MeterNumberLength, "Meter Number Length")</div>
+                                        <div class="editor-field">
+                                            @Html.EditorFor(model => model.MeterNumberLength) 
+                                            @Html.ValidationMessageFor(model => model.MeterNumberLength)
+                                                @if (Session["IsPostBack"] == "true" && (Model.MeterNumberLength == null || Model.MeterNumberLength < 0))
+                                                { 
+                                                    <span class="field-validation-error" data-valmsg-for="MeterNumberLength" data-valmsg-replace="true">The current Meter Number Length value is invalid.</span>
+                                                }
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">@Html.LabelFor(model => model.EdiCapabale, "EDI Capable")</div>
+                                        <div class="editor-field">@Html.EditorFor(model => model.EdiCapabale) @Html.ValidationMessageFor(model => model.EdiCapabale)</div>
+                                        <div class="clear"></div>
+                                        <div class="editor-label">@Html.LabelFor(model => model.UtilityPhoneNumber, "Utility Phone Number")</div>
+                                        <div class="editor-field">@Html.EditorFor(model => model.UtilityPhoneNumber) @Html.ValidationMessageFor(model => model.UtilityPhoneNumber)</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="info"  class="activable">
+                            <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                            <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                            <div id="hideContent2" class="editdetails" >
+                                <div class="details-full-section">
+@*                                    <div class="editor-label">@Html.LabelFor(model => model.Inactive)</div>
+                                    <div class="editor-field">
+                                        @Html.CheckBoxFor(model => model.Inactive, new { disabled="disabled", id="Inactive"})
+                                        @Html.ValidationMessageFor(model => model.Inactive)
+                                    </div>*@
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.CreatedBy, "Created By") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.CreatedBy) @Html.ValidationMessageFor(model => model.CreatedBy) </div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.CreatedDate, "Created Date") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.CreatedDate) @Html.ValidationMessageFor(model => model.CreatedDate) </div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.LastModifiedBy) @Html.ValidationMessageFor(model => model.LastModifiedBy) </div>
+                                    <div class="clear"></div>
+                                    <div class="editor-label"> @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date") </div>
+                                    <div class="editor-field"> @Html.DisplayFor(model => model.LastModifiedDate) @Html.ValidationMessageFor(model => model.LastModifiedDate) </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+    @if(Session["ErrorMessage"] != null) {<h3>@Session["ErrorMessage"].ToString()</h3>}
+@*<script type="text/javascript">
+    $(function () {
+        $("select#UtilityStatusId").change(function (evt) {
+            if ($("select#UtilityStatusId option:selected").text() == "Inactive") {
+                $("select#Inactive").removeAttr("disabled");
+                $("select#Inactive").attr('checked', true);
+            }
+            else
+            {
+                alert($("select#Inactive"));
+                alert($("select#Inactive").attr('checked'));
+                $("select#Inactive").attr("checked", false);
+                alert($("select#Inactive").attr("checked"));
+            }
+        });
+    });
+</script>*@
+
+
+@*<script type="text/javascript" src="http://digitalbush.com/wp-content/uploads/2013/01/jquery.maskedinput-1.3.1.min_.js"></script>
+<script type="text/javascript">// <![CDATA[
+    jQuery(function ($) {
+        $.mask.definitions['~'] = '[+-]';
+        $('#date').mask('99/99/9999');
+        $('#phone').mask('(999) 999-9999');
+        $('#UtilityPhoneNumber').mask("(999) 999-9999? x99999");
+        $("#tin").mask("99-9999999");
+        $("#ssn").mask("999-99-9999");
+        $("#product").mask("a*-999-a999", { placeholder: " ", completed: function () { alert("You typed the following: " + this.val()); } });
+        $("#eyescript").mask("~9.99 ~9.99 999");
+    });
+    // ]]&gt;</script>*@
+<script>
+    $(function () {
+        $("#tabs").tabs();
+
+    });

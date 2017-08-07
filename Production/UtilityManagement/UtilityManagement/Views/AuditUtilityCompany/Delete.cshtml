@@ -1,0 +1,137 @@
+﻿@model DataAccessLayerEntityFramework.zAuditUtilityCompany
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>zAuditUtilityCompany</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UtilityCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UtilityCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Inactive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Inactive)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastModifiedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastModifiedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastModifiedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastModifiedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdPrevious)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdPrevious)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UtilityCodePrevious)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UtilityCodePrevious)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InactivePrevious)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InactivePrevious)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedByPrevious)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedByPrevious)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedDatePrevious)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedDatePrevious)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastModifiedByPrevious)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastModifiedByPrevious)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastModifiedDatePrevious)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastModifiedDatePrevious)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SYS_CHANGE_VERSION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SYS_CHANGE_VERSION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SYS_CHANGE_CREATION_VERSION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SYS_CHANGE_CREATION_VERSION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SYS_CHANGE_OPERATION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SYS_CHANGE_OPERATION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SYS_CHANGE_COLUMNS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SYS_CHANGE_COLUMNS)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.LpStandardTariffCode>
+@{
+    ViewBag.Title = "Lp Standard Tariff Code Index";
+}
+
+<div class="form-details">
+    <div class="form-title">
+        <div class="form-title-general">Index:&nbsp;</div>
+        <div class="form-title-specific">LP Standard Tariff Code</div>
+    </div>
+    <div class="form-information">&nbsp;&nbsp;Information</div>
+    <div class="details-data-section">
+        <div class="details-full-section">
+            <table>
+                <tr>
+                    <th>Row Count = @Model.Count()</th>
+                    <th>
+                        @Html.ActionLink("Utility Code", "UtilityCodeTitleClick")
+                    </th>
+                    <th>
+                        @Html.ActionLink("Lp Standard Tariff Code", "LpStandardTariffCodeCodeTitleClick")
+                    </th>
+                    <th>
+                        @Html.ActionLink("Inactive", "InactiveTitleClick")
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created By", "CreatedByTitleClick")
+                    </th>
+                    <th>
+                        @Html.ActionLink("Created Date", "CreatedDateTitleClick")
+                    </th>
+                    <th>
+                        @Html.ActionLink("Last Modified By", "LastModifiedByTitleClick")
+                    </th>
+                    <th>
+                        @Html.ActionLink("Last Modified Date", "LastModifiedDateTitleClick")
+                    </th>
+                </tr>
+                @{
+                    foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="check-box"></td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UtilityCompany.UtilityCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LpStandardTariffCodeCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Inactive)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                        </td>
+                    </tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

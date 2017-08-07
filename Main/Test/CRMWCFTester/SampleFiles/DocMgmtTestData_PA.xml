@@ -1,0 +1,225 @@
+<?xml version="1.0" standalone="yes"?>
+<ContractDetail>
+  <Address>
+    <CustomerName />
+    <ContactFirstName>Satchidananda</ContactFirstName>
+    <ContactLastName>Jena</ContactLastName>
+    <ContactTitle>_</ContactTitle>
+    <ContactPhone>9196002564</ContactPhone>
+    <ContactEmail>satchi2k2@gmail.com</ContactEmail>
+    <ContactBirthday>1/1/1900</ContactBirthday>
+    <ContractType>NEW</ContractType>
+    <ContractNumber>D20130000465</ContractNumber>
+    <BillingAddressLink>0</BillingAddressLink>
+    <BillingAddress1>Ccvdcvxcv</BillingAddress1>
+    <BillingAddress2>Xcvxcv</BillingAddress2>
+    <BillingCity>Pittsburgh</BillingCity>
+    <BillingCounty />
+    <BillingState>PA</BillingState>
+    <BillingZip>15224</BillingZip>
+    <SalesRep>Outboundtelesales</SalesRep>
+    <TaxID />
+    <ContractTypeDescp>ONLINE</ContractTypeDescp>
+    <GeneratedDate>1/1/0001</GeneratedDate>
+    <ContactDate>1/1/0001</ContactDate>
+    <DigitalSignature>loremImpsumDolor</DigitalSignature>
+  </Address>
+  <MultiRate>
+    <UtilityID>NIMO</UtilityID>
+    <AccountNumber>2359956565</AccountNumber>
+    <AccountType>SMB</AccountType>
+    <AccountName>Satchidananda Jena                                                                                                                                    </AccountName>
+    <CustomerName>Satchidananda Jena                                                                                                                                    </CustomerName>
+    <ContactFirstName>Satchidananda</ContactFirstName>
+    <ContactLastName>Jena</ContactLastName>
+    <ContactTitle>_</ContactTitle>
+    <ContactPhone>9196002564</ContactPhone>
+    <ContactEmail>satchi2k2@gmail.com</ContactEmail>
+    <ContactBirthday>1/1/1900</ContactBirthday>
+    <LanguageId>1</LanguageId>
+    <ContractType>ONLINE</ContractType>
+    <ContractNumber>D20130000465</ContractNumber>
+    <ServiceAddress1>Ccvdcvxcv</ServiceAddress1>
+    <ServiceAddress2>Xcvxcv</ServiceAddress2>
+    <ServiceCity>Pittsburgh</ServiceCity>
+    <ServiceCounty />
+    <ServiceState>PA</ServiceState>
+    <ServiceZip>15224     </ServiceZip>
+    <BillingAddress1>Ccvdcvxcv</BillingAddress1>
+    <BillingAddress2>Xcvxcv</BillingAddress2>
+    <BillingCity>Pittsburgs</BillingCity>
+    <BillingCounty />
+    <BillingState>PA</BillingState>
+    <BillingZip>15224</BillingZip>
+    <ProductID>NIMO_IP             </ProductID>
+    <product_id>NIMO_IP             </product_id>
+    <Rate>0.08</Rate>
+    <Market>NY</Market>
+    <rate_id>0</rate_id>
+    <Term>30</Term>
+    <TermInWords>thirty</TermInWords>
+    <ProductName>Independence Plan</ProductName>
+    <ProductCategory>Fixed</ProductCategory>
+    <ProductRateDescription />
+    <SC />
+    <Zone />
+    <account_id>484</account_id>
+    <FlowStartDate>8/1/2013</FlowStartDate>
+    <ChannelPartnerName>Outbound Telesales</ChannelPartnerName>
+    <AnnualUsage>-1.7976931348623157E+308</AnnualUsage>
+    <EstAnnualUsage>-1.7976931348623157E+308</EstAnnualUsage>
+    <EffectiveStartDate>8/1/2013</EffectiveStartDate>
+    <EndDate>2/1/2016</EndDate>
+    <ChannelName>OUTBOUNDTELESALES</ChannelName>
+    <ChannelEmail />
+    <ChannelPhone />
+    <ChannelFax />
+    <ChannelIsActive>false</ChannelIsActive>
+    <AllowInfoOnWelcomeLetter>true</AllowInfoOnWelcomeLetter>
+    <AllowInfoOnRenewalLetter>true</AllowInfoOnRenewalLetter>
+    <AllowInfoOnRenewalNotice>true</AllowInfoOnRenewalNotice>
+    <account_id1>484</account_id1>
+  </MultiRate>
+  <ContractRate>
+    <ContractNumber>D20130000465</ContractNumber>
+    <Market>NY</Market>
+    <UtilityID>NIMO</UtilityID>
+    <ProductID>NIMO_IP             </ProductID>
+    <product_id>NIMO_IP             </product_id>
+    <RateID>0</RateID>
+    <Rate>0.08</Rate>
+    <ProductName>Independence Plan</ProductName>
+    <Term>30</Term>
+    <TermInWords>thirty</TermInWords>
+    <Utility>NIMO (NIAGRA MOHAK)</Utility>
+    <SC />
+    <Zone />
+    <SalesRep>OUTBOUNDTELESALES</SalesRep>
+  </ContractRate>
+  <Product>
+    <product_id>NIMO_IP             </product_id>
+    <product_category>Fixed</product_category>
+    <utility_id>NIMO</utility_id>
+    <date_created>0001-01-01T00:00:00-05:00</date_created>
+    <active_date>0001-01-01T00:00:00-05:00</active_date>
+    <account_type_id>0</account_type_id>
+  </Product>
+  <Market>
+    <MarketId>8</MarketId>
+    <retail_mkt_id>PA</retail_mkt_id>
+    <retail_mkt_descp>PA - PENNSYLVANIA</retail_mkt_descp>
+    <wholesale_mkt_id>NYISO     </wholesale_mkt_id>
+    <puc_certification_number>61224734</puc_certification_number>
+    <date_created>2006-04-23T06:21:12.2-04:00</date_created>
+    <username>libertypower\dmarino                                                                                                                                                                                    </username>
+    <inactive_ind>0</inactive_ind>
+    <active_date>2006-04-23T06:21:12.2-04:00</active_date>
+    <chgstamp>0</chgstamp>
+    <transfer_ownership_enabled>0</transfer_ownership_enabled>
+  </Market>
+  <Utility>
+    <utility_id>DUQ</utility_id>
+    <retail_mkt_id>PA</retail_mkt_id>
+    <entity_id>LPH</entity_id>
+    <enrollment_lead_days>15</enrollment_lead_days>
+    <billing_type>DUAL</billing_type>
+    <account_length>10</account_length>
+    <account_number_prefix />
+    <por_option>NO</por_option>
+    <field_01_label>NONE</field_01_label>
+    <field_01_type>NONE</field_01_type>
+    <field_02_label>NONE</field_02_label>
+    <field_02_type>NONE</field_02_type>
+    <field_03_label>NONE</field_03_label>
+    <field_03_type>NONE</field_03_type>
+    <field_04_label>NONE</field_04_label>
+    <field_04_type>NONE</field_04_type>
+    <field_05_label>NONE</field_05_label>
+    <field_05_type>NONE</field_05_type>
+    <field_06_label>NONE</field_06_label>
+    <field_06_type>NONE</field_06_type>
+    <field_07_label>NONE</field_07_label>
+    <field_07_type>NONE</field_07_type>
+    <field_08_label>NONE</field_08_label>
+    <field_08_type>NONE</field_08_type>
+    <field_09_label>NONE</field_09_label>
+    <field_09_type>NONE</field_09_type>
+    <field_10_label>NONE</field_10_label>
+    <field_10_type>NONE</field_10_type>
+    <wholesale_mkt_id>NYISO     </wholesale_mkt_id>
+    <meter_charge_clause />
+  </Utility>
+  <CustomDetails />
+  <FirstMultiRate>
+    <UtilityID>DUQ</UtilityID>
+    <AccountNumber>2359956565</AccountNumber>
+    <AccountType>SMB</AccountType>
+    <AccountName>Satchidananda Jena                                                                                                                                    </AccountName>
+    <CustomerName>Satchidananda Jena                                                                                                                                    </CustomerName>
+    <ContactFirstName>Satchidananda</ContactFirstName>
+    <ContactLastName>Jena</ContactLastName>
+    <ContactTitle>_</ContactTitle>
+    <ContactPhone>9196002564</ContactPhone>
+    <ContactEmail>satchi2k2@gmail.com</ContactEmail>
+    <ContactBirthday>1/1/1900</ContactBirthday>
+    <LanguageId>1</LanguageId>
+    <ContractType>ONLINE</ContractType>
+    <ContractNumber>D20130000465</ContractNumber>
+    <ServiceAddress1>Ccvdcvxcv</ServiceAddress1>
+    <ServiceAddress2>Xcvxcv</ServiceAddress2>
+    <ServiceCity>Pittsburgh</ServiceCity>
+    <ServiceCounty />
+    <ServiceState>PA</ServiceState>
+    <ServiceZip>15524</ServiceZip>
+    <BillingAddress1>Ccvdcvxcv</BillingAddress1>
+    <BillingAddress2>Xcvxcv</BillingAddress2>
+    <BillingCity>Pittsburgh</BillingCity>
+    <BillingCounty />
+    <BillingState>PA</BillingState>
+    <BillingZip>15524</BillingZip>
+    <ProductID>DUQ_IP             </ProductID>
+    <product_id>DUQ_IP             </product_id>
+    <Rate>0.08</Rate>
+    <Market>PA</Market>
+    <rate_id>0</rate_id>
+    <Term>30</Term>
+    <TermInWords>thirty</TermInWords>
+    <ProductName>Independence Plan</ProductName>
+    <ProductCategory>Fixed</ProductCategory>
+    <ProductRateDescription />
+    <SC />
+    <Zone />
+    <account_id>484</account_id>
+    <FlowStartDate>8/1/2013</FlowStartDate>
+    <ChannelPartnerName>Outbound Telesales</ChannelPartnerName>
+    <AnnualUsage>-1.7976931348623157E+308</AnnualUsage>
+    <EstAnnualUsage>-1.7976931348623157E+308</EstAnnualUsage>
+    <EffectiveStartDate>8/1/2013</EffectiveStartDate>
+    <EndDate>2/1/2016</EndDate>
+    <ChannelName>OUTBOUNDTELESALES</ChannelName>
+    <ChannelEmail />
+    <ChannelPhone />
+    <ChannelFax />
+    <ChannelIsActive>false</ChannelIsActive>
+    <AllowInfoOnWelcomeLetter>true</AllowInfoOnWelcomeLetter>
+    <AllowInfoOnRenewalLetter>true</AllowInfoOnRenewalLetter>
+    <AllowInfoOnRenewalNotice>true</AllowInfoOnRenewalNotice>
+    <account_id1>484</account_id1>
+  </FirstMultiRate>
+  <FirstContractRate>
+    <ContractNumber>D20130000465</ContractNumber>
+    <Market>PA</Market>
+    <UtilityID>DUQ</UtilityID>
+    <ProductID>DUQ_IP             </ProductID>
+    <product_id>DUQ_IP             </product_id>
+    <RateID>0</RateID>
+    <Rate>0.08</Rate>
+    <ProductName>Independence Plan</ProductName>
+    <Term>30</Term>
+    <TermInWords>thirty</TermInWords>
+    <Utility>DUQ (DUQUESNE LIGHT AND POWER)</Utility>
+    <SC />
+    <Zone />
+    <SalesRep>OUTBOUNDTELESALES</SalesRep>
+  </FirstContractRate>
+</ContractDetail>

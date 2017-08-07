@@ -1,0 +1,648 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileManager</name>
+    </assembly>
+    <members>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.ManagerRootFactory">
+            <summary>
+            ManagerRootFactory handles all construction of ManagerRoot objects
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.ManagerRootFactory.CreateManagerRoot(System.String,System.String,System.Boolean,System.Int32)">
+            <summary>
+            Creates a ManagerRoot object with the sipplied attributes, it does not already exist
+            </summary>
+            <returns>ManagerRoot; null on error</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.ManagerRootFactory.GetManagerRoot(System.String)">
+            <summary>
+            Retrieves a ManagerRoot object, creating a database record from the given description if it does not already exist
+            </summary>
+            <returns>ManagerRoot; null on error</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.ManagerRootFactory.GetAllManagerRoots(System.String)">
+            <summary>
+            Retrieves all ManagerRoot objects for a specified FileManager
+            </summary>
+            <returns>ManagerRootList</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.ManagerRootFactory.SetActiveRoot(System.String,System.String)">
+            <summary>
+            Sets the ManagerRoot specified to active
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.FileManagerException">
+            <summary>
+            Exception thrown from the LibertyPower.Business.CommonBusiness.FileManager business classes 
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.FileManager.FileManagerException.ErrorMessage">
+            <summary>
+            Description of error
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManagerException.#ctor(System.String)">
+            <summary>
+             Usage: <c> throw new FileManagerException("Description of exception")</c>
+            </summary>
+            <param name="msg">Description of message associated with the exception</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFileType">
+            <summary>
+            AccountManagedFileType
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFileType.AccountData">
+            <summary>
+            Account data
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFileType.UsageData">
+            <summary>
+            Usage data
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFile">
+            <summary>
+            Class that contains managed file data for an account
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFile.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFile.#ctor(System.Int32,System.String,System.String,LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFileType,System.Guid)">
+            <summary>
+            Constructor taking parameters for all properties
+            </summary>
+            <param name="identity">Record identifier</param>
+            <param name="accountNumber">Account number</param>
+            <param name="utilityCode">Utility code</param>
+            <param name="fileType">Managed file type enum</param>
+            <param name="fileGuid">Managed file identifier</param>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFile.Identity">
+            <summary>
+            Record identifier
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFile.AccountNumber">
+            <summary>
+            Account number
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFile.UtilityCode">
+            <summary>
+            Utility code
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFile.FileType">
+            <summary>
+            Managed file type enum
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.AccountManagedFile.FileGuid">
+            <summary>
+            Managed file identifier
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.FileManagerFactory">
+            <summary>
+            Creates all instances of the FactoryManagerContext class
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManagerFactory.GetFileManager(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Retrieves a FileManager object, creating a database record from the given description if it does not already exist
+            </summary>
+            <param name="contextKey">unique key value identifying the file manager context (up to 50 characters)</param>
+            <param name="businessPurpose">brief description of the business purpose of the file context (up to 128 characters)</param>
+            <param name="userID">identity of the currently logged in user (up to 50 characters)</param>
+            /// <param name="root">the initial active root for new file writing in the FileManager(up to 50 characters)</param>
+            <returns>FileManager; FileManagerException if error</returns>
+            <exception>FileManagerException</exception>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManagerFactory.GetFileManager(System.String)">
+            <summary>
+            Retrieves a FileManager object, creating a database record from the given description if it does not already exist
+            </summary>
+            <param name="contextKey">unique key value identifying the file manager context (up to 50 characters)</param>
+            <returns>FileManager; FileManagerException if not found or error</returns>
+            <exception>FileManagerException</exception>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManagerFactory.GetFileContextByGuid(System.Guid)">
+            <summary>
+            retrieves a FileContext object based on a guid provided at the time the file was added to managed storage
+            </summary>
+            <param name="guid">the guid associated with the file that is in managed storage</param>
+            <returns>A  FileContext; null if it cannot be found</returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.ManagedBinFactory">
+            <summary>
+            ManagedBinFactory handles all construction for ManagedBin objects
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.ManagedBinFactory.GetManagedBin(System.String,System.String)">
+            <summary>
+            Retrieves the active  ManagedBin for the specified FileManager and ManagedRoot
+            </summary>
+            <param name="contextKey"> uniquely specifies the FileManager</param>
+            <param name="root">uniquely specifies the ManagerRoot for the selected FileManager</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.ManagedBinFactory.CreateManagedBin(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Creates a new ManagedBin with the specified parameters if one does not exist
+            </summary>
+            <param name="contextKey"></param>
+            <param name="root"></param>
+            <param name="relativePath"></param>
+            <param name="userID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.ManagedBinFactory.GetAllManagedBins(System.String,System.String)">
+            <summary>
+            Retrieve all ManagedBins for the parent FileManager
+            </summary>
+            <param name="contextKey">uniquely identifies the parent FileManager</param>
+            <param name="root"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.ManagerRootList">
+            <summary>
+            ManagerRootList
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.ManagedBin">
+            <summary>
+            A ManagedBin directly holds a portion of FileContexts associated with a ManagerRoot that reside in the ManagedBin's RelativePath
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagedBin.ID">
+            <summary>
+            The identity of a ManagedBin in the datebase
+            </summary>
+            <value>int</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagedBin.FileContexts">
+            <summary>
+            Retrieves all FileContexts associated with theis ManagedBin
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagedBin.RelativePath">
+            <summary>
+            The Relative path associated with this ManagedBin
+            </summary>
+            <remarks>
+            Managed file paths are stored in 3 components: 1)the Root; 2) the RelativePath and 3) the FileName. 
+            Each of these partial paths is concatontated to for the fully qualified path of the managed file.
+            C:\Root\  + RelativePath\ ...\  + filename.ext
+            </remarks>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagedBin.CreationTime">
+            <summary>
+            The date and time a ManagedBin record  is originally created
+            </summary>
+            <value>DateTime</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagedBin.UserID">
+            <summary>
+            The identity of the logged in user at the time this ManagedBin record was created
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagedBin.ItemCount">
+            <summary>
+            the number of files added to this ManagedBin
+            </summary>
+            <value>int</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.FileManager">
+            <summary>
+            A FileManager class is used to associate files that share a common business purpose.  
+            As files are added to the context, they are mapped to the database for easy retrieval while abstracting 
+            any physical storage devices or required permissions from the consumer of the FileManager.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.#ctor(System.Int32,System.String,System.String,System.DateTime,System.Int32)">
+            <summary>
+            FileManager objects are instantiated exclusively using the FileManagerFactory
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.GetActiveManagerRoot(System.String)">
+            <summary>
+            Retrieves the active ManagerRoot
+            </summary>
+            <param name="contextKey">uniquely identifies the FileManager</param>
+            <returns>ManagerRoot</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.GetActiveManagedBin">
+            <summary>
+            Returns the active ManagedBin
+            </summary>
+            <returns>ManagedBin</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.GetCurrentRelativePath">
+            <summary>
+            Determines the Current RelativePath by examining the active ManagedBin and creating a new ManagedBin as needed
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.BuildNewRelativePath(System.String)">
+            <summary>
+            Given the current relative path, builds the next ordered path for the ManagedBin
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.BuildManagedFileName(System.Guid,System.String)">
+            <summary>
+            Builds a managed file name as the concatontation of the FileGuid and the original file name
+            </summary>
+            <remarks>Since files will potentially run into naming conflicts when moved into a ManagedBin, this approach is used to create unique filenames for storage.</remarks>
+            <returns>string</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.AddFile(System.IO.Stream,System.String,System.Int32)">
+            <summary>
+            Adds a file to the FileManager
+            </summary>
+            <param name="stream">System.IO.Stream representing the already loaded file</param>
+            <param name="originalFileName">filename of the already loaded file</param>
+            <param name="userID">userID of the currently logged in user</param>
+            <returns>FileContext; null on error</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.AddFile(System.String,System.Boolean,System.Int32)">
+            <summary>
+            Adds a file to the FileManager
+            </summary>
+            <param name="path">Fully qualified path of the file to load</param>
+            <param name="deleteOriginal">specifies whether to delete the source file on successful addition into the FileManager</param>
+            <param name="userID">userID of the currently logged in user</param>
+            <returns>FileContext; null on error</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.AllFileContexts">
+            <summary>
+            Retrieves a list of all FileContexts associated with the ActiveManagerRoot of the FileManager
+            </summary>
+            <returns>FileContextList</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.GetFileContextFromGuid(System.Guid)">
+            <summary>
+            Retrieves a FileContext from the FileManager given a Guid
+            </summary>
+            <remarks>The FileContext can be used to retrieve the fully qualified path to the stored file, the file contents as a stream, the original owner of the file, as well as other descriptive items.</remarks>
+            <param name="guid">The guid assigned to the FileContext when the file was added to the FileManager</param>
+            <returns>FileContext</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.AddRoot(System.String,System.Int32)">
+            <summary>
+            Adds a Root to the FileManager;  A FileManager can have multiple roots associated, with each representing a separate
+            physical storage.  A new root is not set active by default.  The active root directory is set using SetActiveRoot, and retrieved with the property ActiveRootDirectory
+            </summary>
+            <param name="path">physical path of the new root</param>
+            <param name="userID">userID of the currently logged in user</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.AddRoot(System.String,System.Boolean,System.Int32)">
+            <summary>
+            Adds a Root to the FileManager;  A FileManager can have multiple roots associated, with each representing a separate
+            physical storage.  The active root directory is set using either SetActiveRoot or setting the argument active to true; it is retrieved with the 
+            property ActiveRootDirectory
+            </summary>
+            <param name="path">physical path of the new root</param>
+            <param name="active">marks new root as active root if true</param>
+            <param name="userID">userID of the currently logged in user</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.SetActiveRoot(System.String)">
+            <summary>
+            Sets the currently active root directory from among the already added roots
+            </summary>
+            <param name="activeRoot"></param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.GetOrphanFileContexts">
+            <summary>
+            Retrieves a list of all FileContexts currently added to the FileManager for which there is no associated physical file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileManager.DeleteFileContextByGuid(System.Guid,System.Boolean)">
+            <summary>
+            Deletes the specified FileContext and associated File per INF21 FRO12 requirements p33
+            </summary>
+            <param name="guid"></param>
+            <param name="deleteFile">specifies whether to delete the physical file as well as the FileContext</param>
+            <returns>number of rows effected </returns>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.CreationTime">
+            <summary>
+            the date and time of the original creation of the FileManager record
+            </summary>
+            <value>DateTime</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.UserID">
+            <summary>
+            The identity of the logged in user at the time the FileManager record is first created
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.MaxFilesInPath">
+            <summary>
+            Maximum number of files in a ManagedBin before a new ManagedBin is created under the DirectoryPath
+            </summary>
+            <remarks>The MaxFilesInPath value is specified in the config file as MaxFilesInPath</remarks>
+            <value>int</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.ContextKey">
+            <summary>
+            The ContextKey uniquely identifies the FileManager's logical schema;  more than one instance of the FileManager can share a ContextKey simultaneously
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.DirectoryPath">
+            <summary>
+            The ActiveTargetPath represents the path where any new file additions to the FileManager will be written to physical storage
+            This value is the concatonation of the ActiveRootDirectory and the current relative path
+            </summary>
+            <remarks>
+            Managed file paths are stored in 3 components: 1)the Root; 2) the RelativePath and 3) the FileName. 
+            Each of these partial paths is concatontated to for the fully qualified path of the managed file.
+            C:\Root\  + RelativePath\ ...\  + filename.ext
+            The DirectoryPath property represents the combination of the Root + the RelativePath off of the root.  In other words, the fully qualified path less the filename.
+            </remarks>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.ID">
+            <summary>
+            The ID represents the identity value of the FileManager in the database
+            </summary>
+            <value>int</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.BusinessPurpose">
+            <summary>
+            The BusinessPurpose represents a brief description of the purpose of the FileManager
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.FileContexts">
+            <summary>
+            a FileContextList containing all of the FileContexts in the FileManager
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.ManagerRoots">
+            <summary>
+            Retrieves a list of all roots added to the FileManager
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.ManagedBins">
+            <summary>
+            retrieves all ManagedBins for the specified FileManager/ManagedRoot combination
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.ActiveManagerRoot">
+            <summary>
+            Currently active ManagerRoot
+            </summary>
+            <remarks>This property retrieves the currently active ManagerRoot for the FileManager.  A single FileManager may contain multiple ManagerRoots, representing different root paths for the files and potentially different media.  At least one ManagerRoot is required and is specified in the FileManager constructor.  Additional ManagerRoots may be added with AddRoot() and can be selected as the active root manually with SetActiveRoot().</remarks>
+            <value>ManagerRoot</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileManager.ActiveManagedBin">
+            <summary>
+            The currently active ManagedBin of the currently active ManagerRoot
+            </summary>
+            <remarks>This property retrieves the currently active ManagedBin for the currently active ManagerRoot in the FileManager.</remarks>
+            <value>ManagedBin</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot">
+            <summary>
+            The ManagerRoot class provides for a root location on a physical resource for the parent FileManager; a FileManager can have many ManagerRoots
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot.ManagedBins">
+            <summary>
+            Gets all of the ManagedBins for this ManagerRoot
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot.FileContexts">
+            <summary>
+            Gets all FileContexts in this ManagerRoot
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot.Root">
+            <summary>
+            Gets the root path for this ManagerRoot
+            </summary>
+            <remarks>
+            Managed file paths are stored in 3 components: 1)the Root; 2) the RelativePath and 3) the FileName. 
+            Each of these partial paths is concatontated to for the fully qualified path of the managed file.
+            C:\Root\  + RelativePath\ ...\  + filename.ext
+            </remarks>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot.IsActive">
+            <summary>
+            Gets active/inactive state for this ManagerRoot 
+            </summary>
+            <value> True if this ManagerRoot is the currently active</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot.CreationTime">
+            <summary>
+            The date and time of the original creation of this ManagerRoot
+            </summary>
+            <value>DateTime</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot.UserID">
+            <summary>
+            The identity of the logged in user at the time a ManagerRoot  record is first written
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot.ID">
+            <summary>
+            The identity of this ManagerRoot in the database
+            </summary>
+            <value>int</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot.ContextKey">
+            <summary>
+            The ContextKey of the FileManager that this ManagerRoot is a child of
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.ManagerRoot.ActiveManagedBin">
+            <summary>
+            The currently active ManagedBin for this root if the root is active, otherwise null
+            </summary>
+            <value>ManagedBin</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.FileContextList">
+            <summary>
+            Encapsulates a generic list of FileContext items; used to simplify class diagram
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.FileContextFactory">
+            <summary>
+            Factory used for all insance creation of FileContext
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileContextFactory.GetFileContext(System.Guid)">
+            <summary>
+            Creates a FileContext object given a string guid that was returned when the file was added to the FileManager
+            </summary>
+            <param name="guid">guid as a string; this value was returned at the time a file was added to the FileManager</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileContextFactory.CreateFileContext(System.String,System.Guid,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Creates a new FileContext with the specified parameters
+            </summary>
+            <param name="contextKey">ContextKey identifying the associated FileManager</param>
+            <param name="guid">Guid uniquely identifying the new FileContext</param>
+            
+            <param name="relativePath">RelativePath identifying the RelativePath of the new FileContext</param>
+            <param name="originalFileName">the original file name, before adding the file to the FileManager</param>
+            <param name="fileName">the managed filename after adding the file to the FileManager</param>
+            <param name="userID">The identity of the logged in user at the time the FileContext was created</param>
+            <returns>FileContext</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileContextFactory.GetAllFileContextsByRelativePath(System.String,System.String,System.String)">
+            <summary>
+            Retrieves all FileContexts for a given relative path
+            </summary>
+            <param name="contextKey">ContextKey uniquely identifying the FileManager</param>
+            <param name="root">Root of the ManagerRoot whose FileContexts will be retrieves</param>
+            <param name="relativePath">RelativePath of the ManagedBin whose FileContexts will be retrieved</param>
+            <returns>FileContextList</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileContextFactory.GetAllFileContextsByRoot(System.String,System.String)">
+            <summary>
+            Retrieves all FileContexts for a given root path
+            </summary>
+            <param name="contextKey">ContextKey uniquely identifying the FileManager</param>
+            <param name="root">Root of the ManagerRoot whose FileContexts will be retrieves</param>
+            <returns>FileContextList</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileContextFactory.GetAllFileContexts(System.String)">
+            <summary>
+            Retrieves all FileContexts for a given FileManager
+            </summary>
+            <param name="contextKey">ContextKey uniquely identifying the FileManager</param>
+            <returns>FileContextList</returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.FileContext">
+            <summary>
+            FileContext objects represent files that have been added to a FileManager
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileContext.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.Int32)">
+            <summary>
+             Called from FileContextFactory to create a FileContext for an already managed file;  all instance creation is from the FileContextFactory
+            </summary>
+            <param name="guid">Guid uniquely identifying the new FileContext</param>
+            <param name="contextKey">ContextKey identifying the associated FileManager</param>
+            <param name="root">Root identifying the associated Root path for the new FileContext</param>
+            <param name="relativePath">RelativePath identifying the RelativePath of the new FileContext</param>
+            <param name="originalFileName">the original file name, before adding the file to the FileManager</param>
+            <param name="fileName">the managed filename after adding the file to the FileManager</param>
+            <param name="creationTime">the date and time the FileContext was written to the database</param>
+            <param name="userID">The identity of the logged in user at the time the FileContext was created</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.FileManager.FileContext.GetStreamFromStorage">
+            <summary>
+            Retrieves a file from physical storage as a stream
+            </summary>
+            <remarks>Position is set to 0 on return</remarks>
+            <returns>System.IO.Stream</returns>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.FileName">
+            <summary>
+            The storage file name of the physical file in the ManagedBin
+            </summary>
+            <remarks>The storage FileName is constructed as the FileGuid + the original file name</remarks>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.CreationTime">
+            <summary>
+            The date and time this FileContext record was originally written
+            </summary>
+            <value>DateTime</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.UserID">
+            <summary>
+            The identity of the logged in user at the time this FileContext record is originally written
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.Root">
+            <summary>
+            The Root associated with this FileContext; this is the value of the 
+            FileManager ActiveRootDirectory when this file was added to the
+            FileManager.  the current physical location of the file is derived from Root + RelativePath
+            </summary>
+            <remarks>Managed file paths are stored in 3 components: 1)the Root; 2) the RelativePath and 3) the FileName.</remarks>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.RelativePath">
+            <summary>
+            The RelativePath of the stored file.
+            </summary>
+            <remarks>
+            Managed file paths are stored in 3 components: 1)the Root; 2) the RelativePath and 3) the FileName. 
+            Each of these partial paths is concatontated to for the fully qualified path of the managed file.
+            C:\Root\  + RelativePath\ ...\  + filename.ext
+            </remarks>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.RelativeFilePath">
+            <summary>
+            The RelativePath of the stored file, including the file name.  In other words, the fully qualified path of the stored file less the Root.
+            </summary>
+            <remarks>
+            Managed file paths are stored in 3 components: 1)the Root; 2) the RelativePath and 3) the FileName. 
+            Each of these partial paths is concatontated to for the fully qualified path of the managed file.
+            C:\Root\  + RelativePath\ ...\  + filename.ext
+            </remarks>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.DirectoryPath">
+            <summary>
+            The DirectoryPath for this FileContext. The DirectoryPath is the Root + RelativePath.
+            </summary>
+            <remarks>
+            Managed file paths are stored in 3 components: 1)the Root; 2) the RelativePath and 3) the FileName. 
+            Each of these partial paths is concatontated to for the fully qualified path of the managed file.
+            C:\Root\  + RelativePath\ ...\  + filename.ext
+            </remarks>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.FileGuid">
+            <summary>
+            The FileGuid is the identity of the FileContext, and is used to retrieve a file that has been added to the FileManager
+            </summary>
+            <value>Guid</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.OriginalFilename">
+            <summary>
+            The original filename of the FileContext file before it was added to the ManagedBin
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.FullFilePath">
+            <summary>
+            The full physical path of the FileContext
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.FileManager.FileContext.StorageFileExists">
+            <summary>
+            True if a file exists ath the path FullStoragePath
+            </summary>
+            <value>bool</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.FileManager.ManagedBinList">
+            <summary>
+            ManagedBinList
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59B219B4-7629-4BCC-A369-B3F41A948CC6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtilityManagementServiceData</RootNamespace>
+    <AssemblyName>UtilityManagementServiceData</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\SharedVersionInfo.cs">
+      <Link>Properties\SharedVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="GetAllActiveUtilitiesDumpDataResponse.cs" />
+    <Compile Include="GetAllActiveUtilitiesDumpDataResponseItem.cs" />
+    <Compile Include="GetAllUtiltiesReceiveIdrOnlyResponse.cs" />
+    <Compile Include="GetAllUtiltiesReceiveIdrOnlyResponseItem.cs" />
+    <Compile Include="GetBillingTypeResponse.cs" />
+    <Compile Include="GetBillingTypeResponseitem.cs" />
+    <Compile Include="GetCapacityThresholdRuleResponse.cs" />
+    <Compile Include="GetMeterReadDateByUtilityIdReadCycleIdAndInquiryDateResponseBase.cs" />
+    <Compile Include="GetNextMeterReadDateByUtilityIdReadCycleIdAndInquiryDateResponse.cs" />
+    <Compile Include="GetAllUtilitiesDataResponse.cs" />
+    <Compile Include="GetAllUtilitiesDataResponseItem.cs" />
+    <Compile Include="GetMeterReadCalendarByUtilityIdResponse.cs" />
+    <Compile Include="GetMeterReadCalendarByUtilityIdResponseItem.cs" />
+    <Compile Include="GetPreviousMeterReadDateByUtilityIdReadCycleIdAndInquiryDateResponse.cs" />
+    <Compile Include="GetUtilitiesReceiveIdrOnlyByUtilityIdResponse.cs" />
+    <Compile Include="GetUtilityApplicationFieldListRequest.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HasPurcaseOfReceivableAssuranceResponse.cs" />
+    <Compile Include="GetNextMeterReadEstimatedResponse.cs" />
+    <Compile Include="GetNextMeterReadEstimatedRequest.cs" />
+    <Compile Include="GetNextMeterReadRequest.cs" />
+    <Compile Include="GetNextMeterReadResponse.cs" />
+    <Compile Include="GetPurcaseOfReceivablesResponse.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="GetAllRequestModeEnrollmentTypeResponseItem.cs" />
+    <Compile Include="GetAllRequestModeEnrollmentTypesResponse.cs" />
+    <Compile Include="GetHistoricalUsageRequestModesRequest.cs" />
+    <Compile Include="GetAllUtilitiesResponse.cs" />
+    <Compile Include="GetAllUtilitiesResponseItem.cs" />
+    <Compile Include="GetIcapRequestModesRequest.cs" />
+    <Compile Include="GetIcapRequestModeResponse.cs" />
+    <Compile Include="GetIdrRequestModeResponse.cs" />
+    <Compile Include="GetIdrRequestModesRequest.cs" />
+    <Compile Include="GetPurchaseOfReceivablesRequest.cs" />
+    <Compile Include="HasPurchaseOfReceivableAssuranceRequest.cs" />
+    <Compile Include="HistoricalUsageRequestMode.cs" />
+    <Compile Include="GetHistoricalUsageRequestModeResponse.cs" />
+    <Compile Include="IcapRequestMode.cs" />
+    <Compile Include="IdrRequestMode.cs" />
+    <Compile Include="IGetAllRequestModeEnrollmentTypesResponse.cs" />
+    <Compile Include="IGetAllUtilitiesDataResponse.cs" />
+    <Compile Include="IGetHistoricalUsageRequestModeRequest.cs" />
+    <Compile Include="IGetUtilitiesResponse.cs" />
+    <Compile Include="IResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOfReceivable.cs" />
+    <Compile Include="RequestMode.cs" />
+    <Compile Include="UtilityManagementException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{985638c5-4931-489a-a175-0c2d44c4f63a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

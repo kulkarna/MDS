@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CommonRules</name>
+    </assembly>
+    <members>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule">
+            <summary>
+            The BusinessRule abstract class encapsulates atomic business logic validation.
+            </summary>
+            <remarks>Inherit from the BusinessRule class when in need of writing business
+            rules enforcement. Create a constructor with parameters being validated. The
+            Validate member must be overridden including the business logic. When
+            inheriting from this class you must also include a Guid attribute to your 
+            class.</remarks>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.name">
+            <summary>
+            The name of this business brokenRule.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.defaultSeverity">
+            <summary>
+            The default severity of the brokenRule brokenRule resulting from 
+            validating this business brokenRule.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.exception">
+            <summary>
+            The dependentException resulting from breaking this business brokenRule.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.#ctor(System.String,LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleSeverity)">
+            <summary>
+            Instantiates a new instance of the BusinessRule class.
+            </summary>
+            <param name="ruleName">This business brokenRule name.</param>
+            <param name="defaultSeverity">This business brokenRule severity.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.SetException(System.String)">
+            <summary>
+            Adds a BrokenRuleException indicating that this business brokenRule was broken.
+            </summary>
+            <param name="reason">The reason why the brokenRule was brokenRule.</param>
+            <remarks>Keep in mind that calling AddInnerException first will create this
+            dependentException with a generic Message describing the business brokenRule that was broken.
+            If you wish to have a different custom message then make sure to call 
+            SetException before AddInnerException. This method will have no effect if the 
+            AddException is called first.</remarks>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.AddDependentException(LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException)">
+            <summary>
+            Adds a list of brokenRule rules to this business brokenRule.
+            </summary>
+            <param name="dependentException">The list of brokenRule rules.</param>
+            <remarks>Use this member to add the list of rules brokenRule by
+            a dependent brokenRule.</remarks>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.Validate">
+            <summary>
+            The implementation of the business rule.
+            </summary>
+            <returns>A boolean value indicating if the business rule was broken.</returns>
+            <remarks>A boolean value indicating whether the validation succeeded or not.
+            The method returns a true value when the validation succeeded and the 
+            business rule is satisfied. Returns a false value when the validation
+            did not succeed and the business rule is broken.</remarks>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.GUID">
+            <summary>
+            Returns the GUID of this class.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.Name">
+            <summary>
+            The name of this business brokenRule.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.DefaultSeverity">
+            <summary>
+            The severity of this business brokenRule.
+            </summary>
+            <remarks>The brokenRule severity may help the developer understand
+            how to proceed if this business brokenRule fails validation.</remarks>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule.Exception">
+            <summary>
+            The dependentException resulting from breaking this business brokenRule.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.RequiredRangeRule`1">
+            <summary>
+            Checks whether there is an specified value and the value is of the specified type
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.RequiredRangeRule`1.#ctor(`0,`0,`0,System.Int32,System.String)">
+            <summary>
+            Checks that the given valu is within the specified range
+            </summary>
+            <param name="value">The value in question</param>
+            <param name="minValue">Minimum accepted value (inclusive)</param>
+            <param name="maxValue">Maximum accepted value (inclusive)</param>
+            <param name="excelRow">Row representing the original excel row where the value was extracted from</param>
+            <param name="columnName">The excel column where the value was extraced from (letter value, i.e. A, B, C, ... , Z, AA, ...)</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.RequiredRangeRule`1.#ctor(`0,System.Collections.Generic.List{`0},System.Boolean,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonRules.RequiredRangeRule`1"/> class.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="validSet">Set of possible values.</param>
+            <param name="isValidSetExclusive">if set to <c>true</c> value should not match any of the values in the list, if <c>false</c>, value should match one of the values in the list.</param>
+            <param name="excelRow">The excel row.</param>
+            <param name="columnName">Name of the column.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.StringPrefixRule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.StringPrefixRule.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="prefix"></param>
+            <param name="stringToValidate"></param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.StringPrefixRule.Validate">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.StringPrefixRule.Prefix">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.StringPrefixRule.StringToValidate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleSeverity">
+            <summary>
+            The severity level of a business brokenRule dependentException.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleSeverity.Information">
+            <summary>
+            Indicates that the dependentException resulting from validating the business brokenRule 
+            should not 
+            </summary>
+            <remarks>Use Information when the business brokenRule does not impact
+            process workflow.</remarks>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleSeverity.Warning">
+            <summary>
+            Indicates that the dependentException resulting from validating the business brokenRule 
+            does not impact the process flow.
+            </summary>
+            <remarks>Use Warning when a problem was found during validation of the 
+            business brokenRule and that the process logic can continue.</remarks>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleSeverity.Error">
+            <summary>
+            Indicates that the dependentException resulting from validating the business brokenRule 
+            interrupts the process flow.
+            </summary>
+            <remarks>Use Error to indicate that the validation of the business
+            brokenRule failed and that the process cannot continue.</remarks>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.NullObjectRule">
+            <summary>
+            Rule validates that a given object is not null.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.NullObjectRule.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonRules.NullObjectRule"/> class.
+            Determine if an object is null.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.NullObjectRule.#ctor(System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonRules.NullObjectRule"/> class.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.NullObjectRule.Validate">
+            <summary>
+            The implementation of the business rule.
+            </summary>
+            <returns>
+            A boolean value indicating if the business rule was broken.
+            </returns>
+            <remarks>A boolean value indicating whether the validation succeeded or not.
+            The method returns a true value when the validation succeeded and the
+            business rule is satisfied. Returns a false value when the validation
+            did not succeed and the business rule is broken.</remarks>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.MinimumStringLengthRule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.MinimumStringLengthRule.#ctor(System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="minimumLength"></param>
+            <param name="stringToValidate"></param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.MinimumStringLengthRule.#ctor(System.Int32,System.String,LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleSeverity)">
+            <summary>
+            
+            </summary>
+            <param name="minimumLength"></param>
+            <param name="stringToValidate"></param>
+            <param name="severity"></param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.MinimumStringLengthRule.Validate">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.LpcApplication">
+            <summary>
+            Enum for Libertypower applications
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.LpcApplication.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.LpcApplication.OfferEngine">
+            <summary>
+            Offer Engine
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.LpcApplication.RateManagement">
+            <summary>
+            Rate Management
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.LpcApplication.DailyPricing">
+            <summary>
+            Daily Pricing
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.MaximumStringLengthRule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.MaximumStringLengthRule.#ctor(System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="maximumLength"></param>
+            <param name="stringToValidate"></param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.MaximumStringLengthRule.#ctor(System.Int32,System.String,LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleSeverity)">
+            <summary>
+            
+            </summary>
+            <param name="maximumLength"></param>
+            <param name="stringToValidate"></param>
+            <param name="severity"></param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.MaximumStringLengthRule.Validate">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.MaximumStringLengthRule.MaximumLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.MaximumStringLengthRule.StringToValidate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.IsDateRule.#ctor(System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonRules.IsDateRule"/> class.
+            </summary>
+            <param name="date">Object to validate.</param>
+            <param name="message">Optional error message (replaces default message, pass null if default message is to be set).</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.IsDateRule.Validate">
+            <summary>
+            The implementation of the business rule.
+            </summary>
+            <returns>
+            A boolean value indicating if the business rule was broken.
+            </returns>
+            <remarks>A boolean value indicating whether the validation succeeded or not.
+            The method returns a true value when the validation succeeded and the
+            business rule is satisfied. Returns a false value when the validation
+            did not succeed and the business rule is broken.</remarks>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException">
+            <summary>
+            Used for throwing and catching errors during object validation.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.ruleGuid">
+            <summary>
+            The private field holding the global unique identifier of the business rule.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.ruleName">
+            <summary>
+            The private field holding the name of the business rule.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.severity">
+            <summary>
+            The private field holding the severity of breaking the business rule requirements.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.dependentExceptions">
+            <summary>
+            The private field holding the list of exceptions resulting from broken dependent rules.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.#ctor">
+            <summary>
+            Constructor needed for serialization
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.#ctor(LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule)">
+            <summary>
+            Instantiates a new instance of the BrokenRuleException class.
+            </summary>
+            <param name="brokenRule">The broken business rule.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.#ctor(LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule,System.String)">
+            <summary>
+            Instantiates a new instance of the BrokenRuleException class.
+            </summary>
+            <param name="brokenRule">The broken business rule.</param>
+            <param name="message">The reason explaining why the business rule was broken.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.#ctor(LibertyPower.Business.CommonBusiness.CommonRules.BusinessRule,System.String,LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleSeverity)">
+            <summary>
+            Instantiates a new instance of the BrokenRuleException class.
+            </summary>
+            <param name="brokenRule">The broken business rule.</param>
+            <param name="message">The reason explaining why the business rule was broken.</param>
+            <param name="severity">The severity associated with the broken business rule.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.UnnestedExceptions">
+            <summary>
+            Recurses the nested exceptions associated with this exception
+            to return an unnested collection suitable for binding to the presentation layer
+            </summary>
+            <returns>A BrokenRuleExceptionList as a flattened representation of this exception 
+            and any nested  dependent exceptions </returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.UnnestedExceptions(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Recurses the nested exceptions associated with this exception
+            to return an unnested collection suitable for binding to the presentation layer
+            </summary>
+            <returns>A BrokenRuleExceptionList as a flattened representation of this exception 
+            and any nested  dependent exceptions </returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.RecurseErrors(LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException,LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleExceptionList)">
+            <summary>
+            Supports recursion for UnnestedErrors()
+            </summary>
+            <param name="brokenRule"></param>
+            <param name="list"></param>
+            <returns>BrokenRuleExceptionList</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.AddDependentException(LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException)">
+            <summary>
+            Adds the dependentException resulting from a dependent broken business rule.
+            </summary>
+            <param name="dependentException">The dependentException of the dependent broken rule.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.GetBrokenRuleExceptionList(LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.RuleGuid">
+            <summary>
+            The global unique identifier of the business rule.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.RuleName">
+            <summary>
+            The name of the business rule.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.Severity">
+            <summary>
+            The severity of the breaking the business rule requirements.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleException.DependentExceptions">
+            <summary>
+            The list of exceptions resulting from broken dependent rules.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.ValidTypeRule`1">
+            <summary>
+            Validates that the value can be converted to the the given type.
+            </summary>
+            <typeparam name="T">Type that value should be.</typeparam>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.ValidTypeRule`1.fieldName">
+            <summary>
+            Name of column being validated.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.ValidTypeRule`1.value">
+            <summary>
+            Value to validate
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.ValidTypeRule`1.#ctor(System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonRules.ValidTypeRule`1"/> class.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="fieldName">Name of the field.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.ValidTypeRule`1.Validate">
+            <summary>
+            The implementation of the business rule.
+            </summary>
+            <returns>
+            A boolean value indicating if the business rule was broken.
+            </returns>
+            <remarks>A boolean value indicating whether the validation succeeded or not.
+            The method returns a true value when the validation succeeded and the
+            business rule is satisfied. Returns a false value when the validation
+            did not succeed and the business rule is broken.</remarks>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.ExactStringLengthRule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.ExactStringLengthRule.#ctor(System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="exactLength"></param>
+            <param name="stringToValidate"></param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.ExactStringLengthRule.#ctor(System.Int32,System.String,LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleSeverity)">
+            <summary>
+            
+            </summary>
+            <param name="exactLength"></param>
+            <param name="stringToValidate"></param>
+            <param name="severity"></param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.ExactStringLengthRule.Validate">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.ExactStringLengthRule.ExactLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.ExactStringLengthRule.StringToValidate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.IsNumericRule.#ctor(System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonRules.IsNumericRule"/> class.
+            </summary>
+            <param name="numberToValidate">The number to validate.</param>
+            <param name="message">Optional error message (replaces default message, pass null if default message is to be set).</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.IsNumericRule.Validate">
+            <summary>
+            The implementation of the business rule.
+            </summary>
+            <returns>
+            A boolean value indicating if the business rule was broken.
+            </returns>
+            <remarks>A boolean value indicating whether the validation succeeded or not.
+            The method returns a true value when the validation succeeded and the
+            business rule is satisfied. Returns a false value when the validation
+            did not succeed and the business rule is broken.</remarks>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.StringLengthRule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.StringLengthRule.minimumLength">
+            <summary>
+            The private field holding the minimum allowed length of the text to validate.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.StringLengthRule.maximumLength">
+            <summary>
+            The private field holding the maximum allowed length of the text to validate.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonRules.StringLengthRule.stringToValidate">
+            <summary>
+            The private field holding the text to validate.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.StringLengthRule.#ctor(System.Int32,System.Int32,System.String)">
+            <summary>
+            Instantiates a new instance of the StringLengthRule class.
+            </summary>
+            <param name="minimumLength">The minimum allowed text length.</param>
+            <param name="maximumLength">The maximum allowed text length.</param>
+            <param name="stringToValidate">The text to validate.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.StringLengthRule.Validate">
+            <summary>
+            The implementation of the business rule.
+            </summary>
+            <returns>A boolean value indicating whether the validation succeeded or not.
+            The method returns a true value when the validation succeeded and the 
+            business rule is satisfied. Returns a false value when the validation
+            did not succeed and the business rule is broken.</returns>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.StringLengthRule.MinimumLength">
+            <summary>
+            The minimum allowed length of the text to validate.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.StringLengthRule.MaximumLength">
+            <summary>
+            The maximum allowed length of the text to validate.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonRules.StringLengthRule.StringToValidate">
+            <summary>
+            The text to validate.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.DataTypeRule">
+            <summary>
+            Checks whether there is an specified value is of the specified type
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.RequiredColumnRule">
+            <summary>
+            Class to check whether a column with a specified name and index exists whithin a datatable that represents an excel workbook.
+            It is assumed that the first row of the DataTable contains the columns, do not confuse with DataTable columns.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.RequiredColumnRule.#ctor(System.Data.DataTable,System.Int32,System.String,LibertyPower.Business.CommonBusiness.CommonRules.FileSchemaColumnValidationMethod)">
+            <summary>
+            Column rule contructor
+            </summary>
+            <param name="dt">DataTable representing of an Excel worksheet</param>
+            <param name="columnIndex">The 0 based index to look for the column name</param>
+            <param name="columnName">Column name that we want to check for existance</param>
+            <param name="validationMethod">The validation method.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.PositiveNumberRule.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonRules.PositiveNumberRule"/> class.
+            </summary>
+            <param name="numberToValidate">The number to validate.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonRules.PositiveNumberRule.Validate">
+            <summary>
+            The implementation of the business rule.
+            </summary>
+            <returns>
+            A boolean value indicating if the business rule was broken.
+            </returns>
+            <remarks>A boolean value indicating whether the validation succeeded or not.
+            The method returns a true value when the validation succeeded and the
+            business rule is satisfied. Returns a false value when the validation
+            did not succeed and the business rule is broken.</remarks>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.RequiredValueRule">
+            <summary>
+            Checks whether there is an specified value and the value is of the specified type
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonRules.BrokenRuleExceptionList">
+            <summary>
+            A list of BrokenRuleException objects.
+            </summary>
+        </member>
+    </members>
+</doc>

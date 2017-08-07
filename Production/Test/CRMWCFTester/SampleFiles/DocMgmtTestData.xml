@@ -1,0 +1,349 @@
+<?xml version="1.0" standalone="yes"?>
+<ContractDetail>
+  <Address>
+    <CustomerName>SATCHIDANANDA JENA</CustomerName>
+    <ContactFirstName>SATCHIDANANDA</ContactFirstName>
+    <ContactLastName>JENA</ContactLastName>
+    <ContactTitle>_</ContactTitle>
+    <ContactPhone>9198762600</ContactPhone>
+    <ContactEmail>satchi2k2@gmail.com</ContactEmail>
+    <ContactBirthday>1/1/1900</ContactBirthday>
+    <ContractType>NEW</ContractType>
+    <ContractNumber>D20130000914</ContractNumber>
+    <BillingAddressLink>0</BillingAddressLink>
+    <BillingAddress1>1401 Hardimont Rd Apt 16</BillingAddress1>
+    <BillingCity>ANTIOCH</BillingCity>
+    <BillingState>IL</BillingState>
+    <BillingZip>60002     </BillingZip>
+    <SalesRep>WEB</SalesRep>
+    <TaxID>234123512</TaxID>
+    <ContractTypeDescp>ONLINE</ContractTypeDescp>
+    <GeneratedDate>1/1/0001</GeneratedDate>
+    <ContactDate>1/1/0001</ContactDate>
+    <EmailPreference>bammy@gmail.com</EmailPreference>
+    <ContactFax>1111111</ContactFax>
+    <BusinessType>Limited Partnership</BusinessType>
+    <SOHO>1</SOHO>
+  </Address>
+  <MultiRate>
+    <UtilityID>COMED</UtilityID>
+    <AccountNumber>1220289897</AccountNumber>
+    <AccountType>SMB</AccountType>
+    <AccountName>SATCHIDANANDA JENA                                                                                                                                    </AccountName>
+    <CustomerName>SATCHIDANANDA JENA                                                                                                                                    </CustomerName>
+    <ContactFirstName>SATCHIDANANDA</ContactFirstName>
+    <ContactLastName>JENA</ContactLastName>
+    <ContactTitle>_</ContactTitle>
+    <ContactPhone>9198762600</ContactPhone>
+    <ContactEmail>satchi2k2@gmail.com</ContactEmail>
+    <ContactBirthday>1/1/1900</ContactBirthday>
+    <LanguageId>1</LanguageId>
+    <ContractType>ONLINE</ContractType>
+    <ContractNumber>D20130000914</ContractNumber>
+    <ServiceAddress1>1401 Hardimont Rd Apt 16</ServiceAddress1>
+    <ServiceCity>ANTIOCH</ServiceCity>
+    <ServiceState>IL</ServiceState>
+    <ServiceZip>60002     </ServiceZip>
+    <BillingAddress1>1401 Hardimont Rd Apt 16</BillingAddress1>
+    <BillingCity>ANTIOCH</BillingCity>
+    <BillingState>IL</BillingState>
+    <BillingZip>60002     </BillingZip>
+    <ProductID>COMED_IP            </ProductID>
+    <product_id>COMED_IP            </product_id>
+    <Rate>0.06559</Rate>
+    <Market>IL</Market>
+    <rate_id>0</rate_id>
+    <Term>36</Term>
+    <TermInWords>thirty six</TermInWords>
+    <ProductName>Independence Plan</ProductName>
+    <ProductCategory>Fixed</ProductCategory>
+    <ProductRateDescription />
+    <SC>2098as</SC>
+    <Zone>abzcone</Zone>
+    <account_id>843</account_id>
+    <FlowStartDate>9/1/2013</FlowStartDate>
+    <ChannelPartnerName>Online Enrollment Customers</ChannelPartnerName>
+    <AnnualUsage>-1.7976931348623157E+308</AnnualUsage>
+    <EstAnnualUsage>-1.7976931348623157E+308</EstAnnualUsage>
+    <EffectiveStartDate>9/1/2013</EffectiveStartDate>
+    <EndDate>9/1/2016</EndDate>
+    <ChannelName>WEB</ChannelName>
+    <ChannelEmail>jdoe@libertypower.com</ChannelEmail>
+    <ChannelPhone>9015551212</ChannelPhone>
+    <ChannelFax>9015551212</ChannelFax>
+    <ChannelIsActive>false</ChannelIsActive>
+    <AllowInfoOnWelcomeLetter>false</AllowInfoOnWelcomeLetter>
+    <AllowInfoOnRenewalLetter>false</AllowInfoOnRenewalLetter>
+    <AllowInfoOnRenewalNotice>false</AllowInfoOnRenewalNotice>
+    <account_id1>843</account_id1>
+    <TaxCertificateAttached> Yes </TaxCertificateAttached>
+    <ReducedTaxrate>0.5</ReducedTaxrate>
+    <Tier>3</Tier>
+    <OnSiteGeneration>1</OnSiteGeneration>
+    <MeterType>1</MeterType>
+  </MultiRate>
+  <MultiRate>
+    <UtilityID>COMED</UtilityID>
+    <AccountNumber>111111111</AccountNumber>
+    <AccountType>SMB</AccountType>
+    <AccountName>SATCHIDANANDA JENA 1                                                                                                                                   </AccountName>
+    <CustomerName>SATCHIDANANDA JENA 1                                                                                                                                   </CustomerName>
+    <ContactFirstName>SATCHIDANANDA 1</ContactFirstName>
+    <ContactLastName>JENA 1</ContactLastName>
+    <ContactTitle>_</ContactTitle>
+    <ContactPhone>9198762600</ContactPhone>
+    <ContactEmail>satchi2k2@gmail.com</ContactEmail>
+    <ContactBirthday>1/1/1900</ContactBirthday>
+    <LanguageId>1</LanguageId>
+    <ContractType>ONLINE</ContractType>
+    <ContractNumber>D20130000914</ContractNumber>
+    <ServiceAddress1>1401 Hardimont Rd Apt 16 </ServiceAddress1>
+    <ServiceCity>ANTIOCH </ServiceCity>
+    <ServiceState>IL test</ServiceState>
+    <ServiceZip>60002 test </ServiceZip>
+    <BillingAddress1>1401 Hardimont Rd Apt 16 </BillingAddress1>
+    <BillingCity>ANTIOCH </BillingCity>
+    <BillingState>IL</BillingState>
+    <BillingZip>60002  </BillingZip>
+    <ProductID>COMED_IP     </ProductID>
+    <product_id>COMED_IP    </product_id>
+    <Rate>0.06559</Rate>
+    <Market>IL</Market>
+    <rate_id>0</rate_id>
+    <Term>36</Term>
+    <TermInWords>thirty six</TermInWords>
+    <ProductName>Independence Plan</ProductName>
+    <ProductCategory>Fixed</ProductCategory>
+    <ProductRateDescription />
+    <SC>2098as</SC>
+    <Zone>abzcone</Zone>
+    <account_id>843</account_id>
+    <FlowStartDate>9/1/2013</FlowStartDate>
+    <ChannelPartnerName>Online Enrollment Customers</ChannelPartnerName>
+    <AnnualUsage>-1.7976931348623157E+308</AnnualUsage>
+    <EstAnnualUsage>-1.7976931348623157E+308</EstAnnualUsage>
+    <EffectiveStartDate>9/1/2013</EffectiveStartDate>
+    <EndDate>9/1/2016</EndDate>
+    <ChannelName>WEB</ChannelName>
+    <ChannelEmail>jdoe@libertypower.com</ChannelEmail>
+    <ChannelPhone>9015551212</ChannelPhone>
+    <ChannelFax>9015551212</ChannelFax>
+    <ChannelIsActive>false</ChannelIsActive>
+    <AllowInfoOnWelcomeLetter>false</AllowInfoOnWelcomeLetter>
+    <AllowInfoOnRenewalLetter>false</AllowInfoOnRenewalLetter>
+    <AllowInfoOnRenewalNotice>false</AllowInfoOnRenewalNotice>
+    <account_id1>843</account_id1>
+    <TaxCertificateAttached> Yes </TaxCertificateAttached>
+    <ReducedTaxrate>0.5</ReducedTaxrate>
+    <Tier> 3 </Tier>
+    <OnSiteGeneration> 1 </OnSiteGeneration>
+    <MeterType> 1 </MeterType>
+  </MultiRate>
+  <ContractRate>
+    <ContractNumber>D20130000914</ContractNumber>
+    <Market>IL</Market>
+    <UtilityID>COMED</UtilityID>
+    <ProductID>COMED_IP            </ProductID>
+    <product_id>COMED_IP            </product_id>
+    <RateID>0</RateID>
+    <Rate>0.06559</Rate>
+    <ProductName>Independence Plan</ProductName>
+    <Term>36</Term>
+    <TermInWords>thirty six</TermInWords>
+    <Utility>COMED (COMMONWEALTH EDISON)</Utility>
+    <SC>2098as</SC>
+    <Zone>abzcone</Zone>
+    <SalesRep>WEB</SalesRep>
+  </ContractRate>
+  <Product>
+    <product_id>COMED_IP            </product_id>
+    <product_category>Fixed</product_category>
+    <utility_id>COMED</utility_id>
+    <date_created>0001-01-01T00:00:00-05:00</date_created>
+    <active_date>0001-01-01T00:00:00-05:00</active_date>
+    <account_type_id>0</account_type_id>
+  </Product>
+  <Market>
+    <MarketId>13</MarketId>
+    <retail_mkt_id>IL</retail_mkt_id>
+    <retail_mkt_descp>IL - ILLINOIS</retail_mkt_descp>
+    <wholesale_mkt_id>PJM       </wholesale_mkt_id>
+    <puc_certification_number>0</puc_certification_number>
+    <date_created>2007-06-11T00:00:00-04:00</date_created>
+    <username>libertypower\dmarino                                                                                                                                                                                    </username>
+    <inactive_ind>0</inactive_ind>
+    <active_date>2007-06-01T00:00:00-04:00</active_date>
+    <chgstamp>0</chgstamp>
+    <transfer_ownership_enabled>0</transfer_ownership_enabled>
+  </Market>
+  <Utility>
+    <utility_id>COMED</utility_id>
+    <duns_number>1234</duns_number>
+    <retail_mkt_id>IL</retail_mkt_id>
+    <entity_id>LPH</entity_id>
+    <enrollment_lead_days>7</enrollment_lead_days>
+    <billing_type>BR</billing_type>
+    <account_length>10</account_length>
+    <account_number_prefix>amg</account_number_prefix>
+    <por_option>YES</por_option>
+    <field_01_label>NONE</field_01_label>
+    <field_01_type>NONE</field_01_type>
+    <field_02_label>NONE</field_02_label>
+    <field_02_type>NONE</field_02_type>
+    <field_03_label>NONE</field_03_label>
+    <field_03_type>NONE</field_03_type>
+    <field_04_label>NONE</field_04_label>
+    <field_04_type>NONE</field_04_type>
+    <field_05_label>NONE</field_05_label>
+    <field_05_type>NONE</field_05_type>
+    <field_06_label>NONE</field_06_label>
+    <field_06_type>NONE</field_06_type>
+    <field_07_label>NONE</field_07_label>
+    <field_07_type>NONE</field_07_type>
+    <field_08_label>NONE</field_08_label>
+    <field_08_type>NONE</field_08_type>
+    <field_09_label>NONE</field_09_label>
+    <field_09_type>NONE</field_09_type>
+    <field_10_label>NONE</field_10_label>
+    <field_10_type>NONE</field_10_type>
+    <wholesale_mkt_id>PJM       </wholesale_mkt_id>
+    <meter_charge_clause>onfile</meter_charge_clause>
+  </Utility>
+  <CustomDetails>
+    <DigitalSignature>Satchidananda Jena</DigitalSignature>
+    <NumberOfAccounts>2</NumberOfAccounts>
+    <printedname>Brahmaiah Test Name</printedname>
+    <agreementsigneddate>8/20/2013</agreementsigneddate>
+    <alternatesigner>Guy Gelin</alternatesigner>
+  </CustomDetails>
+  <FirstMultiRate>
+    <UtilityID>COMED</UtilityID>
+    <AccountNumber>1220289897</AccountNumber>
+    <AccountType>SMB</AccountType>
+    <AccountName>SATCHIDANANDA JENA                                                                                                                                    </AccountName>
+    <CustomerName>SATCHIDANANDA JENA                                                                                                                                    </CustomerName>
+    <ContactFirstName>SATCHIDANANDA</ContactFirstName>
+    <ContactLastName>JENA</ContactLastName>
+    <ContactTitle>_</ContactTitle>
+    <ContactPhone>9198762600</ContactPhone>
+    <ContactEmail>satchi2k2@gmail.com</ContactEmail>
+    <ContactBirthday>1/1/1900</ContactBirthday>
+    <LanguageId>1</LanguageId>
+    <ContractType>ONLINE</ContractType>
+    <ContractNumber>D20130000914</ContractNumber>
+    <ServiceAddress1>1401 Hardimont Rd Apt 16</ServiceAddress1>
+    <ServiceCity>ANTIOCH</ServiceCity>
+    <ServiceState>IL</ServiceState>
+    <ServiceZip>60002     </ServiceZip>
+    <BillingAddress1>1401 Hardimont Rd Apt 16</BillingAddress1>
+    <BillingCity>ANTIOCH</BillingCity>
+    <BillingState>IL</BillingState>
+    <BillingZip>60002     </BillingZip>
+    <ProductID>COMED_IP            </ProductID>
+    <product_id>COMED_IP            </product_id>
+    <Rate>0.06559</Rate>
+    <Market>IL</Market>
+    <rate_id>0</rate_id>
+    <Term>36</Term>
+    <TermInWords>thirty six</TermInWords>
+    <ProductName>Independence Plan</ProductName>
+    <ProductCategory>Fixed</ProductCategory>
+    <ProductRateDescription />
+    <SC>2098as</SC>
+    <Zone>abzcone</Zone>
+    <account_id>843</account_id>
+    <FlowStartDate>9/1/2013</FlowStartDate>
+    <ChannelPartnerName>Online Enrollment Customers</ChannelPartnerName>
+    <AnnualUsage>-1.7976931348623157E+308</AnnualUsage>
+    <EstAnnualUsage>-1.7976931348623157E+308</EstAnnualUsage>
+    <EffectiveStartDate>9/1/2013</EffectiveStartDate>
+    <EndDate>9/1/2016</EndDate>
+    <ChannelName>WEB</ChannelName>
+    <ChannelEmail>jdoe@libertypower.com</ChannelEmail>
+    <ChannelPhone>9015551212</ChannelPhone>
+    <ChannelFax>9015551212</ChannelFax>
+    <ChannelIsActive>false</ChannelIsActive>
+    <AllowInfoOnWelcomeLetter>false</AllowInfoOnWelcomeLetter>
+    <AllowInfoOnRenewalLetter>false</AllowInfoOnRenewalLetter>
+    <AllowInfoOnRenewalNotice>false</AllowInfoOnRenewalNotice>
+    <account_id1>843</account_id1>
+    <TaxCertificateAttached> Yes </TaxCertificateAttached>
+    <ReducedTaxrate>0.5</ReducedTaxrate>
+    <Tier> 3 </Tier>
+    <OnSiteGeneration> 1 </OnSiteGeneration>
+    <MeterType> 1 </MeterType>
+  </FirstMultiRate>
+  <FirstContractRate>
+    <ContractNumber>D20130000914</ContractNumber>
+    <Market>IL</Market>
+    <UtilityID>COMED</UtilityID>
+    <ProductID>COMED_IP            </ProductID>
+    <product_id>COMED_IP            </product_id>
+    <RateID>0</RateID>
+    <Rate>0.06559</Rate>
+    <ProductName>Independence Plan</ProductName>
+    <Term>36</Term>
+    <TermInWords>thirty six</TermInWords>
+    <Utility>COMED (COMMONWEALTH EDISON)</Utility>
+    <SC>2098as</SC>
+    <Zone>abzcone</Zone>
+    <SalesRep>WEB</SalesRep>
+  </FirstContractRate>
+  <MoreMultiRate>
+    <UtilityID>COMED</UtilityID>
+    <AccountNumber>111111111</AccountNumber>
+    <AccountType>SMB</AccountType>
+    <AccountName>SATCHIDANANDA JENA 1                                                                                                                                   </AccountName>
+    <CustomerName>SATCHIDANANDA JENA 1                                                                                                                                   </CustomerName>
+    <ContactFirstName>SATCHIDANANDA 1</ContactFirstName>
+    <ContactLastName>JENA 1</ContactLastName>
+    <ContactTitle>_</ContactTitle>
+    <ContactPhone>9198762600</ContactPhone>
+    <ContactEmail>satchi2k2@gmail.com</ContactEmail>
+    <ContactBirthday>1/1/1900</ContactBirthday>
+    <LanguageId>1</LanguageId>
+    <ContractType>ONLINE</ContractType>
+    <ContractNumber>D20130000914</ContractNumber>
+    <ServiceAddress1>1401 Hardimont Rd Apt 16 </ServiceAddress1>
+    <ServiceCity>ANTIOCH </ServiceCity>
+    <ServiceState>IL test</ServiceState>
+    <ServiceZip>60002 test </ServiceZip>
+    <BillingAddress1>1401 Hardimont Rd Apt 16 </BillingAddress1>
+    <BillingCity>ANTIOCH </BillingCity>
+    <BillingState>IL</BillingState>
+    <BillingZip>60002  </BillingZip>
+    <ProductID>COMED_IP     </ProductID>
+    <product_id>COMED_IP    </product_id>
+    <Rate>0.06559</Rate>
+    <Market>IL</Market>
+    <rate_id>0</rate_id>
+    <Term>36</Term>
+    <TermInWords>thirty six</TermInWords>
+    <ProductName>Independence Plan</ProductName>
+    <ProductCategory>Fixed</ProductCategory>
+    <ProductRateDescription />
+    <SC>2098as</SC>
+    <Zone>abzcone</Zone>
+    <account_id>843</account_id>
+    <FlowStartDate>9/1/2013</FlowStartDate>
+    <ChannelPartnerName>Online Enrollment Customers</ChannelPartnerName>
+    <AnnualUsage>-1.7976931348623157E+308</AnnualUsage>
+    <EstAnnualUsage>-1.7976931348623157E+308</EstAnnualUsage>
+    <EffectiveStartDate>9/1/2013</EffectiveStartDate>
+    <EndDate>9/1/2016</EndDate>
+    <ChannelName>WEB</ChannelName>
+    <ChannelEmail>jdoe@libertypower.com</ChannelEmail>
+    <ChannelPhone>9015551212</ChannelPhone>
+    <ChannelFax>9015551212</ChannelFax>
+    <ChannelIsActive>false</ChannelIsActive>
+    <AllowInfoOnWelcomeLetter>false</AllowInfoOnWelcomeLetter>
+    <AllowInfoOnRenewalLetter>false</AllowInfoOnRenewalLetter>
+    <AllowInfoOnRenewalNotice>false</AllowInfoOnRenewalNotice>
+    <account_id1>843</account_id1>
+    <TaxCertificateAttached>1</TaxCertificateAttached>
+    <ReducedTaxrate>0.5</ReducedTaxrate>
+    <Tier>3</Tier>
+    <OnSiteGeneration>1</OnSiteGeneration>
+    <MeterType>1</MeterType>
+  </MoreMultiRate>
+</ContractDetail>

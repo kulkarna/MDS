@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bc73a15f-f4ba-4439-bf0e-4cca1c8aad3e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://devordersapi.libertypowercorp.com/CRMTesting.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CRMTesting7.xsd" MetadataType="Schema" ID="917ef70a-6793-4137-9f12-04779c917824" SourceId="1" SourceUrl="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd2" />
+    <MetadataFile FileName="CRMTesting71.xsd" MetadataType="Schema" ID="ce076b07-f45f-463b-84ef-d9a499f6eb5c" SourceId="1" SourceUrl="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd4" />
+    <MetadataFile FileName="CRMTesting72.xsd" MetadataType="Schema" ID="10006515-cc37-4ceb-b3a9-54f531b81283" SourceId="1" SourceUrl="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd5" />
+    <MetadataFile FileName="CRMTesting73.xsd" MetadataType="Schema" ID="b899e21c-12a6-4b38-b40e-4bc4955c7844" SourceId="1" SourceUrl="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd3" />
+    <MetadataFile FileName="CRMTesting1.wsdl" MetadataType="Wsdl" ID="fbd4d49b-4446-4fcb-9c0d-c8f6a8d774a6" SourceId="1" SourceUrl="http://devordersapi.libertypowercorp.com/CRMTesting.svc?wsdl" />
+    <MetadataFile FileName="CRMTesting1.disco" MetadataType="Disco" ID="c874aeb7-deaa-4e7e-8ede-16170a81e989" SourceId="1" SourceUrl="http://devordersapi.libertypowercorp.com/CRMTesting.svc?disco" />
+    <MetadataFile FileName="CRMTesting74.xsd" MetadataType="Schema" ID="6451fbb8-cb89-485d-8a03-cc140944737f" SourceId="1" SourceUrl="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd1" />
+    <MetadataFile FileName="CRMTesting75.xsd" MetadataType="Schema" ID="bd6cf1c7-ca0c-4eff-b6f3-cf79d3b64df3" SourceId="1" SourceUrl="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd0" />
+    <MetadataFile FileName="CRMTesting76.xsd" MetadataType="Schema" ID="0d417b46-f401-4fdf-af55-478bd28ff0ff" SourceId="1" SourceUrl="http://devordersapi.libertypowercorp.com/CRMTesting.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

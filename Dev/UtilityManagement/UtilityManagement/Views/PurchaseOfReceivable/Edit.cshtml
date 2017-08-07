@@ -1,0 +1,425 @@
+﻿@model DataAccessLayerEntityFramework.PurchaseOfReceivable
+@{
+    ViewBag.Title = "Edit Purchase Of Receivable";
+}
+@using UserInterfaceValidationExtensions
+
+<script>
+    $("#UtilityCompanyId option").attr("disabled", "true");
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+     <div class="edit_section">
+        <div class="edit_header">
+            <div class="purchase_ico"></div>
+            <div class="edit_header_desc"><h4>Purchase Of Receivable</h4>
+            <h3>Edit Record</h3>
+            @{string displayName = @Model.UtilityCompany.UtilityCode + " " + @Model.PorDriver.Name;}
+                @displayName
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>RequestModeHistoricalUsage</legend>
+                @Html.Hidden("Id", @Model.Id)
+                 <div class="textblock">
+                    <div class="details-data-section">
+                    <div id="Gen"  class="activable">
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                    <div id="hideContent" class="editdetails">
+                    <div class="details-full-section">
+                         <div class="details-left-section">
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UtilityCompanyId, "Utility Company")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.UtilityCompany.UtilityCode)
+                            @Html.ValidationMessageFor(model => model.UtilityCompanyId)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorDriverId, "POR Driver")
+                        </div>
+                        <div class="editor-field-display" id="divPorDriver">
+                            @Html.DropDownList("PorDriverId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.PorDriverId, "The current POR Driver field value is invalid.")
+                        </div>
+                          <div class="clear"></div>
+                        <div id="PorRateClass">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.RateClassId, "Rate Class")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("RateClassId", String.Empty)
+                                @Html.ValidationMessageFor(model => model.RateClassId, "The current Rate Class field value is invalid.")
+                            </div>
+                        </div>
+                          <div class="clear"></div>
+                        <div id="PorLoadProfile">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.LoadProfileId, "Load Profile")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("LoadProfileId", String.Empty)
+                                @Html.ValidationMessageFor(model => model.LoadProfileId, "The current Load Profile field value is invalid.")
+                            </div>
+                        </div>
+                          <div class="clear"></div>
+                        <div id="PorTariffCode">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.TariffCodeId, "Tariff Code")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("TariffCodeId", String.Empty)
+                                @Html.ValidationMessageFor(model => model.TariffCodeId, "The current Tariff Code field value is invalid.")
+                            </div>
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.IsPorOffered, "Is POR Offered")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.IsPorOffered)
+                            @Html.ValidationMessageFor(model => model.IsPorOffered)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.IsPorParticipated, "Is POR Participated")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.IsPorParticipated)
+                            @Html.ValidationMessageFor(model => model.IsPorParticipated)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.IsPorAssurance, "Is POR Eligible")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.IsPorAssurance)
+                            @Html.ValidationMessageFor(model => model.IsPorAssurance)
+                        </div>
+                          <div class="clear"></div>
+                        </div>
+                        <div class="details-right-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorRecourse.Name, "POR Recourse")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("PorRecourseId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.LoadProfileId, "The current POR Recourse field value is invalid.")
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorDiscountRate, "POR Discount Rate")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.PorDiscountRate)
+                            @Html.ValidationMessageFor(model => model.PorDiscountRate, "The POR Discount Rate Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.PorDiscountRateValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="PorDiscountRate" data-valmsg-replace="true">The current POR Discount Rate field value is invalid.</span>
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorFlatFee, "POR Flat Fee")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.PorFlatFee)
+                            @Html.ValidationMessageFor(model => model.PorFlatFee, "The POR Flat Fee Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.PorFlatFeeValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="PorFlatFee" data-valmsg-replace="true">The current POR Flat Fee field value is invalid.</span>
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorDiscountEffectiveDate, "POR Discount Effective Date")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.PorDiscountEffectiveDate)
+                            @Html.ValidationMessageFor(model => model.PorDiscountEffectiveDate)
+                            @{
+                            if (Session["IsPostBack"] == "true")
+                            {
+                                var validationMessage = Model.PorDiscountEffectiveDateValidationMessage();
+                                if (!string.IsNullOrWhiteSpace(validationMessage))
+                                { 
+                                <span class="field-validation-error" data-valmsg-for="PorDiscountEffectiveDate" data-valmsg-replace="true">@validationMessage</span>
+                                }
+                            }
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorDiscountExpirationDate , "POR Discount Expiration Date" )
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.PorDiscountExpirationDate)
+                            @Html.ValidationMessageFor(model => model.PorDiscountExpirationDate)
+                            @{
+                            if (Session["IsPostBack"] == "true")
+                            {
+                                var validationMessage = Model.PorDiscountExpirationDateValidationMessage();
+                                if (!string.IsNullOrWhiteSpace(validationMessage))
+                                { 
+                                <span class="field-validation-error" data-valmsg-for="PorDiscountExpirationDate" data-valmsg-replace="true">@validationMessage</span>
+                                }
+                            }
+                            }
+                        </div>
+                       </div>
+                    </div>
+                    </div>
+                    <br />
+                    <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.Inactive)
+                            @Html.ValidationMessageFor(model => model.Inactive)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                            @Html.ValidationMessageFor(model => model.CreatedBy)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                            @Html.ValidationMessageFor(model => model.CreatedDate)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                     </div>
+                     </div>
+                </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        if ($("#RequestModeEnrollmentTypeId").val() != "-1") {
+            $.ajax({
+                url: "/RequestModeHistoricalUsage/PopulateRequestModeTypeList",
+                type: 'POST',
+                data: { requestModeEnrollmentTypeId: $("#RequestModeEnrollmentTypeId").val() },
+                datatype: 'json',
+                async: false,
+                success: function (data) {
+                    var i = 0;
+                    var items = "";
+                    items += "<option value='11111'>  </option>";
+                    $.each(data, function (i, val) {
+                        items += "<option";
+                        if (val.Id == $("#RequestModeTypeIdInitial").val()) {
+                            items += " selected='selected'";
+                        }
+                        items += " value='" + val.Id + "'>" + val.Name + "</option>";
+                    });
+
+                    $("select#RequestModeTypeId").empty().html(items);
+                },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+        }
+
+    });
+
+    $(function () {
+        $("#btnSave").click(function (evt) {
+            if ($("select#RequestModeTypeId").val() != "-1") {
+                $.ajax({
+                    type: 'POST',
+                    url: "/RequestModeHistoricalUsage/ValidateIcapAndHistoricalUsageRequestModeTypesForEdit",
+                    datatype: 'json',
+                    async: false,
+                    data: { requestModeIcapId: $("#Id").val(), requestModeTypeId: $("select#RequestModeTypeId").val() },
+                    success: function (data) {
+                        if (data > 0) {
+                            alert("WARNING! The Preferred HU Request Mode in Pre-Enrollment is different from the I-Cap Request Mode.  Please verify that they are correctly configured.");
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+    $(function () {
+        if ($("select#RequestModeTypeId").val() != "-1") {
+            $.ajax({
+                url: "/RequestModeHistoricalUsage/GetVisibilityData",
+                type: 'POST',
+                datatype: 'json',
+                async: false,
+                data: { formName: "Historical Usage Request Mode" },
+                success: function (data) {
+                    $("#divAddressLabel").hide();
+                    $("#divAddressField").hide();
+                    $("#divEmailTemplateLabel").hide();
+                    $("#divEmailTemplateText").hide();
+
+                    $.each(data, function (i, val) {
+                        var control = "#" + val.ControllingControlName + " option:selected";
+
+                        if ($(control).text().toLowerCase() == val.ControllingControlValue.toLowerCase()) {
+                            var controlToShow = "#" + val.VisibilityControlName;
+                            $(controlToShow).show();
+                        }
+                    });
+                },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+        }
+    });
+
+    $(function () {
+        $("select#RequestModeTypeId").change(function (evt) {
+            if ($("select#RequestModeTypeId").val() != "-1") {
+                $.ajax({
+                    url: "/RequestModeHistoricalUsage/GetVisibilityData",
+                    type: 'POST',
+                    datatype: 'json',
+                    async: false,
+                    data: { formName: "Historical Usage Request Mode" },
+                    success: function (data) {
+                        $("#divAddressLabel").hide();
+                        $("#divAddressField").hide();
+                        $("#divEmailTemplateLabel").hide();
+                        $("#divEmailTemplateText").hide();
+
+                        $.each(data, function (i, val) {
+                            var control = "#" + val.ControllingControlName + " option:selected";
+                            if ($(control).text().toLowerCase() == val.ControllingControlValue.toLowerCase()) {
+                                var controlToShow = "#" + val.VisibilityControlName;
+                                $(controlToShow).show();
+                            }
+                        });
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+            }
+        });
+    });
+
+
+    $(function () {
+        $("select#RequestModeEnrollmentTypeId").change(function (evt) {
+            if ($("select#RequestModeEnrollmentTypeId").val() != "-1") {
+                $.ajax({
+                    //url: "/RequestModeHistoricalUsage/PopulateRequestModeEnrollmentTypeIdList",
+                    url: "/RequestModeHistoricalUsage/PopulateRequestModeTypeList",
+                    type: 'POST',
+                    datatype: 'json',
+                    async: false,
+                    data: { RequestModeEnrollmentTypeId: $("select#RequestModeEnrollmentTypeId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Id + "'>" + val.Name + "</option>";
+                        });
+
+                        $("select#RequestModeTypeId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+            }
+        });
+    });
+
+    $(function () {
+        $("select#PorDriverId").change(function (evt) {
+            if ($("select#PorDriverId").val() != "-1") {
+                var selectedText = $("select#PorDriverId option:selected").text();
+                if (selectedText == "Load Profile") {
+                    $("#PorLoadProfile").show();
+                    $("#PorRateClass").hide();
+                    $("#PorTariffCode").hide();
+                }
+                else if (selectedText == "Tariff Code") {
+                    $("#PorLoadProfile").hide();
+                    $("#PorRateClass").hide();
+                    $("#PorTariffCode").show();
+                }
+                else if (selectedText == "Rate Class") {
+                    $("#PorLoadProfile").hide();
+                    $("#PorRateClass").show();
+                    $("#PorTariffCode").hide();
+                }
+                else {
+                    $("#PorLoadProfile").hide();
+                    $("#PorRateClass").hide();
+                    $("#PorTariffCode").hide();
+                }
+            }
+
+        });
+    });
+
+    $(document).ready(function () {
+        if ($("select#PorDriverId").val() != "-1") {
+            var selectedText = $("select#PorDriverId option:selected").text();
+            if (selectedText == "Load Profile") {
+                $("#PorLoadProfile").show();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").hide();
+            }
+            else if (selectedText == "Tariff Code") {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").show();
+            }
+            else if (selectedText == "Rate Class") {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").show();
+                $("#PorTariffCode").hide();
+            }
+            else {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").hide();
+            }
+        }
+    });
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

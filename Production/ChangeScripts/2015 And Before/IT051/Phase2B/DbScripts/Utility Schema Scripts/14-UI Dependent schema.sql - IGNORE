@@ -1,0 +1,135 @@
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+
+--*******************************************************************************
+--* Modified by Lehem Felican 9/25/2012
+--* (work item: 2488) Changed table structure to include BillingTypeID (int) instead of BillingType(varchar) 
+--* (work item: 2488) Changed table structure to include AccountTypeID (int) instead of AccountType(varchar) 
+--* (work item: 2488) NOTE: Will also update lp_account..usp_tblAccounts_IstaEnrollmentService_sel so that it uses these new columns.
+--******************************************************************************* 
+
+USE [LibertyPower]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE	PROCEDURE	[dbo].[usp_UtilityAccountTypeList]
+		
+AS
+
+BEGIN
+	SELECT	ID,Description
+	FROM LibertyPower.dbo.AccountType
+END
+Go
+CREATE	PROCEDURE	[dbo].[usp_UtilityBillingTypeList]
+		
+AS
+
+BEGIN
+	SELECT	BillingTypeID, [Description]
+	FROM LibertyPower.dbo.BillingType
+	Where active = 1
+END
+GO
+CREATE	PROCEDURE	[dbo].[usp_UtilityMarketTypeList] 
+AS
+BEGIN
+	SELECT ID, MarketCode, RetailMktDescp 
+	FROM [libertypower].[dbo].[Market]
+END
+
+GO
+CREATE PROCEDURE	[dbo].usp_UtilityPaymentTermsSelect
+	@utilityCode Varchar(50)  = '0',
+	@marketID Int = 0
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT 
+	   upt.ID
+	  ,upt.[UtilityId]
+      ,upt.[MarketId]
+      ,upt.[ARTerms]
+      ,upt.[BillingTypeID]
+      ,upt.[AccountTypeID]            
+	FROM 
+		[LibertyPower].[dbo].[UtilityPaymentTerms] upt
+		inner join LibertyPower.dbo.Utility u On u.ID = upt.utilityID
+		inner join LibertyPower.dbo.Market m On m.ID = upt.MarketId
+	WHERE 
+		(u.UtilityCode = @utilityCode OR @utilityCode = '0') 
+		AND
+		(m.ID = @marketID OR @marketID = 0)
+	SET NOCOUNT OFF
+END
+GO
+CREATE PROCEDURE	[dbo].usp_UtilityPaymentTermsUpdate
+	 @rowID INT	
+	,@BillingTypeID INT
+    ,@AccountTypeID INT
+	,@ARTerm INT
+AS
+BEGIN
+	UPDATE  
+		[LibertyPower].[dbo].[UtilityPaymentTerms]
+	SET	
+       [BillingTypeID] = @BillingTypeID
+      ,[AccountTypeID] = @AccountTypeID
+      ,[ARTerms] = @ARTerm		
+	WHERE (ID = @rowID)
+END
+GO
+CREATE PROCEDURE	[dbo].usp_UtilityPaymentTermsInsert
+	 @utilityID INT
+	,@MarketID INT
+	,@BillingTypeID INT
+    ,@AccountTypeID INT
+	,@ARTerm INT
+AS
+BEGIN
+	INSERT INTO [LibertyPower].[dbo].[UtilityPaymentTerms]
+	(MarketID,UtilityId,ARTerms,BillingTypeID,AccountTypeID)	
+	VALUES(@MarketID,@utilityID,@ARTerm,@BillingTypeID,@AccountTypeID)	
+END
+GO
+CREATE PROCEDURE	[dbo].usp_UtilityPaymentTermsDelete
+	 @rowID INT
+AS
+BEGIN
+	DELETE FROM [LibertyPower].[dbo].[UtilityPaymentTerms]
+	WHERE ID = @rowID
+END
+GO
+CREATE PROCEDURE usp_TaxTemplateSelect
+	@UtilityID INT = 0
+AS
+set nocount on
+SELECT TOP 1000 [TaxTemplateID]
+      ,tt.[UtilityID]
+      ,tt.[Template]
+      ,tt.[TaxTypeID]
+      ,tt.[PercentTaxable]
+      ,ty.TypeOfTax
+  FROM [LibertyPower].[dbo].[TaxTemplate] tt
+  inner join [LibertyPower].[dbo].TaxType ty ON ty.TaxTypeID = tt.TaxTypeID
+  WHERE (tt.UtilityID = @UtilityID OR @UtilityID =0) 
+  
+GO
+CREATE PROCEDURE	[dbo].usp_TaxTemplateUpdate
+	 @TaxTemplateID INT	
+	,@PercentTaxable INT
+AS
+BEGIN
+	UPDATE  
+		[LibertyPower].[dbo].[TaxTemplate]
+	SET	
+      [PercentTaxable] = @PercentTaxable
+	WHERE (TaxTemplateID = @TaxTemplateID)
+END
+GO
+

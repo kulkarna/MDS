@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CommonBusiness.DocumentManager" />
+  <xs:import schemaLocation="http://localhost:57373/DocumentService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Contract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountContracts" nillable="true" type="tns:ArrayOfAccountContract" />
+      <xs:element minOccurs="0" name="AffinityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientSubmitApplicationKey" nillable="true" type="ser:guid" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums" minOccurs="0" name="ContractDealType" type="q1:ContractDealType" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums" minOccurs="0" name="ContractTemplate" type="q2:ContractTemplate" />
+      <xs:element minOccurs="0" name="ContractTemplateVersionId" nillable="true" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums" minOccurs="0" name="ContractType" type="q3:ContractType" />
+      <xs:element minOccurs="0" name="ContractVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DigitalSignature" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CommonBusiness.DocumentManager" minOccurs="0" name="Documents" nillable="true" type="q4:ArrayOfDocument" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EstimatedAnnualUsage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExternalNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PromotionCodes" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ReceiptDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SalesChannelId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesManagerId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesRep" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TabletDocuments" nillable="true" type="tns:ArrayOfTabletDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contract" nillable="true" type="tns:Contract" />
+  <xs:complexType name="ArrayOfAccountContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountContract" nillable="true" type="tns:AccountContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountContract" nillable="true" type="tns:ArrayOfAccountContract" />
+  <xs:complexType name="AccountContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+      <xs:element minOccurs="0" name="AccountContractCommission" nillable="true" type="tns:AccountContractCommission" />
+      <xs:element minOccurs="0" name="AccountContractRates" nillable="true" type="tns:ArrayOfAccountContractRate" />
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatus" />
+      <xs:element minOccurs="0" name="RequestedStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SendEnrollmentDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountContract" nillable="true" type="tns:AccountContract" />
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountIdLegacy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountInfo" nillable="true" type="tns:AccountInfo" />
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums" minOccurs="0" name="AccountType" type="q6:AccountType" />
+      <xs:element minOccurs="0" name="AccountUsages" nillable="true" type="tns:ArrayOfAccountUsage" />
+      <xs:element minOccurs="0" name="BillingAddress" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="BillingContact" nillable="true" type="tns:Contact" />
+      <xs:element minOccurs="0" name="BillingGroup" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums" minOccurs="0" name="BillingType" type="q7:BillingType" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Details" nillable="true" type="tns:AccountDetail" />
+      <xs:element minOccurs="0" name="Icap" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoadProfile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LossCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MeterNumbers" nillable="true" type="q8:ArrayOfstring" />
+      <xs:element minOccurs="0" name="MeterTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Origin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PorOption" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RetailMktId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceAddress" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="ServiceRateClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StratumVariable" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums" minOccurs="0" name="TaxStatus" type="q9:TaxStatus" />
+      <xs:element minOccurs="0" name="Tcap" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Zone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:complexType name="AccountInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterDataMgmtAgent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterInstaller" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterOwner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterReader" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterServiceProvider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchedulingCoordinator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountInfo" nillable="true" type="tns:AccountInfo" />
+  <xs:complexType name="ArrayOfAccountUsage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountUsage" nillable="true" type="tns:AccountUsage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountUsage" nillable="true" type="tns:ArrayOfAccountUsage" />
+  <xs:complexType name="AccountUsage">
+    <xs:sequence>
+      <xs:element name="_x003C_AccountId_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_AccountUsageId_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_AnnualUsage_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_DateCreated_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_EffectiveDate_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ModifiedBy_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_Modified_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C__usageReqStatusId_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountUsage" nillable="true" type="tns:AccountUsage" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Birthday" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contact" nillable="true" type="tns:Contact" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessActivityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Contact" nillable="true" type="tns:Contact" />
+      <xs:element minOccurs="0" name="CustomerAddress" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dba" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duns" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Preferences" nillable="true" type="tns:CustomerPreference" />
+      <xs:element minOccurs="0" name="SsnClear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="CustomerPreference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsGoGreen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LanguageId" type="xs:int" />
+      <xs:element minOccurs="0" name="OptOutSpecialOffers" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Pin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerPreference" nillable="true" type="tns:CustomerPreference" />
+  <xs:complexType name="AccountDetail">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerManagement.CRMBusinessObjects.Enums" minOccurs="0" name="EnrollmentType" type="q10:EnrollmentType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountDetail" nillable="true" type="tns:AccountDetail" />
+  <xs:complexType name="AccountContractCommission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EvergreenCommissionEnd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EvergreenCommissionRate" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="EvergreenOptionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InitialPymtOptionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResidualCommissionEnd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ResidualOptionId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountContractCommission" nillable="true" type="tns:AccountContractCommission" />
+  <xs:complexType name="ArrayOfAccountContractRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountContractRate" nillable="true" type="tns:AccountContractRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountContractRate" nillable="true" type="tns:ArrayOfAccountContractRate" />
+  <xs:complexType name="AccountContractRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalGrossMargin" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CommissionRate" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="GrossMargin" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HeatIndexSourceId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HeatRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsContractedRate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCustomEnd" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LegacyProductId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriceId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProductCrossPriceMultiID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RateStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Term" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TransferRate" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountContractRate" nillable="true" type="tns:AccountContractRate" />
+  <xs:complexType name="AccountStatus">
+    <xs:sequence>
+      <xs:element name="_x003C_AccountContractId_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_AccountStatusId_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_DateCreated_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ModifiedBy_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Modified_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_Status_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_SubStatus_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountStatus" nillable="true" type="tns:AccountStatus" />
+  <xs:complexType name="ArrayOfTabletDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabletDocument" nillable="true" type="tns:TabletDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabletDocument" nillable="true" type="tns:ArrayOfTabletDocument" />
+  <xs:complexType name="TabletDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContractNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalesAgentID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabletDocument" nillable="true" type="tns:TabletDocument" />
+</xs:schema>

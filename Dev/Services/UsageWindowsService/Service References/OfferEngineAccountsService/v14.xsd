@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0" elementFormDefault="qualified" targetNamespace="http://LibertyPowerCorp.com/RepositoryManagement/AccountManagement/1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lpcnocwsgamma1:8081/Accounts/v1?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="SubmitServiceAccountUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="tns:ServiceAccountInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ServiceAccountInfo">
+    <xs:sequence>
+      <xs:element name="Utility" nillable="true" type="xs:string" />
+      <xs:element name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element name="UpdateSource" nillable="true" type="xs:string" />
+      <xs:element name="UpdateUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ICap" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TCap" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LbmpZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoadProfile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoadShapeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LossFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MeterType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RateClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TariffCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Voltage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceAddressZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Strata" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingAccount" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceAccountInfo" nillable="true" type="tns:ServiceAccountInfo" />
+  <xs:element name="SubmitServiceAccountUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCrmIfAccountMeetsPropertiesRequirements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="utilityId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceAccountProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceAccountPropertiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetServiceAccountPropertiesResult" nillable="true" type="q1:ArrayOfKeyValueOfTrackedFieldstringwI0mcsWq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateServiceAccountProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="updateSource" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="updateUser" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="accountPropertiesNameValueList" nillable="true" type="q2:ArrayOfKeyValueOfTrackedFieldstringwI0mcsWq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateServiceAccountPropertiesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Request" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO" />
+      <xsd:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CostumerService.Entities.Enumerators" />
+      <xsd:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://lpcnocws4:8077/Request.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/CustomerServices.Entities.DTO.MissingRate" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRequest_GetUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsage" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_GetUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_DeEnroll_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeEnroll" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_DeEnroll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeEnrollResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_ReEnroll_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReEnroll" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_ReEnroll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReEnrollResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_ProcessValidationErrorReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessValidationErrorReport" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_ProcessValidationErrorReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessValidationErrorReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_Enroll_InputMessage">
+    <wsdl:part name="parameters" element="tns:Enroll" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_Enroll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnrollResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_RequestMissingRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestMissingRate" />
+  </wsdl:message>
+  <wsdl:message name="IRequest_RequestMissingRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestMissingRateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRequest">
+    <wsdl:operation name="GetUsage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRequest/GetUsage" message="tns:IRequest_GetUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRequest/GetUsageResponse" message="tns:IRequest_GetUsage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeEnroll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRequest/DeEnroll" message="tns:IRequest_DeEnroll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRequest/DeEnrollResponse" message="tns:IRequest_DeEnroll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReEnroll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRequest/ReEnroll" message="tns:IRequest_ReEnroll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRequest/ReEnrollResponse" message="tns:IRequest_ReEnroll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessValidationErrorReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRequest/ProcessValidationErrorReport" message="tns:IRequest_ProcessValidationErrorReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRequest/ProcessValidationErrorReportResponse" message="tns:IRequest_ProcessValidationErrorReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Enroll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRequest/Enroll" message="tns:IRequest_Enroll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRequest/EnrollResponse" message="tns:IRequest_Enroll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestMissingRate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRequest/RequestMissingRate" message="tns:IRequest_RequestMissingRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRequest/RequestMissingRateResponse" message="tns:IRequest_RequestMissingRate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IRequest" type="tns:IRequest">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsage">
+      <soap:operation soapAction="http://tempuri.org/IRequest/GetUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeEnroll">
+      <soap:operation soapAction="http://tempuri.org/IRequest/DeEnroll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReEnroll">
+      <soap:operation soapAction="http://tempuri.org/IRequest/ReEnroll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessValidationErrorReport">
+      <soap:operation soapAction="http://tempuri.org/IRequest/ProcessValidationErrorReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Enroll">
+      <soap:operation soapAction="http://tempuri.org/IRequest/Enroll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestMissingRate">
+      <soap:operation soapAction="http://tempuri.org/IRequest/RequestMissingRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Request">
+    <wsdl:port name="BasicHttpBinding_IRequest" binding="tns:BasicHttpBinding_IRequest">
+      <soap:address location="http://lpcnocws4:8077/Request.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

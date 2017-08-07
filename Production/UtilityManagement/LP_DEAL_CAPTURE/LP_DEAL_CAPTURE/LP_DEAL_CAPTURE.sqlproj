@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>LP_DEAL_CAPTURE</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5b46467e-52aa-44f4-8aec-7c064fca6732}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>LP_DEAL_CAPTURE</RootNamespace>
+    <AssemblyName>LP_DEAL_CAPTURE</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Database Triggers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\deal_contract_batch.sql" />
+    <Build Include="dbo\Tables\deal_pricing_detail.sql" />
+    <Build Include="dbo\Tables\deal_contract_default.sql" />
+    <Build Include="dbo\Tables\deal_pricing.sql" />
+    <Build Include="dbo\Tables\deal_rate.sql" />
+    <Build Include="dbo\Tables\zAudit_account_meters.sql" />
+    <Build Include="dbo\Tables\deal_account_address.sql" />
+    <Build Include="dbo\Tables\deal_account_contact.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_contract_batch.sql" />
+    <Build Include="dbo\Tables\deal_account_name.sql" />
+    <Build Include="dbo\Tables\multi_rates.sql" />
+    <Build Include="dbo\Tables\multi_rate_utility.sql" />
+    <Build Include="dbo\Tables\zAudit_campaign.sql" />
+    <Build Include="dbo\Tables\multi_rate_product.sql" />
+    <Build Include="dbo\Tables\multi_rate_rate.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_contract_default.sql" />
+    <Build Include="dbo\Tables\ST_GenieImportAttachments.sql" />
+    <Build Include="dbo\Tables\ST_GenieImportAttachments_BAK.sql" />
+    <Build Include="dbo\Tables\account_meters.sql" />
+    <Build Include="dbo\Tables\HeatGasPrice.sql" />
+    <Build Include="dbo\Tables\trace.sql" />
+    <Build Include="dbo\Tables\zAudit_campaign_comment.sql" />
+    <Build Include="dbo\Tables\deal_address.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_contract_error.sql" />
+    <Build Include="dbo\Tables\zAudit_campaign_detail.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_contract_print.sql" />
+    <Build Include="dbo\Tables\pricing_file_type.sql" />
+    <Build Include="dbo\Tables\pricing_role.sql" />
+    <Build Include="dbo\Tables\zAudit_campaign_header.sql" />
+    <Build Include="dbo\Tables\deal_get_key.sql" />
+    <Build Include="dbo\Tables\pricing.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_get_key.sql" />
+    <Build Include="dbo\Tables\ST_GenieImport.sql" />
+    <Build Include="dbo\Tables\zAudit_campaign_reason_code.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_name.sql" />
+    <Build Include="dbo\Tables\genie_temp_dump_jforero.sql" />
+    <Build Include="dbo\Tables\zAudit_campaign_retail_mkt.sql" />
+    <Build Include="dbo\Tables\T_GenieImport.sql" />
+    <Build Include="dbo\Tables\zAudit_multi_rate_product.sql" />
+    <Build Include="dbo\Tables\deal_contact.sql" />
+    <Build Include="dbo\Tables\zAudit_campaign_status.sql" />
+    <Build Include="dbo\Tables\SelfGeneration.sql" />
+    <Build Include="dbo\Tables\zAudit_multi_rate_rate.sql" />
+    <Build Include="dbo\Tables\dev_deal_capture.sql" />
+    <Build Include="dbo\Tables\pro_deal_capture.sql" />
+    <Build Include="dbo\Tables\pro_enrollment.sql" />
+    <Build Include="dbo\Tables\dev_enrollment.sql" />
+    <Build Include="dbo\Tables\dev_account.sql" />
+    <Build Include="dbo\Tables\zAudit_contract_temp.sql" />
+    <Build Include="dbo\Tables\pro_account.sql" />
+    <Build Include="dbo\Tables\zAudit_multi_rate_utility.sql" />
+    <Build Include="dbo\Tables\contract_tracking_details.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_address.sql" />
+    <Build Include="dbo\Tables\zAudit_multi_rates.sql" />
+    <Build Include="dbo\Tables\deal_contract_error.sql" />
+    <Build Include="dbo\Tables\deal_config.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_contract.sql" />
+    <Build Include="dbo\Tables\zip_to_zone.sql" />
+    <Build Include="dbo\Tables\deal_contract_print.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_config.sql" />
+    <Build Include="dbo\Tables\tbl_usp_contract_deal_ins_err.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_contract_account.sql" />
+    <Build Include="dbo\Tables\deal_name.sql" />
+    <Build Include="dbo\Tables\zAudit_deal_contact.sql" />
+    <Build Include="dbo\Tables\deal_contract_troubleshoot.sql" />
+    <Build Include="dbo\Tables\deal_contract_comment.sql" />
+    <Build Include="dbo\Tables\deal_contract.sql" />
+    <Build Include="dbo\Tables\deal_contract_account.sql" />
+    <Build Include="dbo\Tables\deal_contract_amend.sql" />
+    <Build Include="dbo\Tables\zPricing_audit.sql" />
+    <Build Include="Security\chrisruby.sql" />
+    <Build Include="Security\BUILTIN_Administrators.sql" />
+    <Build Include="Security\invoicing.sql" />
+    <Build Include="Security\svc_sql.sql" />
+    <Build Include="Security\LIBERTYPOWER_rdeigsler.sql" />
+    <Build Include="Security\NT AUTHORITY_NETWORK SERVICE.sql" />
+    <Build Include="Security\readonly.sql" />
+    <Build Include="Security\LIBERTYPOWER_webadmin.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQLProdSupportRO.sql" />
+    <Build Include="Security\LIBERTYPOWER_lpapplications_svc.sql" />
+    <Build Include="Security\readonly_msoffice.sql" />
+    <Build Include="Security\dmaia.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Reporting_ReadOn.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Rep_Ser_Read_svc.sql" />
+    <Build Include="Security\SQL_Rep_Ser_Read_svc.sql" />
+    <Build Include="Security\SQL_Rep_Ser_RW_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Rep_Ser_RW_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_sqlagent_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_gworthington.sql" />
+    <Build Include="Security\LIBERTYPOWER_atafur.sql" />
+    <Build Include="Security\mguevara.sql" />
+    <Build Include="Security\sqllinkedserver_svc.sql" />
+    <Build Include="Security\libertypower_pperez.sql" />
+    <Build Include="Security\LIBERTYPOWER_dmoretti.sql" />
+    <Build Include="Security\libertypower_sguddanti.sql" />
+    <Build Include="Security\LIBERTYPOWER_SvcSSISdmzctr.sql" />
+    <Build Include="Security\ReadOnly_Access_v1.sql" />
+    <Build Include="Security\ReadOnly_Excel_v1.sql" />
+    <Build Include="Security\LIBERTYPOWER_sscott.sql" />
+    <Build Include="Security\LnkSrvFrmSQL9Txn.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Comm_Rep_svc.sql" />
+    <Build Include="Security\LIBERTYPOWER_jmarsh.sql" />
+    <Build Include="Security\LIBERTYPOWER_clima.sql" />
+    <Build Include="Security\libertypower_lrosenblum.sql" />
+    <Build Include="Security\LIBERTYPOWER_rrusson.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQLProdSupportRW.sql" />
+    <Build Include="Security\mtm.sql" />
+    <Build Include="Security\LIBERTYPOWER_jforero.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\ufn_is_rate_accessible.sql" />
+    <Build Include="dbo\Functions\ufn_campaign_detail_count_attempt.sql" />
+    <Build Include="dbo\Functions\ufn_GetFirstDayNextMonth.sql" />
+    <Build Include="dbo\Functions\ufn_campaign_nextcalldate_attempt.sql" />
+    <Build Include="dbo\Functions\ufn_is_rate_accessible_bak.sql" />
+    <Build Include="dbo\Functions\ufn_is_rate_accessible_jmunoz.sql" />
+    <Build Include="dbo\Functions\ufn_AllContractAccounts.sql" />
+    <Build Include="dbo\Functions\ufn_custom_rates_sel.sql" />
+    <Build Include="dbo\Functions\ufn_account_detail_JFORERO.sql" />
+    <Build Include="dbo\Functions\ufn_account_detail_BAK.sql" />
+    <Build Include="dbo\Functions\ufn_account_detail_JFORERO2.sql" />
+    <Build Include="dbo\Functions\ufn_account_detail_BASE.sql" />
+    <Build Include="dbo\Functions\ufn_account_detail_eric.sql" />
+    <Build Include="dbo\Functions\ufn_account_sales_channel_bak.sql" />
+    <Build Include="dbo\Functions\ufn_account_sales_channel_jmunoz.sql" />
+    <Build Include="dbo\Functions\ufn_custom_rates_sel_bak.sql" />
+    <Build Include="dbo\Functions\ufn_custom_rates_sel_jmunoz.sql" />
+    <Build Include="dbo\Functions\ufn_account_sales_channel.sql" />
+    <Build Include="dbo\Functions\ufn_account_detail.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_sel_listbyusername_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingTermsSelect_prod.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_deal_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_sel_listbyusername_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingRatesSelect_PROD.sql" />
+    <Build Include="dbo\Stored Procedures\usp_list_sel_bylnk.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_sel_listbyusernameb_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingRatesSelect_test.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contracts_sel_list.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_sel_listbyusernameb_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_import_account_CHECKACCOUNT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_sales_channel_data_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utility_sel_listbyusername_for_scraper.sql" />
+    <Build Include="dbo\Stored Procedures\usp_rate_sel_listbyusername_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingRatesSelect_prod_20101217_1530.sql" />
+    <Build Include="dbo\Stored Procedures\usp_profitability_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_rate_sel_listbyusername_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_import_account_HISTORY.sql" />
+    <Build Include="dbo\Stored Procedures\usp_sales_channel_data_sel_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_duplicate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_sel_listbyusername.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_sel_list.sql" />
+    <Build Include="dbo\Stored Procedures\usp_sales_channel_data_sel_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_import_account_ACCOUNT_TEXAS.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingTermsForPrintSelect_test.sql" />
+    <Build Include="dbo\Stored Procedures\usp_HeatIndexSourceList.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_detail_del.sql" />
+    <Build Include="dbo\Stored Procedures\usp_term_months_sel_listbyusername_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_del.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contracts_accounts_sel_bycontract.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_del.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utility_sel_listbyusername_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_name_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_rate_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utility_sel_listbyusername_for_scraper_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_sel_list.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_address_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingTermsSelect_TEST2.sql" />
+    <Build Include="dbo\Stored Procedures\usp_views_sel_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_pricing_ins_test.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_comm_sel_list_by_saleschannel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_contact_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_name_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_roles_type_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_sel_list_by_user_category.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_address_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_contact_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_market_access_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingMarketsSelect_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_tracking_details_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingMarketsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingMarketsSelect_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_general_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingRatesSelect_JMUNOZ.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingRatesSelect_DBAREVIEW.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateAccountLanguagePreference.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contract_multi_rate_sel.sql" />
+    <Build Include="dbo\Stored Procedures\spGenie_Import_TEST.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_general_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contract_multi_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contract_multi_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contracts_multi_rate_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_VerifyLinks.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingRatesSelect_temp.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_meters_sel_by_account_number.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CustomTermsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CustomRatesSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_incomplete_deals_and_renewals_del.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CustomRateSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_HeatGasPriceSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contract_multi_rate_sel_byusername.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_HeatGasPriceUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CustomRatesDataSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PricingRequestSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_type_sel_listbyusername.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contracts_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingDefaultRatesSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_pricing_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_term_months_sel_listbyusername.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_select_list.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_market_sel_listbyusername.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_pricing_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_sel_list_by_saleschannel_BAK.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_files_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_utility_sel_listbyusername.sql" />
+    <Build Include="dbo\Stored Procedures\spGenie_GetRates.sql" />
+    <Build Include="dbo\Stored Procedures\usp_call_status_sel.sql" />
+    <Build Include="dbo\Stored Procedures\spGenie_Import.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_submit_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_submit_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_get_key.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GenieContactCopy.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_name_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GenieNameCopy.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_address_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GenieAddressCopy.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_contact_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_genie_contract_submit.sql" />
+    <Build Include="dbo\Stored Procedures\usp_genie_contract_submit_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_genie_contract_submit_ins.sql" />
+    <Build Include="dbo\Stored Procedures\spGenie_SaveContract.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_sel_list_by_saleschannel_bak20120206.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_name_sel_bylink.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_roles_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_address_sel_bylink.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_sel_list_by_saleschannel_test.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_file_type_name_by_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_contact_sel_bylink.sql" />
+    <Build Include="dbo\Stored Procedures\usp_flowdates_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_file_type_abbrev_by_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_submit_ins_old_20121012.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_file_by_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_file_types_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_submit_ins_POWERMOVE.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_file_del.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_tables_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_roles_by_pricing_id_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contracts_sel_byrequestid.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_roles_by_pricing_id_del.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_tables_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_role_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_link_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_tables_sel_list.sql" />
+    <Build Include="dbo\Stored Procedures\spGenie_PrepImport.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_file_ins_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_rate_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_tables_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_sel_list_by_saleschannel_BAK20120208.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contracts_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetAllContractAccounts.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SelfGenerationsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\create_zaudit.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetAllContractAccounts_JFORERO.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetAllContractAccounts_JFORERO_LUCA.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_submit_ins_JFORERO.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_error_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_sel_list_by_saleschannel_JFORERO.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_error_sel_list.sql" />
+    <Build Include="dbo\Stored Procedures\spGenie_GetRates_TEST.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_number_exists.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_error_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_sel_list_by_saleschannel_JMUNOZ.sql" />
+    <Build Include="dbo\Stored Procedures\spGenie_GetRates_NEW.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingDefaultRatesSelect_AT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_tracking_details_sel_list.sql" />
+    <Build Include="dbo\Stored Procedures\spGenie_GetRates_BAK.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingRatesSelect2.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_submit.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_override_rates.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contracts_account_sel_list_bysaleschannel.sql" />
+    <Build Include="dbo\Stored Procedures\GetPriceDetailsByPriceId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateRateSubmitInd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetPricingFromProductRate.sql" />
+    <Build Include="dbo\Stored Procedures\usp_unsubmitted_deals_list.sql" />
+    <Build Include="dbo\Stored Procedures\usp_import_account_DELETE.sql" />
+    <Build Include="dbo\Stored Procedures\usp_unsubmitted_deals_delete.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_default_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_views_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_zip_to_zone_lookup_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_sel_list_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_sel_list_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_select_list_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_select_list_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_default_val_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingUtilitiesSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_product_sel_list_by_user.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_default_val_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingTermsForPrintSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_upd.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingRatesForPrintSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_detail_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_express_val_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_rate_info_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_detail_sel_list.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_express_val_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_account_sel_list_by_saleschannel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_general_val_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_rate_sel_listbyusername.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_general_val_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_import_account_BUSSINESS.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_ins_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_ins_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_sel_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_pricing_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_import_account_3.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_sel_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_general_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_val_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_express_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_val_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_import_account.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contracts_account_sel_list_bysaleschannel_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contracts_account_sel_list_bysaleschannel_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_import_account_RETENTION.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingTermsSelect_prod_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_val.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingTermsSelect_prod_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingRatesSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_import_account_ACCOUNT.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingUtilitiesSelect_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingTermsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingUtilitiesSelect_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingProductsSelect.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_sel_listbyusernameb.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_comment_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_product_sel_list_by_user_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_submit_batch_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deal_pricing_product_sel_list_by_user_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_market_sel_listbyusername_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_market_sel_listbyusername_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_print_contracts_empty_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_files_sel_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_files_sel_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_roles_by_pricing_id_sel_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_exists.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_roles_by_pricing_id_sel_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_preprinted_contract_ins.sql" />
+    <Build Include="dbo\Stored Procedures\usp_preprinted_contract_nbr_high_sel.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_roles_sel_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_pricing_roles_sel_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\usp_contract_account_del_all.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_sel_list_by_user_category_bak.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyPricingTermsSelect_test.sql" />
+    <Build Include="dbo\Stored Procedures\usp_product_sel_list_by_user_category_jmunoz.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllTableSizes.sql" />
+    <Build Include="Database Triggers\DBTrg_Audit_schema_changes.sql" />
+    <Build Include="Security\LIBERTYPOWER_SQL_Comm_Rep_svc_1.sql" />
+    <Build Include="Security\LnkSrvFrmSQL9Txn_1.sql" />
+    <Build Include="Security\readonly_msoffice_1.sql" />
+  </ItemGroup>
+</Project>

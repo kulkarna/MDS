@@ -1,0 +1,2265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LpDealCaptureModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LpDealCaptureModelStoreContainer">
+          <EntitySet Name="account_meters" EntityType="LpDealCaptureModel.Store.account_meters" store:Type="Tables" store:Schema="dbo" store:Name="account_meters">
+            <DefiningQuery>SELECT 
+      [account_meters].[account_id] AS [account_id], 
+      [account_meters].[meter_number] AS [meter_number]
+      FROM [dbo].[account_meters] AS [account_meters]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CancelContractReason" EntityType="LpDealCaptureModel.Store.CancelContractReason" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContractPromotionCode" EntityType="LpDealCaptureModel.Store.ContractPromotionCode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="deal_account_address" EntityType="LpDealCaptureModel.Store.deal_account_address" store:Type="Tables" store:Schema="dbo" store:Name="deal_account_address">
+            <DefiningQuery>SELECT 
+      [deal_account_address].[account_id] AS [account_id], 
+      [deal_account_address].[address_link] AS [address_link], 
+      [deal_account_address].[address] AS [address], 
+      [deal_account_address].[suite] AS [suite], 
+      [deal_account_address].[city] AS [city], 
+      [deal_account_address].[state] AS [state], 
+      [deal_account_address].[zip] AS [zip], 
+      [deal_account_address].[county] AS [county], 
+      [deal_account_address].[state_fips] AS [state_fips], 
+      [deal_account_address].[county_fips] AS [county_fips], 
+      [deal_account_address].[chgstamp] AS [chgstamp]
+      FROM [dbo].[deal_account_address] AS [deal_account_address]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="deal_account_contact" EntityType="LpDealCaptureModel.Store.deal_account_contact" store:Type="Tables" store:Schema="dbo" store:Name="deal_account_contact">
+            <DefiningQuery>SELECT 
+      [deal_account_contact].[account_id] AS [account_id], 
+      [deal_account_contact].[contact_link] AS [contact_link], 
+      [deal_account_contact].[first_name] AS [first_name], 
+      [deal_account_contact].[last_name] AS [last_name], 
+      [deal_account_contact].[title] AS [title], 
+      [deal_account_contact].[phone] AS [phone], 
+      [deal_account_contact].[fax] AS [fax], 
+      [deal_account_contact].[email] AS [email], 
+      [deal_account_contact].[birthday] AS [birthday], 
+      [deal_account_contact].[chgstamp] AS [chgstamp]
+      FROM [dbo].[deal_account_contact] AS [deal_account_contact]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="deal_account_name" EntityType="LpDealCaptureModel.Store.deal_account_name" store:Type="Tables" store:Schema="dbo" store:Name="deal_account_name">
+            <DefiningQuery>SELECT 
+      [deal_account_name].[account_id] AS [account_id], 
+      [deal_account_name].[name_link] AS [name_link], 
+      [deal_account_name].[full_name] AS [full_name], 
+      [deal_account_name].[chgstamp] AS [chgstamp]
+      FROM [dbo].[deal_account_name] AS [deal_account_name]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="deal_address" EntityType="LpDealCaptureModel.Store.deal_address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="deal_contact" EntityType="LpDealCaptureModel.Store.deal_contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="deal_contract" EntityType="LpDealCaptureModel.Store.deal_contract" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="deal_contract_account" EntityType="LpDealCaptureModel.Store.deal_contract_account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="deal_contract_print" EntityType="LpDealCaptureModel.Store.deal_contract_print" store:Type="Tables" store:Schema="dbo" store:Name="deal_contract_print">
+            <DefiningQuery>SELECT 
+      [deal_contract_print].[request_id] AS [request_id], 
+      [deal_contract_print].[status] AS [status], 
+      [deal_contract_print].[contract_nbr] AS [contract_nbr], 
+      [deal_contract_print].[username] AS [username], 
+      [deal_contract_print].[retail_mkt_id] AS [retail_mkt_id], 
+      [deal_contract_print].[puc_certification_number] AS [puc_certification_number], 
+      [deal_contract_print].[utility_id] AS [utility_id], 
+      [deal_contract_print].[product_id] AS [product_id], 
+      [deal_contract_print].[rate_id] AS [rate_id], 
+      [deal_contract_print].[rate] AS [rate], 
+      [deal_contract_print].[rate_descp] AS [rate_descp], 
+      [deal_contract_print].[term_months] AS [term_months], 
+      [deal_contract_print].[contract_eff_start_date] AS [contract_eff_start_date], 
+      [deal_contract_print].[grace_period] AS [grace_period], 
+      [deal_contract_print].[date_created] AS [date_created], 
+      [deal_contract_print].[contract_template] AS [contract_template], 
+      [deal_contract_print].[contract_rate_type] AS [contract_rate_type], 
+      [deal_contract_print].[TemplateId] AS [TemplateId], 
+      [deal_contract_print].[sales_channel_role] AS [sales_channel_role], 
+      [deal_contract_print].[PriceID] AS [PriceID], 
+      [deal_contract_print].[PriceTier] AS [PriceTier], 
+      [deal_contract_print].[RateString] AS [RateString], 
+      [deal_contract_print].[SubTermString] AS [SubTermString]
+      FROM [dbo].[deal_contract_print] AS [deal_contract_print]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="deal_get_key" EntityType="LpDealCaptureModel.Store.deal_get_key" store:Type="Tables" store:Schema="dbo" store:Name="deal_get_key">
+            <DefiningQuery>SELECT 
+      [deal_get_key].[process_id] AS [process_id], 
+      [deal_get_key].[start_date] AS [start_date], 
+      [deal_get_key].[last_number] AS [last_number]
+      FROM [dbo].[deal_get_key] AS [deal_get_key]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="deal_name" EntityType="LpDealCaptureModel.Store.deal_name" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="deal_pricing" EntityType="LpDealCaptureModel.Store.deal_pricing" store:Type="Tables" store:Schema="dbo" store:Name="deal_pricing">
+            <DefiningQuery>SELECT 
+      [deal_pricing].[deal_pricing_id] AS [deal_pricing_id], 
+      [deal_pricing].[account_name] AS [account_name], 
+      [deal_pricing].[sales_channel_role] AS [sales_channel_role], 
+      [deal_pricing].[commission_rate] AS [commission_rate], 
+      [deal_pricing].[date_expired] AS [date_expired], 
+      [deal_pricing].[date_created] AS [date_created], 
+      [deal_pricing].[username] AS [username], 
+      [deal_pricing].[date_modified] AS [date_modified], 
+      [deal_pricing].[modified_by] AS [modified_by], 
+      [deal_pricing].[pricing_request_id] AS [pricing_request_id], 
+      [deal_pricing].[CustomDealID] AS [CustomDealID]
+      FROM [dbo].[deal_pricing] AS [deal_pricing]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="deal_pricing_detail" EntityType="LpDealCaptureModel.Store.deal_pricing_detail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="deal_rate" EntityType="LpDealCaptureModel.Store.deal_rate" store:Type="Tables" store:Schema="dbo" store:Name="deal_rate">
+            <DefiningQuery>SELECT 
+      [deal_rate].[deal_rate_id] AS [deal_rate_id], 
+      [deal_rate].[rate_cap] AS [rate_cap]
+      FROM [dbo].[deal_rate] AS [deal_rate]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="InCompleteContractCancelReason" EntityType="LpDealCaptureModel.Store.InCompleteContractCancelReason" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RejectedContractMessage" EntityType="LpDealCaptureModel.Store.RejectedContractMessage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TabletIncompleteContract" EntityType="LpDealCaptureModel.Store.TabletIncompleteContract" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_deal_capture.dbo.account_meters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="account_meters">
+          <Key>
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="meter_number" />
+          </Key>
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="meter_number" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CancelContractReason">
+          <Key>
+            <PropertyRef Name="CancelContractReasonId" />
+          </Key>
+          <Property Name="CancelContractReasonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ContractPromotionCode">
+          <Key>
+            <PropertyRef Name="ContractPromotionCodeId" />
+          </Key>
+          <Property Name="ContractPromotionCodeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContractId" Type="int" Nullable="false" />
+          <Property Name="AccountId" Type="int" />
+          <Property Name="PromotionCodeId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_deal_capture.dbo.deal_account_address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="deal_account_address">
+          <Key>
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="address_link" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="suite" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="state" />
+            <PropertyRef Name="zip" />
+            <PropertyRef Name="county" />
+            <PropertyRef Name="state_fips" />
+            <PropertyRef Name="county_fips" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="address_link" Type="int" Nullable="false" />
+          <Property Name="address" Type="char" Nullable="false" MaxLength="50" />
+          <Property Name="suite" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="city" Type="char" Nullable="false" MaxLength="28" />
+          <Property Name="state" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="zip" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="county" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="state_fips" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="county_fips" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_deal_capture.dbo.deal_account_contact' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="deal_account_contact">
+          <Key>
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="contact_link" />
+            <PropertyRef Name="first_name" />
+            <PropertyRef Name="last_name" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="phone" />
+            <PropertyRef Name="fax" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="contact_link" Type="int" Nullable="false" />
+          <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="title" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="fax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="birthday" Type="char" MaxLength="5" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_deal_capture.dbo.deal_account_name' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="deal_account_name">
+          <Key>
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="name_link" />
+            <PropertyRef Name="full_name" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="name_link" Type="int" Nullable="false" />
+          <Property Name="full_name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deal_address">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="contract_nbr" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="address_link" Type="int" Nullable="false" />
+          <Property Name="address" Type="char" Nullable="false" MaxLength="50" />
+          <Property Name="suite" Type="char" Nullable="false" MaxLength="50" />
+          <Property Name="city" Type="char" Nullable="false" MaxLength="50" />
+          <Property Name="state" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="zip" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="county" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="state_fips" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="county_fips" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deal_contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="contract_nbr" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="contact_link" Type="int" Nullable="false" />
+          <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="title" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="fax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="birthday" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deal_contract">
+          <Key>
+            <PropertyRef Name="contract_nbr" />
+          </Key>
+          <Property Name="contract_nbr" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="contract_type" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="status" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="retail_mkt_id" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="utility_id" Type="char" Nullable="false" MaxLength="15" />
+          <Property Name="account_type" Type="int" />
+          <Property Name="product_id" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="rate_id" Type="int" Nullable="false" />
+          <Property Name="rate" Type="float" Nullable="false" />
+          <Property Name="customer_name_link" Type="int" Nullable="false" />
+          <Property Name="customer_address_link" Type="int" Nullable="false" />
+          <Property Name="customer_contact_link" Type="int" Nullable="false" />
+          <Property Name="billing_address_link" Type="int" Nullable="false" />
+          <Property Name="billing_contact_link" Type="int" Nullable="false" />
+          <Property Name="owner_name_link" Type="int" Nullable="false" />
+          <Property Name="service_address_link" Type="int" Nullable="false" />
+          <Property Name="business_type" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="business_activity" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="additional_id_nbr_type" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="additional_id_nbr" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="contract_eff_start_date" Type="datetime" Nullable="false" />
+          <Property Name="enrollment_type" Type="int" />
+          <Property Name="term_months" Type="int" Nullable="false" />
+          <Property Name="date_end" Type="datetime" Nullable="false" />
+          <Property Name="date_deal" Type="datetime" Nullable="false" />
+          <Property Name="date_created" Type="datetime" Nullable="false" />
+          <Property Name="date_submit" Type="datetime" Nullable="false" />
+          <Property Name="sales_channel_role" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="username" Type="nchar" Nullable="false" MaxLength="100" />
+          <Property Name="sales_rep" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="origin" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="grace_period" Type="int" Nullable="false" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+          <Property Name="contract_rate_type" Type="varchar" MaxLength="50" />
+          <Property Name="requested_flow_start_date" Type="datetime" />
+          <Property Name="deal_type" Type="char" MaxLength="20" />
+          <Property Name="customer_code" Type="char" MaxLength="5" />
+          <Property Name="customer_group" Type="char" MaxLength="100" />
+          <Property Name="SSNClear" Type="nvarchar" MaxLength="100" />
+          <Property Name="SSNEncrypted" Type="nvarchar" MaxLength="512" />
+          <Property Name="CreditScoreEncrypted" Type="nvarchar" MaxLength="512" />
+          <Property Name="HeatIndexSourceID" Type="int" />
+          <Property Name="HeatRate" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="evergreen_option_id" Type="int" />
+          <Property Name="evergreen_commission_end" Type="datetime" />
+          <Property Name="residual_option_id" Type="int" />
+          <Property Name="residual_commission_end" Type="datetime" />
+          <Property Name="initial_pymt_option_id" Type="int" />
+          <Property Name="sales_manager" Type="varchar" MaxLength="100" />
+          <Property Name="evergreen_commission_rate" Type="float" />
+          <Property Name="TaxStatus" Type="int" />
+          <Property Name="PriceID" Type="bigint" />
+          <Property Name="PriceTier" Type="int" />
+          <Property Name="RatesString" Type="varchar" MaxLength="200" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CurrentNumber" Type="char" MaxLength="12" />
+          <Property Name="CurrentContAcc" Type="char" MaxLength="10" />
+          <Property Name="ClientSubmitApplicationKeyId" Type="int" />
+        </EntityType>
+        <EntityType Name="deal_contract_account">
+          <Key>
+            <PropertyRef Name="contract_nbr" />
+            <PropertyRef Name="account_number" />
+          </Key>
+          <Property Name="contract_nbr" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="contract_type" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="account_number" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="status" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="retail_mkt_id" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="utility_id" Type="char" Nullable="false" MaxLength="15" />
+          <Property Name="account_type" Type="int" />
+          <Property Name="product_id" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="rate_id" Type="int" Nullable="false" />
+          <Property Name="rate" Type="float" Nullable="false" />
+          <Property Name="account_name_link" Type="int" Nullable="false" />
+          <Property Name="customer_name_link" Type="int" Nullable="false" />
+          <Property Name="customer_address_link" Type="int" Nullable="false" />
+          <Property Name="customer_contact_link" Type="int" Nullable="false" />
+          <Property Name="billing_address_link" Type="int" Nullable="false" />
+          <Property Name="billing_contact_link" Type="int" Nullable="false" />
+          <Property Name="owner_name_link" Type="int" Nullable="false" />
+          <Property Name="service_address_link" Type="int" Nullable="false" />
+          <Property Name="business_type" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="business_activity" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="additional_id_nbr_type" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="additional_id_nbr" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="contract_eff_start_date" Type="datetime" Nullable="false" />
+          <Property Name="enrollment_type" Type="int" />
+          <Property Name="term_months" Type="int" Nullable="false" />
+          <Property Name="date_end" Type="datetime" Nullable="false" />
+          <Property Name="date_deal" Type="datetime" Nullable="false" />
+          <Property Name="date_created" Type="datetime" Nullable="false" />
+          <Property Name="date_submit" Type="datetime" Nullable="false" />
+          <Property Name="sales_channel_role" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="username" Type="nchar" Nullable="false" MaxLength="100" />
+          <Property Name="sales_rep" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="origin" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="grace_period" Type="int" Nullable="false" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+          <Property Name="requested_flow_start_date" Type="datetime" />
+          <Property Name="deal_type" Type="char" MaxLength="20" />
+          <Property Name="customer_code" Type="char" MaxLength="5" />
+          <Property Name="customer_group" Type="char" MaxLength="100" />
+          <Property Name="SSNClear" Type="nvarchar" MaxLength="100" />
+          <Property Name="SSNEncrypted" Type="nvarchar" MaxLength="512" />
+          <Property Name="CreditScoreEncrypted" Type="nvarchar" MaxLength="512" />
+          <Property Name="HeatIndexSourceID" Type="int" />
+          <Property Name="HeatRate" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="evergreen_option_id" Type="int" />
+          <Property Name="evergreen_commission_end" Type="datetime" />
+          <Property Name="residual_option_id" Type="int" />
+          <Property Name="residual_commission_end" Type="datetime" />
+          <Property Name="initial_pymt_option_id" Type="int" />
+          <Property Name="evergreen_commission_rate" Type="float" />
+          <Property Name="zone" Type="varchar" MaxLength="20" />
+          <Property Name="TaxStatus" Type="int" />
+          <Property Name="PriceID" Type="bigint" />
+          <Property Name="RatesString" Type="varchar" MaxLength="200" />
+          <Property Name="IsForSave" Type="bit" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_deal_capture.dbo.deal_contract_print' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="deal_contract_print">
+          <Key>
+            <PropertyRef Name="request_id" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="contract_nbr" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="retail_mkt_id" />
+            <PropertyRef Name="puc_certification_number" />
+            <PropertyRef Name="utility_id" />
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="rate_id" />
+            <PropertyRef Name="rate" />
+            <PropertyRef Name="rate_descp" />
+            <PropertyRef Name="term_months" />
+            <PropertyRef Name="contract_eff_start_date" />
+            <PropertyRef Name="grace_period" />
+            <PropertyRef Name="date_created" />
+            <PropertyRef Name="contract_template" />
+          </Key>
+          <Property Name="request_id" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="status" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="contract_nbr" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="username" Type="nchar" Nullable="false" MaxLength="100" />
+          <Property Name="retail_mkt_id" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="puc_certification_number" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="utility_id" Type="char" Nullable="false" MaxLength="15" />
+          <Property Name="product_id" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="rate_id" Type="int" Nullable="false" />
+          <Property Name="rate" Type="float" Nullable="false" />
+          <Property Name="rate_descp" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="term_months" Type="int" Nullable="false" />
+          <Property Name="contract_eff_start_date" Type="datetime" Nullable="false" />
+          <Property Name="grace_period" Type="int" Nullable="false" />
+          <Property Name="date_created" Type="datetime" Nullable="false" />
+          <Property Name="contract_template" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="contract_rate_type" Type="varchar" MaxLength="50" />
+          <Property Name="TemplateId" Type="int" />
+          <Property Name="sales_channel_role" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriceID" Type="bigint" />
+          <Property Name="PriceTier" Type="int" />
+          <Property Name="RateString" Type="nvarchar" MaxLength="200" />
+          <Property Name="SubTermString" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_deal_capture.dbo.deal_get_key' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="deal_get_key">
+          <Key>
+            <PropertyRef Name="process_id" />
+            <PropertyRef Name="start_date" />
+            <PropertyRef Name="last_number" />
+          </Key>
+          <Property Name="process_id" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="start_date" Type="datetime" Nullable="false" />
+          <Property Name="last_number" Type="numeric" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deal_name">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="contract_nbr" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="name_link" Type="int" Nullable="false" />
+          <Property Name="full_name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_deal_capture.dbo.deal_pricing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="deal_pricing">
+          <Key>
+            <PropertyRef Name="deal_pricing_id" />
+            <PropertyRef Name="account_name" />
+            <PropertyRef Name="sales_channel_role" />
+            <PropertyRef Name="date_created" />
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="deal_pricing_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="account_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="sales_channel_role" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="commission_rate" Type="float" />
+          <Property Name="date_expired" Type="datetime" />
+          <Property Name="date_created" Type="datetime" Nullable="false" />
+          <Property Name="username" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="date_modified" Type="datetime" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+          <Property Name="pricing_request_id" Type="varchar" MaxLength="50" />
+          <Property Name="CustomDealID" Type="int" />
+        </EntityType>
+        <EntityType Name="deal_pricing_detail">
+          <Key>
+            <PropertyRef Name="deal_pricing_detail_id" />
+          </Key>
+          <Property Name="deal_pricing_detail_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="deal_pricing_id" Type="int" Nullable="false" />
+          <Property Name="product_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="rate_id" Type="int" Nullable="false" />
+          <Property Name="date_created" Type="datetime" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="date_modified" Type="datetime" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" />
+          <Property Name="rate_submit_ind" Type="bit" Nullable="false" />
+          <Property Name="ContractRate" Type="decimal" Nullable="false" Precision="9" Scale="6" />
+          <Property Name="Commission" Type="decimal" Nullable="false" Precision="9" Scale="6" />
+          <Property Name="Cost" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="MTM" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="HasPassThrough" Type="int" />
+          <Property Name="BackToBack" Type="int" />
+          <Property Name="HeatIndexSourceID" Type="int" />
+          <Property Name="HeatRate" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="ExpectedTermUsage" Type="int" />
+          <Property Name="ExpectedAccountsAmount" Type="int" />
+          <Property Name="ETP" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="PriceID" Type="bigint" />
+          <Property Name="SelfGenerationID" Type="int" />
+          <Property Name="BillingTypeId" Type="int" />
+          <Property Name="PriceTypeID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_deal_capture.dbo.deal_rate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="deal_rate">
+          <Key>
+            <PropertyRef Name="deal_rate_id" />
+            <PropertyRef Name="rate_cap" />
+          </Key>
+          <Property Name="deal_rate_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="rate_cap" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InCompleteContractCancelReason">
+          <Key>
+            <PropertyRef Name="InCompleteContractCancelReasonID" />
+          </Key>
+          <Property Name="InCompleteContractCancelReasonID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TabletIncompleteContractId" Type="int" Nullable="false" />
+          <Property Name="CancelContractReasonId" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RejectedContractMessage">
+          <Key>
+            <PropertyRef Name="RejectedContractMessageID" />
+          </Key>
+          <Property Name="RejectedContractMessageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContractNumber" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="EmailTypeID" Type="int" Nullable="false" />
+          <Property Name="ErrorMessage" Type="varchar" MaxLength="4000" />
+          <Property Name="Subject" Type="varchar" MaxLength="4000" />
+          <Property Name="Body" Type="varchar(max)" />
+          <Property Name="ToEmail" Type="varchar" MaxLength="1000" />
+          <Property Name="CustomerEmail" Type="nchar" MaxLength="100" />
+          <Property Name="SalesChannelEmail" Type="nchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TabletIncompleteContract">
+          <Key>
+            <PropertyRef Name="TabletIncompleteContractID" />
+          </Key>
+          <Property Name="TabletIncompleteContractID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContractNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="SalesChannelID" Type="int" Nullable="false" />
+          <Property Name="AgentId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="AdditionalNotes" Type="nvarchar" MaxLength="500" />
+          <Property Name="AccountNumber" Type="nchar" MaxLength="25" />
+          <Property Name="RetailMarketId" Type="int" />
+          <Property Name="UtilityId" Type="int" />
+          <Property Name="Zone" Type="nvarchar" MaxLength="10" />
+          <Property Name="AccountTypeId" Type="int" />
+          <Property Name="ProductBrandId" Type="int" />
+          <Property Name="ContractStartDate" Type="datetime" />
+          <Property Name="Term" Type="int" />
+          <Property Name="ServiceClassId" Type="nvarchar" MaxLength="10" />
+          <Property Name="TierId" Type="int" />
+          <Property Name="PriceId" Type="bigint" />
+          <Property Name="BACity" Type="nvarchar" MaxLength="50" />
+          <Property Name="BAState" Type="nvarchar" MaxLength="50" />
+          <Property Name="BAStreet" Type="nvarchar" MaxLength="50" />
+          <Property Name="BAZip" Type="nchar" MaxLength="10" />
+          <Property Name="BCEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="BCFax" Type="nchar" MaxLength="10" />
+          <Property Name="BCFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BCLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BCPhone" Type="nchar" MaxLength="10" />
+          <Property Name="BCTitle" Type="nchar" MaxLength="10" />
+          <Property Name="SACity" Type="nvarchar" MaxLength="50" />
+          <Property Name="SAState" Type="nvarchar" MaxLength="50" />
+          <Property Name="SAStreet" Type="nvarchar" MaxLength="50" />
+          <Property Name="SAZip" Type="nchar" MaxLength="10" />
+          <Property Name="CISSN" Type="nchar" MaxLength="10" />
+          <Property Name="CIEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="CIFax" Type="nchar" MaxLength="10" />
+          <Property Name="CIFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CILastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CIPhone" Type="nchar" MaxLength="10" />
+          <Property Name="CITitle" Type="nchar" MaxLength="10" />
+          <Property Name="CACity" Type="nvarchar" MaxLength="50" />
+          <Property Name="CAState" Type="nvarchar" MaxLength="50" />
+          <Property Name="CAStreet" Type="nvarchar" MaxLength="50" />
+          <Property Name="CASuite" Type="nvarchar" MaxLength="50" />
+          <Property Name="CAZip" Type="nchar" MaxLength="10" />
+          <Property Name="BusinessName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DBA" Type="nvarchar" MaxLength="50" />
+          <Property Name="BusinessType" Type="nchar" MaxLength="10" />
+          <Property Name="DUNS" Type="nchar" MaxLength="10" />
+          <Property Name="ContractTypeId" Type="int" />
+          <Property Name="TaxId" Type="nchar" MaxLength="10" />
+          <Property Name="Language" Type="nchar" MaxLength="10" />
+          <Property Name="PromoCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Origin" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientSubmitApplicationKey" Type="uniqueidentifier" />
+          <Property Name="Review" Type="nvarchar" MaxLength="2000" />
+          <Property Name="OutCome" Type="bit" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="AudioLength" Type="bigint" />
+        </EntityType>
+        <Function Name="spGenie_GetQualifiersforToday" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGenie_GetRates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExpirationFlag" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_contract_account_ins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_username" Type="nchar" Mode="In" />
+          <Parameter Name="p_contract_nbr" Type="char" Mode="In" />
+          <Parameter Name="p_account_number" Type="varchar" Mode="In" />
+          <Parameter Name="p_error" Type="char" Mode="In" />
+          <Parameter Name="p_meter_number" Type="varchar" Mode="In" />
+          <Parameter Name="p_msg_id" Type="char" Mode="In" />
+          <Parameter Name="p_descp" Type="varchar" Mode="In" />
+          <Parameter Name="p_result_ind" Type="char" Mode="In" />
+          <Parameter Name="p_utility_id" Type="char" Mode="In" />
+          <Parameter Name="p_zone" Type="varchar" Mode="In" />
+          <Parameter Name="PriceID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="usp_contract_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_username" Type="nchar" Mode="In" />
+          <Parameter Name="p_contract_nbr" Type="char" Mode="In" />
+          <Parameter Name="p_account_number" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_deal_pricing_tables_sel_list" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_username" Type="varchar" Mode="In" />
+          <Parameter Name="p_sales_channel_role" Type="varchar" Mode="In" />
+          <Parameter Name="p_market_id" Type="varchar" Mode="In" />
+          <Parameter Name="p_utility_id" Type="varchar" Mode="In" />
+          <Parameter Name="p_product_id" Type="varchar" Mode="In" />
+          <Parameter Name="p_account_name" Type="varchar" Mode="In" />
+          <Parameter Name="p_pricing_request_id" Type="varchar" Mode="In" />
+          <Parameter Name="p_account_type" Type="int" Mode="In" />
+          <Parameter Name="p_show_expired" Type="bit" Mode="In" />
+          <Parameter Name="p_order_by" Type="varchar" Mode="In" />
+          <Parameter Name="p_show_new_tables" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_get_key" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_username" Type="nchar" Mode="In" />
+          <Parameter Name="p_process_id" Type="varchar" Mode="In" />
+          <Parameter Name="p_unickey" Type="varchar" Mode="InOut" />
+          <Parameter Name="p_result_ind" Type="char" Mode="In" />
+        </Function>
+        <Function Name="usp_GetFilteredIncompleteContractsWithAudio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="startdate" Type="datetime" Mode="In" />
+          <Parameter Name="enddate" Type="datetime" Mode="In" />
+          <Parameter Name="channelid" Type="int" Mode="In" />
+          <Parameter Name="agentid" Type="int" Mode="In" />
+          <Parameter Name="actionstep" Type="int" Mode="In" />
+          <Parameter Name="marketid" Type="int" Mode="In" />
+          <Parameter Name="zipcode" Type="varchar" Mode="In" />
+          <Parameter Name="audiolengthmin" Type="bigint" Mode="In" />
+          <Parameter Name="audiolengthmax" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="usp_views_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_username" Type="nchar" Mode="In" />
+          <Parameter Name="p_process_id" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LpDealCaptureModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LpDealCaptureEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="account_meters" EntityType="LpDealCaptureModel.account_meters" />
+          <EntitySet Name="deal_account_address" EntityType="LpDealCaptureModel.deal_account_address" />
+          <EntitySet Name="deal_account_contact" EntityType="LpDealCaptureModel.deal_account_contact" />
+          <EntitySet Name="deal_account_name" EntityType="LpDealCaptureModel.deal_account_name" />
+          <EntitySet Name="deal_contract_print" EntityType="LpDealCaptureModel.deal_contract_print" />
+          <EntitySet Name="deal_get_key" EntityType="LpDealCaptureModel.deal_get_key" />
+          <EntitySet Name="deal_rate" EntityType="LpDealCaptureModel.deal_rate" />
+          <FunctionImport Name="spGenie_GetRates" ReturnType="Collection(LpDealCaptureModel.spGenie_GetRates_Result)">
+          <Parameter Name="ExpirationFlag" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_deal_pricing_tables_sel_list" ReturnType="Collection(LpDealCaptureModel.usp_deal_pricing_tables_sel_list_Result)">
+            <Parameter Name="p_username" Mode="In" Type="String" />
+            <Parameter Name="p_sales_channel_role" Mode="In" Type="String" />
+            <Parameter Name="p_market_id" Mode="In" Type="String" />
+            <Parameter Name="p_utility_id" Mode="In" Type="String" />
+            <Parameter Name="p_product_id" Mode="In" Type="String" />
+            <Parameter Name="p_account_name" Mode="In" Type="String" />
+            <Parameter Name="p_pricing_request_id" Mode="In" Type="String" />
+            <Parameter Name="p_account_type" Mode="In" Type="Int32" />
+            <Parameter Name="p_show_expired" Mode="In" Type="Boolean" />
+            <Parameter Name="p_order_by" Mode="In" Type="String" />
+            <Parameter Name="p_show_new_tables" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <EntitySet Name="deal_pricing" EntityType="LpDealCaptureModel.deal_pricing" />
+          <FunctionImport Name="usp_contract_sel" ReturnType="Collection(LpDealCaptureModel.usp_contract_sel_Result)">
+            <Parameter Name="p_username" Mode="In" Type="String" />
+            <Parameter Name="p_contract_nbr" Mode="In" Type="String" />
+            <Parameter Name="p_account_number" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_contract_sel1" ReturnType="Collection(LpDealCaptureModel.usp_contract_sel_Result)">
+            <Parameter Name="p_username" Mode="In" Type="String" />
+            <Parameter Name="p_contract_nbr" Mode="In" Type="String" />
+            <Parameter Name="p_account_number" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="deal_pricing_detail" EntityType="LpDealCaptureModel.deal_pricing_detail" />
+          <FunctionImport Name="spGenie_GetQualifiersforToday" ReturnType="Collection(LpDealCaptureModel.spGenie_GetQualifiersforToday_Result)" />
+          <EntitySet Name="deal_contract_account" EntityType="LpDealCaptureModel.deal_contract_account" />
+          <EntitySet Name="deal_contract" EntityType="LpDealCaptureModel.deal_contract" />
+          <EntitySet Name="CancelContractReasons" EntityType="LpDealCaptureModel.CancelContractReason" />
+          <EntitySet Name="InCompleteContractCancelReasons" EntityType="LpDealCaptureModel.InCompleteContractCancelReason" />
+          <EntitySet Name="TabletIncompleteContracts" EntityType="LpDealCaptureModel.TabletIncompleteContract" />
+          <FunctionImport Name="usp_get_key" ReturnType="Collection(String)">
+            <Parameter Name="p_username" Mode="In" Type="String" />
+            <Parameter Name="p_process_id" Mode="In" Type="String" />
+            <Parameter Name="p_unickey" Mode="InOut" Type="String" />
+            <Parameter Name="p_result_ind" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_contract_account_ins" ReturnType="Collection(String)">
+            <Parameter Name="p_username" Mode="In" Type="String" />
+            <Parameter Name="p_contract_nbr" Mode="In" Type="String" />
+            <Parameter Name="p_account_number" Mode="In" Type="String" />
+            <Parameter Name="p_error" Mode="In" Type="String" />
+            <Parameter Name="p_meter_number" Mode="In" Type="String" />
+            <Parameter Name="p_msg_id" Mode="In" Type="String" />
+            <Parameter Name="p_descp" Mode="In" Type="String" />
+            <Parameter Name="p_result_ind" Mode="In" Type="String" />
+            <Parameter Name="p_utility_id" Mode="In" Type="String" />
+            <Parameter Name="p_zone" Mode="In" Type="String" />
+            <Parameter Name="PriceID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="deal_address" EntityType="LpDealCaptureModel.deal_address" />
+          <EntitySet Name="deal_contact" EntityType="LpDealCaptureModel.deal_contact" />
+          <EntitySet Name="deal_name" EntityType="LpDealCaptureModel.deal_name" />
+          <FunctionImport Name="usp_views_sel" ReturnType="Collection(LpDealCaptureModel.usp_views_sel_Result)">
+            <Parameter Name="p_username" Mode="In" Type="String" />
+            <Parameter Name="p_process_id" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="ContractPromotionCodes" EntityType="LpDealCaptureModel.ContractPromotionCode" />
+          <FunctionImport Name="usp_GetFilteredIncompleteContractsWithAudio" ReturnType="Collection(LpDealCaptureModel.usp_GetFilteredIncompleteContractsWithAudio_Result)">
+            <Parameter Name="startdate" Mode="In" Type="DateTime" />
+            <Parameter Name="enddate" Mode="In" Type="DateTime" />
+            <Parameter Name="channelid" Mode="In" Type="Int32" />
+            <Parameter Name="agentid" Mode="In" Type="Int32" />
+            <Parameter Name="actionstep" Mode="In" Type="Int32" />
+            <Parameter Name="marketid" Mode="In" Type="Int32" />
+            <Parameter Name="zipcode" Mode="In" Type="String" />
+            <Parameter Name="audiolengthmin" Mode="In" Type="Int64" />
+            <Parameter Name="audiolengthmax" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="RejectedContractMessages" EntityType="LpDealCaptureModel.RejectedContractMessage" />
+        </EntityContainer>
+        <EntityType Name="account_meters">
+          <Key>
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="meter_number" />
+          </Key>
+          <Property Name="account_id" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="true" />
+          <Property Name="meter_number" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="deal_account_address">
+          <Key>
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="address_link" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="suite" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="state" />
+            <PropertyRef Name="zip" />
+            <PropertyRef Name="county" />
+            <PropertyRef Name="state_fips" />
+            <PropertyRef Name="county_fips" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Name="account_id" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="true" />
+          <Property Name="address_link" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="true" />
+          <Property Name="suite" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="28" Unicode="false" FixedLength="true" />
+          <Property Name="state" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="zip" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="county" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="state_fips" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="county_fips" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="chgstamp" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deal_account_contact">
+          <Key>
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="contact_link" />
+            <PropertyRef Name="first_name" />
+            <PropertyRef Name="last_name" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="phone" />
+            <PropertyRef Name="fax" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Name="account_id" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="true" />
+          <Property Name="contact_link" Type="Int32" Nullable="false" />
+          <Property Name="first_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="last_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fax" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="birthday" Type="String" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="chgstamp" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deal_account_name">
+          <Key>
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="name_link" />
+            <PropertyRef Name="full_name" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Name="account_id" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="true" />
+          <Property Name="name_link" Type="Int32" Nullable="false" />
+          <Property Name="full_name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="chgstamp" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deal_contract_print">
+          <Key>
+            <PropertyRef Name="request_id" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="contract_nbr" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="retail_mkt_id" />
+            <PropertyRef Name="puc_certification_number" />
+            <PropertyRef Name="utility_id" />
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="rate_id" />
+            <PropertyRef Name="rate" />
+            <PropertyRef Name="rate_descp" />
+            <PropertyRef Name="term_months" />
+            <PropertyRef Name="contract_eff_start_date" />
+            <PropertyRef Name="grace_period" />
+            <PropertyRef Name="date_created" />
+            <PropertyRef Name="contract_template" />
+          </Key>
+          <Property Name="request_id" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="contract_nbr" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="true" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="retail_mkt_id" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="puc_certification_number" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="utility_id" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="true" />
+          <Property Name="product_id" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="rate_id" Type="Int32" Nullable="false" />
+          <Property Name="rate" Type="Double" Nullable="false" />
+          <Property Name="rate_descp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="term_months" Type="Int32" Nullable="false" />
+          <Property Name="contract_eff_start_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="grace_period" Type="Int32" Nullable="false" />
+          <Property Name="date_created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="contract_template" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="contract_rate_type" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TemplateId" Type="Int32" />
+          <Property Name="sales_channel_role" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PriceID" Type="Int64" />
+          <Property Name="PriceTier" Type="Int32" />
+          <Property Name="RateString" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="SubTermString" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="deal_get_key">
+          <Key>
+            <PropertyRef Name="process_id" />
+            <PropertyRef Name="start_date" />
+            <PropertyRef Name="last_number" />
+          </Key>
+          <Property Name="process_id" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="start_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="last_number" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="deal_rate">
+          <Key>
+            <PropertyRef Name="deal_rate_id" />
+            <PropertyRef Name="rate_cap" />
+          </Key>
+          <Property Name="deal_rate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rate_cap" Type="Double" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="spGenie_GetRates_Result">
+          <Property Type="Int32" Name="RateID" Nullable="true" />
+          <Property Type="String" Name="RateSelection" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="ProductSelection" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="PartnerName" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+          <Property Type="String" Name="AccountType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MarketCode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="UtilityCode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ZoneCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ServiceClassCode" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="FlowStartMonth" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="ContractTerm" Nullable="false" />
+          <Property Type="Decimal" Name="TransferRate" Nullable="true" Precision="12" Scale="5" />
+          <Property Type="DateTime" Name="RateExpirationDate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_deal_pricing_tables_sel_list_Result">
+          <Property Type="Int32" Name="deal_pricing_detail_id" Nullable="false" />
+          <Property Type="Int32" Name="deal_pricing_id" Nullable="false" />
+          <Property Type="String" Name="product_id" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="rate_id" Nullable="false" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="23" />
+          <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="date_modified" Nullable="true" Precision="23" />
+          <Property Type="String" Name="modified_by" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="MTM" Nullable="true" Precision="9" Scale="6" />
+          <Property Type="String" Name="product_descp" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="ContractRate" Nullable="false" Precision="9" Scale="6" />
+          <Property Type="String" Name="HasPassThrough" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="BackToBack" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="HeatIndexSourceID" Nullable="true" />
+          <Property Type="Decimal" Name="HeatRate" Nullable="true" Precision="9" Scale="2" />
+          <Property Type="Int32" Name="ExpectedTermUsage" Nullable="true" />
+          <Property Type="Int32" Name="ExpectedAccountsAmount" Nullable="true" />
+          <Property Type="Boolean" Name="rate_submit_ind" Nullable="false" />
+          <Property Type="Int32" Name="account_type_id" Nullable="false" />
+          <Property Type="String" Name="utility_id" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="UtilityCode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MarketCode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="sales_channel_role" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AccountType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="account_name" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="date_expired" Nullable="true" Precision="23" />
+          <Property Type="String" Name="pricing_request_id" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="PriceID" Nullable="true" />
+          <Property Type="Int32" Name="SelfGenerationID" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="deal_pricing">
+          <Key>
+            <PropertyRef Name="deal_pricing_id" />
+            <PropertyRef Name="account_name" />
+            <PropertyRef Name="sales_channel_role" />
+            <PropertyRef Name="date_created" />
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Type="Int32" Name="deal_pricing_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="account_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="sales_channel_role" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="commission_rate" />
+          <Property Type="DateTime" Name="date_expired" Precision="3" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="3" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="date_modified" Precision="3" />
+          <Property Type="String" Name="modified_by" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pricing_request_id" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CustomDealID" />
+        </EntityType>
+        <ComplexType Name="usp_contract_sel" />
+        <ComplexType Name="usp_contract_sel_Result">
+          <Property Type="String" Name="contract_nbr" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="account_number" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="account_type" Nullable="true" />
+          <Property Type="String" Name="status" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="account_id" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="retail_mkt_id" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="utility_id" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="product_id" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="rate_id" Nullable="false" />
+          <Property Type="Double" Name="rate" Nullable="false" />
+          <Property Type="Int32" Name="customer_name_link" Nullable="false" />
+          <Property Type="String" Name="customer_name" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="customer_address_link" Nullable="false" />
+          <Property Type="String" Name="customer_address" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="customer_suite" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="customer_city" Nullable="false" MaxLength="28" />
+          <Property Type="String" Name="customer_state" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="customer_zip" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="customer_contact_link" Nullable="false" />
+          <Property Type="String" Name="customer_first_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="customer_last_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="customer_title" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="customer_phone" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="customer_fax" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="customer_email" Nullable="false" MaxLength="256" />
+          <Property Type="String" Name="customer_birthday" Nullable="false" MaxLength="5" />
+          <Property Type="Int32" Name="billing_address_link" Nullable="false" />
+          <Property Type="String" Name="billing_address" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="billing_suite" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="billing_city" Nullable="false" MaxLength="28" />
+          <Property Type="String" Name="billing_state" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="billing_zip" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="billing_contact_link" Nullable="false" />
+          <Property Type="String" Name="billing_first_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="billing_last_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="billing_title" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="billing_phone" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="billing_fax" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="billing_email" Nullable="false" MaxLength="256" />
+          <Property Type="String" Name="billing_birthday" Nullable="false" MaxLength="5" />
+          <Property Type="Int32" Name="owner_name_link" Nullable="false" />
+          <Property Type="String" Name="owner_name" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="service_address_link" Nullable="false" />
+          <Property Type="String" Name="service_address" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="service_suite" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="service_city" Nullable="false" MaxLength="28" />
+          <Property Type="String" Name="service_state" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="service_zip" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="business_type" Nullable="false" MaxLength="35" />
+          <Property Type="String" Name="business_activity" Nullable="false" MaxLength="35" />
+          <Property Type="String" Name="additional_id_nbr_type" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="additional_id_nbr" Nullable="false" MaxLength="30" />
+          <Property Type="DateTime" Name="contract_eff_start_date" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="enrollment_type" Nullable="false" />
+          <Property Type="Int32" Name="term_months" Nullable="false" />
+          <Property Type="DateTime" Name="date_end" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="date_deal" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="date_submit" Nullable="false" Precision="23" />
+          <Property Type="String" Name="sales_channel_role" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="sales_rep" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="origin" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="comment" Nullable="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+          <Property Type="String" Name="contract_rate_type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="requested_flow_start_date" Nullable="false" Precision="23" />
+          <Property Type="String" Name="deal_type" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="customer_code" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="customer_group" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="SSNEncrypted" Nullable="false" MaxLength="512" />
+          <Property Type="String" Name="SSNClear" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="evergreen_option_id" Nullable="true" />
+          <Property Type="DateTime" Name="evergreen_commission_end" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="residual_option_id" Nullable="true" />
+          <Property Type="DateTime" Name="residual_commission_end" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="initial_pymt_option_id" Nullable="true" />
+          <Property Type="String" Name="sales_mgr" Nullable="true" MaxLength="100" />
+          <Property Type="Double" Name="evergreen_commission_rate" Nullable="true" />
+          <Property Type="String" Name="header_enrollment_1" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="header_enrollment_2" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="contract_type" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="ProductBrandID" Nullable="true" />
+          <Property Type="Int64" Name="PriceID" Nullable="true" />
+          <Property Type="Int32" Name="PriceTier" Nullable="true" />
+          <Property Type="Int32" Name="TaxExempt" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="deal_pricing_detail">
+          <Key>
+            <PropertyRef Name="deal_pricing_detail_id" />
+          </Key>
+          <Property Type="Int32" Name="deal_pricing_detail_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="deal_pricing_id" Nullable="false" />
+          <Property Type="String" Name="product_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="rate_id" Nullable="false" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="3" />
+          <Property Type="String" Name="username" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="date_modified" Precision="3" />
+          <Property Type="String" Name="modified_by" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="rate_submit_ind" Nullable="false" />
+          <Property Type="Decimal" Name="ContractRate" Nullable="false" Precision="9" Scale="6" />
+          <Property Type="Decimal" Name="Commission" Nullable="false" Precision="9" Scale="6" />
+          <Property Type="Decimal" Name="Cost" Precision="9" Scale="6" />
+          <Property Type="Decimal" Name="MTM" Precision="9" Scale="6" />
+          <Property Type="Int32" Name="HasPassThrough" />
+          <Property Type="Int32" Name="BackToBack" />
+          <Property Type="Int32" Name="HeatIndexSourceID" />
+          <Property Type="Decimal" Name="HeatRate" Precision="9" Scale="2" />
+          <Property Type="Int32" Name="ExpectedTermUsage" />
+          <Property Type="Int32" Name="ExpectedAccountsAmount" />
+          <Property Type="Decimal" Name="ETP" Precision="9" Scale="6" />
+          <Property Type="Int64" Name="PriceID" />
+          <Property Type="Int32" Name="SelfGenerationID" />
+          <Property Type="Int32" Name="BillingTypeId" />
+          <Property Type="Int32" Name="PriceTypeID" />
+        </EntityType>
+        <ComplexType Name="spGenie_GetQualifiersforToday_Result">
+          <Property Type="Int32" Name="PromotionCodeID" Nullable="false" />
+          <Property Type="String" Name="PartnerName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="MarketName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UtilityName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AccountTypeDesc" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ContractTerm" Nullable="true" />
+          <Property Type="String" Name="BrandDescription" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="SignStartDate" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="SignEndDate" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ContractEffecStartPeriodStartDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ContractEffecStartPeriodLastDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PriceTierDescription" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="AutoApply" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="deal_contract_account">
+          <Key>
+            <PropertyRef Name="contract_nbr" />
+            <PropertyRef Name="account_number" />
+          </Key>
+          <Property Type="String" Name="contract_nbr" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="contract_type" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="account_number" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="status" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="account_id" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="retail_mkt_id" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="utility_id" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="account_type" />
+          <Property Type="String" Name="product_id" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="rate_id" Nullable="false" />
+          <Property Type="Double" Name="rate" Nullable="false" />
+          <Property Type="Int32" Name="account_name_link" Nullable="false" />
+          <Property Type="Int32" Name="customer_name_link" Nullable="false" />
+          <Property Type="Int32" Name="customer_address_link" Nullable="false" />
+          <Property Type="Int32" Name="customer_contact_link" Nullable="false" />
+          <Property Type="Int32" Name="billing_address_link" Nullable="false" />
+          <Property Type="Int32" Name="billing_contact_link" Nullable="false" />
+          <Property Type="Int32" Name="owner_name_link" Nullable="false" />
+          <Property Type="Int32" Name="service_address_link" Nullable="false" />
+          <Property Type="String" Name="business_type" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="business_activity" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="additional_id_nbr_type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="additional_id_nbr" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="contract_eff_start_date" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="enrollment_type" />
+          <Property Type="Int32" Name="term_months" Nullable="false" />
+          <Property Type="DateTime" Name="date_end" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="date_deal" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="date_submit" Nullable="false" Precision="3" />
+          <Property Type="String" Name="sales_channel_role" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="sales_rep" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="origin" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="grace_period" Nullable="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+          <Property Type="DateTime" Name="requested_flow_start_date" Precision="3" />
+          <Property Type="String" Name="deal_type" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="customer_code" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="customer_group" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SSNClear" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SSNEncrypted" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreditScoreEncrypted" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="HeatIndexSourceID" />
+          <Property Type="Decimal" Name="HeatRate" Precision="9" Scale="2" />
+          <Property Type="Int32" Name="evergreen_option_id" />
+          <Property Type="DateTime" Name="evergreen_commission_end" Precision="3" />
+          <Property Type="Int32" Name="residual_option_id" />
+          <Property Type="DateTime" Name="residual_commission_end" Precision="3" />
+          <Property Type="Int32" Name="initial_pymt_option_id" />
+          <Property Type="Double" Name="evergreen_commission_rate" />
+          <Property Type="String" Name="zone" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="TaxStatus" />
+          <Property Type="Int64" Name="PriceID" />
+          <Property Type="String" Name="RatesString" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsForSave" />
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="deal_contract">
+          <Key>
+            <PropertyRef Name="contract_nbr" />
+          </Key>
+          <Property Type="String" Name="contract_nbr" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="contract_type" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="status" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="retail_mkt_id" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="utility_id" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="account_type" />
+          <Property Type="String" Name="product_id" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="rate_id" Nullable="false" />
+          <Property Type="Double" Name="rate" Nullable="false" />
+          <Property Type="Int32" Name="customer_name_link" Nullable="false" />
+          <Property Type="Int32" Name="customer_address_link" Nullable="false" />
+          <Property Type="Int32" Name="customer_contact_link" Nullable="false" />
+          <Property Type="Int32" Name="billing_address_link" Nullable="false" />
+          <Property Type="Int32" Name="billing_contact_link" Nullable="false" />
+          <Property Type="Int32" Name="owner_name_link" Nullable="false" />
+          <Property Type="Int32" Name="service_address_link" Nullable="false" />
+          <Property Type="String" Name="business_type" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="business_activity" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="additional_id_nbr_type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="additional_id_nbr" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="contract_eff_start_date" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="enrollment_type" />
+          <Property Type="Int32" Name="term_months" Nullable="false" />
+          <Property Type="DateTime" Name="date_end" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="date_deal" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="date_submit" Nullable="false" Precision="3" />
+          <Property Type="String" Name="sales_channel_role" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="sales_rep" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="origin" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="grace_period" Nullable="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+          <Property Type="String" Name="contract_rate_type" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="requested_flow_start_date" Precision="3" />
+          <Property Type="String" Name="deal_type" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="customer_code" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="customer_group" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SSNClear" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SSNEncrypted" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreditScoreEncrypted" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="HeatIndexSourceID" />
+          <Property Type="Decimal" Name="HeatRate" Precision="9" Scale="2" />
+          <Property Type="Int32" Name="evergreen_option_id" />
+          <Property Type="DateTime" Name="evergreen_commission_end" Precision="3" />
+          <Property Type="Int32" Name="residual_option_id" />
+          <Property Type="DateTime" Name="residual_commission_end" Precision="3" />
+          <Property Type="Int32" Name="initial_pymt_option_id" />
+          <Property Type="String" Name="sales_manager" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="evergreen_commission_rate" />
+          <Property Type="Int32" Name="TaxStatus" />
+          <Property Type="Int64" Name="PriceID" />
+          <Property Type="Int32" Name="PriceTier" />
+          <Property Type="String" Name="RatesString" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CurrentNumber" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CurrentContAcc" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="ClientSubmitApplicationKeyId" />
+        </EntityType>
+        <EntityType Name="CancelContractReason">
+          <Key>
+            <PropertyRef Name="CancelContractReasonId" />
+          </Key>
+          <Property Type="Int32" Name="CancelContractReasonId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+          <Property Type="Int32" Name="ModifiedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="InCompleteContractCancelReason">
+          <Key>
+            <PropertyRef Name="InCompleteContractCancelReasonID" />
+          </Key>
+          <Property Type="Int32" Name="InCompleteContractCancelReasonID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="TabletIncompleteContractId" Nullable="false" />
+          <Property Type="Int32" Name="CancelContractReasonId" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+          <Property Type="Int32" Name="ModifiedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="TabletIncompleteContract">
+          <Key>
+            <PropertyRef Name="TabletIncompleteContractID" />
+          </Key>
+          <Property Type="Int32" Name="TabletIncompleteContractID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ContractNumber" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SalesChannelID" Nullable="false" />
+          <Property Type="Int32" Name="AgentId" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="AdditionalNotes" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AccountNumber" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="RetailMarketId" />
+          <Property Type="Int32" Name="UtilityId" />
+          <Property Type="String" Name="Zone" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AccountTypeId" />
+          <Property Type="Int32" Name="ProductBrandId" />
+          <Property Type="DateTime" Name="ContractStartDate" Precision="3" />
+          <Property Type="Int32" Name="Term" />
+          <Property Type="String" Name="ServiceClassId" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TierId" />
+          <Property Type="Int64" Name="PriceId" />
+          <Property Type="String" Name="BACity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BAState" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BAStreet" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BAZip" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="BCEmail" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BCFax" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="BCFirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BCLastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BCPhone" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="BCTitle" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="SACity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SAState" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SAStreet" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SAZip" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CISSN" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CIEmail" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CIFax" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CIFirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CILastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CIPhone" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CITitle" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CACity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAState" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAStreet" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CASuite" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAZip" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="BusinessName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DBA" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BusinessType" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="DUNS" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="ContractTypeId" />
+          <Property Type="String" Name="TaxId" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Language" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="PromoCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Origin" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="ClientSubmitApplicationKey" />
+          <Property Type="String" Name="Review" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="OutCome" />
+          <Property Type="Int32" Name="ModifiedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
+          <Property Type="Int64" Name="AudioLength" />
+        </EntityType>
+        <EntityType Name="deal_address">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="contract_nbr" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="address_link" Nullable="false" />
+          <Property Type="String" Name="address" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="suite" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="city" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="state" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="zip" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="county" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="state_fips" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="county_fips" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deal_contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="contract_nbr" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="contact_link" Nullable="false" />
+          <Property Type="String" Name="first_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="last_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fax" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="birthday" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deal_name">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="contract_nbr" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="name_link" Nullable="false" />
+          <Property Type="String" Name="full_name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="usp_views_sel_Result">
+          <Property Type="String" Name="option_id" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="return_value" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <EntityType Name="ContractPromotionCode">
+          <Key>
+            <PropertyRef Name="ContractPromotionCodeId" />
+          </Key>
+          <Property Type="Int32" Name="ContractPromotionCodeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ContractId" Nullable="false" />
+          <Property Type="Int32" Name="AccountId" />
+          <Property Type="Int32" Name="PromotionCodeId" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="usp_GetFilteredIncompleteContractsWithAudio_Result">
+          <Property Type="Int32" Name="TabletIncompleteContractID" Nullable="false" />
+          <Property Type="String" Name="ContractNumber" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="SalesChannelID" Nullable="false" />
+          <Property Type="Int32" Name="AgentId" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="AdditionalNotes" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="AccountNumber" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="RetailMarketId" Nullable="true" />
+          <Property Type="Int32" Name="UtilityId" Nullable="true" />
+          <Property Type="String" Name="Zone" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="AccountTypeId" Nullable="true" />
+          <Property Type="Int32" Name="ProductBrandId" Nullable="true" />
+          <Property Type="DateTime" Name="ContractStartDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Term" Nullable="true" />
+          <Property Type="String" Name="ServiceClassId" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="TierId" Nullable="true" />
+          <Property Type="Int64" Name="PriceId" Nullable="true" />
+          <Property Type="String" Name="BACity" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BAState" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BAStreet" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BAZip" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BCEmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BCFax" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BCFirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BCLastName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BCPhone" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BCTitle" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="SACity" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SAState" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SAStreet" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SAZip" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CISSN" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CIEmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CIFax" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CIFirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CILastName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CIPhone" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CITitle" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CACity" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CAState" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CAStreet" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CASuite" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CAZip" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DBA" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BusinessType" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="DUNS" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="ContractTypeId" Nullable="true" />
+          <Property Type="String" Name="TaxId" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Language" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PromoCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Origin" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="ClientSubmitApplicationKey" Nullable="true" />
+          <Property Type="String" Name="Review" Nullable="true" MaxLength="2000" />
+          <Property Type="Boolean" Name="OutCome" Nullable="true" />
+          <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="InCompleteContractCancelReasonID" Nullable="false" />
+          <Property Type="Int32" Name="CancelContractReasonId" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="document_path" Nullable="true" />
+          <Property Type="String" Name="document_name" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="document_guid" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="ChannelName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="AgentFirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AgentLastName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MarketCode" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsGas" Nullable="true" />
+          <Property Type="String" Name="ProductBrandName" Nullable="true" MaxLength="500" />
+          <Property Type="Int64" Name="AudioLength" Nullable="true" />
+          <Property Type="Int32" Name="MarketID" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="RejectedContractMessage">
+          <Key>
+            <PropertyRef Name="RejectedContractMessageID" />
+          </Key>
+          <Property Type="Int32" Name="RejectedContractMessageID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ContractNumber" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="EmailTypeID" Nullable="false" />
+          <Property Type="String" Name="ErrorMessage" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Subject" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Body" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ToEmail" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CustomerEmail" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="SalesChannelEmail" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LpDealCaptureModelStoreContainer" CdmEntityContainer="LpDealCaptureEntities">
+          <EntitySetMapping Name="account_meters">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.account_meters">
+              <MappingFragment StoreEntitySet="account_meters">
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="meter_number" ColumnName="meter_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_account_address">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_account_address">
+              <MappingFragment StoreEntitySet="deal_account_address">
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="address_link" ColumnName="address_link" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="suite" ColumnName="suite" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="state_fips" ColumnName="state_fips" />
+                <ScalarProperty Name="county_fips" ColumnName="county_fips" />
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_account_contact">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_account_contact">
+              <MappingFragment StoreEntitySet="deal_account_contact">
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="contact_link" ColumnName="contact_link" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_account_name">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_account_name">
+              <MappingFragment StoreEntitySet="deal_account_name">
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="name_link" ColumnName="name_link" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_contract_print">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_contract_print">
+              <MappingFragment StoreEntitySet="deal_contract_print">
+                <ScalarProperty Name="SubTermString" ColumnName="SubTermString" />
+                <ScalarProperty Name="request_id" ColumnName="request_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="contract_nbr" ColumnName="contract_nbr" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="retail_mkt_id" ColumnName="retail_mkt_id" />
+                <ScalarProperty Name="puc_certification_number" ColumnName="puc_certification_number" />
+                <ScalarProperty Name="utility_id" ColumnName="utility_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="rate_descp" ColumnName="rate_descp" />
+                <ScalarProperty Name="term_months" ColumnName="term_months" />
+                <ScalarProperty Name="contract_eff_start_date" ColumnName="contract_eff_start_date" />
+                <ScalarProperty Name="grace_period" ColumnName="grace_period" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="contract_template" ColumnName="contract_template" />
+                <ScalarProperty Name="contract_rate_type" ColumnName="contract_rate_type" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="sales_channel_role" ColumnName="sales_channel_role" />
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="PriceTier" ColumnName="PriceTier" />
+                <ScalarProperty Name="RateString" ColumnName="RateString" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_get_key">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_get_key">
+              <MappingFragment StoreEntitySet="deal_get_key">
+                <ScalarProperty Name="process_id" ColumnName="process_id" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="last_number" ColumnName="last_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_rate">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_rate">
+              <MappingFragment StoreEntitySet="deal_rate">
+                <ScalarProperty Name="deal_rate_id" ColumnName="deal_rate_id" />
+                <ScalarProperty Name="rate_cap" ColumnName="rate_cap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spGenie_GetRates" FunctionName="LpDealCaptureModel.Store.spGenie_GetRates">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LpDealCaptureModel.spGenie_GetRates_Result">
+                <ScalarProperty Name="RateID" ColumnName="RateID" />
+                <ScalarProperty Name="RateSelection" ColumnName="RateSelection" />
+                <ScalarProperty Name="ProductSelection" ColumnName="ProductSelection" />
+                <ScalarProperty Name="PartnerName" ColumnName="PartnerName" />
+                <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="MarketCode" ColumnName="MarketCode" />
+                <ScalarProperty Name="UtilityCode" ColumnName="UtilityCode" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ZoneCode" ColumnName="ZoneCode" />
+                <ScalarProperty Name="ServiceClassCode" ColumnName="ServiceClassCode" />
+                <ScalarProperty Name="FlowStartMonth" ColumnName="FlowStartMonth" />
+                <ScalarProperty Name="ContractTerm" ColumnName="ContractTerm" />
+                <ScalarProperty Name="TransferRate" ColumnName="TransferRate" />
+                <ScalarProperty Name="RateExpirationDate" ColumnName="RateExpirationDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_deal_pricing_tables_sel_list" FunctionName="LpDealCaptureModel.Store.usp_deal_pricing_tables_sel_list" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LpDealCaptureModel.usp_deal_pricing_tables_sel_list_Result">
+                <ScalarProperty Name="deal_pricing_detail_id" ColumnName="deal_pricing_detail_id" />
+                <ScalarProperty Name="deal_pricing_id" ColumnName="deal_pricing_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="MTM" ColumnName="MTM" />
+                <ScalarProperty Name="product_descp" ColumnName="product_descp" />
+                <ScalarProperty Name="ContractRate" ColumnName="ContractRate" />
+                <ScalarProperty Name="HasPassThrough" ColumnName="HasPassThrough" />
+                <ScalarProperty Name="BackToBack" ColumnName="BackToBack" />
+                <ScalarProperty Name="HeatIndexSourceID" ColumnName="HeatIndexSourceID" />
+                <ScalarProperty Name="HeatRate" ColumnName="HeatRate" />
+                <ScalarProperty Name="ExpectedTermUsage" ColumnName="ExpectedTermUsage" />
+                <ScalarProperty Name="ExpectedAccountsAmount" ColumnName="ExpectedAccountsAmount" />
+                <ScalarProperty Name="rate_submit_ind" ColumnName="rate_submit_ind" />
+                <ScalarProperty Name="account_type_id" ColumnName="account_type_id" />
+                <ScalarProperty Name="utility_id" ColumnName="utility_id" />
+                <ScalarProperty Name="UtilityCode" ColumnName="UtilityCode" />
+                <ScalarProperty Name="MarketCode" ColumnName="MarketCode" />
+                <ScalarProperty Name="sales_channel_role" ColumnName="sales_channel_role" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="account_name" ColumnName="account_name" />
+                <ScalarProperty Name="date_expired" ColumnName="date_expired" />
+                <ScalarProperty Name="pricing_request_id" ColumnName="pricing_request_id" />
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="SelfGenerationID" ColumnName="SelfGenerationID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="deal_pricing">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_pricing">
+              <MappingFragment StoreEntitySet="deal_pricing">
+                <ScalarProperty Name="CustomDealID" ColumnName="CustomDealID" />
+                <ScalarProperty Name="pricing_request_id" ColumnName="pricing_request_id" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="date_expired" ColumnName="date_expired" />
+                <ScalarProperty Name="commission_rate" ColumnName="commission_rate" />
+                <ScalarProperty Name="sales_channel_role" ColumnName="sales_channel_role" />
+                <ScalarProperty Name="account_name" ColumnName="account_name" />
+                <ScalarProperty Name="deal_pricing_id" ColumnName="deal_pricing_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_contract_sel" FunctionName="LpDealCaptureModel.Store.usp_contract_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LpDealCaptureModel.usp_contract_sel_Result">
+                <ScalarProperty Name="contract_nbr" ColumnName="contract_nbr" />
+                <ScalarProperty Name="account_number" ColumnName="account_number" />
+                <ScalarProperty Name="account_type" ColumnName="account_type" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="retail_mkt_id" ColumnName="retail_mkt_id" />
+                <ScalarProperty Name="utility_id" ColumnName="utility_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="customer_name_link" ColumnName="customer_name_link" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="customer_address_link" ColumnName="customer_address_link" />
+                <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+                <ScalarProperty Name="customer_suite" ColumnName="customer_suite" />
+                <ScalarProperty Name="customer_city" ColumnName="customer_city" />
+                <ScalarProperty Name="customer_state" ColumnName="customer_state" />
+                <ScalarProperty Name="customer_zip" ColumnName="customer_zip" />
+                <ScalarProperty Name="customer_contact_link" ColumnName="customer_contact_link" />
+                <ScalarProperty Name="customer_first_name" ColumnName="customer_first_name" />
+                <ScalarProperty Name="customer_last_name" ColumnName="customer_last_name" />
+                <ScalarProperty Name="customer_title" ColumnName="customer_title" />
+                <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+                <ScalarProperty Name="customer_fax" ColumnName="customer_fax" />
+                <ScalarProperty Name="customer_email" ColumnName="customer_email" />
+                <ScalarProperty Name="customer_birthday" ColumnName="customer_birthday" />
+                <ScalarProperty Name="billing_address_link" ColumnName="billing_address_link" />
+                <ScalarProperty Name="billing_address" ColumnName="billing_address" />
+                <ScalarProperty Name="billing_suite" ColumnName="billing_suite" />
+                <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+                <ScalarProperty Name="billing_state" ColumnName="billing_state" />
+                <ScalarProperty Name="billing_zip" ColumnName="billing_zip" />
+                <ScalarProperty Name="billing_contact_link" ColumnName="billing_contact_link" />
+                <ScalarProperty Name="billing_first_name" ColumnName="billing_first_name" />
+                <ScalarProperty Name="billing_last_name" ColumnName="billing_last_name" />
+                <ScalarProperty Name="billing_title" ColumnName="billing_title" />
+                <ScalarProperty Name="billing_phone" ColumnName="billing_phone" />
+                <ScalarProperty Name="billing_fax" ColumnName="billing_fax" />
+                <ScalarProperty Name="billing_email" ColumnName="billing_email" />
+                <ScalarProperty Name="billing_birthday" ColumnName="billing_birthday" />
+                <ScalarProperty Name="owner_name_link" ColumnName="owner_name_link" />
+                <ScalarProperty Name="owner_name" ColumnName="owner_name" />
+                <ScalarProperty Name="service_address_link" ColumnName="service_address_link" />
+                <ScalarProperty Name="service_address" ColumnName="service_address" />
+                <ScalarProperty Name="service_suite" ColumnName="service_suite" />
+                <ScalarProperty Name="service_city" ColumnName="service_city" />
+                <ScalarProperty Name="service_state" ColumnName="service_state" />
+                <ScalarProperty Name="service_zip" ColumnName="service_zip" />
+                <ScalarProperty Name="business_type" ColumnName="business_type" />
+                <ScalarProperty Name="business_activity" ColumnName="business_activity" />
+                <ScalarProperty Name="additional_id_nbr_type" ColumnName="additional_id_nbr_type" />
+                <ScalarProperty Name="additional_id_nbr" ColumnName="additional_id_nbr" />
+                <ScalarProperty Name="contract_eff_start_date" ColumnName="contract_eff_start_date" />
+                <ScalarProperty Name="enrollment_type" ColumnName="enrollment_type" />
+                <ScalarProperty Name="term_months" ColumnName="term_months" />
+                <ScalarProperty Name="date_end" ColumnName="date_end" />
+                <ScalarProperty Name="date_deal" ColumnName="date_deal" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="date_submit" ColumnName="date_submit" />
+                <ScalarProperty Name="sales_channel_role" ColumnName="sales_channel_role" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="sales_rep" ColumnName="sales_rep" />
+                <ScalarProperty Name="origin" ColumnName="origin" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="contract_rate_type" ColumnName="contract_rate_type" />
+                <ScalarProperty Name="requested_flow_start_date" ColumnName="requested_flow_start_date" />
+                <ScalarProperty Name="deal_type" ColumnName="deal_type" />
+                <ScalarProperty Name="customer_code" ColumnName="customer_code" />
+                <ScalarProperty Name="customer_group" ColumnName="customer_group" />
+                <ScalarProperty Name="SSNEncrypted" ColumnName="SSNEncrypted" />
+                <ScalarProperty Name="SSNClear" ColumnName="SSNClear" />
+                <ScalarProperty Name="evergreen_option_id" ColumnName="evergreen_option_id" />
+                <ScalarProperty Name="evergreen_commission_end" ColumnName="evergreen_commission_end" />
+                <ScalarProperty Name="residual_option_id" ColumnName="residual_option_id" />
+                <ScalarProperty Name="residual_commission_end" ColumnName="residual_commission_end" />
+                <ScalarProperty Name="initial_pymt_option_id" ColumnName="initial_pymt_option_id" />
+                <ScalarProperty Name="sales_mgr" ColumnName="sales_mgr" />
+                <ScalarProperty Name="evergreen_commission_rate" ColumnName="evergreen_commission_rate" />
+                <ScalarProperty Name="header_enrollment_1" ColumnName="header_enrollment_1" />
+                <ScalarProperty Name="header_enrollment_2" ColumnName="header_enrollment_2" />
+                <ScalarProperty Name="contract_type" ColumnName="contract_type" />
+                <ScalarProperty Name="ProductBrandID" ColumnName="ProductBrandID" />
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="PriceTier" ColumnName="PriceTier" />
+                <ScalarProperty Name="TaxExempt" ColumnName="TaxExempt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_contract_sel1" FunctionName="LpDealCaptureModel.Store.usp_contract_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LpDealCaptureModel.usp_contract_sel_Result">
+                <ScalarProperty Name="contract_nbr" ColumnName="contract_nbr" />
+                <ScalarProperty Name="account_number" ColumnName="account_number" />
+                <ScalarProperty Name="account_type" ColumnName="account_type" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="retail_mkt_id" ColumnName="retail_mkt_id" />
+                <ScalarProperty Name="utility_id" ColumnName="utility_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="customer_name_link" ColumnName="customer_name_link" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="customer_address_link" ColumnName="customer_address_link" />
+                <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+                <ScalarProperty Name="customer_suite" ColumnName="customer_suite" />
+                <ScalarProperty Name="customer_city" ColumnName="customer_city" />
+                <ScalarProperty Name="customer_state" ColumnName="customer_state" />
+                <ScalarProperty Name="customer_zip" ColumnName="customer_zip" />
+                <ScalarProperty Name="customer_contact_link" ColumnName="customer_contact_link" />
+                <ScalarProperty Name="customer_first_name" ColumnName="customer_first_name" />
+                <ScalarProperty Name="customer_last_name" ColumnName="customer_last_name" />
+                <ScalarProperty Name="customer_title" ColumnName="customer_title" />
+                <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+                <ScalarProperty Name="customer_fax" ColumnName="customer_fax" />
+                <ScalarProperty Name="customer_email" ColumnName="customer_email" />
+                <ScalarProperty Name="customer_birthday" ColumnName="customer_birthday" />
+                <ScalarProperty Name="billing_address_link" ColumnName="billing_address_link" />
+                <ScalarProperty Name="billing_address" ColumnName="billing_address" />
+                <ScalarProperty Name="billing_suite" ColumnName="billing_suite" />
+                <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+                <ScalarProperty Name="billing_state" ColumnName="billing_state" />
+                <ScalarProperty Name="billing_zip" ColumnName="billing_zip" />
+                <ScalarProperty Name="billing_contact_link" ColumnName="billing_contact_link" />
+                <ScalarProperty Name="billing_first_name" ColumnName="billing_first_name" />
+                <ScalarProperty Name="billing_last_name" ColumnName="billing_last_name" />
+                <ScalarProperty Name="billing_title" ColumnName="billing_title" />
+                <ScalarProperty Name="billing_phone" ColumnName="billing_phone" />
+                <ScalarProperty Name="billing_fax" ColumnName="billing_fax" />
+                <ScalarProperty Name="billing_email" ColumnName="billing_email" />
+                <ScalarProperty Name="billing_birthday" ColumnName="billing_birthday" />
+                <ScalarProperty Name="owner_name_link" ColumnName="owner_name_link" />
+                <ScalarProperty Name="owner_name" ColumnName="owner_name" />
+                <ScalarProperty Name="service_address_link" ColumnName="service_address_link" />
+                <ScalarProperty Name="service_address" ColumnName="service_address" />
+                <ScalarProperty Name="service_suite" ColumnName="service_suite" />
+                <ScalarProperty Name="service_city" ColumnName="service_city" />
+                <ScalarProperty Name="service_state" ColumnName="service_state" />
+                <ScalarProperty Name="service_zip" ColumnName="service_zip" />
+                <ScalarProperty Name="business_type" ColumnName="business_type" />
+                <ScalarProperty Name="business_activity" ColumnName="business_activity" />
+                <ScalarProperty Name="additional_id_nbr_type" ColumnName="additional_id_nbr_type" />
+                <ScalarProperty Name="additional_id_nbr" ColumnName="additional_id_nbr" />
+                <ScalarProperty Name="contract_eff_start_date" ColumnName="contract_eff_start_date" />
+                <ScalarProperty Name="enrollment_type" ColumnName="enrollment_type" />
+                <ScalarProperty Name="term_months" ColumnName="term_months" />
+                <ScalarProperty Name="date_end" ColumnName="date_end" />
+                <ScalarProperty Name="date_deal" ColumnName="date_deal" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="date_submit" ColumnName="date_submit" />
+                <ScalarProperty Name="sales_channel_role" ColumnName="sales_channel_role" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="sales_rep" ColumnName="sales_rep" />
+                <ScalarProperty Name="origin" ColumnName="origin" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="contract_rate_type" ColumnName="contract_rate_type" />
+                <ScalarProperty Name="requested_flow_start_date" ColumnName="requested_flow_start_date" />
+                <ScalarProperty Name="deal_type" ColumnName="deal_type" />
+                <ScalarProperty Name="customer_code" ColumnName="customer_code" />
+                <ScalarProperty Name="customer_group" ColumnName="customer_group" />
+                <ScalarProperty Name="SSNEncrypted" ColumnName="SSNEncrypted" />
+                <ScalarProperty Name="SSNClear" ColumnName="SSNClear" />
+                <ScalarProperty Name="evergreen_option_id" ColumnName="evergreen_option_id" />
+                <ScalarProperty Name="evergreen_commission_end" ColumnName="evergreen_commission_end" />
+                <ScalarProperty Name="residual_option_id" ColumnName="residual_option_id" />
+                <ScalarProperty Name="residual_commission_end" ColumnName="residual_commission_end" />
+                <ScalarProperty Name="initial_pymt_option_id" ColumnName="initial_pymt_option_id" />
+                <ScalarProperty Name="sales_mgr" ColumnName="sales_mgr" />
+                <ScalarProperty Name="evergreen_commission_rate" ColumnName="evergreen_commission_rate" />
+                <ScalarProperty Name="header_enrollment_1" ColumnName="header_enrollment_1" />
+                <ScalarProperty Name="header_enrollment_2" ColumnName="header_enrollment_2" />
+                <ScalarProperty Name="contract_type" ColumnName="contract_type" />
+                <ScalarProperty Name="ProductBrandID" ColumnName="ProductBrandID" />
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="PriceTier" ColumnName="PriceTier" />
+                <ScalarProperty Name="TaxExempt" ColumnName="TaxExempt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="deal_pricing_detail">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_pricing_detail">
+              <MappingFragment StoreEntitySet="deal_pricing_detail">
+                <ScalarProperty Name="PriceTypeID" ColumnName="PriceTypeID" />
+                <ScalarProperty Name="BillingTypeId" ColumnName="BillingTypeId" />
+                <ScalarProperty Name="SelfGenerationID" ColumnName="SelfGenerationID" />
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="ETP" ColumnName="ETP" />
+                <ScalarProperty Name="ExpectedAccountsAmount" ColumnName="ExpectedAccountsAmount" />
+                <ScalarProperty Name="ExpectedTermUsage" ColumnName="ExpectedTermUsage" />
+                <ScalarProperty Name="HeatRate" ColumnName="HeatRate" />
+                <ScalarProperty Name="HeatIndexSourceID" ColumnName="HeatIndexSourceID" />
+                <ScalarProperty Name="BackToBack" ColumnName="BackToBack" />
+                <ScalarProperty Name="HasPassThrough" ColumnName="HasPassThrough" />
+                <ScalarProperty Name="MTM" ColumnName="MTM" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Commission" ColumnName="Commission" />
+                <ScalarProperty Name="ContractRate" ColumnName="ContractRate" />
+                <ScalarProperty Name="rate_submit_ind" ColumnName="rate_submit_ind" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="deal_pricing_id" ColumnName="deal_pricing_id" />
+                <ScalarProperty Name="deal_pricing_detail_id" ColumnName="deal_pricing_detail_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spGenie_GetQualifiersforToday" FunctionName="LpDealCaptureModel.Store.spGenie_GetQualifiersforToday">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LpDealCaptureModel.spGenie_GetQualifiersforToday_Result">
+                <ScalarProperty Name="PromotionCodeID" ColumnName="PromotionCodeID" />
+                <ScalarProperty Name="PartnerName" ColumnName="PartnerName" />
+                <ScalarProperty Name="MarketName" ColumnName="MarketName" />
+                <ScalarProperty Name="UtilityName" ColumnName="UtilityName" />
+                <ScalarProperty Name="AccountTypeDesc" ColumnName="AccountTypeDesc" />
+                <ScalarProperty Name="ContractTerm" ColumnName="ContractTerm" />
+                <ScalarProperty Name="BrandDescription" ColumnName="BrandDescription" />
+                <ScalarProperty Name="SignStartDate" ColumnName="SignStartDate" />
+                <ScalarProperty Name="SignEndDate" ColumnName="SignEndDate" />
+                <ScalarProperty Name="ContractEffecStartPeriodStartDate" ColumnName="ContractEffecStartPeriodStartDate" />
+                <ScalarProperty Name="ContractEffecStartPeriodLastDate" ColumnName="ContractEffecStartPeriodLastDate" />
+                <ScalarProperty Name="PriceTierDescription" ColumnName="PriceTierDescription" />
+                <ScalarProperty Name="AutoApply" ColumnName="AutoApply" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="deal_contract_account">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_contract_account">
+              <MappingFragment StoreEntitySet="deal_contract_account">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IsForSave" ColumnName="IsForSave" />
+                <ScalarProperty Name="RatesString" ColumnName="RatesString" />
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="TaxStatus" ColumnName="TaxStatus" />
+                <ScalarProperty Name="zone" ColumnName="zone" />
+                <ScalarProperty Name="evergreen_commission_rate" ColumnName="evergreen_commission_rate" />
+                <ScalarProperty Name="initial_pymt_option_id" ColumnName="initial_pymt_option_id" />
+                <ScalarProperty Name="residual_commission_end" ColumnName="residual_commission_end" />
+                <ScalarProperty Name="residual_option_id" ColumnName="residual_option_id" />
+                <ScalarProperty Name="evergreen_commission_end" ColumnName="evergreen_commission_end" />
+                <ScalarProperty Name="evergreen_option_id" ColumnName="evergreen_option_id" />
+                <ScalarProperty Name="HeatRate" ColumnName="HeatRate" />
+                <ScalarProperty Name="HeatIndexSourceID" ColumnName="HeatIndexSourceID" />
+                <ScalarProperty Name="CreditScoreEncrypted" ColumnName="CreditScoreEncrypted" />
+                <ScalarProperty Name="SSNEncrypted" ColumnName="SSNEncrypted" />
+                <ScalarProperty Name="SSNClear" ColumnName="SSNClear" />
+                <ScalarProperty Name="customer_group" ColumnName="customer_group" />
+                <ScalarProperty Name="customer_code" ColumnName="customer_code" />
+                <ScalarProperty Name="deal_type" ColumnName="deal_type" />
+                <ScalarProperty Name="requested_flow_start_date" ColumnName="requested_flow_start_date" />
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="grace_period" ColumnName="grace_period" />
+                <ScalarProperty Name="origin" ColumnName="origin" />
+                <ScalarProperty Name="sales_rep" ColumnName="sales_rep" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="sales_channel_role" ColumnName="sales_channel_role" />
+                <ScalarProperty Name="date_submit" ColumnName="date_submit" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="date_deal" ColumnName="date_deal" />
+                <ScalarProperty Name="date_end" ColumnName="date_end" />
+                <ScalarProperty Name="term_months" ColumnName="term_months" />
+                <ScalarProperty Name="enrollment_type" ColumnName="enrollment_type" />
+                <ScalarProperty Name="contract_eff_start_date" ColumnName="contract_eff_start_date" />
+                <ScalarProperty Name="additional_id_nbr" ColumnName="additional_id_nbr" />
+                <ScalarProperty Name="additional_id_nbr_type" ColumnName="additional_id_nbr_type" />
+                <ScalarProperty Name="business_activity" ColumnName="business_activity" />
+                <ScalarProperty Name="business_type" ColumnName="business_type" />
+                <ScalarProperty Name="service_address_link" ColumnName="service_address_link" />
+                <ScalarProperty Name="owner_name_link" ColumnName="owner_name_link" />
+                <ScalarProperty Name="billing_contact_link" ColumnName="billing_contact_link" />
+                <ScalarProperty Name="billing_address_link" ColumnName="billing_address_link" />
+                <ScalarProperty Name="customer_contact_link" ColumnName="customer_contact_link" />
+                <ScalarProperty Name="customer_address_link" ColumnName="customer_address_link" />
+                <ScalarProperty Name="customer_name_link" ColumnName="customer_name_link" />
+                <ScalarProperty Name="account_name_link" ColumnName="account_name_link" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="account_type" ColumnName="account_type" />
+                <ScalarProperty Name="utility_id" ColumnName="utility_id" />
+                <ScalarProperty Name="retail_mkt_id" ColumnName="retail_mkt_id" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="account_number" ColumnName="account_number" />
+                <ScalarProperty Name="contract_type" ColumnName="contract_type" />
+                <ScalarProperty Name="contract_nbr" ColumnName="contract_nbr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_contract">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_contract">
+              <MappingFragment StoreEntitySet="deal_contract">
+                <ScalarProperty Name="ClientSubmitApplicationKeyId" ColumnName="ClientSubmitApplicationKeyId" />
+                <ScalarProperty Name="CurrentContAcc" ColumnName="CurrentContAcc" />
+                <ScalarProperty Name="CurrentNumber" ColumnName="CurrentNumber" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RatesString" ColumnName="RatesString" />
+                <ScalarProperty Name="PriceTier" ColumnName="PriceTier" />
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="TaxStatus" ColumnName="TaxStatus" />
+                <ScalarProperty Name="evergreen_commission_rate" ColumnName="evergreen_commission_rate" />
+                <ScalarProperty Name="sales_manager" ColumnName="sales_manager" />
+                <ScalarProperty Name="initial_pymt_option_id" ColumnName="initial_pymt_option_id" />
+                <ScalarProperty Name="residual_commission_end" ColumnName="residual_commission_end" />
+                <ScalarProperty Name="residual_option_id" ColumnName="residual_option_id" />
+                <ScalarProperty Name="evergreen_commission_end" ColumnName="evergreen_commission_end" />
+                <ScalarProperty Name="evergreen_option_id" ColumnName="evergreen_option_id" />
+                <ScalarProperty Name="HeatRate" ColumnName="HeatRate" />
+                <ScalarProperty Name="HeatIndexSourceID" ColumnName="HeatIndexSourceID" />
+                <ScalarProperty Name="CreditScoreEncrypted" ColumnName="CreditScoreEncrypted" />
+                <ScalarProperty Name="SSNEncrypted" ColumnName="SSNEncrypted" />
+                <ScalarProperty Name="SSNClear" ColumnName="SSNClear" />
+                <ScalarProperty Name="customer_group" ColumnName="customer_group" />
+                <ScalarProperty Name="customer_code" ColumnName="customer_code" />
+                <ScalarProperty Name="deal_type" ColumnName="deal_type" />
+                <ScalarProperty Name="requested_flow_start_date" ColumnName="requested_flow_start_date" />
+                <ScalarProperty Name="contract_rate_type" ColumnName="contract_rate_type" />
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="grace_period" ColumnName="grace_period" />
+                <ScalarProperty Name="origin" ColumnName="origin" />
+                <ScalarProperty Name="sales_rep" ColumnName="sales_rep" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="sales_channel_role" ColumnName="sales_channel_role" />
+                <ScalarProperty Name="date_submit" ColumnName="date_submit" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="date_deal" ColumnName="date_deal" />
+                <ScalarProperty Name="date_end" ColumnName="date_end" />
+                <ScalarProperty Name="term_months" ColumnName="term_months" />
+                <ScalarProperty Name="enrollment_type" ColumnName="enrollment_type" />
+                <ScalarProperty Name="contract_eff_start_date" ColumnName="contract_eff_start_date" />
+                <ScalarProperty Name="additional_id_nbr" ColumnName="additional_id_nbr" />
+                <ScalarProperty Name="additional_id_nbr_type" ColumnName="additional_id_nbr_type" />
+                <ScalarProperty Name="business_activity" ColumnName="business_activity" />
+                <ScalarProperty Name="business_type" ColumnName="business_type" />
+                <ScalarProperty Name="service_address_link" ColumnName="service_address_link" />
+                <ScalarProperty Name="owner_name_link" ColumnName="owner_name_link" />
+                <ScalarProperty Name="billing_contact_link" ColumnName="billing_contact_link" />
+                <ScalarProperty Name="billing_address_link" ColumnName="billing_address_link" />
+                <ScalarProperty Name="customer_contact_link" ColumnName="customer_contact_link" />
+                <ScalarProperty Name="customer_address_link" ColumnName="customer_address_link" />
+                <ScalarProperty Name="customer_name_link" ColumnName="customer_name_link" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="account_type" ColumnName="account_type" />
+                <ScalarProperty Name="utility_id" ColumnName="utility_id" />
+                <ScalarProperty Name="retail_mkt_id" ColumnName="retail_mkt_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="contract_type" ColumnName="contract_type" />
+                <ScalarProperty Name="contract_nbr" ColumnName="contract_nbr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CancelContractReasons">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.CancelContractReason">
+              <MappingFragment StoreEntitySet="CancelContractReason">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CancelContractReasonId" ColumnName="CancelContractReasonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InCompleteContractCancelReasons">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.InCompleteContractCancelReason">
+              <MappingFragment StoreEntitySet="InCompleteContractCancelReason">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CancelContractReasonId" ColumnName="CancelContractReasonId" />
+                <ScalarProperty Name="TabletIncompleteContractId" ColumnName="TabletIncompleteContractId" />
+                <ScalarProperty Name="InCompleteContractCancelReasonID" ColumnName="InCompleteContractCancelReasonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabletIncompleteContracts">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.TabletIncompleteContract">
+              <MappingFragment StoreEntitySet="TabletIncompleteContract">
+                <ScalarProperty Name="AudioLength" ColumnName="AudioLength" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="OutCome" ColumnName="OutCome" />
+                <ScalarProperty Name="Review" ColumnName="Review" />
+                <ScalarProperty Name="ClientSubmitApplicationKey" ColumnName="ClientSubmitApplicationKey" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="PromoCode" ColumnName="PromoCode" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="TaxId" ColumnName="TaxId" />
+                <ScalarProperty Name="ContractTypeId" ColumnName="ContractTypeId" />
+                <ScalarProperty Name="DUNS" ColumnName="DUNS" />
+                <ScalarProperty Name="BusinessType" ColumnName="BusinessType" />
+                <ScalarProperty Name="DBA" ColumnName="DBA" />
+                <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+                <ScalarProperty Name="CAZip" ColumnName="CAZip" />
+                <ScalarProperty Name="CASuite" ColumnName="CASuite" />
+                <ScalarProperty Name="CAStreet" ColumnName="CAStreet" />
+                <ScalarProperty Name="CAState" ColumnName="CAState" />
+                <ScalarProperty Name="CACity" ColumnName="CACity" />
+                <ScalarProperty Name="CITitle" ColumnName="CITitle" />
+                <ScalarProperty Name="CIPhone" ColumnName="CIPhone" />
+                <ScalarProperty Name="CILastName" ColumnName="CILastName" />
+                <ScalarProperty Name="CIFirstName" ColumnName="CIFirstName" />
+                <ScalarProperty Name="CIFax" ColumnName="CIFax" />
+                <ScalarProperty Name="CIEmail" ColumnName="CIEmail" />
+                <ScalarProperty Name="CISSN" ColumnName="CISSN" />
+                <ScalarProperty Name="SAZip" ColumnName="SAZip" />
+                <ScalarProperty Name="SAStreet" ColumnName="SAStreet" />
+                <ScalarProperty Name="SAState" ColumnName="SAState" />
+                <ScalarProperty Name="SACity" ColumnName="SACity" />
+                <ScalarProperty Name="BCTitle" ColumnName="BCTitle" />
+                <ScalarProperty Name="BCPhone" ColumnName="BCPhone" />
+                <ScalarProperty Name="BCLastName" ColumnName="BCLastName" />
+                <ScalarProperty Name="BCFirstName" ColumnName="BCFirstName" />
+                <ScalarProperty Name="BCFax" ColumnName="BCFax" />
+                <ScalarProperty Name="BCEmail" ColumnName="BCEmail" />
+                <ScalarProperty Name="BAZip" ColumnName="BAZip" />
+                <ScalarProperty Name="BAStreet" ColumnName="BAStreet" />
+                <ScalarProperty Name="BAState" ColumnName="BAState" />
+                <ScalarProperty Name="BACity" ColumnName="BACity" />
+                <ScalarProperty Name="PriceId" ColumnName="PriceId" />
+                <ScalarProperty Name="TierId" ColumnName="TierId" />
+                <ScalarProperty Name="ServiceClassId" ColumnName="ServiceClassId" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="ContractStartDate" ColumnName="ContractStartDate" />
+                <ScalarProperty Name="ProductBrandId" ColumnName="ProductBrandId" />
+                <ScalarProperty Name="AccountTypeId" ColumnName="AccountTypeId" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="UtilityId" ColumnName="UtilityId" />
+                <ScalarProperty Name="RetailMarketId" ColumnName="RetailMarketId" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="AdditionalNotes" ColumnName="AdditionalNotes" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+                <ScalarProperty Name="SalesChannelID" ColumnName="SalesChannelID" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="TabletIncompleteContractID" ColumnName="TabletIncompleteContractID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_contract_account_ins" FunctionName="LpDealCaptureModel.Store.usp_contract_account_ins" />
+          <EntitySetMapping Name="deal_address">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_address">
+              <MappingFragment StoreEntitySet="deal_address">
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="county_fips" ColumnName="county_fips" />
+                <ScalarProperty Name="state_fips" ColumnName="state_fips" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="suite" ColumnName="suite" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="address_link" ColumnName="address_link" />
+                <ScalarProperty Name="contract_nbr" ColumnName="contract_nbr" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_contact">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_contact">
+              <MappingFragment StoreEntitySet="deal_contact">
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="contact_link" ColumnName="contact_link" />
+                <ScalarProperty Name="contract_nbr" ColumnName="contract_nbr" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_name">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.deal_name">
+              <MappingFragment StoreEntitySet="deal_name">
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="name_link" ColumnName="name_link" />
+                <ScalarProperty Name="contract_nbr" ColumnName="contract_nbr" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_key" FunctionName="LpDealCaptureModel.Store.usp_get_key" />
+          <FunctionImportMapping FunctionImportName="usp_views_sel" FunctionName="LpDealCaptureModel.Store.usp_views_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LpDealCaptureModel.usp_views_sel_Result">
+                <ScalarProperty Name="option_id" ColumnName="option_id" />
+                <ScalarProperty Name="return_value" ColumnName="return_value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ContractPromotionCodes">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.ContractPromotionCode">
+              <MappingFragment StoreEntitySet="ContractPromotionCode">
+                <ScalarProperty Name="PromotionCodeId" ColumnName="PromotionCodeId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+                <ScalarProperty Name="ContractPromotionCodeId" ColumnName="ContractPromotionCodeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetFilteredIncompleteContractsWithAudio" FunctionName="LpDealCaptureModel.Store.usp_GetFilteredIncompleteContractsWithAudio" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LpDealCaptureModel.usp_GetFilteredIncompleteContractsWithAudio_Result">
+                <ScalarProperty Name="TabletIncompleteContractID" ColumnName="TabletIncompleteContractID" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="SalesChannelID" ColumnName="SalesChannelID" />
+                <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="AdditionalNotes" ColumnName="AdditionalNotes" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="RetailMarketId" ColumnName="RetailMarketId" />
+                <ScalarProperty Name="UtilityId" ColumnName="UtilityId" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="AccountTypeId" ColumnName="AccountTypeId" />
+                <ScalarProperty Name="ProductBrandId" ColumnName="ProductBrandId" />
+                <ScalarProperty Name="ContractStartDate" ColumnName="ContractStartDate" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="ServiceClassId" ColumnName="ServiceClassId" />
+                <ScalarProperty Name="TierId" ColumnName="TierId" />
+                <ScalarProperty Name="PriceId" ColumnName="PriceId" />
+                <ScalarProperty Name="BACity" ColumnName="BACity" />
+                <ScalarProperty Name="BAState" ColumnName="BAState" />
+                <ScalarProperty Name="BAStreet" ColumnName="BAStreet" />
+                <ScalarProperty Name="BAZip" ColumnName="BAZip" />
+                <ScalarProperty Name="BCEmail" ColumnName="BCEmail" />
+                <ScalarProperty Name="BCFax" ColumnName="BCFax" />
+                <ScalarProperty Name="BCFirstName" ColumnName="BCFirstName" />
+                <ScalarProperty Name="BCLastName" ColumnName="BCLastName" />
+                <ScalarProperty Name="BCPhone" ColumnName="BCPhone" />
+                <ScalarProperty Name="BCTitle" ColumnName="BCTitle" />
+                <ScalarProperty Name="SACity" ColumnName="SACity" />
+                <ScalarProperty Name="SAState" ColumnName="SAState" />
+                <ScalarProperty Name="SAStreet" ColumnName="SAStreet" />
+                <ScalarProperty Name="SAZip" ColumnName="SAZip" />
+                <ScalarProperty Name="CISSN" ColumnName="CISSN" />
+                <ScalarProperty Name="CIEmail" ColumnName="CIEmail" />
+                <ScalarProperty Name="CIFax" ColumnName="CIFax" />
+                <ScalarProperty Name="CIFirstName" ColumnName="CIFirstName" />
+                <ScalarProperty Name="CILastName" ColumnName="CILastName" />
+                <ScalarProperty Name="CIPhone" ColumnName="CIPhone" />
+                <ScalarProperty Name="CITitle" ColumnName="CITitle" />
+                <ScalarProperty Name="CACity" ColumnName="CACity" />
+                <ScalarProperty Name="CAState" ColumnName="CAState" />
+                <ScalarProperty Name="CAStreet" ColumnName="CAStreet" />
+                <ScalarProperty Name="CASuite" ColumnName="CASuite" />
+                <ScalarProperty Name="CAZip" ColumnName="CAZip" />
+                <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+                <ScalarProperty Name="DBA" ColumnName="DBA" />
+                <ScalarProperty Name="BusinessType" ColumnName="BusinessType" />
+                <ScalarProperty Name="DUNS" ColumnName="DUNS" />
+                <ScalarProperty Name="ContractTypeId" ColumnName="ContractTypeId" />
+                <ScalarProperty Name="TaxId" ColumnName="TaxId" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="PromoCode" ColumnName="PromoCode" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="ClientSubmitApplicationKey" ColumnName="ClientSubmitApplicationKey" />
+                <ScalarProperty Name="Review" ColumnName="Review" />
+                <ScalarProperty Name="OutCome" ColumnName="OutCome" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="InCompleteContractCancelReasonID" ColumnName="InCompleteContractCancelReasonID" />
+                <ScalarProperty Name="CancelContractReasonId" ColumnName="CancelContractReasonId" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="document_path" ColumnName="document_path" />
+                <ScalarProperty Name="document_name" ColumnName="document_name" />
+                <ScalarProperty Name="document_guid" ColumnName="document_guid" />
+                <ScalarProperty Name="ChannelName" ColumnName="ChannelName" />
+                <ScalarProperty Name="AgentFirstName" ColumnName="AgentFirstName" />
+                <ScalarProperty Name="AgentLastName" ColumnName="AgentLastName" />
+                <ScalarProperty Name="MarketCode" ColumnName="MarketCode" />
+                <ScalarProperty Name="IsGas" ColumnName="IsGas" />
+                <ScalarProperty Name="ProductBrandName" ColumnName="ProductBrandName" />
+                <ScalarProperty Name="AudioLength" ColumnName="AudioLength" />
+                <ScalarProperty Name="MarketID" ColumnName="MarketID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="RejectedContractMessages">
+            <EntityTypeMapping TypeName="LpDealCaptureModel.RejectedContractMessage">
+              <MappingFragment StoreEntitySet="RejectedContractMessage">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SalesChannelEmail" ColumnName="SalesChannelEmail" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="ToEmail" ColumnName="ToEmail" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="EmailTypeID" ColumnName="EmailTypeID" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="RejectedContractMessageID" ColumnName="RejectedContractMessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LpDealCapture" ZoomLevel="100">
+        <EntityTypeShape EntityType="LpDealCaptureModel.account_meters" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583331" IsExpanded="true" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_account_address" Width="1.5" PointX="2.75" PointY="0.75" Height="3.1340950520833326" IsExpanded="true" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_account_contact" Width="3" PointX="4.75" PointY="0.75" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_account_name" Width="1.5" PointX="0.75" PointY="4.75" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_contract_print" Width="3.75" PointX="4.75" PointY="4.75" Height="5.2494108072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_get_key" Width="1.5" PointX="8.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_rate" Width="1.5" PointX="9.75" PointY="3.75" Height="1.4033821614583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_pricing" Width="1.5" PointX="9.75" PointY="6.75" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_pricing_detail" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_contract_account" Width="1.875" PointX="7.375" PointY="12.875" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_contract" Width="2.5" PointX="4.75" PointY="10.375" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.CancelContractReason" Width="2.5" PointX="7.375" PointY="10.375" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.InCompleteContractCancelReason" Width="2.875" PointX="10" PointY="10.375" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.TabletIncompleteContract" Width="2.5" PointX="9.875" PointY="12.875" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_address" Width="1.5" PointX="2.5" PointY="4.75" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_contact" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.deal_name" Width="1.5" PointX="1.0611233995580689" PointY="9.1480635298174171" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.ContractPromotionCode" Width="1.5" PointX="1.4924116681760231" PointY="15.208260841298969" />
+        <EntityTypeShape EntityType="LpDealCaptureModel.RejectedContractMessage" Width="1.5" PointX="1.8782009323491717" PointY="7.8592119253516248" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

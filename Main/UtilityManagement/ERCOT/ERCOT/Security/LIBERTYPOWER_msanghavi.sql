@@ -1,0 +1,2 @@
+﻿CREATE USER [LIBERTYPOWER\msanghavi] FOR LOGIN [LIBERTYPOWER\msanghavi];
+

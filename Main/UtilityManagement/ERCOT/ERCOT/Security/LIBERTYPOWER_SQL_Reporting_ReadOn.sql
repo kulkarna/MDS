@@ -1,0 +1,2 @@
+﻿CREATE USER [LIBERTYPOWER\SQL_Reporting_ReadOn];
+

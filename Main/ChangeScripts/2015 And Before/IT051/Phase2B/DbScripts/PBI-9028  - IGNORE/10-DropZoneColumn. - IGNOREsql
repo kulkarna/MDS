@@ -1,0 +1,44 @@
+USE lp_MtM
+GO
+
+ALTER TABLE MtMEnergyCurves DROP COLUMN ZONE 
+
+GO
+
+ALTER TABLE MtMEnergyCurvesMostRecentEffectiveDate DROP COLUMN ZONE 
+
+GO
+
+ALTER TABLE MtMSupplierPremiums DROP COLUMN ZONE 
+
+GO
+
+ALTER TABLE MtMSupplierPremiumsMostRecentEffectiveDate DROP COLUMN ZONE 
+
+GO
+
+ALTER TABLE MtMShaping DROP COLUMN ZONE 
+
+GO
+
+ALTER TABLE MtMShapingMostRecentEffectiveDate DROP COLUMN ZONE 
+
+GO
+
+ALTER TABLE MtMIntraday DROP COLUMN ZONE 
+
+GO
+
+ALTER TABLE MtMIntradayMostRecentEffectiveDate DROP COLUMN ZONE 
+
+GO
+
+ALTER TABLE MtMAttrition DROP COLUMN ZONE 
+
+GO
+
+ALTER TABLE MtMAttritionMostRecentEffectiveDate DROP COLUMN ZONE 
+
+GO
+
+

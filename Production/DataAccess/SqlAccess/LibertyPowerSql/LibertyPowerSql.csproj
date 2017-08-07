@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05913FB9-6F34-4863-A2F3-0A875A4908FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibertyPower.DataAccess.SqlAccess.LibertyPowerSql</RootNamespace>
+    <AssemblyName>LibertyPowerSql</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/LibertyPowerSql/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <NoWarn>
+    </NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\..\..\Targets\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountEtfCalculationFixedSql.cs" />
+    <Compile Include="AccountEtfCalculationVariableSql.cs" />
+    <Compile Include="AccountEtfSql.cs" />
+    <Compile Include="AccountEventSql.cs" />
+    <Compile Include="AccountSalesPitchLetterQueueSql.cs" />
+    <Compile Include="AccountSql.cs" />
+    <Compile Include="CommissionSql.cs" />
+    <Compile Include="CreditAgencySql.cs" />
+    <Compile Include="CreditScoreSql.cs" />
+    <Compile Include="CRMLibertyPowerSql.cs" />
+    <Compile Include="DailyPricingSql.cs" />
+    <Compile Include="DepositSql.cs" />
+    <Compile Include="DispositionTransferSql.cs" />
+    <Compile Include="EdiSql.cs" />
+    <Compile Include="EflSql.cs" />
+    <Compile Include="EmailAddressSql.cs" />
+    <Compile Include="EmailTemplateSql.cs" />
+    <Compile Include="EtfInvoiceSql.cs" />
+    <Compile Include="EtfSql.cs" />
+    <Compile Include="FieldHistoryManagerSql.cs" />
+    <Compile Include="FileManagerSql.cs" />
+    <Compile Include="FileManagerSqlException.cs" />
+    <Compile Include="GeneralSql.cs" />
+    <Compile Include="GeographicalAddressSql.cs" />
+    <Compile Include="GrossMarginSql.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="HierarchyNodeSql.cs" />
+    <Compile Include="HierarchyNodeLevelSql.cs" />
+    <Compile Include="HierarchyNodeLookupSql.cs" />
+    <Compile Include="HierarchyTemplateSql.cs" />
+    <Compile Include="IDRSQL.cs" />
+    <Compile Include="IndividualSql.cs" />
+    <Compile Include="LeadSql.cs" />
+    <Compile Include="LetterQueueSql.cs" />
+    <Compile Include="LoggerSql.cs" />
+    <Compile Include="LibertyPowerSql.cs" />
+    <Compile Include="MailListSql.cs" />
+    <Compile Include="MarginThresholdSql.cs" />
+    <Compile Include="MarketSql.cs" />
+    <Compile Include="MarkToMarket.cs" />
+    <Compile Include="Model\LibertyPowerEDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibertyPowerEDM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiTermServiceSql.cs" />
+    <Compile Include="OfferEngineSql.cs" />
+    <Compile Include="OMSCommissionSql.cs" />
+    <Compile Include="OpportunitySql.cs" />
+    <Compile Include="OrganizationSql.cs" />
+    <Compile Include="PEAddersSql.cs" />
+    <Compile Include="PEAncillaryServicesCurveSql.cs" />
+    <Compile Include="PEAuctionRevenueRightPriceCurveSql.cs" />
+    <Compile Include="PEBillingTransactionCostCurveSql.cs" />
+    <Compile Include="PEOfferPricingComponentsPassthroughSql.cs" />
+    <Compile Include="PEPricingContractSql.cs" />
+    <Compile Include="PETradingHoursPerSymbolSql.cs" />
+    <Compile Include="PEUploadCurveSql.cs" />
+    <Compile Include="PEZoneIdCurveNameAssociationSql.cs" />
+    <Compile Include="PEBlockEnergyCurveParametersSql.cs" />
+    <Compile Include="PECalculationSetSql.cs" />
+    <Compile Include="PEClosingBusinessDayReportCurveSql.cs" />
+    <Compile Include="PECommentSql.cs" />
+    <Compile Include="PEDataValidationSql.cs" />
+    <Compile Include="PEDefaultValuesSql.cs" />
+    <Compile Include="PEEnergyCostsSql.cs" />
+    <Compile Include="PEEnergyCurveNameMappingSql.cs" />
+    <Compile Include="PEEnergyTradingMarketCurveReportsSql.cs" />
+    <Compile Include="PEEnergyTradingMarketCurvesSql.cs" />
+    <Compile Include="PEFinanceFeeCurveSql.cs" />
+    <Compile Include="PEFunctionalParametersSql.cs" />
+    <Compile Include="PEGroupOptionsSql.cs" />
+    <Compile Include="PEInternalFeesSql.cs" />
+    <Compile Include="PEIntradayHourlyPriceDifferenceSql.cs" />
+    <Compile Include="PEIsoSql.cs" />
+    <Compile Include="PELossFactorCurveSql.cs" />
+    <Compile Include="PEMailingListSql.cs" />
+    <Compile Include="PEMarketSql.cs" />
+    <Compile Include="PEMarketVolatilitySql.cs" />
+    <Compile Include="PENewSupplyQuoteRequestDataSql.cs" />
+    <Compile Include="PENewSupplyQuoteRequestHeaderSql.cs" />
+    <Compile Include="PENonEnergyCostsSql.cs" />
+    <Compile Include="PEOfferDetailFileDataSql.cs" />
+    <Compile Include="PEOfferDetailFileHeaderSql.cs" />
+    <Compile Include="PEOfferDocumentDataSql.cs" />
+    <Compile Include="PEOfferDocumentHeaderSql.cs" />
+    <Compile Include="PEPorCurveSql.cs" />
+    <Compile Include="PEPricingComponentsSql.cs" />
+    <Compile Include="PEPricingDayValidTradeDateBlockEnergyCurvesSql.cs" />
+    <Compile Include="PEPricingDayValidTradeDatePerBaselineReportSymbolSql.cs" />
+    <Compile Include="PERenewablePortfolioStandardPriceCurveSql.cs" />
+    <Compile Include="PERisksSql.cs" />
+    <Compile Include="PESalesConfirmationAttachmentDataPartASql.cs" />
+    <Compile Include="PESalesConfirmationAttachmentDataPartBSql.cs" />
+    <Compile Include="PESalesConfirmationAttachmentHeaderSql.cs" />
+    <Compile Include="PEServiceClassIDSql.cs" />
+    <Compile Include="PESnapshotReportCurveSql.cs" />
+    <Compile Include="PESnapshotReportMonthMappingSql.cs" />
+    <Compile Include="PESupplyQuoteSupplierSql.cs" />
+    <Compile Include="PETCapFactorCurveSql.cs" />
+    <Compile Include="PETCapPriceCurveSql.cs" />
+    <Compile Include="PETradingDaysPerBaselineReportSymbol.cs" />
+    <Compile Include="PETradingDaysPerSnapshotReportSymbolSql.cs" />
+    <Compile Include="PEUCapFactorCurveSql.cs" />
+    <Compile Include="PEUCapPriceCurveSql.cs" />
+    <Compile Include="PEUploadedCurveFileSql.cs" />
+    <Compile Include="PEUserSql.cs" />
+    <Compile Include="PEValidationTypeSql.cs" />
+    <Compile Include="PEZoneIdReportSymbolAssociationSql.cs" />
+    <Compile Include="PEZoneSql.cs" />
+    <Compile Include="PhoneNumberSql.cs" />
+    <Compile Include="PEPricingComponentsConfigurationSql.cs" />
+    <Compile Include="PricingEngineSql.cs" />
+    <Compile Include="ProductCostRuleSetup.cs" />
+    <Compile Include="ProductSql.cs" />
+    <Compile Include="ProfileSql.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertySql.cs" />
+    <Compile Include="ProspectGroupSql.cs" />
+    <Compile Include="ProspectSql.cs" />
+    <Compile Include="RDForwardCurvesSql.cs" />
+    <Compile Include="ResourceIdentifierSql.cs" />
+    <Compile Include="RetentionSavedAccountsQueueSql.cs" />
+    <Compile Include="SalesChannelDeviceSql.cs" />
+    <Compile Include="SalesChannelHistorySql.cs" />
+    <Compile Include="SalesChannelProspectSql.cs" />
+    <Compile Include="SalesChannelSql.cs" />
+    <Compile Include="SalesChannelSupportSql.cs" />
+    <Compile Include="SalesChannelUserSql.cs" />
+    <Compile Include="SecuritySQL.cs" />
+    <Compile Include="SnapshotReportSql.cs" />
+    <Compile Include="TimeTrackerEmployeeSql.cs" />
+    <Compile Include="TimeTrackerProjectSql.cs" />
+    <Compile Include="TimeTrackerTaskSql.cs" />
+    <Compile Include="TimeTrackerTimeSheetEntrySql.cs" />
+    <Compile Include="UsageSql.cs" />
+    <Compile Include="MarketParsingSql.cs" />
+    <Compile Include="MarketParsingSqlException.cs" />
+    <Compile Include="UtilityMappingSql.cs" />
+    <Compile Include="UtilitySql.cs" />
+    <Compile Include="WorkflowAutoCompleteSql.cs" />
+    <Compile Include="WorkflowSql.cs" />
+    <Compile Include="ZoneSql.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="LibertyPower.cd" />
+    <EntityDeploy Include="Model\LibertyPowerEDM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LibertyPowerEDM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\DataSources\LibertyPower.DataAccess.SqlAccess.LibertyPowerSql.Model.LibertyPowerEntities.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,150 @@
+﻿@model UtilityManagement.Models.LibertyPowerBillingTypeListModel
+@{
+    ViewBag.Title = "LP Billing Types Details";
+    var pordn = Model.PorDriverName.ToLower();
+}
+
+@using (Html.BeginForm())
+{
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="billing_ico"></div>
+                <div class="edit_header_desc">
+                    <h4> LP Billing Types</h4>
+                    <h3>Details Record</h3>
+                </div>
+            </div>
+        <div class="form_fieldset">
+        <fieldset>
+            <legend>LP Billing Types</legend>
+            <div class="textblock">
+                <div class="details-data-section">
+                    <div id="Gen"  class="activable">
+                        <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                        <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                        <div id="hideContent" class="editdetails">
+                            <div class="details-full-section">
+                                <div class="display-label">
+                        @Html.LabelFor(model => model.UtilityCode, "Utility Code")
+                                </div>
+                                <div class="display-field">
+                        @Html.DisplayFor(model => model.UtilityCode)
+                                </div>
+                                <div class="display-label">
+                        @Html.LabelFor(model => model.PorDriverName, "Driver")
+                                </div>
+                                <div class="display-field">
+                        @Html.DisplayFor(model => model.PorDriverName)
+                                </div>
+                                <div class="display-label">
+                        @Html.Label("Driver Value")
+                                </div>
+                    @{
+    if (pordn == "rate class")
+    {
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.RateClassCode)
+                        </div>
+    }
+    else if (pordn == "load profile")
+    {
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.LoadProfileCode)
+                        </div>
+    }
+    else if (pordn == "tariff code")
+    {
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.TariffCode)
+                        </div>
+    }
+                    } 
+                    <div class="display-label">
+                        @Html.Label("Default Billing Type")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.DefaultBillingTypeName) &nbsp;
+                    </div>
+                    <div class="display-label">
+                        @Html.Label("Utility Offered Billing Type")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.UtilityOfferedBillingTypeName) &nbsp;
+                    </div>
+                    <div class="display-label">
+                        @Html.Label("Liberty Power Approved Billing Type")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.LpApprovedBillingTypeName) &nbsp;
+                    </div>
+                    <div class="display-label">
+                        @Html.Label("Terms")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Terms) &nbsp;
+                    </div>
+                    <div class="display-label">
+                        @Html.Label("Account Type")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.AccountTypeName) &nbsp;
+                    </div>
+                </div>
+                        </div></div>
+                 <div id="info"  class="activable">
+                      <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.Inactive)
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Inactive)
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.CreatedBy, "Created By")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CreatedBy) &nbsp;
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CreatedDate) &nbsp;
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.LastModifiedBy) &nbsp;
+                    </div>
+
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.LastModifiedDate) &nbsp;
+                    </div>
+                </div>
+                    </div></div>
+
+                </div>
+            </div>
+        </fieldset>
+    </div>
+        </div>
+}
+@if (Session["ErrorMessage"] != null)
+{
+    <h3>@Session["ErrorMessage"].ToString()</h3>
+}
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

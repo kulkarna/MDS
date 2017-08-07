@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.RequestModeTypeToRequestModeTypeGenre>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Request Mode Type To Request Mode Type Genre Index</h3>
+<br />
+<table>
+    <tr>
+        <th>Row Count = @Model.Count()</th>
+        <th>
+            @Html.Label("Request Mode Type Name")
+        </th>
+        <th>
+            @Html.Label("Request Mode Type Genre Name")
+        </th>
+        <th>
+            @Html.Label("Inactive")
+        </th>
+        <th>
+            @Html.Label("Created By")
+        </th>
+        <th>
+            @Html.Label("Created Date")
+        </th>
+        <th>
+            @Html.Label("Last Modified By")
+        </th>
+        <th>
+            @Html.Label("Last Modified Date")
+        </th>
+    </tr>
+
+    @foreach (var item in Model.OrderBy(x => x.RequestModeType.Name))
+    {
+        <tr>
+            <td>
+                @{string checkBoxId = string.Format("CheckBoxSelection_{0}", item.Id);}
+                <input type="checkbox" class="check-box" id="@checkBoxId" name="SelectionCheckBox" onClick="UncheckAllButThis('@checkBoxId');">
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestModeType.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestModeTypeGenre.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inactive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModifiedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModifiedDate)
+            </td>
+        </tr>
+    }
+</table>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

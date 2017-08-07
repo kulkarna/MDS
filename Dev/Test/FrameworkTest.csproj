@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9EBF85BB-4A78-4361-BBE2-5443A82162E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrameworkTest</RootNamespace>
+    <AssemblyName>FrameworkTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Jaime_Rebel|AnyCPU'">
+    <OutputPath>bin\Jaime_Rebel\</OutputPath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=7.0.3.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Reference\NonBuild\Aspose\7.1\Aspose.Cells.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aspose.Pdf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56" />
+    <Reference Include="Aspose.Words, Version=4.2.3.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\Reference\NonBuild\Other\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountEventProcessorTest.cs" />
+    <Compile Include="BackFillSalesChannelPrices.cs" />
+    <Compile Include="ErcotParserTests.cs" />
+    <Compile Include="MiscTesting.cs" />
+    <Compile Include="ObjectCloneTest.cs" />
+    <Compile Include="PriceServiceTest.cs" />
+    <Compile Include="ProfilingTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RateManagementTest.cs" />
+    <Compile Include="UsageManagementTest.cs" />
+    <Compile Include="UtilityMappingTest.cs" />
+    <Compile Include="UtilityMappingTest2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Sample Files\RateCodeFile.xlsx" />
+    <None Include="Sample Files\RR-1.xls" />
+    <None Include="Sample Files\UtilitiesAndZoneMapping-ProductionFromPricing.xlsx" />
+    <None Include="Sample Files\UtilitiesAndZoneMapping.xlsx" />
+    <Shadow Include="Test References\UtilityManagement.accessor" />
+    <Shadow Include="Test References\MarketParsing.accessor" />
+    <Shadow Include="Test References\CommonShared.accessor" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Apps\OfferEngine\COMMON\COMMON.csproj">
+      <Project>{E1DDEBE3-B97A-44CF-BBC3-46BBE35D488A}</Project>
+      <Name>COMMON %28LibertyPower\Applications\OfferEngine\Offer Engine Support\COMMON%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\CORE\CORE.csproj">
+      <Project>{A597A317-9629-4543-90F4-A0EE7C8C18EE}</Project>
+      <Name>CORE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\DATA\DATA.csproj">
+      <Project>{AF9CC767-AE99-4B73-B5DE-7BAFCBECBD8E}</Project>
+      <Name>DATA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\GENERICCLASS\GENERICCLASS.csproj">
+      <Project>{DAB0FD11-D0A6-4BF6-BC3D-B722D72A1761}</Project>
+      <Name>GENERICCLASS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\VIHBMSQLSERVEREnrollment\VIHBMSQLSERVEREnrollment.csproj">
+      <Project>{785E0538-63DD-415F-B565-99497D54F6B8}</Project>
+      <Name>VIHBMSQLSERVEREnrollment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\VOHBMORACLE\VOHBMORACLE.csproj">
+      <Project>{F845D926-5A18-4A0C-BF96-A39F5CB02DBD}</Project>
+      <Name>VOHBMORACLE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\VOHBMSQLSERVERCommon\VOHBMSQLSERVERCommon.csproj">
+      <Project>{44B603D0-6689-4F3A-801B-694D75256888}</Project>
+      <Name>VOHBMSQLSERVERCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\VOHBMSQLSERVERDealCaprure\VOHBMSQLSERVERDealCapture.csproj">
+      <Project>{DB02794E-38B8-4D92-8543-4E9A3DB03D9C}</Project>
+      <Name>VOHBMSQLSERVERDealCapture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\VOHBMSQLSERVERHistoricalData\VOHBMSQLSERVERHistoricalData.csproj">
+      <Project>{0E453F3A-286A-459E-A17E-EBD541B7F045}</Project>
+      <Name>VOHBMSQLSERVERHistoricalData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\VOHBMSQLSERVER\VOHBMSQLSERVER.csproj">
+      <Project>{1DCB8989-2730-4DBA-9C49-968C2684661C}</Project>
+      <Name>VOHBMSQLSERVER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps\OfferEngine\VOs\VOs.csproj">
+      <Project>{50B17034-2328-4EAC-B96D-FF12CC5F5A89}</Project>
+      <Name>VOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\CommonEntity\CommonEntity.csproj">
+      <Project>{4480D1DD-D888-427E-861F-EFA44578CC59}</Project>
+      <Name>CommonEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\CommonExcel\CommonExcel.csproj">
+      <Project>{A0F176A9-EA08-420F-A5C2-312FC51ECD21}</Project>
+      <Name>CommonExcel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\CommonExceptions\CommonExceptions.csproj">
+      <Project>{72163BAA-3532-4423-8410-30348D0195A7}</Project>
+      <Name>CommonExceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\CommonHelper\CommonHelper.csproj">
+      <Project>{AB432637-BCFD-4579-89A4-50C4072908C4}</Project>
+      <Name>CommonHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\CommonRules\CommonRules.csproj">
+      <Project>{02012D5F-6983-432B-B030-E66C414ED6AA}</Project>
+      <Name>CommonRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\CommonSecurity\SecurityManager.csproj">
+      <Project>{CF398D31-956C-4EFD-81CA-0B1115B3C4A2}</Project>
+      <Name>SecurityManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\CommonShared\CommonShared.csproj">
+      <Project>{A6DF4C18-D1AD-4775-B595-7DBAADC80659}</Project>
+      <Name>CommonShared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\EmailManager\EmailManager.csproj">
+      <Project>{0583558F-52C6-4086-AD01-1478BBAFBA42}</Project>
+      <Name>EmailManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\FileManager\FileManager.csproj">
+      <Project>{D617259E-B893-483A-BE48-62F30CB3F4CF}</Project>
+      <Name>FileManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CommonBusiness\TimeSeries\TimeSeries.csproj">
+      <Project>{77B0884D-4A6D-4E49-AF8A-11EF81A0CA47}</Project>
+      <Name>TimeSeries</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\DailyPricing\DailyPricing.csproj">
+      <Project>{4AB0A202-3629-4B2C-96EF-A71762660FF1}</Project>
+      <Name>DailyPricing %28LibertyPower\Business\CustomerAcquisition\DailyPricing%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\Offers\Offers.csproj">
+      <Project>{3606403F-2823-42DF-BB81-13FD3CD6B533}</Project>
+      <Name>Offers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\PricingConfiguration\PricingConfiguration.csproj">
+      <Project>{FFB0682E-A344-4BC8-8B2D-0BD42EE7D36B}</Project>
+      <Name>PricingConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\ProductManagement\ProductManagement.csproj">
+      <Project>{D52C8000-3D06-4B23-A6C6-8AE39335E4D1}</Project>
+      <Name>ProductManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\ProspectManagement\ProspectManagement.csproj">
+      <Project>{449573E5-F40B-4FFA-A5BF-F762C1583E6F}</Project>
+      <Name>ProspectManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\Prospects\Prospects.csproj">
+      <Project>{1381FD7E-2E4C-4D70-B4DD-C4072D5FEB68}</Project>
+      <Name>Prospects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\RateDeterminants\RateDeterminants.csproj">
+      <Project>{B5E7BE3F-F2F7-480A-B7AE-7E3E5C329AAC}</Project>
+      <Name>RateDeterminants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\RateManagement\RateManagement.csproj">
+      <Project>{0498F81E-F0E5-4C06-8125-C35246A3967A}</Project>
+      <Name>RateManagement %28LibertyPower\Business\CustomerAcquisition\RateManagement%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\SalesChannel\SalesChannel.csproj">
+      <Project>{25E70629-B240-41CE-85EE-415E4BB77EE2}</Project>
+      <Name>SalesChannel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\VariableRateDeterminants\VariableRateDeterminants.csproj">
+      <Project>{D1814019-4801-4FBB-85C5-D2A731217F2F}</Project>
+      <Name>VariableRateDeterminants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerAcquisition\VariableRateEngine\VariableRateEngine.csproj">
+      <Project>{361CF87A-38C8-4D19-A78C-B225EEE8474D}</Project>
+      <Name>VariableRateEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerManagement\AccountManagement\AccountManagement.csproj">
+      <Project>{5BDF93E6-83AA-4251-BDAD-38F466714B41}</Project>
+      <Name>AccountManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\CustomerManagement\LetterQueue\LetterQueue.csproj">
+      <Project>{0F04212F-3236-4FED-964E-BA0AC9F0DB9A}</Project>
+      <Name>LetterQueue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\MarketManagement\EdiManagement\EdiManagement.csproj">
+      <Project>{B3CA2B31-8D4C-4634-878B-8F9B306CC2A0}</Project>
+      <Name>EdiManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\MarketManagement\EdiParser\FileParser\FileParser.csproj">
+      <Project>{CE2FBCF2-E91B-47C8-BAA9-7ABE67477984}</Project>
+      <Name>FileParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\MarketManagement\IdrUsageManagement\IdrUsageManagement.csproj">
+      <Project>{A5ACE7B9-C270-4A8E-B319-B1274D317453}</Project>
+      <Name>IdrUsageManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\MarketManagement\MarketParsing\MarketParsing.csproj">
+      <Project>{89380D4D-DDFB-4F0F-8F4C-5D42D9DA579D}</Project>
+      <Name>MarketParsing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\MarketManagement\UsageManagement\UsageManagement.csproj">
+      <Project>{942F6C2E-682C-4D9B-9D6B-0B2062A43C70}</Project>
+      <Name>UsageManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\MarketManagement\UtilityManagement\UtilityManagement.csproj">
+      <Project>{98086321-A541-4063-872B-62FA3A691B24}</Project>
+      <Name>UtilityManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\PartnerManagement\Commissions\Commissions\Commissions.vbproj">
+      <Project>{9BFAE591-0AC1-4E9D-9865-93707A8C034D}</Project>
+      <Name>Commissions %28LibertyPower\Business\PartnerManagement\Commissions%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\CsvAccess\GenericCsv\GenericCsv.csproj">
+      <Project>{99952D78-82D9-4CEE-A2F3-E3D9BE637D29}</Project>
+      <Name>GenericCsv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\ExcelAccess\ExcelAccess.csproj">
+      <Project>{0F9B84EA-7DD5-4491-B02C-2B6276EA59E6}</Project>
+      <Name>ExcelAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\SqlAccess\AccountSql\AccountSql.csproj">
+      <Project>{88F03CD1-CBC5-49C6-ACCD-F7F692D653B6}</Project>
+      <Name>AccountSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\SqlAccess\CommonSql\CommonSql.csproj">
+      <Project>{5D28F819-D51A-45BA-9635-E716E67B09A2}</Project>
+      <Name>CommonSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\SqlAccess\HistoricalInfoSql\HistoricalInfoSql.csproj">
+      <Project>{2352F82A-750F-4235-9A30-23281D668105}</Project>
+      <Name>HistoricalInfoSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\SqlAccess\IstaSql\IstaSql.csproj">
+      <Project>{C0897342-C763-4B4A-9770-384507B7CFE0}</Project>
+      <Name>IstaSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\SqlAccess\LibertyPowerSql\LibertyPowerSql.csproj">
+      <Project>{05913FB9-6F34-4863-A2F3-0A875A4908FF}</Project>
+      <Name>LibertyPowerSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\SqlAccess\OfferEngineSql\OfferEngineSql.csproj">
+      <Project>{8D05BB5E-6205-4C20-BDFC-AB7691142F50}</Project>
+      <Name>OfferEngineSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\SqlAccess\RateManagementSql\RateManagementSql.csproj">
+      <Project>{06186C3D-7983-4BB4-87B7-A7B2ACCE6BAB}</Project>
+      <Name>RateManagementSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\SqlAccess\RiskSql\RiskSql.csproj">
+      <Project>{DE014A64-7663-473C-950C-5FDE452F386C}</Project>
+      <Name>RiskSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\SqlAccess\TransactionsSql\TransactionsSql.csproj">
+      <Project>{2B0CEAF2-6CE6-4909-A797-A24EFD55C130}</Project>
+      <Name>TransactionsSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\WebAccess\WebScraperManagement\WebScraperManagement.csproj">
+      <Project>{3DB3D6E0-E9AD-45F3-BF94-741FE9A07D09}</Project>
+      <Name>WebScraperManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\WebServiceAccess\DocumentWebService\DocumentWebService.csproj">
+      <Project>{7573B5EA-8653-47A0-8A42-3B7F9B46B2AB}</Project>
+      <Name>DocumentWebService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\WebServiceAccess\Ista\IstaWebService.csproj">
+      <Project>{98EE2193-7E9A-4349-B5C5-A042CE7D35EE}</Project>
+      <Name>IstaWebService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\WebServiceAccess\PricesWcf\PricesWcf.csproj">
+      <Project>{0BA0743B-29F3-450B-B7B4-32C61C862F60}</Project>
+      <Name>PricesWcf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\WorkbookAccess\WorkbookAccess.csproj">
+      <Project>{4D0B6E19-7218-4AF3-BC1A-F6272B0C4E16}</Project>
+      <Name>WorkbookAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CRMWebServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CRMWebServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/CommonServices.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="WSUtilityResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Utilities" nillable="true" type="tns:ArrayOfWSUtility" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WSUtilityResult" nillable="true" type="tns:WSUtilityResult" />
+  <xs:complexType name="WSResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="HasErrors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSResult" nillable="true" type="tns:WSResult" />
+  <xs:complexType name="ArrayOfWSUtility">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSUtility" nillable="true" type="tns:WSUtility" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSUtility" nillable="true" type="tns:ArrayOfWSUtility" />
+  <xs:complexType name="WSUtility">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumberLength" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountNumberPrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnrollmentLeadDays" type="xs:int" />
+      <xs:element minOccurs="0" name="Identity" type="xs:int" />
+      <xs:element minOccurs="0" name="RetailMarketCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RetailMarketID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSUtility" nillable="true" type="tns:WSUtility" />
+  <xs:complexType name="ArrayOfWSRetailMarket">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSRetailMarket" nillable="true" type="tns:WSRetailMarket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSRetailMarket" nillable="true" type="tns:ArrayOfWSRetailMarket" />
+  <xs:complexType name="WSRetailMarket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsInactive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarketCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PucCertificationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RetailMarketId" type="xs:int" />
+      <xs:element minOccurs="0" name="WholesaleMarkedId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSRetailMarket" nillable="true" type="tns:WSRetailMarket" />
+  <xs:complexType name="WSSalesChannelUserResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WSResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SalesChannelUsers" nillable="true" type="tns:ArrayOfWSSalesChannelUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WSSalesChannelUserResult" nillable="true" type="tns:WSSalesChannelUserResult" />
+  <xs:complexType name="ArrayOfWSSalesChannelUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSSalesChannelUser" nillable="true" type="tns:WSSalesChannelUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSSalesChannelUser" nillable="true" type="tns:ArrayOfWSSalesChannelUser" />
+  <xs:complexType name="WSSalesChannelUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChannelID" type="xs:int" />
+      <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityID" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsChannelManager" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDevelopmentManager" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLPChannelManager" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegacyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportsTo" type="xs:int" />
+      <xs:element minOccurs="0" name="UserGuid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserImage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSSalesChannelUser" nillable="true" type="tns:WSSalesChannelUser" />
+  <xs:complexType name="ArrayOfWSSalesChannel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSSalesChannel" nillable="true" type="tns:WSSalesChannel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSSalesChannel" nillable="true" type="tns:ArrayOfWSSalesChannel" />
+  <xs:complexType name="WSSalesChannel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChannelDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelDevelopmentManagerID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ChannelGroupIdentity" type="xs:int" />
+      <xs:element minOccurs="0" name="ChannelID" type="xs:int" />
+      <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelTypeIdentity" type="xs:int" />
+      <xs:element minOccurs="0" name="HasManagedUsers" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSSalesChannel" nillable="true" type="tns:WSSalesChannel" />
+  <xs:complexType name="ArrayOfWSDocumentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSDocumentType" nillable="true" type="tns:WSDocumentType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSDocumentType" nillable="true" type="tns:ArrayOfWSDocumentType" />
+  <xs:complexType name="WSDocumentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSDocumentType" nillable="true" type="tns:WSDocumentType" />
+  <xs:complexType name="ArrayOfWSAccountType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WSAccountType" nillable="true" type="tns:WSAccountType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWSAccountType" nillable="true" type="tns:ArrayOfWSAccountType" />
+  <xs:complexType name="WSAccountType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WSAccountType" nillable="true" type="tns:WSAccountType" />
+</xs:schema>

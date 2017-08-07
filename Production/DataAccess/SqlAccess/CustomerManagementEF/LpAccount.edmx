@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Lp_AccountModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Lp_AccountModelStoreContainer">
+          <EntitySet Name="account_address_bak" EntityType="Lp_AccountModel.Store.account_address_bak" store:Type="Tables" store:Schema="dbo" store:Name="account_address_bak">
+            <DefiningQuery>SELECT 
+      [account_address_bak].[AccountAddressID] AS [AccountAddressID], 
+      [account_address_bak].[account_id] AS [account_id], 
+      [account_address_bak].[address_link] AS [address_link], 
+      [account_address_bak].[address] AS [address], 
+      [account_address_bak].[suite] AS [suite], 
+      [account_address_bak].[city] AS [city], 
+      [account_address_bak].[state] AS [state], 
+      [account_address_bak].[zip] AS [zip], 
+      [account_address_bak].[county] AS [county], 
+      [account_address_bak].[state_fips] AS [state_fips], 
+      [account_address_bak].[county_fips] AS [county_fips], 
+      [account_address_bak].[chgstamp] AS [chgstamp]
+      FROM [dbo].[account_address_bak] AS [account_address_bak]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="account_contact_bak" EntityType="Lp_AccountModel.Store.account_contact_bak" store:Type="Tables" store:Schema="dbo" store:Name="account_contact_bak">
+            <DefiningQuery>SELECT 
+      [account_contact_bak].[AccountContactID] AS [AccountContactID], 
+      [account_contact_bak].[account_id] AS [account_id], 
+      [account_contact_bak].[contact_link] AS [contact_link], 
+      [account_contact_bak].[first_name] AS [first_name], 
+      [account_contact_bak].[last_name] AS [last_name], 
+      [account_contact_bak].[title] AS [title], 
+      [account_contact_bak].[phone] AS [phone], 
+      [account_contact_bak].[fax] AS [fax], 
+      [account_contact_bak].[email] AS [email], 
+      [account_contact_bak].[birthday] AS [birthday], 
+      [account_contact_bak].[chgstamp] AS [chgstamp]
+      FROM [dbo].[account_contact_bak] AS [account_contact_bak]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="account_info" EntityType="Lp_AccountModel.Store.account_info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="account_name_bak" EntityType="Lp_AccountModel.Store.account_name_bak" store:Type="Tables" store:Schema="dbo" store:Name="account_name_bak">
+            <DefiningQuery>SELECT 
+      [account_name_bak].[AccountNameID] AS [AccountNameID], 
+      [account_name_bak].[account_id] AS [account_id], 
+      [account_name_bak].[name_link] AS [name_link], 
+      [account_name_bak].[full_name] AS [full_name], 
+      [account_name_bak].[chgstamp] AS [chgstamp]
+      FROM [dbo].[account_name_bak] AS [account_name_bak]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="account_renewal_address" EntityType="Lp_AccountModel.Store.account_renewal_address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="account_renewal_contact" EntityType="Lp_AccountModel.Store.account_renewal_contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="account_renewal_name" EntityType="Lp_AccountModel.Store.account_renewal_name" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AccountPaymentTerm" EntityType="Lp_AccountModel.Store.AccountPaymentTerm" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_Account.dbo.account_address_bak' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="account_address_bak">
+          <Key>
+            <PropertyRef Name="AccountAddressID" />
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="address_link" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="suite" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="state" />
+            <PropertyRef Name="zip" />
+            <PropertyRef Name="county" />
+            <PropertyRef Name="state_fips" />
+            <PropertyRef Name="county_fips" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Name="AccountAddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="address_link" Type="int" Nullable="false" />
+          <Property Name="address" Type="char" Nullable="false" MaxLength="50" />
+          <Property Name="suite" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="city" Type="char" Nullable="false" MaxLength="28" />
+          <Property Name="state" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="zip" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="county" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="state_fips" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="county_fips" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_Account.dbo.account_contact_bak' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="account_contact_bak">
+          <Key>
+            <PropertyRef Name="AccountContactID" />
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="contact_link" />
+            <PropertyRef Name="first_name" />
+            <PropertyRef Name="last_name" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="phone" />
+            <PropertyRef Name="fax" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="birthday" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Name="AccountContactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="contact_link" Type="int" Nullable="false" />
+          <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="title" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="fax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="birthday" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_info">
+          <Key>
+            <PropertyRef Name="AccountInfoId" />
+          </Key>
+          <Property Name="AccountInfoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="utility_id" Type="char" Nullable="false" MaxLength="15" />
+          <Property Name="name_key" Type="char" MaxLength="50" />
+          <Property Name="BillingAccount" Type="varchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="MeterDataMgmtAgent" Type="varchar" MaxLength="50" />
+          <Property Name="MeterServiceProvider" Type="varchar" MaxLength="50" />
+          <Property Name="MeterInstaller" Type="varchar" MaxLength="50" />
+          <Property Name="MeterReader" Type="varchar" MaxLength="50" />
+          <Property Name="MeterOwner" Type="varchar" MaxLength="50" />
+          <Property Name="SchedulingCoordinator" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Lp_Account.dbo.account_name_bak' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="account_name_bak">
+          <Key>
+            <PropertyRef Name="AccountNameID" />
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="name_link" />
+            <PropertyRef Name="full_name" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Name="AccountNameID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="name_link" Type="int" Nullable="false" />
+          <Property Name="full_name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_renewal_address">
+          <Key>
+            <PropertyRef Name="AccountRenewalAddressID" />
+          </Key>
+          <Property Name="AccountRenewalAddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="address_link" Type="int" Nullable="false" />
+          <Property Name="address" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="suite" Type="nvarchar" MaxLength="300" />
+          <Property Name="city" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="state" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="zip" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="county" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="state_fips" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="county_fips" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_renewal_contact">
+          <Key>
+            <PropertyRef Name="AccountRenewalContactID" />
+          </Key>
+          <Property Name="AccountRenewalContactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="contact_link" Type="int" Nullable="false" />
+          <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="title" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="fax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="birthday" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_renewal_name">
+          <Key>
+            <PropertyRef Name="AccountRenewalNameID" />
+          </Key>
+          <Property Name="AccountRenewalNameID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="account_id" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="name_link" Type="int" Nullable="false" />
+          <Property Name="full_name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="chgstamp" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountPaymentTerm">
+          <Key>
+            <PropertyRef Name="accountPaymentTermId" />
+          </Key>
+          <Property Name="accountPaymentTermId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="accountId" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="paymentTerm" Type="int" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" />
+        </EntityType>
+        <Function Name="usp_status_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_view" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Lp_AccountModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Lp_AccountEntities" annotation:LazyLoadingEnabled="true" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <EntitySet Name="account_address_bak" EntityType="Lp_AccountModel.account_address_bak" />
+          <EntitySet Name="account_contact_bak" EntityType="Lp_AccountModel.account_contact_bak" />
+          <EntitySet Name="account_name_bak" EntityType="Lp_AccountModel.account_name_bak" />
+          <EntitySet Name="account_renewal_address" EntityType="Lp_AccountModel.account_renewal_address" />
+          <EntitySet Name="account_renewal_contact" EntityType="Lp_AccountModel.account_renewal_contact" />
+          <EntitySet Name="account_renewal_name" EntityType="Lp_AccountModel.account_renewal_name" />
+          <EntitySet Name="AccountPaymentTerms" EntityType="Lp_AccountModel.AccountPaymentTerm" />
+          <EntitySet Name="account_info" EntityType="Lp_AccountModel.account_info" />
+          <FunctionImport Name="usp_status_sel" ReturnType="Collection(Lp_AccountModel.usp_status_sel_Result)">
+            <Parameter Name="p_view" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="account_address_bak">
+          <Key>
+            <PropertyRef Name="AccountAddressID" />
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="address_link" />
+            <PropertyRef Name="address" />
+            <PropertyRef Name="suite" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="state" />
+            <PropertyRef Name="zip" />
+            <PropertyRef Name="county" />
+            <PropertyRef Name="state_fips" />
+            <PropertyRef Name="county_fips" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Type="Int32" Name="AccountAddressID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="account_id" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="address_link" Nullable="false" />
+          <Property Type="String" Name="address" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="suite" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="city" Nullable="false" MaxLength="28" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="state" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="zip" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="county" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="state_fips" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="county_fips" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_contact_bak">
+          <Key>
+            <PropertyRef Name="AccountContactID" />
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="contact_link" />
+            <PropertyRef Name="first_name" />
+            <PropertyRef Name="last_name" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="phone" />
+            <PropertyRef Name="fax" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="birthday" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Type="Int32" Name="AccountContactID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="account_id" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="contact_link" Nullable="false" />
+          <Property Type="String" Name="first_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="last_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fax" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="birthday" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_name_bak">
+          <Key>
+            <PropertyRef Name="AccountNameID" />
+            <PropertyRef Name="account_id" />
+            <PropertyRef Name="name_link" />
+            <PropertyRef Name="full_name" />
+            <PropertyRef Name="chgstamp" />
+          </Key>
+          <Property Type="Int32" Name="AccountNameID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="account_id" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="name_link" Nullable="false" />
+          <Property Type="String" Name="full_name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_renewal_address">
+          <Key>
+            <PropertyRef Name="AccountRenewalAddressID" />
+          </Key>
+          <Property Type="Int32" Name="AccountRenewalAddressID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="account_id" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="address_link" Nullable="false" />
+          <Property Type="String" Name="address" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="suite" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="city" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="state" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="zip" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="county" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="state_fips" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="county_fips" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_renewal_contact">
+          <Key>
+            <PropertyRef Name="AccountRenewalContactID" />
+          </Key>
+          <Property Type="Int32" Name="AccountRenewalContactID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="account_id" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="contact_link" Nullable="false" />
+          <Property Type="String" Name="first_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="last_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fax" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="birthday" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_renewal_name">
+          <Key>
+            <PropertyRef Name="AccountRenewalNameID" />
+          </Key>
+          <Property Type="Int32" Name="AccountRenewalNameID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="account_id" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="name_link" Nullable="false" />
+          <Property Type="String" Name="full_name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="chgstamp" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountPaymentTerm">
+          <Key>
+            <PropertyRef Name="accountPaymentTermId" />
+          </Key>
+          <Property Type="Int32" Name="accountPaymentTermId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="accountId" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="paymentTerm" Nullable="false" />
+          <Property Type="DateTime" Name="dateCreated" Precision="3" />
+        </EntityType>
+        <EntityType Name="account_info">
+          <Key>
+            <PropertyRef Name="AccountInfoId" />
+          </Key>
+          <Property Type="Int32" Name="AccountInfoId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="account_id" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="utility_id" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="name_key" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="BillingAccount" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MeterDataMgmtAgent" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MeterServiceProvider" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MeterInstaller" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MeterReader" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MeterOwner" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SchedulingCoordinator" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="usp_status_sel_Result">
+          <Property Type="String" Name="option_id" Nullable="true" MaxLength="66" />
+          <Property Type="String" Name="return_value" Nullable="false" MaxLength="15" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Lp_AccountModelStoreContainer" CdmEntityContainer="Lp_AccountEntities">
+          <EntitySetMapping Name="account_address_bak">
+            <EntityTypeMapping TypeName="Lp_AccountModel.account_address_bak">
+              <MappingFragment StoreEntitySet="account_address_bak">
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="county_fips" ColumnName="county_fips" />
+                <ScalarProperty Name="state_fips" ColumnName="state_fips" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="suite" ColumnName="suite" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="address_link" ColumnName="address_link" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="AccountAddressID" ColumnName="AccountAddressID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="account_contact_bak">
+            <EntityTypeMapping TypeName="Lp_AccountModel.account_contact_bak">
+              <MappingFragment StoreEntitySet="account_contact_bak">
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="contact_link" ColumnName="contact_link" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="AccountContactID" ColumnName="AccountContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="account_name_bak">
+            <EntityTypeMapping TypeName="Lp_AccountModel.account_name_bak">
+              <MappingFragment StoreEntitySet="account_name_bak">
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="name_link" ColumnName="name_link" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="AccountNameID" ColumnName="AccountNameID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="account_renewal_address">
+            <EntityTypeMapping TypeName="Lp_AccountModel.account_renewal_address">
+              <MappingFragment StoreEntitySet="account_renewal_address">
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="county_fips" ColumnName="county_fips" />
+                <ScalarProperty Name="state_fips" ColumnName="state_fips" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="suite" ColumnName="suite" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="address_link" ColumnName="address_link" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="AccountRenewalAddressID" ColumnName="AccountRenewalAddressID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="account_renewal_contact">
+            <EntityTypeMapping TypeName="Lp_AccountModel.account_renewal_contact">
+              <MappingFragment StoreEntitySet="account_renewal_contact">
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="contact_link" ColumnName="contact_link" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="AccountRenewalContactID" ColumnName="AccountRenewalContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="account_renewal_name">
+            <EntityTypeMapping TypeName="Lp_AccountModel.account_renewal_name">
+              <MappingFragment StoreEntitySet="account_renewal_name">
+                <ScalarProperty Name="chgstamp" ColumnName="chgstamp" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="name_link" ColumnName="name_link" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="AccountRenewalNameID" ColumnName="AccountRenewalNameID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountPaymentTerms">
+            <EntityTypeMapping TypeName="Lp_AccountModel.AccountPaymentTerm">
+              <MappingFragment StoreEntitySet="AccountPaymentTerm">
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="paymentTerm" ColumnName="paymentTerm" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="accountPaymentTermId" ColumnName="accountPaymentTermId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="account_info">
+            <EntityTypeMapping TypeName="Lp_AccountModel.account_info">
+              <MappingFragment StoreEntitySet="account_info">
+                <ScalarProperty Name="SchedulingCoordinator" ColumnName="SchedulingCoordinator" />
+                <ScalarProperty Name="MeterOwner" ColumnName="MeterOwner" />
+                <ScalarProperty Name="MeterReader" ColumnName="MeterReader" />
+                <ScalarProperty Name="MeterInstaller" ColumnName="MeterInstaller" />
+                <ScalarProperty Name="MeterServiceProvider" ColumnName="MeterServiceProvider" />
+                <ScalarProperty Name="MeterDataMgmtAgent" ColumnName="MeterDataMgmtAgent" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="BillingAccount" ColumnName="BillingAccount" />
+                <ScalarProperty Name="name_key" ColumnName="name_key" />
+                <ScalarProperty Name="utility_id" ColumnName="utility_id" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="AccountInfoId" ColumnName="AccountInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_status_sel" FunctionName="Lp_AccountModel.Store.usp_status_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Lp_AccountModel.usp_status_sel_Result">
+                <ScalarProperty Name="option_id" ColumnName="option_id" />
+                <ScalarProperty Name="return_value" ColumnName="return_value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LpAccount" ZoomLevel="69">
+        <EntityTypeShape EntityType="Lp_AccountModel.account_address_bak" Width="2.25" PointX="0.75" PointY="5.75" Height="3.3263964843749996" />
+        <EntityTypeShape EntityType="Lp_AccountModel.account_contact_bak" Width="2.125" PointX="4.5" PointY="5.5" Height="3.1340950520833335" />
+        <EntityTypeShape EntityType="Lp_AccountModel.account_name_bak" Width="2.875" PointX="8.375" PointY="4.75" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Lp_AccountModel.account_renewal_address" Width="4.625" PointX="13.125" PointY="4.25" Height="3.3263964843749996" />
+        <EntityTypeShape EntityType="Lp_AccountModel.account_renewal_contact" Width="2.5" PointX="7.75" PointY="0.75" Height="3.1340950520833326" />
+        <EntityTypeShape EntityType="Lp_AccountModel.account_renewal_name" Width="4.125" PointX="12.625" PointY="0.875" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="Lp_AccountModel.AccountPaymentTerm" Width="3" PointX="7.375" PointY="8.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="Lp_AccountModel.account_info" Width="2.875" PointX="0.75" PointY="0.75" Height="3.5186979166666674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,9 @@
+﻿/*
+This is a script to create the class definitions using microsoft's tool
+we do this that way so that we can troubleshoot what happens on the client side if they dont have visual studio's service references
+since the classes generated are different
+
+*/
+
+svcutil.exe http://localhost:57373/ContractSubmission.svc http://localhost:57373/CRMTesting.svc http://localhost:57373/PricingServices.svc http://localhost:57373/CommonServices.svc 
+

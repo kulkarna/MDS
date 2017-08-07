@@ -1,0 +1,97 @@
+﻿@model DataAccessLayerEntityFramework.UserInterfaceFormControl
+
+@{
+    ViewBag.Title = "Create";
+}
+@using UserInterfaceValidationExtensions
+
+<h3>Create User Interface Form Control</h3>
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form_fieldset">
+        <fieldset>
+            <legend>UserInterfaceFormControl</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserInterfaceFormId, "UserInterfaceForm")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("UserInterfaceFormId", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserInterfaceFormId)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ControlName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ControlName)
+                @Html.ValidationMessageFor(model => model.ControlName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Inactive)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Inactive)
+                @Html.ValidationMessageFor(model => model.Inactive)
+            </div>
+
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedBy, "Created By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedBy)
+                @Html.ValidationMessageFor(model => model.CreatedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedDate, "Created Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.CreatedDate)
+                @Html.ValidationMessageFor(model => model.CreatedDate)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedBy)
+                @Html.ValidationMessageFor(model => model.LastModifiedBy)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.LastModifiedDate)
+                @Html.ValidationMessageFor(model => model.LastModifiedDate)
+            </div>
+
+            @if (Session["IsPostBack"] != null && Session["IsPostBack"].ToString() == "true")
+            {
+                <div class="editor-label" style="color: red">
+                    <h3>
+                        @Model.GetUserInterfaceFormControlValidationString()
+
+                    </h3>
+                </div>
+            }
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

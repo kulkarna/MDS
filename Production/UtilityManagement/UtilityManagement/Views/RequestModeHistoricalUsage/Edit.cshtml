@@ -1,0 +1,348 @@
+﻿@model DataAccessLayerEntityFramework.RequestModeHistoricalUsage
+@{
+    ViewBag.Title = "Edit Request Mode Historical Usage";
+}
+@using UserInterfaceValidationExtensions
+
+<script>
+    $("#UtilityCompanyId option").attr("disabled", "true");
+    $("#RequestModeEnrollmentTypeId option").attr("disabled", "true");
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="edit_section">
+        <div class="edit_header">
+            <div class="historical_ico"></div>
+            <div class="edit_header_desc"><h4>Historical Usage Request Mode</h4>
+            <h3>Edit Record</h3>
+            @{string displayName = @Model.UtilityCompany.UtilityCode + " " + @Model.RequestModeEnrollmentType.Name;}
+                @displayName
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>RequestModeHistoricalUsage</legend>
+
+                @Html.Hidden("Id", @Model.Id)
+                @Html.HiddenFor(model => model.RequestModeEnrollmentTypeId, new { id = "RequestModeEnrollmentTypeId", name = "RequestModeEnrollmentTypeId" })
+                @Html.Hidden("RequestModeTypeIdInitial", @Model.RequestModeTypeId, new { id = "RequestModeTypeIdInitial", name = "RequestModeTypeIdInitial" })
+
+
+                 <div class="textblock">
+                <div class="details-data-section">
+                  <div id="Gen"  class="activable">
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                    <div id="hideContent" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="details-left-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UtilityCompanyId, "Utility Company")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.UtilityCompany.UtilityCode)
+                            @Html.ValidationMessageFor(model => model.UtilityCompanyId)
+                        </div>
+                        <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.RequestModeEnrollmentTypeId, "Request Mode Enrollment Type")
+                        </div>
+                        <div class="editor-field-display" id="divRequestModeEnrollmentType">
+                            @Html.DisplayFor(model => model.RequestModeEnrollmentType.Name)
+                            @Html.ValidationMessageFor(model => model.RequestModeEnrollmentTypeId)
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.RequestModeTypeId, "Request Mode Type")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("RequestModeTypeId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.RequestModeTypeId, "The current Request Mode Type field value is invalid.")
+                        </div>
+                           <div class="clear"></div>
+                        <div class="editor-label" id="divAddressLabel">
+                            @Html.LabelFor(model => model.AddressForPreEnrollment, "Address Form Pre Enrollment")
+                        </div>
+                        <div class="editor-field" id="divAddressField">
+                            @Html.EditorFor(model => model.AddressForPreEnrollment)
+                            @Html.ValidationMessageFor(model => model.AddressForPreEnrollment)
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.AddressForPreEnrollmentValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="AddressForPreEnrollment" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label" id="divEmailTemplateLabel">
+                            @Html.LabelFor(model => model.EmailTemplate, "Email Template")
+                        </div>
+                        <div class="editor-field" id="divEmailTemplateText">
+                            @Html.EditorFor(model => model.EmailTemplate)
+                            @Html.ValidationMessageFor(model => model.EmailTemplate)
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.EmailTemplateValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="EmailTemplate" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Instructions)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Instructions)
+                            @Html.ValidationMessageFor(model => model.Instructions)
+                            @{
+    if (Session["IsPostBack"] == "true")
+    {
+        var validationMessage = Model.InstructionValidationMessage();
+        if (!string.IsNullOrWhiteSpace(validationMessage))
+        { 
+                                <span class="field-validation-error" data-valmsg-for="Instructions" data-valmsg-replace="true">@validationMessage</span>
+        }
+    }
+                            }
+                        </div>
+                          <div class="clear"></div>
+                            </div>
+                        <div class="details-right-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UtilitysSlaHistoricalUsageResponseInDays, "Utility SLA")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.UtilitysSlaHistoricalUsageResponseInDays)
+                            @Html.ValidationMessageFor(model => model.UtilitysSlaHistoricalUsageResponseInDays, "The Utility's SLA I-Cap Response In Days Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.UtilitysSlaHistoricalUsageResponseInDaysValidationMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="UtilitysSlaHistoricalUsageResponseInDays" data-valmsg-replace="true">The current Utility SLA Response field value is invalid.</span>
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LibertyPowersSlaFollowUpHistoricalUsageResponseInDays, "Liberty Power SLA")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.LibertyPowersSlaFollowUpHistoricalUsageResponseInDays)
+                            @Html.ValidationMessageFor(model => model.LibertyPowersSlaFollowUpHistoricalUsageResponseInDays, "The Liberty Power's SLA Follow Up I-Cap Respons In Days Is Not Valid.")
+                            @if (Session["IsPostBack"] == "true" && !string.IsNullOrWhiteSpace(Model.LibertyPowersSlaFollowUpHistoricalUsageResponseInDaysMessage()))
+                            { 
+                                <span class="field-validation-error" data-valmsg-for="LibertyPowersSlaFollowUpHistoricalUsageResponseInDays" data-valmsg-replace="true">The current Liberty Power SLA Response field value is invalid.</span>
+                            }
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.IsLoaRequired, "Is LOA Required")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.IsLoaRequired)
+                            @Html.ValidationMessageFor(model => model.IsLoaRequired)
+                        </div>
+                    </div>
+                       </div>
+                        </div>
+                      </div>
+                      <br />
+                     <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails" >
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.Inactive)
+                            @Html.ValidationMessageFor(model => model.Inactive)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                            @Html.ValidationMessageFor(model => model.CreatedBy)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                            @Html.ValidationMessageFor(model => model.CreatedDate)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                        </div>
+                          <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                        </div>
+                    </div>
+                        </div>
+                         </div>
+                </div>
+            </fieldset>
+        </div>
+        </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        if ($("#RequestModeEnrollmentTypeId").val() != "-1") {
+            $.ajax({
+                url: "/RequestModeHistoricalUsage/PopulateRequestModeTypeList",
+                type: 'POST',
+                data: { requestModeEnrollmentTypeId: $("#RequestModeEnrollmentTypeId").val() },
+                datatype: 'json',
+                async: false,
+                success: function (data) {
+                    var i = 0;
+                    var items = "";
+                    items += "<option value='11111'>  </option>";
+                    $.each(data, function (i, val) {
+                        items += "<option";
+                        if (val.Id == $("#RequestModeTypeIdInitial").val()) {
+                            items += " selected='selected'";
+                        }
+                        items += " value='" + val.Id + "'>" + val.Name + "</option>";
+                    });
+
+                    $("select#RequestModeTypeId").empty().html(items);
+                },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+        }
+
+    });
+
+    $(function () {
+        $("#btnSave").click(function (evt) {
+            if ($("select#RequestModeTypeId").val() != "-1") {
+                $.ajax({
+                    type: 'POST',
+                    url: "/RequestModeHistoricalUsage/ValidateIcapAndHistoricalUsageRequestModeTypesForEdit",
+                    datatype: 'json',
+                    async: false,
+                    data: { requestModeIcapId: $("#Id").val(), requestModeTypeId: $("select#RequestModeTypeId").val() },
+                    success: function (data) {
+                        if (data > 0) {
+                            alert("WARNING! The Preferred HU Request Mode in Pre-Enrollment is different from the I-Cap Request Mode.  Please verify that they are correctly configured.");
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+    $(function () {
+        if ($("select#RequestModeTypeId").val() != "-1") {
+            $.ajax({
+                url: "/RequestModeHistoricalUsage/GetVisibilityData",
+                type: 'POST',
+                datatype: 'json',
+                async: false,
+                data: { formName: "Historical Usage Request Mode" },
+                success: function (data) {
+                    $("#divAddressLabel").hide();
+                    $("#divAddressField").hide();
+                    $("#divEmailTemplateLabel").hide();
+                    $("#divEmailTemplateText").hide();
+
+                    $.each(data, function (i, val) {
+                        var control = "#" + val.ControllingControlName + " option:selected";
+
+                        if ($(control).text().toLowerCase() == val.ControllingControlValue.toLowerCase()) {
+                            var controlToShow = "#" + val.VisibilityControlName;
+                            $(controlToShow).show();
+                        }
+                    });
+                },
+                error: function (xhr) { alert("Something seems Wrong"); }
+            });
+        }
+    });
+
+    $(function () {
+        $("select#RequestModeTypeId").change(function (evt) {
+            if ($("select#RequestModeTypeId").val() != "-1") {
+                $.ajax({
+                    url: "/RequestModeHistoricalUsage/GetVisibilityData",
+                    type: 'POST',
+                    datatype: 'json',
+                    async: false,
+                    data: { formName: "Historical Usage Request Mode" },
+                    success: function (data) {
+                        $("#divAddressLabel").hide();
+                        $("#divAddressField").hide();
+                        $("#divEmailTemplateLabel").hide();
+                        $("#divEmailTemplateText").hide();
+
+                        $.each(data, function (i, val) {
+                            var control = "#" + val.ControllingControlName + " option:selected";
+                            if ($(control).text().toLowerCase() == val.ControllingControlValue.toLowerCase()) {
+                                var controlToShow = "#" + val.VisibilityControlName;
+                                $(controlToShow).show();
+                            }
+                        });
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+            }
+        });
+    });
+
+
+    $(function () {
+        $("select#RequestModeEnrollmentTypeId").change(function (evt) {
+            if ($("select#RequestModeEnrollmentTypeId").val() != "-1") {
+                $.ajax({
+                    //url: "/RequestModeHistoricalUsage/PopulateRequestModeEnrollmentTypeIdList",
+                    url: "/RequestModeHistoricalUsage/PopulateRequestModeTypeList",
+                    type: 'POST',
+                    datatype: 'json',
+                    async: false,
+                    data: { RequestModeEnrollmentTypeId: $("select#RequestModeEnrollmentTypeId").val() },
+                    success: function (data) {
+                        var items = "";
+                        items += "<option value='11111'>  </option>";
+                        $.each(data, function (i, val) {
+                            items += "<option value='" + val.Id + "'>" + val.Name + "</option>";
+                        });
+
+                        $("select#RequestModeTypeId").empty().html(items);
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+            }
+        });
+    });
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+
+    });

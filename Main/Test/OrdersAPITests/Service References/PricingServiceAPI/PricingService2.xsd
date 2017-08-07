@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57373/PricingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CRMWebServices" />
+  <xs:import schemaLocation="http://localhost:57373/PricingService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:57373/PricingService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerAcquisition.ProductManagement" />
+  <xs:import schemaLocation="http://localhost:57373/PricingService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerAcquisition.DailyPricing" />
+  <xs:element name="Echo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="input" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EchoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EchoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPrices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelId" type="xs:int" />
+        <xs:element minOccurs="0" name="channelTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="priceDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="marketId" type="xs:int" />
+        <xs:element minOccurs="0" name="utilityID" type="xs:int" />
+        <xs:element minOccurs="0" name="accountTypeID" type="xs:int" />
+        <xs:element minOccurs="0" name="productBrandId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetSalesChannelPricesResult" nillable="true" type="q1:WSProductRateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByTerm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelId" type="xs:int" />
+        <xs:element minOccurs="0" name="channelTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="priceDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="marketId" type="xs:int" />
+        <xs:element minOccurs="0" name="utilityID" type="xs:int" />
+        <xs:element minOccurs="0" name="accountTypeID" type="xs:int" />
+        <xs:element minOccurs="0" name="productBrandId" type="xs:int" />
+        <xs:element minOccurs="0" name="term" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByTermResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetSalesChannelPricesByTermResult" nillable="true" type="q2:WSProductRateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByTermZone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelId" type="xs:int" />
+        <xs:element minOccurs="0" name="channelTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="priceDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="marketId" type="xs:int" />
+        <xs:element minOccurs="0" name="utilityID" type="xs:int" />
+        <xs:element minOccurs="0" name="accountTypeID" type="xs:int" />
+        <xs:element minOccurs="0" name="productBrandId" type="xs:int" />
+        <xs:element minOccurs="0" name="term" type="xs:int" />
+        <xs:element minOccurs="0" name="zoneId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByTermZoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetSalesChannelPricesByTermZoneResult" nillable="true" type="q3:WSProductRateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByTermZoneServiceClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelId" type="xs:int" />
+        <xs:element minOccurs="0" name="channelTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="priceDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="marketId" type="xs:int" />
+        <xs:element minOccurs="0" name="utilityID" type="xs:int" />
+        <xs:element minOccurs="0" name="accountTypeID" type="xs:int" />
+        <xs:element minOccurs="0" name="productBrandId" type="xs:int" />
+        <xs:element minOccurs="0" name="term" type="xs:int" />
+        <xs:element minOccurs="0" name="zoneId" type="xs:int" />
+        <xs:element minOccurs="0" name="serviceClassId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByTermZoneServiceClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetSalesChannelPricesByTermZoneServiceClassResult" nillable="true" type="q4:WSProductRateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByPriceDateAndMarket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelID" type="xs:int" />
+        <xs:element minOccurs="0" name="priceDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="marketCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByPriceDateAndMarketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetSalesChannelPricesByPriceDateAndMarketResult" nillable="true" type="q5:WSProductRateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByPriceDateAndMarketID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelID" type="xs:int" />
+        <xs:element minOccurs="0" name="priceDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="marketID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesChannelPricesByPriceDateAndMarketIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetSalesChannelPricesByPriceDateAndMarketIDResult" nillable="true" type="q6:WSProductRateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductBySalesChannelUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductBySalesChannelUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetProductBySalesChannelUserNameResult" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductsBySalesChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesChannelCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="utilityCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountTypeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductsBySalesChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetProductsBySalesChannelResult" nillable="true" type="q8:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductBrandsForDailyPricing">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductBrandsForDailyPricingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerAcquisition.ProductManagement" minOccurs="0" name="GetProductBrandsForDailyPricingResult" nillable="true" type="q9:ArrayOfProductBrand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriceTiers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriceTiersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/LibertyPower.Business.CustomerAcquisition.DailyPricing" minOccurs="0" name="GetPriceTiersResult" nillable="true" type="q10:ArrayOfPriceTier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPricingAccountTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPricingAccountTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetPricingAccountTypesResult" nillable="true" type="q11:ArrayOfWSAccountType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentCrossProductPriceSet">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentCrossProductPriceSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetCurrentCrossProductPriceSetResult" nillable="true" type="q12:WSCrossProductPriceSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodaysPricesByChannelMarketProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelId" type="xs:int" />
+        <xs:element minOccurs="0" name="marketId" type="xs:int" />
+        <xs:element minOccurs="0" name="productId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodaysPricesByChannelMarketProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetTodaysPricesByChannelMarketProductResult" nillable="true" type="q13:WSActionResultOfWSProductRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodaysPricesByChannelMarketProductCompressed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelId" type="xs:int" />
+        <xs:element minOccurs="0" name="marketId" type="xs:int" />
+        <xs:element minOccurs="0" name="productId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodaysPricesByChannelMarketProductCompressedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTodaysPricesByChannelMarketProductCompressedResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDailyPrices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelId" type="xs:int" />
+        <xs:element minOccurs="0" name="marketId" type="xs:int" />
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element minOccurs="0" name="acctTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="signDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="zoneID" type="xs:int" />
+        <xs:element minOccurs="0" name="flowStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+        <xs:element minOccurs="0" name="term" type="xs:int" />
+        <xs:element minOccurs="0" name="servClassID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDailyPricesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetDailyPricesResult" nillable="true" type="q14:WSActionResultOfWSProductRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBestDailyPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelId" type="xs:int" />
+        <xs:element minOccurs="0" name="marketId" type="xs:int" />
+        <xs:element minOccurs="0" name="utilityId" type="xs:int" />
+        <xs:element minOccurs="0" name="acctTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="signDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="zoneID" type="xs:int" />
+        <xs:element minOccurs="0" name="flowStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+        <xs:element minOccurs="0" name="term" type="xs:int" />
+        <xs:element minOccurs="0" name="servClassID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBestDailyPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetBestDailyPriceResult" nillable="true" type="q15:WSActionResultOfWSProductRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationDetailsByZipCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="zipCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationDetailsByZipCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CRMWebServices" minOccurs="0" name="GetLocationDetailsByZipCodeResult" nillable="true" type="q16:ArrayOfWSLocationDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

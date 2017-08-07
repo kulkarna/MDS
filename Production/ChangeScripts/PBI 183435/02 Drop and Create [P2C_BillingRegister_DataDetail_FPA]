@@ -1,0 +1,75 @@
+USE [LP_RPTObjects]
+GO
+
+/****** Object:  Table [dbo].[P2C_BillingRegister_DataDetail_FPA]    Script Date: 5/10/2017 2:59:11 PM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P2C_BillingRegister_DataDetail_FPA]') AND type in (N'U'))
+DROP TABLE [dbo].[P2C_BillingRegister_DataDetail_FPA]
+GO
+
+/****** Object:  Table [dbo].[P2C_BillingRegister_DataDetail_FPA]    Script Date: 5/10/2017 2:59:11 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P2C_BillingRegister_DataDetail_FPA]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[P2C_BillingRegister_DataDetail_FPA](
+	[BillRegDetailID] [int] IDENTITY(1,1) NOT NULL,
+	BillRegisterID int NOT NULL REFERENCES P2C_BillingRegister_Data_FPA(BillRegisterID),
+	[invoiceid] [varchar](50) NULL,
+	[invdate] [date] NULL,
+	[postdate] [varchar](50) NULL,
+	[revenue_Class_Desc] [varchar](30) NULL,
+	[Customer_Tkn] [int] NOT NULL,
+	[Customer_Acct_Tkn] [tinyint] NOT NULL,
+	[Account_Pkg_Tkn] [smallint] NOT NULL,
+	[Account_Charge_Tkn] [int] NOT NULL,
+	[Billing_Charge_Tkn] [int] NOT NULL,
+	[Original_Charge_Tkn] [int] NULL,
+	[BC_type_desc] [varchar](50) NULL,
+	[BillMethod] [varchar](21) NULL,
+	[Cust_Statement_Tkn] [int] NULL,
+	[Invoice_Num] [varchar](30) NULL,
+	[Bill_Calculator_Desc] [varchar](25) NULL,
+	[Bill_Presenter_Desc] [varchar](25) NULL,
+	[InvoiceAmtNoTax] [numeric](11, 2) NULL,
+	[InvoiceTaxAmount] [numeric](10, 2) NULL,
+	[InvDetDesc] [varchar](25) NULL,
+	[CategoryID] [int] NULL,
+	[ServiceFrom] [date] NULL,
+	[ServiceTo] [date] NULL,
+	[Rate] [decimal](23, 13) NULL,
+	[invdetamt] [numeric](15, 2) NULL,
+	[invdetamtNoTax] [numeric](14, 2) NULL,
+	[Tax] [numeric](10, 2) NULL,
+	[invdetqty] [numeric](12, 3) NOT NULL,
+	[Charge_Amt] [numeric](10, 2) NULL,
+	[Tax_Amt] [numeric](10, 2) NULL,
+	[Charge_Type_Desc] [varchar](25) NULL,
+	[Demand_Adjust_Amt] [numeric](10, 2) NULL,
+	[Canceled_Date] [date] NULL,
+	[Type_Desc] [varchar](25) NULL,
+	[Demand_Chrg_Amt] [numeric](10, 2) NULL,
+	[Usage_Adjust_Amt] [numeric](10, 2) NULL,
+	[Usage_Chrg_Amt] [numeric](10, 2) NULL,
+	[Usage_Total_Num] [numeric](12, 3) NULL,
+	[Usage_Days_Cnt] [numeric](12, 3) NULL,
+	[Acct_Component_Tkn] [int] NULL,
+	[Component_Chg_Tkn] [smallint] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[BillRegDetailID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

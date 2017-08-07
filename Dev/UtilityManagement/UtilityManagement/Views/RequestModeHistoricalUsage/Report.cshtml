@@ -1,0 +1,25 @@
+﻿@model UtilityManagement.Models.ReportModel
+
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   <div class="form-details">
+        <div class="form-title">
+            <div class="form-title-general">Reports:&nbsp;</div>
+            <div class="form-title-specific">Request Mode Historical Usage</div>
+        </div>
+        <div class="form-information">&nbsp;&nbsp;Report</div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Request Mode Historical Usage</legend>
+                <div class="details-data-section">
+                    <img src="/RequestModeHistoricalUsage/HuChart" alt="" class="img" />
+                    </div>
+                </fieldset>
+            </div>
+       </div>
+ <script>
+    $(function () {
+        $("#tabs").tabs();
+    });

@@ -1,0 +1,2 @@
+﻿CREATE USER [mtm] WITHOUT LOGIN;
+

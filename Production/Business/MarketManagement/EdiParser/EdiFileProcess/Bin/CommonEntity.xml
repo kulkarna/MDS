@@ -1,0 +1,2117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CommonEntity</name>
+    </assembly>
+    <members>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber">
+            <summary>
+            The US phone number.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber">
+            <summary>
+            The phone number.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink">
+            <summary>
+            The base class for the entity links.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.#ctor(LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink"/> class.
+            </summary>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.linkID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.modifiedBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.createdBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.dateModified">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.dateCreated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.entityID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.tag">
+            <summary>
+            Used for distinguishing multiple types..Billingaddress, ServiceAddress.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.LinkType">
+            <summary>
+            Gets the type of the link.
+            </summary>
+            <value>The type of the link.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.EntityID">
+            <summary>
+            Gets the entity ID.
+            </summary>
+            <value>The entity ID.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.LinkID">
+            <summary>
+            Gets the link ID.
+            </summary>
+            <value>The link ID.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.ModifiedBy">
+            <summary>
+            Gets or sets the modified by.
+            </summary>
+            <value>The modified by.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.CreatedBy">
+            <summary>
+            Gets or sets the created by.
+            </summary>
+            <value>The created by.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.DateModified">
+            <summary>
+            Gets or sets the date modified.
+            </summary>
+            <value>The date modified.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.DateCreated">
+            <summary>
+            Gets or sets the date created.
+            </summary>
+            <value>The date created.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLink.Tag">
+            <summary>
+            Gets or sets the tag.
+            </summary>
+            <value>The tag.</value>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber.#ctor(System.String,System.String,System.String,LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber"/> class.
+            </summary>
+            <param name="countryPrefix">The country prefix.</param>
+            <param name="areaCode">The area code.</param>
+            <param name="number">The number.</param>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber.CountryPrefix">
+            <summary>
+            Gets the country prefix.
+            </summary>
+            <value>The country prefix.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber.AreaCode">
+            <summary>
+            Gets the area code.
+            </summary>
+            <value>The area code.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber.Number">
+            <summary>
+            Gets the number.
+            </summary>
+            <value>The number.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber.PhoneType">
+            <summary>
+            Gets the type of the phone.
+            </summary>
+            <value>The type of the phone.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumber.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber.#ctor(System.Int32,System.Int32,System.String,System.String,LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType,System.DateTime,System.DateTime,System.Int32,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber"/> class.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <param name="LinkID">The link ID.</param>
+            <param name="areaCode">The area code.</param>
+            <param name="number">The number.</param>
+            <param name="type">The type.</param>
+            <param name="DateCreated">The date created.</param>
+            <param name="DateModified">The date modified.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="Tag">The tag.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber.CountryPrefix">
+            <summary>
+            Gets the country prefix.
+            </summary>
+            <value>The country prefix.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber.CountryCode">
+            <summary>
+            Gets the country code.
+            </summary>
+            <value>The country code.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumber.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress">
+            <summary>
+            The EmailAddress is one of the EntityLink type classes.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress.#ctor(System.Int32,System.Int32,System.String,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress"/> class.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <param name="LinkID">The link ID.</param>
+            <param name="Domain">The domain.</param>
+            <param name="Email">The email.</param>
+            <param name="DateCreated">The date created.</param>
+            <param name="DateModified">The date modified.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="Tag">The tag.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress.Validate(System.String)">
+            <summary>
+            Validates the specified email address.
+            </summary>
+            <param name="emailAddress">The email address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress.ValidateEmail(System.String)">
+            <summary>
+            Validates the email.
+            </summary>
+            <param name="emailAddress">The email address.</param>
+            <returns></returns>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress.Address">
+            <summary>
+            Gets or sets the address.
+            </summary>
+            <value>The address.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress.Domain">
+            <summary>
+            Gets or sets the domain.
+            </summary>
+            <value>The domain.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddress.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.CaGeographicalAddress">
+            <summary>
+            The Canadian address.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress">
+            <summary>
+            The geographical address.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress"/> class.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.street">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.cityName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.provinceCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.postalCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.countryName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.state">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.Street">
+            <summary>
+            Gets or sets the street.
+            </summary>
+            <value>The street.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.CityName">
+            <summary>
+            Gets or sets the name of the city.
+            </summary>
+            <value>The name of the city.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.ProvinceCode">
+            <summary>
+            Gets or sets the province code.
+            </summary>
+            <value>The province code.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>The postal code.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.CountryName">
+            <summary>
+            Gets or sets the name of the country.
+            </summary>
+            <value>The name of the country.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CaGeographicalAddress.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.CaGeographicalAddress.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.CaGeographicalAddress.FormattedValue">
+            <summary>
+            Gets the standard formatted address value.
+            </summary>
+            <value>The formatted address value.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalState">
+            <summary>
+            The valid state identified by the US Post Office.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsState">
+            <summary>
+            The US state.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.Province">
+            <summary>
+            The base class for provinces or US states.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Province.Code">
+            <summary>
+            Gets the code.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Province.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Province.CountryCode">
+            <summary>
+            Gets the country code.
+            </summary>
+            <value>The country code.</value>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsState.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsState"/> class.
+            </summary>
+            <param name="stateCode">The code.</param>
+            <param name="stateName">The name.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalState.#ctor(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalState"/> class.
+            </summary>
+            <param name="code">The code.</param>
+            <param name="name">The name.</param>
+            <param name="isState">if set to <c>true</c> [is state].</param>
+            <param name="isMilitary">if set to <c>true</c> [is military].</param>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalState.IsState">
+            <summary>
+            Gets a value indicating whether this instance is state.
+            </summary>
+            <value><c>true</c> if this instance is state; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalState.IsMilitary">
+            <summary>
+            Gets a value indicating whether this instance is military.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is military; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierList">
+            <summary>
+            The list of resource identifiers.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierException">
+            <summary>
+            Thrown when the resource identifier is invalid.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkException">
+            <summary>
+            Thrown for exceptions related to an entity link.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.CommonEntityException">
+            <summary>
+            Thrown for exceptions related to the <see cref="N:LibertyPower.Business.CommonBusiness.CommonEntity"/> namespace.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CommonEntityException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.CommonEntityException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CommonEntityException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.CommonEntityException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CommonEntityException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.CommonEntityException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierFactory.IsValidDataset(System.Data.DataSet)">
+            <summary>
+            Determines whether [is valid dataset] [the specified ds].
+            </summary>
+            <param name="ds">The ds.</param>
+            <returns>
+            	<c>true</c> if [is valid dataset] [the specified ds]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierFactory.CreateResourceIdentifier(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            Creates the resource identifier.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <param name="Address">The address.</param>
+            <param name="createdBy">The created by.</param>
+            <param name="tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierFactory.GetResourceIdentifier(System.Data.DataRow)">
+            <summary>
+            Gets the resource identifier.
+            </summary>
+            <param name="dr">The dr.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierFactory.UpdateResourceIdentifier(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            Updates the resource identifier.
+            </summary>
+            <param name="LinkID">The link ID.</param>
+            <param name="Address">The address.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="Tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierFactory.GetResourceIdentifier(System.Int32)">
+            <summary>
+            Gets the resource identifier.
+            </summary>
+            <param name="LinkID">The link ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifierFactory.GetResourceIdentifierList(System.Int32)">
+            <summary>
+            Gets the resource identifier list.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EntityException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EntityException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EntityException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberFormatException">
+            <summary>
+            Thrown when the phone number has an invalid format.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumberException">
+            <summary>
+            Thrown in relation to a phone number exception.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumberException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumberException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumberException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumberException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumberException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneNumberException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberFormatException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberFormatException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberFormatException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberFormatException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberFormatException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberFormatException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory">
+            <summary>
+            Creates a UsGeographicalAddress object out of a single line containing
+            a US city, state, and zip code.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory.IsValidDataset(System.Data.DataSet)">
+            <summary>
+            Determines whether [is valid dataset] [the specified ds].
+            </summary>
+            <param name="ds">The ds.</param>
+            <returns>
+            	<c>true</c> if [is valid dataset] [the specified ds]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory.CreateUsAddress(System.String,System.String,System.String,System.String)">
+            <summary>
+            Takes common address attributes street, city, state and postal code and creates a UsGeographicalAddress
+            </summary>
+            <param name="street"></param>
+            <param name="city"></param>
+            <param name="state"></param>
+            <param name="postal"></param>
+            <returns>A UsGeographicalAddress object containing the given values.</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory.CreateUsAddress(System.String,System.String)">
+            <summary>
+            Takes address attributes street and, city, state and postal code unparsed, and creates a UsGeographicalAddress
+            </summary>
+            <param name="street"></param>
+            <param name="cityStateZipCode"></param>
+            <returns>A UsGeographicalAddress object containing the given values.</returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory.ParseCityStateZipCode(System.String)">
+            <summary>
+            Takes a single string containing US city, state, and zip code and parses
+            its content to extract individual properties.
+            </summary>
+            <param name="cityStateZipCode">The US city, state, and zip code in a single string.</param>
+            <returns>
+            A UsGeographicalAddress object containing the parsed values.
+            </returns>
+            <remarks>The city must be followed by a comma while the state and zip code
+            may be separated by either a comma or a space. All values are trimmed of
+            delimiting blanks.</remarks>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory.GetUsAddressByEntityID(System.Int32)">
+            <summary>
+            Gets the us address by entity ID.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory.GetUsAddress(System.Int32)">
+            <summary>
+            Gets the us address.
+            </summary>
+            <param name="LinkID">The link ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory.GetUSAddress(System.Data.DataRow)">
+            <summary>
+            Gets the US address.
+            </summary>
+            <param name="dr">The dr.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory.CreateUSAddress(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Creates the US address.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <param name="Street">The street.</param>
+            <param name="CityName">Name of the city.</param>
+            <param name="stateCode">The state code.</param>
+            <param name="zipcode">The zipcode.</param>
+            <param name="createdBy">The created by.</param>
+            <param name="tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddressFactory.UpdateUSAddress(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Updates the US address.
+            </summary>
+            <param name="LinkID">The link ID.</param>
+            <param name="EntityID">The entity ID.-Not used by sql layer.</param>
+            <param name="Street">The street.</param>
+            <param name="CityName">Name of the city.</param>
+            <param name="StateCode">The state code.</param>
+            <param name="Zipcode">The zipcode.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidUsCityStateZipCodeException">
+            <summary>
+            Thrown when the US city, state, ZIP code combination is invalid.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddressException">
+            <summary>
+            Thrown for exceptions related to a geographical address.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddressException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddressException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddressException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddressException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddressException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddressException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidUsCityStateZipCodeException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidUsCityStateZipCodeException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidUsCityStateZipCodeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidUsCityStateZipCodeException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidUsCityStateZipCodeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidUsCityStateZipCodeException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeFormatException">
+            <summary>
+            Thrown when the postal code format is invalid.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCodeException">
+            <summary>
+            Thrown for exceptions related to the postal code.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCodeException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCodeException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCodeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCodeException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCodeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCodeException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeFormatException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeFormatException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeFormatException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeFormatException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeFormatException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeFormatException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidDunsNumberFormatException">
+            <summary>
+            Thrown when the DUNS number of an organization is invalid.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationException">
+            <summary>
+            Thrown in relation to an Organization exception.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidDunsNumberFormatException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidDunsNumberFormatException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidDunsNumberFormatException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidDunsNumberFormatException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidDunsNumberFormatException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidDunsNumberFormatException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.Entity">
+            <summary>
+            The base class for an organization or an individual. Use this base class for defining a customer.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.fullName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.tag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.entityID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.startDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.createdBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.modifiedBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.dateModified">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.dateCreated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.#ctor(LibertyPower.Business.CommonBusiness.CommonEntity.EntityType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.Entity"/> class.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.Tag">
+            <summary>
+            Gets or sets the tag.
+            </summary>
+            <value>The tag.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.FullName">
+            <summary>
+            Gets or sets the full name.
+            </summary>
+            <value>The full name.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.StartDate">
+            <summary>
+            Gets or sets the start date.
+            </summary>
+            <value>The start date.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.EntityType">
+            <summary>
+            Gets the type of the entity.
+            </summary>
+            <value>The type of the entity.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.Links">
+            <summary>
+            Gets the links.
+            </summary>
+            <value>The links.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.DateModified">
+            <summary>
+            Gets or sets the date modified.
+            </summary>
+            <value>The date modified.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.DateCreated">
+            <summary>
+            Gets or sets the date created.
+            </summary>
+            <value>The date created.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.CreatedBy">
+            <summary>
+            Gets or sets the created by.
+            </summary>
+            <value>The created by.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.ModifiedBy">
+            <summary>
+            Gets or sets the modified by.
+            </summary>
+            <value>The modified by.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Entity.EntityID">
+            <summary>
+            Gets or sets the entity ID.
+            </summary>
+            <value>The entity ID.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.CountryFactory">
+            <summary>
+            The factory of valid countries.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CountryFactory.GetCountries">
+            <summary>
+            Gets the countries.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumber">
+            <summary>
+            SocialSecurityNumber Entity class
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumber.#ctor(System.String)">
+            <summary>
+            Clear text SocialSecurityNumber.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumber.Validate(System.String)">
+            <summary>
+            Indicates SSN is in proper format and is an actual SSN in use.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumber.Number">
+            <summary>
+            Clear text SocialSecurityNumber without hyphens.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumber.FormattedNumber">
+            <summary>
+            Clear text SocialSecurityNumber in proper format.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumber.IsValid">
+            <summary>
+            Indicates SSN is in proper format and is an actual SSN in use.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.IOrganization">
+            <summary>
+            Specifies properties related to an organization rather than an individual with IIndividual.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.IOrganization.DunsNumber">
+            <summary>
+            Gets or sets the duns number.
+            </summary>
+            <value>The duns number.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.IOrganization.TaxID">
+            <summary>
+            Gets or sets the tax ID.
+            </summary>
+            <value>The tax ID.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressException">
+            <summary>
+            Thrown for exceptions associated with an email address.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.CaState">
+            <summary>
+            The Canadian state.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CaState.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.CaState"/> class.
+            </summary>
+            <param name="stateCode">The state code.</param>
+            <param name="stateName">The state name.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalStateList">
+            <summary>
+            The US postal list of states.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumberFactory">
+            <summary>
+            Social Security Number Factory Class
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumberFactory.GetErrorMessage(System.String)">
+            <summary>
+            Methos to get the error message depending on its message id
+            </summary>
+            <param name="messageId">The Id of the message in lp_common database</param>
+            <returns>The message associated with the given Id</returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.Individual">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.IIndividual">
+            <summary>
+            The IIndividual interface resolves the problem of multiple inheritance by defining
+            properties of an Entity object as an individual person versus an organization
+            via the IOrganization interface.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.IIndividual.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>The first name.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.IIndividual.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>The last name.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.IIndividual.MiddleInitial">
+            <summary>
+            Gets or sets the middle initial.
+            </summary>
+            <value>The middle initial.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.IIndividual.MiddleName">
+            <summary>
+            Gets or sets the name of the middle.
+            </summary>
+            <value>The name of the middle.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.IIndividual.Title">
+            <summary>
+            Gets or sets the title.
+            </summary>
+            <value>The title.</value>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.Individual"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.#ctor(System.String,System.String,System.String,System.Nullable{System.Char},System.String,System.String,System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.Individual"/> class.
+            </summary>
+            <param name="Firstname">The firstname.</param>
+            <param name="Lastname">The lastname.</param>
+            <param name="MiddleName">Name of the middle.</param>
+            <param name="MiddleInitial">The middle initial.</param>
+            <param name="Title">The title.</param>
+            <param name="SocialSecurityNumber">The social security number.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="EntityID">The entity ID.</param>
+            <param name="DateCreated">The date created.</param>
+            <param name="DateModified">The date modified.</param>
+            <param name="Tag">The tag.</param>
+            <param name="BirthDate">The birth date.</param>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.firstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.middleName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.middleInitial">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.lastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.socialSecurityNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.birthDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.BirthDate">
+            <summary>
+            Gets or sets the birth date.
+            </summary>
+            <value>The birth date.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>The first name.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.MiddleName">
+            <summary>
+            Gets or sets the name of the middle.
+            </summary>
+            <value>The name of the middle.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.MiddleInitial">
+            <summary>
+            Gets or sets the middle initial.
+            </summary>
+            <value>The middle initial.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>The last name.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.Title">
+            <summary>
+            Gets or sets the title.
+            </summary>
+            <value>The title.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.SocialSecurityNumber">
+            <summary>
+            Gets or sets the social security number.
+            </summary>
+            <value>The social security number.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Individual.FullName">
+            <summary>
+            Gets or sets the full name.
+            </summary>
+            <value>The full name.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddressList">
+            <summary>
+            The list of <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.GeographicalAddress"/> objects.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkList">
+            <summary>
+            The list of entity links.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidEntityOperationException">
+            <summary>
+            Use this type of exception in relation to the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.Organization"/> or <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.IOrganization"/> classes.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidEntityOperationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidEntityOperationException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidEntityOperationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidEntityOperationException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidEntityOperationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidEntityOperationException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberFactory.IsValidDataset(System.Data.DataSet)">
+            <summary>
+            Determines whether [is valid dataset] [the specified ds].
+            </summary>
+            <param name="ds">The ds.</param>
+            <returns>
+            	<c>true</c> if [is valid dataset] [the specified ds]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberFactory.CreatePhoneNumber(System.String,System.String,LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType,System.Int32,System.Int32,System.String)">
+            <summary>
+            Creates the phone number.
+            </summary>
+            <param name="areaCode">The area code.</param>
+            <param name="number">The number.</param>
+            <param name="phoneType">Type of the phone.</param>
+            <param name="EntityID">The entity ID.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberFactory.GetUsPhoneNumber(System.Data.DataRow)">
+            <summary>
+            Gets the us phone number.
+            </summary>
+            <param name="dr">The dr.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberFactory.UpdatePhoneNumber(System.Int32,System.String,System.String,LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType,System.Int32,System.String)">
+            <summary>
+            Updates the phone number.
+            </summary>
+            <param name="LinkID">The link ID.</param>
+            <param name="areaCode">The area code.</param>
+            <param name="number">The number.</param>
+            <param name="phoneType">Type of the phone.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="Tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberFactory.GetPhoneNumber(System.Int32)">
+            <summary>
+            Gets the phone number.
+            </summary>
+            <param name="LinkID">The link ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberFactory.GetPhoneNumbersByEntityID(System.Int32)">
+            <summary>
+            Gets the phone numbers by entity ID.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberFactory.GetPhoneByName(LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberList,System.String)">
+            <summary>
+            Gets the name of the phone by.
+            </summary>
+            <param name="phoneList">The phone list.</param>
+            <param name="nameToFind">The name to find.</param>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalService">
+            <summary>
+            The Canadian postal service validator.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalService.IsValidPostalCode(System.String)">
+            <summary>
+            Determines whether [is valid postal code] [the specified postal code].
+            </summary>
+            <param name="postalCode">The postal code.</param>
+            <returns>
+            	<c>true</c> if [is valid postal code] [the specified postal code]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsPhoneNumberList">
+            <summary>
+            The list of US phone numbers.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationFactory.IsValidDataset(System.Data.DataSet)">
+            <summary>
+            Determines whether [is valid dataset] [the specified ds].
+            </summary>
+            <param name="ds">The ds.</param>
+            <returns>
+            	<c>true</c> if [is valid dataset] [the specified ds]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationFactory.CreateOrganization(System.String,System.Nullable{System.DateTime},System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Creates the organization.
+            </summary>
+            <param name="DunsNumber">The duns number.</param>
+            <param name="StartDate">The start date.</param>
+            <param name="CustomerName">Name of the customer.</param>
+            <param name="TaxID">The tax ID.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="Tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationFactory.GetOrganization(System.Data.DataRow)">
+            <summary>
+            Gets the organization.
+            </summary>
+            <param name="dr">The dr.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationFactory.GetOrganization(System.Int32)">
+            <summary>
+            Gets the organization.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.OrganizationFactory.UpdateOrganization(System.Int32,System.String,System.Nullable{System.DateTime},System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Updates the organization.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <param name="DunsNumber">The duns number.</param>
+            <param name="StartDate">The start date.</param>
+            <param name="CustomerName">Name of the customer.</param>
+            <param name="TaxID">The tax ID.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="Tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.Country">
+            <summary>
+            The Country class.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Country.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Country.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCode">
+            <summary>
+            The postal code.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCode.code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCode.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCode"/> class.
+            </summary>
+            <param name="code">The code.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCode.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCode.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.PostalCode.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifier">
+            <summary>
+            The resource identifier such as a URI or a URL, or web address.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifier.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifier"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifier.#ctor(System.String,System.Int32,System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifier"/> class.
+            </summary>
+            <param name="address">The address.</param>
+            <param name="EntityID">The entity ID.</param>
+            <param name="LinkID">The link ID.</param>
+            <param name="DateCreated">The date created.</param>
+            <param name="DateModifed">The date modifed.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="Tag">The tag.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifier.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifier.Uri">
+            <summary>
+            Gets the URI.
+            </summary>
+            <value>The URI.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifier.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.ResourceIdentifier.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.IndividualFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.IndividualFactory.IsValidDataset(System.Data.DataSet)">
+            <summary>
+            Determines whether [is valid dataset] [the specified ds].
+            </summary>
+            <param name="ds">The ds.</param>
+            <returns>
+            	<c>true</c> if [is valid dataset] [the specified ds]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.IndividualFactory.CreateIndividual(System.String,System.String,System.Nullable{System.Char},System.String,System.String,System.String,System.Int32,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Creates the individual.
+            </summary>
+            <param name="Firstname">The firstname.</param>
+            <param name="Lastname">The lastname.</param>
+            <param name="MiddleInitial">The middle initial.</param>
+            <param name="MiddleName">Name of the middle.</param>
+            <param name="SocialSecurityNumber">The social security number.</param>
+            <param name="Title">The title.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="Tag">The tag.</param>
+            <param name="BirthDate">The birth date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.IndividualFactory.GetIndividual(System.Data.DataRow)">
+            <summary>
+            Gets the individual.
+            </summary>
+            <param name="dr">The dr.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.IndividualFactory.GetIndividual(System.Int32)">
+            <summary>
+            Gets the individual.
+            </summary>
+            <param name="entityID">The entity ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.IndividualFactory.UpdateIndividual(System.Int32,System.String,System.String,System.Nullable{System.Char},System.String,System.String,System.String,System.Int32,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Updates the individual.
+            </summary>
+            <param name="entityID">The entity ID.</param>
+            <param name="Firstname">The firstname.</param>
+            <param name="Lastname">The lastname.</param>
+            <param name="MiddleInitial">The middle initial.</param>
+            <param name="MiddleName">Name of the middle.</param>
+            <param name="SocialSecurityNumber">The social security number.</param>
+            <param name="Title">The title.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="Tag">The tag.</param>
+            <param name="BirthDate">The birth date.</param>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityType">
+            <summary>
+            Identifies the type of entity.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityType.Organization">
+            <summary>
+            Identifies an organization.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityType.Individual">
+            <summary>
+            Identifies an individual.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumberException">
+            <summary>
+            Thrown for exceptions related to a geographical address.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumberException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumberException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumberException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumberException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumberException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.SocialSecurityNumberException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode">
+            <summary>
+            The Canadian postal code.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode"/> class.
+            </summary>
+            <param name="postalCode">The postal code.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode"/> class.
+            </summary>
+            <param name="forwardSortationArea">The forward sortation area.</param>
+            <param name="localDeliveryUnit">The local delivery unit.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode.Format(System.String)">
+            <summary>
+            Formats the specified format.
+            </summary>
+            <param name="format">The format.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode.ForwardSortationArea">
+            <summary>
+            Gets the forward sortation area.
+            </summary>
+            <value>The forward sortation area.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode.LocalDeliveryUnit">
+            <summary>
+            Gets the local delivery unit.
+            </summary>
+            <value>The local delivery unit.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.CaPostalCode.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService">
+            <summary>
+            The US postal service factory and validator.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService.IsValidZipCode(System.String)">
+            <summary>
+            Determines whether [is valid zip code] [the specified zip code].
+            </summary>
+            <param name="zipCode">The zip code.</param>
+            <returns>
+            	<c>true</c> if [is valid zip code] [the specified zip code]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService.GetStateList">
+            <summary>
+            Gets the state list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService.GetOtherList">
+            <summary>
+            Gets the other list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService.GetNonMilitaryMailingList">
+            <summary>
+            Gets the non military mailing list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService.GetMilitaryList">
+            <summary>
+            Gets the military list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService.GetFullMailingList">
+            <summary>
+            Gets the full mailing list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService.CreateStates">
+            <summary>
+            Creates the states.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService.CreateOtherList">
+            <summary>
+            Creates the other list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsPostalService.CreateMilitaryList">
+            <summary>
+            Creates the military list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType">
+            <summary>
+            Identifies the type of phone number.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType.Unknown">
+            <summary>
+            Indicates that the phone number type is unknown.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType.Telephone">
+            <summary>
+            Indicates a regular phone number.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType.Mobile">
+            <summary>
+            Indicates a mobile or cellular phone number.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType.Fax">
+            <summary>
+            Indicates a fax number.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkType">
+            <summary>
+            Identifies the type of entity link.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkType.PhoneNumber">
+            <summary>
+            Identifies a phone number.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkType.EmailAddress">
+            <summary>
+            Identifies an email address.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkType.ResourceIdentifier">
+            <summary>
+            Identifies a resource identifier.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.EntityLinkType.GeographicalAddress">
+            <summary>
+            Identifies a geographical address.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeException">
+            <summary>
+            Thrown when the postal code is invalid.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPostalCodeException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressList">
+            <summary>
+            The list of email addresses.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress">
+            <summary>
+            The US geographical address.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress.#ctor(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress"/> class.
+            </summary>
+            <param name="EntityID">The entity ID.</param>
+            <param name="LinkID">The link ID.</param>
+            <param name="Street">The street.</param>
+            <param name="CityName">Name of the city.</param>
+            <param name="stateCode">The state code.</param>
+            <param name="zipcode">The zipcode.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="DateCreated">The date created.</param>
+            <param name="DateModified">The date modified.</param>
+            <param name="Tag">The tag.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress.CountryName">
+            <summary>
+            Gets or sets the name of the country.
+            </summary>
+            <value>The name of the country.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress.ZipCode">
+            <summary>
+            Gets or sets the zip code.
+            </summary>
+            <value>The zip code.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress.StateCode">
+            <summary>
+            Gets or sets the state code.
+            </summary>
+            <value>The state code.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsGeographicalAddress.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.ProvinceDictionary">
+            <summary>
+            A dictionary of <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.Province"/> objects.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.CountryDictionary">
+            <summary>
+            A dictionary of <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.Country"/> objects.
+            </summary>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberException">
+            <summary>
+            Thrown when the phone number is invalid.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.InvalidPhoneNumberException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsZipCode">
+            <summary>
+            The US ZIP code.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsZipCode.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsZipCode"/> class.
+            </summary>
+            <param name="code">The code.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsZipCode.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.UsZipCode"/> class.
+            </summary>
+            <param name="code">The code.</param>
+            <param name="plus4">The plus4.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.UsZipCode.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsZipCode.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.UsZipCode.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.Organization">
+            <summary>
+            The organization inheriting from the entity. Use this class for LCI and SMB.
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Organization.DunsNumberLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibertyPower.Business.CommonBusiness.CommonEntity.Organization.DunsNumberPattern">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.Organization.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.Organization"/> class.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.Organization.#ctor(System.String,System.Int32,System.Nullable{System.DateTime},System.String,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.Organization"/> class.
+            </summary>
+            <param name="DunsNumber">The duns number.</param>
+            <param name="EntityID">The entity ID.</param>
+            <param name="StartDate">The start date.</param>
+            <param name="CustomerName">Name of the customer.</param>
+            <param name="TaxID">The tax ID.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="DateCreated">The date created.</param>
+            <param name="DateModified">The date modified.</param>
+            <param name="Tag">The tag.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.Organization.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Organization.TaxID">
+            <summary>
+            Gets or sets the tax ID.
+            </summary>
+            <value>The tax ID.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.Organization.DunsNumber">
+            <summary>
+            Gets or sets the duns number.
+            </summary>
+            <value>The duns number.</value>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressFactory.IsValidDataset(System.Data.DataSet)">
+            <summary>
+            Determines whether [is valid dataset] [the specified ds].
+            </summary>
+            <param name="ds">The ds.</param>
+            <returns>
+            	<c>true</c> if [is valid dataset] [the specified ds]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressFactory.SaveEmailAddress(System.Int32,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Saves the email address.
+            </summary>
+            <param name="entityID">The entity ID.</param>
+            <param name="Domain">The domain.</param>
+            <param name="Address">The address.</param>
+            <param name="CreatedBy">The created by.</param>
+            <param name="Tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressFactory.UpdateEmailAddress(System.Int32,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Updates the email address.
+            </summary>
+            <param name="LinkID">The link ID.</param>
+            <param name="Domain">The domain.</param>
+            <param name="Address">The address.</param>
+            <param name="ModifiedBy">The modified by.</param>
+            <param name="Tag">The tag.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressFactory.GetEmailAddress(System.Int32)">
+            <summary>
+            Gets the email address.
+            </summary>
+            <param name="LinkID">The link ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressFactory.GetEmailAddress(System.Data.DataRow)">
+            <summary>
+            Gets the email address.
+            </summary>
+            <param name="dr">The dr.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressFactory.GetEmailAddressByEntityID(System.Int32)">
+            <summary>
+            Gets the email address by entity ID.
+            </summary>
+            <param name="entityID">The entity ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.EmailAddressFactory.GetEmailAddressList(System.Int32)">
+            <summary>
+            Gets the email address list.
+            </summary>
+            <param name="entityID">The entity ID.</param>
+            <returns></returns>
+        </member>
+        <member name="T:LibertyPower.Business.CommonBusiness.CommonEntity.CaPhoneNumber">
+            <summary>
+            The Canadian phone number.
+            </summary>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CaPhoneNumber.#ctor(System.String,System.String,LibertyPower.Business.CommonBusiness.CommonEntity.PhoneType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibertyPower.Business.CommonBusiness.CommonEntity.CaPhoneNumber"/> class.
+            </summary>
+            <param name="areaCode">The area code.</param>
+            <param name="number">The number.</param>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:LibertyPower.Business.CommonBusiness.CommonEntity.CaPhoneNumber.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.CaPhoneNumber.CountryCode">
+            <summary>
+            Gets the country code.
+            </summary>
+            <value>The country code.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.CaPhoneNumber.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:LibertyPower.Business.CommonBusiness.CommonEntity.CaPhoneNumber.FormattedValue">
+            <summary>
+            Gets the formatted value.
+            </summary>
+            <value>The formatted value.</value>
+        </member>
+    </members>
+</doc>

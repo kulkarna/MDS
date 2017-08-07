@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="af7c30f1-6871-4ffb-85c2-abfd2e1d0a24" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:57373/OrderEntry.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OrderEntry.xsd" MetadataType="Schema" ID="5c364863-1c39-4b28-8653-e9ac143afbc4" SourceId="1" SourceUrl="http://localhost:57373/OrderEntry.svc?xsd=xsd0" />
+    <MetadataFile FileName="OrderEntry1.xsd" MetadataType="Schema" ID="ae6c802f-3987-43a8-8cbd-cae7c4000c94" SourceId="1" SourceUrl="http://localhost:57373/OrderEntry.svc?xsd=xsd3" />
+    <MetadataFile FileName="OrderEntry2.xsd" MetadataType="Schema" ID="6a003dc1-3efd-4520-88c5-eb1541906663" SourceId="1" SourceUrl="http://localhost:57373/OrderEntry.svc?xsd=xsd2" />
+    <MetadataFile FileName="OrderEntry.disco" MetadataType="Disco" ID="1e34aa9e-dfda-4a56-9999-61812ba671c5" SourceId="1" SourceUrl="http://localhost:57373/OrderEntry.svc?disco" />
+    <MetadataFile FileName="OrderEntry.wsdl" MetadataType="Wsdl" ID="96964d55-31dc-4e12-847e-acc75c72fc8c" SourceId="1" SourceUrl="http://localhost:57373/OrderEntry.svc?wsdl" />
+    <MetadataFile FileName="OrderEntry3.xsd" MetadataType="Schema" ID="2fd97f49-f7ba-4ad7-91bd-1bf43300c206" SourceId="1" SourceUrl="http://localhost:57373/OrderEntry.svc?xsd=xsd5" />
+    <MetadataFile FileName="OrderEntry4.xsd" MetadataType="Schema" ID="7f47861b-395e-44c7-a58c-beb85060e2d8" SourceId="1" SourceUrl="http://localhost:57373/OrderEntry.svc?xsd=xsd4" />
+    <MetadataFile FileName="OrderEntry5.xsd" MetadataType="Schema" ID="5b0a9f8b-d35d-44b4-8bf6-b348198ea333" SourceId="1" SourceUrl="http://localhost:57373/OrderEntry.svc?xsd=xsd6" />
+    <MetadataFile FileName="OrderEntry6.xsd" MetadataType="Schema" ID="5d7c6bcf-2743-4e1e-aed3-377d7bc6d2a3" SourceId="1" SourceUrl="http://localhost:57373/OrderEntry.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,180 @@
+﻿@model DataAccessLayerEntityFramework.PurchaseOfReceivable
+@{
+    ViewBag.Title = "Purchase Of Receivables Details";
+    var pordn = Model.PorDriver.Name.ToLower();
+}
+
+@using (Html.BeginForm())
+{
+     <div class="edit_section">
+        <div class="edit_header">
+            <div class="purchase_ico"></div>
+            <div class="edit_header_desc"><h4>Purchase Of Receivable</h4>
+            <h3>Details Record</h3>
+            @{string displayName = @Model.UtilityCompany.UtilityCode + " " + @Model.PorDriver.Name;}
+                @displayName
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Purchase Of Receivables</legend>
+               <div class="textblock">
+                    <div class="details-data-section">
+                    <div id="Gen"  class="activable">
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                    <div id="hideContent" class="editdetails">
+                    <div class="details-full-section">
+                       <div class="details-left-section">
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.UtilityCompany.UtilityCode, "Utility Code")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.UtilityCompany.UtilityCode)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.PorDriver.Name, "POR Driver")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PorDriver.Name)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.Label("POR Driver Value")
+                        </div>
+                        @{
+              if (pordn == "rate class")
+              {
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.RateClass.RateClassCode)
+                            </div>
+              }
+              else if (pordn == "load profile")
+              {
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LoadProfile.LoadProfileCode)
+                            </div>
+              }
+
+              else if (pordn == "tariff code")
+              {
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.TariffCode.TariffCodeCode)
+                            </div>
+              }
+                        }
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.IsPorOffered, "Is POR Offered")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.IsPorOffered)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.IsPorParticipated, "Is POR Participated")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.IsPorParticipated)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.IsPorAssurance, "Is POR Eligible")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.IsPorAssurance)
+                        </div>
+                         <div class="clear"></div>
+                        </div>
+                         <div class="details-right-section">
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.PorRecourse.Name, "POR Recourse")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PorRecourse.Name)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.PorDiscountRate, "POR Discount Rate")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PorDiscountRate)
+                        </div>
+
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.PorFlatFee, "POR Flat Fee")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PorFlatFee)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.PorDiscountEffectiveDate, "POR Discount Effective Date")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PorDiscountEffectiveDate)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.PorDiscountExpirationDate, "POR Discount Expiration Date")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PorDiscountExpirationDate)
+                        </div>
+                    </div>
+                        </div></div>
+                    <br />
+                   <div id="info"  class="activable">
+                    <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                       <div class="details-left-section">
+                        <div class="display-label">
+                            @Html.DisplayNameFor(model => model.Inactive)
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.Inactive)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="display-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                        </div>
+                    </div></div>
+                        </div></div></div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[OE_PRICING_REQUEST_FILES] (
+    [ID]         INT           IDENTITY (1, 1) NOT NULL,
+    [REQUEST_ID] VARCHAR (50)  NULL,
+    [FILE_NAME]  VARCHAR (200) NULL,
+    [DATA]       IMAGE         NULL
+);
+
+
+GO
+CREATE CLUSTERED INDEX [idx_request_id]
+    ON [dbo].[OE_PRICING_REQUEST_FILES]([REQUEST_ID] ASC) WITH (FILLFACTOR = 90);
+

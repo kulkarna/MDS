@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UsageWebService.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UsageWebService.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UsageDateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsageDateRequest" nillable="true" type="tns:UsageDateRequest" />
+  <xs:complexType name="IdrUsageDateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdrUsageDateRequest" nillable="true" type="tns:IdrUsageDateRequest" />
+  <xs:complexType name="UsageDateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsageDateResponse" nillable="true" type="tns:UsageDateResponse" />
+  <xs:complexType name="UsageDateRequestV1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsageDateRequestV1" nillable="true" type="tns:UsageDateRequestV1" />
+  <xs:complexType name="EdiUsageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DunsNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Strata" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EdiUsageRequest" nillable="true" type="tns:EdiUsageRequest" />
+  <xs:complexType name="ScraperUsageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScraperUsageRequest" nillable="true" type="tns:ScraperUsageRequest" />
+  <xs:complexType name="ScraperUsageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScraperUsageResponse" nillable="true" type="tns:ScraperUsageResponse" />
+  <xs:complexType name="AnnualUsageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnualUsageRequest" nillable="true" type="tns:AnnualUsageRequest" />
+  <xs:complexType name="ArrayOfUsageAccountRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsageAccountRequest" nillable="true" type="tns:UsageAccountRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsageAccountRequest" nillable="true" type="tns:ArrayOfUsageAccountRequest" />
+  <xs:complexType name="UsageAccountRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountId" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsageAccountRequest" nillable="true" type="tns:UsageAccountRequest" />
+  <xs:complexType name="AnnualUsageBulkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageAccountList" nillable="true" type="tns:ArrayOfUsageAccountResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnualUsageBulkResponse" nillable="true" type="tns:AnnualUsageBulkResponse" />
+  <xs:complexType name="ArrayOfUsageAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsageAccountResponse" nillable="true" type="tns:UsageAccountResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsageAccountResponse" nillable="true" type="tns:ArrayOfUsageAccountResponse" />
+  <xs:complexType name="UsageAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountId" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usage" type="xs:int" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsageAccountResponse" nillable="true" type="tns:UsageAccountResponse" />
+  <xs:complexType name="IsIdrEligibleRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtilityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IsIdrEligibleRequest" nillable="true" type="tns:IsIdrEligibleRequest" />
+</xs:schema>

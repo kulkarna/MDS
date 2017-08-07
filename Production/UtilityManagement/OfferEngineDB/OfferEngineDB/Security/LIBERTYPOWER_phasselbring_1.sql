@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [LIBERTYPOWER\phasselbring]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserWcfService", "EdiParserWCFService\EdiParserWcfService.csproj", "{7892F230-C733-485D-BEC0-85E065F169D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserBusinessLayer", "EdiParserBusinessLayer\EdiParserBusinessLayer.csproj", "{1F2C9242-F0E3-47DC-A804-6D6D729A0557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserRepository", "EdiParserRepository\EdiParserRepository.csproj", "{5C437A56-D69E-4E3C-BDCA-48ED951A9914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserWcfServiceData", "EdiParserDataService\EdiParserWcfServiceData.csproj", "{7E6661CE-B745-4807-B695-DF1C0E539889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiParserDataMapper", "EdiParserDataMapper\EdiParserDataMapper\EdiParserDataMapper.csproj", "{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "..\..\..\..\Framework\LPOmega\UtilityManagement\Utilities\Utilities.csproj", "{985638C5-4931-489A-A175-0C2D44C4F63A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityLogging", "..\..\..\..\Framework\LPOmega\UtilityManagement\UtilityLogging\UtilityLogging.csproj", "{B550B746-31A5-4487-A8E4-31A357030A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityUnityLogging", "..\..\..\..\Framework\LPOmega\UtilityManagement\UtilityUnityLogging\UtilityUnityLogging.csproj", "{1E6DDDF1-E516-48CC-BEC2-243BE783406A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://lpcnocapptfs1:8080/tfs/lpcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\..\\..\\Framework\\LPOmega\\UtilityManagement\\Utilities\\Utilities.csproj
+		SccProjectName1 = ../../../../Framework/LPOmega/UtilityManagement/Utilities
+		SccLocalPath1 = ..\\..\\..\\..\\Framework\\LPOmega\\UtilityManagement\\Utilities
+		SccProjectUniqueName2 = ..\\..\\..\\..\\Framework\\LPOmega\\UtilityManagement\\UtilityLogging\\UtilityLogging.csproj
+		SccProjectName2 = ../../../../Framework/LPOmega/UtilityManagement/UtilityLogging
+		SccLocalPath2 = ..\\..\\..\\..\\Framework\\LPOmega\\UtilityManagement\\UtilityLogging
+		SccProjectUniqueName3 = ..\\..\\..\\..\\Framework\\LPOmega\\UtilityManagement\\UtilityUnityLogging\\UtilityUnityLogging.csproj
+		SccProjectName3 = ../../../../Framework/LPOmega/UtilityManagement/UtilityUnityLogging
+		SccLocalPath3 = ..\\..\\..\\..\\Framework\\LPOmega\\UtilityManagement\\UtilityUnityLogging
+		SccProjectUniqueName4 = EdiParserBusinessLayer\\EdiParserBusinessLayer.csproj
+		SccProjectName4 = EdiParserBusinessLayer
+		SccLocalPath4 = EdiParserBusinessLayer
+		SccProjectUniqueName5 = EdiParserDataMapper\\EdiParserDataMapper\\EdiParserDataMapper.csproj
+		SccProjectName5 = EdiParserDataMapper/EdiParserDataMapper
+		SccLocalPath5 = EdiParserDataMapper\\EdiParserDataMapper
+		SccProjectUniqueName6 = EdiParserDataService\\EdiParserWcfServiceData.csproj
+		SccProjectName6 = EdiParserDataService
+		SccLocalPath6 = EdiParserDataService
+		SccProjectUniqueName7 = EdiParserRepository\\EdiParserRepository.csproj
+		SccProjectName7 = EdiParserRepository
+		SccLocalPath7 = EdiParserRepository
+		SccProjectUniqueName8 = EdiParserWCFService\\EdiParserWcfService.csproj
+		SccProjectName8 = EdiParserWCFService
+		SccLocalPath8 = EdiParserWCFService
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7892F230-C733-485D-BEC0-85E065F169D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7892F230-C733-485D-BEC0-85E065F169D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7892F230-C733-485D-BEC0-85E065F169D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7892F230-C733-485D-BEC0-85E065F169D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2C9242-F0E3-47DC-A804-6D6D729A0557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2C9242-F0E3-47DC-A804-6D6D729A0557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2C9242-F0E3-47DC-A804-6D6D729A0557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2C9242-F0E3-47DC-A804-6D6D729A0557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C437A56-D69E-4E3C-BDCA-48ED951A9914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C437A56-D69E-4E3C-BDCA-48ED951A9914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C437A56-D69E-4E3C-BDCA-48ED951A9914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C437A56-D69E-4E3C-BDCA-48ED951A9914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6661CE-B745-4807-B695-DF1C0E539889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6661CE-B745-4807-B695-DF1C0E539889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6661CE-B745-4807-B695-DF1C0E539889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6661CE-B745-4807-B695-DF1C0E539889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D25703F-56B0-4F18-BEEA-31ECC0C4863F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{985638C5-4931-489A-A175-0C2D44C4F63A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{985638C5-4931-489A-A175-0C2D44C4F63A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{985638C5-4931-489A-A175-0C2D44C4F63A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{985638C5-4931-489A-A175-0C2D44C4F63A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B550B746-31A5-4487-A8E4-31A357030A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B550B746-31A5-4487-A8E4-31A357030A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B550B746-31A5-4487-A8E4-31A357030A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B550B746-31A5-4487-A8E4-31A357030A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E6DDDF1-E516-48CC-BEC2-243BE783406A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E6DDDF1-E516-48CC-BEC2-243BE783406A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E6DDDF1-E516-48CC-BEC2-243BE783406A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E6DDDF1-E516-48CC-BEC2-243BE783406A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

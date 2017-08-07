@@ -1,0 +1,2 @@
+﻿CREATE USER [LIBERTYPOWER\Offer_Developer] FOR LOGIN [LIBERTYPOWER\Offer_Developer];
+

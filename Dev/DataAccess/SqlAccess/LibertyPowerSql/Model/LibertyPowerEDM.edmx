@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LibertyPowerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="LibertyPowerModelStoreContainer">
+          <EntitySet Name="UsageConsolidated" EntityType="LibertyPowerModel.Store.UsageConsolidated" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsageSource" EntityType="LibertyPowerModel.Store.UsageSource" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsageType" EntityType="LibertyPowerModel.Store.UsageType" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="UsageConsolidated">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UtilityCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="AccountNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsageType" Type="smallint" Nullable="false" />
+          <Property Name="UsageSource" Type="smallint" Nullable="false" />
+          <Property Name="FromDate" Type="datetime" Nullable="false" />
+          <Property Name="ToDate" Type="datetime" Nullable="false" />
+          <Property Name="TotalKwh" Type="int" Nullable="false" />
+          <Property Name="DaysUsed" Type="smallint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="Active" Type="smallint" Nullable="false" />
+          <Property Name="ReasonCode" Type="smallint" />
+          <Property Name="MeterNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="OnPeakKWh" Type="varchar" MaxLength="25" />
+          <Property Name="OffPeakKWh" Type="varchar" MaxLength="25" />
+          <Property Name="IntermediateKwh" Type="float" />
+          <Property Name="BillingDemandKW" Type="float" />
+          <Property Name="MonthlyPeakDemandKW" Type="float" />
+          <Property Name="MonthlyOffPeakDemandKw" Type="float" />
+        </EntityType>
+        <EntityType Name="UsageSource">
+          <Key>
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Value" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UsageType">
+          <Key>
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Value" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibertyPowerModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="LibertyPowerEntities">
+          <EntitySet Name="UsageConsolidateds" EntityType="LibertyPowerModel.UsageConsolidated" />
+          <EntitySet Name="UsageSources" EntityType="LibertyPowerModel.UsageSource" />
+          <EntitySet Name="UsageTypes" EntityType="LibertyPowerModel.UsageType" />
+        </EntityContainer>
+        <EntityType Name="UsageConsolidated">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UtilityCode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AccountNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UsageType" Type="Int16" Nullable="false" />
+          <Property Name="UsageSource" Type="Int16" Nullable="false" />
+          <Property Name="FromDate" Type="DateTime" Nullable="false" />
+          <Property Name="ToDate" Type="DateTime" Nullable="false" />
+          <Property Name="TotalKwh" Type="Int32" Nullable="false" />
+          <Property Name="DaysUsed" Type="Int16" />
+          <Property Name="Created" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Modified" Type="DateTime" />
+          <Property Name="Active" Type="Int16" Nullable="false" />
+          <Property Name="ReasonCode" Type="Int16" />
+          <Property Name="MeterNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OnPeakKWh" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="OffPeakKWh" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="IntermediateKwh" Type="Double" />
+          <Property Name="BillingDemandKW" Type="Double" />
+          <Property Name="MonthlyPeakDemandKW" Type="Double" />
+          <Property Name="MonthlyOffPeakDemandKw" Type="Double" />
+        </EntityType>
+        <EntityType Name="UsageSource">
+          <Key>
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Value" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UsageType">
+          <Key>
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Value" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="LibertyPowerModelStoreContainer" CdmEntityContainer="LibertyPowerEntities">
+          <EntitySetMapping Name="UsageConsolidateds"><EntityTypeMapping TypeName="LibertyPowerModel.UsageConsolidated"><MappingFragment StoreEntitySet="UsageConsolidated">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="UtilityCode" ColumnName="UtilityCode" />
+            <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+            <ScalarProperty Name="UsageType" ColumnName="UsageType" />
+            <ScalarProperty Name="UsageSource" ColumnName="UsageSource" />
+            <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+            <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+            <ScalarProperty Name="TotalKwh" ColumnName="TotalKwh" />
+            <ScalarProperty Name="DaysUsed" ColumnName="DaysUsed" />
+            <ScalarProperty Name="Created" ColumnName="Created" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="Modified" ColumnName="Modified" />
+            <ScalarProperty Name="Active" ColumnName="Active" />
+            <ScalarProperty Name="ReasonCode" ColumnName="ReasonCode" />
+            <ScalarProperty Name="MeterNumber" ColumnName="MeterNumber" />
+            <ScalarProperty Name="OnPeakKWh" ColumnName="OnPeakKWh" />
+            <ScalarProperty Name="OffPeakKWh" ColumnName="OffPeakKWh" />
+            <ScalarProperty Name="IntermediateKwh" ColumnName="IntermediateKwh" />
+            <ScalarProperty Name="BillingDemandKW" ColumnName="BillingDemandKW" />
+            <ScalarProperty Name="MonthlyPeakDemandKW" ColumnName="MonthlyPeakDemandKW" />
+            <ScalarProperty Name="MonthlyOffPeakDemandKw" ColumnName="MonthlyOffPeakDemandKw" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UsageSources"><EntityTypeMapping TypeName="LibertyPowerModel.UsageSource"><MappingFragment StoreEntitySet="UsageSource">
+            <ScalarProperty Name="Value" ColumnName="Value" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Created" ColumnName="Created" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UsageTypes"><EntityTypeMapping TypeName="LibertyPowerModel.UsageType"><MappingFragment StoreEntitySet="UsageType">
+            <ScalarProperty Name="Value" ColumnName="Value" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Created" ColumnName="Created" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LibertyPowerEDM">
+        <EntityTypeShape EntityType="LibertyPowerModel.UsageConsolidated" Width="1.75" PointX="0.75" PointY="0.75" Height="5.057109375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibertyPowerModel.UsageSource" Width="1.5" PointX="3.25" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibertyPowerModel.UsageType" Width="1.5" PointX="3.25" PointY="3.75" Height="1.787985026041667" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

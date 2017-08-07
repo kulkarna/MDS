@@ -1,0 +1,34 @@
+Ron, please create the following folders on WS4:
+
+Deploy SQL scripts to SQL1
+
+C:\Docs\
+C:\Docs\Projects\
+C:\Docs\Projects\IDR\
+C:\Docs\Projects\IDR\ManagedFiles\
+
+C:\Temp\TestIdrFiles\
+
+Please add user "Network Service" under Security with full control to this new folder
+
+Also, please install Silverlight.exe (new version needed for Telerik control) on WS4
+
+
+
+Create a new website on WS4
+Name: IDRManagement
+Authentication: Enable Windows Authentication
+
+
+
+Create a new app pool on WS4
+Name: IDR
+4.0
+Classic pipeline
+Identity: Netwrok Service
+
+
+Machine Config (WS4):
+    <add name="LpTransactionsContainer" connectionString="metadata=res://*/Model.LpTransactions.csdl|res://*/Model.LpTransactions.ssdl|res://*/Model.LpTransactions.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=sqlprod;initial catalog=Lp_transactions;User ID=sa;password=Sp@c3ch@1r;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+
+In App_Data folder, please make sure user "Network Service" under Security has full control..

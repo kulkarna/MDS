@@ -1,0 +1,14 @@
+﻿<div id="chartsdiv">
+            <div style="text-align: center">
+                <%: Html.Chart("SalesByYear",   // Action
+                               "Charts",        // Controller
+                               new {            // RouteData
+                                   CategoryName = Model.CategoryName,
+                                   OrderYear = Model.OrderYear
+                               },
+                               new {            // HTML attributes
+                                   alt = "Sales for " + Model.CategoryName + " in " + Model.OrderYear,
+                                   title = "Sales for " + Model.CategoryName + " in " + Model.OrderYear,
+                               }) %>
+            </div>
+</div>

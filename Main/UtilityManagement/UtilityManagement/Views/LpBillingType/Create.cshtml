@@ -1,0 +1,281 @@
+﻿@model UtilityManagement.Models.LibertyPowerBillingTypeListModel
+@{
+    ViewBag.Title = "Create LP Billing Types";
+}
+@using UserInterfaceValidationExtensions
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+	 <div class="edit_section">
+        <div class="edit_header">
+            <div class="billing_ico"></div>
+            <div class="edit_header_desc"><h4>LP Billing Types</h4>
+            <h3>New Record</h3>
+            </div>
+            </div>
+        <div class="form_fieldset">
+            <fieldset>
+                <legend>Lp Billing Types</legend>
+                <div class="textblock">
+                    
+                <div class="details-data-section">
+                    <div id="Gen"  class="activable">
+
+
+                   <img id="dirImg2"  class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent',this.id)" /> 
+                    <div class="edit_section_heading"  onclick="showDiv('hideContent',this.id)" >General</div>
+                    <div id="hideContent" class="editdetails">
+                    <div class="details-full-section">
+                        @Html.HiddenFor(model => model.SelectedUtilityCompanyId, new { id = "UtilityCompanyId", name = "UtilityCompanyId" })
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.SelectedUtilityCompanyId, "Utility Company")
+                        </div>
+                        <div class="editor-field">
+                            @Html.Label((string)ViewBag.UtilityCode ?? "")
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PorDriverId, "Driver")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("PorDriverId", null, new { @onclick = "PorDriverIdChange();" })
+                            @Html.ValidationMessageFor(model => model.PorDriverId, "The current Driver field value is invalid.")
+                        </div>
+                         <div class="clear"></div>
+                        <div id="PorRateClass">
+                            <div class="editor-label">
+                                @Html.Label("Rate Class")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("RateClassId", String.Empty)
+                                @Html.ValidationMessageFor(model => model.RateClassId, "The current Rate Class field value is invalid.")
+                            </div>
+                        </div>
+                         <div class="clear"></div>
+                        <div id="PorLoadProfile">
+                            <div class="editor-label">
+                                @Html.Label("Load Profile")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("LoadProfileId", String.Empty)
+                                @Html.ValidationMessageFor(model => model.LoadProfileId, "The current Load Profile field value is invalid.")
+                            </div>
+                             <div class="clear"></div>
+                        </div>
+
+                        <div id="PorTariffCode">
+                            <div class="editor-label">
+                                @Html.Label("Tariff Code")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("TariffCodeId", String.Empty)
+                                @Html.ValidationMessageFor(model => model.TariffCodeId, "The current Tariff Code field value is invalid.")
+                            </div>
+                             <div class="clear"></div>
+                        </div>
+
+                        <div id="DefaultBillingTypeDiv">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.DefaultBillingTypeId, "Default Billing Type")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("DefaultBillingTypeId", (IEnumerable<SelectListItem>)ViewBag.DefaultBillingTypeIds)
+                                @Html.ValidationMessageFor(model => model.DefaultBillingTypeId, "The current Default Billing Type field value is invalid.")
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div id="LpUtilityOfferedBillingType">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.UtilityOfferedBillingTypeId, "Utility Offered Billing Type")
+                            </div>
+                            <div class="editor-field">
+                                @Html.DropDownList("UtilityOfferedBillingTypeId", (IEnumerable<SelectListItem>)ViewBag.LpUtilityOfferedBillingTypeId)
+                                @Html.ValidationMessageFor(model => model.UtilityOfferedBillingTypeId, "The current Utility Offered Billing Type field value is invalid.")
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div id="LibertyPowerApprovedBillingTypeBoolId">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.LibertyPowerApprovedBillingTypeId, "LP Approved Billing Type")
+                            </div>
+                            <div class="editor-field">
+                                @Html.CheckBoxFor(model => model.LibertyPowerApprovedBillingTypeId)
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div id="Terms">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.Terms, "Terms")
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.Terms)
+                                @Html.ValidationMessageFor(model => model.Terms, "The current Terms field value is invalid.")
+                            </div>
+                        </div>
+                    </div>
+					</div>
+                    </div>
+                    <div id="info"  class="activable">
+                      <img id="dirImg3" class="hidediv" src="~/Images/arrow_open.png" onclick="showDiv('hideContent2',this.id)" /> 
+                    <div class="edit_section_heading" onclick="showDiv('hideContent2',this.id)">Audit Information</div>
+                    <div id="hideContent2" class="editdetails">
+                    <div class="details-full-section">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Inactive)
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.EditorFor(model => model.Inactive)
+                            @Html.ValidationMessageFor(model => model.Inactive)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedBy, "Created By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedBy)
+                            @Html.ValidationMessageFor(model => model.CreatedBy)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CreatedDate, "Created Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.CreatedDate)
+                            @Html.ValidationMessageFor(model => model.CreatedDate)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedBy, "Last Modified By")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedBy)
+                            @Html.ValidationMessageFor(model => model.LastModifiedBy)
+                        </div>
+                         <div class="clear"></div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastModifiedDate, "Last Modified Date")
+                        </div>
+                        <div class="editor-field-display">
+                            @Html.DisplayFor(model => model.LastModifiedDate)
+                            @Html.ValidationMessageFor(model => model.LastModifiedDate)
+                        </div>
+						</div>
+                    </div>
+                        </div>
+					</div>
+                       </div>
+            </fieldset>
+        </div>
+    </div>
+<script type="text/javascript">
+    function UtilityOfferedBillingTypeClick(utilityOfferedBillingTypeCheckBoxId, lpApprovedBillingTypeCheckBoxId) {
+        var lpApprovedBillingTypeCheckBox = $("#" + lpApprovedBillingTypeCheckBoxId);
+        if ($("#" + utilityOfferedBillingTypeCheckBoxId).attr('checked') == 'checked') {
+            lpApprovedBillingTypeCheckBox.removeAttr("disabled");
+        }
+        else {
+            lpApprovedBillingTypeCheckBox.attr('checked', false);
+            lpApprovedBillingTypeCheckBox.attr("disabled", true);
+        }
+    }
+
+    function LpApprovedBillingTypeClick(lpApprovedBillingTypeCheckBoxId, id, name) {
+        var lpApprovedBillingTypeCheckBox = $("#" + lpApprovedBillingTypeCheckBoxId);
+        var itemText = "<option value=" + id + ">" + name + "</option>";
+        var defaultBillingType = $("#DefaultBillingTypeId");
+        if (lpApprovedBillingTypeCheckBox.attr('checked') == 'checked') {
+            lpApprovedBillingTypeCheckBox.removeAttr("disabled");
+            defaultBillingType.append(itemText);
+            SortDefaultBillingTypeDropDownList();
+        }
+        else {
+            $("#DefaultBillingTypeId option[value='" + id + "']").remove();
+        }
+    }
+
+    function SortDefaultBillingTypeDropDownList() {
+        $("#DefaultBillingTypeId").html($('#DefaultBillingTypeId option').sort(function (x, y) {
+            return $(x).text() < $(y).text() ? -1 : 1;
+        }))
+        $("#DefaultBillingTypeId").get(0).selectedIndex = 0;
+    }
+
+    function PorDriverIdChange() {
+        if ($("select#PorDriverId").val() != "-1") {
+            var selectedText = $("select#PorDriverId option:selected").text();
+            if (selectedText == "Load Profile") {
+                $("#PorLoadProfile").show();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").hide();
+            }
+            else if (selectedText == "Tariff Code") {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").show();
+            }
+            else if (selectedText == "Rate Class") {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").show();
+                $("#PorTariffCode").hide();
+            }
+            else {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").hide();
+            }
+        }
+    }
+
+    window.onload = function()
+    {
+        if ($("select#PorDriverId").val() != "-1") {
+            var selectedText = $("select#PorDriverId option:selected").text();
+            if (selectedText == "Load Profile") {
+                $("#PorLoadProfile").show();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").hide();
+            }
+            else if (selectedText == "Tariff Code") {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").show();
+            }
+            else if (selectedText == "Rate Class") {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").show();
+                $("#PorTariffCode").hide();
+            }
+            else {
+                $("#PorLoadProfile").hide();
+                $("#PorRateClass").hide();
+                $("#PorTariffCode").hide();
+            }
+        }
+    }
+</script>
+}
+
+@if (Session["ErrorMessage"] != null)
+{<h3>@Session["ErrorMessage"].ToString()</h3>}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+@if (Session["IsPostBack"] != null && Session["IsPostBack"].ToString() == "true")
+{
+
+    var errorMessage = string.Empty; //= Model.GetLpBillingTypeValidationString();
+    if (errorMessage != null)
+    {
+    <h3>@errorMessage</h3>
+    }
+}
+
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });

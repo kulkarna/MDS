@@ -1,0 +1,127 @@
+﻿@model IEnumerable<DataAccessLayerEntityFramework.usp_zAuditAccountInfoFieldRequired_SELECT_Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="form-details p15">
+<div class="form-information">
+        <div class="form-title-specific float-left">Audit Account Info Field Required Index</div>
+        <div class="float-right">
+            <input type="text" class="text-box2"><div class="seachbtn">
+                <button class="button" type="submit" value="Search for records" id="search">search</button>
+            </div>
+        </div>
+    </div>
+    <div class="details-data-section">
+ <div class="details-full-section">
+<table class="index">
+    <tr>
+        <th>Row Count = @Model.Count()</th>
+        <th>
+            @Html.ActionLink("Id", "TitleClick", new { name = "Id" })
+        </th>
+        <th>
+            @Html.ActionLink("Util Co Id", "TitleClick", new { name = "UtilityCompanyId" })
+        </th>
+        <th>
+            @Html.ActionLink("Util Code", "TitleClick", new { name = "UtilityCode" })
+        </th>
+        <th>
+            @Html.ActionLink("Account Info Field Id", "TitleClick", new { name = "AccountInfoFieldId" })
+        </th>
+        <th>
+            @Html.ActionLink("Name User Friendly", "TitleClick", new { name = "NameUserFriendly" })
+        </th>
+        <th>
+            @Html.ActionLink("NameMachineUnfriendly", "TitleClick", new { name = "NameMachineUnfriendly" })
+        </th>
+        <th>
+            @Html.ActionLink("Is Required", "TitleClick", new { name = "IsRequired" })
+        </th>
+        <th>
+            @Html.ActionLink("Description", "TitleClick", new { name = "Description" })
+        </th>
+        <th>
+            @Html.ActionLink("Inactive", "TitleClick", new { name = "Inactive" })
+        </th>
+        <th>
+            @Html.ActionLink("Create By", "TitleClick", new { name = "CreatedBy" })
+        </th>
+        <th>
+            @Html.ActionLink("Create Date", "TitleClick", new { name = "CreatedDate" })
+        </th>
+        <th>
+            @Html.ActionLink("Last Mod By", "TitleClick", new { name = "LastModifiedBy" })
+        </th>
+        <th>
+            @Html.ActionLink("Last Mod Date", "TitleClick", new { name = "LastModifiedDate" })
+        </th>
+        <th>
+            @Html.ActionLink("Change Version", "TitleClick", new { name = "ChangeVersion" })
+        </th>
+        <th>
+            @Html.ActionLink("Creation Version", "TitleClick", new { name = "CreationVersion" })
+        </th>
+        <th>
+            @Html.ActionLink("Change Operation", "TitleClick", new { name = "ChangeOperation" })
+        </th>
+        <th>
+            @Html.ActionLink("Change Columns", "TitleClick", new { name = "ChangeColumns" })
+        </th>
+        <th></th>
+    </tr>
+    @{
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>Current</td>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilityCompanyId)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilityCode)</td>
+            <td>@Html.DisplayFor(modelItem => item.AccountInfoFieldId)</td>
+            <td>@Html.DisplayFor(modelItem => item.NameUserFriendly)</td>
+            <td>@Html.DisplayFor(modelItem => item.NameMachineUnfriendly)</td>
+            <td>@Html.DisplayFor(modelItem => item.IsRequired)</td>
+            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+            <td>@Html.DisplayFor(modelItem => item.Inactive)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedBy)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastModifiedBy)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastModifiedDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.SYS_CHANGE_VERSION)</td>
+            <td>@Html.DisplayFor(modelItem => item.SYS_CHANGE_CREATION_VERSION)</td>
+            <td>@Html.DisplayFor(modelItem => item.SYS_CHANGE_OPERATION)</td>
+            <td>@Html.DisplayFor(modelItem => item.SYS_CHANGE_COLUMNS)</td>
+        </tr>
+        <tr>
+            <td>Previous</td>
+            <td>@Html.DisplayFor(modelItem => item.IdPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilityCompanyIdPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.UtilityCodePrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.AccountInfoFieldIdPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.NameUserFriendlyPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.NameMachineUnfriendlyPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.IsRequiredPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.DescriptionPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.InactivePrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedByPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedDatePrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastModifiedByPrevious)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastModifiedDatePrevious)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        }
+    }
+</table>
+</div>
+</div>
+    </div>
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+
+    });

@@ -1,0 +1,94 @@
+USE [LibertyPower]
+GO
+
+/****** Object:  StoredProcedure [dbo].[usp_AccountsSummarySelect]    Script Date: 08/15/2014 13:08:12 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_AccountsSummarySelect]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_AccountsSummarySelect]
+GO
+
+USE [LibertyPower]
+GO
+
+/****** Object:  StoredProcedure [dbo].[usp_AccountsSummarySelect]    Script Date: 08/15/2014 13:08:12 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+---------------------------------------------------------------------------------------------------
+-- Added			: Fernando ML Alves
+-- Date			: 08/15/2014
+-- Description	: Proc to select all accounts summary in the scope of a given zip codes list.
+--                Summary fields per account are AccountNumbers, AccountStatus, ContractEndDate, 
+--				  ProductCode, UtilitID and sales channel.
+-- Format:		: exec usp_AccountsSummarySelect zipCode1,zipCode2
+---------------------------------------------------------------------------------------------------
+
+CREATE TYPE [dbo].[StringList] AS TABLE(
+    [Item] [NVARCHAR](10) NULL
+);
+ 
+CREATE PROCEDURE [dbo].usp_AccountsSummarySelect (
+	 @p_zipCodes StringList READONLY) AS 
+BEGIN 
+	SET NOCOUNT ON;
+
+	SELECT 
+		T1.AccountNumber, T1.AccStatus AS AccountStatus, T2.MaxRateEnd AS ContractEndDate, T1.LegacyProductID AS ProductCode, T1.UtilityID, '' AS SalesChannel 
+	FROM (
+		SELECT 
+			A.AccountNumber, A.AccountIdLegacy, A.AccountID, A.AccountNameID, A.UtilityID, 
+			IsContractedRate, ALS.StartDate, Als.EndDate AccountLatestServiceEndDate, 
+			CASE WHEN ASt.Status= '905000' or ASt.Status= '905000' THEN 'Enrolled' ELSE 'Pending' End AS AccStatus, ASt.Status, 
+			ACR.LegacyProductID, cp.IsDefault 
+		FROM 
+			Libertypower..Account A (NOLOCK), 
+			Libertypower..Address Ad (NOLOCK), 
+			Libertypower..AccountContract AC (NOLOCK), 
+			Libertypower..Contract C (NOLOCK), 
+			Libertypower..AccountContractRate ACR (NOLOCK), 
+			Libertypower..AccountLatestService ALS (NOLOCK), 
+			LibertyPower..AccountStatus Ast (NOLOCK), 
+			lp_common..common_product cp (NOLOCK) 
+		WHERE 
+			A.ServiceAddressID=Ad.AddressID AND AC.AccountID=A.AccountID AND AC.ContractID=C.ContractID 
+		AND 
+			ISNULL(A.CurrentRenewalContractID, A.CurrentContractID)=AC.ContractID AND ACR.AccountContractID=AC.AccountContractID 
+		AND 
+			ALS.AccountID=A.AccountID AND ASt.AccountContractID=AC.AccountContractID AND cp.product_id=ACR.LegacyProductID 
+		AND 
+			Ad.Zip IN @p_zipCodes AND Ast.Status NOT IN ('911000','999998','999999')
+		GROUP BY 
+			A.AccountNumber, A.AccountIdLegacy, A.AccountID, A.AccountNameID, A.UtilityID, IsContractedRate, ALS.StartDate, 
+			Als.EndDate, ASt.Status, ASt.SubStatus, ACR.LegacyProductID, cp.IsDefault
+	) T1 FULL OUTER JOIN (
+		SELECT 
+			A.AccountNumber, MIn(acr.RateStart) MinRateStart, Max(ACR.RateEnd) MaxRateEnd
+		FROM  
+			Libertypower..Account A (NOLOCK), 
+			Libertypower..Address Ad (NOLOCK), 
+			Libertypower..AccountContract AC (NOLOCK), 
+			Libertypower..Contract C (NOLOCK), 
+			Libertypower..AccountContractRate ACR (NOLOCK), 
+			Libertypower..AccountLatestService ALS (NOLOCK), 
+			Libertypower..AccountStatus Ast (NOLOCK), 
+			lp_common..common_product cp (NOLOCK)
+		WHERE  
+			A.ServiceAddressID=Ad.AddressID AND AC.AccountID=A.AccountID AND AC.ContractID=C.ContractID 
+		AND 
+			ISNULL(A.CurrentRenewalContractID, A.CurrentContractID)=AC.ContractID AND ACR.AccountContractID=AC.AccountContractID 
+		AND 
+			ALS.AccountID=A.AccountID AND ASt.AccountContractID=AC.AccountContractID AND cp.product_id=ACR.LegacyProductID 
+		AND 
+			Ad.Zip IN @p_zipCodes AND ACR.IsContractedRate=1 AND Ast.Status NOT IN ('911000','999998','999999')
+		GROUP BY 
+			A.AccountNumber
+	) T2 ON T1.AccountNumber=T2.AccountNumber;
+
+	SET NOCOUNT OFF;	
+END;
+
+GO
+
+

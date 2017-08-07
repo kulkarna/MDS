@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "File Upload Index";
+    ViewBag.PageName = "FileUploadIndex";
+}
+
+<h2>Index</h2>
+                            @Html.ActionLink("Simple Upload","simple_upload",new { myuploader = string.Empty }) 
+                            @Html.ActionLink("Selecting Multiple Files","selecting_multiple_files",new { myuploader = string.Empty }) 
+                            @Html.ActionLink("Large File Upload","Large_File_Upload",new { myuploader = string.Empty }) 
+                            @Html.ActionLink("Multiple Files Upload Control File Number","multiple_files_upload_control_file_number",new { myuploader = string.Empty }) 
+                            @Html.ActionLink("Simple Upload UI","simple_upload_UI",new { myuploader = string.Empty }) 
+                            @Html.ActionLink("Simple Upload Validation","simple_upload_Validation",new { myuploader = string.Empty }) 
+                            @Html.ActionLink("Start Uploading Manually","Start_uploading_manually",new { myuploader = string.Empty }) 
+<form action="" method="post" enctype="multipart/form-data">
+
+  <label for="file">Filename:</label>
+  <input type="file" name="file" id="file" />
+
+  <input type="submit" />
+</form>
