@@ -48,7 +48,7 @@ namespace UtilityManagementBusinessLayer
         string GetZoneByAccountNumberFromErcot(string messageId, string accountNumber);
         IGetEnrollmentleadTimesDataResponse GetUtilityEnrollmentLeadTimeData(string messageId, int utilityId, string rateClass, string loadProfile, string tariffCode);
         bool DoesUtilityCodeBelongToIso(string messageId, string Iso, string UtilityCode);
-        IGetAllActiveUtilitiesDumpDataResponse GetAllActiveUtilitiesDumpData(string messageId);
+        IGetAllActiveUtilitiesDumpDataResponse GetAllActiveUtilitiesDumpData(string messageId, string energyType);
 
     }
 }

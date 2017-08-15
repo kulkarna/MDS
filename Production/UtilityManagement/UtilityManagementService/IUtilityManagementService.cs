@@ -12,6 +12,7 @@ namespace UtilityManagementService
     [ServiceContract]
     public interface IUtilityManagementService
     {
+        #region Electricity Public Methods
 
         [OperationContract]
         [FaultContract(typeof(UtilityManagementException))]
@@ -130,5 +131,14 @@ namespace UtilityManagementService
         [FaultContract(typeof(UtilityManagementException))]
         GetEnrollmentleadTimesDataResponse GetEnrollmentLeadTimes(string messageId,int utilityId, string rateClass, string loadProfile, string tariffCode);
 
+        #endregion
+
+        #region Natural Gas Public Method
+
+        [OperationContract]
+        [FaultContract(typeof(UtilityManagementException))]
+        GetAllActiveUtilitiesDumpDataResponse GetAllGasActiveUtilitiesDataDump(string messageId);
+
+        #endregion
     }
 }

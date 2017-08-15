@@ -1349,7 +1349,7 @@ namespace UtilityManagementBusinessLayer
         }
 
 
-        public IGetAllActiveUtilitiesDumpDataResponse GetAllActiveUtilitiesDumpData(string messageId)
+        public IGetAllActiveUtilitiesDumpDataResponse GetAllActiveUtilitiesDumpData(string messageId, string energyType)
         {
             string method = "GetAllActiveUtilitiesDumpData(messageId)";
 
@@ -1360,7 +1360,7 @@ namespace UtilityManagementBusinessLayer
                 EfToWcfMapping mapper = new EfToWcfMapping();
                 _dataRepository.MessageId = messageId;
 
-                DataSet dataSet = _dataRepository.usp_UtilityGetAllActiveUtilitiesDumpData(messageId);
+                DataSet dataSet = _dataRepository.usp_UtilityGetAllActiveUtilitiesDumpData(messageId, energyType);
 
                 _logger.LogDebug("after utilitycompanies");
 

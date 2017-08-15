@@ -4438,21 +4438,22 @@ namespace UtilityManagementRepository
         }
 
 
-        public DataSet usp_UtilityGetAllActiveUtilitiesDumpData(string messageId)
+        public DataSet usp_UtilityGetAllActiveUtilitiesDumpData(string messageId, string energyType)
         {
-            string method = "usp_UtilityGetAllActiveUtilitiesDumpData(messageId)";
+            string method = string.Format("usp_UtilityGetAllActiveUtilitiesDumpData(messageId:{0}, energyType:{1})", !string.IsNullOrWhiteSpace(messageId) ? "NULL VALUE" : messageId, energyType);
             try
             {
                 _logger.LogInfo(messageId, string.Format("{0}.{1}.{2} BEGIN", NAMESPACE, CLASS, method));
 
                 DataSet ds = new DataSet();
-                string connectionString = Common.NullSafeString(System.Configuration.ConfigurationManager.ConnectionStrings["Lp_UtilityManagement"]);
+                string connectionString = Common.NullSafeString(System.Configuration.ConfigurationManager.ConnectionStrings["DataSync"]);
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand("usp_UtilityGetAllActiveUtilitiesDumpData", connection))
                     {
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.Add(new SqlParameter("@Commodity", energyType));
                         adapter.Fill(ds);
                     }
                 }

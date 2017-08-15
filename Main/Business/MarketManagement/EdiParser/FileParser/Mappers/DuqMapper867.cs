@@ -155,6 +155,7 @@
 						{
 							cellContents = cells[duqMarker.AccountNumberCell].Trim();
 							accountNumber = cellContents == null ? "" : cellContents;
+
 							break;
 						}
 					case "REF45": // previous account number
@@ -303,7 +304,9 @@
 							}
 							break;
 						}
-					case "QTYQD": // begin usage
+                    // Begin usage
+                    case "QTYQD": //Actual Quantity Delivered
+                    case "QTYKA": //Estimated Quantity Delivered
 						{
 							// NV - no value
 							if( !fc.Contains( "NV" ) )
@@ -317,8 +320,15 @@
 								// if historical, then need to wait for begin and end dates
 								if( !transactionSetPurposeCode.Equals( "52" ) )
 								{
-									account.EdiUsageList.Add( CreateEdiUsage( quantity, unitOfMeasurement, measurementSignificanceCode,
-										transactionSetPurposeCode, meterNumber, beginDate, endDate, ptdLoop ) );
+									account.EdiUsageList.Add( 
+                                        CreateEdiUsage(quantity,
+                                        unitOfMeasurement, 
+                                        measurementSignificanceCode,
+                                        transactionSetPurposeCode,
+                                        meterNumber,
+                                        beginDate,
+                                        endDate,
+                                        ptdLoop));
 								}
 							}
 							break;

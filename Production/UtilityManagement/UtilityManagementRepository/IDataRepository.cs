@@ -167,6 +167,6 @@ namespace UtilityManagementRepository
         DataSet usp_CapacityThresholdRuleGetByUtilityCodeCustomerAccountType(string messageId, string utilityCode, string accountType);
         DataSet usp_CapacityThresholdRule_GetAll(string messageId);
         DataSet usp_UtilityGetAllUtilitiesData(string messageId);
-        DataSet usp_UtilityGetAllActiveUtilitiesDumpData(string messageId);
+        DataSet usp_UtilityGetAllActiveUtilitiesDumpData(string messageId, string energyType);
     }
 }

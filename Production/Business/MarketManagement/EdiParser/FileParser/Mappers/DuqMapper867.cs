@@ -1,18 +1,15 @@
 ﻿namespace LibertyPower.Business.MarketManagement.EdiParser.FileParser
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-	using LibertyPower.Business.MarketManagement.UtilityManagement;
-	using LibertyPower.Business.MarketManagement.EdiParser.FormatParser;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Data.SqlTypes;
 
-	/// <summary>
-	/// DUQ utility mapper for 867 file.
-	///  Maps markers in an EDI utility file to specific values in generic collections.
-	/// </summary>
-	public class DuqMapper867 : MapperBase
+    /// <summary>
+    /// DUQ utility mapper for 867 file.
+    ///  Maps markers in an EDI utility file to specific values in generic collections.
+    /// </summary>
+    public class DuqMapper867 : MapperBase
 	{
 		/// <summary>
 		/// Default constructor
@@ -155,6 +152,7 @@
 						{
 							cellContents = cells[duqMarker.AccountNumberCell].Trim();
 							accountNumber = cellContents == null ? "" : cellContents;
+
 							break;
 						}
 					case "REF45": // previous account number
@@ -303,7 +301,9 @@
 							}
 							break;
 						}
-					case "QTYQD": // begin usage
+                    // Begin usage
+                    case "QTYQD": //Actual Quantity Delivered
+                    case "QTYKA": //Estimated Quantity Delivered
 						{
 							// NV - no value
 							if( !fc.Contains( "NV" ) )
@@ -317,8 +317,15 @@
 								// if historical, then need to wait for begin and end dates
 								if( !transactionSetPurposeCode.Equals( "52" ) )
 								{
-									account.EdiUsageList.Add( CreateEdiUsage( quantity, unitOfMeasurement, measurementSignificanceCode,
-										transactionSetPurposeCode, meterNumber, beginDate, endDate, ptdLoop ) );
+									account.EdiUsageList.Add( 
+                                        CreateEdiUsage(quantity,
+                                        unitOfMeasurement, 
+                                        measurementSignificanceCode,
+                                        transactionSetPurposeCode,
+                                        meterNumber,
+                                        beginDate,
+                                        endDate,
+                                        ptdLoop));
 								}
 							}
 							break;

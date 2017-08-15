@@ -14,11 +14,22 @@ using UtilityManagementServiceData;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Runtime.Caching;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace UtilityManagementService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
 
+    public enum ET
+    {
+        [Description("E")]
+        Electricity,
+        [Description("G")]
+        Gas,
+        [Description("ALL")]
+        All
+    }
 
     public class UtilityManagementService : IUtilityManagementService
     {
@@ -34,7 +45,6 @@ namespace UtilityManagementService
         private string CacheKey = string.Empty;
         private string CHACHE_EXPIRATION_SECONDS = System.Configuration.ConfigurationManager.AppSettings["CHACHING_EXPIRATION_SECONDS"];
         #endregion
-
 
         #region public constructors
         public UtilityManagementService()
@@ -63,8 +73,49 @@ namespace UtilityManagementService
         }
         #endregion
 
+        #region Private Methods
 
-        #region public methods
+        private string GetEnumDescription(Enum value)
+        {
+            FieldInfo fi = value.GetType().GetField(value.ToString());
+
+            DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            if (attributes != null && attributes.Length > 0)
+                return attributes[0].Description;
+            else
+                return value.ToString();
+        }
+
+        private GetAllActiveUtilitiesDumpDataResponse GetAllGasActiveUtilitiesDataDumpByEnergyType(string messageId, string energyType)
+        {
+            string method = string.Format("GetAllUtilitiesData(messageId:{0}, energyType:{1})", !string.IsNullOrWhiteSpace(messageId) ? "NULL VALUE" : messageId, energyType);
+            DateTime beginTime = DateTime.Now;
+            try
+            {
+                _logger.LogInfo(messageId, string.Format("{0}.{1}.{2} BEGIN", NAMESPACE, CLASS, method));
+                if (string.IsNullOrWhiteSpace(messageId))
+                    messageId = Guid.NewGuid().ToString();
+                GetAllActiveUtilitiesDumpDataResponse response = (GetAllActiveUtilitiesDumpDataResponse)_businessLayer.GetAllActiveUtilitiesDumpData(messageId, energyType);
+                _logger.LogInfo(messageId, string.Format("{0}.{1}.{2} response END Method Duration ms:{3}", NAMESPACE, CLASS, method, DateTime.Now.Subtract(beginTime).Milliseconds.ToString()));
+                return response;
+            }
+            catch (Exception exc)
+            {
+                string innerException = exc == null ? "NULL VALUE" : exc.InnerException == null ? "NULL VALUE" : exc.InnerException.ToString();
+                string exception = exc == null ? "NULL VALUE" : exc.Message == null ? "NULL VALUE" : exc.Message;
+                string errorMessage = exception + innerException;
+                _logger.LogError(messageId, string.Format("{0}.{1}.{2} ERROR:{3}", NAMESPACE, CLASS, method, errorMessage));
+                _logger.LogInfo(messageId, string.Format("{0}.{1}.{2} END Method Duration ms:{3}", NAMESPACE, CLASS, method, DateTime.Now.Subtract(beginTime).Milliseconds.ToString()));
+                UtilityManagementException ume = new UtilityManagementException(messageId, ERRORCODE, ERRORMESSAGE);
+                throw new FaultException<UtilityManagementException>(ume, ume.Message);
+            }
+        }
+
+        #endregion
+
+        #region Electricity Public Methods
+
         //public GetAllUtilitiesReceiveIdrOnlyResponse GetAllUtiltiesReceiveIdrOnly(string messageId)
         //{
         //    string method = string.Format("GetAllUtiltiesReceiveIdrOnly(messageId:{0})", !string.IsNullOrWhiteSpace(messageId) ? "NULL VALUE" : messageId);
@@ -191,8 +242,6 @@ namespace UtilityManagementService
         //    }
         //}
 
-
-
         public GetPreviousMeterReadDateByUtilityIdReadCycleIdAndInquiryDateResponse GetPreviousMeterReadDateByUtilityIdReadCycleIdAndInquiryDate(string messageId, int utilityId, string readCycleId, bool isAmr, DateTime inquiryDate)
         {
             string method = string.Format("GetPreviousMeterReadDateByUtilityIdReadCycleIdAndInquiryDate(messageId:{0},utilityid:{1},readCycleId:{2},isAmr:{3},inquiryDate:{4})",
@@ -269,8 +318,6 @@ namespace UtilityManagementService
                 return getPreviousMeterReadDateByUtilityIdReadCycleIdAndInquiryDateResponse;
             }
         }
-
-
 
         public GetNextMeterReadDateByUtilityIdReadCycleIdAndInquiryDateResponse GetNextMeterReadDateByUtilityIdReadCycleIdAndInquiryDate(string messageId, int utilityId, string readCycleId, bool isAmr, DateTime inquiryDate)
         {
@@ -349,7 +396,6 @@ namespace UtilityManagementService
             }
         }
 
-
         public GetMeterReadCalendarByUtilityIdResponse GetMeterReadCalendarByUtilityId(string messageId, int utilityId)
         {
             string method = string.Format("GetMeterReadCalendarByUtilityId(messageId,utilityid:{0})", utilityId);
@@ -392,7 +438,6 @@ namespace UtilityManagementService
             }
         }
 
-
         public int GetUtilityIdByUtilityCode(string messageId, string utilityCode)
         {
             string method = string.Format("GetUtilityIdByUtilityCode(messageId:{0}, utilityCode:{1})", !string.IsNullOrWhiteSpace(messageId) ? "NULL VALUE" : messageId, Common.NullSafeString(utilityCode));
@@ -428,7 +473,6 @@ namespace UtilityManagementService
                 throw new FaultException<UtilityManagementException>(ume, ume.Message);
             }
         }
-
 
         public string GetUtilityCodeByUtilityId(string messageId, int utilityId)
         {
@@ -467,7 +511,6 @@ namespace UtilityManagementService
             }
         }
 
-
         public string GetData(int value) { return Guid.NewGuid().ToString(); }
 
         public GetAllUtilitiesResponse GetAllUtilities(string messageId)
@@ -497,7 +540,6 @@ namespace UtilityManagementService
                 throw new FaultException<UtilityManagementException>(ume, ume.Message);
             }
         }
-
 
         public GetAllUtilitiesDataResponse GetAllUtilitiesData(string messageId)
         {
@@ -625,7 +667,6 @@ namespace UtilityManagementService
             }
         }
 
-
         public RequestMode GetHURequestMode(int utilityId, EnrollmentType enrollmentType)
         {
             string method = string.Format("GetHistoricalUsageRequestModes(utilityId:{0},enrollmentType:{1})", utilityId, enrollmentType.ToString());
@@ -709,7 +750,6 @@ namespace UtilityManagementService
             }
         }
 
-
         public RequestMode GetAIRequestMode(int utilityId, EnrollmentType enrollmentType)
         {
             string method = string.Format("GetAIRequestMode(utilityId:{0},enrollmentType:{1})", utilityId, enrollmentType.ToString());
@@ -779,7 +819,6 @@ namespace UtilityManagementService
                 throw;
             }
         }
-
 
         public IdrRequestMode GetIDRRequestModeData(string messageId, int utilityId, string serviceAccount, EnrollmentType enrollmentType, string loadProfile, string rateClass, string tariffCode, int? annualUsage, bool hasEligibilityRuleBeenSatisfied, bool hia)
         {
@@ -862,7 +901,6 @@ namespace UtilityManagementService
             }
         }
 
-
         public bool HasPorAssurance(int utilityId, string rateClass, string loadProfile, string tariffCode, BillingType billingType)
         {
             string method = string.Format("HasPorAssurance(utilityId:{0},rateClass:{1},loadProfile:{2},tariffCode:{3},billingType:{4}) currentDate:{5}", utilityId, rateClass ?? "NULL VALUE", loadProfile ?? "NULL VALUE", tariffCode ?? "NULL VALUE", billingType, DateTime.Now);
@@ -888,7 +926,7 @@ namespace UtilityManagementService
                             bool secondRec = response.HasPurchaseOfReceivableAssuranceList[1].IsPorAssurance;
 
                             returnValue = (firstRec == secondRec && firstRec) ? true : false;   
-                        }
+                }
                     }                  
                 }
 
@@ -934,7 +972,6 @@ namespace UtilityManagementService
         //        throw new FaultException<UtilityManagementException>(umexc, umexc.Message);
         //    }
         //}
-
 
         public GetBillingTypeResponse GetBillingTypes(int utilityId, string rateClass, string loadProfile, string tariffCode)
         {
@@ -1218,8 +1255,6 @@ namespace UtilityManagementService
             }
         }
 
-
-
         public List<AccountInfoRequiredFields> GetAllUtilityAccountInfoRequiredFields()
         {
             string method = "GetAllUtilityAccountInfoRequiredFields()";
@@ -1266,9 +1301,6 @@ namespace UtilityManagementService
                 throw;
             }
         }
-
-
-
 
         public bool DoesUtilityCodeBelongToIso(string messageId, string Iso, string UtilityCode)
         {
@@ -1336,9 +1368,6 @@ namespace UtilityManagementService
             }
         }
 
-        #endregion
-
-
         public GetCapacityThresholdRuleResponse GetCapacityThresholdRule(string messageId, string utilityCode, string accountType)
         {
             string method = string.Format("GetCapacityThresholdRule(messageId,utilityCode:{0},accountType:{1})", utilityCode ?? "NULL VALUE", accountType ?? "NULL VALUE");
@@ -1385,27 +1414,8 @@ namespace UtilityManagementService
 
         public GetAllActiveUtilitiesDumpDataResponse GetAllActiveUtilitiesDataDump(string messageId)
         {
-            string method = string.Format("GetAllUtilitiesData(messageId:{0})", !string.IsNullOrWhiteSpace(messageId) ? "NULL VALUE" : messageId);
-            DateTime beginTime = DateTime.Now;
-            try
-            {
-                _logger.LogInfo(messageId, string.Format("{0}.{1}.{2} BEGIN", NAMESPACE, CLASS, method));
-                if (string.IsNullOrWhiteSpace(messageId))
-                    messageId = Guid.NewGuid().ToString();
-                GetAllActiveUtilitiesDumpDataResponse response = (GetAllActiveUtilitiesDumpDataResponse)_businessLayer.GetAllActiveUtilitiesDumpData(messageId);
-                _logger.LogInfo(messageId, string.Format("{0}.{1}.{2} response END Method Duration ms:{3}", NAMESPACE, CLASS, method, DateTime.Now.Subtract(beginTime).Milliseconds.ToString()));
-                return response;
-            }
-            catch (Exception exc)
-            {
-                string innerException = exc == null ? "NULL VALUE" : exc.InnerException == null ? "NULL VALUE" : exc.InnerException.ToString();
-                string exception = exc == null ? "NULL VALUE" : exc.Message == null ? "NULL VALUE" : exc.Message;
-                string errorMessage = exception + innerException;
-                _logger.LogError(messageId, string.Format("{0}.{1}.{2} ERROR:{3}", NAMESPACE, CLASS, method, errorMessage));
-                _logger.LogInfo(messageId, string.Format("{0}.{1}.{2} END Method Duration ms:{3}", NAMESPACE, CLASS, method, DateTime.Now.Subtract(beginTime).Milliseconds.ToString()));
-                UtilityManagementException ume = new UtilityManagementException(messageId, ERRORCODE, ERRORMESSAGE);
-                throw new FaultException<UtilityManagementException>(ume, ume.Message);
-            }
+            string energyType = GetEnumDescription(ET.Electricity);
+            return GetAllGasActiveUtilitiesDataDumpByEnergyType(messageId, energyType);
         }
 
         public GetAllUtilitiesAcceleratedSwitchResponse GetAllUtilitiesAcceleratedSwitch(string messageId)
@@ -1449,10 +1459,10 @@ namespace UtilityManagementService
             }
         }
 
-        public GetEnrollmentleadTimesDataResponse GetEnrollmentLeadTimes(string messageId,int utilityId, string rateClass, string loadProfile, string tariffCode)
+        public GetEnrollmentleadTimesDataResponse GetEnrollmentLeadTimes(string messageId, int utilityId, string rateClass, string loadProfile, string tariffCode)
         {
             string method = string.Format("GetEnrollmentLeadTimes(messageId:{0},utilityId:{1},rateClass:{2},loadProfile:{3},tariffCode)", 
-                !string.IsNullOrWhiteSpace(messageId) ? "NULL VALUE" : messageId,Common.NullSafeString(utilityId),rateClass,loadProfile,tariffCode);
+                !string.IsNullOrWhiteSpace(messageId) ? "NULL VALUE" : messageId, Common.NullSafeString(utilityId), rateClass, loadProfile, tariffCode);
             DateTime beginTime = DateTime.Now;
             try
             {
@@ -1470,7 +1480,7 @@ namespace UtilityManagementService
                 {
                     if (string.IsNullOrWhiteSpace(messageId))
                         messageId = Guid.NewGuid().ToString();
-                    GetEnrollmentleadTimesDataResponse response = (GetEnrollmentleadTimesDataResponse)_businessLayer.GetUtilityEnrollmentLeadTimeData(messageId,utilityId,rateClass,loadProfile,tariffCode);
+                    GetEnrollmentleadTimesDataResponse response = (GetEnrollmentleadTimesDataResponse)_businessLayer.GetUtilityEnrollmentLeadTimeData(messageId, utilityId, rateClass, loadProfile, tariffCode);
                     _logger.LogInfo(messageId, string.Format("{0}.{1}.{2} response END Method Duration ms:{3}", NAMESPACE, CLASS, method, DateTime.Now.Subtract(beginTime).Milliseconds.ToString()));
                     CacheItemPolicy cacheItemPolicy = new CacheItemPolicy();
                     cacheItemPolicy.AbsoluteExpiration = DateTime.Now.AddSeconds(Convert.ToInt32(string.IsNullOrEmpty(CHACHE_EXPIRATION_SECONDS) ? "0" : CHACHE_EXPIRATION_SECONDS));
@@ -1491,6 +1501,16 @@ namespace UtilityManagementService
             }
         }
 
+        #endregion
 
+        #region Gas Public Methods        
+
+        public GetAllActiveUtilitiesDumpDataResponse GetAllGasActiveUtilitiesDataDump(string messageId)
+        {
+            string energyType = GetEnumDescription(ET.Gas);
+            return GetAllGasActiveUtilitiesDataDumpByEnergyType(messageId, energyType);
+        }
+
+        #endregion  
     }
 }
